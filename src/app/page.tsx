@@ -1,31 +1,15 @@
-// pages/index.tsx
-"use client"; // Add this line at the top
+"use client"
+import React from 'react';
+import ContactUs from './ContactUs';
+import Image from 'next/image'; // Import the Image component
+import { useEffect } from 'react';
 
-import Head from 'next/head';
-import Link from 'next/link';
-import { useState, useEffect } from 'react';
-import CircularProgress from '@mui/material/CircularProgress';
-import Box from '@mui/material/Box';
-import Fab from '@mui/material/Fab';
-import KeyboardArrowDownIcon from '@mui/icons-material/KeyboardArrowDown';
 
-interface HomePageData {
-  home: { title: string; content: string };
-  about: { title: string; content: string };
-  services: { title: string; items: { name: string; description: string }[] };
-  contact: { title: string; content: string; email: string; phone: string };
-}
-
-export default function Home() {
-  const [data, setData] = useState<HomePageData | null>(null);
-  const [loading, setLoading] = useState<boolean>(true);
+function LandingPage() {
 
   useEffect(() => {
     async function fetchData() {
-      const res = await fetch('https://python-mysql-http.onrender.com/api/homepage');
-      const jsonData: HomePageData = await res.json();
-      setData(jsonData);
-      setLoading(false);
+
     }
     fetchData();
   }, []);
@@ -37,67 +21,81 @@ export default function Home() {
     }
   };
 
-  if (loading) {
-    return (
-      <Box sx={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
-        <CircularProgress />
-      </Box>
-    );
-  }
-
-  if (!data) {
-    return <p>Error loading data</p>;
-  }
 
   return (
-    <div>
-      <Head>
-        <title>{data.home.title}</title>
-        <meta name="description" content={data.home.content} />
-        <link rel="icon" href="/favicon.ico" />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
-        />
-        <link
-          rel="stylesheet"
-          href="https://fonts.googleapis.com/icon?family=Material+Icons"
-        />
-      </Head>
+    <div className="bg-black-100 min-h-screen">
+      <header className="bg-black shadow-md">
+        <div className="container mx-auto py-6 px-4 flex items-center"> {/* Use flexbox for layout */}
+          {/* Add the logo */}
+          <Image
+            src="/innovatexp_color_no_bg.svg" // Path to your logo in the public folder
+            alt="InnovateXP Limited Logo"
+            width={50} // Adjust width as needed
+            height={50} // Adjust height as needed
+            className="mr-4" // Add some margin to the right
+          />
+          <div>
+            <h1 className="text-2xl font-bold text-white-800">InnovateXP Limited</h1>
+            <p className="text-gray-600">Cutting-edge software solutions and expert IT consulting services.</p>
+          </div>
+        </div>
+      </header>
 
-      <nav>
-        <ul>
-          <li><Link href="/">Home</Link></li>
-          <li><Link href="/about">About</Link></li>
-          <li><Link href="/services">Services</Link></li>
-          <li><Link href="/contact">Contact</Link></li>
-        </ul>
-      </nav>
+      <main className="container mx-auto py-12 px-4">
+      <section
+          className="mb-12 text-center rounded-lg shadow-lg overflow-hidden" 
+          style={{ backgroundImage: 'url(/4307506.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} >
+            <div className="bg-black bg-opacity-60 text-white p-8 flex flex-col items-center"> 
+              <div className="md:w-3/4 lg:w-1/2"> 
+                <h2 className="text-4xl font-bold mb-4">Transform Your Business with InnovateXP</h2>
+                <p className="text-lg mb-6">
+                Leverage our expertise in software development and IT consulting to achieve your goals. Let's build the future together.
+                </p>
+                <a href="#contact-us" className="bg-white text-blue-600 font-semibold py-2 px-6 rounded-full hover:bg-gray-100 transition duration-300 inline-block"> // Ensure button is inline-block for centering context
+                Get Started
+                </a>
+              </div>
+            </div>
+        </section>
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold text-white-800 mb-4">Our Services</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">Web Development</h3>
+              <p className="text-gray-600">Custom web applications tailored to your business needs.</p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">Mobile App Development</h3>
+              <p className="text-gray-600">Native and cross-platform mobile apps for iOS and Android.</p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">Cloud Computing</h3>
+              <p className="text-gray-600">Scalable and secure cloud solutions for your infrastructure.</p>
+            </div>
+            <div className="bg-white rounded-lg shadow-md p-4">
+              <h3 className="text-xl font-semibold text-gray-700 mb-2">Data Analytics</h3>
+              <p className="text-gray-600">Data-driven insights to improve your business performance.</p>
+            </div>
+          </div>
+        </section>
 
-      <main>
-        <h1>{data.home.title}</h1>
-        <p>{data.home.content}</p>
+        <section className="mb-12">
+          <h2 className="text-3xl font-semibold text-white-800 mb-4">About Us</h2>
+          <p className="text-white-700 leading-relaxed">
+            InnovateXP Limited is dedicated to empowering businesses through technology. We combine technical expertise with a deep understanding of business challenges to deliver innovative solutions that drive growth and efficiency.
+          </p>
+        </section>
+
+        <section>
+          <h2 className="text-3xl font-semibold text-white-800 mb-4">Contact Us</h2>
+          <ContactUs />
+        </section>
       </main>
-
-      <Fab
-        color="primary"
-        aria-label="scroll down to contact"
-        sx={{ position: 'fixed', bottom: 16, right: 16 }}
-        onClick={scrollToContact}
-      >
-        <KeyboardArrowDownIcon />
-      </Fab>
-
-      <footer id="contact">
-        <h2>{data.contact.title}</h2>
-        <p>{data.contact.content}</p>
-        <p>Email: {data.contact.email}</p>
-        <p>Phone: {data.contact.phone}</p>
+      <footer id="contact-us" className="bg-black-200 py-4 text-center">
+        <p className="text-white-600">© 2025 InnovateXP Limited. All rights reserved.</p>
       </footer>
-
-      <style jsx>{`
-        /* ... (styles remain the same) */
-      `}</style>
     </div>
   );
-}
+};
+
+export default LandingPage;
