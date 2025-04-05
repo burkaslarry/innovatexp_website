@@ -89,7 +89,6 @@ export default function ContactForm() {
         <Grid item xs={12}>
         
           <LightPurpleTextField 
-          inputFillChecking={inputFillChecking}
           formData={formData}
           handleChange={handleChange}          
           inputName="senderName" // Pass the variable input name
@@ -101,7 +100,6 @@ export default function ContactForm() {
      
           
           <LightPurpleTextField 
-          inputFillChecking={inputFillChecking}
           formData={formData}
           handleChange={handleChange}
           inputName="email" // Pass the variable input name
@@ -113,7 +111,6 @@ export default function ContactForm() {
        
             
         <LightPurpleTextField 
-          inputFillChecking={inputFillChecking}
           formData={formData}
           handleChange={handleChange}
           inputName="message" // Pass the variable input name        

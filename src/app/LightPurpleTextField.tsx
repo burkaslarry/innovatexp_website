@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { ChangeEvent } from 'react';
 import TextField from "@mui/material/TextField";
 import { createTheme, ThemeProvider } from '@mui/material/styles';
 
-const LightPurpleTextField = ({ inputFillChecking, formData, handleChange, inputName, placeTxt, labelTxt }) => {
+// Define the props interface
+interface LightPurpleTextFieldProps {
+    formData: { [key: string]: string }; // Object with string keys and string values
+    handleChange: (event: ChangeEvent<HTMLInputElement>) => void; // Function to handle input changes
+    inputName: string; // Name of the input field
+    placeTxt: string; // Placeholder text
+    labelTxt: string; // Label text
+  }
+
+  
+  const LightPurpleTextField: React.FC<LightPurpleTextFieldProps> = ({ formData, handleChange, inputName, placeTxt, labelTxt }) => {
     // Create a custom theme with the colors you want
     const theme = createTheme({
         palette: {

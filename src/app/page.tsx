@@ -14,13 +14,6 @@ function LandingPage() {
     fetchData();
   }, []);
 
-  const scrollToContact = () => {
-    const contactSection = document.getElementById('contact');
-    if (contactSection) {
-      contactSection.scrollIntoView({ behavior: 'smooth' });
-    }
-  };
-
 
   return (
     <div className="bg-black-100 min-h-screen">
@@ -49,34 +42,39 @@ function LandingPage() {
               <div className="md:w-3/4 lg:w-1/2"> 
                 <h2 className="text-4xl font-bold mb-4">Transform Your Business with InnovateXP</h2>
                 <p className="text-lg mb-6">
-                Leverage our expertise in software development and IT consulting to achieve your goals. Let's build the future together.
+                  Leverage our expertise in software development and IT consulting to achieve your goals. Let&apos;s build the future together.
                 </p>
-                <a href="#contact-us" className="bg-white text-blue-600 font-semibold py-2 px-6 rounded-full hover:bg-gray-100 transition duration-300 inline-block"> // Ensure button is inline-block for centering context
-                Get Started
-                </a>
+                <a href="#contact-us" className="bg-white text-blue-600 font-semibold py-2 px-6 rounded-full hover:bg-gray-100 transition duration-300 inline-block">Contact Us</a>
               </div>
             </div>
         </section>
         <section className="mb-12">
           <h2 className="text-3xl font-semibold text-white-800 mb-4">Our Services</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <div className="bg-white rounded-lg shadow-md p-4">
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">Web Development</h3>
-              <p className="text-gray-600">Custom web applications tailored to your business needs.</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-4">
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">Mobile App Development</h3>
-              <p className="text-gray-600">Native and cross-platform mobile apps for iOS and Android.</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-4">
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">Cloud Computing</h3>
-              <p className="text-gray-600">Scalable and secure cloud solutions for your infrastructure.</p>
-            </div>
-            <div className="bg-white rounded-lg shadow-md p-4">
-              <h3 className="text-xl font-semibold text-gray-700 mb-2">Data Analytics</h3>
-              <p className="text-gray-600">Data-driven insights to improve your business performance.</p>
-            </div>
+          {/* Web Development Card */}
+          <div className="bg-[#301934] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-6 hover:-translate-y-1">
+            <h3 className="text-xl font-semibold text-white mb-3">Web Development</h3>
+            <p className="text-violet-200">Custom web applications tailored to your business needs.</p>
           </div>
+
+          {/* Mobile App Development Card */}
+          <div className="bg-[#301934] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-6 hover:-translate-y-1">
+            <h3 className="text-xl font-semibold text-white mb-3">Mobile App Development</h3>
+            <p className="text-violet-200">Native and cross-platform mobile apps for iOS and Android.</p>
+          </div>
+
+          {/* Cloud Computing Card */}
+          <div className="bg-[#301934] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-6 hover:-translate-y-1">
+            <h3 className="text-xl font-semibold text-white mb-3">Cloud Computing</h3>
+            <p className="text-violet-200">Scalable and secure cloud solutions for your infrastructure.</p>
+          </div>
+
+          {/* Data Analytics Card */}
+          <div className="bg-[#301934] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-6 hover:-translate-y-1">
+            <h3 className="text-xl font-semibold text-white mb-3">Data Analytics</h3>
+            <p className="text-violet-200">Data-driven insights to improve your business performance.</p>
+          </div>
+        </div>
         </section>
 
         <section className="mb-12">
