@@ -16,7 +16,7 @@ function LandingPage() {
 
 
   return (
-    <div className="bg-black-100 min-h-screen">
+    <div className="bg-black min-h-screen">
       <header className="bg-black shadow-md">
         <div className="container mx-auto py-6 px-4 flex items-center"> {/* Use flexbox for layout */}
           {/* Add the logo */}
@@ -28,13 +28,13 @@ function LandingPage() {
             className="mr-4" // Add some margin to the right
           />
           <div>
-            <h1 className="text-2xl font-bold text-white-800">InnovateXP Limited</h1>
-            <p className="text-gray-600">Cutting-edge software solutions and expert IT consulting services.</p>
+            <h1 className="text-2xl font-bold text-white">InnovateXP Limited</h1>
+            <p className="text-1xl text-white">Cutting-edge software solutions and expert IT consulting services.</p>
           </div>
         </div>
       </header>
 
-      <main className="container mx-auto py-12 px-4">
+      <main className="container mx-auto py-12 px-4 bg-black">
       <section
           className="mb-12 text-center rounded-lg shadow-lg overflow-hidden" 
           style={{ backgroundImage: 'url(/4307506.jpg)', backgroundSize: 'cover', backgroundPosition: 'center' }} >
