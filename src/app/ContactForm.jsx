@@ -6,17 +6,11 @@ import Button from "@mui/material/Button";
 import { Typography } from "@mui/material";
 import CheckCircleIcon from "@mui/icons-material/CheckCircle";
 import { teal } from "@mui/material/colors";
-import LightPurpleTextField from "./LightPurpleTextField"; // Assuming this is a custom component
-
-const inputFillChecking = {
-  titleName: "Name",
-  titleEmail: "Email Address",
-  titleContent: "Content",
-  placeholder: "Please fill in",
-  missionControl: "Mission Control",
-};
+import LightPurpleTextField from "./LightPurpleTextField";
+import { useLanguage } from './LanguageContext';
 
 export default function ContactForm() {
+  const { t } = useLanguage();
   const [formData, setFormData] = useState({
     senderName: "",
     email: "",
@@ -69,7 +63,7 @@ export default function ContactForm() {
       <div style={{ textAlign: "center" }}>
         <CheckCircleIcon sx={{ fontSize: 100 }} color="success" />
         <Typography color={teal[900]}>
-          <strong>Email Sent</strong>
+          <strong>{t('contact.form.success')}</strong>
         </Typography>
       </div>
     );
@@ -91,9 +85,9 @@ export default function ContactForm() {
           <LightPurpleTextField 
           formData={formData}
           handleChange={handleChange}          
-          inputName="senderName" // Pass the variable input name
-          placeTxt={inputFillChecking.titleName} // Pass the variable placeholder text
-          placeholder={inputFillChecking.placeholder} // Pass the variable placeholder text
+          inputName="senderName"
+          placeTxt={t('contact.form.name')}
+          placeholder={t('contact.form.placeholder')}
            />
         </Grid>
         <Grid item xs={12}>
@@ -102,9 +96,9 @@ export default function ContactForm() {
           <LightPurpleTextField 
           formData={formData}
           handleChange={handleChange}
-          inputName="email" // Pass the variable input name
-          placeTxt={inputFillChecking.titleEmail} // Pass the variable placeholder text
-          placeholder={inputFillChecking.placeholder} // Pass the variable placeholder text
+          inputName="email"
+          placeTxt={t('contact.form.email')}
+          placeholder={t('contact.form.placeholder')}
            />
         </Grid>
         <Grid item xs={12}>
@@ -113,9 +107,9 @@ export default function ContactForm() {
         <LightPurpleTextField 
           formData={formData}
           handleChange={handleChange}
-          inputName="message" // Pass the variable input name        
-          placeTxt={inputFillChecking.titleContent} // Pass the variable placeholder text
-          placeholder={inputFillChecking.placeholder} // Pass the variable placeholder text
+          inputName="message"        
+          placeTxt={t('contact.form.content')}
+          placeholder={t('contact.form.placeholder')}
            />
         </Grid>
         <Grid item xs={12} container justifyContent="center" alignItems="center">
@@ -125,11 +119,11 @@ export default function ContactForm() {
             sx={{ width: "60vw",background:"#008080", padding: 1, margin: 2 }}
             disabled={!isFormValid}
           >
-            {"Send Email"}
+            {t('contact.form.submit')}
           </Button>
         </Grid>
         <Grid item xs={12} container justifyContent="center" alignItems="center">
-          <input type="hidden" name="from_name" value={inputFillChecking.missionControl}></input>
+          <input type="hidden" name="from_name" value="Client"></input>
         </Grid>
       </Grid>
     </form>
