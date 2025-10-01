@@ -36,7 +36,7 @@ export const translations = {
     // About Section
     'about.title': 'About Us',
     'about.intro.title': 'About InnovateXP Limited',
-    'about.intro.p1': "InnovateXP Limited is a cutting-edge technology consultancy founded by SAFe-certified Agile Coach Larry Lo, specializing in digital transformation for enterprises and government sectors.",
+    'about.intro.p1': "InnovateXP Limited is a cutting-edge technology consultancy founded by SAFe-certified Agile Coach, specializing in digital transformation for enterprises and government sectors.",
     'about.intro.p2': 'We leverage AI, cloud platforms, and Agile/DevOps frameworks to deliver secure, scalable solutions. Our proven expertise includes boosting user engagement by 100% and pioneering data analytics solutions for the Hong Kong SAR Government.',
     'about.intro.p3': 'At InnovateXP, we are passionate about driving innovation and efficiency across industries. Which sector would you like to transform with us today?',
     
@@ -90,7 +90,7 @@ export const translations = {
     // About Section
     'about.title': '關於我們',
     'about.intro.title': '關於 InnovateXP Limited',
-    'about.intro.p1': 'InnovateXP Limited 是一間尖端科技諮詢公司，由 SAFe 認證敏捷教練 Larry Lo 創立，專門為企業和政府部門提供數碼轉型服務。',
+    'about.intro.p1': 'InnovateXP Limited 是一間尖端科技諮詢公司，由 SAFe 認證敏捷教練創立，專門為企業和政府部門提供數碼轉型服務。',
     'about.intro.p2': '我們運用 AI、雲端平台和敏捷/DevOps 框架，提供安全、可擴展的解決方案。我們的專業實力包括成功提升用戶參與度達 100%，並為香港特區政府開創數據分析解決方案。',
     'about.intro.p3': '在 InnovateXP，我們熱衷於推動各行業的創新和效率。今日您希望與我們一起轉型哪個領域呢？',
     
