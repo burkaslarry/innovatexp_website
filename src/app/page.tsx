@@ -56,28 +56,28 @@ function LandingPage() {
         <section className="mb-12">
           <h2 className="text-3xl font-semibold text-white mb-4">{t('services.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
-          {/* Web Development Card */}
+          {/* System Development Card */}
           <div className="bg-[#301934] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-6 hover:-translate-y-1">
-            <h3 className="text-xl font-semibold text-white mb-3">{t('services.web.title')}</h3>
-            <p className="text-violet-200">{t('services.web.description')}</p>
+            <h3 className="text-xl font-semibold text-white mb-3">{t('services.system.title')}</h3>
+            <p className="text-violet-200">{t('services.system.description')}</p>
           </div>
 
-          {/* Mobile App Development Card */}
+          {/* AI Integration & Training Card */}
           <div className="bg-[#301934] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-6 hover:-translate-y-1">
-            <h3 className="text-xl font-semibold text-white mb-3">{t('services.mobile.title')}</h3>
-            <p className="text-violet-200">{t('services.mobile.description')}</p>
-          </div>
-
-          {/* Cloud Computing Card */}
-          <div className="bg-[#301934] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-6 hover:-translate-y-1">
-            <h3 className="text-xl font-semibold text-white mb-3">{t('services.cloud.title')}</h3>
-            <p className="text-violet-200">{t('services.cloud.description')}</p>
+            <h3 className="text-xl font-semibold text-white mb-3">{t('services.ai.title')}</h3>
+            <p className="text-violet-200">{t('services.ai.description')}</p>
           </div>
 
           {/* Data Analytics Card */}
           <div className="bg-[#301934] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-6 hover:-translate-y-1">
             <h3 className="text-xl font-semibold text-white mb-3">{t('services.data.title')}</h3>
             <p className="text-violet-200">{t('services.data.description')}</p>
+          </div>
+
+          {/* Agile/DevOps Consulting Card */}
+          <div className="bg-[#301934] rounded-lg shadow-sm hover:shadow-md transition-all duration-200 p-6 hover:-translate-y-1">
+            <h3 className="text-xl font-semibold text-white mb-3">{t('services.agile.title')}</h3>
+            <p className="text-violet-200">{t('services.agile.description')}</p>
           </div>
         </div>
         </section>
