@@ -49,7 +49,10 @@ function LandingPage() {
                 <p className="text-lg mb-6">
                   {t('hero.description')}
                 </p>
-                <a href="#contact-us" className="bg-white text-blue-600 font-semibold py-2 px-6 rounded-full hover:bg-gray-100 transition duration-300 inline-block">{t('hero.cta')}</a>
+                <div className="flex gap-4 justify-center">
+                  <a href="#contact-us" className="bg-white text-blue-600 font-semibold py-2 px-6 rounded-full hover:bg-gray-100 transition duration-300 inline-block">{t('hero.cta')}</a>
+                  <a href="/bookme" className="bg-teal-600 text-white font-semibold py-2 px-6 rounded-full hover:bg-teal-700 transition duration-300 inline-block">預約業務交流</a>
+                </div>
               </div>
             </div>
         </section>
