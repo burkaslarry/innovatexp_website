@@ -5,7 +5,7 @@ import { Client } from '@notionhq/client';
 let notion: Client | null = null;
 
 const NOTION_TOKEN = process.env.NOTION_TOKEN;
-const CALENDAR_DB_ID = process.env.NOTION_CALENDAR_DB_ID;
+const CALENDAR_DB_ID = process.env.NOTION_CALENDAR_DB_ID || undefined;
 
 // Log configuration status
 if (NOTION_TOKEN) {

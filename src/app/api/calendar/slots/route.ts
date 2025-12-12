@@ -80,7 +80,8 @@ export async function GET(request: Request) {
         console.log(`📅 Date range: ${startDateStr} to ${endDateStr}`);
         console.log(`📅 Notion DB ID: ${CALENDAR_DB_ID.substring(0, 8)}...`);
 
-        const response = await notion.databases.query({
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const response = await (notion as any).databases.query({
           database_id: CALENDAR_DB_ID,
           filter: {
             and: [
@@ -122,7 +123,7 @@ export async function GET(request: Request) {
           }
 
           return { start: start!, end: end! };
-        }).filter(slot => slot.start && slot.end);
+        }).filter((slot: { start: Date; end: Date }) => slot.start && slot.end);
 
         notionStatus = 'success';
         console.log(`✅ Processed ${bookedSlots.length} booked slots`);

@@ -86,17 +86,20 @@ export async function POST(req: Request) {
 
         // First, try to retrieve the database to verify it exists and check properties
         try {
-          const dbInfo = await notion.databases.retrieve({
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const dbInfo = await (notion as any).databases.retrieve({
             database_id: CALENDAR_DB_ID,
           });
           // eslint-disable-next-line @typescript-eslint/no-explicit-any
           const dbTitle = (dbInfo as any).title?.[0]?.plain_text || 'Untitled';
           console.log('✅ Database found:', dbTitle);
-          console.log('📋 Available properties:', Object.keys(dbInfo.properties).join(', '));
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          const dbProperties = (dbInfo as any).properties || {};
+          console.log('📋 Available properties:', Object.keys(dbProperties).join(', '));
           
           // Check if required properties exist
           const requiredProps = ['Name', 'Date', 'Visitor Email', 'Message'];
-          const missingProps = requiredProps.filter(prop => !dbInfo.properties[prop]);
+          const missingProps = requiredProps.filter(prop => !dbProperties[prop]);
           if (missingProps.length > 0) {
             console.error('❌ Missing required properties:', missingProps.join(', '));
             throw new Error(`Missing required properties: ${missingProps.join(', ')}`);
@@ -108,7 +111,8 @@ export async function POST(req: Request) {
           throw dbError;
         }
 
-        const notionResponse = await notion.pages.create({
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
+        const notionResponse = await (notion as any).pages.create({
           parent: { database_id: CALENDAR_DB_ID },
           properties,
         });
@@ -117,7 +121,9 @@ export async function POST(req: Request) {
         notionSuccess = true;
         console.log('✅ Notion event created successfully!');
         console.log('   Page ID:', notionPageId);
-        console.log('   URL: https://notion.so/' + notionPageId.replace(/-/g, ''));
+        if (notionPageId) {
+          console.log('   URL: https://notion.so/' + notionPageId.replace(/-/g, ''));
+        }
       // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (notionError: any) {
         notionSuccess = false;
