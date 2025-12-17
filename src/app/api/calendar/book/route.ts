@@ -84,35 +84,21 @@ export async function POST(req: Request) {
         console.log('🗄️ Database ID:', CALENDAR_DB_ID);
         console.log('📝 Full properties object:', JSON.stringify(properties, null, 2));
 
-        // First, try to retrieve the database to verify it exists and check properties
+        // Retrieve the database to verify it exists
         try {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const dbInfo = await (notion as any).databases.retrieve({
+          const dbInfo = await notion.databases.retrieve({
             database_id: CALENDAR_DB_ID,
           });
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const dbTitle = (dbInfo as any).title?.[0]?.plain_text || 'Untitled';
+          const dbTitle = dbInfo.title?.[0]?.plain_text || 'Untitled';
           console.log('✅ Database found:', dbTitle);
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
-          const dbProperties = (dbInfo as any).properties || {};
+          const dbProperties = dbInfo.properties || {};
           console.log('📋 Available properties:', Object.keys(dbProperties).join(', '));
-          
-          // Check if required properties exist
-          const requiredProps = ['Name', 'Date', 'Visitor Email', 'Message'];
-          const missingProps = requiredProps.filter(prop => !dbProperties[prop]);
-          if (missingProps.length > 0) {
-            console.error('❌ Missing required properties:', missingProps.join(', '));
-            throw new Error(`Missing required properties: ${missingProps.join(', ')}`);
-          }
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         } catch (dbError: any) {
-          // eslint-disable-next-line @typescript-eslint/no-explicit-any
           console.error('❌ Failed to retrieve database:', (dbError as any).message);
           throw dbError;
         }
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const notionResponse = await (notion as any).pages.create({
+        const notionResponse = await notion.pages.create({
           parent: { database_id: CALENDAR_DB_ID },
           properties,
         });

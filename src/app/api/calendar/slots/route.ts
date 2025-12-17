@@ -1,6 +1,6 @@
 // app/api/calendar/slots/route.ts
 import { NextResponse } from 'next/server';
-import { notion, CALENDAR_DB_ID } from '@/lib/notion';
+import { CALENDAR_DB_ID } from '@/lib/notion';
 import { 
   startOfDay, 
   endOfDay, 
@@ -66,76 +66,83 @@ export async function GET(request: Request) {
     let notionErrorMessage: string | null = null;
     
     // Check if Notion is properly configured
-    if (notion && CALENDAR_DB_ID && CALENDAR_DB_ID !== 'YOUR_NOTION_DATABASE_ID') {
+    if (CALENDAR_DB_ID && CALENDAR_DB_ID !== 'YOUR_NOTION_DATABASE_ID') {
       try {
-        const startOfSelectedDay = startOfDay(selectedDate);
-        const endOfSelectedDay = endOfDay(selectedDate);
-
-        // Format dates for Notion - use ISO format with time to ensure proper matching
-        // Notion date filters work better with full ISO strings
-        const startDateStr = format(startOfSelectedDay, "yyyy-MM-dd'T'00:00:00");
-        const endDateStr = format(endOfSelectedDay, "yyyy-MM-dd'T'23:59:59");
+        const notionToken = process.env.NOTION_TOKEN;
+        if (!notionToken) {
+          throw new Error('NOTION_TOKEN not configured');
+        }
 
         console.log(`🔍 Querying Notion for date: ${dateParam}`);
-        console.log(`📅 Date range: ${startDateStr} to ${endDateStr}`);
         console.log(`📅 Notion DB ID: ${CALENDAR_DB_ID.substring(0, 8)}...`);
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const response = await (notion as any).databases.query({
-          database_id: CALENDAR_DB_ID,
-          filter: {
-            and: [
-              {
-                property: 'Date',
-                date: {
-                  on_or_after: startDateStr,
-                },
-              },
-              {
-                property: 'Date',
-                date: {
-                  on_or_before: endDateStr,
-                },
-              },
-            ],
+        // Use Notion API REST endpoint directly
+        const response = await fetch(`https://api.notion.com/v1/databases/${CALENDAR_DB_ID}/query`, {
+          method: 'POST',
+          headers: {
+            'Authorization': `Bearer ${notionToken}`,
+            'Notion-Version': '2024-06-15',
+            'Content-Type': 'application/json',
           },
-          sorts: [{ property: 'Date', direction: 'ascending' }],
+          body: JSON.stringify({
+            page_size: 100,
+          }),
         });
 
-        console.log(`📊 Found ${response.results.length} existing events in Notion`);
+        if (!response.ok) {
+          throw new Error(`Notion API returned ${response.status}: ${response.statusText}`);
+        }
 
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        bookedSlots = response.results.map((page: any) => {
-          const props = page.properties;
-          const startDateStr = props.Date?.date?.start;
-          const endDateStr = props.Date?.date?.end;
+        const data = await response.json();
+        console.log(`📊 Found ${data.results.length} events in Notion`);
 
-          const start = startDateStr ? parseISO(startDateStr) : null;
-          let end = endDateStr ? parseISO(endDateStr) : null;
+        // Extract booked slots from results
+        bookedSlots = data.results
+          .map((page: any) => {
+            const props = page.properties;
+            
+            // Try to find a date property
+            let startDateStr: string | null = null;
+            let endDateStr: string | null = null;
+            
+            // Search for date properties dynamically
+            for (const propName in props) {
+              const prop = props[propName];
+              if (prop.type === 'date' && prop.date) {
+                startDateStr = prop.date.start;
+                endDateStr = prop.date.end;
+                break;
+              }
+            }
+            
+            if (!startDateStr) {
+              return null;
+            }
 
-          if (start && !end) {
-            // If no explicit end time, assume SLOT_DURATION_MINUTES
-            end = addMinutes(start, SLOT_DURATION_MINUTES);
-          }
+            const start = parseISO(startDateStr);
+            let end = endDateStr ? parseISO(endDateStr) : null;
 
-          if (start) {
-            console.log(`  📌 Booked: ${format(start, 'yyyy-MM-dd HH:mm')} - ${end ? format(end, 'HH:mm') : 'N/A'}`);
-          }
+            if (start && !end) {
+              end = addMinutes(start, SLOT_DURATION_MINUTES);
+            }
 
-          return { start: start!, end: end! };
-        }).filter((slot: { start: Date; end: Date }) => slot.start && slot.end);
+            // Only include events on the selected date
+            if (start.toDateString() === selectedDate.toDateString()) {
+              console.log(`  📌 Booked: ${format(start, 'yyyy-MM-dd HH:mm')} - ${end ? format(end, 'HH:mm') : 'N/A'}`);
+              return { start, end: end! };
+            }
+
+            return null;
+          })
+          .filter(Boolean);
 
         notionStatus = 'success';
         console.log(`✅ Processed ${bookedSlots.length} booked slots`);
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
       } catch (notionError: any) {
-        // If Notion query fails, mark as API error
+        // If Notion query fails, gracefully degrade
         notionStatus = 'api-error';
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const err = notionError as any;
-        notionErrorMessage = err?.message || 'Unknown Notion API error';
-        console.error('❌ Notion query failed:', notionErrorMessage);
-        console.error('Error details:', JSON.stringify(notionError, null, 2));
+        notionErrorMessage = notionError?.message || 'Unknown Notion API error';
+        console.error('⚠️ Notion query failed:', notionErrorMessage);
       }
     } else {
       console.warn('⚠️ Notion not configured - returning all slots as available');
