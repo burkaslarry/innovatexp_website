@@ -155,7 +155,7 @@ export const translations = {
     'bookme.time.label': '⏰ 選擇時間 (1小時)',
     'bookme.time.select': '請先選擇日期',
     'bookme.time.loading': '載入中...',
-    'bookme.time.no_slots': '此日期沒有可用的時間段。<br />請選擇其他日期。',
+    'bookme.time.no_slots': '此日期沒有可用的時間段。請選擇其他日期。',
     'bookme.time.hour': '* 每個時段為 1 小時的一對一諮詢',
     'bookme.selected.title': '已選擇：',
     'bookme.visitor.title': '👤 訪客資訊',

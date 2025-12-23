@@ -43,35 +43,37 @@ export default function BookVisitPage() {
   const [showWhatsAppPrompt, setShowWhatsAppPrompt] = useState(false);
   const [whatsappUrl, setWhatsappUrl] = useState<string | null>(null);
 
+  // Get available slots function
+  const GetAvailableSlots = async () => {
+    if (!selectedDate) {
+      setAvailableSlots([]);
+      return;
+    }
+
+    setIsFetchingSlots(true);
+    setError(null);
+    setSelectedTimeSlot(null);
+
+    try {
+      const formattedDate = format(selectedDate!, 'yyyy-MM-dd');
+      const response = await fetch(`/api/calendar/slots?date=${formattedDate}`);
+      if (!response.ok) {
+        throw new Error('無法獲取可用時段');
+      }
+      const data = await response.json();
+      setAvailableSlots(data.slots || []);
+    } catch (err: unknown) {
+      const errorMessage = err instanceof Error ? err.message : '獲取時段失敗';
+      setError(errorMessage);
+      setAvailableSlots([]);
+    } finally {
+      setIsFetchingSlots(false);
+    }
+  };
+
   // Fetch available slots when date changes
   useEffect(() => {
-    async function fetchSlots() {
-      if (!selectedDate) {
-        setAvailableSlots([]);
-        return;
-      }
-
-      setIsFetchingSlots(true);
-      setError(null);
-      setSelectedTimeSlot(null);
-
-      try {
-        const formattedDate = format(selectedDate!, 'yyyy-MM-dd');
-        const response = await fetch(`/api/calendar/slots?date=${formattedDate}`);
-        if (!response.ok) {
-          throw new Error('無法獲取可用時段');
-        }
-        const data = await response.json();
-        setAvailableSlots(data.slots || []);
-      } catch (err: unknown) {
-        const errorMessage = err instanceof Error ? err.message : '獲取時段失敗';
-        setError(errorMessage);
-        setAvailableSlots([]);
-      } finally {
-        setIsFetchingSlots(false);
-      }
-    }
-    fetchSlots();
+    GetAvailableSlots();
   }, [selectedDate]);
 
   const handleSubmit = async (e: FormEvent) => {
@@ -129,36 +131,24 @@ export default function BookVisitPage() {
         setWhatsappUrl(whatsappLink);
         setShowWhatsAppPrompt(true);
         setSuccessMessage(t('bookme.success.title'));
-        
+        // Refresh the page after success modal closes
+        setTimeout(() => window.location.reload(), 5100);
+
         // Reload available slots for the selected date to reflect the booking
-        if (selectedDate) {
-          async function reloadSlots() {
-            try {
-              const formattedDate = format(selectedDate!, 'yyyy-MM-dd');
-        const response = await fetch(`/api/calendar/slots?date=${formattedDate}`);
-        if (!response.ok) {
-          throw new Error(t('bookme.error.slots'));
-        }
-        const data = await response.json();
-        setAvailableSlots(data.slots || []);
-      } catch (err: unknown) {
-        const errorMessage = err instanceof Error ? err.message : t('bookme.error.fetch');
-        setError(errorMessage);
-        setAvailableSlots([]);
-      }
-          }
-          reloadSlots();
-        }
       } else {
         console.warn('⚠️ Not showing WhatsApp prompt');
         console.warn('   notionSuccess:', result.notionSuccess);
         console.warn('   whatsappMessage:', result.whatsappMessage ? 'exists' : 'null');
         // Still show success even if Notion failed
         setSuccessMessage(t('bookme.success.subtitle'));
+        // Refresh the page after success modal closes
+        setTimeout(() => window.location.reload(), 5100);
       }
+
       // Reset form
       setSelectedDate(new Date());
-      setSelectedTimeSlot(null);
+      setSelectedTimeSlot(null);      
+      console.warn('🔄 available slots:' , availableSlots);
       setVisitorName('');
       setVisitorEmail('');
       setVisitorPhone('');
@@ -246,6 +236,18 @@ export default function BookVisitPage() {
               onClose={() => setShowWhatsAppPrompt(false)}
               whatsappUrl={whatsappUrl}
             />
+
+            {/* Loading Overlay */}
+            {isLoading && (
+              <div className="fixed inset-0 bg-black/50 flex items-center justify-center z-50">
+                <div className="bg-[#1a1a2e] border-2 border-purple-400 rounded-xl p-6 shadow-2xl">
+                  <div className="flex items-center">
+                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-500"></div>
+                    <span className="ml-4 text-purple-200">Processing your booking...</span>
+                  </div>
+                </div>
+              </div>
+            )}
 
             {/* Error Message */}
             {error && (
