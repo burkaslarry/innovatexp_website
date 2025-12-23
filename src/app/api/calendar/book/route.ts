@@ -10,6 +10,8 @@ interface TimeSlot {
   display: string;
 }
 
+
+
 export async function POST(req: Request) {
   try {
     const { visitorName, visitorEmail, visitorPhone, visitorCompany, selectedDate, selectedTimeSlot, message } = await req.json();
@@ -88,13 +90,14 @@ export async function POST(req: Request) {
         try {
           const dbInfo = await notion.databases.retrieve({
             database_id: CALENDAR_DB_ID,
-          });
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          }) as any; // Notion API response type is complex
           const dbTitle = dbInfo.title?.[0]?.plain_text || 'Untitled';
           console.log('✅ Database found:', dbTitle);
           const dbProperties = dbInfo.properties || {};
           console.log('📋 Available properties:', Object.keys(dbProperties).join(', '));
-        } catch (dbError: any) {
-          console.error('❌ Failed to retrieve database:', (dbError as any).message);
+        } catch (dbError: unknown) {
+          console.error('❌ Failed to retrieve database:', (dbError as Error).message);
           throw dbError;
         }
 
@@ -110,17 +113,16 @@ export async function POST(req: Request) {
         if (notionPageId) {
           console.log('   URL: https://notion.so/' + notionPageId.replace(/-/g, ''));
         }
-      // eslint-disable-next-line @typescript-eslint/no-explicit-any
-      } catch (notionError: any) {
-        notionSuccess = false;
-        console.error('❌ Failed to create Notion event');
-        // eslint-disable-next-line @typescript-eslint/no-explicit-any
-        const err = notionError as any;
-        console.error('   Error type:', err?.constructor?.name);
-        console.error('   Error message:', err?.message);
-        console.error('   Error code:', err?.code);
-        console.error('   Full error:', JSON.stringify(notionError, Object.getOwnPropertyNames(notionError), 2));
-        // Continue without Notion - still send email confirmation
+        } catch (notionError: unknown) {
+          notionSuccess = false;
+          console.error('❌ Failed to create Notion event');
+          const err = notionError as Error;
+          console.error('   Error type:', err?.constructor?.name);
+          console.error('   Error message:', err?.message);
+          // eslint-disable-next-line @typescript-eslint/no-explicit-any
+          console.error('   Error code:', (err as any)?.code);
+          console.error('   Full error:', JSON.stringify(notionError, Object.getOwnPropertyNames(notionError as object), 2));
+          // Continue without Notion - still send email confirmation
       }
     } else {
       console.warn('⚠️ Notion not configured - skipping calendar entry creation');
@@ -243,7 +245,7 @@ AI整合、企業培訓、軟件解決方案專家
       `日期: ${format(startDateTime, 'yyyy年MM月dd日')}\n` +
       `時間: ${format(startDateTime, 'HH:mm')} - ${format(endDateTime, 'HH:mm')}\n` +
       `${message ? `留言: ${message}\n` : ''}` +
-      `\n✅ 已成功添加到 Notion 日曆`
+      `\n✅ 已成功添加到 InnovateXP Limited 日曆`
     ) : null;
 
     console.log('📤 Returning response:');
@@ -263,4 +265,3 @@ AI整合、企業培訓、軟件解決方案專家
     return NextResponse.json({ error: '預約失敗，請稍後再試。' }, { status: 500 });
   }
 }
-

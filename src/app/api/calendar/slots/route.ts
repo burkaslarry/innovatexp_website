@@ -1,14 +1,13 @@
 // app/api/calendar/slots/route.ts
 import { NextResponse } from 'next/server';
-import { CALENDAR_DB_ID } from '@/lib/notion';
-import { 
-  startOfDay, 
-  endOfDay, 
-  parseISO, 
-  format, 
-  addMinutes, 
-  isBefore, 
-  setHours, 
+import { notion, CALENDAR_DB_ID } from '@/lib/notion';
+import {
+  parseISO,
+  format,
+  addMinutes,
+  addDays,
+  isBefore,
+  setHours,
   setMinutes,
   isAfter
 } from 'date-fns';
@@ -66,7 +65,7 @@ export async function GET(request: Request) {
     let notionErrorMessage: string | null = null;
     
     // Check if Notion is properly configured
-    if (CALENDAR_DB_ID && CALENDAR_DB_ID !== 'YOUR_NOTION_DATABASE_ID') {
+    if (notion && CALENDAR_DB_ID && CALENDAR_DB_ID !== 'YOUR_NOTION_DATABASE_ID') {
       try {
         const notionToken = process.env.NOTION_TOKEN;
         if (!notionToken) {
@@ -76,35 +75,40 @@ export async function GET(request: Request) {
         console.log(`🔍 Querying Notion for date: ${dateParam}`);
         console.log(`📅 Notion DB ID: ${CALENDAR_DB_ID.substring(0, 8)}...`);
 
-        // Use Notion API REST endpoint directly
-        const response = await fetch(`https://api.notion.com/v1/databases/${CALENDAR_DB_ID}/query`, {
-          method: 'POST',
-          headers: {
-            'Authorization': `Bearer ${notionToken}`,
-            'Notion-Version': '2024-06-15',
-            'Content-Type': 'application/json',
+        // Use Notion SDK search to find pages in our database
+        const response = await notion.search({
+          query: '',
+          filter: {
+            property: 'object',
+            value: 'page',
           },
-          body: JSON.stringify({
-            page_size: 100,
-          }),
+          page_size: 100,
         });
 
-        if (!response.ok) {
-          throw new Error(`Notion API returned ${response.status}: ${response.statusText}`);
-        }
+        console.log(`🔍 Search found ${response.results.length} total pages`);
+        response.results.forEach((page: any, index: number) => {
+          console.log(`  ${index + 1}. ${page.id} - DB: ${page.parent?.database_id} - Title: ${page.properties?.Name?.title?.[0]?.plain_text || 'Untitled'}`);
+        });
 
-        const data = await response.json();
-        console.log(`📊 Found ${data.results.length} events in Notion`);
+        // Filter results to only include pages from our calendar database
+        // Normalize database IDs by removing dashes for comparison
+        const normalizedDbId = CALENDAR_DB_ID.replace(/-/g, '');
+        const data = { results: response.results.filter((page: any) => {
+          const pageDbId = page.parent?.database_id?.replace(/-/g, '');
+          return pageDbId === normalizedDbId;
+        }) };
+        console.log(`📊 Found ${data.results.length} events in calendar database`);
 
         // Extract booked slots from results
         bookedSlots = data.results
-          .map((page: any) => {
-            const props = page.properties;
-            
+          .map((page: unknown) => {
+            // eslint-disable-next-line @typescript-eslint/no-explicit-any
+            const props = (page as any).properties;
+
             // Try to find a date property
             let startDateStr: string | null = null;
             let endDateStr: string | null = null;
-            
+
             // Search for date properties dynamically
             for (const propName in props) {
               const prop = props[propName];
@@ -114,7 +118,7 @@ export async function GET(request: Request) {
                 break;
               }
             }
-            
+
             if (!startDateStr) {
               return null;
             }
@@ -134,14 +138,14 @@ export async function GET(request: Request) {
 
             return null;
           })
-          .filter(Boolean);
+          .filter((slot: { start: Date; end: Date } | null): slot is { start: Date; end: Date } => slot !== null);
 
         notionStatus = 'success';
         console.log(`✅ Processed ${bookedSlots.length} booked slots`);
-      } catch (notionError: any) {
+      } catch (notionError: unknown) {
         // If Notion query fails, gracefully degrade
         notionStatus = 'api-error';
-        notionErrorMessage = notionError?.message || 'Unknown Notion API error';
+        notionErrorMessage = (notionError as Error)?.message || 'Unknown Notion API error';
         console.error('⚠️ Notion query failed:', notionErrorMessage);
       }
     } else {

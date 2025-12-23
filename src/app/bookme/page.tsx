@@ -56,7 +56,7 @@ export default function BookVisitPage() {
       setSelectedTimeSlot(null);
 
       try {
-        const formattedDate = format(selectedDate, 'yyyy-MM-dd');
+        const formattedDate = format(selectedDate!, 'yyyy-MM-dd');
         const response = await fetch(`/api/calendar/slots?date=${formattedDate}`);
         if (!response.ok) {
           throw new Error('無法獲取可用時段');
@@ -81,14 +81,14 @@ export default function BookVisitPage() {
     setSuccessMessage(null);
 
     if (!selectedDate || !selectedTimeSlot || !visitorName || !visitorEmail) {
-      setError('請填寫所有必填欄位並選擇日期和時間。');
+      setError(t('bookme.error.title'));
       setIsLoading(false);
       return;
     }
 
     // Email validation
     if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(visitorEmail)) {
-      setError('請輸入有效的電子郵件地址。');
+      setError(t('bookme.error.email'));
       setIsLoading(false);
       return;
     }
@@ -112,7 +112,7 @@ export default function BookVisitPage() {
 
       if (!response.ok) {
         const errorData = await response.json();
-        throw new Error(errorData.error || '預約失敗，請稍後再試。');
+        throw new Error(errorData.error || t('bookme.error.booking'));
       }
 
       const result = await response.json();
@@ -128,21 +128,24 @@ export default function BookVisitPage() {
         const whatsappLink = `https://wa.me/85293103031?text=${result.whatsappMessage}`;
         setWhatsappUrl(whatsappLink);
         setShowWhatsAppPrompt(true);
-        setSuccessMessage('您的業務拜訪預約已成功！已添加到 Notion 日曆。');
+        setSuccessMessage(t('bookme.success.title'));
         
         // Reload available slots for the selected date to reflect the booking
         if (selectedDate) {
           async function reloadSlots() {
             try {
-              const formattedDate = format(selectedDate, 'yyyy-MM-dd');
-              const response = await fetch(`/api/calendar/slots?date=${formattedDate}`);
-              if (response.ok) {
-                const data = await response.json();
-                setAvailableSlots(data.slots || []);
-              }
-            } catch (err) {
-              console.warn('Failed to reload slots after booking:', err);
-            }
+              const formattedDate = format(selectedDate!, 'yyyy-MM-dd');
+        const response = await fetch(`/api/calendar/slots?date=${formattedDate}`);
+        if (!response.ok) {
+          throw new Error(t('bookme.error.slots'));
+        }
+        const data = await response.json();
+        setAvailableSlots(data.slots || []);
+      } catch (err: unknown) {
+        const errorMessage = err instanceof Error ? err.message : t('bookme.error.fetch');
+        setError(errorMessage);
+        setAvailableSlots([]);
+      }
           }
           reloadSlots();
         }
@@ -151,7 +154,7 @@ export default function BookVisitPage() {
         console.warn('   notionSuccess:', result.notionSuccess);
         console.warn('   whatsappMessage:', result.whatsappMessage ? 'exists' : 'null');
         // Still show success even if Notion failed
-        setSuccessMessage('您的業務拜訪未能預約成功！盡快聯絡InnovateXP Limited : info@innovatexp.com');
+        setSuccessMessage(t('bookme.success.subtitle'));
       }
       // Reset form
       setSelectedDate(new Date());
@@ -200,17 +203,17 @@ export default function BookVisitPage() {
               className="mr-4"
             />
             <div>
-              <h1 className="text-2xl font-bold text-white">InnovateXP Limited</h1>
-              <p className="text-sm text-purple-300">預約業務拜訪</p>
+              <h1 className="text-2xl font-bold text-white">{t('bookme.header.title')}</h1>
+              <p className="text-sm text-purple-300">{t('bookme.header.subtitle')}</p>
             </div>
           </Link>
           <div className="flex items-center gap-4">
             <LanguageSwitcher />
-            <Link 
-              href="/" 
+            <Link
+              href="/"
               className="text-purple-300 hover:text-purple-200 transition-colors"
             >
-              ← 返回首頁
+              {t('bookme.header.back')}
             </Link>
           </div>
         </div>
@@ -231,7 +234,7 @@ export default function BookVisitPage() {
             <Modal
               isOpen={successMessage !== null}
               type={successMessage && successMessage.includes('未能預約成功') ? 'error' : 'success'}
-              title={successMessage && successMessage.includes('未能預約成功') ? '預約失敗' : '預約成功'}
+              title={successMessage && successMessage.includes('未能預約成功') ? t('bookme.modal.error.title') : t('bookme.modal.success.title')}
               message={successMessage || ''}
               onClose={() => setSuccessMessage(null)}
               autoCloseDuration={5000}
@@ -258,13 +261,13 @@ export default function BookVisitPage() {
 
             {/* Info Section */}
             <div className="mt-8 pt-8 border-t border-purple-900/30">
-              <h3 className="text-purple-200 font-semibold mb-4">📋 預約須知</h3>
+              <h3 className="text-purple-200 font-semibold mb-4">{t('bookme.info.title')}</h3>
               <ul className="text-purple-300/80 text-sm space-y-2">
-                <li>• 預約時間為週一至週五，上午 9:00 至下午 5:00</li>
-                <li>• 每個時段為 1 小時的一對一諮詢</li>
-                <li>• 預約成功後，您將收到確認郵件及日曆邀請</li>
-                <li>• 如需取消或更改預約，請提前 24 小時通知</li>
-                <li>• 諮詢可選擇線上會議或實體拜訪</li>
+                <li>{t('bookme.info.monday_friday')}</li>
+                <li>{t('bookme.info.one_hour')}</li>
+                <li>{t('bookme.info.confirmation')}</li>
+                <li>{t('bookme.info.cancel')}</li>
+                <li>{t('bookme.info.online')}</li>
               </ul>
             </div>
             <br />
@@ -301,7 +304,7 @@ export default function BookVisitPage() {
                     />
                   </div>
                   <p className="text-purple-400/70 text-sm mt-2">
-                    * 週六、週日不開放預約
+                    {t('bookme.date.required')}
                   </p>
                 </div>
 
@@ -313,18 +316,18 @@ export default function BookVisitPage() {
                   <div className="bg-[#16213e] rounded-xl p-4 border-2 border-purple-400/30 min-h-[320px] overflow-y-auto">
                     {!selectedDate && (
                       <p className="text-purple-400/70 text-center py-8">
-                        請先選擇日期
+                        {t('bookme.time.select')}
                       </p>
                     )}
                     {isFetchingSlots && (
                       <div className="flex items-center justify-center py-8">
                         <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-purple-500"></div>
-                        <span className="ml-3 text-purple-300">載入中...</span>
+                        <span className="ml-3 text-purple-300">{t('bookme.time.loading')}</span>
                       </div>
                     )}
                     {selectedDate && !isFetchingSlots && availableSlots.length === 0 && (
                       <p className="text-purple-400/70 text-center py-8">
-                        此日期沒有可用的時間段。<br />請選擇其他日期。
+                        {t('bookme.time.no_slots')}
                       </p>
                     )}
                     {selectedDate && !isFetchingSlots && availableSlots.length > 0 && (
@@ -347,7 +350,7 @@ export default function BookVisitPage() {
                     )}
                   </div>
                   <p className="text-purple-400/70 text-sm mt-2">
-                    * 每個時段為 1 小時的一對一諮詢
+                    {t('bookme.time.hour')}
                   </p>
                 </div>
               </div>
@@ -471,7 +474,7 @@ export default function BookVisitPage() {
 
       {/* Footer */}
       <footer className="bg-black py-6 text-center border-t border-purple-900/30">
-        <p className="text-purple-400/60">© 2025 InnovateXP Limited. All rights reserved.</p>
+        <p className="text-purple-400/60">{t('footer.copyright')}</p>
       </footer>
     </div>
   );
