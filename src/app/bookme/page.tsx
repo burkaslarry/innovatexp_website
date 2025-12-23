@@ -5,9 +5,13 @@ import { useState, useEffect, FormEvent } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format, startOfDay } from 'date-fns';
-import { zhTW } from 'date-fns/locale';
+import { zhTW, enUS } from 'date-fns/locale';
 import Link from 'next/link';
 import Image from 'next/image';
+import { useLanguage } from '../LanguageContext';
+import Modal from '../Modal';
+import WhatsAppModal from '../WhatsAppModal';
+import LanguageSwitcher from '../LanguageSwitcher';
 
 interface TimeSlot {
   start: string;
@@ -16,8 +20,15 @@ interface TimeSlot {
 }
 
 export default function BookVisitPage() {
+  const { t, language } = useLanguage();
+  
   // Initialize with current date
-  const [selectedDate, setSelectedDate] = useState<Date | undefined>(new Date());
+  const [selectedDate, setSelectedDate] = useState<Date | undefined>(() => {
+    const today = new Date();
+    // Set time to midnight to ensure proper date comparison
+    today.setHours(0, 0, 0, 0);
+    return today;
+  });
   const [availableSlots, setAvailableSlots] = useState<TimeSlot[]>([]);
   const [selectedTimeSlot, setSelectedTimeSlot] = useState<TimeSlot | null>(null);
   const [visitorName, setVisitorName] = useState('');
@@ -118,6 +129,23 @@ export default function BookVisitPage() {
         setWhatsappUrl(whatsappLink);
         setShowWhatsAppPrompt(true);
         setSuccessMessage('您的業務拜訪預約已成功！已添加到 Notion 日曆。');
+        
+        // Reload available slots for the selected date to reflect the booking
+        if (selectedDate) {
+          async function reloadSlots() {
+            try {
+              const formattedDate = format(selectedDate, 'yyyy-MM-dd');
+              const response = await fetch(`/api/calendar/slots?date=${formattedDate}`);
+              if (response.ok) {
+                const data = await response.json();
+                setAvailableSlots(data.slots || []);
+              }
+            } catch (err) {
+              console.warn('Failed to reload slots after booking:', err);
+            }
+          }
+          reloadSlots();
+        }
       } else {
         console.warn('⚠️ Not showing WhatsApp prompt');
         console.warn('   notionSuccess:', result.notionSuccess);
@@ -133,7 +161,7 @@ export default function BookVisitPage() {
       setVisitorPhone('');
       setVisitorCompany('');
       setMessage('');
-      setAvailableSlots([]);
+      // Note: Don't reset availableSlots here since we reload them above for successful bookings
     } catch (err: unknown) {
       const errorMessage = err instanceof Error ? err.message : '預約失敗';
       setError(errorMessage);
@@ -176,12 +204,15 @@ export default function BookVisitPage() {
               <p className="text-sm text-purple-300">預約業務拜訪</p>
             </div>
           </Link>
-          <Link 
-            href="/" 
-            className="text-purple-300 hover:text-purple-200 transition-colors"
-          >
-            ← 返回首頁
-          </Link>
+          <div className="flex items-center gap-4">
+            <LanguageSwitcher />
+            <Link 
+              href="/" 
+              className="text-purple-300 hover:text-purple-200 transition-colors"
+            >
+              ← 返回首頁
+            </Link>
+          </div>
         </div>
       </header>
 
@@ -190,75 +221,28 @@ export default function BookVisitPage() {
         <div className="max-w-5xl mx-auto">
           <div className="bg-[#1a1a2e] rounded-2xl shadow-2xl p-8 border border-purple-900/30">
             <h1 className="text-3xl font-bold text-center mb-2 text-white">
-              📅 預約業務拜訪
+              📅 {t('bookme.title')}
             </h1>
             <p className="text-center text-purple-300 mb-8">
-              一對一業務諮詢 | Book a Business Consultation
+              {t('bookme.subtitle')}
             </p>
 
-            {/* Success Message */}
-            {successMessage && (
-              <div className="bg-teal-900/50 border border-teal-500 text-teal-200 px-6 py-4 rounded-lg mb-6" role="alert">
-                <div className="flex items-center">
-                  <svg className="w-6 h-6 mr-3" fill="currentColor" viewBox="0 0 20 20">
-                    <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
-                  </svg>
-                  <span className="font-medium">{successMessage}</span>
-                </div>
-              </div>
-            )}
+            {/* Success Modal */}
+            <Modal
+              isOpen={successMessage !== null}
+              type={successMessage && successMessage.includes('未能預約成功') ? 'error' : 'success'}
+              title={successMessage && successMessage.includes('未能預約成功') ? '預約失敗' : '預約成功'}
+              message={successMessage || ''}
+              onClose={() => setSuccessMessage(null)}
+              autoCloseDuration={5000}
+            />
 
-            {/* WhatsApp Prompt */}
-            {showWhatsAppPrompt && whatsappUrl && (
-              <div className="bg-green-900/50 border-2 border-green-500 text-green-100 px-6 py-5 rounded-xl mb-6 shadow-lg" role="alert">
-                <div className="flex items-start">
-                  <div className="flex-shrink-0">
-                    <svg className="w-8 h-8 text-green-400" fill="currentColor" viewBox="0 0 24 24">
-                      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                    </svg>
-                  </div>
-                  <div className="ml-4 flex-1">
-                    <h3 className="text-lg font-bold text-green-200 mb-2">
-                      📱 發送 WhatsApp 確認訊息
-                    </h3>
-                    <p className="text-green-100 mb-4">
-                      您的預約已成功添加到 Notion 日曆！點擊下方按鈕發送確認訊息到 WhatsApp。
-                    </p>
-                    <div className="flex gap-3">
-                      <a
-                        href={whatsappUrl}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="inline-flex items-center px-6 py-3 bg-green-600 hover:bg-green-700 text-white font-bold rounded-lg transition-all duration-200 hover:shadow-lg hover:shadow-green-500/30"
-                        onClick={() => {
-                          // Close prompt after opening WhatsApp
-                          setTimeout(() => setShowWhatsAppPrompt(false), 2000);
-                        }}
-                      >
-                        <svg className="w-5 h-5 mr-2" fill="currentColor" viewBox="0 0 24 24">
-                          <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"/>
-                        </svg>
-                        打開 WhatsApp 發送
-                      </a>
-                      <button
-                        onClick={() => setShowWhatsAppPrompt(false)}
-                        className="px-4 py-3 bg-gray-700 hover:bg-gray-600 text-gray-200 font-medium rounded-lg transition-colors"
-                      >
-                        稍後
-                      </button>
-                    </div>
-                  </div>
-                  <button
-                    onClick={() => setShowWhatsAppPrompt(false)}
-                    className="ml-4 text-green-300 hover:text-green-100"
-                  >
-                    <svg className="w-5 h-5" fill="currentColor" viewBox="0 0 20 20">
-                      <path fillRule="evenodd" d="M4.293 4.293a1 1 0 011.414 0L10 8.586l4.293-4.293a1 1 0 111.414 1.414L11.414 10l4.293 4.293a1 1 0 01-1.414 1.414L10 11.414l-4.293 4.293a1 1 0 01-1.414-1.414L8.586 10 4.293 5.707a1 1 0 010-1.414z" clipRule="evenodd" />
-                    </svg>
-                  </button>
-                </div>
-              </div>
-            )}
+            {/* WhatsApp Modal */}
+            <WhatsAppModal
+              isOpen={showWhatsAppPrompt}
+              onClose={() => setShowWhatsAppPrompt(false)}
+              whatsappUrl={whatsappUrl}
+            />
 
             {/* Error Message */}
             {error && (
@@ -291,7 +275,7 @@ export default function BookVisitPage() {
                 {/* Date Picker */}
                 <div className="flex-1 w-full md:w-auto">
                   <label className="block text-purple-200 text-lg font-semibold mb-4">
-                    📆 選擇日期 <span className="text-red-400">*</span>
+                    📆 {t('bookme.date.label')} <span className="text-red-400">*</span>
                   </label>
                   <div className="bg-[#16213e] rounded-xl p-4 border-2 border-purple-400/30 flex justify-center">
                     <DayPicker
@@ -299,9 +283,8 @@ export default function BookVisitPage() {
                       selected={selectedDate}
                       onSelect={setSelectedDate}
                       disabled={disabledDays}
-                      locale={zhTW}
+                      locale={language === 'en' ? enUS : zhTW}
                       defaultMonth={new Date()}
-                      fromDate={new Date()} // Don't show dates before today
                       modifiersClassNames={{
                         selected: 'bg-purple-500 text-white rounded-full',
                         today: 'border-2 border-purple-400 rounded-full font-bold',
@@ -325,7 +308,7 @@ export default function BookVisitPage() {
                 {/* Time Slots */}
                 <div className="flex-1 w-full md:w-auto">
                   <label className="block text-purple-200 text-lg font-semibold mb-4">
-                    ⏰ 選擇時間 (1小時) <span className="text-red-400">*</span>
+                    ⏰ {t('bookme.time.label')} <span className="text-red-400">*</span>
                   </label>
                   <div className="bg-[#16213e] rounded-xl p-4 border-2 border-purple-400/30 min-h-[320px] overflow-y-auto">
                     {!selectedDate && (
@@ -373,9 +356,9 @@ export default function BookVisitPage() {
               {selectedDate && selectedTimeSlot && (
                 <div className="bg-purple-900/30 border border-purple-500/50 rounded-xl p-4 text-center">
                   <p className="text-purple-200">
-                    <span className="font-semibold">已選擇：</span>{' '}
+                    <span className="font-semibold">{t('bookme.selected.title')}</span>{' '}
                     <span className="text-white font-bold">
-                      {format(selectedDate, 'yyyy年MM月dd日 (EEEE)', { locale: zhTW })}
+                      {format(selectedDate, language === 'en' ? 'MMM dd, yyyy (EEEE)' : 'yyyy年MM月dd日 (EEEE)', { locale: language === 'en' ? enUS : zhTW })}
                     </span>{' '}
                     <span className="text-purple-300">|</span>{' '}
                     <span className="text-white font-bold">{selectedTimeSlot.display}</span>
@@ -386,12 +369,12 @@ export default function BookVisitPage() {
               {/* Visitor Information */}
               <div className="border-t border-purple-900/30 pt-8">
                 <h3 className="text-purple-200 text-lg font-semibold mb-6">
-                  👤 訪客資訊
+                  👤 {t('bookme.visitor.title')}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
                     <label htmlFor="visitorName" className="block text-purple-300 text-sm font-medium mb-2">
-                      您的姓名 <span className="text-red-400">*</span>
+                      {t('bookme.visitor.name')} <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="text"
@@ -399,14 +382,14 @@ export default function BookVisitPage() {
                       value={visitorName}
                       onChange={(e) => setVisitorName(e.target.value)}
                       required
-                      placeholder="請輸入您的姓名"
+                      placeholder={t('bookme.visitor.placeholder.name')}
                       className={inputClassName}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="visitorEmail" className="block text-purple-300 text-sm font-medium mb-2">
-                      電子郵件 <span className="text-red-400">*</span>
+                      {t('bookme.visitor.email')} <span className="text-red-400">*</span>
                     </label>
                     <input
                       type="email"
@@ -414,35 +397,35 @@ export default function BookVisitPage() {
                       value={visitorEmail}
                       onChange={(e) => setVisitorEmail(e.target.value)}
                       required
-                      placeholder="your@email.com"
+                      placeholder={t('bookme.visitor.placeholder.email')}
                       className={inputClassName}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="visitorPhone" className="block text-purple-300 text-sm font-medium mb-2">
-                      聯絡電話
+                      {t('bookme.visitor.phone')}
                     </label>
                     <input
                       type="tel"
                       id="visitorPhone"
                       value={visitorPhone}
                       onChange={(e) => setVisitorPhone(e.target.value)}
-                      placeholder="+852 1234 5678"
+                      placeholder={t('bookme.visitor.placeholder.phone')}
                       className={inputClassName}
                     />
                   </div>
 
                   <div>
                     <label htmlFor="visitorCompany" className="block text-purple-300 text-sm font-medium mb-2">
-                      公司名稱
+                      {t('bookme.visitor.company')}
                     </label>
                     <input
                       type="text"
                       id="visitorCompany"
                       value={visitorCompany}
                       onChange={(e) => setVisitorCompany(e.target.value)}
-                      placeholder="您的公司名稱"
+                      placeholder={t('bookme.visitor.placeholder.company')}
                       className={inputClassName}
                     />
                   </div>
@@ -450,14 +433,14 @@ export default function BookVisitPage() {
 
                 <div className="mt-6">
                   <label htmlFor="message" className="block text-purple-300 text-sm font-medium mb-2">
-                    諮詢內容 / 留言
+                    {t('bookme.visitor.message')}
                   </label>
                   <textarea
                     id="message"
                     value={message}
                     onChange={(e) => setMessage(e.target.value)}
                     rows={4}
-                    placeholder="請簡述您想諮詢的內容，例如：AI 整合方案、系統開發需求、企業培訓等..."
+                    placeholder={t('bookme.visitor.placeholder.message')}
                     className={`${inputClassName} resize-none`}
                   />
                 </div>
@@ -472,12 +455,12 @@ export default function BookVisitPage() {
                 {isLoading ? (
                   <>
                     <div className="animate-spin rounded-full h-5 w-5 border-b-2 border-white"></div>
-                    <span>處理中...</span>
+                    <span>{t('bookme.submit.processing')}</span>
                   </>
                 ) : (
                   <>
                     <span>📅</span>
-                    <span>確認預約</span>
+                    <span>{t('bookme.submit.confirm')}</span>
                   </>
                 )}
               </button>
