@@ -5,7 +5,6 @@ import {
   parseISO,
   format,
   addMinutes,
-  addDays,
   isBefore,
   setHours,
   setMinutes,
@@ -86,6 +85,7 @@ export async function GET(request: Request) {
         });
 
         console.log(`🔍 Search found ${response.results.length} total pages`);
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         response.results.forEach((page: any, index: number) => {
           console.log(`  ${index + 1}. ${page.id} - DB: ${page.parent?.database_id} - Title: ${page.properties?.Name?.title?.[0]?.plain_text || 'Untitled'}`);
         });
@@ -93,6 +93,7 @@ export async function GET(request: Request) {
         // Filter results to only include pages from our calendar database
         // Normalize database IDs by removing dashes for comparison
         const normalizedDbId = CALENDAR_DB_ID.replace(/-/g, '');
+        // eslint-disable-next-line @typescript-eslint/no-explicit-any
         const data = { results: response.results.filter((page: any) => {
           const pageDbId = page.parent?.database_id?.replace(/-/g, '');
           return pageDbId === normalizedDbId;

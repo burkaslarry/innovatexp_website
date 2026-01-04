@@ -1,7 +1,7 @@
 // app/bookme/page.tsx
 'use client';
 
-import { useState, useEffect, FormEvent } from 'react';
+import { useState, useEffect, FormEvent, useCallback } from 'react';
 import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format, startOfDay } from 'date-fns';
@@ -44,7 +44,7 @@ export default function BookVisitPage() {
   const [whatsappUrl, setWhatsappUrl] = useState<string | null>(null);
 
   // Get available slots function
-  const GetAvailableSlots = async () => {
+  const GetAvailableSlots = useCallback(async () => {
     if (!selectedDate) {
       setAvailableSlots([]);
       return;
@@ -69,12 +69,12 @@ export default function BookVisitPage() {
     } finally {
       setIsFetchingSlots(false);
     }
-  };
+  }, [selectedDate]);
 
   // Fetch available slots when date changes
   useEffect(() => {
     GetAvailableSlots();
-  }, [selectedDate]);
+  }, [selectedDate, GetAvailableSlots]);
 
   const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
