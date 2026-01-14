@@ -178,12 +178,12 @@ export default function BookVisitPage() {
   };
 
   // Light purple input class for consistent styling
-  const inputClassName = "w-full bg-white border-2 border-gray-300 dark:border-gray-600 rounded-lg py-3 px-4 text-gray-900 placeholder-purple-700 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-all duration-200";
+  const inputClassName = "w-full bg-white border-2 border-gray-300 rounded-lg py-3 px-4 text-gray-900 placeholder-purple-700 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-all duration-200";
 
   return (
     <div className="min-h-screen" style={{ backgroundColor: '#fffcf7' }}>
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b-2 border-gray-200">
+      <header className="bg-white shadow-sm border-b-2 border-gray-200">
         <div className="container mx-auto py-6 px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
@@ -199,11 +199,10 @@ export default function BookVisitPage() {
             </div>
           </Link>
           <div className="flex items-center gap-4">
-            {/* <ThemeToggle /> add later*/}
             <LanguageSwitcher />
             <Link
               href="/"
-              className="text-gray-700 dark:text-gray-300 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium"
+              className="text-gray-700 hover:text-orange-600 transition-colors font-medium"
             >
               {t('bookme.header.back')}
             </Link>
@@ -214,7 +213,7 @@ export default function BookVisitPage() {
       {/* Main Content */}
       <main className="container mx-auto py-12 px-4">
         <div className="max-w-5xl mx-auto">
-          <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 border border-purple-900/30">
+          <div className="bg-white rounded-2xl shadow-2xl p-8 border border-purple-900/30">
             <h1 className="text-3xl font-bold text-center mb-2 text-gray-900">
               📅 {t('bookme.title')}
             </h1>
@@ -242,7 +241,7 @@ export default function BookVisitPage() {
             {/* Loading Overlay */}
             {isLoading && (
               <div className="fixed inset-0 bg-gray-900/50 flex items-center justify-center z-50">
-                <div className="bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl p-6 shadow-2xl">
+                <div className="bg-white border-2 border-gray-300 rounded-xl p-6 shadow-2xl">
                   <div className="flex items-center">
                     <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-400"></div>
                     <span className="ml-4 text-gray-700">Processing your booking...</span>
@@ -265,7 +264,7 @@ export default function BookVisitPage() {
 
             {/* Info Section */}
             <div className="mt-8 pt-8 border-t border-purple-900/30">
-              <h3 className="text-gray-700 dark:text-gray-300 font-semibold mb-4">{t('bookme.info.title')}</h3>
+              <h3 className="text-gray-700 font-semibold mb-4">{t('bookme.info.title')}</h3>
               <ul className="text-gray-600/80 text-sm space-y-2">
                 <li>{t('bookme.info.monday_friday')}</li>
                 <li>{t('bookme.info.one_hour')}</li>
@@ -284,7 +283,7 @@ export default function BookVisitPage() {
                   <label className="block text-gray-900 text-xl font-bold mb-4">
                     📆 {t('bookme.date.label')} <span className="text-red-400">*</span>
                   </label>
-                  <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border-2 border-gray-300 dark:border-gray-600/30 flex justify-center">
+                  <div className="bg-white rounded-xl p-4 border-2 border-gray-300/30 flex justify-center">
                     <DayPicker
                       mode="single"
                       selected={selectedDate}
@@ -317,7 +316,7 @@ export default function BookVisitPage() {
                   <label className="block text-gray-900 text-xl font-bold mb-4">
                     ⏰ {t('bookme.time.label')} <span className="text-red-400">*</span>
                   </label>
-                  <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border-2 border-gray-300 dark:border-gray-600/30 min-h-[320px] overflow-y-auto">
+                  <div className="bg-white rounded-xl p-4 border-2 border-gray-300/30 min-h-[320px] overflow-y-auto">
                     {!selectedDate && (
                       <p className="text-orange-600/70 text-center py-8">
                         {t('bookme.time.select')}
@@ -344,7 +343,7 @@ export default function BookVisitPage() {
                             className={`px-4 py-3 rounded-lg text-sm font-medium transition-all duration-200
                               ${selectedTimeSlot?.start === slot.start
                                 ? 'bg-orange-500 text-white font-bold shadow-lg shadow-purple-500/30 scale-105 border-2 border-purple-300'
-                                : 'bg-white text-gray-700 border-2 border-gray-300 dark:border-gray-600/30 hover:border-gray-300 hover:bg-purple-900/20'
+                                : 'bg-white text-gray-700 border-2 border-gray-300/30 hover:border-gray-300 hover:bg-purple-900/20'
                               }`}
                           >
                             {slot.display}
@@ -364,18 +363,18 @@ export default function BookVisitPage() {
                 <div className="bg-purple-900/30 border border-orange-400/50 rounded-xl p-4 text-center">
                   <p className="text-gray-700">
                     <span className="font-semibold">{t('bookme.selected.title')}</span>{' '}
-                    <span className="text-gray-900 dark:text-white font-bold">
+                    <span className="text-gray-900 font-bold">
                       {format(selectedDate, language === 'en' ? 'MMM dd, yyyy (EEEE)' : 'yyyy年MM月dd日 (EEEE)', { locale: language === 'en' ? enUS : zhTW })}
                     </span>{' '}
                     <span className="text-gray-600">|</span>{' '}
-                    <span className="text-gray-900 dark:text-white font-bold">{selectedTimeSlot.display}</span>
+                    <span className="text-gray-900 font-bold">{selectedTimeSlot.display}</span>
                   </p>
                 </div>
               )}
 
               {/* Visitor Information */}
               <div className="border-t border-purple-900/30 pt-8">
-                <h3 className="text-gray-700 dark:text-gray-300 text-lg font-semibold mb-6">
+                <h3 className="text-gray-700 text-lg font-semibold mb-6">
                   👤 {t('bookme.visitor.title')}
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
@@ -457,7 +456,7 @@ export default function BookVisitPage() {
               <button
                 type="submit"
                 disabled={isLoading || !selectedTimeSlot || !selectedDate}
-                className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-gray-700 disabled:cursor-not-allowed text-gray-900 dark:text-white font-bold py-4 px-6 rounded-xl text-lg transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/30 disabled:shadow-none flex items-center justify-center gap-2 border-2 border-gray-300 dark:border-gray-600/50 hover:border-gray-300"
+                className="w-full bg-orange-600 hover:bg-orange-700 disabled:bg-gray-700 disabled:cursor-not-allowed text-gray-900 font-bold py-4 px-6 rounded-xl text-lg transition-all duration-200 hover:shadow-lg hover:shadow-purple-500/30 disabled:shadow-none flex items-center justify-center gap-2 border-2 border-gray-300/50 hover:border-gray-300"
               >
                 {isLoading ? (
                   <>
@@ -477,7 +476,7 @@ export default function BookVisitPage() {
       </main>
 
       {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-gray-950 py-6 text-center border-t border-purple-900/30">
+      <footer className="bg-gray-900 py-6 text-center border-t border-purple-900/30">
         <p className="text-orange-600/60">{t('footer.copyright')}</p>
       </footer>
     </div>

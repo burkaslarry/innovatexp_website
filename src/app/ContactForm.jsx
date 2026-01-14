@@ -116,7 +116,16 @@ export default function ContactForm() {
           <Button
             type="submit"
             variant="contained"
-            sx={{ width: "60vw",background:"#008080", padding: 1, margin: 2 }}
+            sx={{ 
+              width: "60vw", 
+              background: isFormValid ? "#f97316" : "#fed7aa", 
+              padding: 1, 
+              margin: 2, 
+              color: "#FFFFFF", 
+              fontWeight: "bold",
+              "&:hover": { background: isFormValid ? "#ea580c" : "#fed7aa" },
+              "&:disabled": { background: "#fed7aa", color: "#FFFFFF", opacity: 0.7 }
+            }}
             disabled={!isFormValid}
           >
             {t('contact.form.submit')}

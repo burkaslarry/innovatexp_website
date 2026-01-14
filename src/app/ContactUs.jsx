@@ -8,11 +8,11 @@ export default function ContactUs() {
   const { t } = useLanguage();
   
   return (
-    <Container sx={{ p: 6 }} className="bg-black">
+    <Container sx={{ p: 6, backgroundColor: '#fff2cc', borderRadius: '16px' }}>
       <Typography
         variant="h4"
         gutterBottom
-        color={"#FFFFFF"}
+        color={"#000000"}
         fontWeight="700"
         sx={{ paddingTop: 3 }}
         align="center"
@@ -23,7 +23,7 @@ export default function ContactUs() {
       <Typography
         variant="h6"
         gutterBottom
-        color={"#FFFFFF"}
+        color={"#000000"}
         fontWeight="700"
         sx={{ paddingTop: 3 }}
         align="center"

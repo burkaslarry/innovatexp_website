@@ -25,16 +25,16 @@ interface LightPurpleTextFieldProps {
                 styleOverrides: {
                     root: {
                         '& .MuiInputBase-input': {
-                            color: 'white', // Text color
+                            color: 'black', // Text color
                         },
                         '& .MuiInputLabel-root': {
-                            color: 'white', // Label color
+                            color: 'black', // Label color
                         },
                         '& .MuiInput-underline:before': {
-                            borderBottomColor: 'white', // Underline when not focused
+                            borderBottomColor: 'black', // Underline when not focused
                         },
                         '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-                            borderBottomColor: 'white', // Underline when hovered
+                            borderBottomColor: 'black', // Underline when hovered
                         },
                         '& .MuiInput-underline:after': {
                             borderBottomColor: '#A370F7', // Underline when focused
@@ -43,7 +43,7 @@ interface LightPurpleTextFieldProps {
                             color: '#A370F7', // Label color when focused
                         },
                         '& .MuiInputBase-input::placeholder': {
-                            color: 'white', // Placeholder color
+                            color: 'black', // Placeholder color
                             opacity: 0.7,
                         },
                     },
