@@ -56,7 +56,7 @@ function LandingPage() {
             {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/bookme" className="bg-gradient-to-r from-orange-500 to-orange-600 dark:from-purple-700 dark:to-purple-800 text-white font-bold py-4 px-10 rounded-full hover:from-orange-600 hover:to-orange-700 dark:hover:from-purple-800 dark:hover:to-purple-900 transition duration-300 text-lg shadow-lg transform hover:scale-105">
+            <a href="/bookme" className="bg-gradient-to-r from-orange-500 to-orange-600 dark:from-purple-700 dark:to-purple-800 text-white dark:text-white font-bold py-4 px-10 rounded-full hover:from-orange-600 hover:to-orange-700 dark:hover:from-purple-800 dark:hover:to-purple-900 transition duration-300 text-lg shadow-lg transform hover:scale-105">
               {t('hero.book_meeting')}
             </a>
             <a href="#contact-us" className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-bold py-4 px-10 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-300 text-lg shadow-md border-2 border-gray-300 dark:border-gray-700 transform hover:scale-105">
@@ -123,10 +123,10 @@ function LandingPage() {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">{t('services.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* AI × CRM Card */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-orange-400 hover:-translate-y-1">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-orange-400 hover:-translate-y-1 flex flex-col">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('services.ai_crm.title')}</h3>
               <p className="text-orange-600 text-sm mb-4 italic font-semibold">{t('services.ai_crm.subtitle')}</p>
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2 mb-6 flex-grow">
                 <li className="text-gray-700 dark:text-gray-300 flex items-start">
                   <span className="text-orange-500 mr-2 font-bold">✓</span>
                   <span>{t('services.ai_crm.benefit1')}</span>
@@ -140,16 +140,18 @@ function LandingPage() {
                   <span>{t('services.ai_crm.benefit3')}</span>
                 </li>
               </ul>
-              <a href="/bookme" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold py-2 px-4 rounded-full hover:from-orange-600 hover:to-orange-700 transition duration-300 inline-block text-sm shadow-md">
-                {t('services.ai_crm.cta')}
-              </a>
+              <div className="flex justify-center">
+                <a href="/bookme" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white dark:text-white font-bold py-2 px-6 rounded-full hover:from-orange-600 hover:to-orange-700 transition duration-300 text-sm shadow-md w-full text-center">
+                  {t('services.ai_crm.cta')}
+                </a>
+              </div>
             </div>
 
             {/* Check-in System Card */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-green-400 hover:-translate-y-1">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-green-400 hover:-translate-y-1 flex flex-col">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('services.checkin.title')}</h3>
               <p className="text-green-600 text-sm mb-4 italic font-semibold">{t('services.checkin.subtitle')}</p>
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2 mb-6 flex-grow">
                 <li className="text-gray-700 dark:text-gray-300 flex items-start">
                   <span className="text-green-500 mr-2 font-bold">✓</span>
                   <span>{t('services.checkin.benefit1')}</span>
@@ -163,16 +165,18 @@ function LandingPage() {
                   <span>{t('services.checkin.benefit3')}</span>
                 </li>
               </ul>
-              <a href="/bookme" className="bg-gradient-to-r from-green-500 to-green-600 text-white font-bold py-2 px-4 rounded-full hover:from-green-600 hover:to-green-700 transition duration-300 inline-block text-sm shadow-md">
-                {t('services.checkin.cta')}
-              </a>
+              <div className="flex justify-center">
+                <a href="/bookme" className="bg-gradient-to-r from-green-500 to-green-600 text-white dark:text-white font-bold py-2 px-6 rounded-full hover:from-green-600 hover:to-green-700 transition duration-300 text-sm shadow-md w-full text-center">
+                  {t('services.checkin.cta')}
+                </a>
+              </div>
             </div>
 
             {/* AI Courses Card */}
-            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-yellow-400 hover:-translate-y-1">
+            <div className="bg-white dark:bg-gray-800 rounded-xl shadow-md hover:shadow-xl transition-all duration-200 p-6 border-2 border-gray-200 dark:border-gray-700 hover:border-yellow-400 hover:-translate-y-1 flex flex-col">
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('services.courses.title')}</h3>
               <p className="text-orange-300 text-sm mb-4 italic font-semibold">{t('services.courses.subtitle')}</p>
-              <ul className="space-y-2 mb-4">
+              <ul className="space-y-2 mb-6 flex-grow">
                 <li className="text-gray-700 dark:text-gray-300 flex items-start">
                   <span className="text-orange-200 mr-2 font-bold">✓</span>
                   <span>{t('services.courses.benefit1')}</span>
@@ -186,9 +190,11 @@ function LandingPage() {
                   <span>{t('services.courses.benefit3')}</span>
                 </li>
               </ul>
-              <a href="#contact-us" className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white font-bold py-2 px-4 rounded-full hover:from-yellow-600 hover:to-yellow-700 transition duration-300 inline-block text-sm shadow-md">
-                {t('services.courses.cta')}
-              </a>
+              <div className="flex justify-center">
+                <a href="#contact-us" className="bg-gradient-to-r from-yellow-500 to-yellow-600 text-white dark:text-white font-bold py-2 px-6 rounded-full hover:from-yellow-600 hover:to-yellow-700 transition duration-300 text-sm shadow-md w-full text-center">
+                  {t('services.courses.cta')}
+                </a>
+              </div>
             </div>
           </div>
         </section>
@@ -335,7 +341,7 @@ function LandingPage() {
               </div>
               <div className="mt-4">
                 <p className="text-xs text-gray-400 italic mb-2">📸 {t('showcase.screenshot_coming')}</p>
-                <a href="/bookme" className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-orange-100 transition duration-300 inline-block text-sm w-full text-center">
+                <a href="/bookme" className="bg-purple-600 dark:bg-purple-700 text-white dark:text-white font-semibold py-2 px-4 rounded-full hover:bg-orange-100 dark:hover:bg-purple-600 transition duration-300 inline-block text-sm w-full text-center">
                   {t('showcase.checkin.cta')}
                 </a>
               </div>
@@ -359,7 +365,7 @@ function LandingPage() {
               </div>
               <div className="mt-4">
                 <p className="text-xs text-gray-400 italic mb-2">📸 {t('showcase.screenshot_coming')}</p>
-                <a href="/bookme" className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-orange-100 transition duration-300 inline-block text-sm w-full text-center">
+                <a href="/bookme" className="bg-purple-600 dark:bg-purple-700 text-white dark:text-white font-semibold py-2 px-4 rounded-full hover:bg-orange-100 dark:hover:bg-purple-600 transition duration-300 inline-block text-sm w-full text-center">
                   {t('showcase.booking.cta')}
                 </a>
               </div>
@@ -384,7 +390,7 @@ function LandingPage() {
               </div>
               <div className="mt-4">
                 <p className="text-xs text-gray-400 italic mb-2">📸 {t('showcase.screenshot_coming')}</p>
-                <a href="/bookme" className="bg-purple-600 text-white font-semibold py-2 px-4 rounded-full hover:bg-orange-100 transition duration-300 inline-block text-sm w-full text-center">
+                <a href="/bookme" className="bg-purple-600 dark:bg-purple-700 text-white dark:text-white font-semibold py-2 px-4 rounded-full hover:bg-orange-100 dark:hover:bg-purple-600 transition duration-300 inline-block text-sm w-full text-center">
                   {t('showcase.ai_crm.cta')}
                 </a>
               </div>
@@ -410,7 +416,7 @@ function LandingPage() {
               <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{t('pricing.insight.name')}</h3>
               <p className="text-2xl text-orange-600 font-semibold mb-2">{t('pricing.insight.tagline')}</p>
               <p className="text-lg text-orange-600 italic mb-3">{t('pricing.insight.subtitle')}</p>
-              <p className="text-gray-600 max-w-3xl mx-auto mb-2">{t('pricing.insight.description')}</p>
+              <p className="text-gray-600 dark:text-orange-200 max-w-3xl mx-auto mb-2">{t('pricing.insight.description')}</p>
               <p className="text-orange-600 font-semibold">{t('pricing.insight.value')}</p>
             </div>
             
@@ -443,7 +449,7 @@ function LandingPage() {
                     <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.insight.tier1.feature4')}</span>
                   </li>
                 </ul>
-                <a href="/bookme" className="block w-full bg-purple-600 text-white font-semibold py-3 rounded-full hover:bg-orange-100 transition duration-300 text-center">
+                <a href="/bookme" className="block w-full bg-purple-600 dark:bg-purple-700 text-white dark:text-white font-semibold py-3 rounded-full hover:bg-orange-100 dark:hover:bg-purple-600 transition duration-300 text-center">
                   {t('pricing.cta')}
                 </a>
               </div>
@@ -508,7 +514,7 @@ function LandingPage() {
                     <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.insight.tier3.feature3')}</span>
                   </li>
                 </ul>
-                <a href="/bookme" className="block w-full bg-purple-600 text-white font-semibold py-3 rounded-full hover:bg-orange-100 transition duration-300 text-center">
+                <a href="/bookme" className="block w-full bg-purple-600 dark:bg-purple-700 text-white dark:text-white font-semibold py-3 rounded-full hover:bg-orange-100 dark:hover:bg-purple-600 transition duration-300 text-center">
                   {t('pricing.contact')}
                 </a>
               </div>
@@ -522,7 +528,7 @@ function LandingPage() {
               <h3 className="text-3xl font-bold text-gray-900 dark:text-white mb-2">{t('pricing.crm.name')}</h3>
               <p className="text-2xl text-orange-600 font-semibold mb-2">{t('pricing.crm.tagline')}</p>
               <p className="text-lg text-orange-600 italic mb-3">{t('pricing.crm.subtitle')}</p>
-              <p className="text-gray-600 max-w-3xl mx-auto mb-2">{t('pricing.crm.description')}</p>
+              <p className="text-gray-600 dark:text-orange-200 max-w-3xl mx-auto mb-2">{t('pricing.crm.description')}</p>
               <p className="text-orange-600 font-semibold mb-6">{t('pricing.crm.value')}</p>
             </div>
 
