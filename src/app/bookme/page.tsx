@@ -266,7 +266,7 @@ export default function BookVisitPage() {
             {/* Info Section */}
             <div className="mt-8 pt-8 border-t border-purple-900/30">
               <h3 className="text-gray-700 dark:text-gray-300 font-semibold mb-4">{t('bookme.info.title')}</h3>
-              <ul className="text-gray-600/80 text-sm space-y-2">
+              <ul className="text-gray-600/80 dark:text-white text-sm space-y-2">
                 <li>{t('bookme.info.monday_friday')}</li>
                 <li>{t('bookme.info.one_hour')}</li>
                 <li>{t('bookme.info.confirmation')}</li>
@@ -380,7 +380,7 @@ export default function BookVisitPage() {
                 </h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
-                    <label htmlFor="visitorName" className="block text-gray-600 text-sm font-medium mb-2">
+                    <label htmlFor="visitorName" className="block text-gray-600 dark:text-white text-sm font-medium mb-2">
                       {t('bookme.visitor.name')} <span className="text-red-400">*</span>
                     </label>
                     <input
@@ -395,7 +395,7 @@ export default function BookVisitPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="visitorEmail" className="block text-gray-600 text-sm font-medium mb-2">
+                    <label htmlFor="visitorEmail" className="block text-gray-600 dark:text-white text-sm font-medium mb-2">
                       {t('bookme.visitor.email')} <span className="text-red-400">*</span>
                     </label>
                     <input
@@ -410,7 +410,7 @@ export default function BookVisitPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="visitorPhone" className="block text-gray-600 text-sm font-medium mb-2">
+                    <label htmlFor="visitorPhone" className="block text-gray-600 dark:text-white text-sm font-medium mb-2">
                       {t('bookme.visitor.phone')}
                     </label>
                     <input
@@ -424,7 +424,7 @@ export default function BookVisitPage() {
                   </div>
 
                   <div>
-                    <label htmlFor="visitorCompany" className="block text-gray-600 text-sm font-medium mb-2">
+                    <label htmlFor="visitorCompany" className="block text-gray-600 dark:text-white text-sm font-medium mb-2">
                       {t('bookme.visitor.company')}
                     </label>
                     <input
@@ -439,7 +439,7 @@ export default function BookVisitPage() {
                 </div>
 
                 <div className="mt-6">
-                  <label htmlFor="message" className="block text-gray-600 text-sm font-medium mb-2">
+                  <label htmlFor="message" className="block text-gray-600 dark:text-white text-sm font-medium mb-2">
                     {t('bookme.visitor.message')}
                   </label>
                   <textarea
