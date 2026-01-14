@@ -19,7 +19,7 @@ export default function ThemeToggle() {
     const themeContext = useTheme();
     theme = themeContext.theme;
     toggleTheme = themeContext.toggleTheme;
-  } catch (error) {
+  } catch {
     // ThemeProvider not available, use default values
     console.warn('ThemeToggle: ThemeProvider not found');
   }

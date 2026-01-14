@@ -43,23 +43,23 @@ function LandingPage() {
         </div>
       </header>
 
-      <main className="container mx-auto py-12 px-4" style={{ backgroundColor: '#fffcf7' }}>
+      <main className="container mx-auto py-12 px-4 bg-[#fffcf7] dark:bg-gray-900">
       {/* Hero Section */}
-      <section className="mb-16 text-center bg-white rounded-2xl shadow-md p-12 border border-gray-200">
+      <section className="mb-16 text-center bg-white dark:bg-gray-800 rounded-2xl shadow-md p-12 border border-gray-200 dark:border-gray-700">
         <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-4 text-gray-900">{t('hero.title')}</h2>
+          <h2 className="text-5xl font-bold mb-4 text-gray-900 dark:text-white">{t('hero.title')}</h2>
           {/* New Tagline */}
           <p className="text-2xl text-orange-600 mb-6 font-bold">
             {t('hero.tagline')}
           </p>
-          <p className="text-lg mb-8 text-gray-600 leading-relaxed">
+          <p className="text-lg mb-8 text-gray-600 dark:text-white leading-relaxed">
             {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/bookme" className="bg-gradient-to-r from-orange-500 to-orange-600 text-white font-bold py-4 px-10 rounded-full hover:from-orange-600 hover:to-orange-700 transition duration-300 text-lg shadow-lg transform hover:scale-105">
+            <a href="/bookme" className="bg-gradient-to-r from-orange-500 to-orange-600 dark:from-purple-700 dark:to-purple-800 text-white font-bold py-4 px-10 rounded-full hover:from-orange-600 hover:to-orange-700 dark:hover:from-purple-800 dark:hover:to-purple-900 transition duration-300 text-lg shadow-lg transform hover:scale-105">
               {t('hero.book_meeting')}
             </a>
-            <a href="#contact-us" className="bg-white text-gray-900 font-bold py-4 px-10 rounded-full hover:bg-gray-50 transition duration-300 text-lg shadow-md border-2 border-gray-300 transform hover:scale-105">
+            <a href="#contact-us" className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-bold py-4 px-10 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-300 text-lg shadow-md border-2 border-gray-300 dark:border-gray-700 transform hover:scale-105">
               {t('hero.cta')}
             </a>
           </div>
@@ -96,21 +96,21 @@ function LandingPage() {
 
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-5xl mx-auto">
             {/* Innovate */}
-            <div className="bg-gray-50 rounded-xl p-6 text-center hover:bg-orange-50 transition duration-300 border-2 border-gray-200 dark:border-gray-700 hover:border-orange-400">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 text-center hover:bg-orange-50 dark:hover:bg-gray-600 transition duration-300 border-2 border-gray-200 dark:border-gray-600 hover:border-orange-400">
               <div className="text-5xl mb-4">💡</div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{t('vision.innovate')}</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{t('vision.innovate_desc')}</p>
             </div>
 
             {/* Transform */}
-            <div className="bg-gray-50 rounded-xl p-6 text-center hover:bg-green-50 transition duration-300 border-2 border-gray-200 dark:border-gray-700 hover:border-green-400">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 text-center hover:bg-green-50 dark:hover:bg-gray-600 transition duration-300 border-2 border-gray-200 dark:border-gray-600 hover:border-green-400">
               <div className="text-5xl mb-4">🚀</div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{t('vision.transform')}</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{t('vision.transform_desc')}</p>
             </div>
 
             {/* Experience */}
-            <div className="bg-gray-50 rounded-xl p-6 text-center hover:bg-yellow-50 transition duration-300 border-2 border-gray-200 dark:border-gray-700 hover:border-yellow-400">
+            <div className="bg-gray-50 dark:bg-gray-700 rounded-xl p-6 text-center hover:bg-yellow-50 dark:hover:bg-gray-600 transition duration-300 border-2 border-gray-200 dark:border-gray-600 hover:border-yellow-400">
               <div className="text-5xl mb-4">✨</div>
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{t('vision.experience')}</h3>
               <p className="text-gray-600 dark:text-gray-300 text-sm leading-relaxed">{t('vision.experience_desc')}</p>
@@ -194,13 +194,13 @@ function LandingPage() {
         </section>
 
         {/* Story Section */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-md border-2 border-gray-200">
+        <section className="mb-16 bg-white dark:bg-gray-700 rounded-2xl p-8 shadow-md border-2 border-gray-200">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">{t('story.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {/* Step 1: Red Ocean */}
             <div className="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center relative border-2 border-gray-200 dark:border-gray-700 hover:border-orange-400 transition duration-300">
               <div className="text-5xl font-bold text-orange-600 mb-4">1</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('story.step1.title')}</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-black mb-3">{t('story.step1.title')}</h3>
               <p className="text-gray-600">{t('story.step1.description')}</p>
               <div className="hidden md:block absolute -right-3 top-1/2 transform -translate-y-1/2 text-orange-500 text-3xl">→</div>
             </div>
@@ -208,7 +208,7 @@ function LandingPage() {
             {/* Step 2: Desert Oasis */}
             <div className="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center relative border-2 border-gray-200 dark:border-gray-700 hover:border-green-400 transition duration-300">
               <div className="text-5xl font-bold text-green-600 mb-4">2</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('story.step2.title')}</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-black mb-3">{t('story.step2.title')}</h3>
               <p className="text-gray-600">{t('story.step2.description')}</p>
               <div className="hidden md:block absolute -right-3 top-1/2 transform -translate-y-1/2 text-green-500 text-3xl">→</div>
             </div>
@@ -216,7 +216,7 @@ function LandingPage() {
             {/* Step 3: Coca-Cola Theory */}
             <div className="bg-gray-50 rounded-xl p-6 flex flex-col items-center text-center border-2 border-gray-200 dark:border-gray-700 hover:border-yellow-400 transition duration-300">
               <div className="text-5xl font-bold text-orange-300 mb-4">3</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('story.step3.title')}</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-black mb-3">{t('story.step3.title')}</h3>
               <p className="text-gray-600">{t('story.step3.description')}</p>
           </div>
         </div>
@@ -225,19 +225,19 @@ function LandingPage() {
       
 
         {/* About Section */}
-        <section className="mb-16 bg-white rounded-2xl p-8 shadow-md border-2 border-gray-200">
+        <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md border-2 border-gray-200">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6 text-center">{t('about.title')}</h2>
           
           {/* 25秒介紹 */}
           <div className="mb-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('about.intro.title')}</h3>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-gray-600 dark:text-yellow-300 leading-relaxed mb-4">
               {t('about.intro.p1')}
             </p>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-gray-600 dark:text-yellow-300 leading-relaxed mb-4">
               {t('about.intro.p2')}
             </p>
-            <p className="text-gray-600 leading-relaxed mb-4">
+            <p className="text-gray-600 dark:text-yellow-300 leading-relaxed mb-4">
               {t('about.intro.p3')}
             </p>
           </div>
@@ -246,17 +246,17 @@ function LandingPage() {
           <div className="mb-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('about.tags.title')}</h3>
             <ul className="space-y-4">
-              <li className="text-gray-600 leading-relaxed">
+              <li className="text-gray-600 dark:text-yellow-300 leading-relaxed">
                 <strong className="text-orange-600 text-lg">{t('about.tags.red_ocean.title')}:</strong>
                 <br />
                 {t('about.tags.red_ocean.description')}
               </li>
-              <li className="text-gray-600 leading-relaxed">
+              <li className="text-gray-600 dark:text-yellow-300 leading-relaxed">
                 <strong className="text-green-600 text-lg">{t('about.tags.desert_oasis.title')}:</strong>
                 <br />
                 {t('about.tags.desert_oasis.description')}
               </li>
-              <li className="text-gray-600 leading-relaxed">
+              <li className="text-gray-600 dark:text-yellow-300 leading-relaxed">
                 <strong className="text-orange-300 text-lg">{t('about.tags.community.title')}:</strong>
                 <br />
                 {t('about.tags.community.description')}
@@ -267,7 +267,7 @@ function LandingPage() {
           {/* 品牌故事線 */}
           <div className="mb-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('about.story.title')}</h3>
-            <p className="text-gray-600 leading-relaxed">
+            <p className="text-gray-600 dark:text-yellow-300 leading-relaxed">
               {t('about.story.content')}
             </p>
           </div>
@@ -300,17 +300,13 @@ function LandingPage() {
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-8 text-center">{t('achievements.title')}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
             <div className="bg-gradient-to-br from-orange-100 to-orange-50 rounded-xl p-6 border-2 border-orange-200 shadow-md">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('achievements.kmb')}</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-black mb-3">{t('achievements.kmb')}</h3>
               <p className="text-gray-700">{t('achievements.government')}</p>
             </div>
             <div className="bg-gradient-to-br from-green-100 to-green-50 rounded-xl p-6 border-2 border-green-200 shadow-md">
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('achievements.sme')}</h3>
+              <h3 className="text-xl font-bold text-gray-900 dark:text-black mb-3">{t('achievements.sme')}</h3>
               <p className="text-gray-700">{t('achievements.engagement')}</p>
             </div>
-          </div>
-          <div className="mt-6 bg-white rounded-xl p-6 text-center border-2 border-gray-200 dark:border-gray-700 shadow-md">
-            <p className="text-lg text-orange-600 font-bold mb-2">成功案例</p>
-            <p className="text-gray-700">{t('achievements.case')}</p>
           </div>
         </section>
 
@@ -532,16 +528,16 @@ function LandingPage() {
 
             {/* AI Feature Deep Dive */}
             <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mb-8 max-w-5xl mx-auto">
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h5 className="text-white font-bold mb-2">✍️ {t('pricing.crm.feature1.title')}</h5>
+              <div className="bg-gray-50 dark:bg-purple-900 rounded-lg p-4">
+                <h5 className="text-black dark:text-white font-bold mb-2">✍️ {t('pricing.crm.feature1.title')}</h5>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.crm.feature1.desc')}</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h5 className="text-white font-bold mb-2">📅 {t('pricing.crm.feature2.title')}</h5>
+              <div className="bg-gray-50 dark:bg-purple-900 rounded-lg p-4">
+                <h5 className="text-black dark:text-white font-bold mb-2">📅 {t('pricing.crm.feature2.title')}</h5>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.crm.feature2.desc')}</p>
               </div>
-              <div className="bg-gray-50 rounded-lg p-4">
-                <h5 className="text-white font-bold mb-2">📊 {t('pricing.crm.feature3.title')}</h5>
+              <div className="bg-gray-50 dark:bg-purple-900 rounded-lg p-4">
+                <h5 className="text-black dark:text-white font-bold mb-2">📊 {t('pricing.crm.feature3.title')}</h5>
                 <p className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.crm.feature3.desc')}</p>
               </div>
             </div>

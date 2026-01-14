@@ -181,9 +181,9 @@ export default function BookVisitPage() {
   const inputClassName = "w-full bg-white border-2 border-gray-300 dark:border-gray-600 rounded-lg py-3 px-4 text-gray-900 placeholder-purple-700 focus:outline-none focus:border-orange-400 focus:ring-2 focus:ring-orange-400/30 transition-all duration-200";
 
   return (
-    <div className="min-h-screen" style={{ backgroundColor: '#fffcf7' }}>
+    <div className="min-h-screen bg-[#fffcf7] dark:bg-gray-900">
       {/* Header */}
-      <header className="bg-white dark:bg-gray-800 shadow-sm border-b-2 border-gray-200">
+      <header className="bg-white dark:bg-gray-800 shadow-sm border-b-2 border-gray-200 dark:border-gray-700">
         <div className="container mx-auto py-6 px-4 flex items-center justify-between">
           <Link href="/" className="flex items-center">
             <Image
@@ -191,15 +191,15 @@ export default function BookVisitPage() {
               alt="InnovateXP Limited Logo"
               width={50}
               height={50}
-              className="mr-4"
+              className="mr-4 dark:invert"
             />
             <div>
-              <h1 className="text-2xl font-bold text-gray-900">{t('bookme.header.title')}</h1>
-              <p className="text-sm text-gray-600">{t('bookme.header.subtitle')}</p>
+              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{t('bookme.header.title')}</h1>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{t('bookme.header.subtitle')}</p>
             </div>
           </Link>
           <div className="flex items-center gap-4">
-            {/* <ThemeToggle /> add later*/}
+            <ThemeToggle />
             <LanguageSwitcher />
             <Link
               href="/"
@@ -215,10 +215,10 @@ export default function BookVisitPage() {
       <main className="container mx-auto py-12 px-4">
         <div className="max-w-5xl mx-auto">
           <div className="bg-white dark:bg-gray-800 rounded-2xl shadow-2xl p-8 border border-purple-900/30">
-            <h1 className="text-3xl font-bold text-center mb-2 text-gray-900">
+            <h1 className="text-3xl font-bold text-center mb-2 text-gray-900 dark:text-white">
               📅 {t('bookme.title')}
             </h1>
-            <p className="text-center text-gray-600 mb-8">
+            <p className="text-center text-gray-600 dark:text-gray-300 mb-8">
               {t('bookme.subtitle')}
             </p>
 
@@ -281,7 +281,7 @@ export default function BookVisitPage() {
               <div className="flex flex-col md:flex-row gap-6 items-start">
                 {/* Date Picker */}
                 <div className="flex-1 w-full md:w-auto">
-                  <label className="block text-gray-900 text-xl font-bold mb-4">
+                  <label className="block text-gray-900 dark:text-white text-xl font-bold mb-4">
                     📆 {t('bookme.date.label')} <span className="text-red-400">*</span>
                   </label>
                   <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border-2 border-gray-300 dark:border-gray-600/30 flex justify-center">
@@ -294,16 +294,16 @@ export default function BookVisitPage() {
                       defaultMonth={new Date()}
                       modifiersClassNames={{
                         selected: 'bg-orange-500 text-white font-bold rounded-full',
-                        today: 'border-2 border-orange-400 rounded-full font-bold text-orange-600',
-                        disabled: 'text-gray-600 opacity-50 cursor-not-allowed',
+                        today: 'border-2 border-orange-400 rounded-full font-bold text-orange-600 dark:text-orange-400',
+                        disabled: 'text-gray-600 dark:text-gray-500 opacity-50 cursor-not-allowed',
                       }}
-                      className="text-gray-900"
+                      className="text-gray-900 dark:text-white"
                       styles={{
-                        caption: { color: '#1f2937' },
-                        head_cell: { color: '#4b5563' },
-                        cell: { color: '#1f2937' },
-                        day: { color: '#1f2937' },
-                        nav_button: { color: '#4b5563' },
+                        caption: { color: 'inherit' },
+                        head_cell: { color: 'inherit' },
+                        cell: { color: 'inherit' },
+                        day: { color: 'inherit' },
+                        nav_button: { color: 'inherit' },
                       }}
                     />
                   </div>
@@ -314,7 +314,7 @@ export default function BookVisitPage() {
 
                 {/* Time Slots */}
                 <div className="flex-1 w-full md:w-auto">
-                  <label className="block text-gray-900 text-xl font-bold mb-4">
+                  <label className="block text-gray-900 dark:text-white text-xl font-bold mb-4">
                     ⏰ {t('bookme.time.label')} <span className="text-red-400">*</span>
                   </label>
                   <div className="bg-white dark:bg-gray-800 rounded-xl p-4 border-2 border-gray-300 dark:border-gray-600/30 min-h-[320px] overflow-y-auto">
