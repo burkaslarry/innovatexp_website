@@ -50,7 +50,7 @@ const Newsletter: React.FC = () => {
       } else {
         setMessage({ type: 'error', text: data.error || t('newsletter.error') });
       }
-    } catch (error) {
+    } catch {
       setMessage({ type: 'error', text: t('newsletter.error') });
     } finally {
       setIsSubmitting(false);
