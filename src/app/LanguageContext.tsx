@@ -122,6 +122,16 @@ export const translations = {
     
     'about.story.title': 'Mission & 2026 Roadmap',
     'about.story.content': 'InnovateXP empowers organizations to upgrade their business through AI and strategic system blueprints. 2026 Roadmap: Jan (Now) - EventXP Launch; Feb - SmartSales CRM; Mar - AI Playbook; Apr - SME Masterclass. We are committed to practical implementation.',
+
+    // Partnership Section
+    'partnership.title': 'Trusted Partners & Affiliations',
+    'partnership.subtitle': 'Building Innovation Through Strategic Partnerships',
+    'partnership.agilizing.title': 'Agilizing Education Center',
+    'partnership.agilizing.desc': 'Professional education and training for business agility and transformation',
+    'partnership.bni_anchor.title': 'BNI Anchor',
+    'partnership.bni_anchor.desc': 'Strategic business referral network and leadership development in BNI',
+    'partnership.linkedinlocal.title': 'LinkedInLocal Asia',
+    'partnership.linkedinlocal.desc': 'Connecting professionals through local networking events across the Asia-Pacific region',
     
     // Contact Section
     'contact.title': 'Contact Us',
@@ -296,6 +306,51 @@ export const translations = {
     'roadmap.mar': 'March - AI Practical Handbook',
     'roadmap.apr': 'April - SME AI Practical Course',
     
+    // Newsletter Section
+    'newsletter.title': 'Stay Updated',
+    'newsletter.subtitle': 'Subscribe to our newsletter for the latest AI insights and updates',
+    'newsletter.name': 'Your Name',
+    'newsletter.email': 'Your Email',
+    'newsletter.interests': 'Interests',
+    'newsletter.interest.ai': 'AI',
+    'newsletter.interest.tech': 'Tech',
+    'newsletter.interest.crm': 'CRM',
+    'newsletter.interest.events': 'Events',
+    'newsletter.subscribe': 'Subscribe',
+    'newsletter.success': 'Successfully subscribed! Thank you for joining us.',
+    'newsletter.error': 'Subscription failed. Please try again.',
+    
+    // AI Consulting Section
+    'ai_consulting.title': 'AI Consulting Services',
+    'ai_consulting.subtitle': 'From Strategy to Implementation',
+    'ai_consulting.description': 'We help businesses navigate the AI landscape with practical, results-driven consulting.',
+    'ai_consulting.package1.name': 'AI Readiness Audit',
+    'ai_consulting.package1.price': 'Starting from HKD $8,000',
+    'ai_consulting.package1.desc': 'Comprehensive assessment of your organization\'s AI readiness and opportunities',
+    'ai_consulting.package1.feature1': 'Current state analysis',
+    'ai_consulting.package1.feature2': 'AI opportunity identification',
+    'ai_consulting.package1.feature3': 'Implementation roadmap',
+    'ai_consulting.package2.name': 'Custom Agent Build',
+    'ai_consulting.package2.price': 'Starting from HKD $25,000',
+    'ai_consulting.package2.desc': 'Tailored AI agents designed for your specific business needs',
+    'ai_consulting.package2.feature1': 'Custom workflow design',
+    'ai_consulting.package2.feature2': 'Integration with existing systems',
+    'ai_consulting.package2.feature3': 'Ongoing support & optimization',
+    'ai_consulting.package3.name': 'Prompt Training Bootcamp',
+    'ai_consulting.package3.price': 'Starting from HKD $12,000',
+    'ai_consulting.package3.desc': 'Hands-on training for your team to master AI prompting',
+    'ai_consulting.package3.feature1': 'Interactive workshops',
+    'ai_consulting.package3.feature2': 'Real-world case studies',
+    'ai_consulting.package3.feature3': 'Custom prompt library',
+    
+    // Navigation
+    'nav.home': 'Home',
+    'nav.eventxp': 'EventXP',
+    'nav.smartsales': 'SmartSales CRM',
+    'nav.ai_consulting': 'AI Consulting',
+    'nav.vision': 'Vision',
+    'nav.partnership': 'Partnership',
+    
     // Footer
     'footer.copyright': `© ${new Date().getFullYear()} InnovateXP Limited. All rights reserved.`,
   },
@@ -409,6 +464,16 @@ export const translations = {
     
     'about.story.title': '使命與 2026 路線圖',
     'about.story.content': 'InnovateXP 賦能企業，通過 AI 與系統藍圖實現業務升級。2026 部署：1月 (現在) - EventXP 發布；2月 - SmartSales CRM；3月 - AI 實戰手冊；4月 - 中小企 AI 課程。我們致力於技術落地。',
+
+    // Partnership Section
+    'partnership.title': '可信賴的合作夥伴與聯盟',
+    'partnership.subtitle': '透過策略合作夥伴關係建立創新',
+    'partnership.agilizing.title': '善敏教育中心',
+    'partnership.agilizing.desc': '提供企業敏捷性與轉型的專業教育與培訓',
+    'partnership.bni_anchor.title': 'BNI Anchor',
+    'partnership.bni_anchor.desc': 'BNI 中的策略性商業引薦網絡與領導力發展',
+    'partnership.linkedinlocal.title': 'LinkedInLocal Asia',
+    'partnership.linkedinlocal.desc': '透過亞太地區的在地聯誼活動連結專業人士',
     
     // Contact Section
     'contact.title': '聯絡我們',
@@ -582,6 +647,51 @@ export const translations = {
     'roadmap.feb': '2月 - AI客戶管理系統',
     'roadmap.mar': '3月 - AI實用手冊',
     'roadmap.apr': '4月 - 中小企AI實用課程',
+    
+    // Newsletter Section
+    'newsletter.title': '保持聯繫',
+    'newsletter.subtitle': '訂閱我們的電子報，獲取最新的 AI 洞察和更新',
+    'newsletter.name': '您的姓名',
+    'newsletter.email': '您的電郵',
+    'newsletter.interests': '興趣',
+    'newsletter.interest.ai': 'AI',
+    'newsletter.interest.tech': '科技',
+    'newsletter.interest.crm': 'CRM',
+    'newsletter.interest.events': '活動',
+    'newsletter.subscribe': '訂閱',
+    'newsletter.success': '訂閱成功！感謝您的加入。',
+    'newsletter.error': '訂閱失敗，請重試。',
+    
+    // AI Consulting Section
+    'ai_consulting.title': 'AI 顧問服務',
+    'ai_consulting.subtitle': '從策略到落地實施',
+    'ai_consulting.description': '我們以實戰為導向的顧問服務，協助企業探索 AI 應用之路。',
+    'ai_consulting.package1.name': 'AI 導入評估',
+    'ai_consulting.package1.price': 'HKD $8,000 起',
+    'ai_consulting.package1.desc': '全面評估您的組織 AI 準備程度與機會',
+    'ai_consulting.package1.feature1': '現狀分析',
+    'ai_consulting.package1.feature2': 'AI 機會識別',
+    'ai_consulting.package1.feature3': '實施路線圖',
+    'ai_consulting.package2.name': '客製化 AI Agent',
+    'ai_consulting.package2.price': 'HKD $25,000 起',
+    'ai_consulting.package2.desc': '為您的業務需求量身打造的 AI 代理',
+    'ai_consulting.package2.feature1': '客製化工作流程設計',
+    'ai_consulting.package2.feature2': '與現有系統整合',
+    'ai_consulting.package2.feature3': '持續支援與優化',
+    'ai_consulting.package3.name': 'Prompt 實戰訓練營',
+    'ai_consulting.package3.price': 'HKD $12,000 起',
+    'ai_consulting.package3.desc': '實戰培訓，讓您的團隊掌握 AI 提示工程',
+    'ai_consulting.package3.feature1': '互動式工作坊',
+    'ai_consulting.package3.feature2': '真實案例研究',
+    'ai_consulting.package3.feature3': '客製化提示庫',
+    
+    // Navigation
+    'nav.home': '首頁',
+    'nav.eventxp': 'EventXP',
+    'nav.smartsales': 'SmartSales CRM',
+    'nav.ai_consulting': 'AI 顧問',
+    'nav.vision': '願景',
+    'nav.partnership': '合作夥伴',
     
     // Footer
     'footer.copyright': `© ${new Date().getFullYear()} InnovateXP Limited. 版權所有。`,

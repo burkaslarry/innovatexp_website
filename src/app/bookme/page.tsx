@@ -584,7 +584,7 @@ export default function BookVisitPage() {
               flex items-center justify-center gap-3 shadow-lg
               ${isLoading || !selectedTimeSlot || !selectedDate || !visitorName || !visitorEmail
                 ? 'bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed'
-                : 'bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-600 hover:to-orange-700 text-white shadow-orange-500/30 hover:shadow-orange-600/40'
+                : 'bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white shadow-orange-500/30 hover:shadow-orange-600/40'
               }
             `}
           >
