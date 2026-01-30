@@ -11,18 +11,7 @@ export default function ThemeToggle() {
     setMounted(true);
   }, []);
 
-  // Use theme hook only after component is mounted
-  let theme: 'light' | 'dark' = 'light';
-  let toggleTheme = () => {};
-
-  try {
-    const themeContext = useTheme();
-    theme = themeContext.theme;
-    toggleTheme = themeContext.toggleTheme;
-  } catch {
-    // ThemeProvider not available, use default values
-    console.warn('ThemeToggle: ThemeProvider not found');
-  }
+  const { theme, toggleTheme } = useTheme();
 
   // Don't render anything until mounted to avoid hydration mismatch
   if (!mounted) {
