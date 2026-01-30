@@ -868,15 +868,7 @@ function LandingPage() {
         <div className="container mx-auto px-4">
           {/* Newsletter Section */}
           <section className="mb-12">
-            <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t('newsletter.title')}</h2>
-            <p className="text-lg text-gray-600 dark:text-gray-300 mb-8 max-w-2xl mx-auto">
-              {t('newsletter.subtitle')}
-            </p>
-
-            {/* Import and use the Newsletter component */}
-            <div className="max-w-4xl mx-auto">
-              <Newsletter />
-            </div>
+           
           </section>
 
           {/* Copyright */}
