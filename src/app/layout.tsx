@@ -1,9 +1,9 @@
 import type { Metadata } from "next";
-import Script from "next/script";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./LanguageContext";
 import { ThemeProvider } from "./ThemeContext";
+import StructuredData from "./components/StructuredData";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,8 +16,58 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "InnovateXP Limited",
-  description: "InnovateXP Limited: Delivering cutting-edge software solutions and expert IT consulting services. We specialize in web development, mobile app development, cloud computing, and data analytics, empowering businesses to thrive in the digital age.  Contact us today for a free consultation.",
+  title: "InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong",
+  description: "AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights. EventXP check-in system. Expert AI consulting.",
+  keywords: "AI CRM, AI customer management, smart sales automation, WhatsApp CRM Hong Kong, event check-in system, AI consulting Hong Kong, prompt engineering, EventXP, SmartSales CRM",
+  authors: [{ name: "Larry Lo", url: "https://www.linkedin.com/in/larry-lo-804a50165/" }],
+  creator: "InnovateXP Limited",
+  publisher: "InnovateXP Limited",
+  metadataBase: new URL('https://innovatexp.co'),
+  alternates: {
+    canonical: '/',
+    languages: {
+      'en': '/en',
+      'zh-HK': '/zh',
+    },
+  },
+  openGraph: {
+    type: 'website',
+    locale: 'en_HK',
+    alternateLocale: ['zh_HK'],
+    url: 'https://innovatexp.co',
+    siteName: 'InnovateXP Limited',
+    title: 'InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong',
+    description: 'AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights. EventXP check-in system. Expert AI consulting.',
+    images: [
+      {
+        url: '/innovatexp_color_no_bg.svg',
+        width: 1200,
+        height: 630,
+        alt: 'InnovateXP Limited - AI CRM and Event Management Solutions',
+      },
+    ],
+  },
+  twitter: {
+    card: 'summary_large_image',
+    title: 'InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong',
+    description: 'AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights.',
+    images: ['/innovatexp_color_no_bg.svg'],
+    creator: '@innovatexp',
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: 'your-google-site-verification-code',
+  },
 };
 
 
@@ -29,6 +79,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <link rel="alternate" hrefLang="en" href="https://innovatexp.co/en" />
+        <link rel="alternate" hrefLang="zh-HK" href="https://innovatexp.co/zh" />
+        <link rel="alternate" hrefLang="x-default" href="https://innovatexp.co/en" />
         <script
           dangerouslySetInnerHTML={{
             __html: `
@@ -64,6 +117,7 @@ export default function RootLayout({
       >
         <ThemeProvider>
           <LanguageProvider>
+            <StructuredData />
             {children}
           </LanguageProvider>
         </ThemeProvider>

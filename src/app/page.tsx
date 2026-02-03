@@ -6,11 +6,12 @@ import { useEffect } from 'react';
 import { useLanguage } from './LanguageContext';
 import LanguageSwitcher from './LanguageSwitcher';
 import ThemeToggle from './ThemeToggle';
-import Newsletter from './Newsletter';
+import FAQ from './components/FAQ';
+import Breadcrumb from './components/Breadcrumb';
 
 
 function LandingPage() {
-  const { t } = useLanguage();
+  const { t, language } = useLanguage();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
   // Smooth scroll handler for anchor links with header offset
@@ -51,7 +52,7 @@ function LandingPage() {
           <div className="flex items-center">
             <Image
               src="/innovatexp_black.svg"
-              alt="InnovateXP Limited Logo"
+              alt="InnovateXP Limited - AI CRM and Event Management Solutions Hong Kong"
               width={50}
               height={50}
               className="mr-4 dark:invert"
@@ -110,8 +111,16 @@ function LandingPage() {
 
       <main className="container mx-auto py-12 px-4 bg-[#fffcf7] dark:bg-gray-900">
       
+      {/* Breadcrumb Navigation */}
+      <Breadcrumb 
+        items={[
+          { name: t('nav.home'), url: 'https://innovatexp.co' },
+          { name: t('services.title'), url: 'https://innovatexp.co#services' }
+        ]}
+      />
+      
       {/* Hero Section */}
-      <section className="mb-16 text-center bg-white dark:bg-gray-800 rounded-2xl shadow-md p-12 border border-gray-200 dark:border-gray-700">
+      <section className="mb-16 text-center bg-white dark:bg-gray-800 rounded-2xl shadow-md p-12 border border-gray-200 dark:border-gray-700" role="banner">
         <div className="max-w-4xl mx-auto">
           <h2 className="text-5xl font-bold mb-4 text-gray-900 dark:text-white">{t('hero.title')}</h2>
           {/* New Tagline */}
@@ -144,7 +153,7 @@ function LandingPage() {
           <div className="relative rounded-2xl overflow-hidden shadow-xl">
             <Image
               src="/mypresent.jpg"
-              alt="InnovateXP Team"
+              alt="Larry Lo presenting at tech event - InnovateXP Founder and AI Consultant with 14 years experience"
               width={1200}
               height={800}
               className="w-full h-auto object-cover"
@@ -186,12 +195,32 @@ function LandingPage() {
       
 
       {/* EventXP Section */}
-      <section id="eventxp" className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-12 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
+      <article id="eventxp" className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-12 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t('pricing.insight.name')} – {t('pricing.insight.subtitle')}
             </h2>
+            
+            {/* What is EventXP? - Answer-first format */}
+            <div className="max-w-4xl mx-auto mb-8 text-left">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('eventxp.what.title')}</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                {t('eventxp.what.answer')}
+              </p>
+              
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-6">{t('eventxp.how.title')}</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+                {t('eventxp.how.title')} {language === 'zh' ? '的 4 個簡單步驟：' : 'works in 4 simple steps:'}
+              </p>
+              <ol className="list-decimal list-inside text-lg text-gray-700 dark:text-gray-300 space-y-2 ml-4">
+                <li>{t('eventxp.how.step1')}</li>
+                <li>{t('eventxp.how.step2')}</li>
+                <li>{t('eventxp.how.step3')}</li>
+                <li>{t('eventxp.how.step4')}</li>
+              </ol>
+            </div>
+            
             <p className="text-xl text-orange-600 dark:text-orange-400 font-semibold mb-6">
               {t('pricing.insight.tagline')}
             </p>
@@ -301,15 +330,45 @@ function LandingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </article>
+
+      {/* EventXP FAQ Section */}
+      <FAQ 
+        title={t('faq.eventxp.title')}
+        id="eventxp-faq"
+        faqs={[
+          { question: t('faq.eventxp.q1'), answer: t('faq.eventxp.a1') },
+          { question: t('faq.eventxp.q2'), answer: t('faq.eventxp.a2') },
+          { question: t('faq.eventxp.q3'), answer: t('faq.eventxp.a3') },
+          { question: t('faq.eventxp.q4'), answer: t('faq.eventxp.a4') },
+        ]}
+      />
 
       {/* SmartSales CRM Section */}
-      <section id="smartsales" className="mb-16 bg-gray-50 dark:bg-gray-700 rounded-2xl p-12 border-2 border-gray-200 dark:border-gray-600 shadow-lg">
+      <article id="smartsales" className="mb-16 bg-gray-50 dark:bg-gray-700 rounded-2xl p-12 border-2 border-gray-200 dark:border-gray-600 shadow-lg">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t('pricing.crm.name')} – {t('pricing.crm.subtitle')}
             </h2>
+            
+            {/* What is AI CRM? - Answer-first format */}
+            <div className="max-w-4xl mx-auto mb-8 text-left">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('aicrm.what.title')}</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                {t('aicrm.what.answer')}
+              </p>
+              
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-6">{t('aicrm.benefits.title')}</h2>
+              <ol className="list-decimal list-inside text-lg text-gray-700 dark:text-gray-300 space-y-2 ml-4">
+                <li>{t('aicrm.benefits.1')}</li>
+                <li>{t('aicrm.benefits.2')}</li>
+                <li>{t('aicrm.benefits.3')}</li>
+                <li>{t('aicrm.benefits.4')}</li>
+                <li>{t('aicrm.benefits.5')}</li>
+              </ol>
+            </div>
+            
             <p className="text-xl text-orange-600 dark:text-orange-400 font-semibold mb-6">
               {t('pricing.crm.tagline')}
             </p>
@@ -343,6 +402,41 @@ function LandingPage() {
             </div>
           </div>
 
+          {/* AI CRM Pricing Comparison */}
+          <div className="mb-8 overflow-x-auto">
+            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">{t('aicrm.pricing.title')}</h3>
+            <table className="min-w-full bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-lg">
+              <thead>
+                <tr className="bg-gray-100 dark:bg-gray-700">
+                  <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('aicrm.pricing.plan')}</th>
+                  <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('aicrm.pricing.price')}</th>
+                  <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('aicrm.pricing.bestfor')}</th>
+                  <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('aicrm.pricing.features')}</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr className="border-b border-gray-200 dark:border-gray-700">
+                  <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('aicrm.pricing.starter')}</td>
+                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.starter.price')}</td>
+                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.starter.for')}</td>
+                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.starter.features')}</td>
+                </tr>
+                <tr className="bg-orange-50 dark:bg-orange-900/20 border-b border-gray-200 dark:border-gray-700">
+                  <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('aicrm.pricing.pro')}</td>
+                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.pro.price')}</td>
+                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.pro.for')}</td>
+                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.pro.features')}</td>
+                </tr>
+                <tr>
+                  <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('aicrm.pricing.setup')}</td>
+                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.setup.price')}</td>
+                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.setup.for')}</td>
+                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.setup.features')}</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          
           {/* SmartSales CRM Pricing Tiers */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
             {/* Starter Tier */}
@@ -418,15 +512,49 @@ function LandingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </article>
+
+      {/* SmartSales CRM FAQ Section */}
+      <FAQ 
+        title={t('faq.smartsales.title')}
+        id="smartsales-faq"
+        faqs={[
+          { question: t('faq.smartsales.q1'), answer: t('faq.smartsales.a1') },
+          { question: t('faq.smartsales.q2'), answer: t('faq.smartsales.a2') },
+          { question: t('faq.smartsales.q3'), answer: t('faq.smartsales.a3') },
+          { question: t('faq.smartsales.q4'), answer: t('faq.smartsales.a4') },
+          { question: t('faq.smartsales.q5'), answer: t('faq.smartsales.a5') },
+        ]}
+      />
 
       {/* AI Consulting Section */}
-      <section id="ai-consulting" className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-12 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
+      <article id="ai-consulting" className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-12 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
         <div className="max-w-6xl mx-auto">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t('ai_consulting.title')}
             </h2>
+            
+            {/* What AI Consulting Services - Answer-first format */}
+            <div className="max-w-4xl mx-auto mb-8 text-left">
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('aiconsulting.what.title')}</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-4">
+                {t('aiconsulting.what.answer')}
+              </p>
+              
+              <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-6">{t('aiconsulting.who.title')}</h2>
+              <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
+                {t('aiconsulting.who.intro')}
+              </p>
+              <ul className="list-disc list-inside text-lg text-gray-700 dark:text-gray-300 space-y-2 ml-4">
+                <li>{t('aiconsulting.who.1')}</li>
+                <li>{t('aiconsulting.who.2')}</li>
+                <li>{t('aiconsulting.who.3')}</li>
+                <li>{t('aiconsulting.who.4')}</li>
+                <li>{t('aiconsulting.who.5')}</li>
+              </ul>
+            </div>
+            
             <p className="text-xl text-orange-600 dark:text-orange-400 font-semibold mb-6">
               {t('ai_consulting.subtitle')}
             </p>
@@ -513,8 +641,19 @@ function LandingPage() {
             </div>
           </div>
         </div>
-      </section>
+      </article>
 
+      {/* AI Consulting FAQ Section */}
+      <FAQ 
+        title={t('faq.aiconsulting.title')}
+        id="ai-consulting-faq"
+        faqs={[
+          { question: t('faq.aiconsulting.q1'), answer: t('faq.aiconsulting.a1') },
+          { question: t('faq.aiconsulting.q2'), answer: t('faq.aiconsulting.a2') },
+          { question: t('faq.aiconsulting.q3'), answer: t('faq.aiconsulting.a3') },
+          { question: t('faq.aiconsulting.q4'), answer: t('faq.aiconsulting.a4') },
+        ]}
+      />
 
         {/* Core Services Section */}
         <section className="mb-16">
@@ -603,6 +742,16 @@ function LandingPage() {
         <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-8 shadow-md border-2 border-gray-200">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-6 text-center">{t('about.title')}</h2>
           
+          {/* Author Byline */}
+          <div className="text-center mb-6">
+            <p className="text-gray-600 dark:text-gray-400 text-sm">
+              {t('about.author.byline')} <a href="https://www.linkedin.com/in/larry-lo-804a50165/" rel="me author" className="text-orange-600 hover:text-orange-700 font-semibold">Larry Lo</a>, {t('about.author.title')}
+            </p>
+            <p className="text-gray-500 dark:text-gray-500 text-xs mt-1">
+              {t('about.author.updated')} {new Date().toLocaleDateString(language === 'zh' ? 'zh-HK' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+            </p>
+          </div>
+          
           {/* 25秒介紹 */}
           <div className="mb-8">
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('about.intro.title')}</h3>
@@ -676,12 +825,12 @@ function LandingPage() {
             </p>
           </div>
 
-          {/* 社交媒體連結 */}
+          {/* 社交媒體連結 with rel="me" for verification */}
           <div className="mt-6 flex gap-4 justify-center">
             <a 
               href="https://www.linkedin.com/in/larry-lo-804a50165/" 
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="bg-[#0077B5] text-white font-semibold py-2 px-6 rounded-full hover:bg-[#005885] transition duration-300 shadow-md"
             >
               LinkedIn
@@ -689,11 +838,34 @@ function LandingPage() {
             <a 
               href="https://github.com/burkaslarry" 
               target="_blank" 
-              rel="noopener noreferrer"
+              rel="me noopener noreferrer"
               className="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition duration-300 shadow-md"
             >
               GitHub
             </a>
+          </div>
+          
+          {/* Trust Signals */}
+          <div className="mt-8 bg-gray-50 dark:bg-gray-700 rounded-lg p-6">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">{t('about.credentials.title')}</h3>
+            <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
+              <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">{language === 'zh' ? '14+ 年' : '14+ Years'}</p>
+                <p className="text-xs text-gray-500">{t('about.credentials.experience')}</p>
+              </div>
+              <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">2,000+</p>
+                <p className="text-xs text-gray-500">{t('about.credentials.participants')}</p>
+              </div>
+              <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">HKSTP</p>
+                <p className="text-xs text-gray-500">{language === 'zh' ? '孵化校友' : 'Incubation Alumni'}</p>
+              </div>
+              <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">GDG HK</p>
+                <p className="text-xs text-gray-500">{language === 'zh' ? '前組織者' : 'Former Organizer'}</p>
+              </div>
+            </div>
           </div>
         </section>
 
@@ -728,7 +900,7 @@ function LandingPage() {
                 <div className="h-24 w-full relative mb-6 transition-transform group-hover:scale-105">
                   <Image
                     src="/Agilizing-Logo transparent.png"
-                    alt="Agilizing Education Center"
+                    alt="Agilizing Education Center - InnovateXP Strategic Partner for Business Training and Agile Education in Hong Kong"
                     fill
                     className="object-contain"
                   />
@@ -744,7 +916,7 @@ function LandingPage() {
                 <div className="h-24 w-full relative mb-6 transition-transform group-hover:scale-105">
                   <Image
                     src="/bni-anchor.png"
-                    alt="BNI Anchor"
+                    alt="BNI Anchor Chapter Hong Kong - Business Networking and Referral Partner with InnovateXP"
                     fill
                     className="object-contain"
                   />
@@ -760,7 +932,7 @@ function LandingPage() {
                 <div className="h-24 w-full relative mb-6 transition-transform group-hover:scale-105">
                   <Image
                     src="/linkedinlocalasia.png"
-                    alt="LinkedInLocal Asia"
+                    alt="LinkedInLocal Asia - Professional Networking Events Partner with InnovateXP across Asia Pacific"
                     fill
                     className="object-contain"
                   />
@@ -871,10 +1043,13 @@ function LandingPage() {
            
           </section>
 
-          {/* Copyright */}
-          <div className="pt-8 border-t border-gray-200 dark:border-gray-700">
+          {/* Copyright and Contact */}
+          <address className="pt-8 border-t border-gray-200 dark:border-gray-700 not-italic">
             <p className="text-gray-900 dark:text-gray-300">{t('footer.copyright')}</p>
-          </div>
+            <p className="text-gray-600 dark:text-gray-400 mt-2">
+              Email: <a href="mailto:info@innovatexp.com" className="text-orange-600 hover:text-orange-700">info@innovatexp.com</a>
+            </p>
+          </address>
         </div>
       </footer>
     </div>
