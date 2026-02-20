@@ -16,15 +16,20 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong",
-  description: "AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights. EventXP check-in system. Expert AI consulting.",
+  title: "InnovateXP AI Solutions for Hong Kong SMEs",
+  description:
+    "InnovateXP helps Hong Kong SMEs and founders implement practical AI workflows across CRM, events, and operations to reduce manual work and improve decision visibility.",
   keywords: "AI CRM, AI customer management, smart sales automation, WhatsApp CRM Hong Kong, event check-in system, AI consulting Hong Kong, prompt engineering, EventXP, SmartSales CRM",
   authors: [{ name: "Larry Lo", url: "https://www.linkedin.com/in/larry-lo-804a50165/" }],
   creator: "InnovateXP Limited",
   publisher: "InnovateXP Limited",
-  metadataBase: new URL("https://www.innovatexp.co"),
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL ||
+      process.env.SITE_URL ||
+      (process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://innovatexp.co")
+  ),
   alternates: {
-    canonical: "/",
+    canonical: "./",
     languages: {
       en: "/",
       "zh-HK": "/",
