@@ -85,9 +85,6 @@ function LandingPage() {
             <div className="container mx-auto px-4 py-4">
               <div className="flex flex-col items-center gap-4">
                 <a href="#" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#')}>{t('nav.home')}</a>
-                <a href="/smartsales-crm" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">SmartSales CRM</a>
-                <a href="/eventxp" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">EventXP</a>
-                <a href="/ai-consulting" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">AI Consulting</a>
                 <a href="#eventxp" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#eventxp')}>{t('nav.eventxp')}</a>
                 <a href="#smartsales" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#smartsales')}>{t('nav.smartsales')}</a>
                 <a href="#ai-consulting" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#ai-consulting')}>{t('nav.ai_consulting')}</a>
@@ -102,9 +99,6 @@ function LandingPage() {
           <div className="container mx-auto px-4 py-2">
             <div className="flex flex-wrap items-center justify-center gap-2">
               <a href="#" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#')}>{t('nav.home')}</a>
-              <a href="/smartsales-crm" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium">SmartSales CRM</a>
-              <a href="/eventxp" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium">EventXP</a>
-              <a href="/ai-consulting" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium">AI Consulting</a>
               <a href="#eventxp" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#eventxp')}>{t('nav.eventxp')}</a>
               <a href="#smartsales" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#smartsales')}>{t('nav.smartsales')}</a>
               <a href="#ai-consulting" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#ai-consulting')}>{t('nav.ai_consulting')}</a>
@@ -341,6 +335,15 @@ function LandingPage() {
         </div>
       </article>
 
+      <div>
+        <article id="quick" className="mb-16 bg-gray-50 dark:bg-gray-700 rounded-2xl p-12 border-2 border-gray-200 dark:border-gray-600 shadow-lg">
+        <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('quick.product')}</h3>
+        <a href="/eventxp" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">EventXP</a>
+        <a href="/smartsales-crm" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">SmartSales CRM</a>
+        <a href="/ai-consulting" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700">AI Consulting</a>        
+        </article>
+      </div>
+
       {/* EventXP FAQ Section */}
       <FAQ 
         title={t('faq.eventxp.title')}
@@ -351,6 +354,8 @@ function LandingPage() {
           { question: t('faq.eventxp.q3'), answer: t('faq.eventxp.a3') },
           { question: t('faq.eventxp.q4'), answer: t('faq.eventxp.a4') },
         ]}
+
+                
       />
 
       {/* SmartSales CRM Section */}

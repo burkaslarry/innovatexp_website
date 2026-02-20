@@ -16,7 +16,7 @@ export const translations = {
     // Header
     'header.title': 'InnovateXP Limited',
     'header.subtitle': 'Innovate • Transform • Experience',
-    
+    'quick.product': 'Quick Product/Service Overview',
     // Hero Section
     'hero.title': 'Your Strongest AI Architect',
     'hero.tagline': 'Elevate your business with AI and Blueprint',
@@ -490,6 +490,7 @@ export const translations = {
     // Header
     'header.title': 'InnovateXP Limited',
     'header.subtitle': '客戶管理系統、企業AI培訓、專業IT諮詢服務',
+    'quick.product': '快速閱覽產品/服務',
     
     // Hero Section
     'hero.title': '與你伴行的最強AI建築師',
