@@ -201,6 +201,9 @@ function LandingPage() {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t('pricing.insight.name')} – {t('pricing.insight.subtitle')}
             </h2>
+            <p className="max-w-4xl mx-auto text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              {t('eventxp.main.answer')}
+            </p>
             
             {/* What is EventXP? - Answer-first format */}
             <div className="max-w-4xl mx-auto mb-8 text-left">
@@ -351,6 +354,9 @@ function LandingPage() {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t('pricing.crm.name')} – {t('pricing.crm.subtitle')}
             </h2>
+            <p className="max-w-4xl mx-auto text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              {t('smartsales.main.answer')}
+            </p>
             
             {/* What is AI CRM? - Answer-first format */}
             <div className="max-w-4xl mx-auto mb-8 text-left">
@@ -534,6 +540,9 @@ function LandingPage() {
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">
               {t('ai_consulting.title')}
             </h2>
+            <p className="max-w-4xl mx-auto text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+              {t('aiconsulting.main.answer')}
+            </p>
             
             {/* What AI Consulting Services - Answer-first format */}
             <div className="max-w-4xl mx-auto mb-8 text-left">
@@ -654,6 +663,101 @@ function LandingPage() {
           { question: t('faq.aiconsulting.q4'), answer: t('faq.aiconsulting.a4') },
         ]}
       />
+
+      <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-10 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t('timeline.title')}</h2>
+        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+          {t('timeline.intro')}
+        </p>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="rounded-xl border border-gray-200 dark:border-gray-600 p-5">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{t('timeline.phase1.title')}</h3>
+            <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">{t('timeline.phase1.duration')}</p>
+            <p className="text-gray-700 dark:text-gray-300">{t('timeline.phase1.desc')}</p>
+          </div>
+          <div className="rounded-xl border border-gray-200 dark:border-gray-600 p-5">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{t('timeline.phase2.title')}</h3>
+            <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">{t('timeline.phase2.duration')}</p>
+            <p className="text-gray-700 dark:text-gray-300">{t('timeline.phase2.desc')}</p>
+          </div>
+          <div className="rounded-xl border border-gray-200 dark:border-gray-600 p-5">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{t('timeline.phase3.title')}</h3>
+            <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">{t('timeline.phase3.duration')}</p>
+            <p className="text-gray-700 dark:text-gray-300">{t('timeline.phase3.desc')}</p>
+          </div>
+          <div className="rounded-xl border border-gray-200 dark:border-gray-600 p-5">
+            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{t('timeline.phase4.title')}</h3>
+            <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">{t('timeline.phase4.duration')}</p>
+            <p className="text-gray-700 dark:text-gray-300">{t('timeline.phase4.desc')}</p>
+          </div>
+        </div>
+      </section>
+
+      <section className="mb-16 bg-gray-50 dark:bg-gray-700 rounded-2xl p-10 border-2 border-gray-200 dark:border-gray-600 shadow-lg">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t('pricing.models.title')}</h2>
+        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+          {t('pricing.models.intro')}
+        </p>
+        <div className="overflow-x-auto">
+          <table className="min-w-full bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-lg">
+            <thead>
+              <tr className="bg-gray-100 dark:bg-gray-700">
+                <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('pricing.models.col1')}</th>
+                <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('pricing.models.col2')}</th>
+                <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('pricing.models.col3')}</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr className="border-b border-gray-200 dark:border-gray-700">
+                <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('pricing.models.discovery.title')}</td>
+                <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('pricing.models.discovery.price')}</td>
+                <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('pricing.models.discovery.desc')}</td>
+              </tr>
+              <tr className="border-b border-gray-200 dark:border-gray-700">
+                <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('pricing.models.pilot.title')}</td>
+                <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('pricing.models.pilot.price')}</td>
+                <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('pricing.models.pilot.desc')}</td>
+              </tr>
+              <tr className="border-b border-gray-200 dark:border-gray-700">
+                <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('pricing.models.impl.title')}</td>
+                <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('pricing.models.impl.price')}</td>
+                <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('pricing.models.impl.desc')}</td>
+              </tr>
+              <tr>
+                <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('pricing.models.retainer.title')}</td>
+                <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('pricing.models.retainer.price')}</td>
+                <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('pricing.models.retainer.desc')}</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-10 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
+        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t('roi.title')}</h2>
+        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
+          {t('roi.intro')}
+        </p>
+        <ul className="list-disc list-inside space-y-3 mb-6 text-gray-700 dark:text-gray-300">
+          <li>
+            <span className="font-semibold text-gray-900 dark:text-white">{t('roi.point1.title')}: </span>
+            {t('roi.point1.desc')}
+          </li>
+          <li>
+            <span className="font-semibold text-gray-900 dark:text-white">{t('roi.point2.title')}: </span>
+            {t('roi.point2.desc')}
+          </li>
+          <li>
+            <span className="font-semibold text-gray-900 dark:text-white">{t('roi.point3.title')}: </span>
+            {t('roi.point3.desc')}
+          </li>
+        </ul>
+        <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-3">{t('roi.scenario.title')}</h3>
+        <ol className="list-decimal list-inside space-y-2 text-gray-700 dark:text-gray-300">
+          <li>{t('roi.scenario.1')}</li>
+          <li>{t('roi.scenario.2')}</li>
+        </ol>
+      </section>
 
         {/* Core Services Section */}
         <section className="mb-16">

@@ -22,37 +22,37 @@ export const metadata: Metadata = {
   authors: [{ name: "Larry Lo", url: "https://www.linkedin.com/in/larry-lo-804a50165/" }],
   creator: "InnovateXP Limited",
   publisher: "InnovateXP Limited",
-  metadataBase: new URL('https://innovatexp.co'),
+  metadataBase: new URL("https://www.innovatexp.co"),
   alternates: {
-    canonical: '/',
+    canonical: "/",
     languages: {
-      'en': '/en',
-      'zh-HK': '/zh',
+      en: "/",
+      "zh-HK": "/",
     },
   },
   openGraph: {
-    type: 'website',
-    locale: 'en_HK',
-    alternateLocale: ['zh_HK'],
-    url: 'https://innovatexp.co',
-    siteName: 'InnovateXP Limited',
-    title: 'InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong',
-    description: 'AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights. EventXP check-in system. Expert AI consulting.',
+    type: "website",
+    locale: "en_HK",
+    alternateLocale: ["zh_HK"],
+    url: "https://www.innovatexp.co",
+    siteName: "InnovateXP Limited",
+    title: "InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong",
+    description: "AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights. EventXP check-in system. Expert AI consulting.",
     images: [
       {
-        url: '/innovatexp_color_no_bg.svg',
+        url: "/innovatexp_color_no_bg.svg",
         width: 1200,
         height: 630,
-        alt: 'InnovateXP Limited - AI CRM and Event Management Solutions',
+        alt: "InnovateXP Limited - AI CRM and Event Management Solutions",
       },
     ],
   },
   twitter: {
-    card: 'summary_large_image',
-    title: 'InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong',
-    description: 'AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights.',
-    images: ['/innovatexp_color_no_bg.svg'],
-    creator: '@innovatexp',
+    card: "summary_large_image",
+    title: "InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong",
+    description: "AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights.",
+    images: ["/innovatexp_color_no_bg.svg"],
+    creator: "@innovatexp",
   },
   robots: {
     index: true,
@@ -66,7 +66,7 @@ export const metadata: Metadata = {
     },
   },
   verification: {
-    google: 'your-google-site-verification-code',
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION || undefined,
   },
 };
 
@@ -79,9 +79,9 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
-        <link rel="alternate" hrefLang="en" href="https://innovatexp.co/en" />
-        <link rel="alternate" hrefLang="zh-HK" href="https://innovatexp.co/zh" />
-        <link rel="alternate" hrefLang="x-default" href="https://innovatexp.co/en" />
+        <link rel="alternate" hrefLang="en" href="https://www.innovatexp.co/" />
+        <link rel="alternate" hrefLang="zh-HK" href="https://www.innovatexp.co/" />
+        <link rel="alternate" hrefLang="x-default" href="https://www.innovatexp.co/" />
         <script
           dangerouslySetInnerHTML={{
             __html: `

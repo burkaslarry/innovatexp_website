@@ -3,15 +3,16 @@ import { useLanguage } from '../LanguageContext';
 
 export default function StructuredData() {
   const { language } = useLanguage();
+  const baseUrl = "https://www.innovatexp.co";
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
-    "@id": "https://innovatexp.co/#organization",
+    "@id": `${baseUrl}/#organization`,
     "name": "InnovateXP Limited",
     "legalName": "InnovateXP Limited",
-    "url": "https://innovatexp.co",
-    "logo": "https://innovatexp.co/innovatexp_color_no_bg.svg",
+    "url": baseUrl,
+    "logo": `${baseUrl}/innovatexp_color_no_bg.svg`,
     "description": language === 'en' 
       ? "AI-powered CRM and customer management solutions for Hong Kong SMEs. We specialize in SmartSales CRM, EventXP check-in system, and AI consulting services."
       : "為香港中小企業提供 AI 驅動的 CRM 和客戶管理解決方案。我們專注於 SmartSales CRM、EventXP 簽到系統和 AI 顧問服務。",
@@ -30,7 +31,7 @@ export default function StructuredData() {
     },
     "founder": {
       "@type": "Person",
-      "@id": "https://innovatexp.co/#founder",
+      "@id": `${baseUrl}/#founder`,
       "name": "Larry Lo",
       "jobTitle": "Founder & AI Architect",
       "url": "https://www.linkedin.com/in/larry-lo-804a50165/",
@@ -41,28 +42,40 @@ export default function StructuredData() {
     },
     "sameAs": [
       "https://www.linkedin.com/company/innovatexp",
-      "https://github.com/innovatexp"
+      "https://www.linkedin.com/in/larry-lo-804a50165/"
+    ],
+    "knowsAbout": [
+      "AI CRM",
+      "SME AI Automation",
+      "Business Process Automation",
+      "AI Implementation Consulting",
+      "Prompt Engineering",
+      "Event Check-in Intelligence",
+      "Business Intelligence Dashboards",
+      "Lead Qualification Automation",
+      "Google Gemini API",
+      "WhatsApp CRM Integration"
     ]
   };
 
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
-    "@id": "https://innovatexp.co/#founder",
+    "@id": `${baseUrl}/#founder`,
     "name": "Larry Lo",
     "jobTitle": "Founder & AI Architect",
     "description": language === 'en'
       ? "14-year tech veteran, AI Consultant for Agilizing Education Center, former GDG Hong Kong Organizer with experience managing 2,000+ participant events, and BNI Anchor chapter member."
       : "14年科技老兵，善敏教育中心 AI 顧問，前 GDG Hong Kong Organizer，曾管理 2,000+ 參與者活動，BNI Anchor 分會成員。",
     "url": "https://www.linkedin.com/in/larry-lo-804a50165/",
-    "image": "https://innovatexp.co/mypresent.jpg",
+    "image": `${baseUrl}/mypresent.jpg`,
     "sameAs": [
       "https://www.linkedin.com/in/larry-lo-804a50165/",
       "https://github.com/burkaslarry"
     ],
     "worksFor": {
       "@type": "Organization",
-      "@id": "https://innovatexp.co/#organization"
+      "@id": `${baseUrl}/#organization`
     },
     "alumniOf": [
       {
@@ -88,9 +101,9 @@ export default function StructuredData() {
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
-    "@id": "https://innovatexp.co/#localbusiness",
+    "@id": `${baseUrl}/#localbusiness`,
     "name": "InnovateXP Limited",
-    "image": "https://innovatexp.co/innovatexp_color_no_bg.svg",
+    "image": `${baseUrl}/innovatexp_color_no_bg.svg`,
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "North Point",
@@ -102,7 +115,7 @@ export default function StructuredData() {
       "latitude": 22.2908,
       "longitude": 114.1950
     },
-    "url": "https://innovatexp.co",
+    "url": baseUrl,
     "telephone": "+852-xxxx-xxxx",
     "priceRange": "$$",
     "openingHoursSpecification": [
@@ -118,7 +131,7 @@ export default function StructuredData() {
   const smartSalesCRMService = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://innovatexp.co/#smartsales-crm",
+    "@id": `${baseUrl}/#smartsales-crm`,
     "serviceType": "AI CRM Software",
     "name": "SmartSales CRM",
     "description": language === 'en'
@@ -126,11 +139,11 @@ export default function StructuredData() {
       : "AI 驅動的客戶關係管理系統，整合 WhatsApp、自動跟進和智能排程，專為香港中小企業設計。",
     "provider": {
       "@type": "Organization",
-      "@id": "https://innovatexp.co/#organization"
+      "@id": `${baseUrl}/#organization`
     },
     "areaServed": {
-      "@type": "Country",
-      "name": "Hong Kong"
+      "@type": "AdministrativeArea",
+      "name": "Hong Kong and Greater Bay Area"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -173,7 +186,7 @@ export default function StructuredData() {
   const eventXPService = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://innovatexp.co/#eventxp",
+    "@id": `${baseUrl}/#eventxp`,
     "serviceType": "Event Management Software",
     "name": "EventXP",
     "description": language === 'en'
@@ -181,11 +194,11 @@ export default function StructuredData() {
       : "智能活動簽到系統，將出席數據轉化為商業洞察。QR 碼掃描、實時報告和 AI 驅動的參與者分析。",
     "provider": {
       "@type": "Organization",
-      "@id": "https://innovatexp.co/#organization"
+      "@id": `${baseUrl}/#organization`
     },
     "areaServed": {
-      "@type": "Country",
-      "name": "Hong Kong"
+      "@type": "AdministrativeArea",
+      "name": "Hong Kong and Greater Bay Area"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -228,7 +241,7 @@ export default function StructuredData() {
   const aiConsultingService = {
     "@context": "https://schema.org",
     "@type": "Service",
-    "@id": "https://innovatexp.co/#ai-consulting",
+    "@id": `${baseUrl}/#ai-consulting`,
     "serviceType": "AI Consulting",
     "name": "AI Consulting Services",
     "description": language === 'en'
@@ -236,11 +249,11 @@ export default function StructuredData() {
       : "為中小企業提供專業的 AI 實施諮詢，包括 AI 準備度評估、定制代理開發和提示工程培訓。",
     "provider": {
       "@type": "Organization",
-      "@id": "https://innovatexp.co/#organization"
+      "@id": `${baseUrl}/#organization`
     },
     "areaServed": {
-      "@type": "Country",
-      "name": "Hong Kong"
+      "@type": "AdministrativeArea",
+      "name": "Hong Kong and Greater Bay Area"
     },
     "hasOfferCatalog": {
       "@type": "OfferCatalog",
@@ -285,13 +298,13 @@ export default function StructuredData() {
         "@type": "ListItem",
         "position": 1,
         "name": "Home",
-        "item": "https://innovatexp.co"
+        "item": baseUrl
       },
       {
         "@type": "ListItem",
         "position": 2,
         "name": "Services",
-        "item": "https://innovatexp.co#services"
+        "item": `${baseUrl}#services`
       }
     ]
   };
@@ -299,15 +312,15 @@ export default function StructuredData() {
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
-    "@id": "https://innovatexp.co/#website",
-    "url": "https://innovatexp.co",
+    "@id": `${baseUrl}/#website`,
+    "url": baseUrl,
     "name": "InnovateXP Limited",
     "description": language === 'en'
       ? "AI CRM Solutions and Event Management for Hong Kong SMEs"
       : "為香港中小企業提供 AI CRM 解決方案和活動管理",
     "publisher": {
       "@type": "Organization",
-      "@id": "https://innovatexp.co/#organization"
+      "@id": `${baseUrl}/#organization`
     },
     "inLanguage": ["en", "zh-HK"]
   };
