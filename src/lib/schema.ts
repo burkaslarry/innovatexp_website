@@ -23,13 +23,16 @@ export function getOrganizationSchema() {
 export function getSmartSalesProductSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "SoftwareApplication",
     name: "SmartSales CRM",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
     description:
       "SmartSales CRM is a practical CRM solution for Hong Kong sales teams that centralizes lead follow-up and improves pipeline visibility.",
-    brand: {
-      "@type": "Organization",
-      name: "InnovateXP",
+    offers: {
+      "@type": "Offer",
+      price: "18888",
+      priceCurrency: "HKD",
     },
     url: `${siteUrl}/smartsales-crm`,
   };
@@ -38,13 +41,16 @@ export function getSmartSalesProductSchema() {
 export function getEventXPProductSchema() {
   return {
     "@context": "https://schema.org",
-    "@type": "Product",
+    "@type": "SoftwareApplication",
     name: "EventXP",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
     description:
       "EventXP is an event management platform for Hong Kong teams to manage check-in flow, attendance tracking, and post-event follow-up actions.",
-    brand: {
-      "@type": "Organization",
-      name: "InnovateXP",
+    offers: {
+      "@type": "Offer",
+      price: "18888",
+      priceCurrency: "HKD",
     },
     url: `${siteUrl}/eventxp`,
   };
