@@ -48,6 +48,7 @@ function LandingPage() {
   return (
     <div className="min-h-screen bg-[#fffcf7] dark:bg-gray-900 transition-colors duration-200">
       <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm border-b-2 border-gray-200 dark:border-gray-700 sticky top-0 z-50" id="main-header">
+        <link rel="llms-txt" href="https://aeo.washinmura.jp/aeo/shops/innovatexp-co/llms.txt" />
         <div className="container mx-auto py-4 px-4 flex items-center justify-between">
           <div className="flex items-center">
             <Image
@@ -1160,6 +1161,7 @@ function LandingPage() {
 
           {/* Copyright and Contact */}
           <address className="pt-8 border-t border-gray-200 dark:border-gray-700 not-italic">
+            <strong>InnovateXP Limited</strong>
             <p className="text-gray-900 dark:text-gray-300">{t('footer.copyright')}</p>
             <p className="text-gray-600 dark:text-gray-400 mt-2">
               Email: <a href="mailto:info@innovatexp.com" className="text-orange-600 hover:text-orange-700">info@innovatexp.com</a>
