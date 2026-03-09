@@ -16,10 +16,10 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "InnovateXP AI Solutions for Hong Kong SMEs",
+  title: "AI Consulting | Global AI Solutions & Hong Kong Tech Excellence | InnovateXP",
   description:
-    "InnovateXP helps Hong Kong SMEs and founders implement practical AI workflows across CRM, events, and operations to reduce manual work and improve decision visibility.",
-  keywords: "AI CRM, AI customer management, smart sales automation, WhatsApp CRM Hong Kong, event check-in system, AI consulting Hong Kong, prompt engineering, EventXP, SmartSales CRM",
+    "Turn AI into revenue: AI consulting and CRM solutions for global business. Hong Kong tech excellence—SmartSales, EventXP, and implementation that actually ships. Book a free consultation.",
+  keywords: "AI consulting, AI CRM, global AI solutions, Hong Kong tech, smart sales automation, WhatsApp CRM, event check-in system, EventXP, SmartSales CRM, prompt engineering",
   authors: [{ name: "Larry Lo", url: "https://www.linkedin.com/in/larry-lo-804a50165/" }],
   creator: "InnovateXP Limited",
   publisher: "InnovateXP Limited",
@@ -37,25 +37,25 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_HK",
-    alternateLocale: ["zh_HK"],
+    locale: "en_US",
+    alternateLocale: ["en_HK", "zh_HK"],
     url: "https://www.innovatexp.co",
     siteName: "InnovateXP Limited",
-    title: "InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong",
-    description: "AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights. EventXP check-in system. Expert AI consulting.",
+    title: "AI Consulting | Global AI Solutions & Hong Kong Tech Excellence | InnovateXP",
+    description: "Turn AI into revenue. Expert AI consulting, CRM & event tech for global business—backed by Hong Kong tech excellence. Free strategy call.",
     images: [
       {
         url: "/innovatexp_color_no_bg.svg",
         width: 1200,
         height: 630,
-        alt: "InnovateXP Limited - AI CRM and Event Management Solutions",
+        alt: "InnovateXP – AI Consulting & Global AI Solutions",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "InnovateXP | AI CRM Solutions & Smart Sales Automation Hong Kong",
-    description: "AI-powered CRM and customer management solutions for Hong Kong SMEs. Automate sales workflows, smart scheduling, and insights.",
+    title: "AI Consulting | Global AI Solutions & Hong Kong Tech Excellence | InnovateXP",
+    description: "Turn AI into revenue. Expert AI consulting, CRM & event tech for global business—backed by Hong Kong tech excellence. Free strategy call.",
     images: ["/innovatexp_color_no_bg.svg"],
     creator: "@innovatexp",
   },

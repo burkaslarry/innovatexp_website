@@ -7,12 +7,27 @@ import {
   getOrganizationSchema,
 } from "@/lib/schema";
 
+const siteUrlMeta =
+  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
+
 export const metadata: Metadata = {
-  title: "EventXP for Hong Kong Events | InnovateXP Platform",
+  title: "AI Consulting & Event Tech | EventXP Check-In Platform | Hong Kong & Global",
   description:
-    "EventXP helps Hong Kong event teams manage check-in, monitor attendance in real time, and turn event operations data into clearer follow-up actions.",
+    "EventXP: real-time check-in, attendance intelligence, and follow-up that converts. Hong Kong event excellence for global teams. See it in action—book a demo.",
   alternates: {
-    canonical: "./",
+    canonical: `${siteUrlMeta}/eventxp`,
+  },
+  openGraph: {
+    title: "AI Consulting & Event Tech | EventXP Check-In Platform | Hong Kong & Global",
+    description: "EventXP: real-time check-in, attendance intelligence, and follow-up that converts. Hong Kong event excellence for global teams.",
+    url: `${siteUrlMeta}/eventxp`,
+    siteName: "InnovateXP Limited",
+    images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP EventXP" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Consulting & Event Tech | EventXP Check-In Platform | Hong Kong & Global",
+    description: "EventXP: real-time check-in, attendance intelligence, and follow-up that converts. Hong Kong event excellence for global teams.",
   },
 };
 

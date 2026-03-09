@@ -110,7 +110,7 @@ function LandingPage() {
         </nav>
       </header>
 
-      <main className="container mx-auto py-12 px-4 bg-[#fffcf7] dark:bg-gray-900">
+      <main className="container mx-auto py-12 px-4 pb-20 md:pb-12 bg-[#fffcf7] dark:bg-gray-900">
       
       {/* Breadcrumb Navigation */}
       <Breadcrumb 
@@ -132,10 +132,10 @@ function LandingPage() {
             {t('hero.description')}
           </p>
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/bookme" className="bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 text-lg shadow-lg transform hover:scale-105">
+            <a href="/bookme" className="inline-flex items-center justify-center min-h-[48px] min-w-[48px] bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 text-lg shadow-lg transform hover:scale-105 touch-manipulation" aria-label="Book a free consultation">
               {t('hero.book_meeting')}
             </a>
-            <a href="#contact-us" className="bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-bold py-4 px-10 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-300 text-lg shadow-md border-2 border-gray-300 dark:border-gray-700 transform hover:scale-105" onClick={(e) => handleAnchorClick(e, '#contact-us')}>
+            <a href="#contact-us" className="inline-flex items-center justify-center min-h-[48px] min-w-[48px] bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-bold py-4 px-10 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-300 text-lg shadow-md border-2 border-gray-300 dark:border-gray-700 transform hover:scale-105 touch-manipulation" onClick={(e) => handleAnchorClick(e, '#contact-us')} aria-label="Contact us">
               {t('hero.cta')}
             </a>
           </div>
@@ -149,16 +149,17 @@ function LandingPage() {
           <p className="text-2xl text-orange-600 dark:text-orange-400 font-bold tracking-wider">{t('vision.tagline')}</p>
         </div>
         
-        {/* Team Photo */}
-        <div className="max-w-3xl mx-auto mb-8">
-          <div className="relative rounded-2xl overflow-hidden shadow-xl">
+        {/* Team Photo - aspect ratio prevents CLS; lazy load below fold */}
+        <div className="max-w-3xl mx-auto mb-8 aspect-[3/2] w-full">
+          <div className="relative rounded-2xl overflow-hidden shadow-xl w-full h-full">
             <Image
               src="/mypresent.jpg"
               alt="Larry Lo presenting at tech event - InnovateXP Founder and AI Consultant with 14 years experience"
               width={1200}
               height={800}
-              className="w-full h-auto object-cover"
-              priority
+              className="w-full h-full object-cover"
+              loading="lazy"
+              sizes="(max-width: 768px) 100vw, 672px"
             />
           </div>
         </div>
@@ -275,7 +276,7 @@ function LandingPage() {
                   <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.insight.tier1.feature2')}</span>
                 </li>
               </ul>
-              <a href="/bookme" className="block w-full bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center">
+              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
                 {t('pricing.cta')}
               </a>
             </div>
@@ -305,7 +306,7 @@ function LandingPage() {
               <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-2 mb-4">
                 <p className="text-orange-500 text-xs">{t('pricing.insight.tier2.note')}</p>
               </div>
-              <a href="/bookme" className="block w-full bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center">
+              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
                 {t('pricing.cta')}
               </a>
             </div>
@@ -328,7 +329,7 @@ function LandingPage() {
                   <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.insight.tier3.feature2')}</span>
                 </li>
               </ul>
-              <a href="/bookme" className="block w-full bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center">
+              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
                 {t('pricing.contact')}
               </a>
             </div>
@@ -475,7 +476,7 @@ function LandingPage() {
                   <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.crm.tier1.feature2')}</span>
                 </li>
               </ul>
-              <a href="/bookme" className="block w-full bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center">
+              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
                 {t('pricing.cta')}
               </a>
             </div>
@@ -501,7 +502,7 @@ function LandingPage() {
                   <span className="text-white text-sm">{t('pricing.crm.tier2.feature2')}</span>
                 </li>
               </ul>
-              <a href="/bookme" className="block w-full bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center">
+              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
                 {t('pricing.cta')}
               </a>
             </div>
@@ -524,7 +525,7 @@ function LandingPage() {
                   <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.crm.tier3.feature2')}</span>
                 </li>
               </ul>
-              <a href="/bookme" className="block w-full bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center">
+              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
                 {t('pricing.contact')}
               </a>
             </div>
@@ -794,7 +795,7 @@ function LandingPage() {
                 </li>
               </ul>
               <div className="flex justify-center">
-                <a href="/bookme" className="bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 text-sm shadow-md w-full text-center">
+                <a href="/bookme" className="min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 text-sm shadow-md w-full text-center touch-manipulation">
                   {t('services.ai_crm.cta')}
                 </a>
               </div>
@@ -819,7 +820,7 @@ function LandingPage() {
                 </li>
               </ul>
               <div className="flex justify-center">
-                <a href="/bookme" className="bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 text-sm shadow-md w-full text-center">
+                <a href="/bookme" className="min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 text-sm shadow-md w-full text-center touch-manipulation">
                   {t('services.checkin.cta')}
                 </a>
               </div>
@@ -1019,6 +1020,8 @@ function LandingPage() {
                     alt="Agilizing Education Center - InnovateXP Strategic Partner for Business Training and Agile Education in Hong Kong"
                     fill
                     className="object-contain"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-orange-500 transition-colors">{t('partnership.agilizing.title')}</h3>
@@ -1035,6 +1038,8 @@ function LandingPage() {
                     alt="BNI Anchor Chapter Hong Kong - Business Networking and Referral Partner with InnovateXP"
                     fill
                     className="object-contain"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-red-600 transition-colors">{t('partnership.bni_anchor.title')}</h3>
@@ -1051,6 +1056,8 @@ function LandingPage() {
                     alt="LinkedInLocal Asia - Professional Networking Events Partner with InnovateXP across Asia Pacific"
                     fill
                     className="object-contain"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors">{t('partnership.linkedinlocal.title')}</h3>
@@ -1085,7 +1092,7 @@ function LandingPage() {
               </div>
               <div className="mt-4">
                 <p className="text-xs text-gray-400 italic mb-2">📸 {t('showcase.screenshot_coming')}</p>
-                <a href="/bookme" className="bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 inline-block text-sm w-full text-center">
+                <a href="/bookme" className="min-h-[44px] inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 text-sm w-full text-center touch-manipulation">
                   {t('showcase.checkin.cta')}
                 </a>
               </div>
@@ -1109,7 +1116,7 @@ function LandingPage() {
               </div>
               <div className="mt-4">
                 <p className="text-xs text-gray-400 italic mb-2">📸 {t('showcase.screenshot_coming')}</p>
-                <a href="/bookme" className="bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 inline-block text-sm w-full text-center">
+                <a href="/bookme" className="min-h-[44px] inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 text-sm w-full text-center touch-manipulation">
                   {t('showcase.booking.cta')}
                 </a>
               </div>
@@ -1134,7 +1141,7 @@ function LandingPage() {
               </div>
               <div className="mt-4">
                 <p className="text-xs text-gray-400 italic mb-2">📸 {t('showcase.screenshot_coming')}</p>
-                <a href="/bookme" className="bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 inline-block text-sm w-full text-center">
+                <a href="/bookme" className="min-h-[44px] inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 text-sm w-full text-center touch-manipulation">
                   {t('showcase.ai_crm.cta')}
                 </a>
               </div>
@@ -1169,6 +1176,17 @@ function LandingPage() {
           </address>
         </div>
       </footer>
+
+      {/* Sticky mobile CTA - thumb-friendly, only on mobile */}
+      <div className="fixed bottom-0 left-0 right-0 z-40 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] bg-white/95 dark:bg-gray-900/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.1)] md:hidden">
+        <a
+          href="/bookme"
+          className="flex items-center justify-center w-full min-h-[48px] bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold rounded-full transition duration-300 shadow-lg touch-manipulation"
+          aria-label="Book a free consultation"
+        >
+          {t('hero.book_meeting')}
+        </a>
+      </div>
     </div>
   );
 };

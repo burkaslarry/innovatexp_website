@@ -7,12 +7,27 @@ import {
   getOrganizationSchema,
 } from "@/lib/schema";
 
+const siteUrlMeta =
+  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
+
 export const metadata: Metadata = {
-  title: "AI Consulting Services for Hong Kong SMEs | InnovateXP",
+  title: "AI Consulting | Implementation That Ships | Hong Kong & Global | InnovateXP",
   description:
-    "AI consulting services for Hong Kong SMEs and founders, focused on practical implementation roadmaps, workflow automation planning, and measurable operational gains.",
+    "Stop slides—start shipping. AI consulting for SMEs: roadmaps that turn into real workflows. Hong Kong tech excellence, global delivery. Book a free audit.",
   alternates: {
-    canonical: "./",
+    canonical: `${siteUrlMeta}/ai-consulting`,
+  },
+  openGraph: {
+    title: "AI Consulting | Implementation That Ships | Hong Kong & Global | InnovateXP",
+    description: "Stop slides—start shipping. AI consulting for SMEs: roadmaps that turn into real workflows. Hong Kong tech excellence, global delivery.",
+    url: `${siteUrlMeta}/ai-consulting`,
+    siteName: "InnovateXP Limited",
+    images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP AI Consulting" }],
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "AI Consulting | Implementation That Ships | Hong Kong & Global | InnovateXP",
+    description: "Stop slides—start shipping. AI consulting for SMEs: roadmaps that turn into real workflows. Hong Kong tech excellence, global delivery.",
   },
 };
 

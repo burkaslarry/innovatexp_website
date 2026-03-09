@@ -325,6 +325,36 @@ export default function StructuredData() {
     "inLanguage": ["en", "zh-HK"]
   };
 
+  const consultingServiceSchema = {
+    "@context": "https://schema.org",
+    "@type": "ProfessionalService",
+    "@id": `${baseUrl}/#consulting-service`,
+    "name": "InnovateXP Limited",
+    "description": language === 'en'
+      ? "AI consulting and implementation for global business. CRM, event tech, and workflow automation. Hong Kong tech excellence serving SMEs worldwide."
+      : "為全球企業提供 AI 顧問與實施服務。CRM、活動科技與工作流程自動化。香港科技，服務全球中小企業。",
+    "url": baseUrl,
+    "serviceType": "AI Consulting",
+    "provider": {
+      "@type": "Organization",
+      "@id": `${baseUrl}/#organization`
+    },
+    "areaServed": [
+      { "@type": "Country", "name": "Hong Kong" },
+      { "@type": "Country", "name": "United States" },
+      { "@type": "Place", "name": "Global" }
+    ],
+    "hasOfferCatalog": {
+      "@type": "OfferCatalog",
+      "name": "AI Consulting & Solutions",
+      "itemListElement": [
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Consulting" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SmartSales CRM" } },
+        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "EventXP" } }
+      ]
+    }
+  };
+
   return (
     <>
       <script
@@ -358,6 +388,10 @@ export default function StructuredData() {
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(consultingServiceSchema) }}
       />
     </>
   );
