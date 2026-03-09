@@ -1,13 +1,19 @@
 "use client"
 import React, { useState } from 'react';
-import ContactUs from './ContactUs';
+import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useEffect } from 'react';
-import { useLanguage } from './LanguageContext';
-import LanguageSwitcher from './LanguageSwitcher';
-import ThemeToggle from './ThemeToggle';
-import FAQ from './components/FAQ';
-import Breadcrumb from './components/Breadcrumb';
+import { useLanguage } from '../LanguageContext';
+import LanguageSwitcher from '../LanguageSwitcher';
+import ThemeToggle from '../ThemeToggle';
+import Breadcrumb from '../components/Breadcrumb';
+
+const ContactUs = dynamic(() => import('../ContactUs'), {
+  ssr: false,
+  loading: () => <div className="min-h-[180px] flex items-center justify-center text-gray-500 dark:text-gray-400 text-sm">Loading contact form…</div>,
+});
+
+const FAQ = dynamic(() => import('../components/FAQ'), { ssr: false });
 
 
 function LandingPage() {
