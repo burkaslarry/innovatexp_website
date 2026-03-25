@@ -1,47 +1,47 @@
 "use client"
-import React, { useState } from 'react';
+import React from 'react';
 import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import { useLanguage } from '../LanguageContext';
-import LanguageSwitcher from '../LanguageSwitcher';
-import ThemeToggle from '../ThemeToggle';
 import Breadcrumb from '../components/Breadcrumb';
+import Header from '../components/Header';
+import { Hero } from '@/components/Hero';
+import { SolutionShowcase } from '@/components/SolutionShowcase';
+import { PricingComparisonTable } from '@/components/PricingComparisonTable';
+import { PriceCard } from '@/components/PriceCard';
+import { PremiumPriceCard } from '@/components/PremiumPriceCard';
+import { ImplementationTimeline } from '@/components/ImplementationTimeline';
+import { FaqAccordion } from '@/components/FaqAccordion';
 
 const ContactUs = dynamic(() => import('../ContactUs'), {
   ssr: false,
-  loading: () => <div className="min-h-[180px] flex items-center justify-center text-gray-500 dark:text-gray-400 text-sm">Loading contact form…</div>,
+  loading: () => <div className="min-h-[180px] flex items-center justify-center text-slate-400 text-sm">Loading contact form…</div>,
 });
-
-const FAQ = dynamic(() => import('../components/FAQ'), { ssr: false });
 
 
 function LandingPage() {
   const { t, language } = useLanguage();
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
-  // Smooth scroll handler for anchor links with header offset
-  const handleAnchorClick = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (href.startsWith('#')) {
-      e.preventDefault();
-      const targetId = href.substring(1);
-      
-      if (targetId === '') {
-        // Home link - scroll to top
-        window.scrollTo({ top: 0, behavior: 'smooth' });
-      } else {
-        const element = document.getElementById(targetId);
-        if (element) {
-          const headerHeight = 180; // Approximate sticky header height
-          const elementPosition = element.getBoundingClientRect().top + window.scrollY - headerHeight;
-          window.scrollTo({ top: elementPosition, behavior: 'smooth' });
-        }
-      }
-      
-      // Close mobile menu
-      setMobileMenuOpen(false);
+  const scrollToAnchor = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
+    if (!href.startsWith('#')) return;
+    e.preventDefault();
+    const id = href.slice(1);
+    if (id === '') window.scrollTo({ top: 0, behavior: 'smooth' });
+    else {
+      const el = document.getElementById(id);
+      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - 180, behavior: 'smooth' });
     }
   };
+
+  const navItems = [
+    { label: t('nav.home'), href: '#' },
+    { label: t('nav.eventxp'), href: '#eventxp' },
+    { label: t('nav.smartsales'), href: '#smartsales' },
+    { label: t('nav.ai_consulting'), href: '#ai-consulting' },
+    { label: t('nav.vision'), href: '#vision' },
+    { label: t('nav.partnership'), href: '#partnership' },
+  ];
 
   useEffect(() => {
     async function fetchData() {
@@ -52,71 +52,15 @@ function LandingPage() {
 
 
   return (
-    <div className="min-h-screen bg-[#fffcf7] dark:bg-gray-900 transition-colors duration-200">
-      <header className="bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm border-b-2 border-gray-200 dark:border-gray-700 sticky top-0 z-50" id="main-header">
-        <link rel="llms-txt" href="https://aeo.washinmura.jp/aeo/shops/innovatexp-co/llms.txt" />
-        <div className="container mx-auto py-4 px-4 flex items-center justify-between">
-          <div className="flex items-center">
-            <Image
-              src="/innovatexp_black.svg"
-              alt="InnovateXP Limited - AI CRM and Event Management Solutions Hong Kong"
-              width={50}
-              height={50}
-              className="mr-4 dark:invert"
-            />
-            <div>
-              <h1 className="text-2xl font-bold text-gray-900 dark:text-white">{t('header.title')}</h1>
-              <p className="text-1xl text-gray-600 dark:text-gray-300">{t('header.subtitle')}</p>
-            </div>
-          </div>
-          <div className="flex items-center gap-4">
-            <ThemeToggle />
-            <LanguageSwitcher />
-            <button 
-              className="md:hidden p-2 rounded-lg bg-gray-200 dark:bg-gray-700 hover:bg-gray-300 dark:hover:bg-gray-600 transition-colors" 
-              onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-              aria-label="Toggle navigation menu"
-            >
-              <span className="sr-only">Toggle menu</span>
-              <div className="space-y-1">
-                <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white transition-all ${mobileMenuOpen ? 'rotate-45 translate-y-2' : ''}`}></span>
-                <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white transition-all ${mobileMenuOpen ? 'opacity-0' : ''}`}></span>
-                <span className={`block w-6 h-0.5 bg-gray-900 dark:bg-white transition-all ${mobileMenuOpen ? '-rotate-45 -translate-y-2' : ''}`}></span>
-              </div>
-            </button>
-          </div>
-        </div>
-        {/* Mobile Navigation - Hidden on desktop */}
-        {mobileMenuOpen && (
-          <nav className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 md:hidden animate-in slide-in-from-top-2">
-            <div className="container mx-auto px-4 py-4">
-              <div className="flex flex-col items-center gap-4">
-                <a href="#" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#')}>{t('nav.home')}</a>
-                <a href="#eventxp" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#eventxp')}>{t('nav.eventxp')}</a>
-                <a href="#smartsales" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#smartsales')}>{t('nav.smartsales')}</a>
-                <a href="#ai-consulting" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#ai-consulting')}>{t('nav.ai_consulting')}</a>
-                <a href="#vision" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#vision')}>{t('nav.vision')}</a>
-                <a href="#partnership" className="px-4 py-3 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium w-full text-center rounded-lg hover:bg-gray-100 dark:hover:bg-gray-700" onClick={(e) => handleAnchorClick(e, '#partnership')}>{t('nav.partnership')}</a>
-              </div>
-            </div>
-          </nav>
-        )}
-        {/* Desktop Navigation - Hidden on mobile */}
-        <nav className="bg-white dark:bg-gray-800 border-t border-gray-200 dark:border-gray-700 hidden md:block">
-          <div className="container mx-auto px-4 py-2">
-            <div className="flex flex-wrap items-center justify-center gap-2">
-              <a href="#" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#')}>{t('nav.home')}</a>
-              <a href="#eventxp" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#eventxp')}>{t('nav.eventxp')}</a>
-              <a href="#smartsales" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#smartsales')}>{t('nav.smartsales')}</a>
-              <a href="#ai-consulting" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#ai-consulting')}>{t('nav.ai_consulting')}</a>
-              <a href="#vision" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#vision')}>{t('nav.vision')}</a>
-              <a href="#partnership" className="px-4 py-2 text-gray-700 dark:text-gray-200 hover:text-orange-600 dark:hover:text-orange-400 transition-colors font-medium" onClick={(e) => handleAnchorClick(e, '#partnership')}>{t('nav.partnership')}</a>
-            </div>
-          </div>
-        </nav>
-      </header>
+    <div className="min-h-screen bg-bg text-fg transition-colors duration-200">
+      <Header
+        variant="main"
+        title={t('header.title')}
+        subtitle={t('header.subtitle')}
+        navItems={navItems}
+      />
 
-      <main className="container mx-auto py-12 px-4 pb-20 md:pb-12 bg-[#fffcf7] dark:bg-gray-900">
+      <main className="mx-auto py-12 px-6 pb-20 md:pb-12 max-w-7xl bg-bg">
       
       {/* Breadcrumb Navigation */}
       <Breadcrumb 
@@ -126,27 +70,16 @@ function LandingPage() {
         ]}
       />
       
-      {/* Hero Section */}
-      <section className="mb-16 text-center bg-white dark:bg-gray-800 rounded-2xl shadow-md p-12 border border-gray-200 dark:border-gray-700" role="banner">
-        <div className="max-w-4xl mx-auto">
-          <h2 className="text-5xl font-bold mb-4 text-gray-900 dark:text-white">{t('hero.title')}</h2>
-          {/* New Tagline */}
-          <p className="text-2xl text-orange-600 mb-6 font-bold">
-            {t('hero.tagline')}
-          </p>
-          <p className="text-lg mb-8 text-gray-600 dark:text-white leading-relaxed">
-            {t('hero.description')}
-          </p>
-          <div className="flex flex-col sm:flex-row gap-4 justify-center">
-            <a href="/bookme" className="inline-flex items-center justify-center min-h-[48px] min-w-[48px] bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-4 px-10 rounded-full transition duration-300 text-lg shadow-lg transform hover:scale-105 touch-manipulation" aria-label="Book a free consultation">
-              {t('hero.book_meeting')}
-            </a>
-            <a href="#contact-us" className="inline-flex items-center justify-center min-h-[48px] min-w-[48px] bg-white dark:bg-gray-900 text-gray-900 dark:text-white font-bold py-4 px-10 rounded-full hover:bg-gray-50 dark:hover:bg-gray-800 transition duration-300 text-lg shadow-md border-2 border-gray-300 dark:border-gray-700 transform hover:scale-105 touch-manipulation" onClick={(e) => handleAnchorClick(e, '#contact-us')} aria-label="Contact us">
-              {t('hero.cta')}
-            </a>
-          </div>
-        </div>
-      </section>
+      <Hero
+        title={t('hero.title')}
+        tagline={t('hero.tagline')}
+        description={t('hero.description')}
+        primaryHref="/bookme"
+        primaryLabel={t('hero.book_meeting')}
+        secondaryLabel={t('hero.cta')}
+        secondaryHref="#contact-us"
+        onSecondaryClick={(e) => scrollToAnchor(e, '#contact-us')}
+      />
       {/* Vision Section - MOVED TO FIRST */}
       <section id="vision" className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-10 border-2 border-gray-200 dark:border-gray-700 shadow-md">
         <div className="text-center mb-8">
@@ -262,84 +195,56 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* EventXP Pricing Tiers */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Professional Tier */}
-            <div className="bg-white dark:bg-gray-700 rounded-xl p-6 border-2 border-gray-200 dark:border-gray-600 hover:border-purple-600 transition-all">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('pricing.insight.tier1.name')}</h3>
-              <div className="mb-4">
-                <span className="text-3xl font-bold text-orange-600">{t('pricing.insight.tier1.price')}</span>
-                <span className="text-gray-600 dark:text-gray-300">{t('pricing.insight.tier1.period')}</span>
-              </div>
-              <p className="text-sm text-violet-500 mb-4">{t('pricing.insight.tier1.target')}</p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.insight.tier1.feature1')}</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.insight.tier1.feature2')}</span>
-                </li>
-              </ul>
-              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
-                {t('pricing.cta')}
-              </a>
-            </div>
-
-            {/* AI Growth Tier - Highlighted */}
-            <div className="bg-gradient-to-br from-orange-500 to-blue-600 rounded-xl p-6 border-4 border-yellow-400 relative transform md:scale-105 shadow-2xl">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white font-bold py-1 px-4 rounded-full text-sm">
-                {t('pricing.insight.tier2.badge')}
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2 mt-2">{t('pricing.insight.tier2.name')}</h3>
-              <div className="mb-3">
-                <span className="text-3xl font-bold text-orange-100">{t('pricing.insight.tier2.price')}</span>
-                <span className="text-white">{t('pricing.insight.tier2.period')}</span>
-                <p className="text-orange-300 text-sm mt-1">{t('pricing.insight.tier2.subtitle')}</p>
-              </div>
-              <p className="text-sm text-orange-100 mb-3">{t('pricing.insight.tier2.target')}</p>
-              <ul className="space-y-2 mb-4">
-                <li className="flex items-start">
-                  <span className="text-orange-100 mr-2">★</span>
-                  <span className="text-white text-xs">{t('pricing.insight.tier2.feature2')}</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-orange-100 mr-2">★</span>
-                  <span className="text-white text-xs">{t('pricing.insight.tier2.feature3')}</span>
-                </li>
-              </ul>
-              <div className="bg-orange-50 border-2 border-orange-200 rounded-lg p-2 mb-4">
-                <p className="text-orange-500 text-xs">{t('pricing.insight.tier2.note')}</p>
-              </div>
-              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
-                {t('pricing.cta')}
-              </a>
-            </div>
-
-            {/* Enterprise Tier */}
-            <div className="bg-white dark:bg-gray-700 rounded-xl p-6 border-2 border-gray-200 dark:border-gray-600 hover:border-purple-600 transition-all">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('pricing.insight.tier3.name')}</h3>
-              <div className="mb-4">
-                <span className="text-3xl font-bold text-orange-600">{t('pricing.insight.tier3.price')}</span>
-                <span className="text-gray-600 dark:text-gray-300 block">{t('pricing.insight.tier3.period')}</span>
-              </div>
-              <p className="text-sm text-violet-500 mb-4">{t('pricing.insight.tier3.target')}</p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.insight.tier3.feature1')}</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.insight.tier3.feature2')}</span>
-                </li>
-              </ul>
-              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
-                {t('pricing.contact')}
-              </a>
-            </div>
+          <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+            <PriceCard
+              index={0}
+              name={t('pricing.insight.tier1.name')}
+              price={t('pricing.insight.tier1.price')}
+              period={t('pricing.insight.tier1.period')}
+              target={t('pricing.insight.tier1.target')}
+              features={[
+                t('pricing.insight.tier1.feature1'),
+                t('pricing.insight.tier1.feature2'),
+                t('pricing.insight.tier1.feature3'),
+                t('pricing.insight.tier1.feature4'),
+              ]}
+              ctaHref="/bookme"
+              ctaLabel={t('pricing.cta')}
+            />
+            <PremiumPriceCard
+              badge={t('pricing.insight.tier2.badge')}
+              name={t('pricing.insight.tier2.name')}
+              price={t('pricing.insight.tier2.price')}
+              period={t('pricing.insight.tier2.period')}
+              subtitle={t('pricing.insight.tier2.subtitle')}
+              target={t('pricing.insight.tier2.target')}
+              featureLines={[
+                t('pricing.insight.tier2.feature2'),
+                t('pricing.insight.tier2.feature3'),
+                t('pricing.insight.tier2.feature4'),
+              ]}
+              callout={t('pricing.insight.tier2.note')}
+              ctaHref="/bookme"
+              ctaLabel={t('pricing.cta')}
+            />
+            <PriceCard
+              index={2}
+              name={t('pricing.insight.tier3.name')}
+              price={t('pricing.insight.tier3.price')}
+              period={t('pricing.insight.tier3.period')}
+              target={t('pricing.insight.tier3.target')}
+              features={[
+                t('pricing.insight.tier3.feature1'),
+                t('pricing.insight.tier3.feature2'),
+                t('pricing.insight.tier3.feature3'),
+              ]}
+              ctaHref="/bookme"
+              ctaLabel={t('pricing.cta')}
+            />
           </div>
+          <p className="mt-4 text-center text-sm text-slate-500 dark:text-slate-400">
+            {t('pricing.insight.setup')}
+          </p>
         </div>
       </article>
 
@@ -353,7 +258,7 @@ function LandingPage() {
       </div>
 
       {/* EventXP FAQ Section */}
-      <FAQ 
+      <FaqAccordion
         title={t('faq.eventxp.title')}
         id="eventxp-faq"
         faqs={[
@@ -362,8 +267,6 @@ function LandingPage() {
           { question: t('faq.eventxp.q3'), answer: t('faq.eventxp.a3') },
           { question: t('faq.eventxp.q4'), answer: t('faq.eventxp.a4') },
         ]}
-
-                
       />
 
       {/* SmartSales CRM Section */}
@@ -427,120 +330,74 @@ function LandingPage() {
             </div>
           </div>
 
-          {/* AI CRM Pricing Comparison */}
-          <div className="mb-8 overflow-x-auto">
-            <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 text-center">{t('aicrm.pricing.title')}</h3>
-            <table className="min-w-full bg-white dark:bg-gray-800 border-2 border-gray-300 dark:border-gray-600 rounded-lg">
-              <thead>
-                <tr className="bg-gray-100 dark:bg-gray-700">
-                  <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('aicrm.pricing.plan')}</th>
-                  <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('aicrm.pricing.price')}</th>
-                  <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('aicrm.pricing.bestfor')}</th>
-                  <th className="py-3 px-4 text-left text-gray-900 dark:text-white font-bold border-b-2 border-gray-300 dark:border-gray-600">{t('aicrm.pricing.features')}</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr className="border-b border-gray-200 dark:border-gray-700">
-                  <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('aicrm.pricing.starter')}</td>
-                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.starter.price')}</td>
-                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.starter.for')}</td>
-                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.starter.features')}</td>
-                </tr>
-                <tr className="bg-orange-50 dark:bg-orange-900/20 border-b border-gray-200 dark:border-gray-700">
-                  <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('aicrm.pricing.pro')}</td>
-                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.pro.price')}</td>
-                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.pro.for')}</td>
-                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.pro.features')}</td>
-                </tr>
-                <tr>
-                  <td className="py-3 px-4 font-semibold text-gray-900 dark:text-white">{t('aicrm.pricing.setup')}</td>
-                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.setup.price')}</td>
-                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.setup.for')}</td>
-                  <td className="py-3 px-4 text-gray-700 dark:text-gray-300">{t('aicrm.pricing.setup.features')}</td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
-          
-          {/* SmartSales CRM Pricing Tiers */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            {/* Starter Tier */}
-            <div className="bg-white dark:bg-gray-600 rounded-xl p-6 border-2 border-gray-200 dark:border-gray-500 hover:border-purple-400 transition-all">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('pricing.crm.tier1.name')}</h3>
-              <div className="mb-4">
-                <span className="text-3xl font-bold text-orange-600">{t('pricing.crm.tier1.price')}</span>
-                <span className="text-gray-600 dark:text-gray-300">{t('pricing.crm.tier1.period')}</span>
-              </div>
-              <p className="text-sm text-violet-500 mb-4">{t('pricing.crm.tier1.target')}</p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.crm.tier1.feature1')}</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.crm.tier1.feature2')}</span>
-                </li>
-              </ul>
-              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
-                {t('pricing.cta')}
-              </a>
-            </div>
+          <PricingComparisonTable
+            title={t('aicrm.pricing.title')}
+            columns={{
+              plan: t('aicrm.pricing.plan'),
+              price: t('aicrm.pricing.price'),
+              bestFor: t('aicrm.pricing.bestfor'),
+              features: t('aicrm.pricing.features'),
+            }}
+            rows={[
+              {
+                plan: t('aicrm.pricing.starter'),
+                price: t('aicrm.pricing.starter.price'),
+                bestFor: t('aicrm.pricing.starter.for'),
+                features: t('aicrm.pricing.starter.features'),
+              },
+              {
+                plan: t('aicrm.pricing.pro'),
+                price: t('aicrm.pricing.pro.price'),
+                bestFor: t('aicrm.pricing.pro.for'),
+                features: t('aicrm.pricing.pro.features'),
+                highlighted: true,
+              },
+              {
+                plan: t('aicrm.pricing.setup'),
+                price: t('aicrm.pricing.setup.price'),
+                bestFor: t('aicrm.pricing.setup.for'),
+                features: t('aicrm.pricing.setup.features'),
+              },
+            ]}
+          />
 
-            {/* Pro Tier - Highlighted */}
-            <div className="bg-gradient-to-br from-orange-500 to-blue-600 rounded-xl p-6 border-4 border-yellow-400 relative transform md:scale-105 shadow-2xl">
-              <div className="absolute -top-4 left-1/2 transform -translate-x-1/2 bg-yellow-500 text-white font-bold py-1 px-4 rounded-full text-sm">
-                {t('pricing.crm.tier2.badge')}
-              </div>
-              <h3 className="text-2xl font-bold text-white mb-2 mt-2">{t('pricing.crm.tier2.name')}</h3>
-              <div className="mb-4">
-                <span className="text-3xl font-bold text-purple-100">{t('pricing.crm.tier2.price')}</span>
-                <span className="text-white">{t('pricing.crm.tier2.period')}</span>
-              </div>
-              <p className="text-sm text-purple-100 mb-4">{t('pricing.crm.tier2.target')}</p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="text-purple-100 mr-2">★</span>
-                  <span className="text-white text-sm">{t('pricing.crm.tier2.feature1')}</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-purple-100 mr-2">★</span>
-                  <span className="text-white text-sm">{t('pricing.crm.tier2.feature2')}</span>
-                </li>
-              </ul>
-              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
-                {t('pricing.cta')}
-              </a>
-            </div>
-
-            {/* Setup Fee Tier */}
-            <div className="bg-white dark:bg-gray-600 rounded-xl p-6 border-2 border-gray-200 dark:border-gray-500 hover:border-purple-400 transition-all">
-              <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">{t('pricing.crm.tier3.name')}</h3>
-              <div className="mb-4">
-                <span className="text-2xl font-bold text-orange-600">{t('pricing.crm.tier3.price')}</span>
-                <span className="text-gray-600 dark:text-gray-300 block">{t('pricing.crm.tier3.period')}</span>
-              </div>
-              <p className="text-sm text-violet-500 mb-4">{t('pricing.crm.tier3.target')}</p>
-              <ul className="space-y-2 mb-6">
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.crm.tier3.feature1')}</span>
-                </li>
-                <li className="flex items-start">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300 text-sm">{t('pricing.crm.tier3.feature2')}</span>
-                </li>
-              </ul>
-              <a href="/bookme" className="block w-full min-h-[44px] flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-3 rounded-full transition duration-300 text-center touch-manipulation">
-                {t('pricing.contact')}
-              </a>
-            </div>
+          <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+            <PriceCard
+              index={0}
+              name={t('pricing.crm.tier1.name')}
+              price={t('pricing.crm.tier1.price')}
+              period={t('pricing.crm.tier1.period')}
+              target={t('pricing.crm.tier1.target')}
+              features={[t('pricing.crm.tier1.feature1'), t('pricing.crm.tier1.feature2')]}
+              ctaHref="/bookme"
+              ctaLabel={t('pricing.cta')}
+            />
+            <PremiumPriceCard
+              badge={t('pricing.crm.tier2.badge')}
+              name={t('pricing.crm.tier2.name')}
+              price={t('pricing.crm.tier2.price')}
+              period={t('pricing.crm.tier2.period')}
+              target={t('pricing.crm.tier2.target')}
+              featureLines={[t('pricing.crm.tier2.feature1'), t('pricing.crm.tier2.feature2')]}
+              ctaHref="/bookme"
+              ctaLabel={t('pricing.cta')}
+            />
+            <PriceCard
+              index={2}
+              name={t('pricing.crm.tier3.name')}
+              price={t('pricing.crm.tier3.price')}
+              period={t('pricing.crm.tier3.period')}
+              target={t('pricing.crm.tier3.target')}
+              features={[t('pricing.crm.tier3.feature1'), t('pricing.crm.tier3.feature2')]}
+              ctaHref="/bookme"
+              ctaLabel={t('pricing.contact')}
+            />
           </div>
         </div>
       </article>
 
       {/* SmartSales CRM FAQ Section */}
-      <FAQ 
+      <FaqAccordion
         title={t('faq.smartsales.title')}
         id="smartsales-faq"
         faqs={[
@@ -672,7 +529,7 @@ function LandingPage() {
       </article>
 
       {/* AI Consulting FAQ Section */}
-      <FAQ 
+      <FaqAccordion
         title={t('faq.aiconsulting.title')}
         id="ai-consulting-faq"
         faqs={[
@@ -683,34 +540,32 @@ function LandingPage() {
         ]}
       />
 
-      <section className="mb-16 bg-white dark:bg-gray-800 rounded-2xl p-10 border-2 border-gray-200 dark:border-gray-700 shadow-lg">
-        <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t('timeline.title')}</h2>
-        <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
-          {t('timeline.intro')}
-        </p>
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
-          <div className="rounded-xl border border-gray-200 dark:border-gray-600 p-5">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{t('timeline.phase1.title')}</h3>
-            <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">{t('timeline.phase1.duration')}</p>
-            <p className="text-gray-700 dark:text-gray-300">{t('timeline.phase1.desc')}</p>
-          </div>
-          <div className="rounded-xl border border-gray-200 dark:border-gray-600 p-5">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{t('timeline.phase2.title')}</h3>
-            <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">{t('timeline.phase2.duration')}</p>
-            <p className="text-gray-700 dark:text-gray-300">{t('timeline.phase2.desc')}</p>
-          </div>
-          <div className="rounded-xl border border-gray-200 dark:border-gray-600 p-5">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{t('timeline.phase3.title')}</h3>
-            <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">{t('timeline.phase3.duration')}</p>
-            <p className="text-gray-700 dark:text-gray-300">{t('timeline.phase3.desc')}</p>
-          </div>
-          <div className="rounded-xl border border-gray-200 dark:border-gray-600 p-5">
-            <h3 className="text-xl font-semibold text-gray-900 dark:text-white mb-1">{t('timeline.phase4.title')}</h3>
-            <p className="text-orange-600 dark:text-orange-400 font-semibold mb-2">{t('timeline.phase4.duration')}</p>
-            <p className="text-gray-700 dark:text-gray-300">{t('timeline.phase4.desc')}</p>
-          </div>
-        </div>
-      </section>
+      <ImplementationTimeline
+        title={t('timeline.title')}
+        intro={t('timeline.intro')}
+        phases={[
+          {
+            title: t('timeline.phase1.title'),
+            duration: t('timeline.phase1.duration'),
+            description: t('timeline.phase1.desc'),
+          },
+          {
+            title: t('timeline.phase2.title'),
+            duration: t('timeline.phase2.duration'),
+            description: t('timeline.phase2.desc'),
+          },
+          {
+            title: t('timeline.phase3.title'),
+            duration: t('timeline.phase3.duration'),
+            description: t('timeline.phase3.desc'),
+          },
+          {
+            title: t('timeline.phase4.title'),
+            duration: t('timeline.phase4.duration'),
+            description: t('timeline.phase4.desc'),
+          },
+        ]}
+      />
 
       <section className="mb-16 bg-gray-50 dark:bg-gray-700 rounded-2xl p-10 border-2 border-gray-200 dark:border-gray-600 shadow-lg">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">{t('pricing.models.title')}</h2>
@@ -851,7 +706,7 @@ function LandingPage() {
                 </li>
               </ul>
               <div className="flex justify-center">
-                <a href="#contact-us" className="bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 text-sm shadow-md w-full text-center" onClick={(e) => handleAnchorClick(e, '#contact-us')}>
+                <a href="#contact-us" className="bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-6 rounded-full transition duration-300 text-sm shadow-md w-full text-center" onClick={(e) => scrollToAnchor(e, '#contact-us')}>
                   {t('services.courses.cta')}
                 </a>
               </div>
@@ -1020,12 +875,13 @@ function LandingPage() {
             {/* Agilizing Education Center */}
             <div className="bg-white dark:bg-gray-700 rounded-xl p-6 border-2 border-gray-100 dark:border-gray-600 hover:border-orange-400 transition-all duration-300 shadow-md flex flex-col items-center text-center">
               <a href="https://agilizing.com" target="_blank" rel="noopener noreferrer" className="w-full flex flex-col items-center group">
-                <div className="h-24 w-full relative mb-6 transition-transform group-hover:scale-105">
+                <div className="mb-6 flex h-24 w-full items-center justify-center transition-transform group-hover:scale-105">
                   <Image
-                    src="/Agilizing-Logo transparent.png"
+                    src="/agilizing-logo-transparent.png"
                     alt="Agilizing Education Center - InnovateXP Strategic Partner for Business Training and Agile Education in Hong Kong"
-                    fill
-                    className="object-contain"
+                    width={280}
+                    height={96}
+                    className="max-h-24 w-auto max-w-full object-contain"
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
@@ -1038,12 +894,13 @@ function LandingPage() {
             {/* BNI Anchor */}
             <div className="bg-white dark:bg-gray-700 rounded-xl p-6 border-2 border-gray-100 dark:border-gray-600 hover:border-red-600 transition-all duration-300 shadow-md flex flex-col items-center text-center">
               <a href="https://www.bni-anchor.com/" target="_blank" rel="noopener noreferrer" className="w-full flex flex-col items-center group">
-                <div className="h-24 w-full relative mb-6 transition-transform group-hover:scale-105">
+                <div className="mb-6 flex h-24 w-full items-center justify-center transition-transform group-hover:scale-105">
                   <Image
-                    src="/bni-anchor.png"
+                    src="/bni_anchor.png"
                     alt="BNI Anchor Chapter Hong Kong - Business Networking and Referral Partner with InnovateXP"
-                    fill
-                    className="object-contain"
+                    width={200}
+                    height={96}
+                    className="max-h-24 w-auto max-w-full object-contain"
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
@@ -1056,12 +913,13 @@ function LandingPage() {
             {/* LinkedInLocal Asia */}
             <div className="bg-white dark:bg-gray-700 rounded-xl p-6 border-2 border-gray-100 dark:border-gray-600 hover:border-blue-600 transition-all duration-300 shadow-md flex flex-col items-center text-center">
               <a href="https://www.linkedin.com/company/linkedinlocal-asia/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="w-full flex flex-col items-center group">
-                <div className="h-24 w-full relative mb-6 transition-transform group-hover:scale-105">
+                <div className="mb-6 flex h-24 w-full items-center justify-center transition-transform group-hover:scale-105">
                   <Image
-                    src="/linkedinlocalasia.png"
+                    src="/linkedin_localasia.jpeg"
                     alt="LinkedInLocal Asia - Professional Networking Events Partner with InnovateXP across Asia Pacific"
-                    fill
-                    className="object-contain"
+                    width={280}
+                    height={96}
+                    className="max-h-24 w-auto max-w-full object-contain"
                     loading="lazy"
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
@@ -1073,88 +931,55 @@ function LandingPage() {
           </div>
         </section>
 
-        {/* Product Showcase Sections */}
-        <section className="mb-12">
-          <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-8 text-center">{t('showcase.title')}</h2>
-          
-          {/* Responsive Grid: Mobile 1 column × 3 rows, Desktop 1 row × 3 columns */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-            
-              {/* Check-in System Showcase */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 flex flex-col">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('showcase.checkin.title')}</h3>
-              <p className="text-orange-600 text-sm mb-4 italic">{t('showcase.checkin.subtitle')}</p>
-              <div className="mb-3 flex-grow">
-                <p className="text-orange-600 font-semibold text-sm mb-1">{t('showcase.problem_label')}</p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{t('showcase.checkin.problem')}</p>
-                <p className="text-orange-600 font-semibold text-sm mb-1">{t('showcase.solution_label')}</p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{t('showcase.checkin.solution')}</p>
-                <p className="text-orange-600 font-semibold text-sm mb-1">{t('showcase.features_label')}</p>
-                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm space-y-1">
-                  {t('showcase.checkin.features').split(';').map((feature, idx) => (
-                    <li key={idx}>{feature.trim()}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-4">
-                <p className="text-xs text-gray-400 italic mb-2">📸 {t('showcase.screenshot_coming')}</p>
-                <a href="/bookme" className="min-h-[44px] inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 text-sm w-full text-center touch-manipulation">
-                  {t('showcase.checkin.cta')}
-                </a>
-              </div>
-            </div>
-
-              {/* Booking System Showcase */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 flex flex-col">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('showcase.booking.title')}</h3>
-              <p className="text-orange-600 text-sm mb-4 italic">{t('showcase.booking.subtitle')}</p>
-              <div className="mb-3 flex-grow">
-                <p className="text-orange-600 font-semibold text-sm mb-1">{t('showcase.problem_label')}</p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{t('showcase.booking.problem')}</p>
-                <p className="text-orange-600 font-semibold text-sm mb-1">{t('showcase.solution_label')}</p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{t('showcase.booking.solution')}</p>
-                <p className="text-orange-600 font-semibold text-sm mb-1">{t('showcase.features_label')}</p>
-                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm space-y-1">
-                  {t('showcase.booking.features').split(';').map((feature, idx) => (
-                    <li key={idx}>{feature.trim()}</li>
-                  ))}
-                </ul>
-              </div>
-              <div className="mt-4">
-                <p className="text-xs text-gray-400 italic mb-2">📸 {t('showcase.screenshot_coming')}</p>
-                <a href="/bookme" className="min-h-[44px] inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 text-sm w-full text-center touch-manipulation">
-                  {t('showcase.booking.cta')}
-                </a>
-              </div>
-            </div>
-
-              {/* AI × CRM Showcase */}
-              <div className="bg-white dark:bg-gray-800 rounded-lg p-6 flex flex-col">
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('showcase.ai_crm.title')}</h3>
-              <p className="text-orange-600 text-sm mb-4 italic">{t('showcase.ai_crm.subtitle')}</p>
-              <div className="mb-3 flex-grow">
-                <p className="text-orange-600 font-semibold text-sm mb-1">{t('showcase.problem_label')}</p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{t('showcase.ai_crm.problem')}</p>
-                <p className="text-orange-600 font-semibold text-sm mb-1">{t('showcase.solution_label')}</p>
-                <p className="text-gray-600 dark:text-gray-300 text-sm mb-3">{t('showcase.ai_crm.solution')}</p>
-                <p className="text-orange-600 font-semibold text-sm mb-1">{t('showcase.features_label')}</p>
-                <ul className="list-disc list-inside text-gray-600 dark:text-gray-300 text-sm space-y-1">
-                  <li>{t('showcase.ai_crm.feature1')}</li>
-                  <li>{t('showcase.ai_crm.feature2')}</li>
-                  <li>{t('showcase.ai_crm.feature3')}</li>
-                  <li>{t('showcase.ai_crm.feature4')}</li>
-                </ul>
-              </div>
-              <div className="mt-4">
-                <p className="text-xs text-gray-400 italic mb-2">📸 {t('showcase.screenshot_coming')}</p>
-                <a href="/bookme" className="min-h-[44px] inline-flex items-center justify-center bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold py-2 px-4 rounded-full transition duration-300 text-sm w-full text-center touch-manipulation">
-                  {t('showcase.ai_crm.cta')}
-                </a>
-              </div>
-            </div>
-
-          </div>
-        </section>
+        <SolutionShowcase
+          title={t('showcase.title')}
+          cards={[
+            {
+              title: t('showcase.checkin.title'),
+              subtitle: t('showcase.checkin.subtitle'),
+              problemLabel: t('showcase.problem_label'),
+              problem: t('showcase.checkin.problem'),
+              solutionLabel: t('showcase.solution_label'),
+              solution: t('showcase.checkin.solution'),
+              featuresLabel: t('showcase.features_label'),
+              features: t('showcase.checkin.features').split(';').map((f) => f.trim()),
+              screenshotNote: t('showcase.screenshot_coming'),
+              ctaHref: '/bookme',
+              ctaLabel: t('showcase.checkin.cta'),
+            },
+            {
+              title: t('showcase.booking.title'),
+              subtitle: t('showcase.booking.subtitle'),
+              problemLabel: t('showcase.problem_label'),
+              problem: t('showcase.booking.problem'),
+              solutionLabel: t('showcase.solution_label'),
+              solution: t('showcase.booking.solution'),
+              featuresLabel: t('showcase.features_label'),
+              features: t('showcase.booking.features').split(';').map((f) => f.trim()),
+              screenshotNote: t('showcase.screenshot_coming'),
+              ctaHref: '/bookme',
+              ctaLabel: t('showcase.booking.cta'),
+            },
+            {
+              title: t('showcase.ai_crm.title'),
+              subtitle: t('showcase.ai_crm.subtitle'),
+              problemLabel: t('showcase.problem_label'),
+              problem: t('showcase.ai_crm.problem'),
+              solutionLabel: t('showcase.solution_label'),
+              solution: t('showcase.ai_crm.solution'),
+              featuresLabel: t('showcase.features_label'),
+              features: [
+                t('showcase.ai_crm.feature1'),
+                t('showcase.ai_crm.feature2'),
+                t('showcase.ai_crm.feature3'),
+                t('showcase.ai_crm.feature4'),
+              ],
+              screenshotNote: t('showcase.screenshot_coming'),
+              ctaHref: '/bookme',
+              ctaLabel: t('showcase.ai_crm.cta'),
+            },
+          ]}
+        />
 
         
 
@@ -1165,7 +990,7 @@ function LandingPage() {
           <ContactUs />
         </section>
       </main>
-      <footer id="contact-us" className="py-12 text-center border-t-2 border-gray-300 dark:border-gray-700 bg-[#fffcf7] dark:bg-gray-900">
+      <footer className="py-12 text-center border-t-2 border-gray-300 dark:border-gray-700 bg-[#fffcf7] dark:bg-gray-900">
         <div className="container mx-auto px-4">
           {/* Newsletter Section */}
           <section className="mb-12">

@@ -6,13 +6,10 @@ import { DayPicker } from 'react-day-picker';
 import 'react-day-picker/dist/style.css';
 import { format, startOfDay } from 'date-fns';
 import { zhTW, enUS } from 'date-fns/locale';
-import { useRouter } from 'next/navigation';
-import Image from 'next/image';
 import { useLanguage } from '../LanguageContext';
 import Modal from '../Modal';
 import WhatsAppModal from '../WhatsAppModal';
-import LanguageSwitcher from '../LanguageSwitcher';
-import ThemeToggle from '../ThemeToggle';
+import Header from '../components/Header';
 
 interface TimeSlot {
   start: string;
@@ -22,8 +19,7 @@ interface TimeSlot {
 
 export default function BookVisitPage() {
   const { t, language } = useLanguage();
-  const router = useRouter();
-  
+
   // Initialize with current date
   const [selectedDate, setSelectedDate] = useState<Date | undefined>(() => {
     const today = new Date();
@@ -183,49 +179,8 @@ export default function BookVisitPage() {
   const inputClassName = "w-full bg-white dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 rounded-lg py-4 px-5 text-gray-900 dark:text-white text-base placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-400/30 transition-all duration-200 min-h-[54px]";
 
   return (
-    <div className="min-h-screen bg-[#fffcf7] dark:bg-gray-900" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
-      {/* Sticky Header with Glassmorphism */}
-      <header className="sticky top-0 z-50 bg-white/80 dark:bg-gray-800/80 backdrop-blur-md shadow-sm border-b border-gray-200 dark:border-gray-700" style={{ paddingTop: 'env(safe-area-inset-top)' }}>
-        <div className="mx-auto py-4 px-6 flex items-center justify-between max-w-7xl">
-          {/* Back Button - Mobile First */}
-          <button
-            onClick={() => router.push('/')}
-            className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-100 dark:bg-gray-700 hover:bg-gray-200 dark:hover:bg-gray-600 transition-colors active:scale-95"
-            aria-label="Back to home"
-          >
-            <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-gray-700 dark:text-gray-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
-            </svg>
-          </button>
-
-          {/* Logo & Title */}
-          <div className="flex items-center gap-3 flex-1 mx-4">
-            <Image
-              src="/innovatexp_black.svg"
-              alt="InnovateXP"
-              width={40}
-              height={40}
-              className="dark:invert"
-            />
-            <div className="hidden sm:block">
-              <h1 className="text-lg font-bold text-gray-900 dark:text-white">{t('bookme.header.title')}</h1>
-            </div>
-          </div>
-
-          {/* Compact Controls */}
-          <div className="flex items-center gap-2">
-            <ThemeToggle />
-            {/* Compact Language Switcher */}
-            <div className="hidden sm:block">
-              <LanguageSwitcher />
-            </div>
-            {/* Mobile: Globe Icon Only */}
-            <div className="sm:hidden">
-              <LanguageSwitcher />
-            </div>
-          </div>
-        </div>
-      </header>
+    <div className="min-h-screen bg-bg text-fg" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
+      <Header variant="booking" title={t('bookme.header.title')} />
 
       {/* Main Content */}
       <main className="mx-auto py-6 px-6 max-w-7xl">
@@ -286,6 +241,10 @@ export default function BookVisitPage() {
                   <li className="flex items-start gap-2">
                     <span className="text-orange-500 mt-0.5">•</span>
                     <span>{t('bookme.info.online')}</span>
+                  </li>
+                  <li className="flex items-start gap-2">
+                    <span className="text-orange-500 mt-0.5">•</span>
+                    <span>{t('bookme.info.notion')}</span>
                   </li>
                 </ul>
               </div>
