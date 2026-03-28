@@ -37,7 +37,7 @@ export default function ContactForm() {
   async function handleSubmit(event) {
     event.preventDefault();
     const form = new FormData(event.target);
-    form.append("access_key", "cb229ca6-07dc-41c8-a2b2-99e9e6e287f5");
+    form.append("access_key", "5561f46b-c354-4847-9f43-13e57e8d2e68");
     form.append("subject", "Normal Inquiry - " + formData.senderName);
 
     const object = Object.fromEntries(form);
