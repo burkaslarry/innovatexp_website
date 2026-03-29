@@ -41,7 +41,8 @@ export async function submitToWeb3FormsContact(
   fields: Record<string, string>
 ): Promise<Web3FormsSubmitResult> {
   const keys = getWeb3FormsAccessKeysForContact();
-  const { access_key: _drop, ...rest } = fields;
+  const rest = { ...fields };
+  delete rest.access_key;
 
   const outcomes = await Promise.all(
     keys.map(async (access_key) => {
