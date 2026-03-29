@@ -34,4 +34,27 @@ You can check out [the Next.js GitHub repository](https://github.com/vercel/next
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+## Bookme / Notion calendar
+
+Available slots on `/bookme` come from **every row** in your Notion database(s) whose **Date** falls on the selected day. Overlapping times are removed from the picker.
+
+| Variable | Purpose |
+|----------|---------|
+| `NOTION_TOKEN` | Notion integration secret |
+| `NOTION_CALENDAR_DB_ID` | Database where **bookings** are stored (and any other rows that should block time if you use one DB) |
+| `NOTION_BUSY_DB_ID` | *(Optional)* Second database — e.g. your main **Notion Calendar**. All events on that day block those hours (e.g. 2–5 pm busy). |
+| `NOTION_CALENDAR_DATE_PROPERTY` | Date property name on the bookings DB (default: `Date`) |
+| `NOTION_BUSY_DATE_PROPERTY` | Date property on the busy DB if different (default: same as above) |
+
+**Marking 2–5 pm as busy:** In Notion, set the row’s Date to **start and end time** (e.g. 14:00 → 17:00). Date-only rows block the **whole** working window (10:00–20:00) for that day. Share both databases with your integration.
+
+## UI components (`src/components`)
+
+Reusable marketing UI (Tailwind + **lucide-react** + **framer-motion**): `Hero`, `SolutionShowcase`, `PricingComparisonTable`, `PriceCard`, `PremiumPriceCard`, `ImplementationTimeline`, `FaqAccordion`, `ContactForm`, plus primitives in `src/components/ui/` (`Button`, `Card`, `SectionHeader`).
+
+Brand tokens: `brand-primary` (#0e34af), `brand-cream`, `brand-cream-warm` (see `tailwind.config.ts`).
+
+Optional: set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` for the contact form (falls back to the previous embedded key if unset).
+
 # Deploy trigger

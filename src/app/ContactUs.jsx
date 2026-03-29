@@ -1,37 +1,34 @@
-"use client"
-import Typography from "@mui/material/Typography";
-import {Container} from "@mui/system";
-import ContactForm from "./ContactForm";
-import { useLanguage } from './LanguageContext';
+"use client";
+import { useLanguage } from "./LanguageContext";
+import { ContactForm } from "@/components/ContactForm";
 
 export default function ContactUs() {
   const { t } = useLanguage();
-  
+
   return (
-    <Container sx={{ p: 6, backgroundColor: '#fff2cc', borderRadius: '16px' }}>
-      <Typography
-        variant="h4"
-        gutterBottom
-        color={"#000000"}
-        fontWeight="700"
-        sx={{ paddingTop: 3 }}
-        align="center"
-      >
-          {t('contact.title')}
-      </Typography>
-
-      <Typography
-        variant="h6"
-        gutterBottom
-        color={"#000000"}
-        fontWeight="700"
-        sx={{ paddingTop: 3 }}
-        align="center"
-      >
-        {t('contact.subtitle')}
-      </Typography>
-
-      <ContactForm />
-    </Container>
+    <div
+      id="contact-us"
+      className="scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/15 bg-brand-cream-warm px-6 py-10 shadow-card dark:border-slate-600 dark:bg-slate-900/90 md:px-10 md:py-12"
+    >
+      <h2 className="text-center text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">
+        {t("contact.title")}
+      </h2>
+      <p className="mx-auto mt-3 max-w-xl text-center text-base text-slate-700 dark:text-slate-300">
+        {t("contact.subtitle")}
+      </p>
+      <div className="mt-10">
+        <ContactForm
+          nameLabel={t("contact.form.name")}
+          emailLabel={t("contact.form.email")}
+          messageLabel={t("contact.form.content")}
+          submitLabel={t("contact.form.submit")}
+          successMessage={t("contact.form.success")}
+          placeholder={t("contact.form.placeholder")}
+          nameHint={t("contact.form.hint.name")}
+          emailHint={t("contact.form.hint.email")}
+          messageHint={t("contact.form.hint.message")}
+        />
+      </div>
+    </div>
   );
 }

@@ -3,6 +3,7 @@ import { NextResponse } from 'next/server';
 import { notion, CALENDAR_DB_ID } from '@/lib/notion';
 import { createEvents, EventAttributes } from 'ics';
 import { format, parseISO } from 'date-fns';
+import { getPrimaryWeb3FormsAccessKey } from '@/lib/web3forms-submit';
 
 interface TimeSlot {
   start: string;
@@ -179,10 +180,10 @@ export async function POST(req: Request) {
       console.log('✅ ICS calendar file generated successfully, length:', icsContent.length);
     });
 
-    // 4. Send confirmation email using Web3Forms (like ContactForm)
+    // 4. Send confirmation email using Web3Forms (primary key only — no duplicate booking emails)
     try {
       const emailFormData = new FormData();
-      emailFormData.append('access_key', 'cb229ca6-07dc-41c8-a2b2-99e9e6e287f5');
+      emailFormData.append('access_key', getPrimaryWeb3FormsAccessKey());
       emailFormData.append('subject', `業務拜訪預約確認 - ${eventTitle}`);
       emailFormData.append('from_name', 'InnovateXP Limited');
       emailFormData.append('name', visitorName);

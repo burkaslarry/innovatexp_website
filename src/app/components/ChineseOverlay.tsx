@@ -24,7 +24,7 @@ export default function ChineseOverlay({ section }: ChineseOverlayProps) {
   if (!text) return null;
 
   return (
-    <aside className="mt-4 rounded-lg border border-orange-200 bg-orange-50 px-4 py-3 text-sm leading-relaxed text-gray-700 dark:border-orange-400 dark:bg-gray-800 dark:text-gray-200">
+    <aside className="mt-4 rounded-lg border border-brand-primary/25 bg-brand-primary/5 px-4 py-3 text-sm leading-relaxed text-gray-700 dark:border-slate-600 dark:bg-slate-800/80 dark:text-gray-200">
       {text}
     </aside>
   );
