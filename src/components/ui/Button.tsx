@@ -19,7 +19,7 @@ const variants: Record<ButtonVariant, string> = {
   outline:
     "border-2 border-slate-200 bg-white text-slate-900 shadow-sm hover:border-brand-primary/40 hover:bg-brand-cream dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800 active:scale-[0.98]",
   ghost:
-    "text-brand-primary hover:bg-brand-primary/10 dark:text-brand-primary dark:hover:bg-white/5",
+    "text-brand-primary hover:bg-brand-primary/10 dark:text-teal-300 dark:hover:bg-white/5",
 };
 
 export function Button({

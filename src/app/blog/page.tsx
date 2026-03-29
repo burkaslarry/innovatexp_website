@@ -22,7 +22,7 @@ export default function BlogIndexPage() {
             <li key={post.slug}>
               <article className="border-b border-gray-200 dark:border-gray-700 pb-8">
                 <Link href={`/blog/${post.slug}`} className="group">
-                  <h2 className="mb-2 text-2xl font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-sky-300">
+                  <h2 className="mb-2 text-2xl font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-teal-300">
                     {post.title}
                   </h2>
                   <p className="text-sm text-gray-500 dark:text-gray-400 mb-2">{post.date}</p>
@@ -33,7 +33,7 @@ export default function BlogIndexPage() {
           ))}
         </ul>
         <p className="mt-12 text-gray-500 dark:text-gray-400 text-sm">
-          More posts coming soon. <Link href="/" className="text-brand-primary hover:underline dark:text-sky-300">Back to home</Link> · <Link href="/bookme" className="text-brand-primary hover:underline dark:text-sky-300">Book a call</Link>
+          More posts coming soon. <Link href="/" className="text-brand-primary hover:underline dark:text-teal-300">Back to home</Link> · <Link href="/bookme" className="text-brand-primary hover:underline dark:text-teal-300">Book a call</Link>
         </p>
       </div>
     </main>

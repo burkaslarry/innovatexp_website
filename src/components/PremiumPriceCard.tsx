@@ -75,7 +75,7 @@ export function PremiumPriceCard({
           {callout ? (
             <div className="mt-5 rounded-xl border border-brand-primary/50 bg-brand-cream-warm/95 p-3 dark:bg-amber-50/10">
               <p className="flex gap-2 text-xs font-medium leading-relaxed text-amber-900 dark:text-amber-100">
-                <Lightbulb className="h-4 w-4 shrink-0 text-brand-primary" aria-hidden />
+                <Lightbulb className="h-4 w-4 shrink-0 text-brand-primary dark:text-teal-300" aria-hidden />
                 {callout}
               </p>
             </div>

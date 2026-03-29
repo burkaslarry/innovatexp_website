@@ -37,7 +37,7 @@ export function ImplementationTimeline({
               <h3 className="text-xl font-semibold text-slate-900 dark:text-white">
                 {phase.title}
               </h3>
-              <p className="mt-2 font-semibold text-brand-primary dark:text-brand-primary">
+              <p className="mt-2 font-semibold text-brand-primary dark:text-teal-300">
                 {phase.duration}
               </p>
               <p className="mt-2 text-slate-600 dark:text-slate-300">{phase.description}</p>

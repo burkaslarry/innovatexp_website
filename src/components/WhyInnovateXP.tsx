@@ -26,7 +26,7 @@ export function WhyInnovateXP({ title, points }: { title: string; points: WhyPoi
               key={i}
               className="flex gap-4 rounded-xl border border-slate-100 bg-slate-50/80 p-4 dark:border-slate-600 dark:bg-slate-800/50"
             >
-              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-oxford/10 text-oxford dark:bg-oxford-light/20 dark:text-oxford-light">
+              <div className="flex h-11 w-11 shrink-0 items-center justify-center rounded-lg bg-oxford/10 text-oxford dark:bg-oxford-light/20 dark:text-teal-300">
                 <Icon className="h-5 w-5" strokeWidth={2} aria-hidden />
               </div>
               <div className="min-w-0">

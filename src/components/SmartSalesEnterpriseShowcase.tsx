@@ -16,7 +16,7 @@ import { useLanguage } from "@/app/LanguageContext";
 const cardClass =
   "rounded-2xl border border-slate-200 bg-white p-6 shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-oxford/25 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/60 dark:shadow-lg dark:backdrop-blur-md dark:hover:border-sky-500/40 dark:hover:shadow-sky-500/10";
 
-const iconClass = "mb-4 h-8 w-8 text-oxford dark:text-oxford-light";
+const iconClass = "mb-4 h-8 w-8 text-oxford dark:text-teal-300";
 
 export default function SmartSalesEnterpriseShowcase() {
   const { t } = useLanguage();
@@ -43,7 +43,7 @@ export default function SmartSalesEnterpriseShowcase() {
       <div className="mx-auto max-w-6xl space-y-16">
         <div>
           <div className="mb-10 text-center">
-            <h2 className="font-faq-title text-3xl font-bold tracking-tight text-brand-primary dark:text-sky-300 md:text-4xl">
+            <h2 className="font-faq-title text-3xl font-bold tracking-tight text-brand-primary dark:text-teal-300 md:text-4xl">
               {t("crm.main.title")}
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-300">

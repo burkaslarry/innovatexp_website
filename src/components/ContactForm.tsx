@@ -115,7 +115,7 @@ export function ContactForm({
               <div className={inputWrap}>
                 <label
                   htmlFor="senderName"
-                  className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400"
+                  className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400 dark:group-focus-within:text-teal-300"
                 >
                   {nameLabel}
                 </label>
@@ -141,7 +141,7 @@ export function ContactForm({
               <div className={inputWrap}>
                 <label
                   htmlFor="email"
-                  className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400"
+                  className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400 dark:group-focus-within:text-teal-300"
                 >
                   {emailLabel}
                 </label>
@@ -169,7 +169,7 @@ export function ContactForm({
               <div className={inputWrap}>
                 <label
                   htmlFor="message"
-                  className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400"
+                  className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400 dark:group-focus-within:text-teal-300"
                 >
                   {messageLabel}
                 </label>

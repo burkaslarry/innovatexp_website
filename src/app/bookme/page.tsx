@@ -203,7 +203,7 @@ export default function BookVisitPage() {
               className="flex w-full items-center justify-between rounded-xl border border-brand-primary/25 bg-brand-primary/5 px-5 py-4 text-left transition-colors hover:bg-brand-primary/10 active:scale-[0.99] dark:border-slate-600 dark:bg-slate-800/60 dark:hover:bg-slate-800"
               aria-expanded={showGuidelines}
             >
-              <span className="flex items-center gap-2 font-semibold text-brand-primary dark:text-sky-300">
+              <span className="flex items-center gap-2 font-semibold text-brand-primary dark:text-teal-300">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -211,7 +211,7 @@ export default function BookVisitPage() {
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={`h-5 w-5 text-brand-primary transition-transform dark:text-sky-300 ${showGuidelines ? 'rotate-180' : ''}`}
+                className={`h-5 w-5 text-brand-primary transition-transform dark:text-teal-300 ${showGuidelines ? 'rotate-180' : ''}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -224,27 +224,27 @@ export default function BookVisitPage() {
               <div className="mt-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 animate-fadeIn">
                 <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-2">
                   <li className="flex items-start gap-2">
-                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
                     <span>{t('bookme.info.monday_friday')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
                     <span>{t('bookme.info.one_hour')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
                     <span>{t('bookme.info.confirmation')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
                     <span>{t('bookme.info.cancel')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
                     <span>{t('bookme.info.online')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
                     <span>{t('bookme.info.notion')}</span>
                   </li>
                 </ul>
@@ -312,7 +312,7 @@ export default function BookVisitPage() {
                       defaultMonth={new Date()}
                       modifiersClassNames={{
                         selected: 'bg-brand-primary text-white font-bold rounded-lg dark:bg-[#00B9B3]',
-                        today: 'border-2 border-brand-primary rounded-lg font-bold text-brand-primary dark:border-[#00B9B3] dark:text-[#5eead4]',
+                        today: 'border-2 border-brand-primary rounded-lg font-bold text-brand-primary dark:border-[#00B9B3] dark:text-teal-300',
                         disabled: 'text-gray-400 dark:text-gray-600 opacity-40 cursor-not-allowed',
                       }}
                       className="text-gray-900 dark:text-white touch-manipulation"
@@ -399,7 +399,7 @@ export default function BookVisitPage() {
               {selectedDate && selectedTimeSlot && (
                 <div className="rounded-xl border-2 border-brand-primary/35 bg-gradient-to-r from-brand-primary/8 to-sky-500/10 p-5 shadow-md dark:border-[#00B9B3]/40 dark:from-slate-800/80 dark:to-slate-800/40">
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-primary dark:text-[#00B9B3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-primary dark:text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
                     <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">{t('bookme.selected.title')}</span>
@@ -409,7 +409,7 @@ export default function BookVisitPage() {
                       {format(selectedDate, language === 'en' ? 'MMM dd, yyyy (EEEE)' : 'yyyy年MM月dd日 (EEEE)', { locale: language === 'en' ? enUS : zhTW })}
                     </span>
                     <span className="hidden sm:inline text-gray-400 mx-2">•</span>
-                    <span className="mt-1 block text-lg font-bold text-brand-primary sm:mt-0 sm:inline dark:text-[#5eead4]">
+                    <span className="mt-1 block text-lg font-bold text-brand-primary sm:mt-0 sm:inline dark:text-teal-300">
                       {selectedTimeSlot.display}
                     </span>
                   </p>
@@ -419,7 +419,7 @@ export default function BookVisitPage() {
               {/* Visitor Information - Mobile Optimized Form */}
               <div className="border-t border-gray-200 dark:border-gray-700 pt-6 space-y-5">
                 <h3 className="text-gray-900 dark:text-white text-lg font-bold flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-primary dark:text-[#00B9B3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-primary dark:text-teal-300" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                   {t('bookme.visitor.title')}

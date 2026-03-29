@@ -71,7 +71,7 @@ const Newsletter: React.FC = () => {
               value={formData.name}
               onChange={(e) => setFormData({ ...formData, name: e.target.value })}
               required
-              className="rounded-lg border-2 border-transparent bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-white focus:ring-2 focus:ring-white/40 dark:bg-slate-800 dark:text-white dark:focus:border-[#5eead4] dark:focus:ring-[#00B9B3]/30"
+              className="rounded-lg border-2 border-transparent bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-white focus:ring-2 focus:ring-white/40 dark:bg-slate-800 dark:text-white dark:focus:border-teal-300 dark:focus:ring-teal-400/30"
             />
             <input
               type="email"
@@ -79,7 +79,7 @@ const Newsletter: React.FC = () => {
               value={formData.email}
               onChange={(e) => setFormData({ ...formData, email: e.target.value })}
               required
-              className="rounded-lg border-2 border-transparent bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-white focus:ring-2 focus:ring-white/40 dark:bg-slate-800 dark:text-white dark:focus:border-[#5eead4] dark:focus:ring-[#00B9B3]/30"
+              className="rounded-lg border-2 border-transparent bg-white px-4 py-3 text-gray-900 outline-none transition-all focus:border-white focus:ring-2 focus:ring-white/40 dark:bg-slate-800 dark:text-white dark:focus:border-teal-300 dark:focus:ring-teal-400/30"
             />
           </div>
 
@@ -93,7 +93,7 @@ const Newsletter: React.FC = () => {
                   onClick={() => handleInterestToggle(option.value)}
                   className={`rounded-full px-4 py-2 font-semibold transition-all ${
                     formData.interests.includes(option.value)
-                      ? "bg-white text-brand-primary shadow-sm dark:bg-slate-950 dark:text-[#5eead4]"
+                      ? "bg-white text-brand-primary shadow-sm dark:bg-slate-950 dark:text-teal-300"
                       : "bg-white/20 text-white hover:bg-white/30"
                   }`}
                 >
@@ -106,7 +106,7 @@ const Newsletter: React.FC = () => {
           <button
             type="submit"
             disabled={isSubmitting}
-            className="w-full rounded-lg bg-white py-3 px-6 font-bold text-brand-primary shadow-md transition-all hover:scale-[1.02] hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-950 dark:text-[#5eead4] dark:hover:bg-slate-900"
+            className="w-full rounded-lg bg-white py-3 px-6 font-bold text-brand-primary shadow-md transition-all hover:scale-[1.02] hover:bg-slate-100 disabled:cursor-not-allowed disabled:opacity-50 dark:bg-slate-950 dark:text-teal-300 dark:hover:bg-slate-900"
           >
             {isSubmitting ? '...' : t('newsletter.subscribe')}
           </button>

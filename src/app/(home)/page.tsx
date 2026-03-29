@@ -164,7 +164,7 @@ function LandingPage() {
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
           <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-brand-primary/50 hover:bg-brand-primary/5 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
-            <div className="mb-4 flex justify-center text-oxford dark:text-oxford-light">
+            <div className="mb-4 flex justify-center text-oxford dark:text-teal-300">
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-oxford/10 dark:bg-oxford-light/20">
                 <Lightbulb className="h-7 w-7" strokeWidth={2} aria-hidden />
               </span>
@@ -174,7 +174,7 @@ function LandingPage() {
           </div>
 
           <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-green-400 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
-            <div className="mb-4 flex justify-center text-oxford dark:text-oxford-light">
+            <div className="mb-4 flex justify-center text-oxford dark:text-teal-300">
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-oxford/10 dark:bg-oxford-light/20">
                 <Rocket className="h-7 w-7" strokeWidth={2} aria-hidden />
               </span>
@@ -184,7 +184,7 @@ function LandingPage() {
           </div>
 
           <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-amber-400 hover:bg-amber-50/80 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
-            <div className="mb-4 flex justify-center text-oxford dark:text-oxford-light">
+            <div className="mb-4 flex justify-center text-oxford dark:text-teal-300">
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-oxford/10 dark:bg-oxford-light/20">
                 <Sparkles className="h-7 w-7" strokeWidth={2} aria-hidden />
               </span>
@@ -205,15 +205,15 @@ function LandingPage() {
             <p className="mb-4 text-sm font-semibold italic text-brand-primary dark:text-teal-300 ">{t('services.ai_crm.subtitle')}</p>
             <ul className="mb-6 flex-grow space-y-2">
               <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary">✓</span>
+                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.ai_crm.benefit1')}</span>
               </li>
               <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary">✓</span>
+                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.ai_crm.benefit2')}</span>
               </li>
               <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary">✓</span>
+                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.ai_crm.benefit3')}</span>
               </li>
             </ul>
@@ -232,15 +232,15 @@ function LandingPage() {
             <p className="mb-4 text-sm font-semibold italic text-brand-primary dark:text-teal-300 ">{t('services.checkin.subtitle')}</p>
             <ul className="mb-6 flex-grow space-y-2">
               <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary">✓</span>
+                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.checkin.benefit1')}</span>
               </li>
               <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary">✓</span>
+                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.checkin.benefit2')}</span>
               </li>
               <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary">✓</span>
+                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.checkin.benefit3')}</span>
               </li>
             </ul>
@@ -259,15 +259,15 @@ function LandingPage() {
             <p className="mb-4 text-sm font-semibold italic text-brand-primary  dark:text-teal-300">{t('services.courses.subtitle')}</p>
             <ul className="mb-6 flex-grow space-y-2">
               <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary">✓</span>
+                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.courses.benefit1')}</span>
               </li>
               <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary">✓</span>
+                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.courses.benefit2')}</span>
               </li>
               <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary">✓</span>
+                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.courses.benefit3')}</span>
               </li>
             </ul>
@@ -336,21 +336,21 @@ function LandingPage() {
           {/* EventXP Features */}
           <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-sky-300">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
                 <LayoutDashboard className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.insight.tier1.feature1')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">{t('pricing.insight.tier1.feature2')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-sky-300">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
                 <ScanSearch className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.insight.tier2.feature2')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">{t('pricing.insight.tier2.feature3')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-sky-300">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
                 <Target className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.insight.tier2.feature4')}</h3>
@@ -371,7 +371,7 @@ function LandingPage() {
             </p>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <div>
-                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-sky-300">
+                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-teal-300">
                   {t('referral.feedback_loop.title')}
                 </h4>
                 <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
@@ -379,7 +379,7 @@ function LandingPage() {
                 </p>
               </div>
               <div>
-                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-sky-300">
+                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-teal-300">
                   {t('referral.commission.title')}
                 </h4>
                 <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
@@ -387,7 +387,7 @@ function LandingPage() {
                 </p>
               </div>
               <div>
-                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-sky-300">
+                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-teal-300">
                   {t('referral.welcome_gift.title')}
                 </h4>
                 <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
@@ -448,7 +448,7 @@ function LandingPage() {
             {t('pricing.insight.setup')}
             <a
               href="/bookme"
-              className="font-semibold text-brand-primary underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary-hover dark:text-sky-300"
+              className="font-semibold text-brand-primary underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary-hover dark:text-teal-300"
             >
               {t('pricing.insight.setup_cta')}
             </a>
@@ -497,17 +497,17 @@ function LandingPage() {
               </ol>
             </div>
             
-            <p className="text-xl font-semibold text-brand-primary dark:text-sky-300 mb-6">
+            <p className="text-xl font-semibold text-brand-primary dark:text-teal-300 mb-6">
               {t('pricing.crm.tagline')}
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8">
               {t('pricing.crm.description')}
             </p>
-            <p className="text-lg font-semibold text-brand-primary dark:text-sky-300">
+            <p className="text-lg font-semibold text-brand-primary dark:text-teal-300">
               {t('pricing.crm.value')}
             </p>
             <div className="mt-6 max-w-2xl mx-auto rounded-lg border border-brand-primary/30 bg-white p-4 dark:border-brand-primary/40 dark:bg-gray-800">
-              <p className="font-bold text-brand-primary dark:text-sky-300">
+              <p className="font-bold text-brand-primary dark:text-teal-300">
                 💰 {t('pricing.crm.tier3.name')}: {t('pricing.crm.tier3.price')}
               </p>
             </div>
@@ -516,21 +516,21 @@ function LandingPage() {
           {/* SmartSales CRM Features */}
           <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="rounded-xl border-2 border-gray-200 bg-white p-6 transition-all hover:border-oxford/40 dark:border-gray-500 dark:bg-gray-600">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-oxford-light">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-teal-300">
                 <PenLine className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.crm.feature1.title')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">{t('pricing.crm.feature1.desc')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-white p-6 transition-all hover:border-oxford/40 dark:border-gray-500 dark:bg-gray-600">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-oxford-light">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-teal-300">
                 <CalendarClock className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.crm.feature2.title')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">{t('pricing.crm.feature2.desc')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-white p-6 transition-all hover:border-oxford/40 dark:border-gray-500 dark:bg-gray-600">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-oxford-light">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-teal-300">
                 <BarChart3 className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.crm.feature3.title')}</h3>
@@ -539,7 +539,7 @@ function LandingPage() {
           </div>
 
           <div className="-mx-6 mb-10 max-w-6xl mx-auto space-y-4 sm:-mx-12">
-            <p className="text-center text-sm font-semibold text-brand-primary md:text-base dark:text-sky-300">
+            <p className="text-center text-sm font-semibold text-brand-primary md:text-base dark:text-teal-300">
               {t('mockup.pipeline')}
             </p>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -630,7 +630,7 @@ function LandingPage() {
                 priority={false}
               />
             </div>
-            <figcaption className="mt-3 text-center text-xs font-medium text-brand-primary/90 dark:text-sky-300/90">
+            <figcaption className="mt-3 text-center text-xs font-medium text-brand-primary/90 dark:text-teal-300/90">
               {t('mockup.ai')}
             </figcaption>
           </figure>
@@ -664,7 +664,7 @@ function LandingPage() {
               </details>
             </div>
             
-            <p className="mb-6 text-xl font-semibold text-brand-primary dark:text-sky-300">
+            <p className="mb-6 text-xl font-semibold text-brand-primary dark:text-teal-300">
               {t('ai_consulting.subtitle')}
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
@@ -676,9 +676,9 @@ function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
             {/* AI Readiness Audit */}
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/40 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 text-4xl text-brand-primary dark:text-sky-300">🔍</div>
+              <div className="mb-4 text-4xl text-brand-primary dark:text-teal-300">🔍</div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('ai_consulting.package1.name')}</h3>
-              <p className="mb-3 font-bold text-brand-primary dark:text-sky-300">{t('ai_consulting.package1.price')}</p>
+              <p className="mb-3 font-bold text-brand-primary dark:text-teal-300">{t('ai_consulting.package1.price')}</p>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{t('ai_consulting.package1.desc')}</p>
               <ul className="space-y-2">
                 <li className="flex items-start text-sm">
@@ -704,9 +704,9 @@ function LandingPage() {
 
             {/* Custom Agent Build */}
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/40 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 text-4xl text-brand-primary dark:text-sky-300">🤖</div>
+              <div className="mb-4 text-4xl text-brand-primary dark:text-teal-300">🤖</div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('ai_consulting.package2.name')}</h3>
-              <p className="mb-3 font-bold text-brand-primary dark:text-sky-300">{t('ai_consulting.package2.price')}</p>
+              <p className="mb-3 font-bold text-brand-primary dark:text-teal-300">{t('ai_consulting.package2.price')}</p>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{t('ai_consulting.package2.desc')}</p>
               <ul className="space-y-2">
                 <li className="flex items-start text-sm">
@@ -732,9 +732,9 @@ function LandingPage() {
 
             {/* Prompt Training Bootcamp */}
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/40 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 text-4xl text-brand-primary dark:text-sky-300">🎓</div>
+              <div className="mb-4 text-4xl text-brand-primary dark:text-teal-300">🎓</div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('ai_consulting.package3.name')}</h3>
-              <p className="mb-3 font-bold text-brand-primary dark:text-sky-300">{t('ai_consulting.package3.price')}</p>
+              <p className="mb-3 font-bold text-brand-primary dark:text-teal-300">{t('ai_consulting.package3.price')}</p>
               <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{t('ai_consulting.package3.desc')}</p>
               <ul className="space-y-2">
                 <li className="flex items-start text-sm">
@@ -843,7 +843,7 @@ function LandingPage() {
               <a
                 href="https://www.linkedin.com/in/larry-lo-804a50165/"
                 rel="me author"
-                className="font-semibold text-brand-primary hover:text-brand-primary-hover dark:text-sky-300 dark:hover:text-sky-200"
+                className="font-semibold text-brand-primary hover:text-brand-primary-hover dark:text-teal-300 dark:hover:text-teal-200"
               >
                 Larry Lo
               </a>
@@ -873,7 +873,7 @@ function LandingPage() {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('about.tags.title')}</h3>
             <ul className="space-y-4">
               <li className="leading-relaxed text-gray-600 dark:text-slate-300">
-                <strong className="text-lg text-brand-primary dark:text-sky-300">{t('about.tags.red_ocean.title')}:</strong>
+                <strong className="text-lg text-brand-primary dark:text-teal-300">{t('about.tags.red_ocean.title')}:</strong>
                 <br />
                 {t('about.tags.red_ocean.description')}
               </li>
@@ -883,7 +883,7 @@ function LandingPage() {
                 {t('about.tags.desert_oasis.description')}
               </li>
               <li className="leading-relaxed text-gray-600 dark:text-slate-300">
-                <strong className="text-lg text-brand-primary dark:text-sky-300">{t('about.tags.community.title')}:</strong>
+                <strong className="text-lg text-brand-primary dark:text-teal-300">{t('about.tags.community.title')}:</strong>
                 <br />
                 {t('about.tags.community.description')}
               </li>
@@ -896,10 +896,10 @@ function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {/* Step 1: Red Ocean */}
             <div className="relative flex flex-col items-center rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-brand-primary/50 dark:border-gray-700">
-              <div className="mb-4 text-5xl font-bold text-brand-primary dark:text-sky-300">1</div>
+              <div className="mb-4 text-5xl font-bold text-brand-primary dark:text-teal-300">1</div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-black mb-3">{t('story.step1.title')}</h3>
               <p className="text-gray-600">{t('story.step1.description')}</p>
-              <div className="absolute -right-3 top-1/2 hidden -translate-y-1/2 transform text-3xl text-brand-primary dark:text-sky-300 md:block">→</div>
+              <div className="absolute -right-3 top-1/2 hidden -translate-y-1/2 transform text-3xl text-brand-primary dark:text-teal-300 md:block">→</div>
             </div>
 
             {/* Step 2: Desert Oasis */}
@@ -912,7 +912,7 @@ function LandingPage() {
 
             {/* Step 3: Coca-Cola Theory */}
             <div className="flex flex-col items-center rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-brand-primary/50 dark:border-gray-700">
-              <div className="mb-4 text-5xl font-bold text-brand-primary/80 dark:text-sky-300">3</div>
+              <div className="mb-4 text-5xl font-bold text-brand-primary/80 dark:text-teal-300">3</div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-black mb-3">{t('story.step3.title')}</h3>
               <p className="text-gray-600">{t('story.step3.description')}</p>
           </div>
@@ -967,7 +967,7 @@ function LandingPage() {
         <section id="partnership" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{t('partnership.title')}</h2>
-            <p className="text-xl font-semibold text-brand-primary dark:text-sky-300">{t('partnership.subtitle')}</p>
+            <p className="text-xl font-semibold text-brand-primary dark:text-teal-300">{t('partnership.subtitle')}</p>
           </div>
           
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -985,7 +985,7 @@ function LandingPage() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
-                <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-sky-300">
+                <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-teal-300">
                   {t('partnership.agilizing.title')}
                 </h3>
               </a>
@@ -1012,7 +1012,7 @@ function LandingPage() {
             </div>
 
             {/* LinkedInLocal Asia */}
-            <div className="bg-white dark:bg-gray-700 rounded-xl p-6 border-2 border-gray-100 dark:border-gray-600 hover:border-blue-600 transition-all duration-300 shadow-md flex flex-col items-center text-center">
+            <div className="flex flex-col items-center rounded-xl border-2 border-gray-100 bg-white p-6 text-center shadow-md transition-all duration-300 hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
               <a href="https://www.linkedin.com/company/linkedinlocal-asia/posts/?feedView=all" target="_blank" rel="noopener noreferrer" className="w-full flex flex-col items-center group">
                 <div className="mb-6 flex h-24 w-full items-center justify-center transition-transform group-hover:scale-105">
                   <Image
@@ -1025,7 +1025,9 @@ function LandingPage() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-blue-600 transition-colors">{t('partnership.linkedinlocal.title')}</h3>
+                <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-teal-300">
+                  {t('partnership.linkedinlocal.title')}
+                </h3>
               </a>
               <p className="text-gray-700 dark:text-gray-300 text-sm">{t('partnership.linkedinlocal.desc')}</p>
             </div>
@@ -1050,7 +1052,7 @@ function LandingPage() {
                     unoptimized
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-brand-primary transition-colors dark:group-hover:text-sky-300">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-brand-primary transition-colors dark:group-hover:text-teal-300">
                   {t('partnership.ex_io.title')}
                 </h3>
               </a>
@@ -1076,7 +1078,7 @@ function LandingPage() {
                     sizes="(max-width: 768px) 100vw, 33vw"
                   />
                 </div>
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-brand-primary transition-colors dark:group-hover:text-sky-300">
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-brand-primary transition-colors dark:group-hover:text-teal-300">
                   {t('partnership.kirapay.title')}
                 </h3>
               </a>
@@ -1160,7 +1162,7 @@ function LandingPage() {
             <p className="text-gray-900 dark:text-gray-300">{t('footer.copyright')}</p>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               Email:{' '}
-              <a href="mailto:info@innovatexp.com" className="text-[#00B9B3] hover:underline dark:text-[#00D4CF]">
+              <a href="mailto:info@innovatexp.com" className="text-[#00B9B3] hover:underline dark:text-teal-300">
                 info@innovatexp.com
               </a>
             </p>

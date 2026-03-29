@@ -38,14 +38,14 @@ export function ProductEntryGrid({
               href={item.href}
               className="group flex h-full flex-col rounded-2xl border-2 border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-oxford/40 hover:shadow-md dark:border-slate-600 dark:bg-slate-800/80 dark:hover:border-oxford-light/50"
             >
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford transition-colors group-hover:bg-oxford/20 dark:bg-oxford-light/15 dark:text-oxford-light">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford transition-colors group-hover:bg-oxford/20 dark:bg-oxford-light/15 dark:text-teal-300">
                 <Icon className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="text-xl font-bold text-oxford dark:text-white">{item.title}</h3>
               <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
                 {item.blurb}
               </p>
-              <span className="mt-5 inline-flex items-center text-sm font-semibold text-oxford group-hover:underline dark:text-oxford-light">
+              <span className="mt-5 inline-flex items-center text-sm font-semibold text-oxford group-hover:underline dark:text-teal-300">
                 {item.cta}
               </span>
             </a>

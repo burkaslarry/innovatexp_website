@@ -47,7 +47,7 @@ export function Hero({
           <h1 className="font-sans text-3xl font-bold leading-tight tracking-tight text-oxford dark:text-white sm:text-4xl md:text-5xl">
             {title}
           </h1>
-          <p className="mt-4 text-xl font-bold text-brand-primary dark:text-[#00D4CF] sm:text-2xl">
+          <p className="mt-4 text-xl font-bold text-brand-primary dark:text-teal-300 sm:text-2xl">
             {tagline}
           </p>
           {taglineEn ? (

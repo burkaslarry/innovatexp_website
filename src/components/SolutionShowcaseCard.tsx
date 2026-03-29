@@ -42,23 +42,23 @@ export function SolutionShowcaseCard({
       transition={{ duration: 0.4, delay: index * 0.08 }}
     >
       <Card className="flex h-full flex-col hover:shadow-card-hover dark:hover:shadow-none">
-        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-brand-primary dark:bg-slate-800">
+        <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-2xl bg-slate-100 text-brand-primary dark:bg-slate-800 dark:text-teal-300">
           <BarChart3 className="h-6 w-6" strokeWidth={2} aria-hidden />
         </div>
         <h3 className="text-xl font-bold text-slate-900 dark:text-white">{title}</h3>
-        <p className="mt-1 text-sm font-medium italic text-brand-primary">{subtitle}</p>
+        <p className="mt-1 text-sm font-medium italic text-brand-primary dark:text-teal-300">{subtitle}</p>
 
         <div className="mt-4 flex flex-1 flex-col gap-3 text-sm">
           <div>
-            <p className="mb-1 font-semibold text-brand-primary">{problemLabel}</p>
+            <p className="mb-1 font-semibold text-brand-primary dark:text-teal-300">{problemLabel}</p>
             <p className="text-slate-600 dark:text-slate-300">{problem}</p>
           </div>
           <div>
-            <p className="mb-1 font-semibold text-brand-primary">{solutionLabel}</p>
+            <p className="mb-1 font-semibold text-brand-primary dark:text-teal-300">{solutionLabel}</p>
             <p className="text-slate-600 dark:text-slate-300">{solution}</p>
           </div>
           <div>
-            <p className="mb-1 font-semibold text-brand-primary">{featuresLabel}</p>
+            <p className="mb-1 font-semibold text-brand-primary dark:text-teal-300">{featuresLabel}</p>
             <ul className="list-inside list-disc space-y-1 text-slate-600 dark:text-slate-300">
               {features.map((f, i) => (
                 <li key={i}>{f}</li>

@@ -79,9 +79,9 @@ export default async function BlogPostPage({ params }: Props) {
       />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <nav className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="/" className="hover:text-brand-primary dark:hover:text-sky-300">Home</Link>
+          <Link href="/" className="hover:text-brand-primary dark:hover:text-teal-300">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/blog" className="hover:text-brand-primary dark:hover:text-sky-300">Blog</Link>
+          <Link href="/blog" className="hover:text-brand-primary dark:hover:text-teal-300">Blog</Link>
           <span className="mx-2">/</span>
           <span className="text-gray-700 dark:text-gray-300">{post.title}</span>
         </nav>
@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="mt-8">
               <Link
                 href="/blog"
-                className="font-medium text-brand-primary hover:underline dark:text-sky-300"
+                className="font-medium text-brand-primary hover:underline dark:text-teal-300"
               >
                 ← Back to blog
               </Link>
@@ -117,7 +117,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <li key={s.href}>
                     <Link
                       href={s.href}
-                      className="font-medium text-brand-primary hover:underline dark:text-sky-300"
+                      className="font-medium text-brand-primary hover:underline dark:text-teal-300"
                     >
                       {s.name}
                     </Link>

@@ -124,7 +124,7 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
                 <a
                   key={item.href}
                   href={item.href}
-                  className="w-full rounded-lg px-4 py-3 text-center font-medium text-slate-600 transition-colors hover:bg-white hover:text-brand-primary dark:text-slate-200 dark:hover:bg-neutral-900 dark:hover:text-[#5eead4]"
+                  className="w-full rounded-lg px-4 py-3 text-center font-medium text-slate-600 transition-colors hover:bg-white hover:text-brand-primary dark:text-slate-200 dark:hover:bg-neutral-900 dark:hover:text-teal-300"
                   onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.label}
@@ -149,7 +149,7 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-white hover:text-brand-primary dark:text-slate-200 dark:hover:bg-neutral-900 dark:hover:text-[#5eead4] sm:px-4 sm:text-[15px]"
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-white hover:text-brand-primary dark:text-slate-200 dark:hover:bg-neutral-900 dark:hover:text-teal-300 sm:px-4 sm:text-[15px]"
                   onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.label}

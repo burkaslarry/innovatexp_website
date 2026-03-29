@@ -30,20 +30,20 @@ export default function NotFound() {
           </Link>
           <Link
             href="/ai-consulting"
-            className="inline-flex min-h-[44px] items-center justify-center px-6 font-semibold text-brand-primary hover:underline dark:text-sky-300"
+            className="inline-flex min-h-[44px] items-center justify-center px-6 font-semibold text-brand-primary hover:underline dark:text-teal-300"
           >
             AI Consulting
           </Link>
           <Link
             href="/blog"
-            className="inline-flex min-h-[44px] items-center justify-center px-6 font-semibold text-brand-primary hover:underline dark:text-sky-300"
+            className="inline-flex min-h-[44px] items-center justify-center px-6 font-semibold text-brand-primary hover:underline dark:text-teal-300"
           >
             Blog
           </Link>
         </nav>
         <p className="mt-8 text-sm text-gray-400 dark:text-gray-500">
           If you followed a broken link, you can{" "}
-          <a href="mailto:info@innovatexp.com?subject=Broken%20link%20report" className="text-brand-primary hover:underline dark:text-sky-300">
+          <a href="mailto:info@innovatexp.com?subject=Broken%20link%20report" className="text-brand-primary hover:underline dark:text-teal-300">
             report it to us
           </a>
           .
