@@ -5,7 +5,6 @@
  */
 
 const LEGACY_KEYS = [
-  "cb229ca6-07dc-41c8-a2b2-99e9e6e287f5",
   "5561f46b-c354-4847-9f43-13e57e8d2e68",
 ] as const;
 
