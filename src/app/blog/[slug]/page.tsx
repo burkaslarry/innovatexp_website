@@ -79,9 +79,9 @@ export default async function BlogPostPage({ params }: Props) {
       />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <nav className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="/" className="hover:text-orange-600">Home</Link>
+          <Link href="/" className="hover:text-brand-primary dark:hover:text-sky-300">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/blog" className="hover:text-orange-600">Blog</Link>
+          <Link href="/blog" className="hover:text-brand-primary dark:hover:text-sky-300">Blog</Link>
           <span className="mx-2">/</span>
           <span className="text-gray-700 dark:text-gray-300">{post.title}</span>
         </nav>
@@ -100,7 +100,7 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="mt-8">
               <Link
                 href="/blog"
-                className="text-orange-600 dark:text-orange-400 hover:underline font-medium"
+                className="font-medium text-brand-primary hover:underline dark:text-sky-300"
               >
                 ← Back to blog
               </Link>
@@ -117,7 +117,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <li key={s.href}>
                     <Link
                       href={s.href}
-                      className="text-orange-600 dark:text-orange-400 hover:underline font-medium"
+                      className="font-medium text-brand-primary hover:underline dark:text-sky-300"
                     >
                       {s.name}
                     </Link>
@@ -126,7 +126,7 @@ export default async function BlogPostPage({ params }: Props) {
               </ul>
               <Link
                 href="/bookme"
-                className="mt-4 flex items-center justify-center min-h-[44px] w-full bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white font-bold rounded-full text-sm transition duration-300 touch-manipulation"
+                className="mt-4 flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
               >
                 Book a call
               </Link>

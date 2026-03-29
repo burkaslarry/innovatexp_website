@@ -176,7 +176,8 @@ export default function BookVisitPage() {
   };
 
   // Mobile-first input styling with proper touch targets and keyboard optimization
-  const inputClassName = "w-full bg-white dark:bg-gray-700 border-2 border-gray-300 dark:border-gray-600 rounded-lg py-4 px-5 text-gray-900 dark:text-white text-base placeholder-gray-500 dark:placeholder-gray-400 focus:outline-none focus:border-orange-500 focus:ring-2 focus:ring-orange-400/30 transition-all duration-200 min-h-[54px]";
+  const inputClassName =
+    "w-full min-h-[54px] rounded-lg border-2 border-gray-300 bg-white py-4 px-5 text-base text-gray-900 transition-all duration-200 placeholder-gray-500 focus:border-brand-primary focus:outline-none focus:ring-2 focus:ring-brand-primary/25 dark:border-gray-600 dark:bg-gray-700 dark:text-white dark:placeholder-gray-400 dark:focus:border-[#00B9B3] dark:focus:ring-[#00B9B3]/25";
 
   return (
     <div className="min-h-screen bg-bg text-fg" style={{ paddingBottom: 'env(safe-area-inset-bottom)' }}>
@@ -199,10 +200,10 @@ export default function BookVisitPage() {
           <div className="mb-6">
             <button
               onClick={() => setShowGuidelines(!showGuidelines)}
-              className="w-full flex items-center justify-between bg-orange-50 dark:bg-orange-900/20 border border-orange-200 dark:border-orange-800 rounded-xl px-5 py-4 text-left hover:bg-orange-100 dark:hover:bg-orange-900/30 transition-colors active:scale-[0.99]"
+              className="flex w-full items-center justify-between rounded-xl border border-brand-primary/25 bg-brand-primary/5 px-5 py-4 text-left transition-colors hover:bg-brand-primary/10 active:scale-[0.99] dark:border-slate-600 dark:bg-slate-800/60 dark:hover:bg-slate-800"
               aria-expanded={showGuidelines}
             >
-              <span className="flex items-center gap-2 text-orange-900 dark:text-orange-300 font-semibold">
+              <span className="flex items-center gap-2 font-semibold text-brand-primary dark:text-sky-300">
                 <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 16h-1v-4h-1m1-4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                 </svg>
@@ -210,7 +211,7 @@ export default function BookVisitPage() {
               </span>
               <svg
                 xmlns="http://www.w3.org/2000/svg"
-                className={`h-5 w-5 text-orange-700 dark:text-orange-400 transition-transform ${showGuidelines ? 'rotate-180' : ''}`}
+                className={`h-5 w-5 text-brand-primary transition-transform dark:text-sky-300 ${showGuidelines ? 'rotate-180' : ''}`}
                 fill="none"
                 viewBox="0 0 24 24"
                 stroke="currentColor"
@@ -223,27 +224,27 @@ export default function BookVisitPage() {
               <div className="mt-3 bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl p-5 animate-fadeIn">
                 <ul className="text-gray-700 dark:text-gray-300 text-sm space-y-2">
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-500 mt-0.5">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
                     <span>{t('bookme.info.monday_friday')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-500 mt-0.5">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
                     <span>{t('bookme.info.one_hour')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-500 mt-0.5">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
                     <span>{t('bookme.info.confirmation')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-500 mt-0.5">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
                     <span>{t('bookme.info.cancel')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-500 mt-0.5">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
                     <span>{t('bookme.info.online')}</span>
                   </li>
                   <li className="flex items-start gap-2">
-                    <span className="text-orange-500 mt-0.5">•</span>
+                    <span className="mt-0.5 text-brand-primary dark:text-[#00B9B3]">•</span>
                     <span>{t('bookme.info.notion')}</span>
                   </li>
                 </ul>
@@ -275,7 +276,7 @@ export default function BookVisitPage() {
               <div className="fixed inset-0 bg-gray-900/50 flex items-center justify-center z-50">
                 <div className="bg-white border-2 border-gray-300 dark:border-gray-600 rounded-xl p-6 shadow-2xl">
                   <div className="flex items-center">
-                    <div className="animate-spin rounded-full h-8 w-8 border-b-2 border-orange-400"></div>
+                    <div className="h-8 w-8 animate-spin rounded-full border-b-2 border-brand-primary dark:border-[#00B9B3]"></div>
                     <span className="ml-4 text-gray-700">Processing your booking...</span>
                   </div>
                 </div>
@@ -310,8 +311,8 @@ export default function BookVisitPage() {
                       locale={language === 'en' ? enUS : zhTW}
                       defaultMonth={new Date()}
                       modifiersClassNames={{
-                        selected: 'bg-orange-500 text-white font-bold rounded-lg',
-                        today: 'border-2 border-orange-400 rounded-lg font-bold text-orange-600 dark:text-orange-400',
+                        selected: 'bg-brand-primary text-white font-bold rounded-lg dark:bg-[#00B9B3]',
+                        today: 'border-2 border-brand-primary rounded-lg font-bold text-brand-primary dark:border-[#00B9B3] dark:text-[#5eead4]',
                         disabled: 'text-gray-400 dark:text-gray-600 opacity-40 cursor-not-allowed',
                       }}
                       className="text-gray-900 dark:text-white touch-manipulation"
@@ -353,7 +354,7 @@ export default function BookVisitPage() {
                   )}
                   {isFetchingSlots && (
                     <div className="flex flex-col items-center justify-center py-12">
-                      <div className="animate-spin rounded-full h-10 w-10 border-3 border-orange-400 border-t-transparent"></div>
+                      <div className="h-10 w-10 animate-spin rounded-full border-3 border-brand-primary border-t-transparent dark:border-[#00B9B3]"></div>
                       <span className="mt-3 text-gray-600 dark:text-gray-400 text-sm">{t('bookme.time.loading')}</span>
                     </div>
                   )}
@@ -378,8 +379,8 @@ export default function BookVisitPage() {
                             min-h-[54px] px-4 py-3 rounded-xl text-base font-semibold 
                             transition-all duration-200 active:scale-95 touch-manipulation
                             ${selectedTimeSlot?.start === slot.start
-                              ? 'bg-orange-500 text-white shadow-lg shadow-orange-500/30 border-2 border-orange-600 ring-2 ring-orange-300 dark:ring-orange-700'
-                              : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 hover:border-orange-400 hover:bg-orange-50 dark:hover:bg-gray-700'
+                              ? 'bg-brand-primary text-white shadow-lg border-2 border-brand-primary-hover ring-2 ring-brand-primary/30 dark:bg-[#00B9B3] dark:border-[#009e98] dark:ring-[#00B9B3]/40'
+                              : 'bg-white dark:bg-gray-800 text-gray-700 dark:text-gray-300 border-2 border-gray-300 dark:border-gray-600 hover:border-brand-primary/50 hover:bg-brand-primary/5 dark:hover:bg-gray-700'
                             }
                           `}
                         >
@@ -396,19 +397,19 @@ export default function BookVisitPage() {
 
               {/* Selected Date/Time Summary - Prominent */}
               {selectedDate && selectedTimeSlot && (
-                <div className="bg-gradient-to-r from-orange-50 to-yellow-50 dark:from-orange-900/20 dark:to-yellow-900/20 border-2 border-orange-400 dark:border-orange-600 rounded-xl p-5 shadow-md">
+                <div className="rounded-xl border-2 border-brand-primary/35 bg-gradient-to-r from-brand-primary/8 to-sky-500/10 p-5 shadow-md dark:border-[#00B9B3]/40 dark:from-slate-800/80 dark:to-slate-800/40">
                   <div className="flex items-center justify-center gap-2 mb-2">
-                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-orange-600 dark:text-orange-400" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-primary dark:text-[#00B9B3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                       <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
                     </svg>
-                    <span className="text-sm font-semibold text-orange-900 dark:text-orange-300">{t('bookme.selected.title')}</span>
+                    <span className="text-sm font-semibold text-slate-900 dark:text-slate-100">{t('bookme.selected.title')}</span>
                   </div>
                   <p className="text-center">
                     <span className="text-gray-900 dark:text-white font-bold text-lg block sm:inline">
                       {format(selectedDate, language === 'en' ? 'MMM dd, yyyy (EEEE)' : 'yyyy年MM月dd日 (EEEE)', { locale: language === 'en' ? enUS : zhTW })}
                     </span>
                     <span className="hidden sm:inline text-gray-400 mx-2">•</span>
-                    <span className="text-orange-600 dark:text-orange-400 font-bold text-lg block sm:inline mt-1 sm:mt-0">
+                    <span className="mt-1 block text-lg font-bold text-brand-primary sm:mt-0 sm:inline dark:text-[#5eead4]">
                       {selectedTimeSlot.display}
                     </span>
                   </p>
@@ -418,7 +419,7 @@ export default function BookVisitPage() {
               {/* Visitor Information - Mobile Optimized Form */}
               <div className="border-t border-gray-200 dark:border-gray-700 pt-6 space-y-5">
                 <h3 className="text-gray-900 dark:text-white text-lg font-bold flex items-center gap-2">
-                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-orange-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <svg xmlns="http://www.w3.org/2000/svg" className="h-5 w-5 text-brand-primary dark:text-[#00B9B3]" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M16 7a4 4 0 11-8 0 4 4 0 018 0zM12 14a7 7 0 00-7 7h14a7 7 0 00-7-7z" />
                   </svg>
                   {t('bookme.visitor.title')}
@@ -543,7 +544,7 @@ export default function BookVisitPage() {
               flex items-center justify-center gap-3 shadow-lg
               ${isLoading || !selectedTimeSlot || !selectedDate || !visitorName || !visitorEmail
                 ? 'bg-gray-300 dark:bg-gray-700 text-gray-500 dark:text-gray-400 cursor-not-allowed'
-                : 'bg-orange-500 hover:bg-orange-600 dark:bg-purple-600 dark:hover:bg-purple-700 text-white shadow-orange-500/30 hover:shadow-orange-600/40'
+                : 'bg-brand-primary hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:hover:bg-[#009e98] text-white shadow-md'
               }
             `}
           >
@@ -565,8 +566,8 @@ export default function BookVisitPage() {
       </div>
 
       {/* Footer */}
-      <footer className="bg-gray-900 dark:bg-gray-950 py-6 text-center border-t border-purple-900/30">
-        <p className="text-orange-600/60">{t('footer.copyright')}</p>
+      <footer className="border-t border-slate-700 bg-gray-900 py-6 text-center dark:bg-gray-950">
+        <p className="text-slate-400">{t('footer.copyright')}</p>
       </footer>
     </div>
   );

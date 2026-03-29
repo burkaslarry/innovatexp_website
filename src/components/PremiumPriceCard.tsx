@@ -43,10 +43,10 @@ export function PremiumPriceCard({
       <div
         className="rounded-2xl p-[2px] shadow-xl"
         style={{
-          background: "linear-gradient(135deg, #EAB308, #E87D3E, #6366f1)",
+          background: "linear-gradient(135deg, #00B9B3, #1242de, #0f766e)",
         }}
       >
-        <div className="relative rounded-[14px] bg-gradient-to-b from-violet-900/95 via-indigo-950 to-slate-950 px-6 pb-8 pt-10 dark:from-violet-950 dark:via-indigo-950">
+        <div className="relative rounded-[14px] bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 px-6 pb-8 pt-10 dark:from-slate-900 dark:via-slate-950">
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-sm font-bold text-slate-900 shadow-md">
             {badge}
           </div>
@@ -58,7 +58,7 @@ export function PremiumPriceCard({
           {subtitle ? (
             <p className="mt-1 text-sm text-amber-200/90">{subtitle}</p>
           ) : null}
-          {target ? <p className="mt-2 text-sm text-violet-100">{target}</p> : null}
+          {target ? <p className="mt-2 text-sm text-slate-300">{target}</p> : null}
 
           <ul className="mt-5 space-y-2">
             {featureLines.map((line, i) => (

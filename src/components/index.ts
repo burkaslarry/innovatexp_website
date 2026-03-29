@@ -10,3 +10,4 @@ export { PremiumPriceCard } from "./PremiumPriceCard";
 export { ImplementationTimeline } from "./ImplementationTimeline";
 export { FaqAccordion } from "./FaqAccordion";
 export { ContactForm } from "./ContactForm";
+export { default as SmartSalesEnterpriseShowcase } from "./SmartSalesEnterpriseShowcase";

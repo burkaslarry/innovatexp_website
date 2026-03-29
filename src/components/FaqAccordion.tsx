@@ -23,7 +23,7 @@ export function FaqAccordion({ title, id, faqs }: FaqAccordionProps) {
       id={id}
       className="mb-16 rounded-3xl border border-slate-100 bg-white p-8 shadow-card dark:border-slate-700 dark:bg-slate-900/80"
     >
-      <h2 className="mb-6 font-serif text-2xl font-bold text-slate-900 dark:text-white md:text-3xl">
+      <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4 md:text-3xl">
         {title}
       </h2>
       <ul className="divide-y divide-slate-200 dark:divide-slate-600">
@@ -34,11 +34,11 @@ export function FaqAccordion({ title, id, faqs }: FaqAccordionProps) {
               <button
                 type="button"
                 onClick={() => setOpenIndex(open ? null : idx)}
-                className="flex w-full items-center justify-between gap-4 py-4 text-left text-base font-medium text-slate-900 transition-colors hover:text-brand-primary dark:text-white dark:hover:text-brand-primary"
+                className="flex w-full items-center justify-between gap-4 py-4 text-left text-base font-medium text-brand-primary transition-colors hover:text-brand-primary-hover dark:text-white dark:hover:text-[#00B9B3]"
                 aria-expanded={open}
               >
                 <span>{faq.question}</span>
-                <span className="shrink-0 text-brand-primary">
+                <span className="shrink-0 text-brand-primary dark:text-[#00B9B3]">
                   {open ? (
                     <Minus className="h-5 w-5" strokeWidth={2.5} aria-hidden />
                   ) : (

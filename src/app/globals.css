@@ -1,13 +1,29 @@
+@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Inter:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@600;700&display=swap');
+
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
 
-@import url('https://fonts.googleapis.com/css2?family=Caveat:wght@400;500;600;700&family=Patrick+Hand&family=Inter:wght@300;400;500;600;700&display=swap');
+@layer utilities {
+  .font-faq-title {
+    font-family: var(--font-faq-title);
+  }
+}
+
+@layer base {
+  h1,
+  h2,
+  h3 {
+    color: var(--heading-foreground);
+  }
+}
 
 /* ====================================
    Light Mode CSS Variables (Default)
    ==================================== */
 :root {
+  --header-offset: 180px;
+
   /* Background Colors */
   --bg-primary: #ffffff;
   --bg-secondary: #f8f9fa;
@@ -36,10 +52,18 @@
   /* Legacy Variables */
   --background: #fffcf7;
   --foreground: #1a1a1a;
+  --oxford-blue: #002147;
+  --heading-foreground: #002147;
+  /* Align with Tailwind theme.extend.colors.brand */
+  --brand-primary: #1242de;
+  --brand-primary-hover: #0e35b5;
+  --brand-accent-teal: #00b9b3;
+  --brand-accent-teal-hover: #009e98;
   
   /* Fonts */
   --font-handwriting: 'Caveat', 'Patrick Hand', cursive;
   --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Inter", sans-serif;
+  --font-faq-title: "Noto Serif TC", "Songti SC", "PMingLiU", "Microsoft JhengHei", serif;
   
   /* Theme */
   color-scheme: light;
@@ -77,6 +101,10 @@
   /* Legacy Variables */
   --background: #0f1419;
   --foreground: #f5f5f5;
+  --oxford-blue: #002147;
+  --heading-foreground: #f8fafc;
+
+  --font-faq-title: "Noto Serif TC", "Songti SC", "PMingLiU", "Microsoft JhengHei", serif;
   
   /* Theme */
   color-scheme: dark;

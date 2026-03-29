@@ -1,73 +1,89 @@
-import React, { ChangeEvent } from 'react';
+"use client";
+
+import React, { ChangeEvent, useMemo } from "react";
 import TextField from "@mui/material/TextField";
-import { createTheme, ThemeProvider } from '@mui/material/styles';
+import { createTheme, ThemeProvider } from "@mui/material/styles";
+import { useTheme as useAppTheme } from "./ThemeContext";
 
-// Define the props interface
+/** InnovateXP brand — aligned with Tailwind `brand.primary` / dark CTA teal */
+const BRAND = "#1242de";
+const BRAND_DARK = "#0e35b5";
+const TEAL = "#00b9b3";
+
 interface LightPurpleTextFieldProps {
-    formData: { [key: string]: string }; // Object with string keys and string values
-    handleChange: (event: ChangeEvent<HTMLInputElement>) => void; // Function to handle input changes
-    inputName: string; // Name of the input field
-    placeTxt: string; // Placeholder text
-    labelTxt: string; // Label text
-  }
+  formData: { [key: string]: string };
+  handleChange: (event: ChangeEvent<HTMLInputElement>) => void;
+  inputName: string;
+  placeTxt: string;
+  labelTxt: string;
+}
 
-  
-  const LightPurpleTextField: React.FC<LightPurpleTextFieldProps> = ({ formData, handleChange, inputName, placeTxt, labelTxt }) => {
-    // Create a custom theme with the colors you want
-    const theme = createTheme({
+export default function LightPurpleTextField({
+  formData,
+  handleChange,
+  inputName,
+  placeTxt,
+  labelTxt,
+}: LightPurpleTextFieldProps) {
+  const { theme: appTheme } = useAppTheme();
+  const isDark = appTheme === "dark";
+  const primary = isDark ? TEAL : BRAND;
+
+  const theme = useMemo(
+    () =>
+      createTheme({
         palette: {
-            primary: {
-                main: '#A370F7', // Light purple color when focused
-            },
+          mode: isDark ? "dark" : "light",
+          primary: { main: primary, dark: isDark ? TEAL : BRAND_DARK },
         },
         components: {
-            MuiTextField: {
-                styleOverrides: {
-                    root: {
-                        '& .MuiInputBase-input': {
-                            color: 'black', // Text color
-                        },
-                        '& .MuiInputLabel-root': {
-                            color: 'black', // Label color
-                        },
-                        '& .MuiInput-underline:before': {
-                            borderBottomColor: 'black', // Underline when not focused
-                        },
-                        '& .MuiInput-underline:hover:not(.Mui-disabled):before': {
-                            borderBottomColor: 'black', // Underline when hovered
-                        },
-                        '& .MuiInput-underline:after': {
-                            borderBottomColor: '#A370F7', // Underline when focused
-                        },
-                        '& .MuiInputLabel-root.Mui-focused': {
-                            color: '#A370F7', // Label color when focused
-                        },
-                        '& .MuiInputBase-input::placeholder': {
-                            color: 'black', // Placeholder color
-                            opacity: 0.7,
-                        },
-                    },
+          MuiTextField: {
+            styleOverrides: {
+              root: {
+                "& .MuiInputBase-input": {
+                  color: isDark ? "#f1f5f9" : "rgba(0,0,0,0.87)",
                 },
+                "& .MuiInputLabel-root": {
+                  color: isDark ? "#94a3b8" : "rgba(0,0,0,0.6)",
+                },
+                "& .MuiInput-underline:before": {
+                  borderBottomColor: isDark ? "rgba(148,163,184,0.5)" : "rgba(0,0,0,0.42)",
+                },
+                "& .MuiInput-underline:hover:not(.Mui-disabled):before": {
+                  borderBottomColor: isDark ? "#cbd5e1" : "rgba(0,0,0,0.87)",
+                },
+                "& .MuiInput-underline:after": {
+                  borderBottomColor: primary,
+                },
+                "& .MuiInputLabel-root.Mui-focused": {
+                  color: primary,
+                },
+                "& .MuiInputBase-input::placeholder": {
+                  color: isDark ? "#64748b" : "rgba(0,0,0,0.45)",
+                  opacity: 1,
+                },
+              },
             },
+          },
         },
-    });
+      }),
+    [isDark, primary]
+  );
 
-    return (
-        <ThemeProvider theme={theme}>
-            <TextField
-                name={inputName} // Use the inputName prop here
-                id={inputName}
-                required
-                placeholder={placeTxt}
-                label={labelTxt}
-                fullWidth
-                variant="standard"
-                value={formData[inputName]} // Use formData with inputName
-                onChange={handleChange}
-                color="primary" // Apply the light purple color
-            />
-        </ThemeProvider>
-    );
-};
-
-export default LightPurpleTextField;
+  return (
+    <ThemeProvider theme={theme}>
+      <TextField
+        name={inputName}
+        id={inputName}
+        required
+        placeholder={placeTxt}
+        label={labelTxt}
+        fullWidth
+        variant="standard"
+        value={formData[inputName]}
+        onChange={handleChange}
+        color="primary"
+      />
+    </ThemeProvider>
+  );
+}

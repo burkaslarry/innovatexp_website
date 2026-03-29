@@ -13,6 +13,13 @@ import {
   List,
   ListItem,
 } from '@mui/material';
+import { ThemeProvider, createTheme } from '@mui/material/styles';
+
+const muiBrandTheme = createTheme({
+  palette: {
+    primary: { main: '#1242de' },
+  },
+});
 import ErrorIcon from '@mui/icons-material/Error';
 import WarningIcon from '@mui/icons-material/Warning';
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
@@ -156,6 +163,7 @@ export default function ErrorModal({ open, errorType, onClose }: ErrorModalProps
   const content = getErrorContent();
 
   return (
+    <ThemeProvider theme={muiBrandTheme}>
     <Dialog open={open} onClose={onClose} maxWidth="sm" fullWidth>
       <DialogTitle sx={{ display: 'flex', alignItems: 'center', gap: 1, pb: 1 }}>
         <ErrorIcon color="error" />
@@ -220,5 +228,6 @@ export default function ErrorModal({ open, errorType, onClose }: ErrorModalProps
         </Button>
       </DialogActions>
     </Dialog>
+    </ThemeProvider>
   );
 }

@@ -40,7 +40,7 @@ export function PriceCard({
           <span className="text-slate-500 dark:text-slate-400">{period}</span>
         </div>
         {target ? (
-          <p className="mt-3 text-sm font-medium text-violet-600 dark:text-violet-300">
+          <p className="mt-3 text-sm font-medium text-slate-600 dark:text-slate-400">
             {target}
           </p>
         ) : null}

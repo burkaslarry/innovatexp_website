@@ -192,7 +192,7 @@ export default function SmartSalesCrmPage() {
           </p>
           <Link
             href="/bookme"
-            className="inline-block bg-orange-500 hover:bg-orange-600 text-white font-semibold py-3 px-6 rounded-full transition-colors"
+            className="inline-block rounded-full bg-brand-primary py-3 px-6 font-semibold text-white transition-colors hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
           >
             Book a free consultation
           </Link>

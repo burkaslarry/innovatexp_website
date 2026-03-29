@@ -8,7 +8,7 @@ export default function ContactUs() {
   return (
     <div
       id="contact-us"
-      className="rounded-3xl border border-amber-100/80 bg-brand-cream-warm px-6 py-10 shadow-card dark:border-slate-700 dark:bg-slate-900/90 md:px-10 md:py-12"
+      className="scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/15 bg-brand-cream-warm px-6 py-10 shadow-card dark:border-slate-600 dark:bg-slate-900/90 md:px-10 md:py-12"
     >
       <h2 className="text-center text-3xl font-bold text-slate-900 dark:text-white md:text-4xl">
         {t("contact.title")}
@@ -24,6 +24,9 @@ export default function ContactUs() {
           submitLabel={t("contact.form.submit")}
           successMessage={t("contact.form.success")}
           placeholder={t("contact.form.placeholder")}
+          nameHint={t("contact.form.hint.name")}
+          emailHint={t("contact.form.hint.email")}
+          messageHint={t("contact.form.hint.message")}
         />
       </div>
     </div>

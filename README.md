@@ -53,7 +53,7 @@ Available slots on `/bookme` come from **every row** in your Notion database(s) 
 
 Reusable marketing UI (Tailwind + **lucide-react** + **framer-motion**): `Hero`, `SolutionShowcase`, `PricingComparisonTable`, `PriceCard`, `PremiumPriceCard`, `ImplementationTimeline`, `FaqAccordion`, `ContactForm`, plus primitives in `src/components/ui/` (`Button`, `Card`, `SectionHeader`).
 
-Brand tokens: `brand-primary` (#E87D3E), `brand-cream`, `brand-cream-warm` (see `tailwind.config.ts`).
+Brand tokens: `brand-primary` (#0e34af), `brand-cream`, `brand-cream-warm` (see `tailwind.config.ts`).
 
 Optional: set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` for the contact form (falls back to the previous embedded key if unset).
 

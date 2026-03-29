@@ -15,6 +15,9 @@ export interface ContactFormProps {
   submitLabel: string;
   successMessage: string;
   placeholder?: string;
+  nameHint?: string;
+  emailHint?: string;
+  messageHint?: string;
 }
 
 export function ContactForm({
@@ -24,6 +27,9 @@ export function ContactForm({
   submitLabel,
   successMessage,
   placeholder = "",
+  nameHint,
+  emailHint,
+  messageHint,
 }: ContactFormProps) {
   const [formData, setFormData] = useState({
     senderName: "",
@@ -105,76 +111,91 @@ export function ContactForm({
           >
             <input type="hidden" name="from_name" value="Client" readOnly />
 
-            <div className={inputWrap}>
-              <label
-                htmlFor="senderName"
-                className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400"
-              >
-                {nameLabel}
-              </label>
-              <input
-                id="senderName"
-                name="senderName"
-                autoComplete="name"
-                value={formData.senderName}
-                onChange={(e) =>
-                  setFormData((p) => ({ ...p, senderName: e.target.value }))
-                }
-                placeholder={placeholder}
-                className="w-full bg-transparent text-base text-slate-900 outline-none placeholder:text-slate-400 dark:text-white"
-                required
-              />
+            <div className="space-y-1">
+              <div className={inputWrap}>
+                <label
+                  htmlFor="senderName"
+                  className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400"
+                >
+                  {nameLabel}
+                </label>
+                <input
+                  id="senderName"
+                  name="senderName"
+                  autoComplete="name"
+                  value={formData.senderName}
+                  onChange={(e) =>
+                    setFormData((p) => ({ ...p, senderName: e.target.value }))
+                  }
+                  placeholder={placeholder}
+                  className="w-full bg-transparent text-base text-slate-900 outline-none placeholder:text-slate-400 dark:text-white"
+                  required
+                />
+              </div>
+              {nameHint ? (
+                <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400">{nameHint}</p>
+              ) : null}
             </div>
 
-            <div className={inputWrap}>
-              <label
-                htmlFor="email"
-                className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400"
-              >
-                {emailLabel}
-              </label>
-              <input
-                id="email"
-                name="email"
-                type="email"
-                inputMode="email"
-                autoComplete="email"
-                value={formData.email}
-                onChange={(e) =>
-                  setFormData((p) => ({ ...p, email: e.target.value }))
-                }
-                placeholder={placeholder}
-                className="w-full bg-transparent text-base text-slate-900 outline-none placeholder:text-slate-400 dark:text-white"
-                required
-              />
+            <div className="space-y-1">
+              <div className={inputWrap}>
+                <label
+                  htmlFor="email"
+                  className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400"
+                >
+                  {emailLabel}
+                </label>
+                <input
+                  id="email"
+                  name="email"
+                  type="email"
+                  inputMode="email"
+                  autoComplete="email"
+                  value={formData.email}
+                  onChange={(e) =>
+                    setFormData((p) => ({ ...p, email: e.target.value }))
+                  }
+                  placeholder={placeholder}
+                  className="w-full bg-transparent text-base text-slate-900 outline-none placeholder:text-slate-400 dark:text-white"
+                  required
+                />
+              </div>
+              {emailHint ? (
+                <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400">{emailHint}</p>
+              ) : null}
             </div>
 
-            <div className={inputWrap}>
-              <label
-                htmlFor="message"
-                className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400"
-              >
-                {messageLabel}
-              </label>
-              <textarea
-                id="message"
-                name="message"
-                rows={4}
-                value={formData.message}
-                onChange={(e) =>
-                  setFormData((p) => ({ ...p, message: e.target.value }))
-                }
-                placeholder={placeholder}
-                className="w-full resize-none bg-transparent text-base text-slate-900 outline-none placeholder:text-slate-400 dark:text-white"
-                required
-              />
+            <div className="space-y-1">
+              <div className={inputWrap}>
+                <label
+                  htmlFor="message"
+                  className="absolute left-0 top-2 text-sm font-medium text-slate-500 transition-all group-focus-within:text-brand-primary dark:text-slate-400"
+                >
+                  {messageLabel}
+                </label>
+                <textarea
+                  id="message"
+                  name="message"
+                  rows={4}
+                  value={formData.message}
+                  onChange={(e) =>
+                    setFormData((p) => ({ ...p, message: e.target.value }))
+                  }
+                  placeholder={placeholder}
+                  className="w-full resize-none bg-transparent text-base text-slate-900 outline-none placeholder:text-slate-400 dark:text-white"
+                  required
+                />
+              </div>
+              {messageHint ? (
+                <p className="text-xs leading-relaxed text-slate-500 dark:text-slate-400">{messageHint}</p>
+              ) : null}
             </div>
 
             <div className="pt-6">
               <button
                 type="submit"
                 disabled={!valid || submitting}
-                className="flex w-full min-h-[52px] items-center justify-center gap-2 rounded-xl bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition-all hover:bg-brand-primary-hover hover:shadow-lg disabled:cursor-not-allowed disabled:bg-brand-primary/40 disabled:shadow-none"
+                className="flex w-full min-h-[52px] items-center justify-center gap-2 rounded-xl bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition-all hover:bg-brand-primary-hover hover:shadow-lg disabled:cursor-not-allowed disabled:bg-brand-primary/40 disabled:shadow-none dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
               >
                 {submitting ? (
                   <>
