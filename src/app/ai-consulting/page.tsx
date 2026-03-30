@@ -11,23 +11,23 @@ const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
 
 export const metadata: Metadata = {
-  title: "AI Consulting | Implementation That Ships | Hong Kong & Global | InnovateXP",
+  title: "InnovateXP | AI Consulting That Ships",
   description:
-    "Stop slides—start shipping. AI consulting for SMEs: roadmaps that turn into real workflows. Hong Kong tech excellence, global delivery. Book a free audit.",
+    "Every AI project that fails does so in the first 3 weeks. InnovateXP helps SMEs start with one workflow, prove ROI in 30 days, then expand — controlled risk, measurable outcomes.",
   alternates: {
     canonical: `${siteUrlMeta}/ai-consulting`,
   },
   openGraph: {
-    title: "AI Consulting | Implementation That Ships | Hong Kong & Global | InnovateXP",
-    description: "Stop slides—start shipping. AI consulting for SMEs: roadmaps that turn into real workflows. Hong Kong tech excellence, global delivery.",
+    title: "InnovateXP | AI Consulting That Ships",
+    description: "Every AI project that fails does so in the first 3 weeks. Start with one workflow, prove ROI in 30 days, then expand — controlled risk, measurable outcomes.",
     url: `${siteUrlMeta}/ai-consulting`,
     siteName: "InnovateXP Limited",
     images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP AI Consulting" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Consulting | Implementation That Ships | Hong Kong & Global | InnovateXP",
-    description: "Stop slides—start shipping. AI consulting for SMEs: roadmaps that turn into real workflows. Hong Kong tech excellence, global delivery.",
+    title: "InnovateXP | AI Consulting That Ships",
+    description: "Every AI project that fails does so in the first 3 weeks. Start with one workflow, prove ROI in 30 days, then expand — controlled risk, measurable outcomes.",
   },
 };
 
@@ -74,10 +74,10 @@ export default function AiConsultingPage() {
           }}
         />
         <h1 className="text-4xl md:text-5xl font-bold text-gray-900 dark:text-white mb-6">
-          AI Consulting Services in Hong Kong
+          Every AI project that fails does so in the first 3 weeks. Here&apos;s why.
         </h1>
         <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300 mb-10">
-          Our AI consulting service helps Hong Kong SMEs, founders, and operations leaders move from AI interest to practical implementation. We focus on real workflow outcomes: clearer process design, lower execution friction, and better decision visibility for growing teams. Instead of generic strategy decks, we work through use-case selection, setup priorities, team enablement, and continuous refinement so AI becomes a stable part of daily operations.
+          Most SMEs pick the wrong tool, scope too broadly, and lose momentum before seeing results. InnovateXP&apos;s consulting starts with one workflow, proves ROI in 30 days, then expands — controlled risk, measurable outcomes.
         </p>
         <ChineseOverlay section="ai-consulting-hero" />
 
@@ -94,10 +94,10 @@ export default function AiConsultingPage() {
         <section className="mb-10">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Who it&apos;s for</h2>
           <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Hong Kong SMEs that want to adopt AI but need a practical rollout path.</li>
-            <li>B2B teams that need workflow automation without disrupting daily execution.</li>
-            <li>Startup founders who need clearer priorities before investing in build scope.</li>
-            <li>Managers who need measurable operational improvements, not generic AI advice.</li>
+            <li>You&apos;ve tried ChatGPT but it&apos;s not connected to anything in your business.</li>
+            <li>You want to automate follow-ups, reporting, or scheduling — but don&apos;t know which tool fits your stack.</li>
+            <li>You&apos;ve been quoted $200,000 for an AI project and want a reality check.</li>
+            <li>You need someone who will actually build it, not just slide-deck it.</li>
           </ul>
         </section>
 

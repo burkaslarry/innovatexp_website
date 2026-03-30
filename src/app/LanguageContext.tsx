@@ -18,14 +18,15 @@ export const translations = {
     'header.subtitle': 'Innovate • Transform • Experience',
     'quick.product': 'Quick Product/Service Overview',
     // Hero Section
-    'hero.title': 'Your Strongest AI Architect',
-    'hero.tagline': 'Elevate your business with AI and Blueprint',
-    'hero.description': "Leave behind high competition and low margins - create unique value with our AI-driven solutions.",
+    'hero.title': 'You have 40 WhatsApp messages. Which one do you reply to first?',
+    'hero.tagline': '',
+    'hero.description':
+      'InnovateXP builds AI systems that help Hong Kong SMEs stop losing deals to slow replies, missed follow-ups, and scattered spreadsheets.',
     'hero.cta': 'Contact Us',
-    'hero.book_meeting': 'Book a strategy call',
-    'hero.tagline_en': 'AI CRM & event systems built in Hong Kong, for SMEs across Asia.',
+    'hero.book_meeting': 'Book a Free 30-min Consultation',
+    'hero.tagline_en': '',
     'hero.image_alt': 'Larry Lo presenting — InnovateXP founder, AI & CRM for Hong Kong SMEs',
-    'hero.explore_services': 'Explore services',
+    'hero.explore_services': 'Explore Our Products',
     'why.title': 'Why InnovateXP',
     'why.1.label': '14+ years in tech',
     'why.1.sub': 'Hands-on systems and consulting, not slide decks only.',
@@ -35,18 +36,25 @@ export const translations = {
     'why.3.sub': 'Hong Kong startup ecosystem roots.',
     'why.4.label': 'Local AI + CRM team',
     'why.4.sub': 'Cantonese / English delivery for regional SMEs.',
-    'product.entry.eventxp.title': 'EventXP',
-    'product.entry.eventxp.blurb': 'QR check-in, attendance intelligence, and post-event follow-up.',
-    'product.entry.eventxp.cta': 'View EventXP',
-    'product.entry.smartsales.title': 'SmartSales CRM',
-    'product.entry.smartsales.blurb': 'AI-assisted pipeline, drafts, and scheduling for sales teams.',
-    'product.entry.smartsales.cta': 'View SmartSales CRM',
-    'product.entry.ai.title': 'AI consulting',
-    'product.entry.ai.blurb': 'Readiness audits, custom agents, and team prompt training.',
-    'product.entry.ai.cta': 'View AI consulting',
-    'mockup.checkin': 'EventXP check-in & dashboard (mockup)',
+    'product.entry.section_label': 'What are you trying to solve?',
+    'product.entry.eventxp.title':
+      '🎟️ I run events and lose track of attendees after the day',
+    'product.entry.eventxp.blurb': 'See how check-ins become ranked follow-up lists.',
+    'product.entry.eventxp.cta': '→ See EventXP',
+    'product.entry.smartsales.title':
+      '💬 My WhatsApp inbox is full of leads I never followed up on',
+    'product.entry.smartsales.blurb': 'See triage, AI drafts, and human-approved sending.',
+    'product.entry.smartsales.cta': '→ See SmartSales CRM',
+    'product.entry.ai.title': '🤖 I want AI in my business but don\'t know where to start',
+    'product.entry.ai.blurb': 'Start with one workflow, prove ROI in 30 days, then expand.',
+    'product.entry.ai.cta': '→ See AI Consulting',
+    'eventxp.headline': 'You spent HKD 50,000 on an event. What happened to those 200 contacts?',
+    'smartsales.headline': 'Your best salesperson follows up within 2 hours. Does yours?',
+    'mockup.checkin':
+      '🎬 Watch EventXP in a live 15-min walkthrough. We\'ll show you a real post-event report from a recent BNI chapter event. → Book Demo: info@innovatexp.com',
     'mockup.checkin.alt': 'EventXP admin — check-in and dashboard screenshot',
-    'mockup.pipeline': 'SmartSales pipeline & AI draft (mockup)',
+    'mockup.pipeline':
+      '🎬 See a live SmartSales inbox walkthrough — 15 minutes. We\'ll show you how a real lead gets triaged, drafted, and followed up. → Book Demo: info@innovatexp.com',
     'mockup.ai': 'AI drafting & workflow (mockup)',
     'contact.form.hint.name': 'How we should address you or your team.',
     'contact.form.hint.email': 'We reply within 1–2 business days.',
@@ -110,7 +118,8 @@ export const translations = {
     'vision.title': 'Our Vision',
     'vision.brand': 'InnovateXP Limited',
     'vision.tagline': 'Innovate • Transform • Experience',
-    'vision.description': 'At InnovateXP, we believe every business deserves to harness the power of AI and data-driven insights. We don\'t just build software—we architect your competitive advantage. From event management to customer relationships, we transform complex challenges into elegant solutions that drive measurable growth.',
+    'vision.description':
+      'Most SMEs are stuck in the Red Ocean — competing on price, doing what everyone else does, and watching margins shrink. InnovateXP builds the systems that let you escape it. Not by automating everything at once, but by finding the one workflow where AI creates an unfair advantage for your business — and building that first. That\'s the Desert Oasis approach. Your competitors are busy in the crowd. You build where they can\'t follow.',
     'vision.innovate': 'Innovate',
     'vision.innovate_desc': 'Challenge the status quo with AI-powered solutions that turn data into your strategic asset.',
     'vision.transform': 'Transform',
@@ -120,7 +129,7 @@ export const translations = {
 
     // Core Services Section (Three Main Services)
     'services.title': 'Our Core Services',
-    'services.ai_crm.title': 'AI × CRM',
+    'services.ai_crm.title': 'SmartSales CRM',
     'services.ai_crm.subtitle': 'Intelligent Customer Management System',
     'services.ai_crm.benefit1': 'Lightning-fast responses with AI Smart Draft',
     'services.ai_crm.benefit2': 'Automated booking handling',
@@ -210,10 +219,13 @@ export const translations = {
     
     // Achievements Section
     'achievements.title': 'Track Record & Impact',
-    'achievements.kmb': 'KMB / Government Projects',
-    'achievements.government': 'High-risk environment systems',
+    'achievements.kmb':
+      'KMB & Government Projects',
+    'achievements.government':
+      'Delivered production systems operating in real-time, high-availability environments — the same engineering discipline we bring to every SME build.',
     'achievements.sme': 'SME Projects',
-    'achievements.engagement': 'Boosted user engagement by 100%',
+    'achievements.engagement':
+      'Doubled active user engagement within 3 months of launch (SME client, 2025)',
     'achievements.case': 'AI × CRM success story',
     
     // Credibility Badges
@@ -225,11 +237,11 @@ export const translations = {
     'credibility.bni': 'BNI',
     
     // Product Showcases
-    'showcase.title': 'Solution Showcases',
+    'showcase.title': '',
     'showcase.problem_label': 'Problem:',
     'showcase.solution_label': 'Solution:',
     'showcase.features_label': 'Key Features:',
-    'showcase.screenshot_coming': 'Product screenshot coming soon',
+    'showcase.screenshot_coming': '📬 Book a 15-min live walkthrough — info@innovatexp.com',
     'showcase.checkin.title': 'EventXP',
     'showcase.checkin.subtitle': 'QR Code + Real-time Sync',
     'showcase.checkin.problem': 'Manual check-in prone to errors and missing data, time-consuming post-event statistics',
@@ -262,9 +274,12 @@ export const translations = {
     // EventXP Product
     'pricing.insight.name': 'EventXP',
     'pricing.insight.tagline': 'Turn Event Data into Revenue Growth',
-    'pricing.insight.subtitle': 'Intelligent Event Data System',
-    'pricing.insight.description': 'Stop letting your visitor data sleep in Excel. Transform attendance records into deep customer insights and sustainable business growth.',
-    'pricing.insight.value': 'Predict attendee interests, retain community members, and precisely target next year\'s buyers.',
+    'pricing.insight.subtitle':
+      'You spent HKD 50,000 on an event. What happened to those 200 contacts?',
+    'pricing.insight.description':
+      'EventXP turns every check-in into a ranked lead list — automatically. Know who to follow up with, and when, before your competitors do.',
+    'pricing.insight.value':
+      'The AI Growth plan costs HKD $400/month more than Professional. A single recovered client from a smarter follow-up list typically pays for a year\'s subscription. The math is straightforward.',
     
     'pricing.insight.tier1.name': 'Starter',
     'pricing.insight.tier1.price': 'HKD $1,480',
@@ -282,7 +297,7 @@ export const translations = {
     'pricing.insight.tier2.badge': 'Best Value',
     'pricing.insight.tier2.target': '2 communities · Min. 12 months',
     'pricing.insight.tier2.feature1': 'All Starter features, PLUS:',
-    'pricing.insight.tier2.feature2': '🕵️ AI Potential Interest Insight (check-in behavior → likely interests)',
+    'pricing.insight.tier2.feature2': '🕵️ Lead scoring insight (check-in timing + attendance + engagement)',
     'pricing.insight.tier2.feature3': '3 onsite events · 2 Strategic AI Consultancy sessions/year',
     'pricing.insight.tier2.feature4': '1 year warranty · 2 product review meetings',
     'pricing.insight.tier2.note': '💡 Ideal for community retention and data-driven follow-up. Prepay 1 year: 10% off; 2 years: 20% off.',
@@ -296,22 +311,27 @@ export const translations = {
     'pricing.insight.tier3.feature3': 'Continuous optimization, workflow automation & strategy support',
     
     'pricing.insight.setup':
-      'If the prospect is a BNI member, one-off setup pricing may be negotiable. For details, ',
+      'If we confirm the booking person is a BNI member, the scenario and pricing may be negotiable. For details, ',
     'pricing.insight.setup_cta': 'book a consultation',
     'eventxp.communities_support':
       'Event support by plan: Starter — 1 community; Growth — 2 communities; Enterprise — 4 communities. Includes one trial event.',
-    'mockup.pipeline_kanban': 'SmartSales — pipeline / Kanban (screenshot)',
-    'mockup.pipeline_inbox': 'SmartSales — inbox & channels (screenshot)',
+    'mockup.pipeline_kanban':
+      '🎬 Live walkthrough: pipeline / Kanban — Book: info@innovatexp.com',
+    'mockup.pipeline_inbox':
+      '🎬 Live walkthrough: inbox triage & drafts — Book: info@innovatexp.com',
     
     // SmartSales CRM Product
     'pricing.crm.name': 'SmartSales CRM',
-    'pricing.crm.tagline': 'Clone Your Best Salesperson with AI',
-    'pricing.crm.subtitle': 'AI Sales Growth Engine',
-    'pricing.crm.description': 'Let AI become your top sales assistant. From writing emails, scheduling to analysis - automate tedious work so you can focus on closing deals.',
-    'pricing.crm.value': 'Automate follow-ups, appointments and analysis - save 70% admin time.',
+    'pricing.crm.tagline': 'Your best salesperson follows up within 2 hours. Does yours?',
+    'pricing.crm.subtitle': 'WhatsApp-first revenue recovery for Hong Kong teams',
+    'pricing.crm.description':
+      'SmartSales CRM watches your WhatsApp inbox, ranks every lead by urgency, and drafts a reply in Cantonese or English. You review, tweak 20%, and send. No bot feel. No missed deals.',
+    'pricing.crm.value':
+      'Our users typically reclaim 3+ hours per week previously spent on manual WhatsApp tracking and copy-pasting replies. (Based on onboarded SME clients, March 2026)',
     
-    'pricing.crm.feature1.title': 'AI Smart Writing & Reply',
-    'pricing.crm.feature1.desc': 'Context-aware responses: When customers say "too expensive", AI auto-drafts a value-focused reply for you to edit.',
+    'pricing.crm.feature1.title': 'AI Reply Drafts — Cantonese & English',
+    'pricing.crm.feature1.desc':
+      'When a lead says \'too expensive\', SmartSales drafts a value-focused reply in your brand\'s voice. You edit it, you send it. The customer never knows AI was involved — because it wasn\'t. You were.',
     'pricing.crm.feature2.title': 'Intelligent Scheduling',
     'pricing.crm.feature2.desc': 'Auto-booking: Integrates with Google/Outlook Calendar, AI bot confirms availability in chat and sends meeting invites.',
     'pricing.crm.feature3.title': 'Insight Reporting',
@@ -334,13 +354,15 @@ export const translations = {
     'pricing.crm.tier2.feature2': 'Insight Reports: AI sales forecasting & strategic recommendations',
     'pricing.crm.tier2.feature3': 'WhatsApp / Email dual integration',
     
-    'pricing.crm.tier3.name': 'Setup Fee',
-    'pricing.crm.tier3.price': 'From HKD $8,000',
-    'pricing.crm.tier3.period': '(One-time)',
-    'pricing.crm.tier3.target': 'System onboarding',
-    'pricing.crm.tier3.feature1': 'Migrate existing data',
-    'pricing.crm.tier3.feature2': 'Train custom AI prompts for your products',
-    'pricing.crm.tier3.feature3': 'Staff training workshop',
+    'pricing.crm.tier3.name': 'Onboarding & Setup',
+    'pricing.crm.tier3.price': 'From HKD $15,000',
+    'pricing.crm.tier3.period': '(one-time)',
+    'pricing.crm.tier3.target': '',
+    'pricing.crm.tier3.feature1': 'Migration from your existing spreadsheet or CRM',
+    'pricing.crm.tier3.feature2': 'Custom AI prompt training in your product\'s brand voice',
+    'pricing.crm.tier3.feature3': '2-hour team walkthrough session',
+    'pricing.crm.tier3.feature4':
+      'Most clients go live within 5–7 business days. Not sure if you need this? Book a free 30-min chat first.',
     
     'pricing.cta': 'Book Consultation',
     'pricing.contact': 'Contact for Details',
@@ -367,9 +389,10 @@ export const translations = {
     'newsletter.error': 'Subscription failed. Please try again.',
     
     // AI Consulting Section
-    'ai_consulting.title': 'AI Consulting Services',
-    'ai_consulting.subtitle': 'From Strategy to Implementation',
-    'ai_consulting.description': 'We help businesses navigate the AI landscape with practical, results-driven consulting.',
+    'ai_consulting.title': 'Every AI project that fails does so in the first 3 weeks. Here\'s why.',
+    'ai_consulting.subtitle':
+      'Most SMEs pick the wrong tool, scope too broadly, and lose momentum before seeing results. InnovateXP\'s consulting starts with one workflow, proves ROI in 30 days, then expands — controlled risk, measurable outcomes.',
+    'ai_consulting.description': '',
     'ai_consulting.package1.name': 'AI Readiness Audit',
     'ai_consulting.package1.price': 'Starting from HKD $8,000',
     'ai_consulting.package1.desc': 'Comprehensive assessment of your organization\'s AI readiness and opportunities',
@@ -413,7 +436,8 @@ export const translations = {
     'faq.smartsales.q4': 'How long does it take to implement AI CRM?',
     'faq.smartsales.a4': 'Basic setup takes 1-2 weeks including data migration and team training. Full WhatsApp integration and custom workflows typically require 3-4 weeks. We provide hands-on onboarding support throughout.',
     'faq.smartsales.q5': 'What ROI can I expect from AI-powered customer management?',
-    'faq.smartsales.a5': 'Clients typically see 70% reduction in missed follow-ups, 3+ hours saved daily on manual tasks, and 40% improvement in lead response time within the first month.',
+    'faq.smartsales.a5':
+      'Our onboarded SME clients (through March 2026) typically reclaim 3+ hours per week previously spent on manual WhatsApp tracking and copy-pasting replies; timelines vary by team size and workflow.',
     
     'faq.eventxp.title': 'EventXP - Frequently Asked Questions',
     'faq.eventxp.q1': 'What is EventXP event check-in system?',
@@ -447,10 +471,13 @@ export const translations = {
     'aicrm.what.title': 'What is AI CRM?',
     'aicrm.what.answer': 'AI CRM is customer relationship management software enhanced with artificial intelligence that automatically drafts follow-up messages, predicts lead conversion, and prioritizes prospects. Unlike traditional CRM that only stores data, AI CRM saves SMEs 3+ hours daily on repetitive sales tasks through intelligent automation.',
     'aicrm.benefits.title': 'Top 5 Benefits of AI CRM for Hong Kong SMEs:',
-    'aicrm.benefits.1': 'Automated follow-ups reduce missed opportunities by 70%',
-    'aicrm.benefits.2': 'Smart scheduling eliminates double-booking and saves 3+ hours daily',
-    'aicrm.benefits.3': 'AI-powered responses improve lead response time by 40%',
-    'aicrm.benefits.4': 'Sales forecasting with 85% accuracy for better planning',
+    'aicrm.benefits.1':
+      'Our users typically reclaim 3+ hours per week previously spent on manual WhatsApp tracking and copy-pasting replies. (Based on onboarded SME clients, March 2026)',
+    'aicrm.benefits.2': 'Smart scheduling eliminates double-booking and keeps your calendar accurate.',
+    'aicrm.benefits.3':
+      'Draft-first replies in Cantonese or English — you approve before anything is sent.',
+    'aicrm.benefits.4':
+      'Pipeline visibility so managers see unanswered threads before deals slip.',
     'aicrm.benefits.5': 'WhatsApp integration tailored for Hong Kong business communication',
     'aicrm.pricing.title': 'AI CRM Pricing Comparison Hong Kong',
     'aicrm.pricing.plan': 'Plan',
@@ -474,15 +501,23 @@ export const translations = {
     'aiconsulting.what.answer': 'InnovateXP provides three core AI consulting services for Hong Kong SMEs: AI Readiness Audits (from HKD 8,000) to assess your implementation opportunities, Custom Agent Build (from HKD 25,000) for tailored AI solutions, and Prompt Engineering Training (from HKD 12,000) for hands-on team skill development.',
     'aiconsulting.who.title': 'Who Needs AI Implementation Consulting?',
     'aiconsulting.who.intro': 'AI consulting is ideal for Hong Kong SMEs who:',
-    'aiconsulting.who.1': 'Want to adopt AI but don\'t know where to start',
-    'aiconsulting.who.2': 'Need to reduce trial-and-error costs in AI implementation',
-    'aiconsulting.who.3': 'Require custom AI agents for specific business workflows',
-    'aiconsulting.who.4': 'Want their team trained in practical prompt engineering',
-    'aiconsulting.who.5': 'Seek expert guidance from a 14-year tech veteran',
+    'aiconsulting.who.1': 'You\'ve tried ChatGPT but it\'s not connected to anything in your business',
+    'aiconsulting.who.2':
+      'You want to automate follow-ups, reporting, or scheduling — but don\'t know which tool fits your stack',
+    'aiconsulting.who.3':
+      'You\'ve been quoted $200,000 for an AI project and want a reality check',
+    'aiconsulting.who.4': 'You need someone who will actually build it, not just slide-deck it',
+    'aiconsulting.who.5':
+      'Built by a practitioner, not a consultant. Larry Lo has 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. He is the person who builds and supports your system — not a project manager who subcontracts. Former Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systems handling 2,000+ concurrent active users',
 
     // Main section direct answers + GEO content gap sections
-    'eventxp.main.answer': 'EventXP helps Hong Kong and GBA organizers turn event check-ins into usable business intelligence. Teams can track attendance in real time, identify high-intent attendees, and trigger practical follow-up actions. This gives SMEs clearer post-event visibility instead of relying on scattered manual reports.',
-    'smartsales.main.answer': 'SmartSales CRM gives SMEs a practical AI CRM workflow that combines WhatsApp conversations, lead tracking, and follow-up reminders in one system. Instead of manual updates across spreadsheets and chat apps, sales teams get a cleaner pipeline, faster response cycles, and more consistent customer handling.',
+    'eventxp.main.answer':
+      'EventXP turns every check-in into a ranked lead list — automatically. Know who to follow up with, and when, before your competitors do.',
+    'eventxp.grid.ai_insight.title': 'Scored follow-up lists',
+    'eventxp.grid.ai_insight.body':
+      'Stop guessing who was genuinely interested. EventXP scores every attendee based on check-in timing, session attendance, and engagement patterns — so your team follows up with the right 20 people, not all 200.',
+    'smartsales.main.answer':
+      'SmartSales CRM watches your WhatsApp inbox, ranks every lead by urgency, and drafts a reply in Cantonese or English. You review, tweak 20%, and send. No bot feel. No missed deals.',
     'crm.main.title': 'Why SmartSales? Forged for Hong Kong business culture',
     'crm.main.subtitle': 'Stop losing leads to robotic auto-senders. We believe in "AI Drafts, Human Approves."',
     'crm.usp.1.title': 'Draft-First AI, Not Bots',
@@ -558,7 +593,8 @@ export const translations = {
     'roi.scenario.2': 'An event-driven business can identify higher-intent attendee segments faster for targeted follow-ups.',
     
     'about.author.byline': 'By',
-    'about.author.title': 'Founder of InnovateXP | 14-year Tech Veteran | AI Consultant | Former GDG Hong Kong Organizer',
+    'about.author.title':
+      'Built by a practitioner, not a consultant. Larry Lo has 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. He is the person who builds and supports your system — not a project manager who subcontracts. Former Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systems handling 2,000+ concurrent active users',
     'about.author.updated': 'Last Updated:',
     'about.credentials.title': 'Credentials & Affiliations',
     'about.credentials.experience': 'Tech Experience',
@@ -597,6 +633,9 @@ export const translations = {
     'product.entry.ai.title': 'AI 顧問',
     'product.entry.ai.blurb': '導入評估、客製 Agent 與團隊 Prompt 培訓。',
     'product.entry.ai.cta': '查看 AI 顧問',
+    'product.entry.section_label': '你想優先解決哪個問題？',
+    'eventxp.headline': '你花了 HKD 50,000 辦活動，之後那 200 個聯絡人發生了什麼？',
+    'smartsales.headline': '你最強的業務 2 小時內就跟進。你的團隊做到嗎？',
     'mockup.checkin': 'EventXP 簽到與儀表板（示意）',
     'mockup.checkin.alt': 'EventXP 後台 — 簽到與儀表板畫面',
     'mockup.pipeline': 'SmartSales 漏斗與 AI 草稿（示意）',
@@ -673,7 +712,7 @@ export const translations = {
 
     // Core Services Section (Three Main Services)
     'services.title': '我們的核心服務',
-    'services.ai_crm.title': 'AI × CRM',
+    'services.ai_crm.title': 'SmartSales CRM',
     'services.ai_crm.subtitle': '智能客戶管理系統',
     'services.ai_crm.benefit1': 'AI智能草稿提供專業快速回覆',
     'services.ai_crm.benefit2': '自動化預訂處理',
@@ -778,11 +817,11 @@ export const translations = {
     'credibility.bni': 'BNI',
     
     // Product Showcases
-    'showcase.title': '解決方案展示',
+    'showcase.title': '',
     'showcase.problem_label': '遇到的問題：',
     'showcase.solution_label': '我們的解決方案：',
     'showcase.features_label': '核心功能：',
-    'showcase.screenshot_coming': '產品截圖即將推出',
+    'showcase.screenshot_coming': '📬 預約 15 分鐘現場示範 — info@innovatexp.com',
     'showcase.checkin.title': 'EventXP',
     'showcase.checkin.subtitle': 'QR Code + 即時同步',
     'showcase.checkin.problem': '手動簽到容易出錯、遺漏數據，會後統計費時費力',
@@ -848,7 +887,7 @@ export const translations = {
     'pricing.insight.tier3.feature2': '4 次現場支援 · 2 年保養 · 3 次產品檢討會議',
     'pricing.insight.tier3.feature3': '持續優化、流程自動化及策略支援',
     
-    'pricing.insight.setup': '若查探預約者為 BNI 成員，一次性設定價格可議。詳情請',
+    'pricing.insight.setup': '若經查出預約者為 BNI 成員，場景和價格可議。詳情請',
     'pricing.insight.setup_cta': '預約洽談',
     'eventxp.communities_support':
       '各方案支援社群活動：Starter 1 個社群、Growth 2 個、Enterprise 4 個；並可享用試用活動 1 次。',
@@ -886,13 +925,14 @@ export const translations = {
     'pricing.crm.tier2.feature2': 'Insight Report：AI 銷售預測與戰略建議',
     'pricing.crm.tier2.feature3': 'WhatsApp / Email 雙向整合',
     
-    'pricing.crm.tier3.name': 'Setup 費用',
-    'pricing.crm.tier3.price': 'HKD $8,000 起',
+    'pricing.crm.tier3.name': '導入與設定',
+    'pricing.crm.tier3.price': 'HKD $15,000 起',
     'pricing.crm.tier3.period': '(一次性)',
-    'pricing.crm.tier3.target': '系統導入',
-    'pricing.crm.tier3.feature1': '協助將舊數據導入',
-    'pricing.crm.tier3.feature2': '根據公司產品訓練專屬 AI Prompt',
-    'pricing.crm.tier3.feature3': '員工培訓工作坊',
+    'pricing.crm.tier3.target': '（導入與設定）',
+    'pricing.crm.tier3.feature1': '由現有 Excel／CRM 遷移資料',
+    'pricing.crm.tier3.feature2': '按你產品與語氣訓練專屬 AI Prompt',
+    'pricing.crm.tier3.feature3': '2 小時團隊上手導覽',
+    'pricing.crm.tier3.feature4': '大多數客戶可於 5–7 個工作天上線。如不確定是否需要？先預約免費 30 分鐘聊聊。',
     
     'pricing.cta': '預約諮詢',
     'pricing.contact': '聯絡了解詳情',
@@ -1034,6 +1074,8 @@ export const translations = {
 
     // Main section direct answers + GEO content gap sections
     'eventxp.main.answer': 'EventXP 協助香港及大灣區活動團隊將簽到紀錄轉化為可執行的商業洞察。你可以即時查看出席情況、識別高意向參加者，並安排後續跟進流程，避免活動結束後只剩零散報表與難以行動的資料。',
+    'eventxp.grid.ai_insight.title': '自動評分的跟進名單',
+    'eventxp.grid.ai_insight.body': '不再靠感覺猜誰最有興趣。EventXP 會根據簽到時間、出席狀況與互動訊號為每位參加者評分，讓你先跟進最值得的 20 人，而不是把 200 人全部都追一次。',
     'smartsales.main.answer': 'SmartSales CRM 為中小企業提供可落地的 AI CRM 流程，把 WhatsApp 對話、潛在客戶進度與跟進提醒整合到同一系統。團隊可減少手動更新與跨工具切換，讓銷售管道更清晰、回應更快、服務更一致。',
     'crm.main.title': '專為香港商業文化鑄造',
     'crm.main.subtitle': '拒絕冷冰冰的機械人。我們的核心哲學是：「AI 幫你諗，你話事。」',

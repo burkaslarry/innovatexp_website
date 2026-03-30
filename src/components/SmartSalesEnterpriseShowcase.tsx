@@ -43,9 +43,9 @@ export default function SmartSalesEnterpriseShowcase() {
       <div className="mx-auto max-w-6xl space-y-16">
         <div>
           <div className="mb-10 text-center">
-            <h2 className="font-faq-title text-3xl font-bold tracking-tight text-brand-primary dark:text-teal-300 md:text-4xl">
+            <h3 className="mb-4 text-center text-2xl font-bold text-brand-primary dark:text-white md:text-3xl">
               {t("crm.main.title")}
-            </h2>
+            </h3>
             <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-300">
               {t("crm.main.subtitle")}
             </p>
@@ -70,9 +70,9 @@ export default function SmartSalesEnterpriseShowcase() {
 
         <div>
           <div className="mb-10 text-center">
-            <h2 className="font-faq-title text-3xl font-bold tracking-tight text-oxford dark:text-white md:text-4xl">
+            <h3 className="mb-4 text-center text-2xl font-bold text-brand-primary dark:text-white md:text-3xl">
               {t("addon.title")}
-            </h2>
+            </h3>
             <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-300">
               {t("addon.subtitle")}
             </p>

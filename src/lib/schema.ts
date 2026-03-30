@@ -62,7 +62,7 @@ export function getAIConsultingServiceSchema() {
     "@type": "Service",
     name: "AI Consulting Services",
     description:
-      "AI consulting services for Hong Kong SMEs focused on practical implementation roadmaps, workflow automation, and operational improvements.",
+      "Every AI project that fails does so in the first 3 weeks. InnovateXP helps SMEs start with one workflow, prove ROI in 30 days, then expand — controlled risk, measurable outcomes.",
     provider: {
       "@type": "Organization",
       name: "InnovateXP",
