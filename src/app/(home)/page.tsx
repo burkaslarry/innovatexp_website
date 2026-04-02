@@ -1,6 +1,5 @@
 "use client"
 import React from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import {
@@ -18,7 +17,6 @@ import { useLanguage } from '../LanguageContext';
 import Breadcrumb from '../components/Breadcrumb';
 import Header from '../components/Header';
 import { Hero } from '@/components/Hero';
-import { SolutionShowcase } from '@/components/SolutionShowcase';
 import { PriceCard } from '@/components/PriceCard';
 import { PremiumPriceCard } from '@/components/PremiumPriceCard';
 import { ImplementationTimeline } from '@/components/ImplementationTimeline';
@@ -27,12 +25,6 @@ import SmartSalesEnterpriseShowcase from '@/components/SmartSalesEnterpriseShowc
 import { WhyInnovateXP } from '@/components/WhyInnovateXP';
 import { ProductEntryGrid } from '@/components/ProductEntryGrid';
 import { ProductMockupPlaceholder } from '@/components/ProductMockupPlaceholder';
-
-const ContactUs = dynamic(() => import('../ContactUs'), {
-  ssr: false,
-  loading: () => <div className="min-h-[180px] flex items-center justify-center text-slate-400 text-sm">Loading contact form…</div>,
-});
-
 
 function LandingPage() {
   const { t, language } = useLanguage();
@@ -53,7 +45,7 @@ function LandingPage() {
     { label: t('nav.smartsales'), href: '#smartsales' },
     { label: t('nav.ai_consulting'), href: '#ai-consulting' },
     { label: t('nav.about'), href: '#about-us' },
-    { label: t('nav.contact'), href: '#contact-us' },
+    { label: t('nav.contact'), href: '/bookme#quotation-wizard' },
   ];
 
   useEffect(() => {
@@ -88,11 +80,12 @@ function LandingPage() {
         tagline={t('hero.tagline')}
         taglineEn={t('hero.tagline_en')}
         description={t('hero.description')}
-        primaryHref="/bookme"
-        primaryLabel={t('hero.book_meeting')}
-        secondaryLabel={t('hero.explore_services')}
-        secondaryHref="#product-pillars"
-        onSecondaryClick={(e) => scrollToAnchor(e, '#product-pillars')}
+        primaryHref="#product-pillars"
+        primaryLabel={t('hero.explore_services')}
+        onPrimaryClick={(e) => scrollToAnchor(e, '#product-pillars')}
+        secondaryHref="/bookme"
+        secondaryLabel={t('hero.book_meeting')}
+        onSecondaryClick={undefined}
         imageAlt={t('hero.image_alt')}
       />
 
@@ -106,6 +99,9 @@ function LandingPage() {
         ]}
       />
 
+      <p className="mb-4 text-center text-lg font-semibold text-gray-900 dark:text-white md:text-xl">
+        {t('product.entry.section_label')}
+      </p>
       <ProductEntryGrid
         id="product-pillars"
         items={[
@@ -273,9 +269,8 @@ function LandingPage() {
             </ul>
             <div className="flex justify-center">
               <a
-                href="#contact-us"
+                href="/bookme#quotation-wizard"
                 className="w-full rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
-                onClick={(e) => scrollToAnchor(e, '#contact-us')}
               >
                 {t('services.courses.cta')}
               </a>
@@ -289,7 +284,7 @@ function LandingPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
-              {t('pricing.insight.name')} – {t('pricing.insight.subtitle')}
+              {t('eventxp.headline')}
             </h2>
             <p className="max-w-4xl mx-auto text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               {t('eventxp.main.answer')}
@@ -346,8 +341,8 @@ function LandingPage() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
                 <ScanSearch className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.insight.tier2.feature2')}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{t('pricing.insight.tier2.feature3')}</p>
+              <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('eventxp.grid.ai_insight.title')}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{t('eventxp.grid.ai_insight.body')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
@@ -363,7 +358,7 @@ function LandingPage() {
           </p>
 
           <div className="mb-12 rounded-2xl border-2 border-slate-200 bg-slate-50 p-8 dark:border-slate-600 dark:bg-slate-800/60">
-            <h3 className="font-faq-title mb-4 text-center text-2xl font-bold text-brand-primary dark:text-white md:text-3xl">
+            <h3 className="mb-4 text-center text-2xl font-bold text-brand-primary dark:text-white md:text-3xl">
               {t('referral.title')}
             </h3>
             <p className="mx-auto mb-8 max-w-3xl text-center text-gray-700 dark:text-gray-300">
@@ -474,7 +469,7 @@ function LandingPage() {
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
-              {t('pricing.crm.name')} – {t('pricing.crm.subtitle')}
+              {t('smartsales.headline')}
             </h2>
             <p className="max-w-4xl mx-auto text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-6">
               {t('smartsales.main.answer')}
@@ -591,7 +586,12 @@ function LandingPage() {
               price={t('pricing.crm.tier3.price')}
               period={t('pricing.crm.tier3.period')}
               target={t('pricing.crm.tier3.target')}
-              features={[t('pricing.crm.tier3.feature1'), t('pricing.crm.tier3.feature2')]}
+              features={[
+                t('pricing.crm.tier3.feature1'),
+                t('pricing.crm.tier3.feature2'),
+                t('pricing.crm.tier3.feature3'),
+                t('pricing.crm.tier3.feature4'),
+              ]}
               ctaHref="/bookme"
               ctaLabel={t('pricing.contact')}
             />
@@ -618,6 +618,9 @@ function LandingPage() {
           <h2 className="mb-6 text-center text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
             {t('ai_consulting.title')}
           </h2>
+          <p className="mx-auto mb-8 max-w-4xl text-center text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            {t('ai_consulting.subtitle')}
+          </p>
           <figure className="mb-10 mx-auto max-w-5xl">
             <div className="relative w-full overflow-hidden rounded-xl border-2 border-slate-200 bg-slate-100 shadow-md dark:border-slate-600 dark:bg-slate-800">
               <Image
@@ -659,17 +662,9 @@ function LandingPage() {
                   <li>{t('aiconsulting.who.2')}</li>
                   <li>{t('aiconsulting.who.3')}</li>
                   <li>{t('aiconsulting.who.4')}</li>
-                  <li>{t('aiconsulting.who.5')}</li>
                 </ul>
               </details>
             </div>
-            
-            <p className="mb-6 text-xl font-semibold text-brand-primary dark:text-teal-300">
-              {t('ai_consulting.subtitle')}
-            </p>
-            <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto">
-              {t('ai_consulting.description')}
-            </p>
           </div>
 
           {/* AI Consulting Packages */}
@@ -1087,65 +1082,41 @@ function LandingPage() {
           </div>
         </section>
 
-        <SolutionShowcase
-          title={t('showcase.title')}
-          cards={[
-            {
-              title: t('showcase.checkin.title'),
-              subtitle: t('showcase.checkin.subtitle'),
-              problemLabel: t('showcase.problem_label'),
-              problem: t('showcase.checkin.problem'),
-              solutionLabel: t('showcase.solution_label'),
-              solution: t('showcase.checkin.solution'),
-              featuresLabel: t('showcase.features_label'),
-              features: t('showcase.checkin.features').split(';').map((f) => f.trim()),
-              screenshotNote: t('showcase.screenshot_coming'),
-              ctaHref: '/bookme',
-              ctaLabel: t('showcase.checkin.cta'),
-            },
-            {
-              title: t('showcase.booking.title'),
-              subtitle: t('showcase.booking.subtitle'),
-              problemLabel: t('showcase.problem_label'),
-              problem: t('showcase.booking.problem'),
-              solutionLabel: t('showcase.solution_label'),
-              solution: t('showcase.booking.solution'),
-              featuresLabel: t('showcase.features_label'),
-              features: t('showcase.booking.features').split(';').map((f) => f.trim()),
-              screenshotNote: t('showcase.screenshot_coming'),
-              ctaHref: '/bookme',
-              ctaLabel: t('showcase.booking.cta'),
-            },
-            {
-              title: t('showcase.ai_crm.title'),
-              subtitle: t('showcase.ai_crm.subtitle'),
-              problemLabel: t('showcase.problem_label'),
-              problem: t('showcase.ai_crm.problem'),
-              solutionLabel: t('showcase.solution_label'),
-              solution: t('showcase.ai_crm.solution'),
-              featuresLabel: t('showcase.features_label'),
-              features: [
-                t('showcase.ai_crm.feature1'),
-                t('showcase.ai_crm.feature2'),
-                t('showcase.ai_crm.feature3'),
-                t('showcase.ai_crm.feature4'),
-              ],
-              screenshotNote: t('showcase.screenshot_coming'),
-              ctaHref: '/bookme',
-              ctaLabel: t('showcase.ai_crm.cta'),
-            },
-          ]}
-        />
-
-        
-
-      
-     
-
-        <section>
-          <ContactUs />
-        </section>
       </main>
+
+        {/* Sticky Bottom CTA - Mobile Optimized */}
+      <div
+        className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 shadow-2xl"
+        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      >
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <button
+            type="submit"
+            form="booking-form"
+            onClick={(e) => {
+              e.preventDefault();
+              const form = document.getElementById("booking-form") as HTMLFormElement | null;
+              form?.requestSubmit();
+            }}            
+            className={`
+              w-full min-h-[54px] font-bold text-lg rounded-xl
+              transition-all duration-300 active:scale-[0.98]
+              flex items-center justify-center gap-3 shadow-lg
+              "bg-white hover:bg-gray-50 border-2 border-gray-300 text-gray-900 shadow-md dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
+              
+            `}
+          >
+            
+              <>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{t("bookme.submit.confirm")}</span>
+              </>
+            
+          </button>
+        </div>
+      </div>
       <footer className="border-t-2 border-gray-300 bg-[#fffcf7] py-12 text-center dark:border-gray-700 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="mb-10">
@@ -1172,8 +1143,7 @@ function LandingPage() {
 
       <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-2 border-t border-gray-200 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.08)] backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95 md:hidden">
         <a
-          href="#contact-us"
-          onClick={(e) => scrollToAnchor(e, '#contact-us')}
+          href="/bookme#quotation-wizard"
           className="flex min-h-[48px] flex-1 items-center justify-center rounded-full border-2 border-slate-300 bg-transparent text-sm font-bold text-slate-800 transition hover:border-[#00B9B3]/50 dark:border-slate-500 dark:text-slate-100"
         >
           {t('mobile.cta_contact')}

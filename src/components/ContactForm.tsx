@@ -6,6 +6,8 @@ import { CheckCircle2, Loader2 } from "lucide-react";
 import { submitToWeb3FormsContact } from "@/lib/web3forms-submit";
 
 export interface ContactFormProps {
+  /** Prefills and updates the message field when the quote summary changes */
+  initialMessage?: string;
   nameLabel: string;
   emailLabel: string;
   messageLabel: string;
@@ -18,6 +20,7 @@ export interface ContactFormProps {
 }
 
 export function ContactForm({
+  initialMessage = "",
   nameLabel,
   emailLabel,
   messageLabel,
@@ -39,6 +42,10 @@ export function ContactForm({
   const [submitError, setSubmitError] = useState<string | null>(null);
 
   useEffect(() => {
+    setFormData((p) => ({ ...p, message: initialMessage }));
+  }, [initialMessage]);
+
+  useEffect(() => {
     const { senderName, email, message } = formData;
     setValid(
       senderName.trim() !== "" && email.trim() !== "" && message.trim() !== ""
@@ -57,7 +64,7 @@ export function ContactForm({
     setSubmitting(true);
     setSubmitError(null);
     const form = new FormData(e.currentTarget);
-    form.append("access_key", "5561f46b-c354-4847-9f43-13e57e8d2e68");
+    // form.append("access_key", "5561f46b-c354-4847-9f43-13e57e8d2e68");
     form.append("subject", "Normal Inquiry - " + formData.senderName);
     const fields = Object.fromEntries(form) as Record<string, string>;
 
@@ -65,7 +72,7 @@ export function ContactForm({
       const result = await submitToWeb3FormsContact(fields);
       if (result.success) {
         setSuccess(true);
-        setFormData({ senderName: "", email: "", message: "" });
+        setFormData({ senderName: "", email: "", message: initialMessage });
       } else {
         setSubmitError("Could not send. Please try again or email us directly.");
       }

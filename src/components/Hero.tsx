@@ -12,9 +12,11 @@ export interface HeroProps {
   description: string;
   primaryHref: string;
   primaryLabel: string;
+  /** When primary targets an in-page anchor, use for smooth scroll with header offset */
+  onPrimaryClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   /** Ghost CTA e.g. explore services */
   secondaryLabel: string;
-  /** Use with #product-pillars or #contact-us */
+  /** Use with #product-pillars or /bookme#quotation-wizard */
   onSecondaryClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   secondaryHref?: string;
   imageSrc?: string;
@@ -28,9 +30,10 @@ export function Hero({
   description,
   primaryHref,
   primaryLabel,
+  onPrimaryClick,
   secondaryLabel,
   onSecondaryClick,
-  secondaryHref = "#contact-us",
+  secondaryHref = "/bookme#quotation-wizard",
   imageSrc = "/mypresent.jpg",
   imageAlt = "",
 }: HeroProps) {
@@ -47,30 +50,44 @@ export function Hero({
           <h1 className="font-sans text-3xl font-bold leading-tight tracking-tight text-oxford dark:text-white sm:text-4xl md:text-5xl">
             {title}
           </h1>
-          <p className="mt-4 text-xl font-bold text-brand-primary dark:text-teal-300 sm:text-2xl">
-            {tagline}
-          </p>
-          {taglineEn ? (
+          {tagline?.trim() ? (
+            <p className="mt-4 text-xl font-bold text-brand-primary dark:text-teal-300 sm:text-2xl">
+              {tagline}
+            </p>
+          ) : null}
+          {taglineEn?.trim() ? (
             <p className="mt-2 text-sm font-medium leading-snug text-slate-500 dark:text-slate-400 sm:text-base">
               {taglineEn}
             </p>
           ) : null}
-          <p className="mx-auto mt-6 max-w-xl text-base leading-[1.7] text-slate-600 dark:text-slate-300 lg:mx-0 lg:max-w-lg lg:text-lg">
-            {description}
-          </p>
+          {description?.trim() ? (
+            <p className="mx-auto mt-6 max-w-xl text-base leading-[1.7] text-slate-600 dark:text-slate-300 lg:mx-0 lg:max-w-lg lg:text-lg">
+              {description}
+            </p>
+          ) : null}
           <motion.div
             className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start"
             initial={{ opacity: 0, y: 12 }}
             animate={{ opacity: 1, y: 0 }}
             transition={{ delay: 0.15, duration: 0.45 }}
           >
-            <Button
-              href={primaryHref}
-              variant="primary"
-              className="min-h-[52px] touch-manipulation px-10 text-base shadow-md sm:min-w-[200px]"
-            >
-              {primaryLabel}
-            </Button>
+            {onPrimaryClick && primaryHref.startsWith("#") ? (
+              <a
+                href={primaryHref}
+                onClick={onPrimaryClick}
+                className="inline-flex min-h-[52px] touch-manipulation items-center justify-center gap-2 rounded-full bg-brand-primary px-10 text-base font-bold text-white shadow-md transition-all hover:bg-brand-primary-hover hover:shadow-lg active:scale-[0.98] dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98] dark:shadow-none sm:min-w-[200px]"
+              >
+                {primaryLabel}
+              </a>
+            ) : (
+              <Button
+                href={primaryHref}
+                variant="primary"
+                className="min-h-[52px] touch-manipulation px-10 text-base shadow-md sm:min-w-[200px]"
+              >
+                {primaryLabel}
+              </Button>
+            )}
             <a
               href={secondaryHref}
               onClick={onSecondaryClick}

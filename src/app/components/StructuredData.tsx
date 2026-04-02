@@ -65,7 +65,7 @@ export default function StructuredData() {
     "name": "Larry Lo",
     "jobTitle": "Founder & AI Architect",
     "description": language === 'en'
-      ? "14-year tech veteran, AI Consultant for Agilizing Education Center, former GDG Hong Kong Organizer with experience managing 2,000+ participant events, and BNI Anchor chapter member."
+      ? "Built by a practitioner, not a consultant. Larry Lo has 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. He is the person who builds and supports your system — not a project manager who subcontracts. Former Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systems handling 2,000+ concurrent active users"
       : "14年科技老兵，善敏教育中心 AI 顧問，前 GDG Hong Kong Organizer，曾管理 2,000+ 參與者活動，BNI Anchor 分會成員。",
     "url": "https://www.linkedin.com/in/larry-lo-804a50165/",
     "image": `${baseUrl}/mypresent.jpg`,

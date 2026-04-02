@@ -33,7 +33,7 @@ export default function BlogIndexPage() {
           ))}
         </ul>
         <p className="mt-12 text-gray-500 dark:text-gray-400 text-sm">
-          More posts coming soon. <Link href="/" className="text-brand-primary hover:underline dark:text-teal-300">Back to home</Link> · <Link href="/bookme" className="text-brand-primary hover:underline dark:text-teal-300">Book a call</Link>
+          More posts are on the way. <Link href="/" className="text-brand-primary hover:underline dark:text-teal-300">Back to home</Link> · <Link href="/bookme" className="text-brand-primary hover:underline dark:text-teal-300">Book a call</Link>
         </p>
       </div>
     </main>
