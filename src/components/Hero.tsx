@@ -16,7 +16,7 @@ export interface HeroProps {
   onPrimaryClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   /** Ghost CTA e.g. explore services */
   secondaryLabel: string;
-  /** Use with #product-pillars or #contact-us */
+  /** Use with #product-pillars or /bookme#quotation-wizard */
   onSecondaryClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   secondaryHref?: string;
   imageSrc?: string;
@@ -33,7 +33,7 @@ export function Hero({
   onPrimaryClick,
   secondaryLabel,
   onSecondaryClick,
-  secondaryHref = "#contact-us",
+  secondaryHref = "/bookme#quotation-wizard",
   imageSrc = "/mypresent.jpg",
   imageAlt = "",
 }: HeroProps) {

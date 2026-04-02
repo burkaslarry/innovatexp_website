@@ -17,7 +17,7 @@ export default function NotFound() {
             Home
           </Link>
           <Link
-            href="/#contact-us"
+            href="/bookme#quotation-wizard"
             className="inline-flex min-h-[44px] items-center justify-center rounded-full border-2 border-gray-300 bg-white px-6 font-bold text-gray-900 transition duration-300 hover:border-brand-primary dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-[#00B9B3]"
           >
             Contact us

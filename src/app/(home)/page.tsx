@@ -1,6 +1,5 @@
 "use client"
 import React from 'react';
-import dynamic from 'next/dynamic';
 import Image from 'next/image';
 import { useEffect } from 'react';
 import {
@@ -27,12 +26,6 @@ import { WhyInnovateXP } from '@/components/WhyInnovateXP';
 import { ProductEntryGrid } from '@/components/ProductEntryGrid';
 import { ProductMockupPlaceholder } from '@/components/ProductMockupPlaceholder';
 
-const ContactUs = dynamic(() => import('../ContactUs'), {
-  ssr: false,
-  loading: () => <div className="min-h-[180px] flex items-center justify-center text-slate-400 text-sm">Loading contact form…</div>,
-});
-
-
 function LandingPage() {
   const { t, language } = useLanguage();
 
@@ -52,7 +45,7 @@ function LandingPage() {
     { label: t('nav.smartsales'), href: '#smartsales' },
     { label: t('nav.ai_consulting'), href: '#ai-consulting' },
     { label: t('nav.about'), href: '#about-us' },
-    { label: t('nav.contact'), href: '#contact-us' },
+    { label: t('nav.contact'), href: '/bookme#quotation-wizard' },
   ];
 
   useEffect(() => {
@@ -276,9 +269,8 @@ function LandingPage() {
             </ul>
             <div className="flex justify-center">
               <a
-                href="#contact-us"
+                href="/bookme#quotation-wizard"
                 className="w-full rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
-                onClick={(e) => scrollToAnchor(e, '#contact-us')}
               >
                 {t('services.courses.cta')}
               </a>
@@ -1090,11 +1082,41 @@ function LandingPage() {
           </div>
         </section>
 
-      
-        <section>
-          <ContactUs />
-        </section>
       </main>
+
+        {/* Sticky Bottom CTA - Mobile Optimized */}
+      <div
+        className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 shadow-2xl"
+        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
+      >
+        <div className="max-w-4xl mx-auto px-6 py-4">
+          <button
+            type="submit"
+            form="booking-form"
+            onClick={(e) => {
+              e.preventDefault();
+              const form = document.getElementById("booking-form") as HTMLFormElement | null;
+              form?.requestSubmit();
+            }}            
+            className={`
+              w-full min-h-[54px] font-bold text-lg rounded-xl
+              transition-all duration-300 active:scale-[0.98]
+              flex items-center justify-center gap-3 shadow-lg
+              "bg-white hover:bg-gray-50 border-2 border-gray-300 text-gray-900 shadow-md dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
+              
+            `}
+          >
+            
+              <>
+                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
+                </svg>
+                <span>{t("bookme.submit.confirm")}</span>
+              </>
+            
+          </button>
+        </div>
+      </div>
       <footer className="border-t-2 border-gray-300 bg-[#fffcf7] py-12 text-center dark:border-gray-700 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="mb-10">
@@ -1121,8 +1143,7 @@ function LandingPage() {
 
       <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-2 border-t border-gray-200 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.08)] backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95 md:hidden">
         <a
-          href="#contact-us"
-          onClick={(e) => scrollToAnchor(e, '#contact-us')}
+          href="/bookme#quotation-wizard"
           className="flex min-h-[48px] flex-1 items-center justify-center rounded-full border-2 border-slate-300 bg-transparent text-sm font-bold text-slate-800 transition hover:border-[#00B9B3]/50 dark:border-slate-500 dark:text-slate-100"
         >
           {t('mobile.cta_contact')}

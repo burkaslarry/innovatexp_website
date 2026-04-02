@@ -3,7 +3,8 @@ import { NextResponse } from 'next/server';
 import { notion, CALENDAR_DB_ID } from '@/lib/notion';
 import { createEvents, EventAttributes } from 'ics';
 import { format, parseISO } from 'date-fns';
-import { getPrimaryWeb3FormsAccessKey } from '@/lib/web3forms-submit';
+import { submitToWeb3FormsServer } from '@/lib/web3forms-submit';
+import { buildBookingConfirmationWeb3Fields } from '@/lib/build-booking-web3forms-fields';
 
 interface TimeSlot {
   start: string;
@@ -59,8 +60,8 @@ export async function POST(req: Request) {
               end: format(endDateTime, "yyyy-MM-dd'T'HH:mm:ssXXX"),
             },
           },
-          'Visitor Email': {
-            email: visitorEmail,
+          'Email': {
+            rich_text: [{ text: { content: visitorEmail } }],
           },
         };
 
@@ -180,60 +181,50 @@ export async function POST(req: Request) {
       console.log('✅ ICS calendar file generated successfully, length:', icsContent.length);
     });
 
-    // 4. Send confirmation email using Web3Forms (primary key only — no duplicate booking emails)
+    // 4. Web3Forms confirmation (server). Often blocked for server-side IPs; client sends backup — see QuotationWizard.
+    let emailSuccess = false;
+    const web3Fields = buildBookingConfirmationWeb3Fields({
+      visitorName,
+      visitorEmail,
+      visitorPhone: typeof visitorPhone === 'string' ? visitorPhone : '',
+      visitorCompany: typeof visitorCompany === 'string' ? visitorCompany : '',
+      message: typeof message === 'string' ? message : '',
+      slotStartIso: timeSlot.start,
+      slotEndIso: timeSlot.end,
+    });
+
     try {
-      const emailFormData = new FormData();
-      emailFormData.append('access_key', getPrimaryWeb3FormsAccessKey());
-      emailFormData.append('subject', `業務拜訪預約確認 - ${eventTitle}`);
-      emailFormData.append('from_name', 'InnovateXP Limited');
-      emailFormData.append('name', visitorName);
-      emailFormData.append('email', visitorEmail);
-      emailFormData.append('message', `
-業務拜訪預約確認
-
-親愛的 ${visitorName}，
-
-感謝您的預約。您的業務拜訪已成功安排。
-
-預約詳情：
-- 主題: ${eventTitle}
-- 日期: ${format(startDateTime, 'yyyy年MM月dd日')}
-- 時間: ${format(startDateTime, 'HH:mm')} - ${format(endDateTime, 'HH:mm')}
-${visitorPhone ? `- 電話: ${visitorPhone}` : ''}
-${visitorCompany ? `- 公司: ${visitorCompany}` : ''}
-${message ? `- 留言: ${message}` : ''}
-
-詳細資訊已附加到此電子郵件中 (.ics 文件)，您可以將其添加到您的日曆。
-
-如有任何問題，請隨時聯繫我們。
-
-期待與您會面！
-
-此致，
-InnovateXP Limited
-AI整合、企業培訓、軟件解決方案專家
-      `.trim());
-
-      const emailObject = Object.fromEntries(emailFormData);
-      const emailJson = JSON.stringify(emailObject);
-
-      const emailResponse = await fetch('https://api.web3forms.com/submit', {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: emailJson,
-      });
-
-      if (emailResponse.ok) {
-        console.log('✅ Confirmation email sent via Web3Forms');
+      if (process.env.NODE_ENV === 'development') {
+        console.log(
+          '[calendar/book] Web3Forms JSON (no access_key; messageChars=%d):',
+          web3Fields.message.length,
+          JSON.stringify(web3Fields),
+        );
       } else {
-        console.warn('⚠️ Email sending failed, but booking was successful');
+        console.log('[calendar/book] Web3Forms request summary:', {
+          subjectLen: web3Fields.subject.length,
+          nameLen: web3Fields.name.length,
+          messageChars: web3Fields.message.length,
+          emailDomain: visitorEmail.includes('@')
+            ? visitorEmail.split('@')[1]
+            : '(invalid)',
+        });
+      }
+
+      const emailResult = await submitToWeb3FormsServer(web3Fields);
+      emailSuccess = emailResult.success;
+
+      if (emailResult.success) {
+        console.log('✅ Confirmation email sent via Web3Forms (server)');
+      } else {
+        console.warn('[calendar/book] Web3Forms server path failed — client may retry', {
+          responseOk: emailResult.ok,
+          apiMessage: emailResult.message ?? '(none)',
+        });
       }
     } catch (emailError) {
       console.error('❌ Error sending email:', emailError);
-      // Don't fail the booking if email fails
+      emailSuccess = false;
     }
 
     // 5. Prepare WhatsApp message if Notion was successful
@@ -258,6 +249,7 @@ AI整合、企業培訓、軟件解決方案專家
       message: '預約成功！', 
       notionPageId: notionPageId || null, // Don't expose internal status
       notionSuccess: notionSuccess,
+      emailSuccess,
       whatsappMessage: whatsappMessage
     }, { status: 201 });
 
