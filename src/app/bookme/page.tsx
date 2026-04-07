@@ -15,9 +15,10 @@ export default function BookVisitPage() {
       <Header variant="booking" title={t('bookme.header.title')} subtitle={t('bookme.header.subtitle')} />
 
       <main className="pt-24">
-        <div className="mx-auto max-w-5xl px-6">
-          <div className="mx-auto max-w-4xl px-6 py-10">
-            <div className="rounded-3xl border border-slate-200 bg-white/90 p-6 shadow-xl backdrop-blur dark:border-slate-700 dark:bg-slate-900/60 md:p-10">
+        {/* Mobile: single horizontal gutter (avoid double px-6); desktop unchanged from md breakpoint */}
+        <div className="mx-auto max-w-5xl px-3 sm:px-5 md:px-6">
+          <div className="mx-auto max-w-4xl py-8 md:px-6 md:py-10">
+            <div className="rounded-3xl border border-slate-200 bg-white/90 p-4 shadow-xl backdrop-blur dark:border-slate-700 dark:bg-slate-900/60 sm:p-6 md:p-10">
               <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white md:text-3xl">
                 {t('bookme.title')}
               </h1>
@@ -25,7 +26,7 @@ export default function BookVisitPage() {
                 {t('bookme.subtitle')}
               </p>
 
-              <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-950/40">
+              <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-950/40 sm:p-5 md:p-5">
                 <button
                   type="button"
                   onClick={() => setShowGuidelines((v) => !v)}

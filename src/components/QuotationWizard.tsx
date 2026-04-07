@@ -97,8 +97,8 @@ function ExpertShortcut({
 }) {
   const { body, cta } = hookCopy(path, step, t);
   return (
-    <div className="mt-8 space-y-3 rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-50/90 to-white px-4 py-4 dark:border-amber-900/50 dark:from-amber-950/30 dark:to-slate-900/60 md:px-5 md:py-5">
-      <p className="text-center text-xs font-medium text-slate-600 dark:text-slate-400">{t("wizard.trust_signal")}</p>
+    <div className="mt-8 space-y-3 rounded-2xl border border-amber-200/80 bg-gradient-to-br from-amber-50/90 to-white px-3 py-4 dark:border-amber-900/50 dark:from-amber-950/30 dark:to-slate-900/60 sm:px-4 md:px-5 md:py-5">
+      <p className="text-left text-xs font-medium text-slate-600 dark:text-slate-400 md:text-center">{t("wizard.trust_signal")}</p>
       <p className="text-sm font-semibold leading-relaxed text-slate-800 dark:text-slate-100">{body}</p>
       <button
         type="button"
@@ -376,7 +376,7 @@ export default function QuotationWizard({
   );
 
   const pathBanner = path ? (
-    <p className="mb-4 text-center text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300">
+    <p className="mb-4 text-left text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300 md:text-center">
       {path === "eventxp"
         ? t("wizard.path_tagline.eventxp")
         : path === "smartsales"
@@ -388,9 +388,12 @@ export default function QuotationWizard({
   ) : null;
 
   const stepCard = (
-    <Card className="border-2 border-slate-200 dark:border-slate-700">
+    <Card
+      padded={false}
+      className="border-2 border-slate-200 p-3.5 sm:p-5 md:p-8 dark:border-slate-700"
+    >
       {!["result", "flowx_identity"].includes(step) ? (
-        <div className="text-center">
+        <div className="text-left md:text-center">
           <h2 className="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">{t("wizard.title")}</h2>
           <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{t("wizard.subtitle")}</p>
         </div>
@@ -406,7 +409,7 @@ export default function QuotationWizard({
                   key={p}
                   type="button"
                   onClick={() => onPickPath(p)}
-                  className="rounded-2xl border-2 border-slate-200 bg-white px-4 py-4 text-left shadow-sm transition hover:border-brand-primary/40 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/60 dark:hover:border-[#00B9B3]/50"
+                  className="rounded-2xl border-2 border-slate-200 bg-white px-3 py-3.5 text-left shadow-sm transition hover:border-brand-primary/40 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/60 dark:hover:border-[#00B9B3]/50 sm:px-4 sm:py-4 md:px-4"
                 >
                   <span className="block text-xs font-bold text-brand-primary dark:text-teal-300">
                     {p === "eventxp"
@@ -771,7 +774,7 @@ export default function QuotationWizard({
             <p className="mt-2 text-sm text-slate-600 dark:text-slate-400">{t("wizard.finale.team_note")}</p>
             <p className="mt-3 text-sm italic text-slate-600 dark:text-slate-400">{t("wizard.finale.roi")}</p>
 
-            <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-950/40">
+            <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-950/40 sm:p-5">
               <div className="text-sm text-slate-700 dark:text-slate-300">
                 <div className="font-semibold text-slate-900 dark:text-white">{t("wizard.finale.recommend_label")}</div>
                 <div className="mt-1 text-base font-bold text-brand-primary dark:text-teal-300">{t(result.planKey)}</div>
@@ -820,11 +823,11 @@ export default function QuotationWizard({
         ) : null}
 
         {step === "flowx_identity" ? (
-          <div className="rounded-2xl border border-brand-primary/20 bg-gradient-to-b from-white to-slate-50/80 px-4 py-8 dark:border-slate-600 dark:from-slate-900 dark:to-slate-950/80 md:px-8">
-            <h3 className="text-center text-xl font-bold text-slate-900 dark:text-white md:text-2xl">
+          <div className="rounded-2xl border border-brand-primary/20 bg-gradient-to-b from-white to-slate-50/80 px-3 py-6 dark:border-slate-600 dark:from-slate-900 dark:to-slate-950/80 md:px-8 md:py-8">
+            <h3 className="text-left text-xl font-bold text-slate-900 dark:text-white md:text-center md:text-2xl">
               {t("wizard.flowx.title")}
             </h3>
-            <p className="mx-auto mt-2 max-w-lg text-center text-sm text-slate-600 dark:text-slate-400">
+            <p className="mx-auto mt-2 max-w-lg text-left text-sm text-slate-600 dark:text-slate-400 md:text-center">
               {t("wizard.flowx.subtitle")}
             </p>
             <div className="mx-auto mt-8 max-w-md space-y-4">
@@ -939,7 +942,7 @@ export default function QuotationWizard({
         ) : null}
 
         {step === "flowx_booking" ? (
-          <div className="rounded-2xl border border-slate-200 bg-white px-4 py-6 dark:border-slate-700 dark:bg-slate-950/40 md:px-6">
+          <div className="rounded-2xl border border-slate-200 bg-white px-3 py-5 dark:border-slate-700 dark:bg-slate-950/40 md:px-6 md:py-6">
             <div className="flex items-start justify-between gap-4">
               <div>
                 <h3 className="text-lg font-bold text-slate-900 dark:text-white">{t("bookme.title")}</h3>
@@ -1107,7 +1110,7 @@ function ChoiceStep({
             key={opt.id}
             type="button"
             onClick={() => onPick(opt.id)}
-            className="rounded-2xl border-2 border-slate-200 bg-white px-5 py-4 text-left text-sm font-semibold leading-snug text-slate-900 shadow-sm transition hover:border-oxford/30 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/60 dark:text-white sm:text-base"
+            className="rounded-2xl border-2 border-slate-200 bg-white px-3 py-3.5 text-left text-sm font-semibold leading-snug text-slate-900 shadow-sm transition hover:border-oxford/30 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/60 dark:text-white sm:px-5 sm:py-4 sm:text-base"
           >
             {opt.label}
           </button>
@@ -1162,7 +1165,7 @@ function MultiSelectStep({
                 onChange(next);
               }}
               className={[
-                "rounded-2xl border-2 px-4 py-4 text-left font-semibold text-sm leading-snug shadow-sm transition sm:text-base",
+                "rounded-2xl border-2 px-3 py-3.5 text-left font-semibold text-sm leading-snug shadow-sm transition sm:px-4 sm:py-4 sm:text-base",
                 checked
                   ? "border-brand-primary bg-brand-primary/10 text-slate-900 dark:border-[#00B9B3] dark:bg-[#00B9B3]/10 dark:text-white"
                   : "border-slate-200 bg-white text-slate-900 hover:border-oxford/30 dark:border-slate-700 dark:bg-slate-900/60 dark:text-white",

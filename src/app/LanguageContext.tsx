@@ -59,7 +59,6 @@ export const translations = {
     'contact.form.hint.name': 'How we should address you or your team.',
     'contact.form.hint.email': 'We reply within 1–2 business days.',
     'contact.form.hint.message': 'Briefly describe your biggest AI / CRM or event challenge right now.',
-    'footer.book_cta': 'Book a strategy call',
     'mobile.cta_contact': 'Contact',
     'roi.show_more': 'Show deeper ROI scenarios',
     'roi.show_less': 'Show less',
@@ -181,6 +180,9 @@ export const translations = {
     'partnership.ex_io.desc': 'Digital asset & exchange ecosystem partner',
     'partnership.kirapay.title': 'KiraPay',
     'partnership.kirapay.desc': 'Payments & fintech collaboration',
+    'partnership.ol_international.title': 'OL International Services Limited',
+    'partnership.ol_international.desc':
+      'Corporate services & international business support — strategic collaboration across markets.',
     
     // Contact Section
     'contact.title': 'Contact Us',
@@ -906,7 +908,6 @@ export const translations = {
     'contact.form.hint.name': '方便我們稱呼您或貴團隊。',
     'contact.form.hint.email': '我們會於 1–2 個工作天內回覆。',
     'contact.form.hint.message': '請簡述你現時最大的 AI／CRM／活動相關挑戰。',
-    'footer.book_cta': '預約業務交流',
     'mobile.cta_contact': '聯絡',
     'roi.show_more': '展開更多 ROI 情境說明',
     'roi.show_less': '收合',
@@ -1027,6 +1028,8 @@ export const translations = {
     'partnership.ex_io.desc': '數字資產與交易生態夥伴',
     'partnership.kirapay.title': 'KiraPay',
     'partnership.kirapay.desc': '支付與金融科技協作',
+    'partnership.ol_international.title': 'OL International Services Limited',
+    'partnership.ol_international.desc': '企業及國際業務服務夥伴，跨市場策略協作',
     
     // Contact Section
     'contact.title': '聯絡我們',
@@ -1071,10 +1074,10 @@ export const translations = {
     'wizard.trust_signal':
       '已有 500+ 本地企業通過此診斷獲得轉型建議 — 你仍掌握幾時再深談。',
     'wizard.hook.q0.body':
-      '唔想逐題填？寧願直接倾？預約 15 分鐘，我哋帮你 pinpoint 漏斗邊度漏、點样 plug。',
+      '唔想逐題咁填？寧願直接傾？預約 15 分鐘，我哋幫你 pinpoint 個漏斗邊度漏、點樣 plug 返。',
     'wizard.hook.q0.cta': '預約專家診斷',
     'wizard.hook.smartsales.body':
-      '唔想填落去？我明，做老闆時間最貴。直接預約 15 分鐘「銷售漏斗診斷」，我親自幫你睇點 plug 個窿。',
+      '唔想填落去？我明，做老闆時間最貴。直接預約 15 分鐘「銷售漏斗診斷」，我親自幫你睇個窿喺邊、點樣補返。',
     'wizard.hook.smartsales.cta': '👉 預約諮詢',
     'wizard.hook.eventxp.body':
       '搞緊活動？壓力好大？撳呢度，我哋直接話你知點樣用 5 分鐘 Set 好全自動簽到。',
@@ -1086,7 +1089,7 @@ export const translations = {
       'AI 變化快過你讀呢題嘅時間。唔好自己盲摸，預約 15 分鐘「AI 落地可行性分析」。',
     'wizard.hook.ai.cta': '👉 搶佔 AI 轉型先機',
     'wizard.hook.bundle.body':
-      '想一次過睇晒成張圖？跳过題目，直接預約策略 Call，一次過講清 EventXP、SmartSales 同 AI。',
+      '想一次過睇晒成張圖？跳過題目，直接預約策略 Call，一次過講清 EventXP、SmartSales 同 AI。',
     'wizard.hook.bundle.cta': '預約全方位策略諮詢',
     'wizard.finale.thanks':
       '多謝你！根據你的診斷，你目前的「潛在利潤回升空間」非常巨大。',

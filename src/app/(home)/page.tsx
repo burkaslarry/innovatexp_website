@@ -65,7 +65,7 @@ function LandingPage() {
         navItems={navItems}
       />
 
-      <main className="mx-auto max-w-7xl bg-bg px-6 py-12 pb-36 text-fg md:pb-12 md:leading-relaxed">
+      <main className="mx-auto max-w-7xl bg-bg px-6 py-12 pb-36 text-fg md:pb-28 md:leading-relaxed">
       
       {/* Breadcrumb Navigation */}
       <Breadcrumb 
@@ -966,27 +966,6 @@ function LandingPage() {
           </div>
           
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
-            {/* Agilizing Education Center */}
-            <div className="flex flex-col items-center rounded-xl border-2 border-gray-100 bg-white p-6 text-center shadow-md transition-all duration-300 hover:border-brand-primary/40 dark:border-gray-600 dark:bg-gray-700">
-              <a href="https://agilizing.com" target="_blank" rel="noopener noreferrer" className="w-full flex flex-col items-center group">
-                <div className="mb-6 flex h-24 w-full items-center justify-center transition-transform group-hover:scale-105">
-                  <Image
-                    src="/agilizing-logo-transparent.png"
-                    alt="Agilizing Education Center - InnovateXP Strategic Partner for Business Training and Agile Education in Hong Kong"
-                    width={280}
-                    height={96}
-                    className="max-h-24 w-auto max-w-full object-contain"
-                    loading="lazy"
-                    sizes="(max-width: 768px) 100vw, 33vw"
-                  />
-                </div>
-                <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-teal-300">
-                  {t('partnership.agilizing.title')}
-                </h3>
-              </a>
-              <p className="text-gray-700 dark:text-gray-300 text-sm">{t('partnership.agilizing.desc')}</p>
-            </div>
-
             {/* BNI Anchor */}
             <div className="bg-white dark:bg-gray-700 rounded-xl p-6 border-2 border-gray-100 dark:border-gray-600 hover:border-red-600 transition-all duration-300 shadow-md flex flex-col items-center text-center">
               <a href="https://www.bni-anchor.com/" target="_blank" rel="noopener noreferrer" className="w-full flex flex-col items-center group">
@@ -1079,42 +1058,70 @@ function LandingPage() {
               </a>
               <p className="text-gray-700 dark:text-gray-300 text-sm">{t('partnership.kirapay.desc')}</p>
             </div>
+
+            {/* OL International Services Limited — https://www.olisl.com/ */}
+            <div className="flex flex-col items-center rounded-xl border-2 border-gray-100 bg-white p-6 text-center shadow-md transition-all duration-300 hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
+              <a
+                href="https://www.olisl.com/"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="group flex w-full flex-col items-center no-underline"
+              >
+                <div className="mb-6 flex h-24 w-full items-center justify-center transition-transform group-hover:scale-105">
+                  <Image
+                    src="/ollsi.png"
+                    alt="OL International Services Limited — corporate accounting, audit liaison, taxation, company services"
+                    width={280}
+                    height={96}
+                    className="max-h-24 w-auto max-w-full object-contain"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3 group-hover:text-brand-primary transition-colors dark:group-hover:text-teal-300">
+                  {t('partnership.ol_international.title')}
+                </h3>
+              </a>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">{t('partnership.ol_international.desc')}</p>
+            </div>
+            {/* Agilizing Education Center */}
+            <div className="flex flex-col items-center rounded-xl border-2 border-gray-100 bg-white p-6 text-center shadow-md transition-all duration-300 hover:border-brand-primary/40 dark:border-gray-600 dark:bg-gray-700">
+              <a href="https://agilizing.com" target="_blank" rel="noopener noreferrer" className="w-full flex flex-col items-center group">
+                <div className="mb-6 flex h-24 w-full items-center justify-center transition-transform group-hover:scale-105">
+                  <Image
+                    src="/agilizing-logo-transparent.png"
+                    alt="Agilizing Education Center - InnovateXP Strategic Partner for Business Training and Agile Education in Hong Kong"
+                    width={280}
+                    height={96}
+                    className="max-h-24 w-auto max-w-full object-contain"
+                    loading="lazy"
+                    sizes="(max-width: 768px) 100vw, 33vw"
+                  />
+                </div>
+                <h3 className="mb-3 text-xl font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-teal-300">
+                  {t('partnership.agilizing.title')}
+                </h3>
+              </a>
+              <p className="text-gray-700 dark:text-gray-300 text-sm">{t('partnership.agilizing.desc')}</p>
+            </div>
           </div>
         </section>
 
       </main>
 
-        {/* Sticky Bottom CTA - Mobile Optimized */}
+        {/* Desktop sticky CTA → /bookme (mobile uses twin bar below; old “booking-form” submit was dead) */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-40 bg-white/95 dark:bg-gray-800/95 backdrop-blur-md border-t border-gray-200 dark:border-gray-700 shadow-2xl"
+        className="fixed bottom-0 left-0 right-0 z-40 hidden border-t border-gray-200 bg-white/95 shadow-2xl backdrop-blur-md dark:border-gray-700 dark:bg-gray-800/95 md:block"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
-        <div className="max-w-4xl mx-auto px-6 py-4">
-          <button
-            type="submit"
-            form="booking-form"
-            onClick={(e) => {
-              e.preventDefault();
-              const form = document.getElementById("booking-form") as HTMLFormElement | null;
-              form?.requestSubmit();
-            }}            
-            className={`
-              w-full min-h-[54px] font-bold text-lg rounded-xl
-              transition-all duration-300 active:scale-[0.98]
-              flex items-center justify-center gap-3 shadow-lg
-              "bg-white hover:bg-gray-50 border-2 border-gray-300 text-gray-900 shadow-md dark:bg-white dark:text-gray-900 dark:hover:bg-gray-100"
-              
-            `}
+        <div className="mx-auto max-w-4xl px-6 py-4">
+          <a
+            href="/bookme"
+            className="flex min-h-[54px] w-full items-center justify-center gap-2 rounded-xl border-2 border-gray-300 bg-white text-lg font-bold text-gray-900 no-underline shadow-lg transition hover:bg-gray-50 active:scale-[0.98] dark:border-transparent dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white"
           >
-            
-              <>
-                <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 12l2 2 4-4m6 2a9 9 0 11-18 0 9 9 0 0118 0z" />
-                </svg>
-                <span>{t("bookme.submit.confirm")}</span>
-              </>
-            
-          </button>
+            <CalendarClock className="h-6 w-6 shrink-0 text-gray-900 dark:!text-white" strokeWidth={2} aria-hidden />
+            <span className="dark:!text-white">{t("hero.book_meeting")}</span>
+          </a>
         </div>
       </div>
       <footer className="border-t-2 border-gray-300 bg-[#fffcf7] py-12 text-center dark:border-gray-700 dark:bg-gray-900">
@@ -1122,9 +1129,9 @@ function LandingPage() {
           <div className="mb-10">
             <a
               href="/bookme"
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-8 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-8 py-3 text-base font-bold text-white no-underline shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white"
             >
-              {t('footer.book_cta')}
+              {t('hero.book_meeting')}
             </a>
           </div>
 
@@ -1150,7 +1157,7 @@ function LandingPage() {
         </a>
         <a
           href="/bookme"
-          className="flex min-h-[48px] flex-[1.15] touch-manipulation items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+          className="flex min-h-[48px] flex-[1.15] touch-manipulation items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white no-underline shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white"
         >
           {t('hero.book_meeting')}
         </a>

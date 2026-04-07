@@ -15,7 +15,7 @@ export function WhyInnovateXP({ title, points }: { title: string; points: WhyPoi
       aria-label={title}
       className="mb-14 rounded-2xl border border-slate-200/90 bg-white/80 px-5 py-8 shadow-sm backdrop-blur-sm dark:border-slate-700 dark:bg-slate-900/60 md:px-10 md:py-10"
     >
-      <h2 className="font-faq-title mb-8 text-center text-2xl font-bold tracking-tight text-oxford dark:text-white md:text-3xl">
+      <h2 className="mb-8 text-center font-sans text-3xl font-bold leading-tight tracking-tight text-oxford dark:text-white sm:text-4xl md:text-5xl">
         {title}
       </h2>
       <ul className="grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-4">
