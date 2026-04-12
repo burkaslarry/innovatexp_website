@@ -11,23 +11,23 @@ const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
 
 export const metadata: Metadata = {
-  title: "AI Consulting & CRM | SmartSales for Global Sales Teams | Hong Kong Tech",
+  title: "SmartSales CRM | Lead Follow-Up and Pipeline Management",
   description:
-    "SmartSales CRM: centralize leads, automate follow-up, and see your pipeline clearly. AI-powered CRM from Hong Kong—built for global sales teams. Start free.",
+    "Keep leads in one place, follow up on time, and track your pipeline with less manual work.",
   alternates: {
     canonical: `${siteUrlMeta}/smartsales-crm`,
   },
   openGraph: {
-    title: "AI Consulting & CRM | SmartSales for Global Sales Teams | Hong Kong Tech",
-    description: "SmartSales CRM: centralize leads, automate follow-up, and see your pipeline clearly. AI-powered CRM from Hong Kong—built for global sales teams.",
+    title: "SmartSales CRM | Lead Follow-Up and Pipeline Management",
+    description: "Keep leads in one place, follow up on time, and track your pipeline with less manual work.",
     url: `${siteUrlMeta}/smartsales-crm`,
     siteName: "InnovateXP Limited",
     images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP SmartSales CRM" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Consulting & CRM | SmartSales for Global Sales Teams | Hong Kong Tech",
-    description: "SmartSales CRM: centralize leads, automate follow-up, and see your pipeline clearly. AI-powered CRM from Hong Kong—built for global sales teams.",
+    title: "SmartSales CRM | Lead Follow-Up and Pipeline Management",
+    description: "Keep leads in one place, follow up on time, and track your pipeline with less manual work.",
   },
 };
 

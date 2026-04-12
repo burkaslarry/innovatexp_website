@@ -4,15 +4,15 @@ const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
 
 export const metadata: Metadata = {
-  title: "Blog | AI Consulting & Implementation Insights | InnovateXP",
+  title: "Blog | InnovateXP",
   description:
-    "Case studies, AI implementation tips, and insights from Hong Kong tech. CRM, events, and operations—practical reads for global business.",
+    "Updates and practical notes on AI, CRM, event operations, and implementation work.",
   alternates: {
     canonical: `${siteUrlMeta}/blog`,
   },
   openGraph: {
-    title: "Blog | AI Consulting & Implementation Insights | InnovateXP",
-    description: "Case studies, AI implementation tips, and insights from Hong Kong tech. CRM, events, and operations.",
+    title: "Blog | InnovateXP",
+    description: "Updates and practical notes on AI, CRM, event operations, and implementation work.",
     url: `${siteUrlMeta}/blog`,
     siteName: "InnovateXP Limited",
   },

@@ -1,14 +1,17 @@
 "use client"
 import React from 'react';
 import Image from 'next/image';
-import { useEffect } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import {
+  Bot,
   Lightbulb,
   Rocket,
+  Search,
   Sparkles,
   PenLine,
   CalendarClock,
   BarChart3,
+  GraduationCap,
   LayoutDashboard,
   ScanSearch,
   Target,
@@ -25,9 +28,29 @@ import SmartSalesEnterpriseShowcase from '@/components/SmartSalesEnterpriseShowc
 import { WhyInnovateXP } from '@/components/WhyInnovateXP';
 import { ProductEntryGrid } from '@/components/ProductEntryGrid';
 import { ProductMockupPlaceholder } from '@/components/ProductMockupPlaceholder';
+import { AIConsultingPackageCard } from '@/components/AIConsultingPackageCard';
+import { ImageCarouselModal } from '@/components/ImageCarouselModal';
 
 function LandingPage() {
   const { t, language } = useLanguage();
+  const [smartSalesCarouselOpen, setSmartSalesCarouselOpen] = useState(false);
+  const [smartSalesCarouselIndex, setSmartSalesCarouselIndex] = useState(0);
+
+  const smartSalesSlides = useMemo(
+    () => [
+      {
+        src: '/smart-sales-crm-1.png',
+        alt: t('mockup.pipeline_kanban'),
+        caption: t('mockup.pipeline_kanban'),
+      },
+      {
+        src: '/smart-sales-crm-2.png',
+        alt: t('mockup.pipeline_inbox'),
+        caption: t('mockup.pipeline_inbox'),
+      },
+    ],
+    [t]
+  );
 
   const scrollToAnchor = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith('#')) return;
@@ -44,9 +67,27 @@ function LandingPage() {
     { label: t('nav.eventxp'), href: '#eventxp' },
     { label: t('nav.smartsales'), href: '#smartsales' },
     { label: t('nav.ai_consulting'), href: '#ai-consulting' },
+    { label: t('nav.pricing'), href: '#pricing' },
     { label: t('nav.about'), href: '#about-us' },
     { label: t('nav.contact'), href: '/bookme#quotation-wizard' },
   ];
+
+  const openSmartSalesCarouselAt = (index: number) => {
+    setSmartSalesCarouselIndex(index);
+    setSmartSalesCarouselOpen(true);
+  };
+
+  const closeSmartSalesCarousel = () => {
+    setSmartSalesCarouselOpen(false);
+  };
+
+  const showPrevSmartSalesSlide = () => {
+    setSmartSalesCarouselIndex((prev) => (prev === 0 ? smartSalesSlides.length - 1 : prev - 1));
+  };
+
+  const showNextSmartSalesSlide = () => {
+    setSmartSalesCarouselIndex((prev) => (prev + 1) % smartSalesSlides.length);
+  };
 
   useEffect(() => {
     async function fetchData() {
@@ -392,7 +433,7 @@ function LandingPage() {
             </div>
           </div>
 
-          <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+          <div id="pricing" className="grid scroll-mt-[var(--header-offset)] grid-cols-1 items-stretch gap-6 md:grid-cols-3">
             <PriceCard
               index={0}
               name={t('pricing.insight.tier1.name')}
@@ -542,17 +583,19 @@ function LandingPage() {
                 label={t('mockup.pipeline_kanban')}
                 imageSrc="/smart-sales-crm-1.png"
                 imageAlt={t('mockup.pipeline_kanban')}
+                onClick={() => openSmartSalesCarouselAt(0)}
               />
               <ProductMockupPlaceholder
                 label={t('mockup.pipeline_inbox')}
                 imageSrc="/smart-sales-crm-2.png"
                 imageAlt={t('mockup.pipeline_inbox')}
+                onClick={() => openSmartSalesCarouselAt(1)}
               />
             </div>
           </div>
 
           <div className="-mx-6 mb-12 overflow-hidden rounded-2xl sm:-mx-12">
-            <SmartSalesEnterpriseShowcase />
+            <SmartSalesEnterpriseShowcase onOpenGallery={() => openSmartSalesCarouselAt(0)} />
           </div>
 
           <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
@@ -621,19 +664,19 @@ function LandingPage() {
           <p className="mx-auto mb-8 max-w-4xl text-center text-lg leading-relaxed text-gray-700 dark:text-gray-300">
             {t('ai_consulting.subtitle')}
           </p>
-          <figure className="mb-10 mx-auto max-w-5xl">
-            <div className="relative w-full overflow-hidden rounded-xl border-2 border-slate-200 bg-slate-100 shadow-md dark:border-slate-600 dark:bg-slate-800">
+          <figure className="mb-10 mx-auto max-w-5xl rounded-2xl border-2 border-slate-200 bg-white p-3 shadow-md dark:border-slate-600 dark:bg-slate-800">
+            <div className="relative w-full overflow-hidden rounded-xl border border-slate-200 bg-slate-100 dark:border-slate-600 dark:bg-slate-900">
               <Image
                 src="/ai-consul.png"
                 alt={t('mockup.ai')}
                 width={1200}
                 height={675}
-                className="h-auto w-full object-contain object-top"
+                className="h-auto w-full object-cover object-top"
                 sizes="(max-width: 768px) 100vw, min(1024px, 90vw)"
                 priority={false}
               />
             </div>
-            <figcaption className="mt-3 text-center text-xs font-medium text-brand-primary/90 dark:text-teal-300/90">
+            <figcaption className="mt-3 text-center text-sm font-medium text-slate-600 dark:text-slate-300">
               {t('mockup.ai')}
             </figcaption>
           </figure>
@@ -668,90 +711,46 @@ function LandingPage() {
           </div>
 
           {/* AI Consulting Packages */}
-          <div className="grid grid-cols-1 md:grid-cols-3 gap-8">
-            {/* AI Readiness Audit */}
-            <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/40 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 text-4xl text-brand-primary dark:text-teal-300">🔍</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('ai_consulting.package1.name')}</h3>
-              <p className="mb-3 font-bold text-brand-primary dark:text-teal-300">{t('ai_consulting.package1.price')}</p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{t('ai_consulting.package1.desc')}</p>
-              <ul className="space-y-2">
-                <li className="flex items-start text-sm">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300">{t('ai_consulting.package1.feature1')}</span>
-                </li>
-                <li className="flex items-start text-sm">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300">{t('ai_consulting.package1.feature2')}</span>
-                </li>
-                <li className="flex items-start text-sm">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300">{t('ai_consulting.package1.feature3')}</span>
-                </li>
-              </ul>
-              <a
-                href="/bookme"
-                className="mt-4 block w-full rounded-full bg-brand-primary py-3 text-center font-bold text-white transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
-              >
-                {t('pricing.cta')}
-              </a>
-            </div>
-
-            {/* Custom Agent Build */}
-            <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/40 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 text-4xl text-brand-primary dark:text-teal-300">🤖</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('ai_consulting.package2.name')}</h3>
-              <p className="mb-3 font-bold text-brand-primary dark:text-teal-300">{t('ai_consulting.package2.price')}</p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{t('ai_consulting.package2.desc')}</p>
-              <ul className="space-y-2">
-                <li className="flex items-start text-sm">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300">{t('ai_consulting.package2.feature1')}</span>
-                </li>
-                <li className="flex items-start text-sm">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300">{t('ai_consulting.package2.feature2')}</span>
-                </li>
-                <li className="flex items-start text-sm">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300">{t('ai_consulting.package2.feature3')}</span>
-                </li>
-              </ul>
-              <a
-                href="/bookme"
-                className="mt-4 block w-full rounded-full bg-brand-primary py-3 text-center font-bold text-white transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
-              >
-                {t('pricing.cta')}
-              </a>
-            </div>
-
-            {/* Prompt Training Bootcamp */}
-            <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/40 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 text-4xl text-brand-primary dark:text-teal-300">🎓</div>
-              <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-3">{t('ai_consulting.package3.name')}</h3>
-              <p className="mb-3 font-bold text-brand-primary dark:text-teal-300">{t('ai_consulting.package3.price')}</p>
-              <p className="text-gray-600 dark:text-gray-300 text-sm mb-4">{t('ai_consulting.package3.desc')}</p>
-              <ul className="space-y-2">
-                <li className="flex items-start text-sm">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300">{t('ai_consulting.package3.feature1')}</span>
-                </li>
-                <li className="flex items-start text-sm">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300">{t('ai_consulting.package3.feature2')}</span>
-                </li>
-                <li className="flex items-start text-sm">
-                  <span className="text-green-400 mr-2">✓</span>
-                  <span className="text-gray-600 dark:text-gray-300">{t('ai_consulting.package3.feature3')}</span>
-                </li>
-              </ul>
-              <a
-                href="/bookme"
-                className="mt-4 block w-full rounded-full bg-brand-primary py-3 text-center font-bold text-white transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
-              >
-                {t('pricing.cta')}
-              </a>
-            </div>
+          <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
+            <AIConsultingPackageCard
+              icon={Search}
+              title={t('ai_consulting.package1.name')}
+              price={t('ai_consulting.package1.price')}
+              description={t('ai_consulting.package1.desc')}
+              features={[
+                t('ai_consulting.package1.feature1'),
+                t('ai_consulting.package1.feature2'),
+                t('ai_consulting.package1.feature3'),
+              ]}
+              ctaHref="/bookme"
+              ctaLabel={t('pricing.cta')}
+            />
+            <AIConsultingPackageCard
+              icon={Bot}
+              title={t('ai_consulting.package2.name')}
+              price={t('ai_consulting.package2.price')}
+              description={t('ai_consulting.package2.desc')}
+              features={[
+                t('ai_consulting.package2.feature1'),
+                t('ai_consulting.package2.feature2'),
+                t('ai_consulting.package2.feature3'),
+              ]}
+              ctaHref="/bookme"
+              ctaLabel={t('pricing.cta')}
+            />
+            <AIConsultingPackageCard
+              icon={GraduationCap}
+              title={t('ai_consulting.package3.name')}
+              price={t('ai_consulting.package3.price')}
+              description={t('ai_consulting.package3.desc')}
+              features={[
+                t('ai_consulting.package3.feature1'),
+                t('ai_consulting.package3.feature2'),
+                t('ai_consulting.package3.feature3'),
+              ]}
+              ctaHref="/bookme"
+              ctaLabel={t('pricing.cta')}
+            />
           </div>
         </div>
       </article>
@@ -1108,6 +1107,15 @@ function LandingPage() {
         </section>
 
       </main>
+
+      <ImageCarouselModal
+        open={smartSalesCarouselOpen}
+        slides={smartSalesSlides}
+        currentIndex={smartSalesCarouselIndex}
+        onClose={closeSmartSalesCarousel}
+        onPrev={showPrevSmartSalesSlide}
+        onNext={showNextSmartSalesSlide}
+      />
 
         {/* Desktop sticky CTA → /bookme (mobile uses twin bar below; old “booking-form” submit was dead) */}
       <div

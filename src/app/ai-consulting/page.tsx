@@ -11,23 +11,23 @@ const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
 
 export const metadata: Metadata = {
-  title: "InnovateXP | AI Consulting That Ships",
+  title: "AI Consulting | Practical AI Implementation for SMEs",
   description:
-    "Every AI project that fails does so in the first 3 weeks. InnovateXP helps SMEs start with one workflow, prove ROI in 30 days, then expand — controlled risk, measurable outcomes.",
+    "Plan and implement AI step by step with clear scope, workflow priorities, and measurable outcomes.",
   alternates: {
     canonical: `${siteUrlMeta}/ai-consulting`,
   },
   openGraph: {
-    title: "InnovateXP | AI Consulting That Ships",
-    description: "Every AI project that fails does so in the first 3 weeks. Start with one workflow, prove ROI in 30 days, then expand — controlled risk, measurable outcomes.",
+    title: "AI Consulting | Practical AI Implementation for SMEs",
+    description: "Plan and implement AI step by step with clear scope, workflow priorities, and measurable outcomes.",
     url: `${siteUrlMeta}/ai-consulting`,
     siteName: "InnovateXP Limited",
     images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP AI Consulting" }],
   },
   twitter: {
     card: "summary_large_image",
-    title: "InnovateXP | AI Consulting That Ships",
-    description: "Every AI project that fails does so in the first 3 weeks. Start with one workflow, prove ROI in 30 days, then expand — controlled risk, measurable outcomes.",
+    title: "AI Consulting | Practical AI Implementation for SMEs",
+    description: "Plan and implement AI step by step with clear scope, workflow priorities, and measurable outcomes.",
   },
 };
 

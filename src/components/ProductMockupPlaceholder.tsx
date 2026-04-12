@@ -9,17 +9,26 @@ export function ProductMockupPlaceholder({
   className = "",
   imageSrc,
   imageAlt = "",
+  onClick,
 }: {
   label: string;
   className?: string;
   /** e.g. /eventxp-admin.png — when set, shows image instead of dashed placeholder */
   imageSrc?: string;
   imageAlt?: string;
+  onClick?: () => void;
 }) {
   if (imageSrc) {
     return (
       <figure className={`w-full ${className}`}>
-        <div className="relative aspect-[16/10] w-full overflow-hidden rounded-xl border-2 border-slate-200 bg-slate-100 shadow-md dark:border-slate-600 dark:bg-slate-800">
+        <button
+          type="button"
+          onClick={onClick}
+          className={`relative aspect-[16/10] w-full overflow-hidden rounded-xl border-2 border-slate-200 bg-slate-100 shadow-md dark:border-slate-600 dark:bg-slate-800 ${
+            onClick ? "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary" : "cursor-default"
+          }`}
+          aria-label={imageAlt || label}
+        >
           <Image
             src={imageSrc}
             alt={imageAlt || label}
@@ -27,10 +36,20 @@ export function ProductMockupPlaceholder({
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 672px"
           />
-        </div>
+        </button>
         {label ? (
           <figcaption className="mt-2 text-center text-xs font-medium text-brand-primary/90 dark:text-teal-300/90">
-            {label}
+            {onClick ? (
+              <button
+                type="button"
+                onClick={onClick}
+                className="underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary dark:hover:text-teal-300"
+              >
+                {label}
+              </button>
+            ) : (
+              label
+            )}
           </figcaption>
         ) : null}
       </figure>

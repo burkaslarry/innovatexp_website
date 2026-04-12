@@ -18,7 +18,13 @@ const cardClass =
 
 const iconClass = "mb-4 h-8 w-8 text-oxford dark:text-teal-300";
 
-export default function SmartSalesEnterpriseShowcase() {
+type SmartSalesEnterpriseShowcaseProps = {
+  onOpenGallery?: () => void;
+};
+
+export default function SmartSalesEnterpriseShowcase({
+  onOpenGallery,
+}: SmartSalesEnterpriseShowcaseProps) {
   const { t } = useLanguage();
 
   const uspIcons = [
@@ -43,9 +49,19 @@ export default function SmartSalesEnterpriseShowcase() {
       <div className="mx-auto max-w-6xl space-y-16">
         <div>
           <div className="mb-10 text-center">
-            <h3 className="mb-4 text-center text-2xl font-bold text-brand-primary dark:text-white md:text-3xl">
-              {t("crm.main.title")}
-            </h3>
+            {onOpenGallery ? (
+              <button
+                type="button"
+                onClick={onOpenGallery}
+                className="mb-4 text-center text-2xl font-bold text-brand-primary underline decoration-brand-primary/40 underline-offset-4 dark:text-white md:text-3xl"
+              >
+                {t("crm.main.title")}
+              </button>
+            ) : (
+              <h3 className="mb-4 text-center text-2xl font-bold text-brand-primary dark:text-white md:text-3xl">
+                {t("crm.main.title")}
+              </h3>
+            )}
             <p className="mx-auto mt-4 max-w-3xl text-lg text-slate-600 dark:text-slate-300">
               {t("crm.main.subtitle")}
             </p>

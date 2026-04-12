@@ -16,9 +16,9 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "AI Consulting | Global AI Solutions & Hong Kong Tech Excellence | InnovateXP",
+  title: "InnovateXP | AI CRM, EventXP, and AI Consulting",
   description:
-    "Turn AI into revenue: AI consulting and CRM solutions for global business. Hong Kong tech excellence—SmartSales, EventXP, and implementation that actually ships. Book a free consultation.",
+    "We help Hong Kong SMEs improve follow-up, event operations, and AI workflows with practical systems.",
   keywords: "AI consulting, AI CRM, global AI solutions, Hong Kong tech, smart sales automation, WhatsApp CRM, event check-in system, EventXP, SmartSales CRM, prompt engineering",
   authors: [{ name: "Larry Lo", url: "https://www.linkedin.com/in/larry-lo-804a50165/" }],
   creator: "InnovateXP Limited",
@@ -41,8 +41,8 @@ export const metadata: Metadata = {
     alternateLocale: ["en_HK", "zh_HK"],
     url: "https://www.innovatexp.co",
     siteName: "InnovateXP Limited",
-    title: "AI Consulting | Global AI Solutions & Hong Kong Tech Excellence | InnovateXP",
-    description: "Turn AI into revenue. Expert AI consulting, CRM & event tech for global business—backed by Hong Kong tech excellence. Free strategy call.",
+    title: "InnovateXP | AI CRM, EventXP, and AI Consulting",
+    description: "Practical AI systems for SMEs: faster follow-up, better event flow, and clearer operations.",
     images: [
       {
         url: "/innovatexp_color_no_bg.svg",
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "AI Consulting | Global AI Solutions & Hong Kong Tech Excellence | InnovateXP",
-    description: "Turn AI into revenue. Expert AI consulting, CRM & event tech for global business—backed by Hong Kong tech excellence. Free strategy call.",
+    title: "InnovateXP | AI CRM, EventXP, and AI Consulting",
+    description: "Practical AI systems for SMEs: faster follow-up, better event flow, and clearer operations.",
     images: ["/innovatexp_color_no_bg.svg"],
     creator: "@innovatexp",
   },
