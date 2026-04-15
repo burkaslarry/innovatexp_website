@@ -49,7 +49,7 @@ export function getEventXPProductSchema() {
       "EventXP is an event management platform for Hong Kong teams to manage check-in flow, attendance tracking, and post-event follow-up actions.",
     offers: {
       "@type": "Offer",
-      price: "18888",
+      price: "880",
       priceCurrency: "HKD",
     },
     url: `${siteUrl}/eventxp`,

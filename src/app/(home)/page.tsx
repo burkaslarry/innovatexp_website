@@ -375,8 +375,8 @@ function LandingPage() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
                 <LayoutDashboard className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.insight.tier1.feature1')}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{t('pricing.insight.tier1.feature2')}</p>
+              <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('eventxp.grid.checkin.title')}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{t('eventxp.grid.checkin.body')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
@@ -389,8 +389,8 @@ function LandingPage() {
               <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
                 <Target className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
-              <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.insight.tier2.feature4')}</h3>
-              <p className="text-sm text-gray-600 dark:text-gray-300">{t('pricing.insight.tier2.feature4')}</p>
+              <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('eventxp.grid.retention.title')}</h3>
+              <p className="text-sm text-gray-600 dark:text-gray-300">{t('eventxp.grid.retention.body')}</p>
             </div>
           </div>
 
@@ -433,9 +433,13 @@ function LandingPage() {
             </div>
           </div>
 
+          <p className="mb-6 text-center text-lg font-semibold text-gray-900 dark:text-white">
+            {t('pricing.insight.plans_heading')}
+          </p>
           <div id="pricing" className="grid scroll-mt-[var(--header-offset)] grid-cols-1 items-stretch gap-6 md:grid-cols-3">
             <PriceCard
               index={0}
+              badge={t('pricing.insight.tier1.badge')}
               name={t('pricing.insight.tier1.name')}
               price={t('pricing.insight.tier1.price')}
               period={t('pricing.insight.tier1.period')}
@@ -457,6 +461,7 @@ function LandingPage() {
               subtitle={t('pricing.insight.tier2.subtitle')}
               target={t('pricing.insight.tier2.target')}
               featureLines={[
+                t('pricing.insight.tier2.feature1'),
                 t('pricing.insight.tier2.feature2'),
                 t('pricing.insight.tier2.feature3'),
                 t('pricing.insight.tier2.feature4'),
@@ -475,6 +480,7 @@ function LandingPage() {
                 t('pricing.insight.tier3.feature1'),
                 t('pricing.insight.tier3.feature2'),
                 t('pricing.insight.tier3.feature3'),
+                t('pricing.insight.tier3.feature4'),
               ]}
               ctaHref="/bookme"
               ctaLabel={t('pricing.cta')}
@@ -619,7 +625,11 @@ function LandingPage() {
               price={t('pricing.crm.tier2.price')}
               period={t('pricing.crm.tier2.period')}
               target={t('pricing.crm.tier2.target')}
-              featureLines={[t('pricing.crm.tier2.feature1'), t('pricing.crm.tier2.feature2')]}
+              featureLines={[
+                t('pricing.crm.tier2.feature1'),
+                t('pricing.crm.tier2.feature2'),
+                t('pricing.crm.tier2.feature3'),
+              ]}
               ctaHref="/bookme"
               ctaLabel={t('pricing.cta')}
             />
@@ -1156,16 +1166,10 @@ function LandingPage() {
         </div>
       </footer>
 
-      <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-2 border-t border-gray-200 bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.08)] backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95 md:hidden">
-        <a
-          href="/bookme#quotation-wizard"
-          className="flex min-h-[48px] flex-1 items-center justify-center rounded-full border-2 border-slate-300 bg-transparent text-sm font-bold text-slate-800 transition hover:border-[#00B9B3]/50 dark:border-slate-500 dark:text-slate-100"
-        >
-          {t('mobile.cta_contact')}
-        </a>
+      <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-1.5 border-t border-gray-200 bg-white/95 px-2 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.08)] backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95 sm:gap-2 sm:p-3 sm:pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
         <a
           href="/bookme"
-          className="flex min-h-[48px] flex-[1.15] touch-manipulation items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white no-underline shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white"
+          className="flex min-h-[48px] min-w-0 flex-[1.15] touch-manipulation items-center justify-center rounded-full bg-brand-primary px-2 text-center text-xs font-bold leading-tight text-white no-underline shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white sm:px-3 sm:text-sm max-[400px]:flex-1"
         >
           {t('hero.book_meeting')}
         </a>

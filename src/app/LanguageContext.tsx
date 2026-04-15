@@ -536,50 +536,54 @@ export const translations = {
     'pricing.promotion': 'Q1 Launch Special',
     'pricing.promotion_detail': 'Sign up for 1 year, get 1 Man-day Custom Consultation FREE',
     
-    // EventXP Product
+    // EventXP Product (aligned with EventXP pitch deck)
     'pricing.insight.name': 'EventXP',
+    'pricing.insight.plans_heading': 'Monthly support & maintenance plans',
     'pricing.insight.tagline': 'Turn Event Data into Revenue Growth',
     'pricing.insight.subtitle':
       'You spent HKD 50,000 on an event. What happened to those 200 contacts?',
     'pricing.insight.description':
       'EventXP turns every check-in into a ranked lead list — automatically. Know who to follow up with, and when, before your competitors do.',
     'pricing.insight.value':
-      'The AI Growth plan costs HKD $400/month more than Professional. A single recovered client from a smarter follow-up list typically pays for a year\'s subscription. The math is straightforward.',
+      'Prepay 1 year for 10% off; prepay 2 years for 25% off. Pair monthly maintenance with a one-time go-live setup so your team moves from first scan to qualified follow-up without another night in a spreadsheet.',
     
+    'pricing.insight.tier1.badge': 'Hot Choice',
     'pricing.insight.tier1.name': 'Starter',
-    'pricing.insight.tier1.price': 'HKD $1,480',
+    'pricing.insight.tier1.price': 'HKD $880',
     'pricing.insight.tier1.period': '/ month',
-    'pricing.insight.tier1.target': '1 community · Min. 6 months',
-    'pricing.insight.tier1.feature1': 'Unlimited event creation & QR Code check-in',
-    'pricing.insight.tier1.feature2': 'Smart Conversion List & Retention Strategy Engine',
-    'pricing.insight.tier1.feature3': 'Ops support & backups · 2 onsite events included',
-    'pricing.insight.tier1.feature4': '3 months warranty · 1 product review meeting',
+    'pricing.insight.tier1.target': 'Best for a single organizer running occasional events',
+    'pricing.insight.tier1.feature1': 'Ops support & data backups',
+    'pricing.insight.tier1.feature2': 'Onsite support: 2 events',
+    'pricing.insight.tier1.feature3': 'Warranty: 6 months (maintenance plan)',
+    'pricing.insight.tier1.feature4': 'Go-live setup from HKD $6,800 · 2 pilot events · 3-month basic warranty',
     
     'pricing.insight.tier2.name': 'Growth',
-    'pricing.insight.tier2.price': 'HKD $1,980',
+    'pricing.insight.tier2.price': 'HKD $1,280',
     'pricing.insight.tier2.period': '/ month',
-    'pricing.insight.tier2.subtitle': '(Only +$500 more than Starter)',
+    'pricing.insight.tier2.subtitle': '(+HKD 400 / month vs Starter)',
     'pricing.insight.tier2.badge': 'Popular',
-    'pricing.insight.tier2.target': '2 communities · Min. 12 months',
-    'pricing.insight.tier2.feature1': 'All Starter features, PLUS:',
-    'pricing.insight.tier2.feature2': '🕵️ Lead scoring insight (check-in timing + attendance + engagement)',
-    'pricing.insight.tier2.feature3': '3 onsite events · 2 Strategic AI Consultancy sessions/year',
-    'pricing.insight.tier2.feature4': '1 year warranty · 2 product review meetings',
-    'pricing.insight.tier2.note': '💡 Ideal for community retention and data-driven follow-up. Prepay 1 year: 10% off; 2 years: 20% off.',
+    'pricing.insight.tier2.target': 'Best for ~2 communities running regular events',
+    'pricing.insight.tier2.feature1': 'Everything in Starter maintenance, plus:',
+    'pricing.insight.tier2.feature2': 'Monthly health / usage summary',
+    'pricing.insight.tier2.feature3': 'Minor configuration & content tweaks',
+    'pricing.insight.tier2.feature4': '2 additional onsite support events',
+    'pricing.insight.tier2.note':
+      'Go-live setup from HKD $8,800 · 3 pilot events · 4-month basic warranty. Prepay 1 year: 10% off · 2 years: 25% off.',
     
     'pricing.insight.tier3.name': 'Enterprise',
-    'pricing.insight.tier3.price': 'HKD $2,480',
+    'pricing.insight.tier3.price': 'HKD $1,480',
     'pricing.insight.tier3.period': '/ month',
-    'pricing.insight.tier3.target': '4 communities · Min. 12 months',
-    'pricing.insight.tier3.feature1': 'All Growth features, PLUS 1 AI Consultancy session (60 min) every month',
-    'pricing.insight.tier3.feature2': '4 onsite events · 2 years warranty · 3 product review meetings',
-    'pricing.insight.tier3.feature3': 'Continuous optimization, workflow automation & strategy support',
+    'pricing.insight.tier3.target': 'Best for 4+ communities driving collaboration beyond events',
+    'pricing.insight.tier3.feature1': 'Growth Maintenance Package included',
+    'pricing.insight.tier3.feature2': 'WhatsApp automation support',
+    'pricing.insight.tier3.feature3': 'Quarterly optimization review',
+    'pricing.insight.tier3.feature4': 'Integration upkeep (agreed scope) · go-live from HKD $9,800 · 4 pilots · 5-month basic warranty',
     
     'pricing.insight.setup':
       'If we confirm the booking person is a BNI member, the scenario and pricing may be negotiable. For details, ',
     'pricing.insight.setup_cta': 'book a consultation',
     'eventxp.communities_support':
-      'Event support by plan: Starter — 1 community; Growth — 2 communities; Enterprise — 4 communities. Includes one trial event.',
+      'Go-live packages (deck): Starter — HKD 6,800 setup, 2 pilot events, 3-month basic warranty; Growth — HKD 8,800, 3 pilots, 4-month warranty; Enterprise — HKD 9,800, 4 pilots, 5-month warranty. Monthly maintenance is billed separately.',
     'mockup.pipeline_kanban':
       '🎬 Live walkthrough: pipeline / Kanban — Book: info@innovatexp.com',
     'mockup.pipeline_inbox':
@@ -622,7 +626,7 @@ export const translations = {
     'pricing.crm.tier3.name': 'Onboarding & Setup',
     'pricing.crm.tier3.price': 'From HKD $15,000',
     'pricing.crm.tier3.period': '(one-time)',
-    'pricing.crm.tier3.target': '',
+    'pricing.crm.tier3.target': 'Picking up where you left off',
     'pricing.crm.tier3.feature1': 'Migration from your existing spreadsheet or CRM',
     'pricing.crm.tier3.feature2': 'Custom AI prompt training in your product\'s brand voice',
     'pricing.crm.tier3.feature3': '2-hour team walkthrough session',
@@ -713,7 +717,8 @@ export const translations = {
     'faq.eventxp.q3': 'Can EventXP handle multiple simultaneous events?',
     'faq.eventxp.a3': 'Yes. EventXP supports unlimited concurrent events with separate dashboards, real-time attendance tracking, and consolidated reporting across all events.',
     'faq.eventxp.q4': 'What is the cost of EventXP event management system?',
-    'faq.eventxp.a4': 'EventXP Starter is HKD 1,480/month (1 community, 2 onsite events). Growth is HKD 1,980/month with AI Potential Interest Insight and 2 AI consultancy sessions/year. Enterprise is HKD 2,480/month with monthly AI consultancy and 4 onsite events. One-off setup: BNI members may receive negotiable pricing — book a call for details.',
+    'faq.eventxp.a4':
+      'EventXP maintenance plans start at HKD 880/month (Starter), HKD 1,280/month (Growth), and HKD 1,480/month (Enterprise), matching our standard pitch deck. One-time go-live setup ranges from HKD 6,800–9,800 by tier (pilot events and basic warranty differ). BNI members may receive negotiable pricing — book a call for details.',
     
     'faq.aiconsulting.title': 'AI Consulting - Frequently Asked Questions',
     'faq.aiconsulting.q1': 'What is prompt engineering training?',
@@ -779,9 +784,15 @@ export const translations = {
     // Main section direct answers + GEO content gap sections
     'eventxp.main.answer':
       'EventXP turns every check-in into a ranked lead list — automatically. Know who to follow up with, and when, before your competitors do.',
+    'eventxp.grid.checkin.title': 'QR check-in & attendance',
+    'eventxp.grid.checkin.body':
+      'Sub-second verification, deduped records, and export-ready summaries when the event ends — the same flow showcased in our deck.',
     'eventxp.grid.ai_insight.title': 'Scored follow-up lists',
     'eventxp.grid.ai_insight.body':
       'Stop guessing who was genuinely interested. EventXP scores every attendee based on check-in timing, session attendance, and engagement patterns — so your team follows up with the right 20 people, not all 200.',
+    'eventxp.grid.retention.title': 'Retention & sponsor-ready reporting',
+    'eventxp.grid.retention.body':
+      'Turn attendance into themes, re-engagement, and renewal conversations your partners can trust — analytics & retention as in the deck.',
     'smartsales.main.answer':
       'SmartSales CRM watches your WhatsApp inbox, ranks every lead by urgency, and drafts a reply in Cantonese or English. You review, tweak 20%, and send. No bot feel. No missed deals.',
     'crm.main.title': 'Why SmartSales? Forged for Hong Kong business culture',
@@ -1375,46 +1386,51 @@ export const translations = {
     'pricing.promotion': 'Q1 推出優惠',
     'pricing.promotion_detail': '簽約一年，免費贈送 1 場 Man-day 客製化諮詢',
     
-    // EventXP Product
+    // EventXP Product（與 pitch deck 一致）
     'pricing.insight.name': 'EventXP',
+    'pricing.insight.plans_heading': '月費支援及維護方案',
     'pricing.insight.tagline': '將活動數據轉化為營收增長',
     'pricing.insight.subtitle': '智能活動數據系統',
     'pricing.insight.description': '別讓您的訪客數據在 Excel 裡沉睡。將出席記錄升級為深度客戶洞察，創造可持續的業績增長。',
-    'pricing.insight.value': '預測參加者興趣，留住社群成員，精準鎖定明年買家。',
+    'pricing.insight.value':
+      '預付 1 年享 10% 折扣；預付 2 年享 25% 折扣。月費維護配上線組合，由第一次簽到做到可執行跟進，唔使再熬夜砌試算表。',
     
+    'pricing.insight.tier1.badge': '熱門之選',
     'pricing.insight.tier1.name': 'Starter',
-    'pricing.insight.tier1.price': 'HKD $1,480',
+    'pricing.insight.tier1.price': 'HKD $880',
     'pricing.insight.tier1.period': '/ 月',
-    'pricing.insight.tier1.target': '1 個社群 · 最少 6 個月',
-    'pricing.insight.tier1.feature1': '無限活動建立及 QR Code 簽到',
-    'pricing.insight.tier1.feature2': '精準轉化名單及留存策略引擎',
-    'pricing.insight.tier1.feature3': '營運支援及備份 · 含 2 次現場活動支援',
-    'pricing.insight.tier1.feature4': '3 個月保養 · 1 次產品檢討會議',
+    'pricing.insight.tier1.target': '適合單一主辦、活動頻率較低的團隊',
+    'pricing.insight.tier1.feature1': '營運支援與資料備份',
+    'pricing.insight.tier1.feature2': '現場支援：2 場活動',
+    'pricing.insight.tier1.feature3': '保養期：6 個月（維護方案）',
+    'pricing.insight.tier1.feature4': '上線組合 HKD $6,800 起 · 2 場試辦 · 3 個月基本保養',
     
     'pricing.insight.tier2.name': 'Growth',
-    'pricing.insight.tier2.price': 'HKD $1,980',
+    'pricing.insight.tier2.price': 'HKD $1,280',
     'pricing.insight.tier2.period': '/ 月',
-    'pricing.insight.tier2.subtitle': '(僅比 Starter 多 $500)',
+    'pricing.insight.tier2.subtitle': '（比 Starter 每月多 HKD $400）',
     'pricing.insight.tier2.badge': '常見選擇',
-    'pricing.insight.tier2.target': '2 個社群 · 最少 12 個月',
-    'pricing.insight.tier2.feature1': '包含 Starter 所有功能，另加：',
-    'pricing.insight.tier2.feature2': '🕵️ AI 潛在興趣透視（簽到行為 → 推斷興趣）',
-    'pricing.insight.tier2.feature3': '3 次現場支援 · 每年 2 次策略 AI 諮詢',
-    'pricing.insight.tier2.feature4': '1 年保養 · 2 次產品檢討會議',
-    'pricing.insight.tier2.note': '💡 適合重視社群留存與數據跟進。預付 1 年享 10% 折扣；2 年享 20% 折扣。',
+    'pricing.insight.tier2.target': '適合約 2 個社群、活動較頻繁的團隊',
+    'pricing.insight.tier2.feature1': '包含 Starter 維護內容，另加：',
+    'pricing.insight.tier2.feature2': '每月健康度／用量摘要',
+    'pricing.insight.tier2.feature3': '輕量設定與內容微調',
+    'pricing.insight.tier2.feature4': '額外 2 場現場支援',
+    'pricing.insight.tier2.note':
+      '上線組合 HKD $8,800 · 3 場試辦 · 4 個月基本保養。預付 1 年 10% 折扣 · 2 年 25% 折扣。',
     
     'pricing.insight.tier3.name': 'Enterprise',
-    'pricing.insight.tier3.price': 'HKD $2,480',
+    'pricing.insight.tier3.price': 'HKD $1,480',
     'pricing.insight.tier3.period': '/ 月',
-    'pricing.insight.tier3.target': '4 個社群 · 最少 12 個月',
-    'pricing.insight.tier3.feature1': '包含 Growth 所有功能，另加每月 1 次 AI 諮詢（60 分鐘）',
-    'pricing.insight.tier3.feature2': '4 次現場支援 · 2 年保養 · 3 次產品檢討會議',
-    'pricing.insight.tier3.feature3': '持續優化、流程自動化及策略支援',
+    'pricing.insight.tier3.target': '適合 4 個以上社群、要跨活動協作的團隊',
+    'pricing.insight.tier3.feature1': '包含 Growth 維護套裝',
+    'pricing.insight.tier3.feature2': 'WhatsApp 自動化支援',
+    'pricing.insight.tier3.feature3': '每季優化檢討',
+    'pricing.insight.tier3.feature4': '約定範圍內的整合維護 · 上線 HKD $9,800 起 · 4 場試辦 · 5 個月基本保養',
     
     'pricing.insight.setup': '若經查出預約者為 BNI 成員，場景和價格可議。詳情請',
     'pricing.insight.setup_cta': '預約洽談',
     'eventxp.communities_support':
-      '各方案支援社群活動：Starter 1 個社群、Growth 2 個、Enterprise 4 個；並可享用試用活動 1 次。',
+      '上線組合（deck）：Starter HKD 6,800、2 場試辦、3 個月基本保養；Growth HKD 8,800、3 場、4 個月；Enterprise HKD 9,800、4 場、5 個月。月費維護另計。',
     'mockup.pipeline_kanban': 'SmartSales — 管道／看板（畫面示意）',
     'mockup.pipeline_inbox': 'SmartSales — 收件匣與管道（畫面示意）',
     
@@ -1452,7 +1468,7 @@ export const translations = {
     'pricing.crm.tier3.name': '導入與設定',
     'pricing.crm.tier3.price': 'HKD $15,000 起',
     'pricing.crm.tier3.period': '(一次性)',
-    'pricing.crm.tier3.target': '（導入與設定）',
+    'pricing.crm.tier3.target': '承接你現有進度',
     'pricing.crm.tier3.feature1': '由現有 Excel／CRM 遷移資料',
     'pricing.crm.tier3.feature2': '按你產品與語氣訓練專屬 AI Prompt',
     'pricing.crm.tier3.feature3': '2 小時團隊上手導覽',
@@ -1540,7 +1556,8 @@ export const translations = {
     'faq.eventxp.q3': 'EventXP 能否處理多個同時進行的活動？',
     'faq.eventxp.a3': '可以。EventXP 支援無限數量的同步活動，配備獨立儀表板、即時出席追蹤，並可整合所有活動的報告。',
     'faq.eventxp.q4': 'EventXP 活動管理系統的費用是多少？',
-    'faq.eventxp.a4': 'EventXP Starter 月費 HKD 1,480（1 個社群、2 次現場支援）。Growth 月費 HKD 1,980，含 AI 潛在興趣透視及每年 2 次 AI 諮詢。Enterprise 月費 HKD 2,480，含每月 AI 諮詢及 4 次現場支援。一次性設定：BNI 成員可議價，詳情請預約洽談。',
+    'faq.eventxp.a4':
+      'EventXP 月費維護方案為 Starter HKD 880／月、Growth HKD 1,280／月、Enterprise HKD 1,480／月（與標準 pitch deck 一致）。一次性上線組合約 HKD 6,800–9,800（試辦場次與基本保養期因方案而異）。BNI 成員可議價，詳情請預約洽談。',
     
     'faq.aiconsulting.title': 'AI 顧問服務 - 常見問題',
     'faq.aiconsulting.q1': '什麼是 Prompt Engineering 培訓？',
@@ -1599,8 +1616,12 @@ export const translations = {
 
     // Main section direct answers + GEO content gap sections
     'eventxp.main.answer': 'EventXP 協助香港及大灣區活動團隊將簽到紀錄轉化為可執行的商業洞察。你可以即時查看出席情況、識別高意向參加者，並安排後續跟進流程，避免活動結束後只剩零散報表與難以行動的資料。',
+    'eventxp.grid.checkin.title': 'QR 簽到與出席紀錄',
+    'eventxp.grid.checkin.body': '極速驗證、去重名單，活動結束即可匯出摘要——與 deck 展示流程一致。',
     'eventxp.grid.ai_insight.title': '自動評分的跟進名單',
     'eventxp.grid.ai_insight.body': '不再靠感覺猜誰最有興趣。EventXP 會根據簽到時間、出席狀況與互動訊號為每位參加者評分，讓你先跟進最值得的 20 人，而不是把 200 人全部都追一次。',
+    'eventxp.grid.retention.title': '留存與贊助商報告',
+    'eventxp.grid.retention.body': '將出席數據變成主題、再參與與續約對話，讓合作夥伴看得明白——呼應 deck 中分析與留存段落。',
     'smartsales.main.answer': 'SmartSales CRM 為中小企業提供可落地的 AI CRM 流程，把 WhatsApp 對話、潛在客戶進度與跟進提醒整合到同一系統。團隊可減少手動更新與跨工具切換，讓銷售管道更清晰、回應更快、服務更一致。',
     'crm.main.title': '專為香港商業文化鑄造',
     'crm.main.subtitle': '拒絕冷冰冰的機械人。我們的核心哲學是：「AI 幫你諗，你話事。」',

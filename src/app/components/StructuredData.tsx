@@ -208,13 +208,13 @@ export default function StructuredData() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "EventXP - Professional"
+            "name": "EventXP - Starter (maintenance)"
           },
-          "price": "2480",
+          "price": "880",
           "priceCurrency": "HKD",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "2480",
+            "price": "880",
             "priceCurrency": "HKD",
             "unitText": "per month"
           }
@@ -223,13 +223,28 @@ export default function StructuredData() {
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "EventXP - AI Growth"
+            "name": "EventXP - Growth (maintenance)"
           },
-          "price": "2880",
+          "price": "1280",
           "priceCurrency": "HKD",
           "priceSpecification": {
             "@type": "UnitPriceSpecification",
-            "price": "2880",
+            "price": "1280",
+            "priceCurrency": "HKD",
+            "unitText": "per month"
+          }
+        },
+        {
+          "@type": "Offer",
+          "itemOffered": {
+            "@type": "Service",
+            "name": "EventXP - Enterprise (maintenance)"
+          },
+          "price": "1480",
+          "priceCurrency": "HKD",
+          "priceSpecification": {
+            "@type": "UnitPriceSpecification",
+            "price": "1480",
             "priceCurrency": "HKD",
             "unitText": "per month"
           }

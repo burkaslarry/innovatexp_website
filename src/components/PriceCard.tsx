@@ -6,6 +6,8 @@ import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
 
 export interface PriceCardProps {
+  /** Optional pill badge (e.g. “Hot Choice”) — positioned above the card */
+  badge?: string;
   name: string;
   price: string;
   period: string;
@@ -17,6 +19,7 @@ export interface PriceCardProps {
 }
 
 export function PriceCard({
+  badge,
   name,
   price,
   period,
@@ -28,12 +31,25 @@ export function PriceCard({
 }: PriceCardProps) {
   return (
     <motion.div
+      className="h-full w-full"
       initial={{ opacity: 0, y: 16 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.4, delay: index * 0.06 }}
     >
-      <Card className="flex h-full flex-col border-slate-100 transition-shadow hover:shadow-card-hover dark:border-slate-700">
+      <Card
+        className={[
+          "relative flex h-full flex-col border-slate-100 transition-shadow hover:shadow-card-hover dark:border-slate-700",
+          badge ? "pt-12" : "",
+        ]
+          .filter(Boolean)
+          .join(" ")}
+      >
+        {badge ? (
+          <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-900 shadow-md sm:text-sm">
+            {badge}
+          </div>
+        ) : null}
         <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{name}</h3>
         <div className="mt-2">
           <span className="text-3xl font-bold text-brand-primary dark:text-teal-300">{price}</span>
@@ -56,7 +72,7 @@ export function PriceCard({
             </li>
           ))}
         </ul>
-        <Button href={ctaHref} variant="primary" className="mt-8 w-full touch-manipulation">
+        <Button href={ctaHref} variant="primary" className="mt-auto w-full touch-manipulation pt-6">
           {ctaLabel}
         </Button>
       </Card>

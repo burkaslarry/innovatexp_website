@@ -34,19 +34,19 @@ export function PremiumPriceCard({
 }: PremiumPriceCardProps) {
   return (
     <motion.div
-      className="relative md:scale-[1.02]"
+      className="h-full w-full"
       initial={{ opacity: 0, y: 20 }}
       whileInView={{ opacity: 1, y: 0 }}
       viewport={{ once: true }}
       transition={{ duration: 0.45 }}
     >
       <div
-        className="rounded-2xl p-[2px] shadow-xl"
+        className="flex h-full flex-col rounded-2xl p-[2px] shadow-xl"
         style={{
           background: "linear-gradient(135deg, #00B9B3, #1242de, #0f766e)",
         }}
       >
-        <div className="relative rounded-[14px] bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 px-6 pb-8 pt-10 dark:from-slate-900 dark:via-slate-950">
+        <div className="relative flex min-h-0 flex-1 flex-col rounded-[14px] bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 px-6 pb-8 pt-10 dark:from-slate-900 dark:via-slate-950">
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-sm font-bold text-slate-900 shadow-md">
             {badge}
           </div>
@@ -60,7 +60,7 @@ export function PremiumPriceCard({
           ) : null}
           {target ? <p className="mt-2 text-sm text-slate-300">{target}</p> : null}
 
-          <ul className="mt-5 space-y-2">
+          <ul className="mt-5 flex flex-1 flex-col gap-2">
             {featureLines.map((line, i) => (
               <li
                 key={i}
@@ -72,22 +72,20 @@ export function PremiumPriceCard({
             ))}
           </ul>
 
-          {callout ? (
-            <div className="mt-5 rounded-xl border border-brand-primary/50 bg-brand-cream-warm/95 p-3 dark:bg-amber-50/10">
-              <p className="flex gap-2 text-xs font-medium leading-relaxed text-amber-900 dark:text-amber-100">
-                <Lightbulb className="h-4 w-4 shrink-0 text-brand-primary dark:text-teal-300" aria-hidden />
-                {callout}
-              </p>
-            </div>
-          ) : null}
+          <div className="mt-auto shrink-0 space-y-5 pt-6">
+            {callout ? (
+              <div className="rounded-xl border border-brand-primary/50 bg-brand-cream-warm/95 p-3 dark:bg-amber-50/10">
+                <p className="flex gap-2 text-xs font-medium leading-relaxed text-amber-900 dark:text-amber-100">
+                  <Lightbulb className="h-4 w-4 shrink-0 text-brand-primary dark:text-teal-300" aria-hidden />
+                  {callout}
+                </p>
+              </div>
+            ) : null}
 
-          <Button
-            href={ctaHref}
-            variant="primary"
-            className="mt-6 w-full touch-manipulation"
-          >
-            {ctaLabel}
-          </Button>
+            <Button href={ctaHref} variant="primary" className="w-full touch-manipulation">
+              {ctaLabel}
+            </Button>
+          </div>
         </div>
       </div>
     </motion.div>
