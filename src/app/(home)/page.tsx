@@ -236,11 +236,11 @@ function LandingPage() {
         <h2 className="mb-8 text-center text-4xl font-bold text-gray-900 dark:text-white">
           {t('services.title')}
         </h2>
-        <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-          <div className="flex flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+          <div className="flex h-full min-h-0 flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
             <h3 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{t('services.ai_crm.title')}</h3>
             <p className="mb-4 text-sm font-semibold italic text-brand-primary dark:text-teal-300 ">{t('services.ai_crm.subtitle')}</p>
-            <ul className="mb-6 flex-grow space-y-2">
+            <ul className="flex min-h-0 flex-1 flex-col space-y-2">
               <li className="flex items-start text-gray-700 dark:text-gray-300">
                 <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.ai_crm.benefit1')}</span>
@@ -254,7 +254,7 @@ function LandingPage() {
                 <span>{t('services.ai_crm.benefit3')}</span>
               </li>
             </ul>
-            <div className="flex justify-center">
+            <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
               <a
                 href="/bookme"
                 className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
@@ -264,10 +264,10 @@ function LandingPage() {
             </div>
           </div>
 
-          <div className="flex flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
+          <div className="flex h-full min-h-0 flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
             <h3 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{t('services.checkin.title')}</h3>
             <p className="mb-4 text-sm font-semibold italic text-brand-primary dark:text-teal-300 ">{t('services.checkin.subtitle')}</p>
-            <ul className="mb-6 flex-grow space-y-2">
+            <ul className="flex min-h-0 flex-1 flex-col space-y-2">
               <li className="flex items-start text-gray-700 dark:text-gray-300">
                 <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.checkin.benefit1')}</span>
@@ -281,7 +281,7 @@ function LandingPage() {
                 <span>{t('services.checkin.benefit3')}</span>
               </li>
             </ul>
-            <div className="flex justify-center">
+            <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
               <a
                 href="/bookme"
                 className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
@@ -291,10 +291,10 @@ function LandingPage() {
             </div>
           </div>
 
-          <div className="flex flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
+          <div className="flex h-full min-h-0 flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
             <h3 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{t('services.courses.title')}</h3>
             <p className="mb-4 text-sm font-semibold italic text-brand-primary  dark:text-teal-300">{t('services.courses.subtitle')}</p>
-            <ul className="mb-6 flex-grow space-y-2">
+            <ul className="flex min-h-0 flex-1 flex-col space-y-2">
               <li className="flex items-start text-gray-700 dark:text-gray-300">
                 <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
                 <span>{t('services.courses.benefit1')}</span>
@@ -308,10 +308,10 @@ function LandingPage() {
                 <span>{t('services.courses.benefit3')}</span>
               </li>
             </ul>
-            <div className="flex justify-center">
+            <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
               <a
                 href="/bookme#quotation-wizard"
-                className="w-full rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+                className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
               >
                 {t('services.courses.cta')}
               </a>
@@ -394,9 +394,56 @@ function LandingPage() {
             </div>
           </div>
 
-          <p className="mx-auto mb-10 max-w-3xl text-center text-base leading-relaxed text-gray-700 dark:text-gray-300">
-            {t('eventxp.communities_support')}
-          </p>
+          <section aria-labelledby="eventxp-golive-heading" className="mb-12">
+            <h3
+              id="eventxp-golive-heading"
+              className="mb-6 text-center text-lg font-semibold text-gray-900 dark:text-white md:text-xl"
+            >
+              {t('eventxp.golive.heading')}
+            </h3>
+            <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
+              {/* Starter — 熱門之選 */}
+              <div className="relative flex h-full flex-col rounded-2xl border-2 border-gray-200 bg-gray-50 px-5 pb-6 pt-10 text-left shadow-sm dark:border-gray-600 dark:bg-gray-800/80">
+                <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-900 shadow-md sm:text-sm">
+                  {t('pricing.insight.tier1.badge')}
+                </div>
+                <p className="text-lg font-bold text-brand-primary dark:text-teal-300">{t('eventxp.golive.tier1.name')}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+                  {t('eventxp.golive.tier1.desc')}
+                </p>
+              </div>
+
+              {/* Growth — 常見選擇 + gradient frame (matches monthly Growth card) */}
+              <div
+                className="h-full rounded-2xl p-[2px] shadow-xl"
+                style={{
+                  background: 'linear-gradient(135deg, #00B9B3, #1242de, #0f766e)',
+                }}
+              >
+                <div className="relative flex h-full min-h-0 flex-col rounded-[14px] bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 px-5 pb-6 pt-10 dark:from-slate-900 dark:via-slate-950">
+                  <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-900 shadow-md sm:text-sm">
+                    {t('pricing.insight.tier2.badge')}
+                  </div>
+                  <p className="text-lg font-bold text-white">{t('eventxp.golive.tier2.name')}</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-300">{t('eventxp.golive.tier2.desc')}</p>
+                </div>
+              </div>
+
+              {/* Enterprise — teal accent highlight */}
+              <div className="relative flex h-full flex-col rounded-2xl border-2 border-brand-primary/45 bg-gradient-to-b from-gray-50 via-white to-teal-50/40 px-5 pb-6 pt-10 text-left shadow-md dark:border-teal-500/45 dark:from-gray-800 dark:via-slate-900 dark:to-teal-950/30">
+                <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#00B9B3] to-[#1242de] px-3 py-1 text-xs font-bold text-white shadow-md sm:text-sm">
+                  {t('eventxp.golive.tier3.badge')}
+                </div>
+                <p className="text-lg font-bold text-brand-primary dark:text-teal-300">{t('eventxp.golive.tier3.name')}</p>
+                <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-700 dark:text-slate-300">
+                  {t('eventxp.golive.tier3.desc')}
+                </p>
+              </div>
+            </div>
+            <p className="mt-6 text-center text-sm font-medium text-gray-600 dark:text-gray-400">
+              {t('eventxp.golive.note')}
+            </p>
+          </section>
 
           <div className="mb-12 rounded-2xl border-2 border-slate-200 bg-slate-50 p-8 dark:border-slate-600 dark:bg-slate-800/60">
             <h3 className="mb-4 text-center text-2xl font-bold text-brand-primary dark:text-white md:text-3xl">
@@ -472,6 +519,7 @@ function LandingPage() {
             />
             <PriceCard
               index={2}
+              badge={t('pricing.insight.tier3.badge')}
               name={t('pricing.insight.tier3.name')}
               price={t('pricing.insight.tier3.price')}
               period={t('pricing.insight.tier3.period')}

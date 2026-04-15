@@ -11,7 +11,7 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  "inline-flex min-h-[48px] items-center justify-center gap-2 rounded-full px-8 py-3 text-base font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-[#00B9B3]";
+  "flex min-h-[48px] items-center justify-center gap-2 rounded-full px-8 py-3 text-center text-base font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-[#00B9B3]";
 
 const variants: Record<ButtonVariant, string> = {
   primary:

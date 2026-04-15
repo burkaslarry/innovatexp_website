@@ -573,6 +573,7 @@ export const translations = {
     'pricing.insight.tier3.name': 'Enterprise',
     'pricing.insight.tier3.price': 'HKD $1,480',
     'pricing.insight.tier3.period': '/ month',
+    'pricing.insight.tier3.badge': 'Enterprise',    
     'pricing.insight.tier3.target': 'Best for 4+ communities driving collaboration beyond events',
     'pricing.insight.tier3.feature1': 'Growth Maintenance Package included',
     'pricing.insight.tier3.feature2': 'WhatsApp automation support',
@@ -582,8 +583,16 @@ export const translations = {
     'pricing.insight.setup':
       'If we confirm the booking person is a BNI member, the scenario and pricing may be negotiable. For details, ',
     'pricing.insight.setup_cta': 'book a consultation',
-    'eventxp.communities_support':
-      'Go-live packages (deck): Starter — HKD 6,800 setup, 2 pilot events, 3-month basic warranty; Growth — HKD 8,800, 3 pilots, 4-month warranty; Enterprise — HKD 9,800, 4 pilots, 5-month warranty. Monthly maintenance is billed separately.',
+    'eventxp.golive.heading': 'Go-live packages',
+    'eventxp.golive.tier1.name': 'Starter',
+    'eventxp.golive.tier1.desc':
+      'HKD 6,800 setup · 2 pilot events · 3-month basic warranty',
+    'eventxp.golive.tier2.name': 'Growth',
+    'eventxp.golive.tier2.desc': 'HKD 8,800 · 3 pilots · 4-month warranty',
+    'eventxp.golive.tier3.name': 'Enterprise',
+    'eventxp.golive.tier3.desc': 'HKD 9,800 · 4 pilots · 5-month warranty',
+    'eventxp.golive.tier3.badge': 'Enterprise',
+    'eventxp.golive.note': 'Monthly maintenance is billed separately.',
     'mockup.pipeline_kanban':
       '🎬 Live walkthrough: pipeline / Kanban — Book: info@innovatexp.com',
     'mockup.pipeline_inbox':
@@ -786,13 +795,13 @@ export const translations = {
       'EventXP turns every check-in into a ranked lead list — automatically. Know who to follow up with, and when, before your competitors do.',
     'eventxp.grid.checkin.title': 'QR check-in & attendance',
     'eventxp.grid.checkin.body':
-      'Sub-second verification, deduped records, and export-ready summaries when the event ends — the same flow showcased in our deck.',
+      'Sub-second verification, deduped records, and export-ready summaries when the event ends.',
     'eventxp.grid.ai_insight.title': 'Scored follow-up lists',
     'eventxp.grid.ai_insight.body':
       'Stop guessing who was genuinely interested. EventXP scores every attendee based on check-in timing, session attendance, and engagement patterns — so your team follows up with the right 20 people, not all 200.',
     'eventxp.grid.retention.title': 'Retention & sponsor-ready reporting',
     'eventxp.grid.retention.body':
-      'Turn attendance into themes, re-engagement, and renewal conversations your partners can trust — analytics & retention as in the deck.',
+      'Turn attendance into themes, re-engagement, and renewal conversations your partners can trust.',
     'smartsales.main.answer':
       'SmartSales CRM watches your WhatsApp inbox, ranks every lead by urgency, and drafts a reply in Cantonese or English. You review, tweak 20%, and send. No bot feel. No missed deals.',
     'crm.main.title': 'Why SmartSales? Forged for Hong Kong business culture',
@@ -1421,6 +1430,7 @@ export const translations = {
     'pricing.insight.tier3.name': 'Enterprise',
     'pricing.insight.tier3.price': 'HKD $1,480',
     'pricing.insight.tier3.period': '/ 月',
+    'pricing.insight.tier3.badge': '企業方案',    
     'pricing.insight.tier3.target': '適合 4 個以上社群、要跨活動協作的團隊',
     'pricing.insight.tier3.feature1': '包含 Growth 維護套裝',
     'pricing.insight.tier3.feature2': 'WhatsApp 自動化支援',
@@ -1429,8 +1439,15 @@ export const translations = {
     
     'pricing.insight.setup': '若經查出預約者為 BNI 成員，場景和價格可議。詳情請',
     'pricing.insight.setup_cta': '預約洽談',
-    'eventxp.communities_support':
-      '上線組合（deck）：Starter HKD 6,800、2 場試辦、3 個月基本保養；Growth HKD 8,800、3 場、4 個月；Enterprise HKD 9,800、4 場、5 個月。月費維護另計。',
+    'eventxp.golive.heading': '上線組合',
+    'eventxp.golive.tier1.name': 'Starter',
+    'eventxp.golive.tier1.desc': 'HKD 6,800、2 場試辦、3 個月基本保養',
+    'eventxp.golive.tier2.name': 'Growth',
+    'eventxp.golive.tier2.desc': 'HKD 8,800、3 場、4 個月',
+    'eventxp.golive.tier3.name': 'Enterprise',
+    'eventxp.golive.tier3.desc': 'HKD 9,800、4 場、5 個月',
+    'eventxp.golive.tier3.badge': '企業方案',
+    'eventxp.golive.note': '月費維護另計。',
     'mockup.pipeline_kanban': 'SmartSales — 管道／看板（畫面示意）',
     'mockup.pipeline_inbox': 'SmartSales — 收件匣與管道（畫面示意）',
     
@@ -1617,11 +1634,11 @@ export const translations = {
     // Main section direct answers + GEO content gap sections
     'eventxp.main.answer': 'EventXP 協助香港及大灣區活動團隊將簽到紀錄轉化為可執行的商業洞察。你可以即時查看出席情況、識別高意向參加者，並安排後續跟進流程，避免活動結束後只剩零散報表與難以行動的資料。',
     'eventxp.grid.checkin.title': 'QR 簽到與出席紀錄',
-    'eventxp.grid.checkin.body': '極速驗證、去重名單，活動結束即可匯出摘要——與 deck 展示流程一致。',
+    'eventxp.grid.checkin.body': '極速驗證、去重名單，活動結束即可匯出摘要',
     'eventxp.grid.ai_insight.title': '自動評分的跟進名單',
     'eventxp.grid.ai_insight.body': '不再靠感覺猜誰最有興趣。EventXP 會根據簽到時間、出席狀況與互動訊號為每位參加者評分，讓你先跟進最值得的 20 人，而不是把 200 人全部都追一次。',
     'eventxp.grid.retention.title': '留存與贊助商報告',
-    'eventxp.grid.retention.body': '將出席數據變成主題、再參與與續約對話，讓合作夥伴看得明白——呼應 deck 中分析與留存段落。',
+    'eventxp.grid.retention.body': '將出席數據變成主題、再參與與續約對話，讓合作夥伴看得明白',
     'smartsales.main.answer': 'SmartSales CRM 為中小企業提供可落地的 AI CRM 流程，把 WhatsApp 對話、潛在客戶進度與跟進提醒整合到同一系統。團隊可減少手動更新與跨工具切換，讓銷售管道更清晰、回應更快、服務更一致。',
     'crm.main.title': '專為香港商業文化鑄造',
     'crm.main.subtitle': '拒絕冷冰冰的機械人。我們的核心哲學是：「AI 幫你諗，你話事。」',

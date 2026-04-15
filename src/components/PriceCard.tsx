@@ -72,9 +72,11 @@ export function PriceCard({
             </li>
           ))}
         </ul>
-        <Button href={ctaHref} variant="primary" className="mt-auto w-full touch-manipulation pt-6">
-          {ctaLabel}
-        </Button>
+        <div className="mt-auto flex w-full justify-center pt-6">
+          <Button href={ctaHref} variant="primary" className="w-full max-w-full touch-manipulation">
+            {ctaLabel}
+          </Button>
+        </div>
       </Card>
     </motion.div>
   );

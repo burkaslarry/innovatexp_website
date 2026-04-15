@@ -82,9 +82,11 @@ export function PremiumPriceCard({
               </div>
             ) : null}
 
-            <Button href={ctaHref} variant="primary" className="w-full touch-manipulation">
-              {ctaLabel}
-            </Button>
+            <div className="flex w-full justify-center">
+              <Button href={ctaHref} variant="primary" className="w-full max-w-full touch-manipulation">
+                {ctaLabel}
+              </Button>
+            </div>
           </div>
         </div>
       </div>
