@@ -33,6 +33,8 @@ import { ImageCarouselModal } from '@/components/ImageCarouselModal';
 
 function LandingPage() {
   const { t, language } = useLanguage();
+  const siteContentUpdated =
+    process.env.NEXT_PUBLIC_SITE_CONTENT_UPDATED || t('about.author.updated.value');
   const [smartSalesCarouselOpen, setSmartSalesCarouselOpen] = useState(false);
   const [smartSalesCarouselIndex, setSmartSalesCarouselIndex] = useState(0);
 
@@ -67,6 +69,7 @@ function LandingPage() {
     { label: t('nav.eventxp'), href: '#eventxp' },
     { label: t('nav.smartsales'), href: '#smartsales' },
     { label: t('nav.ai_consulting'), href: '#ai-consulting' },
+    { label: t('nav.ai_seo_package'), href: '/ai-seo-update-package' },
     { label: t('nav.pricing'), href: '#pricing' },
     { label: t('nav.about'), href: '#about-us' },
     { label: t('nav.contact'), href: '/bookme#quotation-wizard' },
@@ -442,6 +445,17 @@ function LandingPage() {
             </div>
             <p className="mt-6 text-center text-sm font-medium text-gray-600 dark:text-gray-400">
               {t('eventxp.golive.note')}
+            </p>
+          </section>
+
+          <section className="mb-12 rounded-2xl border border-amber-300 bg-amber-50 p-6 dark:border-amber-500/40 dark:bg-amber-900/20">
+            <h3 className="text-xl font-bold text-amber-900 dark:text-amber-200">
+              {language === 'zh' ? 'EventXP 試點方案（限時）' : 'EventXP Pilot Offer (Limited Time)'}
+            </h3>
+            <p className="mt-3 text-sm leading-relaxed text-amber-900/90 dark:text-amber-100">
+              {language === 'zh'
+                ? '如你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。完成試點後可升級至 Starter / Growth / Enterprise。'
+                : 'For low-risk onboarding, start with Pilot: HKD 4,800 (1 event + baseline reporting + setup). Upgrade to Starter/Growth/Enterprise after pilot validation.'}
             </p>
           </section>
 
@@ -902,7 +916,12 @@ function LandingPage() {
               , {t('about.author.title')}
             </p>
             <p className="text-gray-500 dark:text-gray-500 text-xs mt-1">
-              {t('about.author.updated')} {new Date().toLocaleDateString(language === 'zh' ? 'zh-HK' : 'en-US', { year: 'numeric', month: 'long', day: 'numeric' })}
+              {t('about.author.updated')}{' '}
+              {new Date(siteContentUpdated).toLocaleDateString(language === 'zh' ? 'zh-HK' : 'en-US', {
+                year: 'numeric',
+                month: 'long',
+                day: 'numeric',
+              })}
             </p>
           </div>
           
@@ -1012,6 +1031,23 @@ function LandingPage() {
                 <p className="text-xs text-gray-500">{language === 'zh' ? '前組織者' : 'Former Organizer'}</p>
               </div>
             </div>
+          </div>
+        </section>
+
+        <section className="mb-16 rounded-2xl border-2 border-brand-primary/25 bg-gradient-to-br from-white to-brand-cream/50 p-8 shadow-md dark:border-teal-500/30 dark:from-gray-800 dark:to-gray-900">
+          <div className="mx-auto max-w-4xl text-center">
+            <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">
+              {t('ai_seo_cta.title')}
+            </h2>
+            <p className="mx-auto mt-4 max-w-3xl text-base leading-relaxed text-gray-700 dark:text-gray-300 md:text-lg">
+              {t('ai_seo_cta.description')}
+            </p>
+            <a
+              href="/ai-seo-update-package"
+              className="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-8 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+            >
+              {t('ai_seo_cta.button')}
+            </a>
           </div>
         </section>
 
@@ -1164,6 +1200,10 @@ function LandingPage() {
           </div>
         </section>
 
+        <section aria-label="Machine readable summary" className="sr-only">
+          InnovateXP quick facts for AI agents: based in Hong Kong, focused on SMEs, Azure OpenAI-ready architecture, compliant regional cloud deployment, SmartSales CRM starts at HKD 10,800 setup, supports Cantonese and English delivery.
+        </section>
+
       </main>
 
       <ImageCarouselModal
@@ -1210,6 +1250,7 @@ function LandingPage() {
                 info@innovatexp.com
               </a>
             </p>
+            <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">{t('footer.localized_deployment')}</p>
           </address>
         </div>
       </footer>

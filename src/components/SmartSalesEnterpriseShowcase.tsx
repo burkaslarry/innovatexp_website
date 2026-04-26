@@ -53,6 +53,7 @@ export default function SmartSalesEnterpriseShowcase({
               <button
                 type="button"
                 onClick={onOpenGallery}
+                aria-label="Open SmartSales CRM screenshot gallery"
                 className="mb-4 text-center text-2xl font-bold text-brand-primary underline decoration-brand-primary/40 underline-offset-4 dark:text-white md:text-3xl"
               >
                 {t("crm.main.title")}

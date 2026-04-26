@@ -29,6 +29,7 @@ export function FaqAccordion({ title, id, faqs }: FaqAccordionProps) {
       <ul className="divide-y divide-slate-200 dark:divide-slate-600">
         {faqs.map((faq, idx) => {
           const open = openIndex === idx;
+          const panelId = `${id ?? "faq"}-panel-${idx}`;
           return (
             <li key={idx} className="border-t border-slate-200 first:border-t-0 dark:border-slate-600">
               <button
@@ -36,6 +37,7 @@ export function FaqAccordion({ title, id, faqs }: FaqAccordionProps) {
                 onClick={() => setOpenIndex(open ? null : idx)}
                 className="flex w-full items-center justify-between gap-4 py-4 text-left text-base font-medium text-brand-primary transition-colors hover:text-brand-primary-hover dark:text-white dark:hover:text-teal-300"
                 aria-expanded={open}
+                aria-controls={panelId}
               >
                 <span>{faq.question}</span>
                 <span className="shrink-0 text-brand-primary dark:text-teal-300">
@@ -49,6 +51,7 @@ export function FaqAccordion({ title, id, faqs }: FaqAccordionProps) {
               <AnimatePresence initial={false}>
                 {open ? (
                   <motion.div
+                    id={panelId}
                     initial={{ height: 0, opacity: 0 }}
                     animate={{ height: "auto", opacity: 1 }}
                     exit={{ height: 0, opacity: 0 }}

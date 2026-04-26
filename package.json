@@ -7,7 +7,8 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "seo:check": "node seo-diagnostics/seo-check.mjs"
+    "seo:check": "node seo-diagnostics/seo-check.mjs",
+    "seo:validate-schema": "node scripts/validate-schema.mjs"
   },
   "proxy": "https://python-mysql-http.onrender.com",
   "dependencies": {
