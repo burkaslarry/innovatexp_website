@@ -34,7 +34,7 @@ export function ProductEntryGrid({
           const Icon = iconMap[item.icon];
           return (
             <a
-              key={item.href}
+              key={item.icon}
               href={item.href}
               className="group flex h-full min-h-0 flex-col rounded-2xl border-2 border-slate-200 bg-white p-6 shadow-sm transition-all hover:-translate-y-0.5 hover:border-oxford/40 hover:shadow-md dark:border-slate-600 dark:bg-slate-800/80 dark:hover:border-oxford-light/50"
             >
