@@ -706,6 +706,7 @@ export const translations = {
     'nav.vision': 'Vision',
     'nav.partnership': 'Partnership',
     'nav.ai_seo_package': 'AI SEO package',
+    'nav.pitch_decks': 'Pitch decks',
     'ai_seo_cta.title': 'Need fast AI SEO updates?',
     'ai_seo_cta.description':
       'Choose a fixed-scope update package for structured data, content refinement, and delivery timeline you can plan around.',
@@ -1566,6 +1567,7 @@ export const translations = {
     'nav.vision': '願景',
     'nav.partnership': '合作夥伴',
     'nav.ai_seo_package': 'AI SEO 更新套餐',
+    'nav.pitch_decks': 'Pitch Deck',
     'ai_seo_cta.title': '想快速完成 AI SEO 更新？',
     'ai_seo_cta.description': '選擇固定範圍更新套餐，包含結構化資料、內容微調與可預期交付時程。',
     'ai_seo_cta.button': '查看 AI SEO 更新套餐',

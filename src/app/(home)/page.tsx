@@ -68,6 +68,7 @@ function LandingPage() {
     { label: t('nav.smartsales'), href: '#smartsales' },
     { label: t('nav.ai_consulting'), href: '#ai-consulting' },
     { label: t('nav.ai_seo_package'), href: '/ai-seo-update-package' },
+    { label: t('nav.pitch_decks'), href: '/pitch-decks' },
     { label: t('nav.pricing'), href: '#pricing' },
     { label: t('nav.about'), href: '#about-us' },
     { label: t('nav.contact'), href: '/bookme#quotation-wizard' },
