@@ -43,7 +43,7 @@ export default function NotFound() {
         </nav>
         <p className="mt-8 text-sm text-gray-400 dark:text-gray-500">
           If you followed a broken link, you can{" "}
-          <a href="mailto:info@innovatexp.com?subject=Broken%20link%20report" className="text-brand-primary hover:underline dark:text-teal-300">
+          <a href="mailto:info@innovatexp.co?subject=Broken%20link%20report" className="text-brand-primary hover:underline dark:text-teal-300">
             report it to us
           </a>
           .

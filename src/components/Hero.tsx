@@ -19,6 +19,8 @@ export interface HeroProps {
   /** Use with #product-pillars or /bookme#quotation-wizard */
   onSecondaryClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
   secondaryHref?: string;
+  trustBadges?: string[];
+  bottomTagline?: string;
   imageSrc?: string;
   imageAlt?: string;
 }
@@ -34,6 +36,8 @@ export function Hero({
   secondaryLabel,
   onSecondaryClick,
   secondaryHref = "/bookme#quotation-wizard",
+  trustBadges = [],
+  bottomTagline = "",
   imageSrc = "/mypresent.jpg",
   imageAlt = "",
 }: HeroProps) {
@@ -64,6 +68,18 @@ export function Hero({
             <p className="mx-auto mt-6 max-w-xl text-base leading-[1.7] text-slate-600 dark:text-slate-300 lg:mx-0 lg:max-w-lg lg:text-lg">
               {description}
             </p>
+          ) : null}
+          {trustBadges.length > 0 ? (
+            <ul className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200 lg:mx-0 lg:justify-start">
+              {trustBadges.map((badge) => (
+                <li key={badge} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 shadow-sm dark:border-slate-600 dark:bg-slate-800">
+                  {badge}
+                </li>
+              ))}
+            </ul>
+          ) : null}
+          {bottomTagline?.trim() ? (
+            <p className="mt-5 text-lg font-bold text-oxford dark:text-teal-300">{bottomTagline}</p>
           ) : null}
           <motion.div
             className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start"

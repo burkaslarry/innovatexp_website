@@ -46,7 +46,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "contactPoint": {
       "@type": "ContactPoint",
       "contactType": "Customer Service",
-      "email": "info@innovatexp.com",
+      "email": "info@innovatexp.co",
       "availableLanguage": ["English", "Chinese"]
     },
     "founder": {
@@ -78,6 +78,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "Azure OpenAI Implementation",
       "AI Agent Deployment",
       "Compliant Regional Cloud Architecture",
+      "香港 WhatsApp CRM",
+      "香港中小企 AI 自動化",
+      "BNI 跟進系統",
       "Google Gemini API",
       "WhatsApp CRM Integration"
     ]
@@ -154,7 +157,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
 
   const smartSalesCRMService = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": ["Service", "Product"],
     "@id": `${baseUrl}/#smartsales-crm`,
     "serviceType": "AI CRM Software",
     "name": "SmartSales CRM",
@@ -216,7 +219,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
 
   const eventXPService = {
     "@context": "https://schema.org",
-    "@type": "Service",
+    "@type": ["Service", "Product"],
     "@id": `${baseUrl}/#eventxp`,
     "serviceType": "Event Management Software",
     "name": "EventXP",

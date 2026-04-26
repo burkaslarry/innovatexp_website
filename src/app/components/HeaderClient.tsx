@@ -78,16 +78,16 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
             {subtitle !== undefined ? (
               <>
                 <div className="min-w-0 hidden sm:block">
-                  <h1 className="truncate text-lg font-bold text-oxford dark:text-white">{title}</h1>
+                  <p className="truncate text-lg font-bold text-oxford dark:text-white">{title}</p>
                   <p className="truncate text-sm text-slate-600 dark:text-slate-400">{subtitle}</p>
                 </div>
                 <div className="sm:hidden">
-                  <h1 className="text-lg font-bold text-oxford dark:text-white">{title}</h1>
+                  <p className="text-lg font-bold text-oxford dark:text-white">{title}</p>
                 </div>
               </>
             ) : (
               <div className="hidden sm:block">
-                <h1 className="text-lg font-bold text-oxford dark:text-white">{title}</h1>
+                <p className="text-lg font-bold text-oxford dark:text-white">{title}</p>
               </div>
             )}
           </div>

@@ -33,8 +33,6 @@ import { ImageCarouselModal } from '@/components/ImageCarouselModal';
 
 function LandingPage() {
   const { t, language } = useLanguage();
-  const siteContentUpdated =
-    process.env.NEXT_PUBLIC_SITE_CONTENT_UPDATED || t('about.author.updated.value');
   const [smartSalesCarouselOpen, setSmartSalesCarouselOpen] = useState(false);
   const [smartSalesCarouselIndex, setSmartSalesCarouselIndex] = useState(0);
 
@@ -124,12 +122,14 @@ function LandingPage() {
         tagline={t('hero.tagline')}
         taglineEn={t('hero.tagline_en')}
         description={t('hero.description')}
-        primaryHref="#product-pillars"
-        primaryLabel={t('hero.explore_services')}
-        onPrimaryClick={(e) => scrollToAnchor(e, '#product-pillars')}
-        secondaryHref="/bookme"
-        secondaryLabel={t('hero.book_meeting')}
-        onSecondaryClick={undefined}
+        primaryHref="/bookme"
+        primaryLabel={t('hero.book_meeting')}
+        onPrimaryClick={undefined}
+        secondaryHref="#case-studies"
+        secondaryLabel={t('hero.case_studies')}
+        onSecondaryClick={(e) => scrollToAnchor(e, '#case-studies')}
+        trustBadges={[t('hero.badge.experience'), t('hero.badge.events'), t('hero.badge.language')]}
+        bottomTagline={t('hero.bottom_tagline')}
         imageAlt={t('hero.image_alt')}
       />
 
@@ -150,21 +150,21 @@ function LandingPage() {
         id="product-pillars"
         items={[
           {
-            href: '#eventxp',
+            href: '/bookme',
             title: t('product.entry.eventxp.title'),
             blurb: t('product.entry.eventxp.blurb'),
             cta: t('product.entry.eventxp.cta'),
             icon: 'event',
           },
           {
-            href: '#smartsales',
+            href: '/bookme',
             title: t('product.entry.smartsales.title'),
             blurb: t('product.entry.smartsales.blurb'),
             cta: t('product.entry.smartsales.cta'),
             icon: 'crm',
           },
           {
-            href: '#ai-consulting',
+            href: '/bookme',
             title: t('product.entry.ai.title'),
             blurb: t('product.entry.ai.blurb'),
             cta: t('product.entry.ai.cta'),
@@ -915,14 +915,6 @@ function LandingPage() {
               </a>
               , {t('about.author.title')}
             </p>
-            <p className="text-gray-500 dark:text-gray-500 text-xs mt-1">
-              {t('about.author.updated')}{' '}
-              {new Date(siteContentUpdated).toLocaleDateString(language === 'zh' ? 'zh-HK' : 'en-US', {
-                year: 'numeric',
-                month: 'long',
-                day: 'numeric',
-              })}
-            </p>
           </div>
           
           {/* 25秒介紹 */}
@@ -1052,6 +1044,30 @@ function LandingPage() {
         </section>
 
         {/* Partnership Section */}
+        <section id="case-studies" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-md dark:border-slate-700 dark:bg-gray-800">
+          <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
+            {language === 'zh' ? '成功案例與客戶回饋' : 'Case Studies & Client Signals'}
+          </h2>
+          <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
+            <blockquote className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
+              {language === 'zh'
+                ? '「自從用咗 SmartSales，我每日少咗約 2 個鐘 WhatsApp 行政跟進，重要客查詢唔再沉底。」'
+                : '"Since using SmartSales, we spend around 2 fewer hours a day on WhatsApp follow-up admin, and important inquiries no longer get buried."'}
+              <footer className="mt-3 font-semibold text-brand-primary dark:text-teal-300">
+                {language === 'zh' ? '香港服務業 SME 負責人（匿名）' : 'Hong Kong service SME owner (anonymous)'}
+              </footer>
+            </blockquote>
+            <blockquote className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
+              {language === 'zh'
+                ? '「活動後唔再只係得 Excel 名單，可以即刻知道邊批人最值得優先跟進。」'
+                : '"After an event, we no longer just have an Excel list. We can immediately see which attendees deserve priority follow-up."'}
+              <footer className="mt-3 font-semibold text-brand-primary dark:text-teal-300">
+                {language === 'zh' ? '活動主辦團隊（匿名）' : 'Event organizer team (anonymous)'}
+              </footer>
+            </blockquote>
+          </div>
+        </section>
+
         <section id="partnership" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{t('partnership.title')}</h2>
@@ -1246,8 +1262,8 @@ function LandingPage() {
             <p className="text-gray-900 dark:text-gray-300">{t('footer.copyright')}</p>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               Email:{' '}
-              <a href="mailto:info@innovatexp.com" className="text-[#00B9B3] hover:underline dark:text-teal-300">
-                info@innovatexp.com
+              <a href="mailto:info@innovatexp.co" className="text-[#00B9B3] hover:underline dark:text-teal-300">
+                info@innovatexp.co
               </a>
             </p>
             <p className="mt-3 text-sm text-gray-600 dark:text-gray-400">{t('footer.localized_deployment')}</p>

@@ -1,9 +1,5 @@
 "use client";
 
-import { useState } from "react";
-import { AnimatePresence, motion } from "framer-motion";
-import { Plus, Minus } from "lucide-react";
-
 export interface FaqItem {
   question: string;
   answer: string;
@@ -16,8 +12,6 @@ export interface FaqAccordionProps {
 }
 
 export function FaqAccordion({ title, id, faqs }: FaqAccordionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(null);
-
   return (
     <section
       id={id}
@@ -28,42 +22,19 @@ export function FaqAccordion({ title, id, faqs }: FaqAccordionProps) {
       </h2>
       <ul className="divide-y divide-slate-200 dark:divide-slate-600">
         {faqs.map((faq, idx) => {
-          const open = openIndex === idx;
           const panelId = `${id ?? "faq"}-panel-${idx}`;
           return (
             <li key={idx} className="border-t border-slate-200 first:border-t-0 dark:border-slate-600">
-              <button
-                type="button"
-                onClick={() => setOpenIndex(open ? null : idx)}
-                className="flex w-full items-center justify-between gap-4 py-4 text-left text-base font-medium text-brand-primary transition-colors hover:text-brand-primary-hover dark:text-white dark:hover:text-teal-300"
-                aria-expanded={open}
-                aria-controls={panelId}
+              <h3
+                className="py-4 text-left text-base font-semibold text-brand-primary dark:text-white"
               >
                 <span>{faq.question}</span>
-                <span className="shrink-0 text-brand-primary dark:text-teal-300">
-                  {open ? (
-                    <Minus className="h-5 w-5" strokeWidth={2.5} aria-hidden />
-                  ) : (
-                    <Plus className="h-5 w-5" strokeWidth={2.5} aria-hidden />
-                  )}
-                </span>
-              </button>
-              <AnimatePresence initial={false}>
-                {open ? (
-                  <motion.div
-                    id={panelId}
-                    initial={{ height: 0, opacity: 0 }}
-                    animate={{ height: "auto", opacity: 1 }}
-                    exit={{ height: 0, opacity: 0 }}
-                    transition={{ duration: 0.28, ease: [0.22, 1, 0.36, 1] }}
-                    className="overflow-hidden"
-                  >
-                    <p className="pb-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
-                      {faq.answer}
-                    </p>
-                  </motion.div>
-                ) : null}
-              </AnimatePresence>
+              </h3>
+              <div id={panelId}>
+                <p className="pb-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+                  {faq.answer}
+                </p>
+              </div>
             </li>
           );
         })}
