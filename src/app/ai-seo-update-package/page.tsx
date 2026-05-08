@@ -33,7 +33,7 @@ export default function AiSeoUpdatePackagePage() {
         </p>
         <h1 className="mt-3 text-3xl font-bold md:text-4xl">AI SEO 更新套餐</h1>
         <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
-          專為香港中小企而設的 AI SEO 快速更新服務。聚焦你現有網站內容與結構化資料，提升 AI Agent 可讀性與搜尋可見度。
+          專為香港中小企而設的 AI SEO / AEO 快速更新服務。聚焦你現有網站內容、結構化資料與 answer-first copy，提升搜尋、AI 摘要與買家可讀性。
         </p>
         <p className="mt-3 text-sm font-medium text-slate-500 dark:text-slate-400">
           最後套餐更新：2026 年 3 月底

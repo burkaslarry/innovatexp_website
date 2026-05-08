@@ -1,3 +1,4 @@
+/* F12: Pitch decks download page - Lists PDF deck links under public/decks. */
 import type { Metadata } from "next";
 import Link from "next/link";
 

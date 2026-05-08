@@ -8,7 +8,7 @@ import {
 } from "@/lib/schema";
 
 const siteUrlMeta =
-  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
+  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
 export const metadata: Metadata = {
   title: "AI Consulting | Practical AI Implementation for SMEs",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function AiConsultingPage() {
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
+    process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
   const faqQuestions = [
     {

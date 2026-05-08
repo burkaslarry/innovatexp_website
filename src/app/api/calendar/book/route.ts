@@ -1,4 +1,4 @@
-// app/api/calendar/book/route.ts
+/* F07: Calendar booking API - POST handler: validates input, writes Notion, emails ICS/Web3Forms confirmations. */
 import { NextResponse } from 'next/server';
 import { notion, CALENDAR_DB_ID } from '@/lib/notion';
 import { createEvents, EventAttributes } from 'ics';
@@ -153,7 +153,7 @@ export async function POST(req: Request) {
       title: eventTitle,
       description: `訪客: ${visitorName}\n電子郵件: ${visitorEmail}\n留言: ${message || '無留言'}`,
       location: 'InnovateXP Limited Office / Online Meeting',
-      url: 'https://innovatexp.com/bookme',
+      url: 'https://www.innovatexp.com/bookme',
       organizer: {
         name: 'InnovateXP Limited',
         email: process.env.SENDER_EMAIL || 'noreply@innovatexp.com',

@@ -1,3 +1,4 @@
+/* F16: Schema validation script - CI guard that StructuredData.tsx still contains required SEO tokens. */
 import fs from "node:fs";
 import path from "node:path";
 
@@ -9,7 +10,9 @@ const requiredTokens = [
   '"@type": "Service"',
   '"@type": "FAQPage"',
   "Azure OpenAI",
-  "AI Agent",
+  "AI-augmented Workflow",
+  "On-Premise",
+  "AI Training",
   "AggregateOffer",
 ];
 

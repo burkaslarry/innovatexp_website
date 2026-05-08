@@ -1,4 +1,5 @@
 "use client"
+/* F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path. */
 import { usePathname } from "next/navigation";
 import { useLanguage } from '../LanguageContext';
 
@@ -35,8 +36,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "url": baseUrl,
     "logo": `${baseUrl}/innovatexp_color_no_bg.svg`,
     "description": language === 'en' 
-      ? "We help Hong Kong SMEs deploy Azure OpenAI-powered AI agents and workflow automation platforms with compliant regional cloud architecture. Our core services include SmartSales CRM, EventXP, and AI implementation consulting."
-      : "我們協助香港中小企業落地基於 Azure OpenAI 的 AI Agent 與流程自動化平台，採用合規雲端區域部署。核心服務包括 SmartSales CRM、EventXP 與 AI 實作顧問。",
+      ? "We help Hong Kong SMEs turn event leads and WhatsApp inquiries into structured sales pipelines with AI-augmented workflows. System deployment can support cloud platforms including Azure OpenAI, Alibaba Cloud, GCP, AWS, or self-hosted / on-premise environments, plus practical AI training."
+      : "我們協助香港中小企將活動名單同 WhatsApp 查詢變成結構化 sales pipeline，透過 AI 輔助分類、下一步建議與回覆草稿。系統上架可支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署，並提供實戰 AI training。",
     "address": {
       "@type": "PostalAddress",
       "addressLocality": "North Point",
@@ -76,7 +77,12 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "Business Intelligence Dashboards",
       "Lead Qualification Automation",
       "Azure OpenAI Implementation",
-      "AI Agent Deployment",
+      "Alibaba Cloud AI Deployment",
+      "GCP AI Deployment",
+      "AWS AI Deployment",
+      "AI-augmented Workflow Deployment",
+      "On-Premise AI Deployment",
+      "AI Training for SMEs",
       "Compliant Regional Cloud Architecture",
       "香港 WhatsApp CRM",
       "香港中小企 AI 自動化",
@@ -301,8 +307,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "serviceType": "AI Consulting",
     "name": "AI Consulting Services",
     "description": language === 'en'
-      ? "Practical AI implementation consulting for Hong Kong SMEs, including Azure OpenAI-ready architecture, custom AI agent deployment, and workflow automation design."
-      : "為香港中小企業提供可落地的 AI 實作顧問，包括 Azure OpenAI 架構規劃、客製 AI Agent 部署與流程自動化設計。",
+      ? "Practical AI implementation consulting for Hong Kong SMEs, including cloud platform deployment (Azure OpenAI, Alibaba Cloud, GCP, AWS), on-premise options, AI training, and deterministic workflow automation design."
+      : "為香港中小企提供可落地的 AI 實作顧問，包括 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）、On-Premise 部署選項、AI training 與可控流程自動化設計。",
     "provider": {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`
@@ -328,7 +334,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           "@type": "Offer",
           "itemOffered": {
             "@type": "Service",
-            "name": "Custom Agent Build"
+            "name": "Custom AI Workflow Build"
           },
           "price": "25000",
           "priceCurrency": "HKD"
@@ -539,8 +545,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "url": baseUrl,
     "name": "InnovateXP Limited",
     "description": language === 'en'
-      ? "AI CRM Solutions and Event Management for Hong Kong SMEs"
-      : "為香港中小企業提供 AI CRM 解決方案和活動管理",
+      ? "WhatsApp CRM, EventXP, AI training, cloud platform and on-premise deployment support for Hong Kong SMEs"
+      : "為香港中小企提供 WhatsApp CRM、EventXP、AI training、Cloud Platform 及 On-Premise 部署支援",
     "publisher": {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`
@@ -554,8 +560,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@id": `${baseUrl}/#consulting-service`,
     "name": "InnovateXP Limited",
     "description": language === 'en'
-      ? "We deliver practical AI agent and workflow automation systems for Hong Kong SMEs, using compliant regional cloud deployment with Azure OpenAI-ready architecture."
-      : "我們為香港中小企業交付可落地的 AI Agent 與流程自動化系統，採用合規雲端區域部署，並支援 Azure OpenAI 架構。",
+      ? "We deliver practical AI-augmented workflow systems for Hong Kong SMEs, deployed on cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments where appropriate."
+      : "我們為香港中小企交付可落地的 AI-augmented workflow，系統上架可按需要支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署。",
     "url": baseUrl,
     "serviceType": "AI Consulting",
     "provider": {

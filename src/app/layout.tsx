@@ -1,9 +1,11 @@
+/* F05: Root app shell - Global metadata, fonts, theme/language providers, layout chrome, and site-wide CTAs. */
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import { LanguageProvider } from "./LanguageContext";
 import { ThemeProvider } from "./ThemeContext";
 import StructuredData from "./components/StructuredData";
+import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,17 +18,17 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "InnovateXP | AI CRM, EventXP, and AI Consulting",
+  title: "InnovateXP | WhatsApp CRM, EventXP, AI Training",
   description:
-    "香港中小企 AI CRM：客人 WhatsApp 即刻有 AI 草擬回覆，活動 200 聯絡人自動排優先順序，唔再漏單。",
-  keywords: "香港 WhatsApp CRM, 香港中小企 AI 自動化, BNI 跟進系統, AI consulting, AI CRM, Hong Kong SME AI automation, smart sales automation, WhatsApp CRM, event check-in system, EventXP, SmartSales CRM",
+    "香港中小企 AI CRM：將 WhatsApp 查詢同活動名單變成可跟進 pipeline，支援 Cloud Platform 或 On-Premise 上架及 AI training。",
+  keywords: "香港 WhatsApp CRM, 香港中小企 AI 自動化, BNI 跟進系統, AI training Hong Kong, Azure OpenAI implementation, Alibaba Cloud AI, GCP AI deployment, AWS AI deployment, on-premise AI deployment, AI consulting, AI CRM, Hong Kong SME AI automation, smart sales automation, WhatsApp CRM, event check-in system, EventXP, SmartSales CRM",
   authors: [{ name: "Larry Lo", url: "https://www.linkedin.com/in/larry-lo-804a50165/" }],
   creator: "InnovateXP Limited",
   publisher: "InnovateXP Limited",
   metadataBase: new URL(
     process.env.NEXT_PUBLIC_SITE_URL ||
       process.env.SITE_URL ||
-      (process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://innovatexp.co")
+      (process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://www.innovatexp.co")
   ),
   alternates: {
     canonical: "./",
@@ -37,12 +39,12 @@ export const metadata: Metadata = {
   },
   openGraph: {
     type: "website",
-    locale: "en_US",
-    alternateLocale: ["en_HK", "zh_HK"],
+    locale: "zh_HK",
+    alternateLocale: ["en_HK"],
     url: "https://www.innovatexp.co",
     siteName: "InnovateXP Limited",
-    title: "InnovateXP | AI CRM, EventXP, and AI Consulting",
-    description: "香港中小企 AI CRM：WhatsApp 查詢即有 AI 草擬回覆，活動聯絡人自動排優先順序。",
+    title: "InnovateXP | WhatsApp CRM, EventXP, AI Training",
+    description: "香港中小企 AI CRM：WhatsApp 查詢同活動名單變成可跟進 pipeline，支援 Cloud Platform / On-Premise 上架。",
     images: [
       {
         url: "/innovatexp_color_no_bg.svg",
@@ -54,8 +56,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "InnovateXP | AI CRM, EventXP, and AI Consulting",
-    description: "香港中小企 AI CRM：WhatsApp 查詢即有 AI 草擬回覆，活動聯絡人自動排優先順序。",
+    title: "InnovateXP | WhatsApp CRM, EventXP, AI Training",
+    description: "香港中小企 AI CRM：WhatsApp 查詢同活動名單變成可跟進 pipeline，支援 Cloud Platform / On-Premise 上架。",
     images: ["/innovatexp_color_no_bg.svg"],
     creator: "@innovatexp",
   },
@@ -82,7 +84,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang="en" suppressHydrationWarning>
+    <html lang="zh-HK" suppressHydrationWarning>
       <head>
         <link rel="alternate" hrefLang="en" href="https://www.innovatexp.co/" />
         <link rel="alternate" hrefLang="zh-HK" href="https://www.innovatexp.co/" />
@@ -109,6 +111,7 @@ export default function RootLayout({
           <LanguageProvider>
             <StructuredData />
             {children}
+            <FloatingWhatsAppButton />
           </LanguageProvider>
         </ThemeProvider>
         {/* Hotjar: load after window load to avoid render-blocking */}

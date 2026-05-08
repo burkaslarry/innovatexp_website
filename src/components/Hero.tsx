@@ -1,5 +1,6 @@
 "use client";
 
+/* F15: Hero section - Animated hero with primary/secondary CTAs and optional trust badges. */
 import { motion } from "framer-motion";
 import Image from "next/image";
 import { Button } from "@/components/ui/Button";
@@ -7,8 +8,6 @@ import { Button } from "@/components/ui/Button";
 export interface HeroProps {
   title: string;
   tagline: string;
-  /** English line under Chinese tagline for international visitors */
-  taglineEn?: string;
   description: string;
   primaryHref: string;
   primaryLabel: string;
@@ -28,7 +27,6 @@ export interface HeroProps {
 export function Hero({
   title,
   tagline,
-  taglineEn,
   description,
   primaryHref,
   primaryLabel,
@@ -57,11 +55,6 @@ export function Hero({
           {tagline?.trim() ? (
             <p className="mt-4 text-xl font-bold text-brand-primary dark:text-teal-300 sm:text-2xl">
               {tagline}
-            </p>
-          ) : null}
-          {taglineEn?.trim() ? (
-            <p className="mt-2 text-sm font-medium leading-snug text-slate-500 dark:text-slate-400 sm:text-base">
-              {taglineEn}
             </p>
           ) : null}
           {description?.trim() ? (

@@ -1,5 +1,6 @@
 "use client";
 
+/* F08: Quotation wizard - Self-serve quote flow, calendar integration, and lead capture UI. */
 import { useMemo, useState, useCallback, useEffect, type ReactNode } from "react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Card } from "@/components/ui/Card";

@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 
 const siteUrlMeta =
-  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
+  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
 export const metadata: Metadata = {
   title: "Book a Consultation | InnovateXP",

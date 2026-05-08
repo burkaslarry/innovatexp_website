@@ -1,8 +1,39 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# InnovateXP website
+
+Next.js (App Router) marketing site for InnovateXP: WhatsApp CRM, EventXP, AI consulting, booking, and SEO.
+
+## Feature map (code comments)
+
+Source files use leading block comments in this form so features stay traceable in docs and git history:
+
+```text
+F01: Feature name - What this file or module does in one line.
+```
+
+Index (copy into a new file when adding scope):
+
+```text
+F01: Internationalization - Central EN/ZH strings, LanguageProvider, and t() lookups.
+F02: Homepage marketing - Landing page sections: hero, products, pricing, FAQs, and modals.
+F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path.
+F04: Shared schema builders - Reusable Organization/Product helpers consumed by JSON-LD and tooling.
+F05: Root app shell - Global metadata, fonts, theme/language providers, layout chrome, and site-wide CTAs.
+F06: Bookme page - Booking/quotation entry with header, guidelines, and QuotationWizard mount.
+F07: Calendar booking API - POST handler: validates input, writes Notion, emails ICS/Web3Forms confirmations.
+F08: Quotation wizard - Self-serve quote flow, calendar integration, and lead capture UI.
+F09: Floating WhatsApp CTA - Fixed wa.me link from env or fallback to bookme anchor.
+F10: Sitemap generation - Declares static routes and blog slugs for search engines.
+F11: Robots rules - allow-all with sitemap and host URL from env.
+F12: Pitch decks download page - Lists PDF deck links under public/decks.
+F13: Reliability (server) - Metadata and Article JSON-LD for the reliability manifesto route.
+F14: Reliability (client) - Bilingual copy, comparison table, and CTAs for /reliability.
+F15: Hero section - Animated hero with primary/secondary CTAs and optional trust badges.
+F16: Schema validation script - CI guard that StructuredData.tsx still contains required SEO tokens.
+```
 
 ## Getting Started
 
-First, run the development server:
+Run the development server:
 
 ```bash
 npm run dev
@@ -14,26 +45,9 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) for Geist.
 
 ## Bookme / Notion calendar
 
@@ -57,4 +71,11 @@ Brand tokens: `brand-primary` (#0e34af), `brand-cream`, `brand-cream-warm` (see 
 
 Optional: set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` for the contact form (falls back to the previous embedded key if unset).
 
-# Deploy trigger
+## Deploy on Vercel
+
+Deploy from the Vercel dashboard or CLI. Production releases are tagged (e.g. `prod/3.0`) for traceability.
+
+## Learn More
+
+- [Next.js Documentation](https://nextjs.org/docs)
+- [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)

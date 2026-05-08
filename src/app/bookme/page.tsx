@@ -1,4 +1,4 @@
-// app/bookme/page.tsx
+/* F06: Bookme page - Booking/quotation entry with header, guidelines, and QuotationWizard mount. */
 'use client';
 
 import { useState } from 'react';
@@ -24,6 +24,15 @@ export default function BookVisitPage() {
               </h1>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 md:text-base">
                 {t('bookme.subtitle')}
+              </p>
+              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
+                Email:{' '}
+                <a
+                  href="mailto:info@innovatexp.co"
+                  className="font-semibold text-brand-primary underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary-hover dark:text-teal-300"
+                >
+                  info@innovatexp.co
+                </a>
               </p>
 
               <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-950/40 sm:p-5 md:p-5">

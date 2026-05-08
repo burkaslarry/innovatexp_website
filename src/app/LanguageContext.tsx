@@ -1,4 +1,5 @@
 "use client"
+/* F01: Internationalization - Central EN/ZH strings, LanguageProvider, and t() lookups. */
 import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
 
 type Language = 'en' | 'zh';
@@ -18,18 +19,16 @@ export const translations = {
     'header.subtitle': 'Innovate • Transform • Experience',
     'quick.product': 'Quick Product/Service Overview',
     // Hero Section
-    'hero.title': 'Customers ask, then nobody replies? Orders falling through the cracks?',
-    'hero.tagline': 'We help Hong Kong SMEs use AI to follow up with customers automatically — without hiring another salesperson.',
+    'hero.title': 'Too many leads, slow follow-up, messy WhatsApp?',
+    'hero.tagline': 'We help event organizers, training businesses, communities, and membership teams turn attendance and inquiries into a structured sales pipeline.',
     'hero.description':
       'When a WhatsApp inquiry comes in, AI drafts the reply. After an event with 200 contacts, the system ranks the 20 most worth following up.',
     'hero.cta': 'Contact Us',
     'hero.book_meeting': 'Free 15-min chat',
     'hero.case_studies': 'See case studies',
-    'hero.tagline_en': '',
     'hero.badge.experience': '14 years hands-on tech',
-    'hero.badge.events': '2,000+ event participants',
     'hero.badge.language': 'Cantonese / English support',
-    'hero.bottom_tagline': 'AI drafts. You decide.',
+    'hero.bottom_tagline': 'AI drafts. You approve. From chat to cash.',
     'hero.image_alt': 'Larry Lo presenting — InnovateXP founder, AI & CRM for Hong Kong SMEs',
     'hero.explore_services': 'Free 15-min chat',
     'why.title': 'Why InnovateXP',
@@ -56,10 +55,10 @@ export const translations = {
     'eventxp.headline': 'You spent HKD 50,000 on an event. What happened to those 200 contacts?',
     'smartsales.headline': 'Fast follow-up closes more deals. Can your team reply within 2 hours?',
     'mockup.checkin':
-      '🎬 Watch EventXP in a live 15-min walkthrough. We\'ll show you a real post-event report from a recent BNI chapter event. → Book Demo: info@innovatexp.co',
+      'EventXP live walkthrough: see how check-in turns into a ranked follow-up list.',
     'mockup.checkin.alt': 'EventXP dashboard interface for Hong Kong SME AI consultant deployment',
     'mockup.pipeline':
-      '🎬 See SmartSales CRM interface walkthrough for Hong Kong SMEs — triage, AI drafts, and follow-up execution. → Book Demo: info@innovatexp.co',
+      'SmartSales CRM walkthrough: inbox triage, AI drafts, and pipeline follow-up execution.',
     'mockup.ai': 'AI consultant workflow interface for Hong Kong SME automation projects',
     'contact.form.hint.name': 'How we should address you or your team.',
     'contact.form.hint.email': 'We reply within 1–2 business days.',
@@ -125,7 +124,7 @@ export const translations = {
     'vision.brand': 'InnovateXP Limited',
     'vision.tagline': 'Innovate • Transform • Experience',
     'vision.description':
-      'We help Hong Kong SMEs implement AI agents and automation in real operations. Start from one high-impact workflow, deploy on compliant regional cloud architecture, then scale based on measurable business outcomes.',
+      'We help Hong Kong SMEs turn event check-ins and WhatsApp inquiries into structured leads, tasks, and pipeline visibility. System deployment can support cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments where the business case requires it, with practical AI training for your team.',
     'vision.innovate': 'Innovate',
     'vision.innovate_desc': 'Challenge the status quo with AI-powered solutions that turn data into your strategic asset.',
     'vision.transform': 'Transform',
@@ -150,24 +149,24 @@ export const translations = {
     'services.courses.title': 'AI Consulting Services',
     'services.courses.subtitle': 'Help Enterprises Deploy AI from 0 to 1',
     'services.courses.benefit1': 'Implementation Assessment: Significantly reduce trial-and-error costs',
-    'services.courses.benefit2': 'Customized AI Agent & Architecture Design',
+    'services.courses.benefit2': 'Cloud Platform / On-Premise AI workflow architecture',
     'services.courses.benefit3': 'Hands-on Prompt Engineering Training',
     'services.courses.cta': 'Learn About Consulting Services',
     
     // About Section - REVISED: Technical Authority & Corrected Facts
     'about.title': 'About Us',
     'about.intro.title': 'About InnovateXP Limited',
-    'about.intro.p1': "Founded by Larry Lo, former Organizer of Google Developer Group Hong Kong (until 2025) and HKSTP Incubation alumnus (2017-2019). We are not just consultants; we are hands-on system architects.",
-    'about.intro.p2': 'Our Philosophy: "Connecting Technology through Passion, Perfection, and Premier standards." We leverage years of experience in System Design and Real-world Development to help you build your "Desert Oasis".',
-    'about.intro.p3': 'We combine the agility of modern tech stacks with the stability required for enterprise operations, delivering practical, actionable AI solutions.',
+    'about.intro.p1': "Not slideware. Built by a practitioner: Larry Lo brings 14 years of hands-on system design and implementation experience.",
+    'about.intro.p2': 'We help SMEs move from scattered WhatsApp chats and post-event Excel files into structured follow-up workflows that owners can see and manage.',
+    'about.intro.p3': 'System deployment can support cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments when data policy or operations require it.',
     
     'about.tags.title': 'Our Strategy & Capability',
     'about.tags.red_ocean.title': 'Red Ocean Dilemma',
-    'about.tags.red_ocean.description': 'High competition, low margins. Doing what everyone else does only dilutes your value. You need a technological edge to escape.',
+    'about.tags.red_ocean.description': 'If every lead sits in WhatsApp and Excel, your team competes on memory and speed instead of process.',
     'about.tags.desert_oasis.title': 'Desert Oasis Strategy',
-    'about.tags.desert_oasis.description': 'Use AI to build a data moat. Create unique value that competitors cannot easily copy, establishing your own blue ocean.',
+    'about.tags.desert_oasis.description': 'Same inquiry, different system: one business lets it get buried; another turns it into a task, pipeline stage, and next action.',
     'about.tags.community.title': 'Proven Technical Capability',
-    'about.tags.community.description': 'Founder Larry Lo brings proven experience in architecting systems that handle 2,000+ active participants. We focus on robust execution over empty talk.',
+    'about.tags.community.description': 'Founder-led delivery, bilingual support, and real operating workflows for events, training, communities, and membership businesses.',
     
     'about.story.title': 'Mission & 2026 Roadmap',
     'about.story.content': 'InnovateXP empowers organizations to upgrade their business through AI and strategic system blueprints. 2026 Roadmap: Jan (Now) - EventXP Launch; Feb - SmartSales CRM; Mar - AI Playbook; Apr - SME Masterclass. We are committed to practical implementation.',
@@ -599,9 +598,9 @@ export const translations = {
     'eventxp.golive.tier3.badge': 'Enterprise',
     'eventxp.golive.note': 'Monthly maintenance is billed separately.',
     'mockup.pipeline_kanban':
-      '🎬 Live walkthrough: pipeline / Kanban — Book: info@innovatexp.co',
+      'SmartSales — pipeline / Kanban walkthrough',
     'mockup.pipeline_inbox':
-      '🎬 Live walkthrough: inbox triage & drafts — Book: info@innovatexp.co',
+      'SmartSales — inbox triage & draft walkthrough',
     
     // SmartSales CRM Product
     'pricing.crm.name': 'SmartSales CRM',
@@ -682,9 +681,9 @@ export const translations = {
     'ai_consulting.package1.feature1': 'Current state analysis',
     'ai_consulting.package1.feature2': 'AI opportunity identification',
     'ai_consulting.package1.feature3': 'Implementation roadmap',
-    'ai_consulting.package2.name': 'Custom Agent Build',
+    'ai_consulting.package2.name': 'Custom AI Workflow Build',
     'ai_consulting.package2.price': 'Starting from HKD $25,000',
-    'ai_consulting.package2.desc': 'Tailored AI agents designed for your specific business needs',
+    'ai_consulting.package2.desc': 'Tailored AI-augmented workflows for your business, with cloud platform or on-premise deployment options.',
     'ai_consulting.package2.feature1': 'Custom workflow design',
     'ai_consulting.package2.feature2': 'Integration with existing systems',
     'ai_consulting.package2.feature3': 'Ongoing support & optimization',
@@ -707,6 +706,7 @@ export const translations = {
     'nav.partnership': 'Partnership',
     'nav.ai_seo_package': 'AI SEO package',
     'nav.pitch_decks': 'Pitch decks',
+    'nav.reliability': 'Reliability',
     'ai_seo_cta.title': 'Need fast AI SEO updates?',
     'ai_seo_cta.description':
       'Choose a fixed-scope update package for structured data, content refinement, and delivery timeline you can plan around.',
@@ -742,17 +742,17 @@ export const translations = {
     
     'faq.aiconsulting.title': 'AI Consulting - Frequently Asked Questions',
     'faq.aiconsulting.q1': 'What is prompt engineering training?',
-    'faq.aiconsulting.a1': 'Prompt engineering training teaches your team how to effectively communicate with AI systems like ChatGPT, Claude, or custom AI agents. Our hands-on bootcamp covers prompt structure, context optimization, output refinement, and real-world business applications specific to your industry.',
+    'faq.aiconsulting.a1': 'Prompt engineering training teaches your team how to work with AI systems like ChatGPT, Claude, or custom AI workflow tools. Our hands-on bootcamp covers prompt structure, context optimization, output refinement, and real-world business applications specific to your industry.',
     'faq.aiconsulting.q2': 'How do you assess AI readiness for SMEs?',
     'faq.aiconsulting.a2': 'Our AI Readiness Audit (from HKD 8,000) analyzes your current workflows, data infrastructure, team capabilities, and business goals. We identify high-ROI AI opportunities, assess technical requirements, and provide a phased implementation roadmap tailored to your budget and resources.',
     'faq.aiconsulting.q3': 'What industries do you provide AI consulting for?',
     'faq.aiconsulting.a3': 'We specialize in AI solutions for service-based SMEs including education centers, event organizers, professional services, training providers, and B2B companies in Hong Kong. Our founder has 14 years of tech experience and has managed systems for 2,000+ participants.',
-    'faq.aiconsulting.q4': 'How long does custom AI agent development take?',
-    'faq.aiconsulting.a4': 'Custom AI agent projects typically take 4-8 weeks from requirements gathering to deployment. This includes workflow design, integration with your existing systems, testing, and staff training. Pricing starts from HKD 25,000.',
+    'faq.aiconsulting.q4': 'How long does custom AI workflow development take?',
+    'faq.aiconsulting.a4': 'Custom AI workflow projects typically take 4-8 weeks from requirements gathering to deployment. This includes workflow design, integration with your existing systems, testing, and staff training. Pricing starts from HKD 25,000.',
     
     // Answer-first content sections
     'eventxp.what.title': 'What is EventXP Event Check-in System?',
-    'eventxp.what.answer': 'EventXP is an event intelligence platform that transforms check-ins into business insights. Beyond attendance tracking, it uses AI to predict which attendees are most likely to buy, renew memberships, or require follow-up—turning event data into actionable sales leads for Hong Kong event organizers.',
+    'eventxp.what.answer': 'EventXP is an event intelligence platform that transforms check-ins into structured leads, follow-up tasks, and pipeline visibility for Hong Kong and Greater Bay Area event organizers.',
     'eventxp.how.title': 'How Does QR Code Check-in Work?',
     'eventxp.how.step1': 'Guests receive a unique QR code via email or WhatsApp',
     'eventxp.how.step2': 'Staff scan the code using EventXP mobile app at the event',
@@ -789,7 +789,7 @@ export const translations = {
     'aicrm.pricing.setup.features': 'Data migration + Training',
     
     'aiconsulting.what.title': 'What AI Consulting Services Do We Offer?',
-    'aiconsulting.what.answer': 'InnovateXP provides three core AI consulting services for Hong Kong SMEs: AI Readiness Audits (from HKD 8,000) to assess your implementation opportunities, Custom Agent Build (from HKD 25,000) for tailored AI solutions, and Prompt Engineering Training (from HKD 12,000) for hands-on team skill development.',
+    'aiconsulting.what.answer': 'InnovateXP provides three core AI consulting services for Hong Kong SMEs: AI Readiness Audits (from HKD 8,000), custom AI-augmented workflow builds (from HKD 25,000), and practical AI training / Prompt Engineering workshops (from HKD 12,000). System deployment can support cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments where appropriate.',
     'aiconsulting.who.title': 'Who Needs AI Implementation Consulting?',
     'aiconsulting.who.intro': 'AI consulting is ideal for Hong Kong SMEs who:',
     'aiconsulting.who.1': 'You\'ve tried ChatGPT but it\'s not connected to anything in your business',
@@ -894,7 +894,7 @@ export const translations = {
       'Built by a practitioner, not a consultant. Larry Lo has 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. He is the person who builds and supports your system — not a project manager who subcontracts. Former Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systems handling 2,000+ concurrent active users',
     'about.author.updated': 'Last Updated:',
     'about.author.updated.value': '2026-04-26',
-    'footer.localized_deployment': 'Built for Hong Kong SMEs: practical AI agents and workflow automation on compliant regional cloud architecture.',
+    'footer.localized_deployment': 'Built for Hong Kong SMEs: practical AI-augmented workflows deployed on cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments when required.',
     'about.credentials.title': 'Credentials & Affiliations',
     'about.credentials.experience': 'Tech Experience',
     'about.credentials.participants': 'Event Participants',
@@ -906,17 +906,15 @@ export const translations = {
     'quick.product': '快速閱覽產品/服務',
     
     // Hero Section
-    'hero.title': '客人問完冇人覆？訂單跟漏？',
-    'hero.tagline': '我哋幫香港中小企用 AI 自動跟進客戶，唔使請多個 Sales 都做到嘢。',
+    'hero.title': '名單多，跟進慢，WhatsApp 好亂？',
+    'hero.tagline': '我哋幫活動主辦、培訓機構、社群同會員制生意，將活動 check-in 同 WhatsApp 查詢變成可跟進嘅 sales pipeline。',
     'hero.description': 'WhatsApp 一有客查詢，AI 即刻幫你寫好回覆草稿；活動 200 個聯絡人，自動排出邊 20 個最值得追。',
     'hero.cta': '聯絡我們',
     'hero.book_meeting': '免費傾 15 分鐘，睇下啱唔啱你',
     'hero.case_studies': '睇成功案例',
-    'hero.tagline_en': '',
     'hero.badge.experience': '14 年科技實戰',
-    'hero.badge.events': '2,000+ 活動驗證',
-    'hero.badge.language': '粵語／英文支援',
-    'hero.bottom_tagline': 'AI 幫你諗，你話事。',
+    'hero.badge.language': '廣東話／英文支援',
+    'hero.bottom_tagline': 'AI 幫你諗，你話事。由傾偈傾到收錢。',
     'hero.image_alt': 'Larry Lo 演講 — InnovateXP 創辦人，專注香港中小企 AI 與 CRM',
     'hero.explore_services': '免費傾 15 分鐘',
     'why.title': '為何選擇 InnovateXP',
@@ -1007,7 +1005,7 @@ export const translations = {
     'vision.title': '我們的願景',
     'vision.brand': 'InnovateXP Limited',
     'vision.tagline': 'Innovate • Transform • Experience',
-    'vision.description': '我們協助香港中小企把 AI Agent 與流程自動化真正落地到日常營運。先由一個高影響流程開始，以合規雲端區域部署實作，再按可量化成效逐步擴展。',
+    'vision.description': '我們協助香港中小企將活動 check-in 同 WhatsApp 查詢變成結構化 leads、任務同 pipeline。系統上架可按需要支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署，並提供實戰 AI training。',
     'vision.innovate': '創新 Innovate',
     'vision.innovate_desc': '以 AI 驅動的解決方案挑戰現狀，將數據轉化為您的戰略資產。',
     'vision.transform': '轉型 Transform',
@@ -1032,24 +1030,24 @@ export const translations = {
     'services.courses.title': 'AI 顧問服務',
     'services.courses.subtitle': '協助企業從 0 到 1 導入 AI',
     'services.courses.benefit1': '導入評估：大幅減少試錯成本',
-    'services.courses.benefit2': '客製化 AI Agent 與架構設計',
+    'services.courses.benefit2': 'Cloud Platform／On-Premise AI workflow 架構設計',
     'services.courses.benefit3': '實戰 Prompt Engineering 培訓',
     'services.courses.cta': '了解顧問服務',
     
     // About Section
     'about.title': '關於我們',
     'about.intro.title': '關於 InnovateXP Limited',
-    'about.intro.p1': '由 Larry Lo 創立（前 GDG HK Organiser，任期至 2025 年；2017-2019 HKSTP Incubatee）。我們不僅是你的IT顧問，更是實戰派的系統架構師。',
-    'about.intro.p2': '我們的理念：「以熱誠、完美與卓越連結科技」。憑藉多年的系統設計 (System Design) 與實戰開發經驗，我們助您建立專屬的「沙漠綠洲」。',
-    'about.intro.p3': '我們將創業公司的敏捷開發思維與企業級的穩定性完美結合，提供真正「可落地、可實施」的 AI 解決方案。',
+    'about.intro.p1': '唔係紙上談兵，係實戰派。Larry Lo 有 14 年系統設計同落地經驗，Founder 親自落場拆流程、落 code、交付。',
+    'about.intro.p2': '我們幫中小企將零散 WhatsApp、活動 Excel 名單同人手記憶，變成老闆睇得見、團隊跟得到嘅 pipeline。',
+    'about.intro.p3': '系統上架可按業務需要支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署，同時提供團隊 AI training，確保唔只 demo 靚，日常都用到。',
     
     'about.tags.title': '我們的戰略與實力',
     'about.tags.red_ocean.title': '紅海困境',
-    'about.tags.red_ocean.description': '高競爭、低利潤、同質化。若只做別人都在做的事，價值將被無限攤薄。你需要技術壁壘來突圍。',
+    'about.tags.red_ocean.description': '如果所有 lead 都留喺 WhatsApp 同 Excel，團隊就只係靠記性同運氣跟單。',
     'about.tags.desert_oasis.title': '沙漠綠洲戰略',
-    'about.tags.desert_oasis.description': '利用 AI 建立數據護城河。創造競爭對手無法輕易複製的獨特價值，建立屬於您的藍海綠洲。',
+    'about.tags.desert_oasis.description': '同一個查詢，有人放到沉底；有人即刻變成任務、pipeline stage 同下一步。',
     'about.tags.community.title': '實戰驗證的技術力',
-    'about.tags.community.description': '創始人擁有處理 2000+ 參與者規模的活動系統設計經驗。我們深知如何構建高併發、高穩定的系統，拒絕紙上談兵。',
+    'about.tags.community.description': 'Founder-led 交付、粵英支援，專注活動、培訓、社群同會員制生意嘅真實營運流程。',
     
     'about.story.title': '使命與 2026 路線圖',
     'about.story.content': 'InnovateXP 賦能企業，通過 AI 與系統藍圖實現業務升級。2026 部署：1月 (現在) - EventXP 發布；2月 - SmartSales CRM；3月 - AI 實戰手冊；4月 - 中小企 AI 課程。我們致力於技術落地。',
@@ -1543,9 +1541,9 @@ export const translations = {
     'ai_consulting.package1.feature1': '現狀分析',
     'ai_consulting.package1.feature2': 'AI 機會識別',
     'ai_consulting.package1.feature3': '實施路線圖',
-    'ai_consulting.package2.name': '客製化 AI Agent',
+    'ai_consulting.package2.name': '客製 AI Workflow',
     'ai_consulting.package2.price': 'HKD $25,000 起',
-    'ai_consulting.package2.desc': '為您的業務需求量身打造的 AI 代理',
+    'ai_consulting.package2.desc': '為您的業務需求量身打造 AI 輔助流程，可支援 Cloud Platform 或 On-Premise 部署',
     'ai_consulting.package2.feature1': '客製化工作流程設計',
     'ai_consulting.package2.feature2': '與現有系統整合',
     'ai_consulting.package2.feature3': '持續支援與優化',
@@ -1568,6 +1566,7 @@ export const translations = {
     'nav.partnership': '合作夥伴',
     'nav.ai_seo_package': 'AI SEO 更新套餐',
     'nav.pitch_decks': 'Pitch Deck',
+    'nav.reliability': '可靠 AI',
     'ai_seo_cta.title': '想快速完成 AI SEO 更新？',
     'ai_seo_cta.description': '選擇固定範圍更新套餐，包含結構化資料、內容微調與可預期交付時程。',
     'ai_seo_cta.button': '查看 AI SEO 更新套餐',
@@ -1601,13 +1600,13 @@ export const translations = {
     
     'faq.aiconsulting.title': 'AI 顧問服務 - 常見問題',
     'faq.aiconsulting.q1': '什麼是 Prompt Engineering 培訓？',
-    'faq.aiconsulting.a1': 'Prompt Engineering 培訓教導您的團隊如何有效地與 AI 系統（如 ChatGPT、Claude 或定制 AI 代理）溝通。我們的實戰訓練營涵蓋提示結構、上下文優化、輸出精煉，以及針對您行業的真實商業應用。',
+    'faq.aiconsulting.a1': 'Prompt Engineering 培訓教導您的團隊如何有效地與 AI 系統（如 ChatGPT、Claude 或定制 AI workflow 工具）協作。我們的實戰訓練營涵蓋提示結構、上下文優化、輸出精煉，以及針對您行業的真實商業應用。',
     'faq.aiconsulting.q2': '你們如何評估中小企業的 AI 準備度？',
     'faq.aiconsulting.a2': '我們的 AI 準備度評估（HKD 8,000 起）分析您目前的工作流程、數據基礎設施、團隊能力和業務目標。我們識別高回報的 AI 機會、評估技術需求，並提供針對您預算和資源的分階段實施路線圖。',
     'faq.aiconsulting.q3': '你們為哪些行業提供 AI 顧問服務？',
     'faq.aiconsulting.a3': '我們專注為服務型中小企業提供 AI 解決方案，包括教育中心、活動組織者、專業服務、培訓機構和香港的 B2B 公司。我們的創辦人擁有 14 年科技經驗，曾管理 2,000+ 參與者規模的系統。',
-    'faq.aiconsulting.q4': '定制 AI 代理開發需要多長時間？',
-    'faq.aiconsulting.a4': '定制 AI 代理項目從需求收集到部署通常需要 4-8 週。這包括工作流程設計、與現有系統整合、測試和員工培訓。定價由 HKD 25,000 起。',
+    'faq.aiconsulting.q4': '定制 AI workflow 開發需要多長時間？',
+    'faq.aiconsulting.a4': '定制 AI workflow 項目從需求收集到部署通常需要 4-8 週。這包括工作流程設計、與現有系統整合、測試和員工培訓。定價由 HKD 25,000 起。',
     
     // Answer-first content sections
     'eventxp.what.title': '什麼是 EventXP 活動簽到系統？',
@@ -1645,12 +1644,12 @@ export const translations = {
     'aicrm.pricing.setup.features': '數據遷移 + 培訓',
     
     'aiconsulting.what.title': '我們提供哪些 AI 顧問服務？',
-    'aiconsulting.what.answer': 'InnovateXP 為香港中小企業提供三項核心 AI 顧問服務：AI 準備度評估（HKD 8,000 起）評估您的實施機會、定制 AI 代理構建（HKD 25,000 起）提供量身定制的 AI 解決方案，以及 Prompt Engineering 培訓（HKD 12,000 起）提供實戰團隊技能發展。',
+    'aiconsulting.what.answer': 'InnovateXP 為香港中小企提供三項核心 AI 顧問服務：AI 準備度評估（HKD 8,000 起）、客製 AI-augmented workflow 建置（HKD 25,000 起），以及 Prompt Engineering／AI training（HKD 12,000 起）。系統上架可按需要支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署。',
     'aiconsulting.who.title': '誰需要 AI 實施顧問？',
     'aiconsulting.who.intro': 'AI 顧問服務最適合以下香港中小企業：',
     'aiconsulting.who.1': '想採用 AI 但不知從何開始',
     'aiconsulting.who.2': '需要減少 AI 實施的試錯成本',
-    'aiconsulting.who.3': '需要針對特定業務工作流程的定制 AI 代理',
+    'aiconsulting.who.3': '需要針對特定業務工作流程的定制 AI workflow',
     'aiconsulting.who.4': '希望團隊接受實用的 Prompt Engineering 培訓',
     'aiconsulting.who.5': '尋求 14 年科技老兵的專業指導',
 
@@ -1741,7 +1740,7 @@ export const translations = {
     'about.author.title': 'InnovateXP 創辦人 | 14 年科技老兵 | AI 顧問 | 前 GDG Hong Kong Organizer',
     'about.author.updated': '最後更新：',
     'about.author.updated.value': '2026-04-26',
-    'footer.localized_deployment': '面向香港中小企：交付可落地的 AI Agent 與流程自動化平台，採用合規雲端區域部署架構。',
+    'footer.localized_deployment': '面向香港中小企：交付可落地的 AI-augmented workflow，系統上架可支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署。',
     'about.credentials.title': '資歷與聯盟',
     'about.credentials.experience': '科技經驗',
     'about.credentials.participants': '活動參與者',
@@ -1753,7 +1752,7 @@ interface LanguageProviderProps {
 }
 
 export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('en');
+  const [language, setLanguageState] = useState<Language>('zh');
 
   useEffect(() => {
     // Load language from localStorage on mount

@@ -1,4 +1,5 @@
 "use client"
+/* F02: Homepage marketing - Landing sections: hero, products, pricing, FAQs, and modals. */
 import React from 'react';
 import Image from 'next/image';
 import { useEffect, useMemo, useState } from 'react';
@@ -17,7 +18,6 @@ import {
   Target,
 } from 'lucide-react';
 import { useLanguage } from '../LanguageContext';
-import Breadcrumb from '../components/Breadcrumb';
 import Header from '../components/Header';
 import { Hero } from '@/components/Hero';
 import { PriceCard } from '@/components/PriceCard';
@@ -67,6 +67,7 @@ function LandingPage() {
     { label: t('nav.eventxp'), href: '#eventxp' },
     { label: t('nav.smartsales'), href: '#smartsales' },
     { label: t('nav.ai_consulting'), href: '#ai-consulting' },
+    { label: t('nav.reliability'), href: '/reliability' },
     { label: t('nav.ai_seo_package'), href: '/ai-seo-update-package' },
     { label: t('nav.pitch_decks'), href: '/pitch-decks' },
     { label: t('nav.pricing'), href: '#pricing' },
@@ -110,18 +111,9 @@ function LandingPage() {
 
       <main className="mx-auto max-w-7xl bg-bg px-6 py-12 pb-36 text-fg md:pb-28 md:leading-relaxed">
       
-      {/* Breadcrumb Navigation */}
-      <Breadcrumb 
-        items={[
-          { name: t('nav.home'), url: 'https://innovatexp.co' },
-          { name: t('services.title'), url: 'https://innovatexp.co#services' }
-        ]}
-      />
-      
       <Hero
         title={t('hero.title')}
         tagline={t('hero.tagline')}
-        taglineEn={t('hero.tagline_en')}
         description={t('hero.description')}
         primaryHref="/bookme"
         primaryLabel={t('hero.book_meeting')}
@@ -129,7 +121,7 @@ function LandingPage() {
         secondaryHref="#case-studies"
         secondaryLabel={t('hero.case_studies')}
         onSecondaryClick={(e) => scrollToAnchor(e, '#case-studies')}
-        trustBadges={[t('hero.badge.experience'), t('hero.badge.events'), t('hero.badge.language')]}
+        trustBadges={[t('hero.badge.experience'), t('hero.badge.language')]}
         bottomTagline={t('hero.bottom_tagline')}
         imageAlt={t('hero.image_alt')}
       />
@@ -143,6 +135,18 @@ function LandingPage() {
           { label: t('why.4.label'), sub: t('why.4.sub') },
         ]}
       />
+
+      <section className="mb-12 rounded-2xl border border-brand-primary/25 bg-gradient-to-r from-cyan-50 via-white to-amber-50 p-5 text-center shadow-sm dark:border-teal-500/30 dark:from-slate-900 dark:via-slate-900 dark:to-gray-900">
+        <p className="text-sm font-semibold leading-relaxed text-slate-800 dark:text-slate-200 md:text-base">
+          {language === 'zh'
+            ? '可靠 AI，不賭命：核心流程可預測、可監察、可回滾；AI 只做分類、建議同草稿。'
+            : 'Reliable AI, not autopilot hype: core workflows stay predictable, observable, and reversible; AI classifies, suggests, and drafts.'}
+          {' '}
+          <a href="/reliability" className="font-bold text-brand-primary underline underline-offset-4 dark:text-teal-300">
+            {language === 'zh' ? '睇我哋點樣做可靠 AI' : 'See our reliability approach'}
+          </a>
+        </p>
+      </section>
 
       <p className="mb-4 text-center text-lg font-semibold text-gray-900 dark:text-white md:text-xl">
         {t('product.entry.section_label')}
@@ -344,7 +348,7 @@ function LandingPage() {
               
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-6">{t('eventxp.how.title')}</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
-                {t('eventxp.how.title')} {language === 'zh' ? '的 4 個簡單步驟：' : 'works in 4 simple steps:'}
+                {language === 'zh' ? '以下 4 步就可以由簽到去到可跟進名單：' : "Here's how it works in 4 simple steps:"}
               </p>
               <ol className="list-decimal list-inside text-lg text-gray-700 dark:text-gray-300 space-y-2 ml-4">
                 <li>{t('eventxp.how.step1')}</li>
@@ -371,6 +375,14 @@ function LandingPage() {
               imageSrc="/eventxp-admin.png"
               imageAlt={t('mockup.checkin.alt')}
             />
+            <div className="mt-4 text-center">
+              <a
+                href="/bookme"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
+              >
+                {language === 'zh' ? '預約 15 分鐘 Demo' : 'Book a 15-min demo'}
+              </a>
+            </div>
           </div>
 
           {/* EventXP Features */}
@@ -424,12 +436,12 @@ function LandingPage() {
                   background: 'linear-gradient(135deg, #00B9B3, #1242de, #0f766e)',
                 }}
               >
-                <div className="relative flex h-full min-h-0 flex-col rounded-[14px] bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 px-5 pb-6 pt-10 dark:from-slate-900 dark:via-slate-950">
+                <div className="relative flex h-full min-h-0 flex-col rounded-[14px] bg-gradient-to-br from-cyan-50 via-white to-amber-50 px-5 pb-6 pt-10 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
                   <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-900 shadow-md sm:text-sm">
                     {t('pricing.insight.tier2.badge')}
                   </div>
-                  <p className="text-lg font-bold text-white">{t('eventxp.golive.tier2.name')}</p>
-                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-300">{t('eventxp.golive.tier2.desc')}</p>
+                  <p className="text-lg font-bold text-brand-primary dark:text-white">{t('eventxp.golive.tier2.name')}</p>
+                  <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{t('eventxp.golive.tier2.desc')}</p>
                 </div>
               </div>
 
@@ -455,9 +467,21 @@ function LandingPage() {
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-amber-900/90 dark:text-amber-100">
               {language === 'zh'
-                ? '如你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。完成試點後可升級至 Starter / Growth / Enterprise。'
-                : 'For low-risk onboarding, start with Pilot: HKD 4,800 (1 event + baseline reporting + setup). Upgrade to Starter/Growth/Enterprise after pilot validation.'}
+                ? '如你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。2026 年 6 月底前或首 10 個客戶可優先安排試點；完成後可升級至 Starter / Growth / Enterprise。'
+                : 'For low-risk onboarding, start with Pilot: HKD 4,800 (1 event + baseline reporting + setup). Available for bookings before end-June 2026 or the first 10 pilot clients; upgrade after validation.'}
             </p>
+          </section>
+
+          <section className="mb-12 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-800">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+              {language === 'zh' ? 'EventXP 最啱邊類團隊？' : 'Who is EventXP for?'}
+            </h3>
+            <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300 md:grid-cols-2">
+              <li>{language === 'zh' ? 'BNI chapter、JCI、校友會、會員制社群' : 'Networking groups: BNI chapters, JCI, alumni groups, membership communities'}</li>
+              <li>{language === 'zh' ? '每季 3 場以上活動嘅培訓／銷售活動主辦' : 'Sales or training event organizers running 3+ events per quarter'}</li>
+              <li>{language === 'zh' ? '活動後仍然靠 Excel 匯出同人手 follow-up' : 'Teams tired of exporting Excel after every event'}</li>
+              <li>{language === 'zh' ? '200+ 人活動，手動逐個追已經追唔切' : '200+ attendee events where manual follow-up is impossible'}</li>
+            </ul>
           </section>
 
           <div className="mb-12 rounded-2xl border-2 border-slate-200 bg-slate-50 p-8 dark:border-slate-600 dark:bg-slate-800/60">
@@ -661,11 +685,31 @@ function LandingPage() {
                 onClick={() => openSmartSalesCarouselAt(1)}
               />
             </div>
+            <div className="text-center">
+              <a
+                href="/bookme"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
+              >
+                {language === 'zh' ? '預約 SmartSales Demo' : 'Book SmartSales demo'}
+              </a>
+            </div>
           </div>
 
           <div className="-mx-6 mb-12 overflow-hidden rounded-2xl sm:-mx-12">
             <SmartSalesEnterpriseShowcase onOpenGallery={() => openSmartSalesCarouselAt(0)} />
           </div>
+
+          <section className="mb-12 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-800">
+            <h3 className="text-xl font-bold text-gray-900 dark:text-white">
+              {language === 'zh' ? 'SmartSales CRM 最啱邊類團隊？' : 'Who is SmartSales CRM for?'}
+            </h3>
+            <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300 md:grid-cols-2">
+              <li>{language === 'zh' ? '3–15 人 sales team，以 WhatsApp 收 leads 為主' : '3–15 person sales teams using WhatsApp as the primary lead channel'}</li>
+              <li>{language === 'zh' ? '餐飲、門市、教育、顧問、B2B 服務等香港服務業' : 'F&B, retail, education, consulting, and B2B service teams in Hong Kong'}</li>
+              <li>{language === 'zh' ? '查詢多但無 SLA，靠記性分配同追單' : 'Teams losing leads because replies are slow or inconsistent'}</li>
+              <li>{language === 'zh' ? '老闆想見到 pipeline，而唔係逐個 WhatsApp 問同事' : 'Owners who want SLA visibility without micromanaging every chat'}</li>
+            </ul>
+          </section>
 
           <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
             <PriceCard
@@ -867,6 +911,70 @@ function LandingPage() {
         ]}
       />
 
+      <section className="mb-16 rounded-2xl border-2 border-brand-primary/20 bg-gradient-to-br from-white via-cyan-50/40 to-amber-50/50 p-8 shadow-md dark:border-teal-500/30 dark:from-gray-800 dark:via-slate-900 dark:to-slate-900">
+        <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+          {language === 'zh' ? '唔知揀邊個？先睇最短路徑' : 'Not sure where to start? Pick the shortest path'}
+        </h2>
+        <div className="overflow-x-auto">
+          <table className="w-full min-w-[720px] border-separate border-spacing-y-3 text-left text-sm">
+            <thead className="text-slate-700 dark:text-slate-300">
+              <tr>
+                <th className="px-4 py-2">{language === 'zh' ? '服務' : 'Service'}</th>
+                <th className="px-4 py-2">{language === 'zh' ? '一次性 setup' : 'One-time setup'}</th>
+                <th className="px-4 py-2">{language === 'zh' ? '月費' : 'Monthly'}</th>
+                <th className="px-4 py-2">{language === 'zh' ? '最適合' : 'Best for'}</th>
+              </tr>
+            </thead>
+            <tbody>
+              {[
+                {
+                  service: 'EventXP Pilot',
+                  setup: 'HKD $4,800',
+                  monthly: '—',
+                  fit: language === 'zh' ? '先試 1 場活動，睇簽到後跟進效果' : 'Testing one event before committing',
+                },
+                {
+                  service: 'SmartSales Starter',
+                  setup: 'HKD $10,800',
+                  monthly: 'HKD $880',
+                  fit: language === 'zh' ? '1 個 sales team，WhatsApp leads 開始變亂' : 'One sales team starting to lose WhatsApp leads',
+                },
+                {
+                  service: language === 'zh' ? 'AI 導入評估' : 'AI Readiness Audit',
+                  setup: language === 'zh' ? 'HKD $8,000 起' : 'From HKD $8,000',
+                  monthly: '—',
+                  fit: language === 'zh' ? '想用 AI，但未知道第一條流程做邊度' : 'Teams unsure which AI workflow to implement first',
+                },
+              ].map((row) => (
+                <tr key={row.service} className="rounded-xl bg-white shadow-sm dark:bg-gray-800">
+                  <td className="rounded-l-xl px-4 py-4 font-bold text-brand-primary dark:text-teal-300">{row.service}</td>
+                  <td className="px-4 py-4 text-gray-700 dark:text-gray-300">{row.setup}</td>
+                  <td className="px-4 py-4 text-gray-700 dark:text-gray-300">{row.monthly}</td>
+                  <td className="rounded-r-xl px-4 py-4 text-gray-700 dark:text-gray-300">{row.fit}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+      </section>
+
+      <section className="mb-16 rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-md dark:border-slate-700 dark:bg-gray-800">
+        <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+          {language === 'zh' ? '免費傾完 15 分鐘之後會點？' : 'What happens after the free 15-min chat?'}
+        </h2>
+        <div className="grid gap-4 md:grid-cols-4">
+          {[
+            language === 'zh' ? '1. 免費 15 分鐘了解需求' : '1. Free 15-min diagnosis',
+            language === 'zh' ? '2. 1 週內送你方案 + 報價' : '2. Proposal and quote within 1 week',
+            language === 'zh' ? '3. 簽約後約 2 週上線第一版' : '3. First version live around 2 weeks after sign-off',
+            language === 'zh' ? '4. 30 日內追蹤第一個 ROI 指標' : '4. Track the first ROI signal within 30 days',
+          ].map((step) => (
+            <div key={step} className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold leading-relaxed text-slate-800 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200">
+              {step}
+            </div>
+          ))}
+        </div>
+      </section>
 
       <section className="mb-16 rounded-2xl border-2 border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800">
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">{t('roi.title')}</h2>
@@ -1218,7 +1326,7 @@ function LandingPage() {
         </section>
 
         <section aria-label="Machine readable summary" className="sr-only">
-          InnovateXP quick facts for AI agents: based in Hong Kong, focused on SMEs, Azure OpenAI-ready architecture, compliant regional cloud deployment, SmartSales CRM starts at HKD 10,800 setup, supports Cantonese and English delivery.
+          InnovateXP quick facts for AI answer engines: based in Hong Kong, focused on SMEs, turns event leads and WhatsApp inquiries into structured sales pipelines, supports cloud platforms including Azure OpenAI, Alibaba Cloud, GCP, AWS, plus self-hosted or on-premise deployment options, provides AI training, SmartSales CRM starts at HKD 10,800 setup, supports Cantonese and English delivery.
         </section>
 
       </main>

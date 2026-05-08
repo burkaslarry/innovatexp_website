@@ -46,27 +46,27 @@ export function PremiumPriceCard({
           background: "linear-gradient(135deg, #00B9B3, #1242de, #0f766e)",
         }}
       >
-        <div className="relative flex min-h-0 flex-1 flex-col rounded-[14px] bg-gradient-to-b from-slate-900 via-slate-950 to-slate-950 px-6 pb-8 pt-10 dark:from-slate-900 dark:via-slate-950">
+        <div className="relative flex min-h-0 flex-1 flex-col rounded-[14px] bg-gradient-to-br from-cyan-50 via-white to-amber-50 px-6 pb-8 pt-10 text-slate-900 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 dark:text-white">
           <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-sm font-bold text-slate-900 shadow-md">
             {badge}
           </div>
-          <h3 className="mt-2 text-2xl font-bold text-white">{name}</h3>
+          <h3 className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">{name}</h3>
           <div className="mt-2">
-            <span className="text-3xl font-bold text-white">{price}</span>
-            <span className="text-white/90">{period}</span>
+            <span className="text-3xl font-bold text-brand-primary dark:text-white">{price}</span>
+            <span className="text-slate-700 dark:text-white/90">{period}</span>
           </div>
           {subtitle ? (
-            <p className="mt-1 text-sm text-amber-200/90">{subtitle}</p>
+            <p className="mt-1 text-sm font-medium text-amber-800 dark:text-amber-200/90">{subtitle}</p>
           ) : null}
-          {target ? <p className="mt-2 text-sm text-slate-300">{target}</p> : null}
+          {target ? <p className="mt-2 text-sm font-medium text-slate-700 dark:text-slate-300">{target}</p> : null}
 
           <ul className="mt-5 flex flex-1 flex-col gap-2">
             {featureLines.map((line, i) => (
               <li
                 key={i}
-                className="flex items-start gap-2 text-sm text-white/95"
+                className="flex items-start gap-2 text-sm text-slate-700 dark:text-white/95"
               >
-                <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-amber-300" aria-hidden />
+                <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-amber-500 dark:text-amber-300" aria-hidden />
                 <span>{line}</span>
               </li>
             ))}

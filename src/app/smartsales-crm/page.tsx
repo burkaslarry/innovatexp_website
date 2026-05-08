@@ -8,7 +8,7 @@ import {
 } from "@/lib/schema";
 
 const siteUrlMeta =
-  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
+  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
 export const metadata: Metadata = {
   title: "SmartSales CRM | Lead Follow-Up and Pipeline Management",
@@ -33,7 +33,7 @@ export const metadata: Metadata = {
 
 export default function SmartSalesCrmPage() {
   const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
+    process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
   const faqQuestions = [
     {

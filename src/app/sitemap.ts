@@ -1,3 +1,4 @@
+/* F10: Sitemap generation - Declares static routes and blog slugs for search engines. */
 import { MetadataRoute } from "next";
 
 const blogSlugs = [
@@ -7,7 +8,7 @@ const blogSlugs = [
 ];
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://innovatexp.co";
+  const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
   const now = new Date();
 
   const staticPages: MetadataRoute.Sitemap = [
@@ -58,6 +59,12 @@ export default function sitemap(): MetadataRoute.Sitemap {
       lastModified: now,
       changeFrequency: "monthly",
       priority: 0.6,
+    },
+    {
+      url: `${siteUrl}/reliability`,
+      lastModified: now,
+      changeFrequency: "monthly",
+      priority: 0.7,
     },
   ];
 
