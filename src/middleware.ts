@@ -11,6 +11,10 @@ function shouldSkipLocale(pathname: string) {
     pathname === "/favicon.ico" ||
     pathname === "/robots.txt" ||
     pathname === "/sitemap.xml" ||
+    pathname === "/opengraph-image" ||
+    pathname === "/twitter-image" ||
+    pathname === "/icon" ||
+    pathname === "/apple-icon" ||
     FILE_EXTENSION.test(pathname)
   );
 }

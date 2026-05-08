@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { BackToHomeControl } from "@/components/BackToHomeControl";
 import { isValidLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 
@@ -44,6 +45,7 @@ export default async function AiSeoUpdatePackagePage({
 
   return (
     <main className="mx-auto min-h-screen max-w-5xl px-6 py-12 text-slate-900 dark:text-slate-100">
+      <BackToHomeControl />
       <section className="mb-8 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
         <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-teal-300">
           InnovateXP Service

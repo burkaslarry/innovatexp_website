@@ -2,6 +2,7 @@
 /* F02: Homepage marketing - Landing sections: hero, products, pricing, FAQs, and modals. */
 import React from 'react';
 import Image from 'next/image';
+import Script from 'next/script';
 import { useEffect, useMemo, useState } from 'react';
 import {
   Bot,
@@ -31,6 +32,47 @@ import { ProductEntryGrid } from '@/components/ProductEntryGrid';
 import { ProductMockupPlaceholder } from '@/components/ProductMockupPlaceholder';
 import { AIConsultingPackageCard } from '@/components/AIConsultingPackageCard';
 import { ImageCarouselModal } from '@/components/ImageCarouselModal';
+import { Button } from '@/components/ui/Button';
+
+/** Homepage-only Service JSON-LD for Rich Results (SmartSales + EventXP sections). */
+const LD_SERVICE_EVENTXP = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'EventXP',
+  description:
+    'Event check-in, attendance reporting, and ranked follow-up workflows for Hong Kong event teams.',
+  provider: { '@type': 'Organization', name: 'InnovateXP Limited' },
+  areaServed: 'Hong Kong',
+  offers: [
+    { '@type': 'Offer', name: 'Pilot', price: '4800', priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Starter', price: '6800', priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Growth', price: '8800', priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Enterprise', price: '9800', priceCurrency: 'HKD' },
+  ],
+};
+
+const LD_SERVICE_SMARTSALES = {
+  '@context': 'https://schema.org',
+  '@type': 'Service',
+  name: 'SmartSales CRM',
+  description: 'WhatsApp AI CRM for Hong Kong SMEs with draft-first reply mode',
+  provider: { '@type': 'Organization', name: 'InnovateXP Limited' },
+  areaServed: 'Hong Kong',
+  offers: [
+    { '@type': 'Offer', name: 'Starter', price: '10800', priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Growth', price: '18880', priceCurrency: 'HKD' },
+    {
+      '@type': 'Offer',
+      name: 'Enterprise',
+      priceCurrency: 'HKD',
+      priceSpecification: {
+        '@type': 'PriceSpecification',
+        minPrice: '30000',
+        priceCurrency: 'HKD',
+      },
+    },
+  ],
+};
 
 function LandingPage() {
   const { t, language } = useLanguage();
@@ -131,6 +173,13 @@ function LandingPage() {
         imageAlt={t('hero.image_alt')}
       />
 
+      <section id="about-innovatexp" className="max-w-4xl mx-auto px-6 py-12">
+        <h2 className="text-2xl font-bold mb-4">InnovateXP 係邊間公司？做咩嘅？</h2>
+        <p className="text-lg leading-relaxed text-gray-700">
+          <strong>InnovateXP Limited</strong> 係香港中小企 AI CRM 與活動科技公司，由 <strong>Larry Lo</strong>（14 年技術經驗、前 GDG Hong Kong organizer、HKSTP 孵化校友）創立。提供 3 個產品線：<strong>SmartSales CRM</strong>（WhatsApp AI CRM，HKD 10,800 起）、<strong>EventXP</strong>（活動簽到系統，HKD 4,800 試點起）、<strong>AI 顧問服務</strong>（HKD 8,000 起）。服務對象：3–15 人 sales team、活動主辦團隊、會員制社群。語言支援：粵英、中英夾雜。部署選項：Cloud（Azure OpenAI、Alibaba Cloud、GCP、AWS）或 On-Premise。
+        </p>
+      </section>
+
       <WhyInnovateXP
         title={t('why.title')}
         points={[
@@ -147,7 +196,10 @@ function LandingPage() {
             ? '可靠 AI，不賭命：核心流程可預測、可監察、可回滾；AI 只做分類、建議同草稿。'
             : 'Reliable AI, not autopilot hype: core workflows stay predictable, observable, and reversible; AI classifies, suggests, and drafts.'}
           {' '}
-          <a href={loc("/reliability")} className="font-bold text-brand-primary underline underline-offset-4 dark:text-teal-300">
+          <a
+            href={loc("/reliability")}
+            className="ml-1 inline-flex items-center rounded-full border-2 border-slate-900/20 bg-white px-4 py-2 text-sm font-bold text-slate-900 no-underline shadow-sm transition-all duration-300 hover:border-black hover:bg-black hover:text-white dark:border-slate-500 dark:bg-white dark:text-slate-950 dark:hover:border-black dark:hover:bg-black dark:hover:text-white md:ml-2 md:px-5 md:text-base"
+          >
             {language === 'zh' ? '睇我哋點樣做可靠 AI' : 'See our reliability approach'}
           </a>
         </p>
@@ -335,6 +387,14 @@ function LandingPage() {
 
       {/* EventXP Section */}
       <article id="eventxp" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800 md:p-12">
+        <Script
+          id="ld-svc-eventxp"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(LD_SERVICE_EVENTXP).replace(/</g, '\\u003c'),
+          }}
+        />
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
@@ -605,6 +665,14 @@ function LandingPage() {
 
       {/* SmartSales CRM Section */}
       <article id="smartsales" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-gray-200 bg-gray-50 p-10 shadow-lg dark:border-gray-600 dark:bg-gray-700 md:p-12">
+        <Script
+          id="ld-svc-smartsales"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify(LD_SERVICE_SMARTSALES).replace(/</g, '\\u003c'),
+          }}
+        />
         <div className="mx-auto max-w-6xl">
           <div className="mb-12 text-center">
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
@@ -1351,24 +1419,22 @@ function LandingPage() {
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         <div className="mx-auto max-w-4xl px-6 py-4">
-          <a
+          <Button
             href={loc("/bookme")}
-            className="flex min-h-[54px] w-full items-center justify-center gap-2 rounded-xl border-2 border-gray-300 bg-white text-lg font-bold text-gray-900 no-underline shadow-lg transition hover:bg-gray-50 active:scale-[0.98] dark:border-transparent dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white"
+            variant="ctaLight"
+            className="flex min-h-[54px] w-full items-center justify-center gap-2 rounded-xl text-lg shadow-lg"
           >
-            <CalendarClock className="h-6 w-6 shrink-0 text-gray-900 dark:!text-white" strokeWidth={2} aria-hidden />
-            <span className="dark:!text-white">{t("hero.book_meeting")}</span>
-          </a>
+            <CalendarClock className="h-6 w-6 shrink-0 text-slate-950 group-hover:text-white" strokeWidth={2} aria-hidden />
+            <span>{t("hero.book_meeting")}</span>
+          </Button>
         </div>
       </div>
       <footer className="border-t-2 border-gray-300 bg-[#fffcf7] py-12 text-center dark:border-gray-700 dark:bg-gray-900">
         <div className="container mx-auto px-4">
           <div className="mb-10">
-            <a
-              href={loc("/bookme")}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-8 py-3 text-base font-bold text-white no-underline shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white"
-            >
+            <Button href={loc("/bookme")} variant="ctaLight">
               {t('hero.book_meeting')}
-            </a>
+            </Button>
           </div>
 
           <address className="not-italic border-t border-gray-200 pt-8 dark:border-gray-700">
@@ -1386,12 +1452,13 @@ function LandingPage() {
       </footer>
 
       <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-1.5 border-t border-gray-200 bg-white/95 px-2 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.08)] backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95 sm:gap-2 sm:p-3 sm:pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
-        <a
+        <Button
           href={loc("/bookme")}
-          className="flex min-h-[48px] min-w-0 flex-[1.15] touch-manipulation items-center justify-center rounded-full bg-brand-primary px-2 text-center text-xs font-bold leading-tight text-white no-underline shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white sm:px-3 sm:text-sm max-[400px]:flex-1"
+          variant="ctaLight"
+          className="min-h-[48px] min-w-0 flex-[1.15] px-2 text-center text-xs leading-tight sm:px-3 sm:text-sm max-[400px]:flex-1"
         >
           {t('hero.book_meeting')}
-        </a>
+        </Button>
       </div>
     </div>
   );

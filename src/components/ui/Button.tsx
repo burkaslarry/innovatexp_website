@@ -1,7 +1,7 @@
 import Link from "next/link";
-import type { ReactNode, ButtonHTMLAttributes } from "react";
+import type { ReactNode, ButtonHTMLAttributes, MouseEventHandler } from "react";
 
-export type ButtonVariant = "primary" | "outline" | "ghost";
+export type ButtonVariant = "primary" | "outline" | "ghost" | "ctaLight";
 
 export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   variant?: ButtonVariant;
@@ -20,6 +20,8 @@ const variants: Record<ButtonVariant, string> = {
     "border-2 border-slate-200 bg-white text-slate-900 shadow-sm hover:border-brand-primary/40 hover:bg-brand-cream dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800 active:scale-[0.98]",
   ghost:
     "text-brand-primary hover:bg-brand-primary/10 dark:text-teal-300 dark:hover:bg-white/5",
+  ctaLight:
+    "group border-2 border-slate-900/20 bg-white text-slate-900 shadow-md hover:border-black hover:bg-black hover:text-white active:scale-[0.98] dark:border-slate-500 dark:bg-white dark:text-slate-950 dark:hover:border-black dark:hover:bg-black dark:hover:text-white",
 };
 
 export function Button({
@@ -28,20 +30,25 @@ export function Button({
   children,
   className = "",
   type = "button",
+  onClick,
   ...rest
 }: ButtonProps) {
   const cls = `${base} ${variants[variant]} ${className}`.trim();
 
   if (href) {
     return (
-      <Link href={href} className={cls}>
+      <Link
+        href={href}
+        className={cls}
+        onClick={onClick as MouseEventHandler<HTMLAnchorElement> | undefined}
+      >
         {children}
       </Link>
     );
   }
 
   return (
-    <button type={type} className={cls} {...rest}>
+    <button type={type} className={cls} onClick={onClick} {...rest}>
       {children}
     </button>
   );

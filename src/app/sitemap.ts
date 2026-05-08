@@ -24,6 +24,8 @@ const paths: Array<{
   { path: "/ai-seo-update-package", priority: 0.7, changeFrequency: "weekly" },
   { path: "/pitch-decks", priority: 0.6, changeFrequency: "monthly" },
   { path: "/reliability", priority: 0.7, changeFrequency: "monthly" },
+  { path: "/compare/smartsales-vs-salesforce", priority: 0.75, changeFrequency: "monthly" },
+  { path: "/compare/eventxp-vs-eventbrite", priority: 0.75, changeFrequency: "monthly" },
 ];
 
 function getOrigin(): string {

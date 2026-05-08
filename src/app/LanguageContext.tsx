@@ -1340,7 +1340,7 @@ export const translations = {
     'story.step2.title': '沙漠綠洲',
     'story.step2.description': '利用AI創造獨特價值，逃離競爭',
     'story.step3.title': '可樂理論',
-    'story.step3.description': '相同產品，在不同環境中呈現不同價值',
+    'story.step3.description': '同一罐可樂，7-Eleven 賣 $10、酒店賣 $50、機場 lounge 免費送 — 產品冇變，價值由場景定。AI 方案同理：配合你業務場景，先有 premium pricing power。',
     
     // Ideal Client Section
     'ideal.title': '理想引薦 / 理想客戶輪廓',

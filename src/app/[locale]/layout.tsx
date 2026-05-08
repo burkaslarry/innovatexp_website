@@ -5,11 +5,7 @@ import { LanguageProvider } from "../LanguageContext";
 import StructuredData from "../components/StructuredData";
 import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
 import { LocaleHtmlLang } from "../components/LocaleHtmlLang";
-import {
-  alternateLanguageUrls,
-  isValidLocale,
-  localeToLanguage,
-} from "@/lib/i18n-routing";
+import { isValidLocale, localeToLanguage } from "@/lib/i18n-routing";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ||
@@ -24,7 +20,6 @@ export async function generateMetadata({
   const { locale: loc } = await params;
   if (!isValidLocale(loc)) return {};
 
-  const languages = alternateLanguageUrls(siteUrl, "/");
   const canonical = `${siteUrl}/${loc}`;
 
   return {
@@ -39,12 +34,6 @@ export async function generateMetadata({
     creator: "InnovateXP Limited",
     publisher: "InnovateXP Limited",
     metadataBase: new URL(siteUrl),
-    alternates: {
-      canonical,
-      languages: {
-        ...languages,
-      },
-    },
     openGraph: {
       type: "website",
       locale: loc === "en" ? "en_HK" : "zh_HK",

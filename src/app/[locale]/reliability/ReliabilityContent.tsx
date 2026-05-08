@@ -2,6 +2,7 @@
 
 /* F14: Reliability (client) - Bilingual copy, comparison table, and CTAs for /reliability. */
 import Link from "next/link";
+import { BackToHomeControl } from "@/components/BackToHomeControl";
 import { useLanguage } from "../../LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
 
@@ -109,6 +110,7 @@ export function ReliabilityContent() {
 
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-6 py-12 text-slate-900 dark:text-slate-100">
+      <BackToHomeControl />
       <section className="rounded-3xl border border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-amber-50 p-8 shadow-sm dark:border-slate-700 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
         <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-teal-300">
           {copy.eyebrow}
@@ -170,7 +172,7 @@ export function ReliabilityContent() {
         <p className="mt-3 text-slate-700 dark:text-slate-300">{copy.ctaBody}</p>
         <Link
           href={loc("/bookme")}
-          className="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-[#1ebe5d]"
+          className="group mt-6 inline-flex min-h-[48px] items-center justify-center rounded-full border-2 border-slate-900/20 bg-white px-6 py-3 text-sm font-bold text-slate-900 shadow-md transition-all duration-300 hover:border-black hover:bg-black hover:text-white dark:border-slate-500 dark:bg-white dark:text-slate-950 dark:hover:border-black dark:hover:bg-black dark:hover:text-white"
         >
           {copy.cta}
         </Link>

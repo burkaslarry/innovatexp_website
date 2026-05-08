@@ -1,5 +1,43 @@
+import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
+import Script from "next/script";
 import "./globals.css";
+
+const ORGANIZATION_JSON_LD = {
+  "@context": "https://schema.org",
+  "@type": ["Organization", "LocalBusiness"],
+  name: "InnovateXP Limited",
+  url: "https://www.innovatexp.co",
+  logo: "https://www.innovatexp.co/logo.png",
+  email: "info@innovatexp.co",
+  address: { "@type": "PostalAddress", addressLocality: "Hong Kong", addressCountry: "HK" },
+  founder: {
+    "@type": "Person",
+    name: "Larry Lo",
+    jobTitle: "Founder & AI Consultant",
+    sameAs: [
+      "https://www.linkedin.com/in/larry-lo-804a50165/",
+      "https://github.com/burkaslarry",
+    ],
+  },
+  knowsAbout: ["AI CRM", "WhatsApp Business API", "Event Management", "Prompt Engineering", "Cantonese NLP"],
+  areaServed: { "@type": "Country", name: "Hong Kong" },
+} as const;
+
+export const metadata: Metadata = {
+  title: "InnovateXP｜香港中小企 WhatsApp AI CRM・活動簽到・AI 顧問",
+  description:
+    "為香港中小企提供 SmartSales CRM、EventXP 活動簽到系統與 AI 顧問服務。將 WhatsApp 查詢與活動 200 人名單變成可跟進 sales pipeline。雲端／On-Premise 可諮詢。Founder-led、14 年實戰經驗，免費 15 分鐘諮詢。",
+  metadataBase: new URL("https://www.innovatexp.co"),
+  alternates: {
+    canonical: "https://www.innovatexp.co/",
+    languages: {
+      "zh-HK": "https://www.innovatexp.co//?lang=zh-HK",
+      en: "https://www.innovatexp.co//?lang=en",
+      "x-default": "https://www.innovatexp.co/",
+    },
+  },
+};
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -37,6 +75,12 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#fffcf7] dark:bg-gray-900 transition-colors duration-200`}
         suppressHydrationWarning
       >
+        <Script
+          id="ld-org"
+          type="application/ld+json"
+          strategy="afterInteractive"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(ORGANIZATION_JSON_LD) }}
+        />
         {children}
         <script
           dangerouslySetInnerHTML={{

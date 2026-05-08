@@ -1,6 +1,6 @@
 /* F12: Pitch decks download page - Lists PDF deck links under public/decks. */
 import type { Metadata } from "next";
-import Link from "next/link";
+import { BackToHomeControl } from "@/components/BackToHomeControl";
 import { isValidLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 
@@ -47,10 +47,11 @@ export default async function PitchDecksPage({
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  const { locale } = await params;
+  await params;
 
   return (
     <main className="mx-auto min-h-screen max-w-5xl px-6 py-12 text-slate-900 dark:text-slate-100">
+      <BackToHomeControl />
       <section className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
         <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-teal-300">
           InnovateXP Downloads
@@ -81,15 +82,6 @@ export default async function PitchDecksPage({
           </article>
         ))}
       </section>
-
-      <div className="mt-8">
-        <Link
-          href={`/${locale}`}
-          className="text-sm font-semibold text-brand-primary hover:underline dark:text-teal-300"
-        >
-          Back to homepage
-        </Link>
-      </div>
     </main>
   );
 }

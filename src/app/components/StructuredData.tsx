@@ -30,6 +30,15 @@ function buildBreadcrumbJsonLd(
     eventxp: { en: "EventXP", zh: "EventXP" },
     "ai-consulting": { en: "AI Consulting", zh: "AI 顧問服務" },
     "ai-seo-update-package": { en: "AI SEO update package", zh: "AI SEO 更新套餐" },
+    compare: { en: "Compare", zh: "產品比較" },
+    "smartsales-vs-salesforce": {
+      en: "SmartSales vs Salesforce",
+      zh: "SmartSales vs Salesforce",
+    },
+    "eventxp-vs-eventbrite": {
+      en: "EventXP vs Eventbrite",
+      zh: "EventXP vs Eventbrite",
+    },
   };
 
   let acc = "";

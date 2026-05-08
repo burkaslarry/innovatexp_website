@@ -84,15 +84,15 @@ export function Hero({
               <a
                 href={primaryHref}
                 onClick={onPrimaryClick}
-                className="inline-flex min-h-[52px] touch-manipulation items-center justify-center gap-2 rounded-full bg-brand-primary px-10 text-base font-bold text-white shadow-md transition-all hover:bg-brand-primary-hover hover:shadow-lg active:scale-[0.98] dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98] dark:shadow-none sm:min-w-[200px]"
+                className="group inline-flex min-h-[52px] touch-manipulation items-center justify-center gap-2 rounded-full border-2 border-slate-900/20 bg-white px-10 text-base font-bold text-slate-900 shadow-md transition-all duration-300 hover:border-black hover:bg-black hover:text-white active:scale-[0.98] dark:border-slate-500 dark:bg-white dark:text-slate-950 dark:hover:border-black dark:hover:bg-black dark:hover:text-white sm:min-w-[200px]"
               >
                 {primaryLabel}
               </a>
             ) : (
               <Button
                 href={primaryHref}
-                variant="primary"
-                className="min-h-[52px] touch-manipulation px-10 text-base shadow-md sm:min-w-[200px]"
+                variant="ctaLight"
+                className="min-h-[52px] touch-manipulation px-10 text-base sm:min-w-[200px]"
               >
                 {primaryLabel}
               </Button>
