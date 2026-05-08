@@ -1,13 +1,21 @@
 import Link from "next/link";
+import { notFound } from "next/navigation";
+import { isValidLocale } from "@/lib/i18n-routing";
 
-// Placeholder: replace with CMS or static list of posts
 const posts = [
   { slug: "getting-started-ai-consulting", title: "Getting Started with AI Consulting for SMEs", date: "2026-03-01", excerpt: "How to scope your first AI consulting engagement and get from slides to shipped workflows." },
   { slug: "event-check-in-best-practices", title: "Event Check-In Best Practices for Higher Conversion", date: "2026-02-15", excerpt: "Turn attendance data into follow-up actions. Lessons from Hong Kong events." },
   { slug: "crm-automation-without-the-hype", title: "CRM Automation Without the Hype", date: "2026-02-01", excerpt: "Practical CRM automation for sales teams: WhatsApp, pipelines, and one source of truth." },
 ];
 
-export default function BlogIndexPage() {
+export default async function BlogIndexPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  if (!isValidLocale(locale)) notFound();
+
   return (
     <main className="min-h-screen bg-[#fffcf7] dark:bg-gray-900">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
@@ -21,7 +29,7 @@ export default function BlogIndexPage() {
           {posts.map((post) => (
             <li key={post.slug}>
               <article className="border-b border-gray-200 dark:border-gray-700 pb-8">
-                <Link href={`/blog/${post.slug}`} className="group">
+                <Link href={`/${locale}/blog/${post.slug}`} className="group">
                   <h2 className="mb-2 text-2xl font-bold text-gray-900 transition-colors group-hover:text-brand-primary dark:text-white dark:group-hover:text-teal-300">
                     {post.title}
                   </h2>
@@ -33,7 +41,14 @@ export default function BlogIndexPage() {
           ))}
         </ul>
         <p className="mt-12 text-gray-500 dark:text-gray-400 text-sm">
-          More posts are on the way. <Link href="/" className="text-brand-primary hover:underline dark:text-teal-300">Back to home</Link> · <Link href="/bookme" className="text-brand-primary hover:underline dark:text-teal-300">Book a call</Link>
+          More posts are on the way.{" "}
+          <Link href={`/${locale}`} className="text-brand-primary hover:underline dark:text-teal-300">
+            Back to home
+          </Link>
+          {" · "}
+          <Link href={`/${locale}/bookme`} className="text-brand-primary hover:underline dark:text-teal-300">
+            Book a call
+          </Link>
         </p>
       </div>
     </main>

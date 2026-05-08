@@ -17,7 +17,7 @@ F01: Internationalization - Central EN/ZH strings, LanguageProvider, and t() loo
 F02: Homepage marketing - Landing page sections: hero, products, pricing, FAQs, and modals.
 F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path.
 F04: Shared schema builders - Reusable Organization/Product helpers consumed by JSON-LD and tooling.
-F05: Root app shell - Global metadata, fonts, theme/language providers, layout chrome, and site-wide CTAs.
+F05: Root layout - HTML shell, fonts, theme boot script, Hotjar (after load); no locale-specific metadata.
 F06: Bookme page - Booking/quotation entry with header, guidelines, and QuotationWizard mount.
 F07: Calendar booking API - POST handler: validates input, writes Notion, emails ICS/Web3Forms confirmations.
 F08: Quotation wizard - Self-serve quote flow, calendar integration, and lead capture UI.
@@ -29,6 +29,7 @@ F13: Reliability (server) - Metadata and Article JSON-LD for the reliability man
 F14: Reliability (client) - Bilingual copy, comparison table, and CTAs for /reliability.
 F15: Hero section - Animated hero with primary/secondary CTAs and optional trust badges.
 F16: Schema validation script - CI guard that StructuredData.tsx still contains required SEO tokens.
+F17: Locale routes & hreflang - Middleware redirects unprefixed URLs to `/zh-hk/...`; marketing pages under `/en` and `/zh-hk` with `alternates.languages`; sitemap lists both locales.
 ```
 
 ## Getting Started
@@ -45,13 +46,13 @@ pnpm dev
 bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open [http://localhost:3000](http://localhost:3000) in your browser; you’ll be redirected to `/zh-hk` by middleware.
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) for Geist.
 
 ## Bookme / Notion calendar
 
-Available slots on `/bookme` come from **every row** in your Notion database(s) whose **Date** falls on the selected day. Overlapping times are removed from the picker.
+Available slots on `/zh-hk/bookme` (or `/en/bookme`) come from **every row** in your Notion database(s) whose **Date** falls on the selected day. Overlapping times are removed from the picker.
 
 | Variable | Purpose |
 |----------|---------|
@@ -71,9 +72,13 @@ Brand tokens: `brand-primary` (#0e34af), `brand-cream`, `brand-cream-warm` (see 
 
 Optional: set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` for the contact form (falls back to the previous embedded key if unset).
 
+## SEO maintenance (Search Console & rich results)
+
+Periodically in [Google Search Console](https://search.google.com/search-console): check **Enhancements** / **Experience** reports for FAQ, Article, or breadcrumb issues after schema changes. Use [Rich Results Test](https://search.google.com/test/rich-results) on sample URLs in both locales, e.g. `https://www.innovatexp.co/zh-hk/` and `https://www.innovatexp.co/en/smartsales-crm`.
+
 ## Deploy on Vercel
 
-Deploy from the Vercel dashboard or CLI. Production releases are tagged (e.g. `prod/3.0`) for traceability.
+Deploy from the Vercel dashboard or CLI. Production releases are tagged (e.g. `prod/10.0`) for traceability.
 
 ## Learn More
 

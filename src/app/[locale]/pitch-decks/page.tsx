@@ -1,17 +1,29 @@
 /* F12: Pitch decks download page - Lists PDF deck links under public/decks. */
 import type { Metadata } from "next";
 import Link from "next/link";
+import { isValidLocale } from "@/lib/i18n-routing";
+import { localeAlternates } from "@/lib/alternate-metadata";
 
-export const metadata: Metadata = {
-  title: "Pitch Deck Downloads | InnovateXP",
-  description:
-    "Download InnovateXP pitch decks for SmartSales CRM, EventXP, and customised website projects.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isValidLocale(locale)) return {};
+  return {
+    title: "Pitch Deck Downloads | InnovateXP",
+    description:
+      "Download InnovateXP pitch decks for SmartSales CRM, EventXP, and customised website projects.",
+    alternates: localeAlternates(locale, "/pitch-decks"),
+  };
+}
 
 const decks = [
   {
     title: "SmartSales CRM Pitch Deck",
-    description: "AI-assisted WhatsApp CRM for Hong Kong SMEs: lead triage, reply drafts, and follow-up workflows.",
+    description:
+      "AI-assisted WhatsApp CRM for Hong Kong SMEs: lead triage, reply drafts, and follow-up workflows.",
     href: "/decks/ixp-smartsales-pitch-deck.pdf",
     filename: "IXP_SmartSales_Pitch_Deck.pdf",
   },
@@ -23,13 +35,20 @@ const decks = [
   },
   {
     title: "Customised Website Pitch Deck",
-    description: "Website development package for SMEs that need clearer positioning, SEO, and conversion flow.",
+    description:
+      "Website development package for SMEs that need clearer positioning, SEO, and conversion flow.",
     href: "/decks/ixp-customised-website-pitch-deck.pdf",
     filename: "IXP_Customised_Website_Pitch_Deck.pdf",
   },
 ];
 
-export default function PitchDecksPage() {
+export default async function PitchDecksPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <main className="mx-auto min-h-screen max-w-5xl px-6 py-12 text-slate-900 dark:text-slate-100">
       <section className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
@@ -64,7 +83,10 @@ export default function PitchDecksPage() {
       </section>
 
       <div className="mt-8">
-        <Link href="/" className="text-sm font-semibold text-brand-primary hover:underline dark:text-teal-300">
+        <Link
+          href={`/${locale}`}
+          className="text-sm font-semibold text-brand-primary hover:underline dark:text-teal-300"
+        >
           Back to homepage
         </Link>
       </div>

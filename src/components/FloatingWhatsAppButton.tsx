@@ -1,12 +1,20 @@
 /* F09: Floating WhatsApp CTA - Fixed wa.me link from env or fallback to bookme anchor. */
+"use client";
+
+import { usePathname } from "next/navigation";
+import { getLocaleFromPathname, withLocale } from "@/lib/i18n-routing";
+
 const defaultMessage =
   "你好！我喺 InnovateXP 網站睇到，想了解點樣將 WhatsApp inquiry / 活動 lead 變成可跟進 pipeline。";
 
 export function FloatingWhatsAppButton() {
+  const pathname = usePathname();
+  const locale = getLocaleFromPathname(pathname);
+  const localizedBookme = withLocale(locale, "/bookme#quotation-wizard");
   const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
   const href = rawNumber
     ? `https://wa.me/${rawNumber}?text=${encodeURIComponent(defaultMessage)}`
-    : "/bookme#quotation-wizard";
+    : localizedBookme;
 
   return (
     <a

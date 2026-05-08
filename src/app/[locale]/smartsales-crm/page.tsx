@@ -1,33 +1,48 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import ChineseOverlay from "../components/ChineseOverlay";
+import ChineseOverlay from "../../components/ChineseOverlay";
 import { getFAQPageSchema, getSmartSalesProductSchema } from "@/lib/schema";
+import { isValidLocale } from "@/lib/i18n-routing";
+import { localeAlternates } from "@/lib/alternate-metadata";
 
 const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
-export const metadata: Metadata = {
-  title: "SmartSales CRM | Lead Follow-Up and Pipeline Management",
-  description:
-    "Keep leads in one place, follow up on time, and track your pipeline with less manual work.",
-  alternates: {
-    canonical: `${siteUrlMeta}/smartsales-crm`,
-  },
-  openGraph: {
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isValidLocale(locale)) return {};
+  const alternates = localeAlternates(locale, "/smartsales-crm");
+  const ogUrl = typeof alternates?.canonical === "string" ? alternates.canonical : `${siteUrlMeta}/${locale}/smartsales-crm`;
+  return {
     title: "SmartSales CRM | Lead Follow-Up and Pipeline Management",
-    description: "Keep leads in one place, follow up on time, and track your pipeline with less manual work.",
-    url: `${siteUrlMeta}/smartsales-crm`,
-    siteName: "InnovateXP Limited",
-    images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP SmartSales CRM" }],
-  },
-  twitter: {
-    card: "summary_large_image",
-    title: "SmartSales CRM | Lead Follow-Up and Pipeline Management",
-    description: "Keep leads in one place, follow up on time, and track your pipeline with less manual work.",
-  },
-};
+    description:
+      "Keep leads in one place, follow up on time, and track your pipeline with less manual work.",
+    alternates,
+    openGraph: {
+      title: "SmartSales CRM | Lead Follow-Up and Pipeline Management",
+      description: "Keep leads in one place, follow up on time, and track your pipeline with less manual work.",
+      url: ogUrl,
+      siteName: "InnovateXP Limited",
+      images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP SmartSales CRM" }],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title: "SmartSales CRM | Lead Follow-Up and Pipeline Management",
+      description: "Keep leads in one place, follow up on time, and track your pipeline with less manual work.",
+    },
+  };
+}
 
-export default function SmartSalesCrmPage() {
+export default async function SmartSalesCrmPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
   const siteUrl =
     process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
@@ -54,9 +69,11 @@ export default function SmartSalesCrmPage() {
     },
   ];
 
+  const pageUrl = `${siteUrl}/${locale}/smartsales-crm`;
+  const productSchema = getSmartSalesProductSchema();
   const jsonLd = [
-    getSmartSalesProductSchema(),
-    getFAQPageSchema({ url: `${siteUrl}/smartsales-crm`, questions: faqQuestions }),
+    { ...productSchema, url: pageUrl },
+    getFAQPageSchema({ url: pageUrl, questions: faqQuestions }),
   ];
 
   return (
@@ -186,7 +203,7 @@ export default function SmartSalesCrmPage() {
             Book a practical consultation to map your current process and define the fastest rollout path.
           </p>
           <Link
-            href="/bookme"
+            href={`/${locale}/bookme`}
             className="inline-block rounded-full bg-brand-primary py-3 px-6 font-semibold text-white transition-colors hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
           >
             Book a free consultation

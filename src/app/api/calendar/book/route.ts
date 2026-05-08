@@ -153,7 +153,7 @@ export async function POST(req: Request) {
       title: eventTitle,
       description: `訪客: ${visitorName}\n電子郵件: ${visitorEmail}\n留言: ${message || '無留言'}`,
       location: 'InnovateXP Limited Office / Online Meeting',
-      url: 'https://www.innovatexp.com/bookme',
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co"}/zh-hk/bookme`,
       organizer: {
         name: 'InnovateXP Limited',
         email: process.env.SENDER_EMAIL || 'noreply@innovatexp.com',

@@ -2,18 +2,24 @@
 /* F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path. */
 import { usePathname } from "next/navigation";
 import { useLanguage } from '../LanguageContext';
+import { getLocaleFromPathname, stripLocaleFromPathname } from "@/lib/i18n-routing";
 
 function buildBreadcrumbJsonLd(
   pathname: string,
   baseUrl: string,
   language: "en" | "zh"
 ) {
-  const normalized = (pathname || "/").split("?")[0]?.replace(/\/$/, "") || "/";
-  if (normalized === "/") return null;
+  const clean = ((pathname || "/").split("?")[0] || "/").replace(/\/$/, "") || "/";
+  const lower = clean.toLowerCase();
+  const locale = getLocaleFromPathname(lower);
+  const withoutLocale = stripLocaleFromPathname(lower);
+  if (withoutLocale === "/") return null;
 
-  const segments = normalized.slice(1).split("/").filter(Boolean);
+  const segments = withoutLocale.slice(1).split("/").filter(Boolean);
   const homeLabel = language === "en" ? "Home" : "首頁";
-  const items: { name: string; item: string }[] = [{ name: homeLabel, item: baseUrl }];
+  const items: { name: string; item: string }[] = [
+    { name: homeLabel, item: `${baseUrl}/${locale}` },
+  ];
 
   const labels: Record<string, { en: string; zh: string }> = {
     bookme: { en: "Book a visit", zh: "預約洽詢" },
@@ -39,7 +45,7 @@ function buildBreadcrumbJsonLd(
     } else {
       name = seg.replace(/-/g, " ");
     }
-    items.push({ name, item: `${baseUrl}${acc}` });
+    items.push({ name, item: `${baseUrl}/${locale}${acc}` });
   }
 
   return {
@@ -68,20 +74,21 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
   const { language } = useLanguage();
   const pathname = usePathname();
   const baseUrl = "https://www.innovatexp.co";
-  const normalizedPath = (pathname?.toLowerCase() || "/").replace(/\/$/, "") || "/";
+  const lower = ((pathname || "/").split("?")[0] || "/").toLowerCase();
+  const pathWithoutLocale = stripLocaleFromPathname(lower);
 
   const resolvedScope: StructuredDataScope =
     type !== "auto"
       ? type
-      : normalizedPath === "/" || normalizedPath === ""
+      : pathWithoutLocale === "/"
       ? "home"
-      : normalizedPath.startsWith("/smartsales-crm")
+      : pathWithoutLocale.startsWith("/smartsales-crm")
       ? "smartsales"
-      : normalizedPath.startsWith("/eventxp")
+      : pathWithoutLocale.startsWith("/eventxp")
       ? "eventxp"
-      : normalizedPath.startsWith("/ai-consulting")
+      : pathWithoutLocale.startsWith("/ai-consulting")
       ? "ai-consulting"
-      : normalizedPath.startsWith("/ai-seo-update-package")
+      : pathWithoutLocale.startsWith("/ai-seo-update-package")
       ? "ai-seo-package"
       : "minimal";
 

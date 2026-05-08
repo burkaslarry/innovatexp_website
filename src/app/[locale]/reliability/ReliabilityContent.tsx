@@ -2,7 +2,8 @@
 
 /* F14: Reliability (client) - Bilingual copy, comparison table, and CTAs for /reliability. */
 import Link from "next/link";
-import { useLanguage } from "../LanguageContext";
+import { useLanguage } from "../../LanguageContext";
+import { useLocalizedHref } from "@/hooks/useLocalizedHref";
 
 const content = {
   en: {
@@ -103,6 +104,7 @@ const content = {
 
 export function ReliabilityContent() {
   const { language } = useLanguage();
+  const loc = useLocalizedHref();
   const copy = content[language];
 
   return (
@@ -153,7 +155,7 @@ export function ReliabilityContent() {
             <h2 className="text-xl font-bold text-brand-primary dark:text-teal-300">{item.title}</h2>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{item.body}</p>
             <a
-              href={item.href}
+              href={item.download ? item.href : loc(item.href)}
               download={item.download ? "" : undefined}
               className="mt-5 inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-5 py-2 text-sm font-bold text-white transition hover:bg-brand-primary-hover dark:bg-teal-400 dark:text-slate-950"
             >
@@ -167,7 +169,7 @@ export function ReliabilityContent() {
         <h2 className="text-2xl font-bold">{copy.ctaTitle}</h2>
         <p className="mt-3 text-slate-700 dark:text-slate-300">{copy.ctaBody}</p>
         <Link
-          href="/bookme"
+          href={loc("/bookme")}
           className="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-full bg-[#25D366] px-6 py-3 text-sm font-bold text-slate-950 transition hover:bg-[#1ebe5d]"
         >
           {copy.cta}

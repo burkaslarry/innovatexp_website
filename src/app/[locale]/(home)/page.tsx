@@ -17,8 +17,9 @@ import {
   ScanSearch,
   Target,
 } from 'lucide-react';
-import { useLanguage } from '../LanguageContext';
-import Header from '../components/Header';
+import { useLanguage } from '../../LanguageContext';
+import Header from '../../components/Header';
+import { useLocalizedHref } from '@/hooks/useLocalizedHref';
 import { Hero } from '@/components/Hero';
 import { PriceCard } from '@/components/PriceCard';
 import { PremiumPriceCard } from '@/components/PremiumPriceCard';
@@ -33,6 +34,7 @@ import { ImageCarouselModal } from '@/components/ImageCarouselModal';
 
 function LandingPage() {
   const { t, language } = useLanguage();
+  const loc = useLocalizedHref();
   const [smartSalesCarouselOpen, setSmartSalesCarouselOpen] = useState(false);
   const [smartSalesCarouselIndex, setSmartSalesCarouselIndex] = useState(0);
 
@@ -63,17 +65,20 @@ function LandingPage() {
     }
   };
 
-  const navItems = [
-    { label: t('nav.eventxp'), href: '#eventxp' },
-    { label: t('nav.smartsales'), href: '#smartsales' },
-    { label: t('nav.ai_consulting'), href: '#ai-consulting' },
-    { label: t('nav.reliability'), href: '/reliability' },
-    { label: t('nav.ai_seo_package'), href: '/ai-seo-update-package' },
-    { label: t('nav.pitch_decks'), href: '/pitch-decks' },
-    { label: t('nav.pricing'), href: '#pricing' },
-    { label: t('nav.about'), href: '#about-us' },
-    { label: t('nav.contact'), href: '/bookme#quotation-wizard' },
-  ];
+  const navItems = useMemo(
+    () => [
+      { label: t('nav.eventxp'), href: '#eventxp' },
+      { label: t('nav.smartsales'), href: '#smartsales' },
+      { label: t('nav.ai_consulting'), href: '#ai-consulting' },
+      { label: t('nav.reliability'), href: loc('/reliability') },
+      { label: t('nav.ai_seo_package'), href: loc('/ai-seo-update-package') },
+      { label: t('nav.pitch_decks'), href: loc('/pitch-decks') },
+      { label: t('nav.pricing'), href: '#pricing' },
+      { label: t('nav.about'), href: '#about-us' },
+      { label: t('nav.contact'), href: loc('/bookme#quotation-wizard') },
+    ],
+    [t, loc]
+  );
 
   const openSmartSalesCarouselAt = (index: number) => {
     setSmartSalesCarouselIndex(index);
@@ -115,7 +120,7 @@ function LandingPage() {
         title={t('hero.title')}
         tagline={t('hero.tagline')}
         description={t('hero.description')}
-        primaryHref="/bookme"
+        primaryHref={loc("/bookme")}
         primaryLabel={t('hero.book_meeting')}
         onPrimaryClick={undefined}
         secondaryHref="#case-studies"
@@ -142,7 +147,7 @@ function LandingPage() {
             ? '可靠 AI，不賭命：核心流程可預測、可監察、可回滾；AI 只做分類、建議同草稿。'
             : 'Reliable AI, not autopilot hype: core workflows stay predictable, observable, and reversible; AI classifies, suggests, and drafts.'}
           {' '}
-          <a href="/reliability" className="font-bold text-brand-primary underline underline-offset-4 dark:text-teal-300">
+          <a href={loc("/reliability")} className="font-bold text-brand-primary underline underline-offset-4 dark:text-teal-300">
             {language === 'zh' ? '睇我哋點樣做可靠 AI' : 'See our reliability approach'}
           </a>
         </p>
@@ -155,21 +160,21 @@ function LandingPage() {
         id="product-pillars"
         items={[
           {
-            href: '/bookme',
+            href: loc('/bookme'),
             title: t('product.entry.eventxp.title'),
             blurb: t('product.entry.eventxp.blurb'),
             cta: t('product.entry.eventxp.cta'),
             icon: 'event',
           },
           {
-            href: '/bookme',
+            href: loc('/bookme'),
             title: t('product.entry.smartsales.title'),
             blurb: t('product.entry.smartsales.blurb'),
             cta: t('product.entry.smartsales.cta'),
             icon: 'crm',
           },
           {
-            href: '/bookme',
+            href: loc('/bookme'),
             title: t('product.entry.ai.title'),
             blurb: t('product.entry.ai.blurb'),
             cta: t('product.entry.ai.cta'),
@@ -264,7 +269,7 @@ function LandingPage() {
             </ul>
             <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
               <a
-                href="/bookme"
+                href={loc("/bookme")}
                 className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
               >
                 {t('services.ai_crm.cta')}
@@ -291,7 +296,7 @@ function LandingPage() {
             </ul>
             <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
               <a
-                href="/bookme"
+                href={loc("/bookme")}
                 className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
               >
                 {t('services.checkin.cta')}
@@ -318,7 +323,7 @@ function LandingPage() {
             </ul>
             <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
               <a
-                href="/bookme#quotation-wizard"
+                href={loc("/bookme#quotation-wizard")}
                 className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
               >
                 {t('services.courses.cta')}
@@ -377,7 +382,7 @@ function LandingPage() {
             />
             <div className="mt-4 text-center">
               <a
-                href="/bookme"
+                href={loc("/bookme")}
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
               >
                 {language === 'zh' ? '預約 15 分鐘 Demo' : 'Book a 15-min demo'}
@@ -536,7 +541,7 @@ function LandingPage() {
                 t('pricing.insight.tier1.feature3'),
                 t('pricing.insight.tier1.feature4'),
               ]}
-              ctaHref="/bookme"
+              ctaHref={loc("/bookme")}
               ctaLabel={t('pricing.cta')}
             />
             <PremiumPriceCard
@@ -553,7 +558,7 @@ function LandingPage() {
                 t('pricing.insight.tier2.feature4'),
               ]}
               callout={t('pricing.insight.tier2.note')}
-              ctaHref="/bookme"
+              ctaHref={loc("/bookme")}
               ctaLabel={t('pricing.cta')}
             />
             <PriceCard
@@ -569,14 +574,14 @@ function LandingPage() {
                 t('pricing.insight.tier3.feature3'),
                 t('pricing.insight.tier3.feature4'),
               ]}
-              ctaHref="/bookme"
+              ctaHref={loc("/bookme")}
               ctaLabel={t('pricing.cta')}
             />
           </div>
           <p className="mt-4 text-center text-sm text-slate-600 dark:text-slate-400">
             {t('pricing.insight.setup')}
             <a
-              href="/bookme"
+              href={loc("/bookme")}
               className="font-semibold text-brand-primary underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary-hover dark:text-teal-300"
             >
               {t('pricing.insight.setup_cta')}
@@ -687,7 +692,7 @@ function LandingPage() {
             </div>
             <div className="text-center">
               <a
-                href="/bookme"
+                href={loc("/bookme")}
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
               >
                 {language === 'zh' ? '預約 SmartSales Demo' : 'Book SmartSales demo'}
@@ -723,7 +728,7 @@ function LandingPage() {
                 t('pricing.crm.tier1.feature2'),
                 t('pricing.crm.tier1.feature3'),
               ]}
-              ctaHref="/bookme"
+              ctaHref={loc("/bookme")}
               ctaLabel={t('pricing.cta')}
             />
             <PremiumPriceCard
@@ -737,7 +742,7 @@ function LandingPage() {
                 t('pricing.crm.tier2.feature2'),
                 t('pricing.crm.tier2.feature3'),
               ]}
-              ctaHref="/bookme"
+              ctaHref={loc("/bookme")}
               ctaLabel={t('pricing.cta')}
             />
             <PriceCard
@@ -752,7 +757,7 @@ function LandingPage() {
                 t('pricing.crm.tier3.feature3'),
                 t('pricing.crm.tier3.feature4'),
               ]}
-              ctaHref="/bookme"
+              ctaHref={loc("/bookme")}
               ctaLabel={t('pricing.contact')}
             />
           </div>
@@ -839,7 +844,7 @@ function LandingPage() {
                 t('ai_consulting.package1.feature2'),
                 t('ai_consulting.package1.feature3'),
               ]}
-              ctaHref="/bookme"
+              ctaHref={loc("/bookme")}
               ctaLabel={t('pricing.cta')}
             />
             <AIConsultingPackageCard
@@ -852,7 +857,7 @@ function LandingPage() {
                 t('ai_consulting.package2.feature2'),
                 t('ai_consulting.package2.feature3'),
               ]}
-              ctaHref="/bookme"
+              ctaHref={loc("/bookme")}
               ctaLabel={t('pricing.cta')}
             />
             <AIConsultingPackageCard
@@ -865,7 +870,7 @@ function LandingPage() {
                 t('ai_consulting.package3.feature2'),
                 t('ai_consulting.package3.feature3'),
               ]}
-              ctaHref="/bookme"
+              ctaHref={loc("/bookme")}
               ctaLabel={t('pricing.cta')}
             />
           </div>
@@ -1144,7 +1149,7 @@ function LandingPage() {
               {t('ai_seo_cta.description')}
             </p>
             <a
-              href="/ai-seo-update-package"
+              href={loc("/ai-seo-update-package")}
               className="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-8 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
             >
               {t('ai_seo_cta.button')}
@@ -1347,7 +1352,7 @@ function LandingPage() {
       >
         <div className="mx-auto max-w-4xl px-6 py-4">
           <a
-            href="/bookme"
+            href={loc("/bookme")}
             className="flex min-h-[54px] w-full items-center justify-center gap-2 rounded-xl border-2 border-gray-300 bg-white text-lg font-bold text-gray-900 no-underline shadow-lg transition hover:bg-gray-50 active:scale-[0.98] dark:border-transparent dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white"
           >
             <CalendarClock className="h-6 w-6 shrink-0 text-gray-900 dark:!text-white" strokeWidth={2} aria-hidden />
@@ -1359,7 +1364,7 @@ function LandingPage() {
         <div className="container mx-auto px-4">
           <div className="mb-10">
             <a
-              href="/bookme"
+              href={loc("/bookme")}
               className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-8 py-3 text-base font-bold text-white no-underline shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white"
             >
               {t('hero.book_meeting')}
@@ -1382,7 +1387,7 @@ function LandingPage() {
 
       <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-1.5 border-t border-gray-200 bg-white/95 px-2 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.08)] backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95 sm:gap-2 sm:p-3 sm:pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
         <a
-          href="/bookme"
+          href={loc("/bookme")}
           className="flex min-h-[48px] min-w-0 flex-[1.15] touch-manipulation items-center justify-center rounded-full bg-brand-primary px-2 text-center text-xs font-bold leading-tight text-white no-underline shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:!text-white dark:hover:bg-[#009e98] dark:hover:!text-white sm:px-3 sm:text-sm max-[400px]:flex-1"
         >
           {t('hero.book_meeting')}

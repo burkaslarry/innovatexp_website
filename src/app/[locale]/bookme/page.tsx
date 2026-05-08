@@ -2,8 +2,8 @@
 'use client';
 
 import { useState } from 'react';
-import { useLanguage } from '../LanguageContext';
-import Header from '../components/Header';
+import { useLanguage } from '../../LanguageContext';
+import Header from '../../components/Header';
 import QuotationWizard from '@/components/QuotationWizard';
 
 export default function BookVisitPage() {

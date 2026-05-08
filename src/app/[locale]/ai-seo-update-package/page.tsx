@@ -1,11 +1,22 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { isValidLocale } from "@/lib/i18n-routing";
+import { localeAlternates } from "@/lib/alternate-metadata";
 
-export const metadata: Metadata = {
-  title: "AI SEO 更新套餐 | InnovateXP",
-  description:
-    "AI SEO 更新套餐：Starter HKD 2,000（3次改動、1星期、1次follow-up）及 Growth HKD 6,000（10次改動、1個月、2次follow-up）。",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isValidLocale(locale)) return {};
+  return {
+    title: "AI SEO 更新套餐 | InnovateXP",
+    description:
+      "AI SEO 更新套餐：Starter HKD 2,000（3次改動、1星期、1次follow-up）及 Growth HKD 6,000（10次改動、1個月、2次follow-up）。",
+    alternates: localeAlternates(locale, "/ai-seo-update-package"),
+  };
+}
 
 const plans = [
   {
@@ -24,7 +35,13 @@ const plans = [
   },
 ];
 
-export default function AiSeoUpdatePackagePage() {
+export default async function AiSeoUpdatePackagePage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+
   return (
     <main className="mx-auto min-h-screen max-w-5xl px-6 py-12 text-slate-900 dark:text-slate-100">
       <section className="mb-8 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
@@ -70,7 +87,7 @@ export default function AiSeoUpdatePackagePage() {
         </p>
         <div className="mt-6">
           <Link
-            href="/bookme#quotation-wizard"
+            href={`/${locale}/bookme#quotation-wizard`}
             className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-primary-hover dark:bg-teal-400 dark:text-slate-950"
           >
             預約 AI SEO 更新套餐

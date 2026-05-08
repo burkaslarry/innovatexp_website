@@ -1,6 +1,16 @@
+"use client";
+
 import Link from "next/link";
+import { useParams } from "next/navigation";
+import { DEFAULT_LOCALE, isValidLocale, withLocale, type AppLocale } from "@/lib/i18n-routing";
 
 export default function NotFound() {
+  const params = useParams();
+  const raw = params?.locale;
+  const locale: AppLocale =
+    typeof raw === "string" && isValidLocale(raw) ? raw : DEFAULT_LOCALE;
+  const h = (path: string) => withLocale(locale, path);
+
   return (
     <main className="min-h-screen bg-[#fffcf7] dark:bg-gray-900 flex flex-col items-center justify-center px-4">
       <div className="max-w-lg w-full text-center">
@@ -11,31 +21,31 @@ export default function NotFound() {
         </p>
         <nav className="flex flex-wrap gap-4 justify-center">
           <Link
-            href="/"
+            href={h("/")}
             className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 font-bold text-white transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
           >
             Home
           </Link>
           <Link
-            href="/bookme#quotation-wizard"
+            href={h("/bookme#quotation-wizard")}
             className="inline-flex min-h-[44px] items-center justify-center rounded-full border-2 border-gray-300 bg-white px-6 font-bold text-gray-900 transition duration-300 hover:border-brand-primary dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-[#00B9B3]"
           >
             Contact us
           </Link>
           <Link
-            href="/bookme"
+            href={h("/bookme")}
             className="inline-flex min-h-[44px] items-center justify-center rounded-full border-2 border-gray-300 bg-white px-6 font-bold text-gray-900 transition duration-300 hover:border-brand-primary dark:border-gray-600 dark:bg-gray-800 dark:text-white dark:hover:border-[#00B9B3]"
           >
             Book a call
           </Link>
           <Link
-            href="/ai-consulting"
+            href={h("/ai-consulting")}
             className="inline-flex min-h-[44px] items-center justify-center px-6 font-semibold text-brand-primary hover:underline dark:text-teal-300"
           >
             AI Consulting
           </Link>
           <Link
-            href="/blog"
+            href={h("/blog")}
             className="inline-flex min-h-[44px] items-center justify-center px-6 font-semibold text-brand-primary hover:underline dark:text-teal-300"
           >
             Blog
@@ -43,7 +53,10 @@ export default function NotFound() {
         </nav>
         <p className="mt-8 text-sm text-gray-400 dark:text-gray-500">
           If you followed a broken link, you can{" "}
-          <a href="mailto:info@innovatexp.co?subject=Broken%20link%20report" className="text-brand-primary hover:underline dark:text-teal-300">
+          <a
+            href="mailto:info@innovatexp.co?subject=Broken%20link%20report"
+            className="text-brand-primary hover:underline dark:text-teal-300"
+          >
             report it to us
           </a>
           .

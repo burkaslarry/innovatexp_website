@@ -1,17 +1,33 @@
 /* F13: Reliability (server) - Metadata and Article JSON-LD for the reliability manifesto route. */
 import type { Metadata } from "next";
 import { ReliabilityContent } from "./ReliabilityContent";
+import { isValidLocale } from "@/lib/i18n-routing";
+import { localeAlternates } from "@/lib/alternate-metadata";
 
 const siteUrl = process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
-export const metadata: Metadata = {
-  title: "Why InnovateXP doesn't build AI autopilot hype | Reliable AI workflows",
-  description:
-    "InnovateXP builds deterministic AI-augmented workflows for Hong Kong SMEs: cloud platform support, on-premise options, human checkpoints, and practical AI training.",
-};
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}): Promise<Metadata> {
+  const { locale } = await params;
+  if (!isValidLocale(locale)) return {};
+  return {
+    title: "Why InnovateXP doesn't build AI autopilot hype | Reliable AI workflows",
+    description:
+      "InnovateXP builds deterministic AI-augmented workflows for Hong Kong SMEs: cloud platform support, on-premise options, human checkpoints, and practical AI training.",
+    alternates: localeAlternates(locale, "/reliability"),
+  };
+}
 
-export default function ReliabilityPage() {
-  const pageUrl = `${siteUrl}/reliability`;
+export default async function ReliabilityPage({
+  params,
+}: {
+  params: Promise<{ locale: string }>;
+}) {
+  const { locale } = await params;
+  const pageUrl = `${siteUrl}/${locale}/reliability`;
   const articleSchema = {
     "@context": "https://schema.org",
     "@type": "Article",

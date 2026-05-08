@@ -1749,20 +1749,15 @@ export const translations = {
 
 interface LanguageProviderProps {
   children: ReactNode;
+  initialLang: Language;
 }
 
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children }) => {
-  const [language, setLanguageState] = useState<Language>('zh');
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, initialLang }) => {
+  const [language, setLanguageState] = useState<Language>(initialLang);
 
   useEffect(() => {
-    // Load language from localStorage on mount
-    if (typeof window !== 'undefined') {
-      const savedLanguage = localStorage.getItem('language') as Language;
-      if (savedLanguage && (savedLanguage === 'en' || savedLanguage === 'zh')) {
-        setLanguageState(savedLanguage);
-      }
-    }
-  }, []);
+    setLanguageState(initialLang);
+  }, [initialLang]);
 
   const setLanguage = (lang: Language) => {
     setLanguageState(lang);

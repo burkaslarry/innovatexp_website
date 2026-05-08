@@ -1,6 +1,8 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
+import { LOCALES, isValidLocale } from "@/lib/i18n-routing";
+import { localeAlternates } from "@/lib/alternate-metadata";
 
 const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
@@ -31,37 +33,42 @@ const posts: Record<
 };
 
 const relatedServices = [
-  { name: "AI Consulting", href: "/ai-consulting" },
-  { name: "EventXP", href: "/eventxp" },
-  { name: "SmartSales CRM", href: "/smartsales-crm" },
-  { name: "Book a call", href: "/bookme" },
+  { name: "AI Consulting", path: "/ai-consulting" },
+  { name: "EventXP", path: "/eventxp" },
+  { name: "SmartSales CRM", path: "/smartsales-crm" },
+  { name: "Book a call", path: "/bookme" },
 ];
 
-type Props = { params: Promise<{ slug: string }> };
+type Props = { params: Promise<{ locale: string; slug: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { slug } = await params;
+  const { slug, locale } = await params;
   const post = posts[slug];
-  if (!post) return { title: "Blog | InnovateXP" };
+  if (!post || !isValidLocale(locale)) return { title: "Blog | InnovateXP" };
+  const pathSuffix = `/blog/${slug}`;
+  const alternates = localeAlternates(locale, pathSuffix);
+  const ogUrl =
+    typeof alternates?.canonical === "string" ? alternates.canonical : `${siteUrlMeta}/${locale}${pathSuffix}`;
   return {
     title: `${post.title} | Blog | InnovateXP`,
     description: post.excerpt,
-    alternates: { canonical: `${siteUrlMeta}/blog/${slug}` },
+    alternates,
     openGraph: {
       title: `${post.title} | Blog | InnovateXP`,
       description: post.excerpt,
-      url: `${siteUrlMeta}/blog/${slug}`,
+      url: ogUrl,
       siteName: "InnovateXP Limited",
     },
   };
 }
 
 export default async function BlogPostPage({ params }: Props) {
-  const { slug } = await params;
+  const { slug, locale } = await params;
+  if (!isValidLocale(locale)) notFound();
   const post = posts[slug];
   if (!post) notFound();
 
-  const postUrl = `${siteUrlMeta}/blog/${slug}`;
+  const postUrl = `${siteUrlMeta}/${locale}/blog/${slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
@@ -102,9 +109,9 @@ export default async function BlogPostPage({ params }: Props) {
       />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <nav className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href="/" className="hover:text-brand-primary dark:hover:text-teal-300">Home</Link>
+          <Link href={`/${locale}`} className="hover:text-brand-primary dark:hover:text-teal-300">Home</Link>
           <span className="mx-2">/</span>
-          <Link href="/blog" className="hover:text-brand-primary dark:hover:text-teal-300">Blog</Link>
+          <Link href={`/${locale}/blog`} className="hover:text-brand-primary dark:hover:text-teal-300">Blog</Link>
           <span className="mx-2">/</span>
           <span className="text-gray-700 dark:text-gray-300">{post.title}</span>
         </nav>
@@ -122,7 +129,7 @@ export default async function BlogPostPage({ params }: Props) {
             </div>
             <p className="mt-8">
               <Link
-                href="/blog"
+                href={`/${locale}/blog`}
                 className="font-medium text-brand-primary hover:underline dark:text-teal-300"
               >
                 ← Back to blog
@@ -137,9 +144,9 @@ export default async function BlogPostPage({ params }: Props) {
               </h2>
               <ul className="space-y-3">
                 {relatedServices.map((s) => (
-                  <li key={s.href}>
+                  <li key={s.path}>
                     <Link
-                      href={s.href}
+                      href={`/${locale}${s.path}`}
                       className="font-medium text-brand-primary hover:underline dark:text-teal-300"
                     >
                       {s.name}
@@ -148,7 +155,7 @@ export default async function BlogPostPage({ params }: Props) {
                 ))}
               </ul>
               <Link
-                href="/bookme"
+                href={`/${locale}/bookme`}
                 className="mt-4 flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
               >
                 Book a call
@@ -162,5 +169,5 @@ export default async function BlogPostPage({ params }: Props) {
 }
 
 export function generateStaticParams() {
-  return Object.keys(posts).map((slug) => ({ slug }));
+  return LOCALES.flatMap((locale) => Object.keys(posts).map((slug) => ({ locale, slug })));
 }

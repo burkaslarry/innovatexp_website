@@ -6,6 +6,7 @@ import { useRouter } from 'next/navigation';
 import ThemeToggle from '../ThemeToggle';
 import LanguageSwitcher from '../LanguageSwitcher';
 import type { HeaderProps } from './Header';
+import { useLocalizedHref } from '@/hooks/useLocalizedHref';
 
 const LOGO_ALT = 'InnovateXP Limited - AI CRM and Event Management Solutions Hong Kong';
 
@@ -13,6 +14,7 @@ const HEADER_SCROLL_OFFSET = 180;
 
 export default function HeaderClient({ variant, title, subtitle, navItems = [] }: HeaderProps) {
   const router = useRouter();
+  const loc = useLocalizedHref();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const isMain = variant === 'main';
@@ -58,7 +60,7 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
         <div className="flex min-w-0 flex-1 items-center gap-3">
           {variant === 'booking' && (
             <button
-              onClick={() => router.push('/')}
+              onClick={() => router.push(loc('/'))}
               className="flex items-center justify-center w-10 h-10 rounded-full bg-gray-200 dark:bg-slate-700 hover:bg-gray-300 dark:hover:bg-slate-600 transition-colors active:scale-95 shrink-0"
               aria-label="Back to home"
             >
