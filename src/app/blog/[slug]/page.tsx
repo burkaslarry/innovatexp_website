@@ -61,21 +61,44 @@ export default async function BlogPostPage({ params }: Props) {
   const post = posts[slug];
   if (!post) notFound();
 
+  const postUrl = `${siteUrlMeta}/blog/${slug}`;
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "Article",
+    "@id": `${postUrl}#article`,
     headline: post.title,
     description: post.excerpt,
     datePublished: post.date,
-    publisher: { "@type": "Organization", name: "InnovateXP Limited", url: siteUrlMeta },
-    url: `${siteUrlMeta}/blog/${slug}`,
+    dateModified: post.date,
+    inLanguage: "en",
+    author: {
+      "@type": "Person",
+      name: "Larry Lo",
+      url: "https://www.linkedin.com/in/larry-lo-804a50165/",
+    },
+    publisher: {
+      "@type": "Organization",
+      name: "InnovateXP Limited",
+      url: siteUrlMeta,
+      logo: {
+        "@type": "ImageObject",
+        url: `${siteUrlMeta}/innovatexp_color_no_bg.svg`,
+      },
+    },
+    mainEntityOfPage: {
+      "@type": "WebPage",
+      "@id": postUrl,
+      url: postUrl,
+    },
+    image: [`${siteUrlMeta}/innovatexp_color_no_bg.svg`],
+    url: postUrl,
   };
 
   return (
     <main className="min-h-screen bg-[#fffcf7] dark:bg-gray-900">
       <script
         type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <nav className="mb-8 text-sm text-gray-500 dark:text-gray-400">

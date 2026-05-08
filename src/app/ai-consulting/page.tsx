@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ChineseOverlay from "../components/ChineseOverlay";
-import {
-  getAIConsultingServiceSchema,
-  getFAQPageSchema,
-  getOrganizationSchema,
-} from "@/lib/schema";
+import { getFAQPageSchema } from "@/lib/schema";
 
 const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
@@ -59,8 +55,6 @@ export default function AiConsultingPage() {
   ];
 
   const jsonLd = [
-    getOrganizationSchema(),
-    getAIConsultingServiceSchema(),
     getFAQPageSchema({ url: `${siteUrl}/ai-consulting`, questions: faqQuestions }),
   ];
 

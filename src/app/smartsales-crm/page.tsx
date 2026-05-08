@@ -1,11 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import ChineseOverlay from "../components/ChineseOverlay";
-import {
-  getFAQPageSchema,
-  getOrganizationSchema,
-  getSmartSalesProductSchema,
-} from "@/lib/schema";
+import { getFAQPageSchema, getSmartSalesProductSchema } from "@/lib/schema";
 
 const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
@@ -59,7 +55,6 @@ export default function SmartSalesCrmPage() {
   ];
 
   const jsonLd = [
-    getOrganizationSchema(),
     getSmartSalesProductSchema(),
     getFAQPageSchema({ url: `${siteUrl}/smartsales-crm`, questions: faqQuestions }),
   ];

@@ -3,18 +3,77 @@
 import { usePathname } from "next/navigation";
 import { useLanguage } from '../LanguageContext';
 
-type StructuredDataScope = "auto" | "home" | "smartsales" | "eventxp" | "ai-consulting" | "ai-seo-package";
+function buildBreadcrumbJsonLd(
+  pathname: string,
+  baseUrl: string,
+  language: "en" | "zh"
+) {
+  const normalized = (pathname || "/").split("?")[0]?.replace(/\/$/, "") || "/";
+  if (normalized === "/") return null;
+
+  const segments = normalized.slice(1).split("/").filter(Boolean);
+  const homeLabel = language === "en" ? "Home" : "首頁";
+  const items: { name: string; item: string }[] = [{ name: homeLabel, item: baseUrl }];
+
+  const labels: Record<string, { en: string; zh: string }> = {
+    bookme: { en: "Book a visit", zh: "預約洽詢" },
+    blog: { en: "Blog", zh: "網誌" },
+    "pitch-decks": { en: "Pitch decks", zh: "簡報下載" },
+    reliability: { en: "Reliability manifesto", zh: "可靠 AI 立場" },
+    "smartsales-crm": { en: "SmartSales CRM", zh: "SmartSales CRM" },
+    eventxp: { en: "EventXP", zh: "EventXP" },
+    "ai-consulting": { en: "AI Consulting", zh: "AI 顧問服務" },
+    "ai-seo-update-package": { en: "AI SEO update package", zh: "AI SEO 更新套餐" },
+  };
+
+  let acc = "";
+  for (let i = 0; i < segments.length; i++) {
+    acc += `/${segments[i]}`;
+    const seg = segments[i];
+    const known = labels[seg];
+    let name: string;
+    if (known) {
+      name = language === "en" ? known.en : known.zh;
+    } else if (segments[0] === "blog") {
+      name = language === "en" ? "Article" : "文章";
+    } else {
+      name = seg.replace(/-/g, " ");
+    }
+    items.push({ name, item: `${baseUrl}${acc}` });
+  }
+
+  return {
+    "@context": "https://schema.org",
+    "@type": "BreadcrumbList",
+    itemListElement: items.map((it, idx) => ({
+      "@type": "ListItem",
+      position: idx + 1,
+      name: it.name,
+      item: it.item,
+    })),
+  };
+}
+
+type StructuredDataScope =
+  | "auto"
+  | "home"
+  | "smartsales"
+  | "eventxp"
+  | "ai-consulting"
+  | "ai-seo-package"
+  /** Org + WebSite only; no product/FAQ (bookme, blog, reliability, etc.) */
+  | "minimal";
 
 export default function StructuredData({ type = "auto" }: { type?: StructuredDataScope }) {
   const { language } = useLanguage();
   const pathname = usePathname();
   const baseUrl = "https://www.innovatexp.co";
-  const normalizedPath = pathname?.toLowerCase() || "/";
+  const normalizedPath = (pathname?.toLowerCase() || "/").replace(/\/$/, "") || "/";
 
   const resolvedScope: StructuredDataScope =
     type !== "auto"
       ? type
-      : normalizedPath === "/"
+      : normalizedPath === "/" || normalizedPath === ""
       ? "home"
       : normalizedPath.startsWith("/smartsales-crm")
       ? "smartsales"
@@ -24,7 +83,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       ? "ai-consulting"
       : normalizedPath.startsWith("/ai-seo-update-package")
       ? "ai-seo-package"
-      : "home";
+      : "minimal";
 
   const organizationSchema = {
     "@context": "https://schema.org",
@@ -419,6 +478,14 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
               "@type": "Answer",
               "text": "Guests receive a unique QR code by email or WhatsApp. Staff scan codes on-site, attendance is recorded in real time, and EventXP can trigger post-event follow-up workflows based on participation signals."
             }
+          },
+          {
+            "@type": "Question",
+            "name": "Where can InnovateXP deploy AI-assisted workflows?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+              "text": "InnovateXP supports deployment on major cloud platforms (including Azure OpenAI, Alibaba Cloud, GCP, and AWS) and self-hosted or on-premise environments when your risk or compliance posture requires it, with practical AI training for your team."
+            }
           }
         ]
       : [
@@ -437,57 +504,13 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
               "@type": "Answer",
               "text": "賓客透過電郵或 WhatsApp 收到獨特 QR 碼，工作人員現場掃描後系統即時記錄出席，並可根據活動行為訊號自動觸發後續跟進流程。"
             }
-          }
-        ]
-  };
-
-  const smartSalesFaqPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": language === "en"
-      ? [
+          },
           {
             "@type": "Question",
-            "name": "What is AI CRM and how is it different from traditional CRM?",
+            "name": "InnovateXP 可將 AI 輔助流程部署喺邊？",
             "acceptedAnswer": {
               "@type": "Answer",
-              "text": "AI CRM combines customer records with AI-generated drafts, workflow automation, and priority scoring. Unlike traditional CRM that mainly stores data, it helps teams respond faster and reduce repetitive follow-up work."
-            }
-          }
-        ]
-      : [
-          {
-            "@type": "Question",
-            "name": "什麼是 AI CRM？它與傳統 CRM 有何不同？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "AI CRM 把客戶資料管理結合 AI 草稿、自動化流程與優先排序。相比只儲存資料的傳統 CRM，AI CRM 可協助團隊更快回覆並減少重複跟進工作。"
-            }
-          }
-        ]
-  };
-
-  const eventXpFaqPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    "mainEntity": language === "en"
-      ? [
-          {
-            "@type": "Question",
-            "name": "How does EventXP QR check-in work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Guests receive a unique QR code by email or WhatsApp. Staff scan codes on-site, attendance is recorded in real time, and EventXP can trigger post-event follow-up workflows based on participation signals."
-            }
-          }
-        ]
-      : [
-          {
-            "@type": "Question",
-            "name": "QR 碼簽到如何運作？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "賓客透過電郵或 WhatsApp 收到獨特 QR 碼，工作人員現場掃描後系統即時記錄出席，並可根據活動行為訊號自動觸發後續跟進流程。"
+              "text": "我們可配合主要 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）上架，亦可在需要時採用自家主機／On-Premise 部署以符合風險或合規要求，並提供實戰 AI training。"
             }
           }
         ]
@@ -517,25 +540,6 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
             }
           }
         ]
-  };
-
-  const breadcrumbSchema = {
-    "@context": "https://schema.org",
-    "@type": "BreadcrumbList",
-    "itemListElement": [
-      {
-        "@type": "ListItem",
-        "position": 1,
-        "name": "Home",
-        "item": baseUrl
-      },
-      {
-        "@type": "ListItem",
-        "position": 2,
-        "name": "Services",
-        "item": `${baseUrl}#services`
-      }
-    ]
   };
 
   const websiteSchema = {
@@ -593,18 +597,19 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       ? [eventXPService]
       : resolvedScope === "ai-consulting"
       ? [aiConsultingService]
-      : [aiSeoUpdateService];
+      : resolvedScope === "ai-seo-package"
+      ? [aiSeoUpdateService]
+      : [];
 
+  /** Product/detail pages expose richer FAQPage JSON-LD locally — avoid duplicate/conflicting FAQ here. */
   const scopedFaqSchemas =
     resolvedScope === "home"
       ? [homeFaqPageSchema]
-      : resolvedScope === "smartsales"
-      ? [smartSalesFaqPageSchema]
-      : resolvedScope === "eventxp"
-      ? [eventXpFaqPageSchema]
-      : resolvedScope === "ai-consulting"
-      ? [homeFaqPageSchema]
-      : [aiSeoUpdateFaqPageSchema];
+      : resolvedScope === "ai-seo-package"
+      ? [aiSeoUpdateFaqPageSchema]
+      : [];
+
+  const breadcrumbSchema = buildBreadcrumbJsonLd(pathname || "/", baseUrl, language);
 
   return (
     <>
@@ -627,10 +632,12 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
         />
       ))}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-      />
+      {breadcrumbSchema ? (
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
+        />
+      ) : null}
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
