@@ -17,7 +17,7 @@ F01: Internationalization - Central EN/ZH strings, LanguageProvider, and t() loo
 F02: Homepage marketing - Landing page sections: hero, products, pricing, FAQs, and modals.
 F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path.
 F04: Shared schema builders - Reusable Organization/Product helpers consumed by JSON-LD and tooling.
-F05: Root layout - HTML shell, fonts, theme boot script, Hotjar (after load); no locale-specific metadata.
+F05: Root layout (`app/layout.tsx`) - HTML shell, fonts, theme boot script, Hotjar. Per-locale metadata and providers live in `app/[locale]/layout.tsx`.
 F06: Bookme page - Booking/quotation entry with header, guidelines, and QuotationWizard mount.
 F07: Calendar booking API - POST handler: validates input, writes Notion, emails ICS/Web3Forms confirmations.
 F08: Quotation wizard - Self-serve quote flow, calendar integration, and lead capture UI.
