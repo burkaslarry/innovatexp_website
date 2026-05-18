@@ -21,6 +21,7 @@ import {
 import { useLanguage } from '../../LanguageContext';
 import Header from '../../components/Header';
 import { useLocalizedHref } from '@/hooks/useLocalizedHref';
+import type { AppLocale } from '@/lib/i18n-routing';
 import { Hero } from '@/components/Hero';
 import { PriceCard } from '@/components/PriceCard';
 import { PremiumPriceCard } from '@/components/PremiumPriceCard';
@@ -74,9 +75,342 @@ const LD_SERVICE_SMARTSALES = {
   ],
 };
 
+type HomePageLocaleCopy = {
+  eventxp: {
+    howIntro: string;
+    demoCta: string;
+    pilotTitle: string;
+    pilotBody: string;
+    audienceTitle: string;
+    audienceBullets: [string, string, string, string];
+  };
+  smartsales: {
+    demoCta: string;
+    audienceTitle: string;
+    audienceBullets: [string, string, string, string];
+  };
+  comparison: {
+    title: string;
+    headers: [string, string, string, string];
+    rows: Array<{ service: string; setup: string; monthly: string; fit: string }>;
+  };
+  followUp: {
+    title: string;
+    steps: [string, string, string, string];
+  };
+  trust: {
+    years: string;
+    incubation: string;
+    organizer: string;
+  };
+  cases: {
+    title: string;
+    quote1: string;
+    footer1: string;
+    quote2: string;
+    footer2: string;
+  };
+  punctuation: string;
+};
+
+const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
+  en: {
+    eventxp: {
+      howIntro: "Here's how it works in 4 simple steps:",
+      demoCta: "Book a 15-min demo",
+      pilotTitle: "EventXP Pilot Offer (Limited Time)",
+      pilotBody:
+        'For low-risk onboarding, start with Pilot: HKD 4,800 (1 event + baseline reporting + setup). Available for bookings before end-June 2026 or the first 10 pilot clients; upgrade after validation.',
+      audienceTitle: 'Who is EventXP for?',
+      audienceBullets: [
+        'Networking groups: BNI chapters, JCI, alumni groups, membership communities',
+        'Sales or training event organizers running 3+ events per quarter',
+        'Teams tired of exporting Excel after every event',
+        '200+ attendee events where manual follow-up is impossible',
+      ],
+    },
+    smartsales: {
+      demoCta: 'Book SmartSales demo',
+      audienceTitle: 'Who is SmartSales CRM for?',
+      audienceBullets: [
+        '3–15 person sales teams using WhatsApp as the primary lead channel',
+        'F&B, retail, education, consulting, and B2B service teams in Hong Kong',
+        'Teams losing leads because replies are slow or inconsistent',
+        'Owners who want SLA visibility without micromanaging every chat',
+      ],
+    },
+    comparison: {
+      title: 'Not sure where to start? Pick the shortest path',
+      headers: ['Service', 'One-time setup', 'Monthly', 'Best for'],
+      rows: [
+        { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: 'Testing one event before committing' },
+        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: 'One sales team starting to lose WhatsApp leads' },
+        { service: 'AI Readiness Audit', setup: 'From HKD $8,000', monthly: '—', fit: 'Teams unsure which AI workflow to implement first' },
+      ],
+    },
+    followUp: {
+      title: 'What happens after the free 15-min chat?',
+      steps: [
+        '1. Free 15-min diagnosis',
+        '2. Proposal and quote within 1 week',
+        '3. First version live around 2 weeks after sign-off',
+        '4. Track the first ROI signal within 30 days',
+      ],
+    },
+    trust: {
+      years: '14+ Years',
+      incubation: 'Incubation Alumni',
+      organizer: 'Former Organizer',
+    },
+    cases: {
+      title: 'Case Studies & Client Signals',
+      quote1:
+        '“Since using SmartSales, we spend around 2 fewer hours a day on WhatsApp follow-up admin, and important inquiries no longer get buried.”',
+      footer1: 'Hong Kong service SME owner (anonymous)',
+      quote2:
+        '“After an event, we no longer just have an Excel list. We can immediately see which attendees deserve priority follow-up.”',
+      footer2: 'Event organizer team (anonymous)',
+    },
+    punctuation: '.',
+  },
+  'zh-hk': {
+    eventxp: {
+      howIntro: '以下 4 步就可以由簽到去到可跟進名單：',
+      demoCta: '預約 15 分鐘 Demo',
+      pilotTitle: 'EventXP 試點方案（限時）',
+      pilotBody:
+        '如你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。2026 年 6 月底前或首 10 個客戶可優先安排試點；完成後可升級至 Starter / Growth / Enterprise。',
+      audienceTitle: 'EventXP 最啱邊類團隊？',
+      audienceBullets: [
+        'BNI chapter、JCI、校友會、會員制社群',
+        '每季 3 場以上活動嘅培訓／銷售活動主辦',
+        '活動後仍然靠 Excel 匯出同人手 follow-up',
+        '200+ 人活動，手動逐個追已經追唔切',
+      ],
+    },
+    smartsales: {
+      demoCta: '預約 SmartSales Demo',
+      audienceTitle: 'SmartSales CRM 最啱邊類團隊？',
+      audienceBullets: [
+        '3–15 人 sales team，以 WhatsApp 收 leads 為主',
+        '餐飲、門市、教育、顧問、B2B 服務等香港服務業',
+        '查詢多但無 SLA，靠記性分配同追單',
+        '老闆想見到 pipeline，而唔係逐個 WhatsApp 問同事',
+      ],
+    },
+    comparison: {
+      title: '唔知揀邊個？先睇最短路徑',
+      headers: ['服務', '一次性 setup', '月費', '最適合'],
+      rows: [
+        { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: '先試 1 場活動，睇簽到後跟進效果' },
+        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: '1 個 sales team，WhatsApp leads 開始變亂' },
+        { service: 'AI 導入評估', setup: 'HKD $8,000 起', monthly: '—', fit: '想用 AI，但未知道第一條流程做邊度' },
+      ],
+    },
+    followUp: {
+      title: '免費傾完 15 分鐘之後會點？',
+      steps: [
+        '1. 免費 15 分鐘了解需求',
+        '2. 1 週內送你方案 + 報價',
+        '3. 簽約後約 2 週上線第一版',
+        '4. 30 日內追蹤第一個 ROI 指標',
+      ],
+    },
+    trust: {
+      years: '14+ 年',
+      incubation: '孵化校友',
+      organizer: '前組織者',
+    },
+    cases: {
+      title: '成功案例與客戶回饋',
+      quote1: '「自從用咗 SmartSales，我每日少咗約 2 個鐘 WhatsApp 行政跟進，重要客查詢唔再沉底。」',
+      footer1: '香港服務業 SME 負責人（匿名）',
+      quote2: '「活動後唔再只係得 Excel 名單，可以即刻知道邊批人最值得優先跟進。」',
+      footer2: '活動主辦團隊（匿名）',
+    },
+    punctuation: '。',
+  },
+  'zh-tw': {
+    eventxp: {
+      howIntro: '以下 4 步就可以由簽到走到可跟進名單：',
+      demoCta: '預約 15 分鐘 Demo',
+      pilotTitle: 'EventXP 試點方案（限時）',
+      pilotBody:
+        '如果你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。2026 年 6 月底前或首 10 位客戶可優先安排試點；完成後可升級至 Starter / Growth / Enterprise。',
+      audienceTitle: 'EventXP 最適合哪些團隊？',
+      audienceBullets: [
+        'BNI chapter、JCI、校友會、會員制社群',
+        '每季 3 場以上活動的培訓／銷售活動主辦',
+        '活動後仍然靠 Excel 匯出與人工 follow-up',
+        '200+ 人活動，手動逐一追已經追不完',
+      ],
+    },
+    smartsales: {
+      demoCta: '預約 SmartSales Demo',
+      audienceTitle: 'SmartSales CRM 最適合哪些團隊？',
+      audienceBullets: [
+        '3–15 人 sales team，以 WhatsApp 收 leads 為主',
+        '餐飲、門市、教育、顧問、B2B 服務等香港服務業',
+        '詢問多但沒有 SLA，靠記性分配與追單',
+        '老闆想看到 pipeline，而不是逐個 WhatsApp 問同事',
+      ],
+    },
+    comparison: {
+      title: '不知道選哪個？先看最短路徑',
+      headers: ['服務', '一次性 setup', '月費', '最適合'],
+      rows: [
+        { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: '先試 1 場活動，看看簽到後跟進效果' },
+        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: '1 個 sales team，WhatsApp leads 開始變亂' },
+        { service: 'AI 導入評估', setup: 'HKD $8,000 起', monthly: '—', fit: '想用 AI，但還不知道第一條流程要從哪裡開始' },
+      ],
+    },
+    followUp: {
+      title: '免費聊完 15 分鐘之後會怎樣？',
+      steps: [
+        '1. 免費 15 分鐘了解需求',
+        '2. 1 週內送你方案 + 報價',
+        '3. 簽約後約 2 週上線第一版',
+        '4. 30 日內追蹤第一個 ROI 指標',
+      ],
+    },
+    trust: {
+      years: '14+ 年',
+      incubation: '孵化校友',
+      organizer: '前組織者',
+    },
+    cases: {
+      title: '成功案例與客戶回饋',
+      quote1: '「自從使用 SmartSales，我們每天少了約 2 小時的 WhatsApp 跟進行政，重要詢問也不再被埋沒。」',
+      footer1: '香港服務業 SME 負責人（匿名）',
+      quote2: '「活動後不再只是 Excel 名單，可以立刻知道哪一批人最值得優先跟進。」',
+      footer2: '活動主辦團隊（匿名）',
+    },
+    punctuation: '。',
+  },
+  ja: {
+    eventxp: {
+      howIntro: '以下の4ステップで、チェックインからフォロー対象リストまでつながります。',
+      demoCta: '15分デモを予約',
+      pilotTitle: 'EventXP パイロットプラン（期間限定）',
+      pilotBody:
+        '低リスクで試したい場合は Pilot を選べます：HKD 4,800（1イベント + 基本レポート + 初期設定）。2026年6月末まで、または先着10社まで優先受付。検証後に Starter / Growth / Enterprise へアップグレード可能です。',
+      audienceTitle: 'EventXP はどんなチーム向け？',
+      audienceBullets: [
+        'BNI チャプター、JCI、同窓会、会員制コミュニティ',
+        '四半期に 3 回以上イベントを行う研修／営業チーム',
+        'イベント後も Excel 出力と手作業フォローに頼っているチーム',
+        '200 名以上のイベントで、手動フォローが追いつかないチーム',
+      ],
+    },
+    smartsales: {
+      demoCta: 'SmartSales デモを予約',
+      audienceTitle: 'SmartSales CRM はどんなチーム向け？',
+      audienceBullets: [
+        'WhatsApp を主要なリード経路にする 3〜15 人の営業チーム',
+        '飲食、小売、教育、コンサル、B2B サービスの香港チーム',
+        '返信が遅い・ばらつくことでリードを失っているチーム',
+        'チャットごとの管理ではなく SLA の見える化が欲しい経営者',
+      ],
+    },
+    comparison: {
+      title: 'どれを選ぶべき？まずは最短ルートを確認',
+      headers: ['サービス', '初期費用', '月額', '最適対象'],
+      rows: [
+        { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: 'まず1件のイベントで、チェックイン後のフォロー効果を確認したい' },
+        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: '1つの営業チームで WhatsApp リード管理が乱れ始めた' },
+        { service: 'AI 導入評価', setup: 'HKD 8,000〜', monthly: '—', fit: 'どの AI ワークフローから始めるべきか分からない' },
+      ],
+    },
+    followUp: {
+      title: '無料15分の後はどうなる？',
+      steps: [
+        '1. 無料15分で要件を整理',
+        '2. 1週間以内に提案と見積もり',
+        '3. 署名後およそ2週間で初版公開',
+        '4. 30日以内に最初の ROI 指標を追跡',
+      ],
+    },
+    trust: {
+      years: '14年以上',
+      incubation: 'インキュベーション卒業',
+      organizer: '元オーガナイザー',
+    },
+    cases: {
+      title: '導入事例とお客様の声',
+      quote1:
+        '「SmartSales を導入してから、WhatsApp のフォロー業務が 1 日あたり約 2 時間減り、重要な問い合わせが埋もれなくなりました。」',
+      footer1: '香港サービス業 SME オーナー（匿名）',
+      quote2:
+        '「イベント後、Excel の一覧だけに頼らず、どの参加者を優先フォローすべきかすぐ分かるようになりました。」',
+      footer2: 'イベント主催チーム（匿名）',
+    },
+    punctuation: '。',
+  },
+  de: {
+    eventxp: {
+      howIntro: 'So funktioniert es in 4 einfachen Schritten:',
+      demoCta: '15-Minuten-Demo buchen',
+      pilotTitle: 'EventXP Pilotangebot (zeitlich begrenzt)',
+      pilotBody:
+        'Für einen risikoarmen Einstieg: Pilot für HKD 4.800 (1 Event + Basis-Reporting + Setup). Buchbar bis Ende Juni 2026 oder für die ersten 10 Pilot-Kunden; nach der Validierung Upgrade auf Starter / Growth / Enterprise.',
+      audienceTitle: 'Für wen ist EventXP gedacht?',
+      audienceBullets: [
+        'Networking-Gruppen: BNI-Chapters, JCI, Alumni-Gruppen, Mitglieder-Communities',
+        'Vertriebs- oder Schulungs-Event-Teams',
+        'Teams, die nach Events noch Excel-Exporte und manuelle Follow-ups nutzen',
+        '200+ Teilnehmer-Events, bei denen manuelles Follow-up nicht mehr reicht',
+      ],
+    },
+    smartsales: {
+      demoCta: 'SmartSales-Demo buchen',
+      audienceTitle: 'Für wen ist SmartSales CRM gedacht?',
+      audienceBullets: [
+        'Vertriebsteams mit 3–15 Personen, die WhatsApp als Hauptkanal für Leads nutzen',
+        'F&B, Retail, Bildung, Beratung und B2B-Serviceteams in Hongkong',
+        'Teams, die Leads wegen langsamer oder inkonsistenter Antworten verlieren',
+        'Geschäftsführer, die SLA-Transparenz statt Micromanagement pro Chat wollen',
+      ],
+    },
+    comparison: {
+      title: 'Nicht sicher, womit anfangen? Nimm den kürzesten Weg',
+      headers: ['Service', 'Einmalige Einrichtung', 'Monatlich', 'Am besten für'],
+      rows: [
+        { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: 'Ein Event testen, bevor du dich festlegst' },
+        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: 'Ein Vertriebsteam, dessen WhatsApp-Leads unübersichtlich werden' },
+        { service: 'KI-Bereitschaftsaudit', setup: 'Ab HKD $8,000', monthly: '—', fit: 'Du weißt noch nicht, welcher KI-Workflow zuerst dran ist' },
+      ],
+    },
+    followUp: {
+      title: 'Was passiert nach dem kostenlosen 15-Minuten-Gespräch?',
+      steps: [
+        '1. Kostenloses 15-Minuten-Diagnosegespräch',
+        '2. Angebot und Kostenvoranschlag innerhalb 1 Woche',
+        '3. Die erste Version geht etwa 2 Wochen nach Beauftragung live',
+        '4. Den ersten ROI-Indikator innerhalb von 30 Tagen verfolgen',
+      ],
+    },
+    trust: {
+      years: '14+ Jahre',
+      incubation: 'Inkubations-Alumni',
+      organizer: 'Ehem. Organisator',
+    },
+    cases: {
+      title: 'Fallstudien und Kundenstimmen',
+      quote1:
+        '„Seit wir SmartSales nutzen, verbringen wir täglich rund 2 Stunden weniger mit WhatsApp-Follow-up-Admin, und wichtige Anfragen gehen nicht mehr unter.“',
+      footer1: 'Hongkonger Service-KMU-Inhaber (anonym)',
+      quote2:
+        '„Nach einem Event haben wir nicht mehr nur eine Excel-Liste. Wir sehen sofort, welche Teilnehmenden Priorität für das Follow-up haben.“',
+      footer2: 'Event-Organisator-Team (anonym)',
+    },
+    punctuation: '.',
+  },
+};
+
 function LandingPage() {
   const { t, locale } = useLanguage();
   const loc = useLocalizedHref();
+  const copy = HOME_PAGE_COPY[locale];
   const [smartSalesCarouselOpen, setSmartSalesCarouselOpen] = useState(false);
   const [smartSalesCarouselIndex, setSmartSalesCarouselIndex] = useState(0);
 
@@ -410,7 +744,7 @@ function LandingPage() {
               
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-6">{t('eventxp.how.title')}</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
-                {locale === 'zh-hk' ? '以下 4 步就可以由簽到去到可跟進名單：' : "Here's how it works in 4 simple steps:"}
+                {copy.eventxp.howIntro}
               </p>
               <ol className="list-decimal list-inside text-lg text-gray-700 dark:text-gray-300 space-y-2 ml-4">
                 <li>{t('eventxp.how.step1')}</li>
@@ -442,7 +776,7 @@ function LandingPage() {
                 href={loc("/bookme")}
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
               >
-                {locale === 'zh-hk' ? '預約 15 分鐘 Demo' : 'Book a 15-min demo'}
+                {copy.eventxp.demoCta}
               </a>
             </div>
           </div>
@@ -525,24 +859,21 @@ function LandingPage() {
 
           <section className="mb-12 rounded-2xl border border-amber-300 bg-amber-50 p-6 dark:border-amber-500/40 dark:bg-amber-900/20">
             <h3 className="text-xl font-bold text-amber-900 dark:text-amber-200">
-              {locale === 'zh-hk' ? 'EventXP 試點方案（限時）' : 'EventXP Pilot Offer (Limited Time)'}
+              {copy.eventxp.pilotTitle}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-amber-900/90 dark:text-amber-100">
-              {locale === 'zh-hk'
-                ? '如你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。2026 年 6 月底前或首 10 個客戶可優先安排試點；完成後可升級至 Starter / Growth / Enterprise。'
-                : 'For low-risk onboarding, start with Pilot: HKD 4,800 (1 event + baseline reporting + setup). Available for bookings before end-June 2026 or the first 10 pilot clients; upgrade after validation.'}
+              {copy.eventxp.pilotBody}
             </p>
           </section>
 
           <section className="mb-12 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-800">
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              {locale === 'zh-hk' ? 'EventXP 最啱邊類團隊？' : 'Who is EventXP for?'}
+              {copy.eventxp.audienceTitle}
             </h3>
             <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300 md:grid-cols-2">
-              <li>{locale === 'zh-hk' ? 'BNI chapter、JCI、校友會、會員制社群' : 'Networking groups: BNI chapters, JCI, alumni groups, membership communities'}</li>
-              <li>{locale === 'zh-hk' ? '每季 3 場以上活動嘅培訓／銷售活動主辦' : 'Sales or training event organizers running 3+ events per quarter'}</li>
-              <li>{locale === 'zh-hk' ? '活動後仍然靠 Excel 匯出同人手 follow-up' : 'Teams tired of exporting Excel after every event'}</li>
-              <li>{locale === 'zh-hk' ? '200+ 人活動，手動逐個追已經追唔切' : '200+ attendee events where manual follow-up is impossible'}</li>
+              {copy.eventxp.audienceBullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </section>
 
@@ -643,7 +974,7 @@ function LandingPage() {
             >
               {t('pricing.insight.setup_cta')}
             </a>
-            {locale === 'zh-hk' ? '。' : '.'}
+          {copy.punctuation}
           </p>
         </div>
       </article>
@@ -760,7 +1091,7 @@ function LandingPage() {
                 href={loc("/bookme")}
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
               >
-                {locale === 'zh-hk' ? '預約 SmartSales Demo' : 'Book SmartSales demo'}
+                {copy.smartsales.demoCta}
               </a>
             </div>
           </div>
@@ -771,13 +1102,12 @@ function LandingPage() {
 
           <section className="mb-12 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-800">
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              {locale === 'zh-hk' ? 'SmartSales CRM 最啱邊類團隊？' : 'Who is SmartSales CRM for?'}
+              {copy.smartsales.audienceTitle}
             </h3>
             <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300 md:grid-cols-2">
-              <li>{locale === 'zh-hk' ? '3–15 人 sales team，以 WhatsApp 收 leads 為主' : '3–15 person sales teams using WhatsApp as the primary lead channel'}</li>
-              <li>{locale === 'zh-hk' ? '餐飲、門市、教育、顧問、B2B 服務等香港服務業' : 'F&B, retail, education, consulting, and B2B service teams in Hong Kong'}</li>
-              <li>{locale === 'zh-hk' ? '查詢多但無 SLA，靠記性分配同追單' : 'Teams losing leads because replies are slow or inconsistent'}</li>
-              <li>{locale === 'zh-hk' ? '老闆想見到 pipeline，而唔係逐個 WhatsApp 問同事' : 'Owners who want SLA visibility without micromanaging every chat'}</li>
+              {copy.smartsales.audienceBullets.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
             </ul>
           </section>
 
@@ -983,39 +1313,20 @@ function LandingPage() {
 
       <section className="mb-16 rounded-2xl border-2 border-brand-primary/20 bg-gradient-to-br from-white via-cyan-50/40 to-amber-50/50 p-8 shadow-md dark:border-teal-500/30 dark:from-gray-800 dark:via-slate-900 dark:to-slate-900">
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
-          {locale === 'zh-hk' ? '唔知揀邊個？先睇最短路徑' : 'Not sure where to start? Pick the shortest path'}
+          {copy.comparison.title}
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[720px] border-separate border-spacing-y-3 text-left text-sm">
             <thead className="text-slate-700 dark:text-slate-300">
               <tr>
-                <th className="px-4 py-2">{locale === 'zh-hk' ? '服務' : 'Service'}</th>
-                <th className="px-4 py-2">{locale === 'zh-hk' ? '一次性 setup' : 'One-time setup'}</th>
-                <th className="px-4 py-2">{locale === 'zh-hk' ? '月費' : 'Monthly'}</th>
-                <th className="px-4 py-2">{locale === 'zh-hk' ? '最適合' : 'Best for'}</th>
+                <th className="px-4 py-2">{copy.comparison.headers[0]}</th>
+                <th className="px-4 py-2">{copy.comparison.headers[1]}</th>
+                <th className="px-4 py-2">{copy.comparison.headers[2]}</th>
+                <th className="px-4 py-2">{copy.comparison.headers[3]}</th>
               </tr>
             </thead>
             <tbody>
-              {[
-                {
-                  service: 'EventXP Pilot',
-                  setup: 'HKD $4,800',
-                  monthly: '—',
-                  fit: locale === 'zh-hk' ? '先試 1 場活動，睇簽到後跟進效果' : 'Testing one event before committing',
-                },
-                {
-                  service: 'SmartSales Starter',
-                  setup: 'HKD $10,800',
-                  monthly: 'HKD $880',
-                  fit: locale === 'zh-hk' ? '1 個 sales team，WhatsApp leads 開始變亂' : 'One sales team starting to lose WhatsApp leads',
-                },
-                {
-                  service: locale === 'zh-hk' ? 'AI 導入評估' : 'AI Readiness Audit',
-                  setup: locale === 'zh-hk' ? 'HKD $8,000 起' : 'From HKD $8,000',
-                  monthly: '—',
-                  fit: locale === 'zh-hk' ? '想用 AI，但未知道第一條流程做邊度' : 'Teams unsure which AI workflow to implement first',
-                },
-              ].map((row) => (
+              {copy.comparison.rows.map((row) => (
                 <tr key={row.service} className="rounded-xl bg-white shadow-sm dark:bg-gray-800">
                   <td className="rounded-l-xl px-4 py-4 font-bold text-brand-primary dark:text-teal-300">{row.service}</td>
                   <td className="px-4 py-4 text-gray-700 dark:text-gray-300">{row.setup}</td>
@@ -1030,15 +1341,10 @@ function LandingPage() {
 
       <section className="mb-16 rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-md dark:border-slate-700 dark:bg-gray-800">
         <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
-          {locale === 'zh-hk' ? '免費傾完 15 分鐘之後會點？' : 'What happens after the free 15-min chat?'}
+          {copy.followUp.title}
         </h2>
         <div className="grid gap-4 md:grid-cols-4">
-          {[
-            locale === 'zh-hk' ? '1. 免費 15 分鐘了解需求' : '1. Free 15-min diagnosis',
-            locale === 'zh-hk' ? '2. 1 週內送你方案 + 報價' : '2. Proposal and quote within 1 week',
-            locale === 'zh-hk' ? '3. 簽約後約 2 週上線第一版' : '3. First version live around 2 weeks after sign-off',
-            locale === 'zh-hk' ? '4. 30 日內追蹤第一個 ROI 指標' : '4. Track the first ROI signal within 30 days',
-          ].map((step) => (
+          {copy.followUp.steps.map((step) => (
             <div key={step} className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold leading-relaxed text-slate-800 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200">
               {step}
             </div>
@@ -1186,7 +1492,7 @@ function LandingPage() {
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">{t('about.credentials.title')}</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
-                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">{locale === 'zh-hk' ? '14+ 年' : '14+ Years'}</p>
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">{copy.trust.years}</p>
                 <p className="text-xs text-gray-500">{t('about.credentials.experience')}</p>
               </div>
               <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
@@ -1195,11 +1501,11 @@ function LandingPage() {
               </div>
               <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">HKSTP</p>
-                <p className="text-xs text-gray-500">{locale === 'zh-hk' ? '孵化校友' : 'Incubation Alumni'}</p>
+                <p className="text-xs text-gray-500">{copy.trust.incubation}</p>
               </div>
               <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">GDG HK</p>
-                <p className="text-xs text-gray-500">{locale === 'zh-hk' ? '前組織者' : 'Former Organizer'}</p>
+                <p className="text-xs text-gray-500">{copy.trust.organizer}</p>
               </div>
             </div>
           </div>
@@ -1225,23 +1531,19 @@ function LandingPage() {
         {/* Partnership Section */}
         <section id="case-studies" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-md dark:border-slate-700 dark:bg-gray-800">
           <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
-            {locale === 'zh-hk' ? '成功案例與客戶回饋' : 'Case Studies & Client Signals'}
+            {copy.cases.title}
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <blockquote className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
-              {locale === 'zh-hk'
-                ? '「自從用咗 SmartSales，我每日少咗約 2 個鐘 WhatsApp 行政跟進，重要客查詢唔再沉底。」'
-                : '"Since using SmartSales, we spend around 2 fewer hours a day on WhatsApp follow-up admin, and important inquiries no longer get buried."'}
+              {copy.cases.quote1}
               <footer className="mt-3 font-semibold text-brand-primary dark:text-teal-300">
-                {locale === 'zh-hk' ? '香港服務業 SME 負責人（匿名）' : 'Hong Kong service SME owner (anonymous)'}
+                {copy.cases.footer1}
               </footer>
             </blockquote>
             <blockquote className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
-              {locale === 'zh-hk'
-                ? '「活動後唔再只係得 Excel 名單，可以即刻知道邊批人最值得優先跟進。」'
-                : '"After an event, we no longer just have an Excel list. We can immediately see which attendees deserve priority follow-up."'}
+              {copy.cases.quote2}
               <footer className="mt-3 font-semibold text-brand-primary dark:text-teal-300">
-                {locale === 'zh-hk' ? '活動主辦團隊（匿名）' : 'Event organizer team (anonymous)'}
+                {copy.cases.footer2}
               </footer>
             </blockquote>
           </div>
