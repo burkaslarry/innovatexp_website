@@ -1,0 +1,18 @@
+# InnovateXP — llms.txt
+# Machine-readable pointers for AI crawlers / answer engines (informal convention).
+
+Site: https://www.innovatexp.co/
+
+Primary offerings:
+- SmartSales CRM (WhatsApp-led pipeline): https://www.innovatexp.co/zh-hk/smartsales-crm
+- EventXP (event check-in & follow-up): https://www.innovatexp.co/zh-hk/eventxp
+- AI consulting: https://www.innovatexp.co/zh-hk/ai-consulting
+- Premium AI/CRM programmes: https://www.innovatexp.co/zh-hk/premium-ai-consulting
+- AI-era quality engineering (method): https://www.innovatexp.co/zh-hk/ai-era-quality
+- Reliability stance: https://www.innovatexp.co/zh-hk/reliability
+
+English home: https://www.innovatexp.co/en/
+
+Contact: info@innovatexp.co
+
+Sitemap: https://www.innovatexp.co/sitemap.xml

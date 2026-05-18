@@ -113,6 +113,8 @@ function LandingPage() {
       { label: t('nav.smartsales'), href: '#smartsales' },
       { label: t('nav.ai_consulting'), href: '#ai-consulting' },
       { label: t('nav.reliability'), href: loc('/reliability') },
+      { label: t('nav.ai_quality'), href: loc('/ai-era-quality') },
+      { label: t('nav.premium_offer'), href: loc('/premium-ai-consulting') },
       { label: t('nav.ai_seo_package'), href: loc('/ai-seo-update-package') },
       { label: t('nav.pitch_decks'), href: loc('/pitch-decks') },
       { label: t('nav.pricing'), href: '#pricing' },
@@ -212,21 +214,21 @@ function LandingPage() {
         id="product-pillars"
         items={[
           {
-            href: loc('/bookme'),
+            href: loc('/eventxp'),
             title: t('product.entry.eventxp.title'),
             blurb: t('product.entry.eventxp.blurb'),
             cta: t('product.entry.eventxp.cta'),
             icon: 'event',
           },
           {
-            href: loc('/bookme'),
+            href: loc('/smartsales-crm'),
             title: t('product.entry.smartsales.title'),
             blurb: t('product.entry.smartsales.blurb'),
             cta: t('product.entry.smartsales.cta'),
             icon: 'crm',
           },
           {
-            href: loc('/bookme'),
+            href: loc('/ai-consulting'),
             title: t('product.entry.ai.title'),
             blurb: t('product.entry.ai.blurb'),
             cta: t('product.entry.ai.cta'),

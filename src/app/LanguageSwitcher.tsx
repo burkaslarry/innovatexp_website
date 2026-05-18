@@ -5,64 +5,54 @@ import { usePathname, useRouter } from "next/navigation";
 import { useLanguage } from "./LanguageContext";
 import {
   getLocaleFromPathname,
-  languageToLocale,
+  localeToLanguage,
   stripLocaleFromPathname,
   withLocale,
+  LOCALES,
   type AppLocale,
 } from "@/lib/i18n-routing";
 
+const LABELS: Record<AppLocale, string> = {
+  en: "English",
+  "zh-hk": "繁中（香港）",
+  "zh-tw": "繁中（台灣）",
+  ja: "日本語",
+  de: "Deutsch",
+};
+
 /**
- * Segmented EN | 繁中 control — navigates to the other locale prefix (hreflang-aligned URLs).
+ * Locale selector — navigates between hreflang-aligned URL prefixes (`/en`, `/zh-hk`, …).
  */
 export default function LanguageSwitcher() {
-  const { language, setLanguage } = useLanguage();
+  const { setLanguage } = useLanguage();
   const pathname = usePathname() || "/";
   const router = useRouter();
+  const current = getLocaleFromPathname(pathname);
+  const bare = stripLocaleFromPathname(pathname);
 
-  const switchLocale = (lang: "en" | "zh") => {
-    const nextLocale: AppLocale = languageToLocale(lang);
-    const current = getLocaleFromPathname(pathname);
-    const bare = stripLocaleFromPathname(pathname);
-    const href = withLocale(nextLocale, bare);
-    if (nextLocale !== current) {
-      setLanguage(lang);
-      router.push(href);
-      return;
-    }
-    setLanguage(lang);
+  const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
+    const next = e.target.value as AppLocale;
+    setLanguage(localeToLanguage(next));
+    router.push(withLocale(next, bare));
   };
 
   return (
-    <div
-      role="group"
-      aria-label="Language"
-      className="inline-flex items-center rounded-full border border-slate-200/90 bg-slate-100/80 p-0.5 shadow-sm dark:border-slate-600 dark:bg-slate-800/90"
-    >
-      <button
-        type="button"
-        onClick={() => switchLocale("en")}
-        className={`relative rounded-full px-2.5 py-1 text-xs font-semibold transition-colors sm:px-3 sm:text-sm ${
-          language === "en"
-            ? "bg-brand-primary text-white shadow-sm dark:bg-[#00B9B3] dark:text-slate-950"
-            : "text-slate-600 hover:text-brand-primary dark:text-slate-400 dark:hover:text-white"
-        }`}
+    <div className="inline-flex items-center">
+      <label className="sr-only" htmlFor="ixp-locale-select">
+        Language / 語言
+      </label>
+      <select
+        id="ixp-locale-select"
+        value={current}
+        onChange={onChange}
+        className="max-w-[11rem] cursor-pointer rounded-full border border-slate-200/90 bg-slate-100/80 px-2.5 py-1 text-xs font-semibold text-slate-800 shadow-sm dark:border-slate-600 dark:bg-slate-800/90 dark:text-slate-100 sm:max-w-none sm:px-3 sm:text-sm"
       >
-        EN
-      </button>
-      <span className="select-none px-0.5 text-slate-300 dark:text-slate-600" aria-hidden>
-        |
-      </span>
-      <button
-        type="button"
-        onClick={() => switchLocale("zh")}
-        className={`rounded-full px-2.5 py-1 text-xs font-semibold transition-colors sm:px-3 sm:text-sm ${
-          language === "zh"
-            ? "bg-brand-primary text-white shadow-sm dark:bg-[#00B9B3] dark:text-slate-950"
-            : "text-slate-600 hover:text-brand-primary dark:text-slate-400 dark:hover:text-white"
-        }`}
-      >
-        繁中
-      </button>
+        {LOCALES.map((loc) => (
+          <option key={loc} value={loc}>
+            {LABELS[loc]}
+          </option>
+        ))}
+      </select>
     </div>
   );
 }

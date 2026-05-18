@@ -53,9 +53,6 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
       id={isMain ? 'main-header' : undefined}
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
-      {isMain && (
-        <link rel="llms-txt" href="https://aeo.washinmura.jp/aeo/shops/innovatexp-co/llms.txt" />
-      )}
       <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
         <div className="flex min-w-0 flex-1 items-center gap-3">
           {variant === 'booking' && (

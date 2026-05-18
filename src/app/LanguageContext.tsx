@@ -707,6 +707,8 @@ export const translations = {
     'nav.ai_seo_package': 'AI SEO package',
     'nav.pitch_decks': 'Pitch decks',
     'nav.reliability': 'Reliability',
+    'nav.ai_quality': 'AI-era quality',
+    'nav.premium_offer': 'Premium consulting',
     'ai_seo_cta.title': 'Need fast AI SEO updates?',
     'ai_seo_cta.description':
       'Choose a fixed-scope update package for structured data, content refinement, and delivery timeline you can plan around.',
@@ -1567,6 +1569,8 @@ export const translations = {
     'nav.ai_seo_package': 'AI SEO 更新套餐',
     'nav.pitch_decks': 'Pitch Deck',
     'nav.reliability': '可靠 AI',
+    'nav.ai_quality': 'AI 時代品質工程',
+    'nav.premium_offer': '高票價顧問',
     'ai_seo_cta.title': '想快速完成 AI SEO 更新？',
     'ai_seo_cta.description': '選擇固定範圍更新套餐，包含結構化資料、內容微調與可預期交付時程。',
     'ai_seo_cta.button': '查看 AI SEO 更新套餐',

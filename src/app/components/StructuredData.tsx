@@ -26,6 +26,8 @@ function buildBreadcrumbJsonLd(
     blog: { en: "Blog", zh: "網誌" },
     "pitch-decks": { en: "Pitch decks", zh: "簡報下載" },
     reliability: { en: "Reliability manifesto", zh: "可靠 AI 立場" },
+    "ai-era-quality": { en: "AI-era quality engineering", zh: "AI 時代品質工程" },
+    "premium-ai-consulting": { en: "Premium AI consulting", zh: "高票價 AI 顧問" },
     "smartsales-crm": { en: "SmartSales CRM", zh: "SmartSales CRM" },
     eventxp: { en: "EventXP", zh: "EventXP" },
     "ai-consulting": { en: "AI Consulting", zh: "AI 顧問服務" },
@@ -571,7 +573,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`
     },
-    "inLanguage": ["en", "zh-HK"]
+    "inLanguage": ["en-HK", "zh-HK", "zh-TW", "ja-JP", "de-DE"],
   };
 
   const consultingServiceSchema = {

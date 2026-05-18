@@ -2,15 +2,11 @@
 
 import { useEffect } from "react";
 import type { AppLocale } from "@/lib/i18n-routing";
-
-const LOCALE_HTML_LANG: Record<AppLocale, string> = {
-  en: "en",
-  "zh-hk": "zh-HK",
-};
+import { localeToHtmlLang } from "@/lib/i18n-routing";
 
 export function LocaleHtmlLang({ locale }: { locale: AppLocale }) {
   useEffect(() => {
-    document.documentElement.lang = LOCALE_HTML_LANG[locale];
+    document.documentElement.lang = localeToHtmlLang(locale);
   }, [locale]);
   return null;
 }

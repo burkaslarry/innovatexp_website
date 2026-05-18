@@ -13,7 +13,7 @@ F01: Feature name - What this file or module does in one line.
 Index (copy into a new file when adding scope):
 
 ```text
-F01: Internationalization - Central EN/ZH strings, LanguageProvider, and t() lookups.
+F01: Internationalization - Central EN/ZH strings, LanguageProvider, locale-prefixed routes (`en`, `zh-hk`, `zh-tw`, `ja`, `de`), and `t()` lookups (JA/DE UI falls back to EN strings until translated).
 F02: Homepage marketing - Landing page sections: hero, products, pricing, FAQs, and modals.
 F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path.
 F04: Shared schema builders - Reusable Organization/Product helpers consumed by JSON-LD and tooling.
@@ -22,14 +22,14 @@ F06: Bookme page - Booking/quotation entry with header, guidelines, and Quotatio
 F07: Calendar booking API - POST handler: validates input, writes Notion, emails ICS/Web3Forms confirmations.
 F08: Quotation wizard - Self-serve quote flow, calendar integration, and lead capture UI.
 F09: Floating WhatsApp CTA - Fixed wa.me link from env or fallback to bookme anchor.
-F10: Sitemap generation - Declares static routes and blog slugs for search engines.
+F10: Sitemap generation - `src/lib/site-routes.ts` enumerates localized marketing paths + blog slugs; `src/app/sitemap.ts` emits absolute URLs per locale.
 F11: Robots rules - allow-all with sitemap and host URL from env.
 F12: Pitch decks download page - Lists PDF deck links under public/decks.
 F13: Reliability (server) - Metadata and Article JSON-LD for the reliability manifesto route.
 F14: Reliability (client) - Bilingual copy, comparison table, and CTAs for /reliability.
 F15: Hero section - Animated hero with primary/secondary CTAs and optional trust badges.
 F16: Schema validation script - CI guard that StructuredData.tsx still contains required SEO tokens.
-F17: Locale routes & hreflang - Middleware redirects unprefixed URLs to `/zh-hk/...`; marketing pages under `/en` and `/zh-hk` with `alternates.languages`; sitemap lists both locales.
+F17: Locale routes & hreflang - Middleware redirects unprefixed URLs to `/zh-hk/...`; marketing pages under `/en`, `/zh-hk`, `/zh-tw`, `/ja`, `/de` with `alternates.languages`; sitemap lists every locale × static path × blog post.
 ```
 
 ## Getting Started
@@ -74,7 +74,9 @@ Optional: set `NEXT_PUBLIC_WEB3FORMS_ACCESS_KEY` for the contact form (falls bac
 
 ## SEO maintenance (Search Console & rich results)
 
-Periodically in [Google Search Console](https://search.google.com/search-console): check **Enhancements** / **Experience** reports for FAQ, Article, or breadcrumb issues after schema changes. Use [Rich Results Test](https://search.google.com/test/rich-results) on sample URLs in both locales, e.g. `https://www.innovatexp.co/zh-hk/` and `https://www.innovatexp.co/en/smartsales-crm`.
+Periodically in [Google Search Console](https://search.google.com/search-console): check **Enhancements** / **Experience** reports for FAQ, Article, or breadcrumb issues after schema changes. Use [Rich Results Test](https://search.google.com/test/rich-results) on sample URLs across locales, e.g. `https://www.innovatexp.co/zh-hk/` and `https://www.innovatexp.co/en/smartsales-crm`.
+
+Run `npm run seo:check` for a quick sitemap cardinality check and `npm run seo:validate-schema` after editing `StructuredData.tsx`.
 
 ## Deploy on Vercel
 
