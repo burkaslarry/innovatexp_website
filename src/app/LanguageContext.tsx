@@ -5,6 +5,9 @@ import type { AppLocale } from '@/lib/i18n-routing';
 import homeZhTw from '@/messages/homepage.zh-tw.json';
 import homeJa from '@/messages/homepage.ja.json';
 import homeDe from '@/messages/homepage.de.json';
+import bookmeZhTw from '@/messages/bookme.zh-tw.json';
+import bookmeJa from '@/messages/bookme.ja.json';
+import bookmeDe from '@/messages/bookme.de.json';
 
 type Language = 'en' | 'zh';
 
@@ -1784,9 +1787,9 @@ export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, lo
 
   const enMap = translations.en as Record<string, string>;
   const zhMap = translations.zh as Record<string, string>;
-  const twMap = homeZhTw as Record<string, string>;
-  const jaMap = homeJa as Record<string, string>;
-  const deMap = homeDe as Record<string, string>;
+  const twMap = { ...(homeZhTw as Record<string, string>), ...(bookmeZhTw as Record<string, string>) };
+  const jaMap = { ...(homeJa as Record<string, string>), ...(bookmeJa as Record<string, string>) };
+  const deMap = { ...(homeDe as Record<string, string>), ...(bookmeDe as Record<string, string>) };
 
   const t = (key: string): string => {
     switch (locale) {

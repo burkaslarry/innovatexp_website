@@ -13,7 +13,7 @@ F01: Feature name - What this file or module does in one line.
 Index (copy into a new file when adding scope):
 
 ```text
-F01: Internationalization - `LanguageProvider` reads URL `locale` (`en` | `zh-hk` | `zh-tw` | `ja` | `de`). Cantonese UI uses `translations.zh` in `LanguageContext.tsx`; `zh-tw` / `ja` / `de` homepage strings overlay `src/messages/homepage.*.json` then fall back to English. Non-home routes still mostly use EN/ZH maps until migrated.
+F01: Internationalization - `LanguageProvider` reads URL `locale` (`en` | `zh-hk` | `zh-tw` | `ja` | `de`). Cantonese UI uses `translations.zh` in `LanguageContext.tsx`; `zh-tw` / `ja` / `de` overlay `src/messages/homepage.*.json` and `src/messages/bookme.*.json`, then fall back to English. Non-home routes still mostly use EN/ZH maps until migrated.
 F02: Homepage marketing - Landing page sections: hero, products, pricing, FAQs, and modals.
 F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path.
 F04: Shared schema builders - Reusable Organization/Product helpers consumed by JSON-LD and tooling.
@@ -35,9 +35,9 @@ F17: Locale routes & hreflang - Middleware redirects unprefixed URLs to `/zh-hk/
 ## Internationalization
 
 - **Routes:** Middleware sends bare paths to `/zh-hk` by default; localized marketing URLs are `/en`, `/zh-hk`, `/zh-tw`, `/ja`, `/de` (see `src/lib/i18n-routing.ts`).
-- **Runtime:** `LanguageProvider` in `src/app/[locale]/layout.tsx` passes the segment locale into `t()`. HK uses the large `translations.zh` object; TW/JA/DE home keys merge `src/messages/homepage.zh-tw.json`, `homepage.ja.json`, `homepage.de.json` over English.
+- **Runtime:** `LanguageProvider` in `src/app/[locale]/layout.tsx` passes the segment locale into `t()`. HK uses the large `translations.zh` object; TW/JA/DE merge `homepage.{zh-tw,ja,de}.json` and `bookme.{zh-tw,ja,de}.json` over English.
 - **JSON-LD:** `StructuredData.tsx` picks copy per `AppLocale` (five explicit locales, no zh/en boolean).
-- **Regenerate home overlays (optional):** after changing EN keys on the homepage, refresh message files with `node scripts/generate-home-i18n.mjs` (local only; respects API limits — review/edit output before shipping).
+- **Homepage overlays:** edit `src/messages/homepage.{zh-tw,ja,de}.json` manually (no bundled machine translation). **Bookme page:** edit `src/messages/bookme.{zh-tw,ja,de}.json`. After changing EN keys in `LanguageContext.tsx`, update those JSON files and run `node scripts/generate-home-i18n.mjs` to verify coverage. For Traditional Chinese aligned to HK copy on the homepage only, run `node scripts/sync-homepage-zhtw-from-zh.mjs`.
 
 ## Getting Started
 

@@ -1,10 +1,8 @@
 /**
- * Validates homepage overlay JSON against EN keys in LanguageContext.tsx.
- * Homepage JA/DE/TW strings are maintained manually in src/messages — no machine translation here.
+ * Populate homepage.zh-tw.json from translations.zh (HK Traditional) — no external API.
+ * For homepage-keys missing from zh, falls back to EN (logged).
  *
- *   node scripts/generate-home-i18n.mjs
- *
- * Exits 1 if any homepage-keys.json entry is missing from an overlay or (for ja/de only) still identical to EN when EN is non-empty; same checks for src/messages/bookme.{zh-tw,ja,de}.json keys vs EN `bookme.*` strings.
+ *   node scripts/sync-homepage-zhtw-from-zh.mjs
  */
 import fs from "node:fs";
 import path from "node:path";
@@ -12,6 +10,7 @@ import path from "node:path";
 const root = path.resolve(import.meta.dirname, "..");
 const keysPath = path.join(root, "scripts/homepage-keys.json");
 const ctxPath = path.join(root, "src/app/LanguageContext.tsx");
+const twPath = path.join(root, "src/messages/homepage.zh-tw.json");
 
 function extractLangBlock(langKey) {
   const txt = fs.readFileSync(ctxPath, "utf8");
@@ -162,73 +161,23 @@ function parseTranslationBlock(block) {
   return map;
 }
 
-function checkLocale(label, filePath, keys, enMap, { flagEnglishDupes = true } = {}) {
-  const loc = JSON.parse(fs.readFileSync(filePath, "utf8"));
-  const missing = [];
-  const sameAsEn = [];
-  for (const k of keys) {
-    const en = enMap[k];
-    const v = loc[k];
-    if (v === undefined || v === "") missing.push(k);
-    else if (flagEnglishDupes && en !== undefined && en !== "" && v === en) sameAsEn.push(k);
+const keys = JSON.parse(fs.readFileSync(keysPath, "utf8"));
+const zh = parseTranslationBlock(extractLangBlock("zh"));
+const en = parseTranslationBlock(extractLangBlock("en"));
+
+const out = {};
+const fallbacks = [];
+for (const k of keys) {
+  if (zh[k] != null && zh[k] !== "") out[k] = zh[k];
+  else if (en[k] != null) {
+    out[k] = en[k];
+    fallbacks.push(k);
   }
-  if (missing.length || sameAsEn.length) {
-    console.error(`\n${label} (${path.relative(root, filePath)})`);
-    if (missing.length) console.error("  missing/empty:", missing.length, missing.slice(0, 40));
-    if (sameAsEn.length) console.error("  still English:", sameAsEn.length, sameAsEn.slice(0, 40));
-  }
-  return missing.length + sameAsEn.length;
 }
 
-function main() {
-  const keys = JSON.parse(fs.readFileSync(keysPath, "utf8"));
-  const enMap = parseTranslationBlock(extractLangBlock("en"));
-
-  const messagesDir = path.join(root, "src/messages");
-  let bad = 0;
-  bad += checkLocale("zh-TW", path.join(messagesDir, "homepage.zh-tw.json"), keys, enMap, {
-    flagEnglishDupes: false,
-  });
-  bad += checkLocale("ja", path.join(messagesDir, "homepage.ja.json"), keys, enMap);
-  bad += checkLocale("de", path.join(messagesDir, "homepage.de.json"), keys, enMap);
-
-  const bookmeZhTwPath = path.join(messagesDir, "bookme.zh-tw.json");
-  const bookmeJaPath = path.join(messagesDir, "bookme.ja.json");
-  const bookmeDePath = path.join(messagesDir, "bookme.de.json");
-  const bookmeTw = JSON.parse(fs.readFileSync(bookmeZhTwPath, "utf8"));
-  const bookmeJa = JSON.parse(fs.readFileSync(bookmeJaPath, "utf8"));
-  const bookmeDe = JSON.parse(fs.readFileSync(bookmeDePath, "utf8"));
-  const bookmeKeys = Object.keys(bookmeTw).sort();
-  const jaBkKeys = Object.keys(bookmeJa).sort();
-  const deBkKeys = Object.keys(bookmeDe).sort();
-  if (
-    JSON.stringify(bookmeKeys) !== JSON.stringify(jaBkKeys) ||
-    JSON.stringify(bookmeKeys) !== JSON.stringify(deBkKeys)
-  ) {
-    console.error("\nbookme: key sets must match across bookme.{zh-tw,ja,de}.json");
-    bad += 1;
-  } else {
-    bad += checkLocale("bookme zh-TW", bookmeZhTwPath, bookmeKeys, enMap, {
-      flagEnglishDupes: false,
-    });
-    bad += checkLocale("bookme ja", bookmeJaPath, bookmeKeys, enMap);
-    bad += checkLocale("bookme de", bookmeDePath, bookmeKeys, enMap);
-  }
-
-  if (bad === 0) {
-    console.error(
-      "homepage + bookme i18n OK:",
-      keys.length,
-      "home keys × 3 locales;",
-      bookmeKeys.length,
-      "bookme keys × 3 locales",
-    );
-    return;
-  }
-  console.error(
-    "\nFix src/messages/homepage.*.json / bookme.*.json or sync zh-tw: node scripts/sync-homepage-zhtw-from-zh.mjs",
-  );
-  process.exit(1);
+if (fallbacks.length) {
+  console.warn("zh missing, used EN:", fallbacks.length, fallbacks.slice(0, 30));
 }
 
-main();
+fs.writeFileSync(twPath, `${JSON.stringify(out, null, 2)}\n`);
+console.error("wrote", twPath, "keys", keys.length);
