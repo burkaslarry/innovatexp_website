@@ -7,11 +7,11 @@ import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
 import { LocaleHtmlLang } from "../components/LocaleHtmlLang";
 import {
   isValidLocale,
-  localeToLanguage,
   localeToOgLocale,
   localeUsesChineseCopy,
   ogAlternateLocales,
   LOCALES,
+  type AppLocale,
 } from "@/lib/i18n-routing";
 
 const OG_IMAGE_DEFAULT = {
@@ -106,7 +106,7 @@ export default async function LocaleLayout({
     <>
       <LocaleHtmlLang locale={locale} />
       <ThemeProvider>
-        <LanguageProvider initialLang={localeToLanguage(locale)}>
+        <LanguageProvider locale={locale as AppLocale}>
           <StructuredData />
           {children}
           <FloatingWhatsAppButton />

@@ -104,9 +104,9 @@ const content = {
 };
 
 export function ReliabilityContent() {
-  const { language } = useLanguage();
+  const { locale } = useLanguage();
   const loc = useLocalizedHref();
-  const copy = content[language];
+  const copy = locale === "zh-hk" ? content.zh : content.en;
 
   return (
     <main className="mx-auto min-h-screen max-w-6xl px-6 py-12 text-slate-900 dark:text-slate-100">

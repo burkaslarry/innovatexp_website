@@ -123,7 +123,8 @@ export default function QuotationWizard({
     contactName?: string;
   }) => void;
 }) {
-  const { t, language } = useLanguage();
+  const { t, locale } = useLanguage();
+  const usesChineseUi = locale === "zh-hk" || locale === "zh-tw";
 
   const [path, setPath] = useState<QuotePath | null>(null);
   const [answers, setAnswers] = useState<QuoteAnswers>({});
@@ -186,8 +187,8 @@ export default function QuotationWizard({
     if (!selectedDate || !selectedTimeSlot) return "";
     const dateLabel = format(
       selectedDate,
-      language === "en" ? "MMM dd, yyyy (EEEE)" : "yyyy年MM月dd日 (EEEE)",
-      { locale: language === "en" ? enUS : zhTW },
+      usesChineseUi ? "yyyy年MM月dd日 (EEEE)" : "MMM dd, yyyy (EEEE)",
+      { locale: usesChineseUi ? zhTW : enUS },
     );
     return `${dateLabel} — ${selectedTimeSlot.display}`;
   }
@@ -870,7 +871,7 @@ export default function QuotationWizard({
                 >
                   {PHONE_DIAL_OPTIONS.map((o) => (
                     <option key={o.code} value={o.code}>
-                      {language === "en" ? o.labelEn : o.labelZh} (+{o.code})
+                      {usesChineseUi ? o.labelZh : o.labelEn} (+{o.code})
                     </option>
                   ))}
                   <option value={PHONE_DIAL_CUSTOM}>{t("wizard.flowx.dial_other")}</option>
@@ -970,7 +971,7 @@ export default function QuotationWizard({
                       selected={selectedDate}
                       onSelect={onSelectDate}
                       disabled={disabledDays}
-                      locale={language === "en" ? enUS : zhTW}
+                      locale={usesChineseUi ? zhTW : enUS}
                       defaultMonth={new Date()}
                       modifiersClassNames={{
                         selected: "bg-brand-primary text-white font-bold rounded-lg dark:bg-[#00B9B3]",

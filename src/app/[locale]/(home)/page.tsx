@@ -75,7 +75,7 @@ const LD_SERVICE_SMARTSALES = {
 };
 
 function LandingPage() {
-  const { t, language } = useLanguage();
+  const { t, locale } = useLanguage();
   const loc = useLocalizedHref();
   const [smartSalesCarouselOpen, setSmartSalesCarouselOpen] = useState(false);
   const [smartSalesCarouselIndex, setSmartSalesCarouselIndex] = useState(0);
@@ -175,11 +175,9 @@ function LandingPage() {
         imageAlt={t('hero.image_alt')}
       />
 
-      <section id="about-innovatexp" className="max-w-4xl mx-auto px-6 py-12">
-        <h2 className="text-2xl font-bold mb-4">InnovateXP 係邊間公司？做咩嘅？</h2>
-        <p className="text-lg leading-relaxed text-gray-700">
-          <strong>InnovateXP Limited</strong> 係香港中小企 AI CRM 與活動科技公司，由 <strong>Larry Lo</strong>（14 年技術經驗、前 GDG Hong Kong organizer、HKSTP 孵化校友）創立。提供 3 個產品線：<strong>SmartSales CRM</strong>（WhatsApp AI CRM，HKD 10,800 起）、<strong>EventXP</strong>（活動簽到系統，HKD 4,800 試點起）、<strong>AI 顧問服務</strong>（HKD 8,000 起）。服務對象：3–15 人 sales team、活動主辦團隊、會員制社群。語言支援：粵英、中英夾雜。部署選項：Cloud（Azure OpenAI、Alibaba Cloud、GCP、AWS）或 On-Premise。
-        </p>
+      <section id="about-innovatexp" className="mx-auto max-w-4xl px-6 py-12">
+        <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{t('home.about.title')}</h2>
+        <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{t('home.about.body')}</p>
       </section>
 
       <WhyInnovateXP
@@ -194,15 +192,12 @@ function LandingPage() {
 
       <section className="mb-12 rounded-2xl border border-brand-primary/25 bg-gradient-to-r from-cyan-50 via-white to-amber-50 p-5 text-center shadow-sm dark:border-teal-500/30 dark:from-slate-900 dark:via-slate-900 dark:to-gray-900">
         <p className="text-sm font-semibold leading-relaxed text-slate-800 dark:text-slate-200 md:text-base">
-          {language === 'zh'
-            ? '可靠 AI，不賭命：核心流程可預測、可監察、可回滾；AI 只做分類、建議同草稿。'
-            : 'Reliable AI, not autopilot hype: core workflows stay predictable, observable, and reversible; AI classifies, suggests, and drafts.'}
-          {' '}
+          {t('home.reliability.banner')}{' '}
           <a
             href={loc("/reliability")}
             className="ml-1 inline-flex items-center rounded-full border-2 border-slate-900/20 bg-white px-4 py-2 text-sm font-bold text-slate-900 no-underline shadow-sm transition-all duration-300 hover:border-black hover:bg-black hover:text-white dark:border-slate-500 dark:bg-white dark:text-slate-950 dark:hover:border-black dark:hover:bg-black dark:hover:text-white md:ml-2 md:px-5 md:text-base"
           >
-            {language === 'zh' ? '睇我哋點樣做可靠 AI' : 'See our reliability approach'}
+            {t('home.reliability.cta')}
           </a>
         </p>
       </section>
@@ -415,7 +410,7 @@ function LandingPage() {
               
               <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-4 mt-6">{t('eventxp.how.title')}</h2>
               <p className="text-lg text-gray-700 dark:text-gray-300 leading-relaxed mb-2">
-                {language === 'zh' ? '以下 4 步就可以由簽到去到可跟進名單：' : "Here's how it works in 4 simple steps:"}
+                {locale === 'zh-hk' ? '以下 4 步就可以由簽到去到可跟進名單：' : "Here's how it works in 4 simple steps:"}
               </p>
               <ol className="list-decimal list-inside text-lg text-gray-700 dark:text-gray-300 space-y-2 ml-4">
                 <li>{t('eventxp.how.step1')}</li>
@@ -447,7 +442,7 @@ function LandingPage() {
                 href={loc("/bookme")}
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
               >
-                {language === 'zh' ? '預約 15 分鐘 Demo' : 'Book a 15-min demo'}
+                {locale === 'zh-hk' ? '預約 15 分鐘 Demo' : 'Book a 15-min demo'}
               </a>
             </div>
           </div>
@@ -530,10 +525,10 @@ function LandingPage() {
 
           <section className="mb-12 rounded-2xl border border-amber-300 bg-amber-50 p-6 dark:border-amber-500/40 dark:bg-amber-900/20">
             <h3 className="text-xl font-bold text-amber-900 dark:text-amber-200">
-              {language === 'zh' ? 'EventXP 試點方案（限時）' : 'EventXP Pilot Offer (Limited Time)'}
+              {locale === 'zh-hk' ? 'EventXP 試點方案（限時）' : 'EventXP Pilot Offer (Limited Time)'}
             </h3>
             <p className="mt-3 text-sm leading-relaxed text-amber-900/90 dark:text-amber-100">
-              {language === 'zh'
+              {locale === 'zh-hk'
                 ? '如你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。2026 年 6 月底前或首 10 個客戶可優先安排試點；完成後可升級至 Starter / Growth / Enterprise。'
                 : 'For low-risk onboarding, start with Pilot: HKD 4,800 (1 event + baseline reporting + setup). Available for bookings before end-June 2026 or the first 10 pilot clients; upgrade after validation.'}
             </p>
@@ -541,13 +536,13 @@ function LandingPage() {
 
           <section className="mb-12 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-800">
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              {language === 'zh' ? 'EventXP 最啱邊類團隊？' : 'Who is EventXP for?'}
+              {locale === 'zh-hk' ? 'EventXP 最啱邊類團隊？' : 'Who is EventXP for?'}
             </h3>
             <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300 md:grid-cols-2">
-              <li>{language === 'zh' ? 'BNI chapter、JCI、校友會、會員制社群' : 'Networking groups: BNI chapters, JCI, alumni groups, membership communities'}</li>
-              <li>{language === 'zh' ? '每季 3 場以上活動嘅培訓／銷售活動主辦' : 'Sales or training event organizers running 3+ events per quarter'}</li>
-              <li>{language === 'zh' ? '活動後仍然靠 Excel 匯出同人手 follow-up' : 'Teams tired of exporting Excel after every event'}</li>
-              <li>{language === 'zh' ? '200+ 人活動，手動逐個追已經追唔切' : '200+ attendee events where manual follow-up is impossible'}</li>
+              <li>{locale === 'zh-hk' ? 'BNI chapter、JCI、校友會、會員制社群' : 'Networking groups: BNI chapters, JCI, alumni groups, membership communities'}</li>
+              <li>{locale === 'zh-hk' ? '每季 3 場以上活動嘅培訓／銷售活動主辦' : 'Sales or training event organizers running 3+ events per quarter'}</li>
+              <li>{locale === 'zh-hk' ? '活動後仍然靠 Excel 匯出同人手 follow-up' : 'Teams tired of exporting Excel after every event'}</li>
+              <li>{locale === 'zh-hk' ? '200+ 人活動，手動逐個追已經追唔切' : '200+ attendee events where manual follow-up is impossible'}</li>
             </ul>
           </section>
 
@@ -648,7 +643,7 @@ function LandingPage() {
             >
               {t('pricing.insight.setup_cta')}
             </a>
-            {language === 'zh' ? '。' : '.'}
+            {locale === 'zh-hk' ? '。' : '.'}
           </p>
         </div>
       </article>
@@ -765,7 +760,7 @@ function LandingPage() {
                 href={loc("/bookme")}
                 className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
               >
-                {language === 'zh' ? '預約 SmartSales Demo' : 'Book SmartSales demo'}
+                {locale === 'zh-hk' ? '預約 SmartSales Demo' : 'Book SmartSales demo'}
               </a>
             </div>
           </div>
@@ -776,13 +771,13 @@ function LandingPage() {
 
           <section className="mb-12 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-800">
             <h3 className="text-xl font-bold text-gray-900 dark:text-white">
-              {language === 'zh' ? 'SmartSales CRM 最啱邊類團隊？' : 'Who is SmartSales CRM for?'}
+              {locale === 'zh-hk' ? 'SmartSales CRM 最啱邊類團隊？' : 'Who is SmartSales CRM for?'}
             </h3>
             <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300 md:grid-cols-2">
-              <li>{language === 'zh' ? '3–15 人 sales team，以 WhatsApp 收 leads 為主' : '3–15 person sales teams using WhatsApp as the primary lead channel'}</li>
-              <li>{language === 'zh' ? '餐飲、門市、教育、顧問、B2B 服務等香港服務業' : 'F&B, retail, education, consulting, and B2B service teams in Hong Kong'}</li>
-              <li>{language === 'zh' ? '查詢多但無 SLA，靠記性分配同追單' : 'Teams losing leads because replies are slow or inconsistent'}</li>
-              <li>{language === 'zh' ? '老闆想見到 pipeline，而唔係逐個 WhatsApp 問同事' : 'Owners who want SLA visibility without micromanaging every chat'}</li>
+              <li>{locale === 'zh-hk' ? '3–15 人 sales team，以 WhatsApp 收 leads 為主' : '3–15 person sales teams using WhatsApp as the primary lead channel'}</li>
+              <li>{locale === 'zh-hk' ? '餐飲、門市、教育、顧問、B2B 服務等香港服務業' : 'F&B, retail, education, consulting, and B2B service teams in Hong Kong'}</li>
+              <li>{locale === 'zh-hk' ? '查詢多但無 SLA，靠記性分配同追單' : 'Teams losing leads because replies are slow or inconsistent'}</li>
+              <li>{locale === 'zh-hk' ? '老闆想見到 pipeline，而唔係逐個 WhatsApp 問同事' : 'Owners who want SLA visibility without micromanaging every chat'}</li>
             </ul>
           </section>
 
@@ -988,16 +983,16 @@ function LandingPage() {
 
       <section className="mb-16 rounded-2xl border-2 border-brand-primary/20 bg-gradient-to-br from-white via-cyan-50/40 to-amber-50/50 p-8 shadow-md dark:border-teal-500/30 dark:from-gray-800 dark:via-slate-900 dark:to-slate-900">
         <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
-          {language === 'zh' ? '唔知揀邊個？先睇最短路徑' : 'Not sure where to start? Pick the shortest path'}
+          {locale === 'zh-hk' ? '唔知揀邊個？先睇最短路徑' : 'Not sure where to start? Pick the shortest path'}
         </h2>
         <div className="overflow-x-auto">
           <table className="w-full min-w-[720px] border-separate border-spacing-y-3 text-left text-sm">
             <thead className="text-slate-700 dark:text-slate-300">
               <tr>
-                <th className="px-4 py-2">{language === 'zh' ? '服務' : 'Service'}</th>
-                <th className="px-4 py-2">{language === 'zh' ? '一次性 setup' : 'One-time setup'}</th>
-                <th className="px-4 py-2">{language === 'zh' ? '月費' : 'Monthly'}</th>
-                <th className="px-4 py-2">{language === 'zh' ? '最適合' : 'Best for'}</th>
+                <th className="px-4 py-2">{locale === 'zh-hk' ? '服務' : 'Service'}</th>
+                <th className="px-4 py-2">{locale === 'zh-hk' ? '一次性 setup' : 'One-time setup'}</th>
+                <th className="px-4 py-2">{locale === 'zh-hk' ? '月費' : 'Monthly'}</th>
+                <th className="px-4 py-2">{locale === 'zh-hk' ? '最適合' : 'Best for'}</th>
               </tr>
             </thead>
             <tbody>
@@ -1006,19 +1001,19 @@ function LandingPage() {
                   service: 'EventXP Pilot',
                   setup: 'HKD $4,800',
                   monthly: '—',
-                  fit: language === 'zh' ? '先試 1 場活動，睇簽到後跟進效果' : 'Testing one event before committing',
+                  fit: locale === 'zh-hk' ? '先試 1 場活動，睇簽到後跟進效果' : 'Testing one event before committing',
                 },
                 {
                   service: 'SmartSales Starter',
                   setup: 'HKD $10,800',
                   monthly: 'HKD $880',
-                  fit: language === 'zh' ? '1 個 sales team，WhatsApp leads 開始變亂' : 'One sales team starting to lose WhatsApp leads',
+                  fit: locale === 'zh-hk' ? '1 個 sales team，WhatsApp leads 開始變亂' : 'One sales team starting to lose WhatsApp leads',
                 },
                 {
-                  service: language === 'zh' ? 'AI 導入評估' : 'AI Readiness Audit',
-                  setup: language === 'zh' ? 'HKD $8,000 起' : 'From HKD $8,000',
+                  service: locale === 'zh-hk' ? 'AI 導入評估' : 'AI Readiness Audit',
+                  setup: locale === 'zh-hk' ? 'HKD $8,000 起' : 'From HKD $8,000',
                   monthly: '—',
-                  fit: language === 'zh' ? '想用 AI，但未知道第一條流程做邊度' : 'Teams unsure which AI workflow to implement first',
+                  fit: locale === 'zh-hk' ? '想用 AI，但未知道第一條流程做邊度' : 'Teams unsure which AI workflow to implement first',
                 },
               ].map((row) => (
                 <tr key={row.service} className="rounded-xl bg-white shadow-sm dark:bg-gray-800">
@@ -1035,14 +1030,14 @@ function LandingPage() {
 
       <section className="mb-16 rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-md dark:border-slate-700 dark:bg-gray-800">
         <h2 className="mb-6 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
-          {language === 'zh' ? '免費傾完 15 分鐘之後會點？' : 'What happens after the free 15-min chat?'}
+          {locale === 'zh-hk' ? '免費傾完 15 分鐘之後會點？' : 'What happens after the free 15-min chat?'}
         </h2>
         <div className="grid gap-4 md:grid-cols-4">
           {[
-            language === 'zh' ? '1. 免費 15 分鐘了解需求' : '1. Free 15-min diagnosis',
-            language === 'zh' ? '2. 1 週內送你方案 + 報價' : '2. Proposal and quote within 1 week',
-            language === 'zh' ? '3. 簽約後約 2 週上線第一版' : '3. First version live around 2 weeks after sign-off',
-            language === 'zh' ? '4. 30 日內追蹤第一個 ROI 指標' : '4. Track the first ROI signal within 30 days',
+            locale === 'zh-hk' ? '1. 免費 15 分鐘了解需求' : '1. Free 15-min diagnosis',
+            locale === 'zh-hk' ? '2. 1 週內送你方案 + 報價' : '2. Proposal and quote within 1 week',
+            locale === 'zh-hk' ? '3. 簽約後約 2 週上線第一版' : '3. First version live around 2 weeks after sign-off',
+            locale === 'zh-hk' ? '4. 30 日內追蹤第一個 ROI 指標' : '4. Track the first ROI signal within 30 days',
           ].map((step) => (
             <div key={step} className="rounded-xl border border-slate-200 bg-slate-50 p-4 text-sm font-semibold leading-relaxed text-slate-800 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-200">
               {step}
@@ -1191,7 +1186,7 @@ function LandingPage() {
             <h3 className="text-xl font-bold text-gray-900 dark:text-white mb-4 text-center">{t('about.credentials.title')}</h3>
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-center">
               <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
-                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">{language === 'zh' ? '14+ 年' : '14+ Years'}</p>
+                <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">{locale === 'zh-hk' ? '14+ 年' : '14+ Years'}</p>
                 <p className="text-xs text-gray-500">{t('about.credentials.experience')}</p>
               </div>
               <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
@@ -1200,11 +1195,11 @@ function LandingPage() {
               </div>
               <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">HKSTP</p>
-                <p className="text-xs text-gray-500">{language === 'zh' ? '孵化校友' : 'Incubation Alumni'}</p>
+                <p className="text-xs text-gray-500">{locale === 'zh-hk' ? '孵化校友' : 'Incubation Alumni'}</p>
               </div>
               <div className="p-3 bg-white dark:bg-gray-800 rounded-lg">
                 <p className="text-sm font-semibold text-gray-700 dark:text-gray-300">GDG HK</p>
-                <p className="text-xs text-gray-500">{language === 'zh' ? '前組織者' : 'Former Organizer'}</p>
+                <p className="text-xs text-gray-500">{locale === 'zh-hk' ? '前組織者' : 'Former Organizer'}</p>
               </div>
             </div>
           </div>
@@ -1230,23 +1225,23 @@ function LandingPage() {
         {/* Partnership Section */}
         <section id="case-studies" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-slate-200 bg-white p-8 shadow-md dark:border-slate-700 dark:bg-gray-800">
           <h2 className="mb-6 text-center text-3xl font-bold text-gray-900 dark:text-white">
-            {language === 'zh' ? '成功案例與客戶回饋' : 'Case Studies & Client Signals'}
+            {locale === 'zh-hk' ? '成功案例與客戶回饋' : 'Case Studies & Client Signals'}
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <blockquote className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
-              {language === 'zh'
+              {locale === 'zh-hk'
                 ? '「自從用咗 SmartSales，我每日少咗約 2 個鐘 WhatsApp 行政跟進，重要客查詢唔再沉底。」'
                 : '"Since using SmartSales, we spend around 2 fewer hours a day on WhatsApp follow-up admin, and important inquiries no longer get buried."'}
               <footer className="mt-3 font-semibold text-brand-primary dark:text-teal-300">
-                {language === 'zh' ? '香港服務業 SME 負責人（匿名）' : 'Hong Kong service SME owner (anonymous)'}
+                {locale === 'zh-hk' ? '香港服務業 SME 負責人（匿名）' : 'Hong Kong service SME owner (anonymous)'}
               </footer>
             </blockquote>
             <blockquote className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
-              {language === 'zh'
+              {locale === 'zh-hk'
                 ? '「活動後唔再只係得 Excel 名單，可以即刻知道邊批人最值得優先跟進。」'
                 : '"After an event, we no longer just have an Excel list. We can immediately see which attendees deserve priority follow-up."'}
               <footer className="mt-3 font-semibold text-brand-primary dark:text-teal-300">
-                {language === 'zh' ? '活動主辦團隊（匿名）' : 'Event organizer team (anonymous)'}
+                {locale === 'zh-hk' ? '活動主辦團隊（匿名）' : 'Event organizer team (anonymous)'}
               </footer>
             </blockquote>
           </div>

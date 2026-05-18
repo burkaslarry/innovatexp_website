@@ -13,7 +13,7 @@ F01: Feature name - What this file or module does in one line.
 Index (copy into a new file when adding scope):
 
 ```text
-F01: Internationalization - Central EN/ZH strings, LanguageProvider, locale-prefixed routes (`en`, `zh-hk`, `zh-tw`, `ja`, `de`), and `t()` lookups (JA/DE UI falls back to EN strings until translated).
+F01: Internationalization - `LanguageProvider` reads URL `locale` (`en` | `zh-hk` | `zh-tw` | `ja` | `de`). Cantonese UI uses `translations.zh` in `LanguageContext.tsx`; `zh-tw` / `ja` / `de` homepage strings overlay `src/messages/homepage.*.json` then fall back to English. Non-home routes still mostly use EN/ZH maps until migrated.
 F02: Homepage marketing - Landing page sections: hero, products, pricing, FAQs, and modals.
 F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path.
 F04: Shared schema builders - Reusable Organization/Product helpers consumed by JSON-LD and tooling.
@@ -31,6 +31,13 @@ F15: Hero section - Animated hero with primary/secondary CTAs and optional trust
 F16: Schema validation script - CI guard that StructuredData.tsx still contains required SEO tokens.
 F17: Locale routes & hreflang - Middleware redirects unprefixed URLs to `/zh-hk/...`; marketing pages under `/en`, `/zh-hk`, `/zh-tw`, `/ja`, `/de` with `alternates.languages`; sitemap lists every locale × static path × blog post.
 ```
+
+## Internationalization
+
+- **Routes:** Middleware sends bare paths to `/zh-hk` by default; localized marketing URLs are `/en`, `/zh-hk`, `/zh-tw`, `/ja`, `/de` (see `src/lib/i18n-routing.ts`).
+- **Runtime:** `LanguageProvider` in `src/app/[locale]/layout.tsx` passes the segment locale into `t()`. HK uses the large `translations.zh` object; TW/JA/DE home keys merge `src/messages/homepage.zh-tw.json`, `homepage.ja.json`, `homepage.de.json` over English.
+- **JSON-LD:** `StructuredData.tsx` picks copy per `AppLocale` (five explicit locales, no zh/en boolean).
+- **Regenerate home overlays (optional):** after changing EN keys on the homepage, refresh message files with `node scripts/generate-home-i18n.mjs` (local only; respects API limits — review/edit output before shipping).
 
 ## Getting Started
 
@@ -80,7 +87,11 @@ Run `npm run seo:check` for a quick sitemap cardinality check and `npm run seo:v
 
 ## Deploy on Vercel
 
-Deploy from the Vercel dashboard or CLI. Production releases are tagged (e.g. `prod/10.0`) for traceability.
+Connect this GitHub repo to a Vercel project and deploy **Production** from `main` (dashboard: Production Branch = `main`). Pushing `main` triggers a production deployment when Git integration is enabled.
+
+CLI alternative (logged-in): `npx vercel --prod` from the repo root.
+
+Production releases may be tagged (e.g. `prod/10.0`) for traceability.
 
 ## Learn More
 

@@ -6,9 +6,9 @@ export function isValidLocale(s: string): s is AppLocale {
   return (LOCALES as readonly string[]).includes(s);
 }
 
-/** UI language for LanguageContext (`translations`). Ja/de routes use English strings until localized. */
+/** Legacy UI flag: only `zh-hk` uses the Cantonese `translations.zh` bundle; other locales resolve via `t()` + overlays. */
 export function localeToLanguage(locale: AppLocale): "en" | "zh" {
-  if (locale === "zh-hk" || locale === "zh-tw") return "zh";
+  if (locale === "zh-hk") return "zh";
   return "en";
 }
 

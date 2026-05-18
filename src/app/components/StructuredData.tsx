@@ -1,62 +1,457 @@
-"use client"
+"use client";
 /* F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path. */
 import { usePathname } from "next/navigation";
-import { useLanguage } from '../LanguageContext';
+import type { AppLocale } from "@/lib/i18n-routing";
 import { getLocaleFromPathname, stripLocaleFromPathname } from "@/lib/i18n-routing";
 
-function buildBreadcrumbJsonLd(
-  pathname: string,
-  baseUrl: string,
-  language: "en" | "zh"
-) {
+/** Pick JSON-LD copy per URL locale — explicit `AppLocale` rows (no zh/en boolean). */
+function pickSchema(locale: AppLocale, row: Record<AppLocale, string>): string {
+  return row[locale];
+}
+
+type FaqMainEntity = Array<{
+  "@type": "Question";
+  name: string;
+  acceptedAnswer: { "@type": "Answer"; text: string };
+}>;
+
+const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
+  en: "We help Hong Kong SMEs turn event leads and WhatsApp inquiries into structured sales pipelines with AI-augmented workflows. System deployment can support cloud platforms including Azure OpenAI, Alibaba Cloud, GCP, AWS, or self-hosted / on-premise environments, plus practical AI training.",
+  "zh-hk":
+    "我們協助香港中小企將活動名單同 WhatsApp 查詢變成結構化 sales pipeline，透過 AI 輔助分類、下一步建議與回覆草稿。系統上架可支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署，並提供實戰 AI training。",
+  "zh-tw":
+    "我們協助中小企將活動名單與 WhatsApp 諮詢轉為結構化的業務銷售流程，透過 AI 輔助分類、下一步建議與回覆草稿。系統可部署於雲端平台（Azure OpenAI、阿里雲、GCP、AWS）或自建／地端環境，並提供實務 AI 培訓。",
+  ja: "InnovateXP は香港の中小企業向けに、イベントからの見込み客や WhatsApp の問い合わせを AI ワークフローで構造化されたセールスパイプラインへ変える支援を行います。Azure OpenAI、Alibaba Cloud、GCP、AWS、オンプレミスへの展開と実践的な AI 研修に対応します。",
+  de: "InnovateXP Limited hilft KMUs in Hongkong dabei, Event-Leads und WhatsApp-Anfragen mit KI-gestützten Workflows in strukturierte Vertriebspipelines zu verwandeln. Bereitstellung auf Azure OpenAI, Alibaba Cloud, GCP, AWS oder On-Premise sowie praktisches AI-Training.",
+};
+
+const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
+  en: "Built by a practitioner, not a consultant. Larry Lo has 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. He is the person who builds and supports your system — not a project manager who subcontracts. Former Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systems handling 2,000+ concurrent active users",
+  "zh-hk": "14年科技老兵，善敏教育中心 AI 顧問，前 GDG Hong Kong Organizer，曾管理 2,000+ 參與者活動，BNI Anchor 分會成員。",
+  "zh-tw":
+    "Larry Lo 具備 14 年以上系統架構與落地實作經驗，包含香港政府與公共交通相關的高可用度專案。他親自參與建置與維運，而非層層轉包。曾任 Google Developer Group Hong Kong Organizer、香港科技園孵化校友，並曾支援 2,000 名以上並行使用者的系統等級。",
+  ja: "現場の実装者として、Larry Lo はシステムアーキテクチャにおよそ 14 年の実務経験があります（香港の行政・公共交通向け高可用性案件を含む）。彼自身が構築・保守に入る体制で、請け負いだけの PM ではありません。元 Google Developer Group HK Organizer、HKSTP インキュベーション卒業・2,000 人以上同時アクティブ規模のシステム経験。",
+  de: "Larry Lo ist seit über 14 Jahren praktisch in der Systemarchitektur tätig — inklusive Hochverfügbarkeitsprojekten für öffentliche Auftraggeber und Verkehr in Hongkong. Er baut und betreut die Systeme selbst, statt nur zu delegieren. Ehem. Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systeme mit 2.000+ gleichzeitig aktiven Nutzern.",
+};
+
+const SCHEMA_SMARTSALES_DESCRIPTION: Record<AppLocale, string> = {
+  en: "AI-powered customer relationship management system with WhatsApp integration, automated follow-ups, and intelligent scheduling for Hong Kong SMEs.",
+  "zh-hk": "AI 驅動的客戶關係管理系統，整合 WhatsApp、自動跟進和智能排程，專為香港中小企業設計。",
+  "zh-tw":
+    "以 AI 為核心的客戶關係管理系統，整合 WhatsApp、自動跟進與智慧排程，適合香港與區內中小企業使用。",
+  ja: "WhatsApp 連携、自動フォローアップ、インテリジェントな日程調整を備えた AI 型 CRM。香港の中小企業向け。",
+  de: "KI-gestütztes CRM mit WhatsApp-Anbindung, automatisierten Follow-ups und intelligenter Terminplanung für KMUs in Hongkong.",
+};
+
+const SCHEMA_EVENTXP_DESCRIPTION: Record<AppLocale, string> = {
+  en: "Intelligent event check-in system that transforms attendance data into business insights. QR code scanning, real-time reporting, and AI-powered attendee analysis.",
+  "zh-hk": "智能活動簽到系統，將出席數據轉化為商業洞察。QR 碼掃描、實時報告和 AI 驅動的參與者分析。",
+  "zh-tw":
+    "智慧活動報到系統，將出席資料轉為可行动的商業洞察；支援 QRCode 報到、即時報表與 AI 輔助的出席者分析。",
+  ja: "出席データをビジネスインサイトへ変えるインテリジェントなイベントチェックイン。QR 読取、リアルタイムレポート、AI による参加者分析。",
+  de: "Intelligentes Event-Check-in: verwandelt Anwesenheitsdaten in Business-Insights mit QR-Scanning, Echtzeit-Reporting und KI-gestützter Teilnehmeranalyse.",
+};
+
+const SCHEMA_AI_CONSULTING_DESCRIPTION: Record<AppLocale, string> = {
+  en: "Practical AI implementation consulting for Hong Kong SMEs, including cloud platform deployment (Azure OpenAI, Alibaba Cloud, GCP, AWS), on-premise options, AI training, and deterministic workflow automation design.",
+  "zh-hk":
+    "為香港中小企提供可落地的 AI 實作顧問，包括 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）、On-Premise 部署選項、AI training 與可控流程自動化設計。",
+  "zh-tw":
+    "為中小企提供可落地的 AI 導入顧問：包含雲端平台（Azure OpenAI、阿里雲、GCP、AWS）、地端／自建選項、AI 培訓，以及可預測的工作流程自動化設計。",
+  ja: "香港の中小企業向けの実践的 AI 導入コンサルティング。クラウド（Azure OpenAI、Alibaba Cloud、GCP、AWS）、オンプレミス、研修、決定的ワークフロー設計に対応。",
+  de: "Praktische KI-Implementierungsberatung für KMUs in Hongkong inkl. Cloud-Deployments (Azure OpenAI, Alibaba Cloud, GCP, AWS), On-Premise-Optionen, AI-Training und deterministisches Workflow-Automatisierungsdesign.",
+};
+
+const SCHEMA_AI_SEO_NAME: Record<AppLocale, string> = {
+  en: "AI SEO Update Package",
+  "zh-hk": "AI SEO 更新套餐",
+  "zh-tw": "AI SEO 更新方案",
+  ja: "AI SEO アップデートパッケージ",
+  de: "AI-SEO-Update-Paket",
+};
+
+const SCHEMA_AI_SEO_DESCRIPTION: Record<AppLocale, string> = {
+  en: "Done-for-you AI SEO content and schema update package for SMEs, with fixed revision rounds and follow-up sessions.",
+  "zh-hk": "為中小企提供 AI SEO 內容與結構化資料更新服務，包含固定修改輪次與跟進會議。",
+  "zh-tw": "為中小企提供 AI SEO 內容與結構化資料更新服務，含固定修改輪次與後續會議。",
+  ja: "中小企業向けの代行型 AI SEO／構造化データ更新パッケージ。改訂ラウンドとフォロー面談を定額回数で提供。",
+  de: "Done-for-you-Paket für KI-gestützte SEO-Inhalte und Schema-Updates für KMUs, mit festen Überarbeitungsrunden und Follow-up-Terminen.",
+};
+
+const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
+  en: "WhatsApp CRM, EventXP, AI training, cloud platform and on-premise deployment support for Hong Kong SMEs",
+  "zh-hk": "為香港中小企提供 WhatsApp CRM、EventXP、AI training、Cloud Platform 及 On-Premise 部署支援",
+  "zh-tw": "提供 WhatsApp CRM、EventXP、AI 培訓，以及雲端／地端部署支援（服務香港與區內中小企業）",
+  ja: "香港の中小企業向けに WhatsApp CRM、EventXP、AI 研修、クラウド／オンプレミス支援を提供",
+  de: "WhatsApp-CRM, EventXP, AI-Schulungen sowie Cloud- und On-Premise-Deployments für KMUs in Hongkong",
+};
+
+const SCHEMA_CONSULTING_SERVICE_DESCRIPTION: Record<AppLocale, string> = {
+  en: "We deliver practical AI-augmented workflow systems for Hong Kong SMEs, deployed on cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments where appropriate.",
+  "zh-hk":
+    "我們為香港中小企交付可落地的 AI-augmented workflow，系統上架可按需要支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署。",
+  "zh-tw":
+    "我們為中小企交付可落地的 AI 強化工作流程；可依需求部署於雲端（Azure OpenAI、阿里雲、GCP、AWS）或自建／地端環境。",
+  ja: "香港の中小企業向けに実用的な AI 拡張ワークフローを提供。Azure OpenAI、Alibaba Cloud、GCP、AWS またはオンプレミスへの展開に対応。",
+  de: "Wir liefern praktische KI-erweiterte Workflows für KMUs in Hongkong — auf Azure OpenAI, Alibaba Cloud, GCP, AWS oder bei Bedarf Self-Hosted/On-Premise.",
+};
+
+const BREADCRUMB_HOME: Record<AppLocale, string> = {
+  en: "Home",
+  "zh-hk": "首頁",
+  "zh-tw": "首頁",
+  ja: "ホーム",
+  de: "Start",
+};
+
+const BREADCRUMB_ARTICLE: Record<AppLocale, string> = {
+  en: "Article",
+  "zh-hk": "文章",
+  "zh-tw": "文章",
+  ja: "記事",
+  de: "Artikel",
+};
+
+/** Segment labels indexed by URL locale — every `AppLocale` must be present per key. */
+const BREADCRUMB_SEGMENTS: Record<string, Record<AppLocale, string>> = {
+  bookme: {
+    en: "Book a visit",
+    "zh-hk": "預約洽詢",
+    "zh-tw": "預約諮詢",
+    ja: "予約・相談",
+    de: "Termin buchen",
+  },
+  blog: {
+    en: "Blog",
+    "zh-hk": "網誌",
+    "zh-tw": "部落格",
+    ja: "ブログ",
+    de: "Blog",
+  },
+  "pitch-decks": {
+    en: "Pitch decks",
+    "zh-hk": "簡報下載",
+    "zh-tw": "簡報下載",
+    ja: "ピッチ資料",
+    de: "Pitch-Decks",
+  },
+  reliability: {
+    en: "Reliability manifesto",
+    "zh-hk": "可靠 AI 立場",
+    "zh-tw": "可靠 AI 立場",
+    ja: "信頼性の原則",
+    de: "Zuverlässigkeits-Manifest",
+  },
+  "ai-era-quality": {
+    en: "AI-era quality engineering",
+    "zh-hk": "AI 時代品質工程",
+    "zh-tw": "AI 時代品質工程",
+    ja: "AI時代の品質工学",
+    de: "Qualitätstechnik im KI-Zeitalter",
+  },
+  "premium-ai-consulting": {
+    en: "Premium AI consulting",
+    "zh-hk": "高票價 AI 顧問",
+    "zh-tw": "高價值 AI 顧問",
+    ja: "プレミアム AI コンサル",
+    de: "Premium-KI-Beratung",
+  },
+  "smartsales-crm": {
+    en: "SmartSales CRM",
+    "zh-hk": "SmartSales CRM",
+    "zh-tw": "SmartSales CRM",
+    ja: "SmartSales CRM",
+    de: "SmartSales CRM",
+  },
+  eventxp: {
+    en: "EventXP",
+    "zh-hk": "EventXP",
+    "zh-tw": "EventXP",
+    ja: "EventXP",
+    de: "EventXP",
+  },
+  "ai-consulting": {
+    en: "AI Consulting",
+    "zh-hk": "AI 顧問服務",
+    "zh-tw": "AI 顧問服務",
+    ja: "AI コンサルティング",
+    de: "KI-Beratung",
+  },
+  "ai-seo-update-package": {
+    en: "AI SEO update package",
+    "zh-hk": "AI SEO 更新套餐",
+    "zh-tw": "AI SEO 更新方案",
+    ja: "AI SEO アップデート",
+    de: "AI-SEO-Update-Paket",
+  },
+  compare: {
+    en: "Compare",
+    "zh-hk": "產品比較",
+    "zh-tw": "產品比較",
+    ja: "製品比較",
+    de: "Vergleich",
+  },
+  "smartsales-vs-salesforce": {
+    en: "SmartSales vs Salesforce",
+    "zh-hk": "SmartSales vs Salesforce",
+    "zh-tw": "SmartSales vs Salesforce",
+    ja: "SmartSales と Salesforce の比較",
+    de: "SmartSales vs. Salesforce",
+  },
+  "eventxp-vs-eventbrite": {
+    en: "EventXP vs Eventbrite",
+    "zh-hk": "EventXP vs Eventbrite",
+    "zh-tw": "EventXP vs Eventbrite",
+    ja: "EventXP と Eventbrite の比較",
+    de: "EventXP vs. Eventbrite",
+  },
+};
+
+const HOME_FAQ_EN: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "What is AI CRM and how is it different from traditional CRM?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "AI CRM combines customer records with AI-generated drafts, workflow automation, and priority scoring. Unlike traditional CRM that mainly stores data, it helps teams respond faster and reduce repetitive follow-up work.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "How does EventXP QR check-in work?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Guests receive a unique QR code by email or WhatsApp. Staff scan codes on-site, attendance is recorded in real time, and EventXP can trigger post-event follow-up workflows based on participation signals.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Where can InnovateXP deploy AI-assisted workflows?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "InnovateXP supports deployment on major cloud platforms (including Azure OpenAI, Alibaba Cloud, GCP, and AWS) and self-hosted or on-premise environments when your risk or compliance posture requires it, with practical AI training for your team.",
+    },
+  },
+];
+
+const HOME_FAQ_ZH_HK: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "什麼是 AI CRM？它與傳統 CRM 有何不同？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "AI CRM 把客戶資料管理結合 AI 草稿、自動化流程與優先排序。相比只儲存資料的傳統 CRM，AI CRM 可協助團隊更快回覆並減少重複跟進工作。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "QR 碼簽到如何運作？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "賓客透過電郵或 WhatsApp 收到獨特 QR 碼，工作人員現場掃描後系統即時記錄出席，並可根據活動行為訊號自動觸發後續跟進流程。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "InnovateXP 可將 AI 輔助流程部署喺邊？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "我們可配合主要 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）上架，亦可在需要時採用自家主機／On-Premise 部署以符合風險或合規要求，並提供實戰 AI training。",
+    },
+  },
+];
+
+const HOME_FAQ_ZH_TW: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "什麼是 AI CRM？與傳統 CRM 有什麼不同？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "AI CRM 將客戶資料結合 AI 草稿、自動化流程與優先排序。相較於主要用來儲存資料的傳統 CRM，AI CRM 可協助團隊更快回應並降低重複跟進成本。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "EventXP 的 QRCode 報到如何運作？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "來賓可透過電子郵件或 WhatsApp 取得專屬 QRCode；現場掃描後即時紀錄出席，並可依參與訊號觸發活動後的跟進流程。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "InnovateXP 可以把 AI 輔助流程部署在哪裡？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "我們可配合主要雲端平台（Azure OpenAI、阿里雲、GCP、AWS）上架；若有合規或風控需求，亦可採用自建／地端部署，並提供實務 AI 培訓。",
+    },
+  },
+];
+
+const HOME_FAQ_JA: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "AI CRM とは何ですか？従来の CRM とどう違いますか？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "AI CRM は顧客情報に AI 草案、ワークフロー自動化、優先度スコアリングを組み合わせます。データ保管が中心の従来 CRM と異なり、返信を速め、繰り返しのフォロー業務を減らします。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "EventXP の QR チェックインはどう動きますか？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "ゲストはメールまたは WhatsApp で固有の QR を受け取ります。スタッフが現場で読み取ると出席がリアルタイム記録され、参加シグナルに応じてイベント後フォローのワークフローを起動できます。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "InnovateXP は AI 支援ワークフローをどこに展開できますか？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "主要クラウド（Azure OpenAI、Alibaba Cloud、GCP、AWS）への展開に加え、リスク／コンプライアンス要件に応じてセルフホスト／オンプレミスにも対応し、実務に沿った AI 研修も提供します。",
+    },
+  },
+];
+
+const HOME_FAQ_DE: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "Was ist AI-CRM — und wie unterscheidet es sich von klassischem CRM?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "AI-CRM verbindet Kundendaten mit KI-generierten Entwürfen, Workflow-Automatisierung und Priorisierung. Anders als klassisches CRM, das vor allem speichert, hilft es Teams, schneller zu antworten und wiederkehrende Follow-up-Arbeit zu reduzieren.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Wie funktioniert der EventXP QR-Check-in?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Gäste erhalten einen individuellen QR-Code per E-Mail oder WhatsApp. Vor Ort wird gescannt, die Anwesenheit wird in Echtzeit erfasst und EventXP kann nachgelagerte Follow-up-Workflows anhand von Teilnahmesignalen auslösen.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Wo kann InnovateXP KI-unterstützte Workflows bereitstellen?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "InnovateXP unterstützt Bereitstellung auf großen Cloud-Plattformen (z. B. Azure OpenAI, Alibaba Cloud, GCP, AWS) sowie Self-Hosted/On-Premise, wenn Risiko- oder Compliance-Anforderungen es erfordern — inklusive praktischem AI-Training für Ihr Team.",
+    },
+  },
+];
+
+function homeFaqMainEntity(locale: AppLocale): FaqMainEntity {
+  switch (locale) {
+    case "en":
+      return HOME_FAQ_EN;
+    case "zh-hk":
+      return HOME_FAQ_ZH_HK;
+    case "zh-tw":
+      return HOME_FAQ_ZH_TW;
+    case "ja":
+      return HOME_FAQ_JA;
+    case "de":
+      return HOME_FAQ_DE;
+  }
+}
+
+const AI_SEO_FAQ_EN: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "How many revisions are included in the AI SEO Update Package?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "The Starter package includes 3 revisions in one week with 1 follow-up. The Growth package includes 10 revisions in one month with 2 follow-ups.",
+    },
+  },
+];
+
+const AI_SEO_FAQ_ZH_HK: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "AI SEO 更新套餐包含幾多次修改？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Starter 套餐一星期內提供 3 次修改與 1 次 follow-up。Growth 套餐一個月內提供 10 次修改與 2 次 follow-up。",
+    },
+  },
+];
+
+const AI_SEO_FAQ_ZH_TW: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "AI SEO 更新方案包含幾次修改？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Starter 方案於一週內提供 3 次修改與 1 次後續會議；Growth 方案於一個月內提供 10 次修改與 2 次後續會議。",
+    },
+  },
+];
+
+const AI_SEO_FAQ_JA: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "AI SEO アップデートパッケージには何回の修正が含まれますか？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Starter は 1 週間で 3 回の修正とフォローアップ 1 回。Growth は 1 か月で 10 回の修正とフォローアップ 2 回です。",
+    },
+  },
+];
+
+const AI_SEO_FAQ_DE: FaqMainEntity = [
+  {
+    "@type": "Question",
+    name: "Wie viele Überarbeitungen sind im AI-SEO-Update-Paket enthalten?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Das Starter-Paket umfasst innerhalb einer Woche 3 Überarbeitungen und 1 Follow-up. Das Growth-Paket umfasst innerhalb eines Monats 10 Überarbeitungen und 2 Follow-ups.",
+    },
+  },
+];
+
+function aiSeoFaqMainEntity(locale: AppLocale): FaqMainEntity {
+  switch (locale) {
+    case "en":
+      return AI_SEO_FAQ_EN;
+    case "zh-hk":
+      return AI_SEO_FAQ_ZH_HK;
+    case "zh-tw":
+      return AI_SEO_FAQ_ZH_TW;
+    case "ja":
+      return AI_SEO_FAQ_JA;
+    case "de":
+      return AI_SEO_FAQ_DE;
+  }
+}
+
+function buildBreadcrumbJsonLd(pathname: string, baseUrl: string, labelLocale: AppLocale) {
   const clean = ((pathname || "/").split("?")[0] || "/").replace(/\/$/, "") || "/";
   const lower = clean.toLowerCase();
-  const locale = getLocaleFromPathname(lower);
+  const urlLocale = getLocaleFromPathname(lower);
   const withoutLocale = stripLocaleFromPathname(lower);
   if (withoutLocale === "/") return null;
 
   const segments = withoutLocale.slice(1).split("/").filter(Boolean);
-  const homeLabel = language === "en" ? "Home" : "首頁";
-  const items: { name: string; item: string }[] = [
-    { name: homeLabel, item: `${baseUrl}/${locale}` },
-  ];
-
-  const labels: Record<string, { en: string; zh: string }> = {
-    bookme: { en: "Book a visit", zh: "預約洽詢" },
-    blog: { en: "Blog", zh: "網誌" },
-    "pitch-decks": { en: "Pitch decks", zh: "簡報下載" },
-    reliability: { en: "Reliability manifesto", zh: "可靠 AI 立場" },
-    "ai-era-quality": { en: "AI-era quality engineering", zh: "AI 時代品質工程" },
-    "premium-ai-consulting": { en: "Premium AI consulting", zh: "高票價 AI 顧問" },
-    "smartsales-crm": { en: "SmartSales CRM", zh: "SmartSales CRM" },
-    eventxp: { en: "EventXP", zh: "EventXP" },
-    "ai-consulting": { en: "AI Consulting", zh: "AI 顧問服務" },
-    "ai-seo-update-package": { en: "AI SEO update package", zh: "AI SEO 更新套餐" },
-    compare: { en: "Compare", zh: "產品比較" },
-    "smartsales-vs-salesforce": {
-      en: "SmartSales vs Salesforce",
-      zh: "SmartSales vs Salesforce",
-    },
-    "eventxp-vs-eventbrite": {
-      en: "EventXP vs Eventbrite",
-      zh: "EventXP vs Eventbrite",
-    },
-  };
+  const homeLabel = BREADCRUMB_HOME[labelLocale];
+  const items: { name: string; item: string }[] = [{ name: homeLabel, item: `${baseUrl}/${urlLocale}` }];
 
   let acc = "";
   for (let i = 0; i < segments.length; i++) {
     acc += `/${segments[i]}`;
     const seg = segments[i];
-    const known = labels[seg];
+    const known = seg ? BREADCRUMB_SEGMENTS[seg] : undefined;
     let name: string;
     if (known) {
-      name = language === "en" ? known.en : known.zh;
+      name = known[labelLocale];
     } else if (segments[0] === "blog") {
-      name = language === "en" ? "Article" : "文章";
+      name = BREADCRUMB_ARTICLE[labelLocale];
     } else {
       name = seg.replace(/-/g, " ");
     }
-    items.push({ name, item: `${baseUrl}/${locale}${acc}` });
+    items.push({ name, item: `${baseUrl}/${urlLocale}${acc}` });
   }
 
   return {
@@ -82,67 +477,59 @@ type StructuredDataScope =
   | "minimal";
 
 export default function StructuredData({ type = "auto" }: { type?: StructuredDataScope }) {
-  const { language } = useLanguage();
   const pathname = usePathname();
   const baseUrl = "https://www.innovatexp.co";
   const lower = ((pathname || "/").split("?")[0] || "/").toLowerCase();
+  const routeLocale = getLocaleFromPathname(lower);
   const pathWithoutLocale = stripLocaleFromPathname(lower);
 
   const resolvedScope: StructuredDataScope =
     type !== "auto"
       ? type
       : pathWithoutLocale === "/"
-      ? "home"
-      : pathWithoutLocale.startsWith("/smartsales-crm")
-      ? "smartsales"
-      : pathWithoutLocale.startsWith("/eventxp")
-      ? "eventxp"
-      : pathWithoutLocale.startsWith("/ai-consulting")
-      ? "ai-consulting"
-      : pathWithoutLocale.startsWith("/ai-seo-update-package")
-      ? "ai-seo-package"
-      : "minimal";
+        ? "home"
+        : pathWithoutLocale.startsWith("/smartsales-crm")
+          ? "smartsales"
+          : pathWithoutLocale.startsWith("/eventxp")
+            ? "eventxp"
+            : pathWithoutLocale.startsWith("/ai-consulting")
+              ? "ai-consulting"
+              : pathWithoutLocale.startsWith("/ai-seo-update-package")
+                ? "ai-seo-package"
+                : "minimal";
 
   const organizationSchema = {
     "@context": "https://schema.org",
     "@type": "Organization",
     "@id": `${baseUrl}/#organization`,
-    "name": "InnovateXP Limited",
-    "alternateName": "IXP",
-    "legalName": "InnovateXP Limited",
-    "url": baseUrl,
-    "logo": `${baseUrl}/innovatexp_color_no_bg.svg`,
-    "description": language === 'en' 
-      ? "We help Hong Kong SMEs turn event leads and WhatsApp inquiries into structured sales pipelines with AI-augmented workflows. System deployment can support cloud platforms including Azure OpenAI, Alibaba Cloud, GCP, AWS, or self-hosted / on-premise environments, plus practical AI training."
-      : "我們協助香港中小企將活動名單同 WhatsApp 查詢變成結構化 sales pipeline，透過 AI 輔助分類、下一步建議與回覆草稿。系統上架可支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署，並提供實戰 AI training。",
-    "address": {
+    name: "InnovateXP Limited",
+    alternateName: "IXP",
+    legalName: "InnovateXP Limited",
+    url: baseUrl,
+    logo: `${baseUrl}/innovatexp_color_no_bg.svg`,
+    description: pickSchema(routeLocale, SCHEMA_ORGANIZATION_DESCRIPTION),
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "North Point",
-      "addressRegion": "Hong Kong",
-      "addressCountry": "HK"
+      addressLocality: "North Point",
+      addressRegion: "Hong Kong",
+      addressCountry: "HK",
     },
-    "contactPoint": {
+    contactPoint: {
       "@type": "ContactPoint",
-      "contactType": "Customer Service",
-      "email": "info@innovatexp.co",
-      "availableLanguage": ["English", "Chinese"]
+      contactType: "Customer Service",
+      email: "info@innovatexp.co",
+      availableLanguage: ["English", "Chinese"],
     },
-    "founder": {
+    founder: {
       "@type": "Person",
       "@id": `${baseUrl}/#founder`,
-      "name": "Larry Lo",
-      "jobTitle": "Founder & AI Architect",
-      "url": "https://www.linkedin.com/in/larry-lo-804a50165/",
-      "sameAs": [
-        "https://www.linkedin.com/in/larry-lo-804a50165/",
-        "https://github.com/burkaslarry"
-      ]
+      name: "Larry Lo",
+      jobTitle: "Founder & AI Architect",
+      url: "https://www.linkedin.com/in/larry-lo-804a50165/",
+      sameAs: ["https://www.linkedin.com/in/larry-lo-804a50165/", "https://github.com/burkaslarry"],
     },
-    "sameAs": [
-      "https://www.linkedin.com/company/innovatexp",
-      "https://www.linkedin.com/in/larry-lo-804a50165/"
-    ],
-    "knowsAbout": [
+    sameAs: ["https://www.linkedin.com/company/innovatexp", "https://www.linkedin.com/in/larry-lo-804a50165/"],
+    knowsAbout: [
       "AI CRM",
       "SME AI Automation",
       "Business Process Automation",
@@ -165,484 +552,381 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "香港中小企 AI 自動化",
       "BNI 跟進系統",
       "Google Gemini API",
-      "WhatsApp CRM Integration"
-    ]
+      "WhatsApp CRM Integration",
+    ],
   };
 
   const personSchema = {
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${baseUrl}/#founder`,
-    "name": "Larry Lo",
-    "jobTitle": "Founder & AI Architect",
-    "description": language === 'en'
-      ? "Built by a practitioner, not a consultant. Larry Lo has 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. He is the person who builds and supports your system — not a project manager who subcontracts. Former Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systems handling 2,000+ concurrent active users"
-      : "14年科技老兵，善敏教育中心 AI 顧問，前 GDG Hong Kong Organizer，曾管理 2,000+ 參與者活動，BNI Anchor 分會成員。",
-    "url": "https://www.linkedin.com/in/larry-lo-804a50165/",
-    "image": `${baseUrl}/mypresent.jpg`,
-    "sameAs": [
-      "https://www.linkedin.com/in/larry-lo-804a50165/",
-      "https://github.com/burkaslarry"
-    ],
-    "worksFor": {
+    name: "Larry Lo",
+    jobTitle: "Founder & AI Architect",
+    description: pickSchema(routeLocale, SCHEMA_PERSON_DESCRIPTION),
+    url: "https://www.linkedin.com/in/larry-lo-804a50165/",
+    image: `${baseUrl}/mypresent.jpg`,
+    sameAs: ["https://www.linkedin.com/in/larry-lo-804a50165/", "https://github.com/burkaslarry"],
+    worksFor: {
       "@type": "Organization",
-      "@id": `${baseUrl}/#organization`
+      "@id": `${baseUrl}/#organization`,
     },
-    "alumniOf": [
+    alumniOf: [
       {
         "@type": "Organization",
-        "name": "Hong Kong Science and Technology Parks Corporation",
-        "sameAs": "https://www.hkstp.org"
-      }
+        name: "Hong Kong Science and Technology Parks Corporation",
+        sameAs: "https://www.hkstp.org",
+      },
     ],
-    "affiliation": [
+    affiliation: [
       {
         "@type": "Organization",
-        "name": "Agilizing Education Center",
-        "sameAs": "https://agilizing.com"
+        name: "Agilizing Education Center",
+        sameAs: "https://agilizing.com",
       },
       {
         "@type": "Organization",
-        "name": "BNI Anchor",
-        "sameAs": "https://www.bni-anchor.com/"
-      }
-    ]
+        name: "BNI Anchor",
+        sameAs: "https://www.bni-anchor.com/",
+      },
+    ],
   };
 
   const localBusinessSchema = {
     "@context": "https://schema.org",
     "@type": "LocalBusiness",
     "@id": `${baseUrl}/#localbusiness`,
-    "name": "InnovateXP Limited",
-    "image": `${baseUrl}/innovatexp_color_no_bg.svg`,
-    "address": {
+    name: "InnovateXP Limited",
+    image: `${baseUrl}/innovatexp_color_no_bg.svg`,
+    address: {
       "@type": "PostalAddress",
-      "addressLocality": "North Point",
-      "addressRegion": "Hong Kong",
-      "addressCountry": "HK"
+      addressLocality: "North Point",
+      addressRegion: "Hong Kong",
+      addressCountry: "HK",
     },
-    "geo": {
+    geo: {
       "@type": "GeoCoordinates",
-      "latitude": 22.2908,
-      "longitude": 114.1950
+      latitude: 22.2908,
+      longitude: 114.195,
     },
-    "url": baseUrl,
-    "priceRange": "$$",
-    "openingHoursSpecification": [
+    url: baseUrl,
+    priceRange: "$$",
+    openingHoursSpecification: [
       {
         "@type": "OpeningHoursSpecification",
-        "dayOfWeek": ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        "opens": "09:00",
-        "closes": "18:00"
-      }
-    ]
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
   };
 
   const smartSalesCRMService = {
     "@context": "https://schema.org",
     "@type": ["Service", "Product"],
     "@id": `${baseUrl}/#smartsales-crm`,
-    "serviceType": "AI CRM Software",
-    "name": "SmartSales CRM",
-    "description": language === 'en'
-      ? "AI-powered customer relationship management system with WhatsApp integration, automated follow-ups, and intelligent scheduling for Hong Kong SMEs."
-      : "AI 驅動的客戶關係管理系統，整合 WhatsApp、自動跟進和智能排程，專為香港中小企業設計。",
-    "provider": {
+    serviceType: "AI CRM Software",
+    name: "SmartSales CRM",
+    description: pickSchema(routeLocale, SCHEMA_SMARTSALES_DESCRIPTION),
+    provider: {
       "@type": "Organization",
-      "@id": `${baseUrl}/#organization`
+      "@id": `${baseUrl}/#organization`,
     },
-    "areaServed": {
+    areaServed: {
       "@type": "AdministrativeArea",
-      "name": "Hong Kong and Greater Bay Area"
+      name: "Hong Kong and Greater Bay Area",
     },
-    "hasOfferCatalog": {
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "SmartSales CRM Pricing",
-      "itemListElement": [
+      name: "SmartSales CRM Pricing",
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "SmartSales CRM - Starter"
+            name: "SmartSales CRM - Starter",
           },
-          "price": "2800",
-          "priceCurrency": "HKD",
-          "priceSpecification": {
+          price: "2800",
+          priceCurrency: "HKD",
+          priceSpecification: {
             "@type": "UnitPriceSpecification",
-            "price": "2800",
-            "priceCurrency": "HKD",
-            "unitText": "per month"
-          }
+            price: "2800",
+            priceCurrency: "HKD",
+            unitText: "per month",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "SmartSales CRM - Pro"
+            name: "SmartSales CRM - Pro",
           },
-          "price": "4800",
-          "priceCurrency": "HKD",
-          "priceSpecification": {
+          price: "4800",
+          priceCurrency: "HKD",
+          priceSpecification: {
             "@type": "UnitPriceSpecification",
-            "price": "4800",
-            "priceCurrency": "HKD",
-            "unitText": "per month"
-          }
-        }
-      ]
+            price: "4800",
+            priceCurrency: "HKD",
+            unitText: "per month",
+          },
+        },
+      ],
     },
-    "offers": {
+    offers: {
       "@type": "AggregateOffer",
-      "priceCurrency": "HKD",
-      "lowPrice": "10800",
-      "highPrice": "18880",
-      "offerCount": 3
-    }
+      priceCurrency: "HKD",
+      lowPrice: "10800",
+      highPrice: "18880",
+      offerCount: 3,
+    },
   };
 
   const eventXPService = {
     "@context": "https://schema.org",
     "@type": ["Service", "Product"],
     "@id": `${baseUrl}/#eventxp`,
-    "serviceType": "Event Management Software",
-    "name": "EventXP",
-    "description": language === 'en'
-      ? "Intelligent event check-in system that transforms attendance data into business insights. QR code scanning, real-time reporting, and AI-powered attendee analysis."
-      : "智能活動簽到系統，將出席數據轉化為商業洞察。QR 碼掃描、實時報告和 AI 驅動的參與者分析。",
-    "provider": {
+    serviceType: "Event Management Software",
+    name: "EventXP",
+    description: pickSchema(routeLocale, SCHEMA_EVENTXP_DESCRIPTION),
+    provider: {
       "@type": "Organization",
-      "@id": `${baseUrl}/#organization`
+      "@id": `${baseUrl}/#organization`,
     },
-    "areaServed": {
+    areaServed: {
       "@type": "AdministrativeArea",
-      "name": "Hong Kong and Greater Bay Area"
+      name: "Hong Kong and Greater Bay Area",
     },
-    "hasOfferCatalog": {
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "EventXP Pricing",
-      "itemListElement": [
+      name: "EventXP Pricing",
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "EventXP - Starter (maintenance)"
+            name: "EventXP - Starter (maintenance)",
           },
-          "price": "880",
-          "priceCurrency": "HKD",
-          "priceSpecification": {
+          price: "880",
+          priceCurrency: "HKD",
+          priceSpecification: {
             "@type": "UnitPriceSpecification",
-            "price": "880",
-            "priceCurrency": "HKD",
-            "unitText": "per month"
-          }
+            price: "880",
+            priceCurrency: "HKD",
+            unitText: "per month",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "EventXP - Growth (maintenance)"
+            name: "EventXP - Growth (maintenance)",
           },
-          "price": "1280",
-          "priceCurrency": "HKD",
-          "priceSpecification": {
+          price: "1280",
+          priceCurrency: "HKD",
+          priceSpecification: {
             "@type": "UnitPriceSpecification",
-            "price": "1280",
-            "priceCurrency": "HKD",
-            "unitText": "per month"
-          }
+            price: "1280",
+            priceCurrency: "HKD",
+            unitText: "per month",
+          },
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "EventXP - Enterprise (maintenance)"
+            name: "EventXP - Enterprise (maintenance)",
           },
-          "price": "1480",
-          "priceCurrency": "HKD",
-          "priceSpecification": {
+          price: "1480",
+          priceCurrency: "HKD",
+          priceSpecification: {
             "@type": "UnitPriceSpecification",
-            "price": "1480",
-            "priceCurrency": "HKD",
-            "unitText": "per month"
-          }
-        }
-      ]
+            price: "1480",
+            priceCurrency: "HKD",
+            unitText: "per month",
+          },
+        },
+      ],
     },
-    "offers": {
+    offers: {
       "@type": "AggregateOffer",
-      "priceCurrency": "HKD",
-      "lowPrice": "6800",
-      "highPrice": "9800",
-      "offerCount": 3
-    }
+      priceCurrency: "HKD",
+      lowPrice: "6800",
+      highPrice: "9800",
+      offerCount: 3,
+    },
   };
 
   const aiConsultingService = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${baseUrl}/#ai-consulting`,
-    "serviceType": "AI Consulting",
-    "name": "AI Consulting Services",
-    "description": language === 'en'
-      ? "Practical AI implementation consulting for Hong Kong SMEs, including cloud platform deployment (Azure OpenAI, Alibaba Cloud, GCP, AWS), on-premise options, AI training, and deterministic workflow automation design."
-      : "為香港中小企提供可落地的 AI 實作顧問，包括 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）、On-Premise 部署選項、AI training 與可控流程自動化設計。",
-    "provider": {
+    serviceType: "AI Consulting",
+    name: "AI Consulting Services",
+    description: pickSchema(routeLocale, SCHEMA_AI_CONSULTING_DESCRIPTION),
+    provider: {
       "@type": "Organization",
-      "@id": `${baseUrl}/#organization`
+      "@id": `${baseUrl}/#organization`,
     },
-    "areaServed": {
+    areaServed: {
       "@type": "AdministrativeArea",
-      "name": "Hong Kong and Greater Bay Area"
+      name: "Hong Kong and Greater Bay Area",
     },
-    "hasOfferCatalog": {
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "AI Consulting Packages",
-      "itemListElement": [
+      name: "AI Consulting Packages",
+      itemListElement: [
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "AI Readiness Audit"
+            name: "AI Readiness Audit",
           },
-          "price": "8000",
-          "priceCurrency": "HKD"
+          price: "8000",
+          priceCurrency: "HKD",
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Custom AI Workflow Build"
+            name: "Custom AI Workflow Build",
           },
-          "price": "25000",
-          "priceCurrency": "HKD"
+          price: "25000",
+          priceCurrency: "HKD",
         },
         {
           "@type": "Offer",
-          "itemOffered": {
+          itemOffered: {
             "@type": "Service",
-            "name": "Prompt Training Bootcamp"
+            name: "Prompt Training Bootcamp",
           },
-          "price": "12000",
-          "priceCurrency": "HKD"
-        }
-      ]
+          price: "12000",
+          priceCurrency: "HKD",
+        },
+      ],
     },
-    "offers": {
+    offers: {
       "@type": "AggregateOffer",
-      "priceCurrency": "HKD",
-      "lowPrice": "8000",
-      "highPrice": "25000",
-      "offerCount": 3
-    }
+      priceCurrency: "HKD",
+      lowPrice: "8000",
+      highPrice: "25000",
+      offerCount: 3,
+    },
   };
 
   const aiSeoUpdateService = {
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${baseUrl}/#ai-seo-update-package`,
-    "serviceType": "AI SEO Content Update Service",
-    "name": language === "en" ? "AI SEO Update Package" : "AI SEO 更新套餐",
-    "description":
-      language === "en"
-        ? "Done-for-you AI SEO content and schema update package for SMEs, with fixed revision rounds and follow-up sessions."
-        : "為中小企提供 AI SEO 內容與結構化資料更新服務，包含固定修改輪次與跟進會議。",
-    "provider": {
+    serviceType: "AI SEO Content Update Service",
+    name: pickSchema(routeLocale, SCHEMA_AI_SEO_NAME),
+    description: pickSchema(routeLocale, SCHEMA_AI_SEO_DESCRIPTION),
+    provider: {
       "@type": "Organization",
-      "@id": `${baseUrl}/#organization`
+      "@id": `${baseUrl}/#organization`,
     },
-    "offers": {
+    offers: {
       "@type": "AggregateOffer",
-      "priceCurrency": "HKD",
-      "lowPrice": "2000",
-      "highPrice": "6000",
-      "offerCount": 2,
-      "offers": [
+      priceCurrency: "HKD",
+      lowPrice: "2000",
+      highPrice: "6000",
+      offerCount: 2,
+      offers: [
         {
           "@type": "Offer",
-          "name": "AI SEO 更新套餐 - Starter",
-          "price": "2000",
-          "priceCurrency": "HKD",
-          "description": "3 次改動、1 星期完成、1 次 follow-up"
+          name: "AI SEO 更新套餐 - Starter",
+          price: "2000",
+          priceCurrency: "HKD",
+          description: "3 次改動、1 星期完成、1 次 follow-up",
         },
         {
           "@type": "Offer",
-          "name": "AI SEO 更新套餐 - Growth",
-          "price": "6000",
-          "priceCurrency": "HKD",
-          "description": "10 次改動、1 個月完成、2 次 follow-up"
-        }
-      ]
+          name: "AI SEO 更新套餐 - Growth",
+          price: "6000",
+          priceCurrency: "HKD",
+          description: "10 次改動、1 個月完成、2 次 follow-up",
+        },
+      ],
     },
-    "url": `${baseUrl}/ai-seo-update-package`
+    url: `${baseUrl}/ai-seo-update-package`,
   };
 
   const homeFaqPageSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": language === 'en'
-      ? [
-          {
-            "@type": "Question",
-            "name": "What is AI CRM and how is it different from traditional CRM?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "AI CRM combines customer records with AI-generated drafts, workflow automation, and priority scoring. Unlike traditional CRM that mainly stores data, it helps teams respond faster and reduce repetitive follow-up work."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "How does EventXP QR check-in work?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Guests receive a unique QR code by email or WhatsApp. Staff scan codes on-site, attendance is recorded in real time, and EventXP can trigger post-event follow-up workflows based on participation signals."
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "Where can InnovateXP deploy AI-assisted workflows?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "InnovateXP supports deployment on major cloud platforms (including Azure OpenAI, Alibaba Cloud, GCP, and AWS) and self-hosted or on-premise environments when your risk or compliance posture requires it, with practical AI training for your team."
-            }
-          }
-        ]
-      : [
-          {
-            "@type": "Question",
-            "name": "什麼是 AI CRM？它與傳統 CRM 有何不同？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "AI CRM 把客戶資料管理結合 AI 草稿、自動化流程與優先排序。相比只儲存資料的傳統 CRM，AI CRM 可協助團隊更快回覆並減少重複跟進工作。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "QR 碼簽到如何運作？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "賓客透過電郵或 WhatsApp 收到獨特 QR 碼，工作人員現場掃描後系統即時記錄出席，並可根據活動行為訊號自動觸發後續跟進流程。"
-            }
-          },
-          {
-            "@type": "Question",
-            "name": "InnovateXP 可將 AI 輔助流程部署喺邊？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "我們可配合主要 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）上架，亦可在需要時採用自家主機／On-Premise 部署以符合風險或合規要求，並提供實戰 AI training。"
-            }
-          }
-        ]
+    mainEntity: homeFaqMainEntity(routeLocale),
   };
 
   const aiSeoUpdateFaqPageSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
-    "mainEntity": language === "en"
-      ? [
-          {
-            "@type": "Question",
-            "name": "How many revisions are included in the AI SEO Update Package?",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "The Starter package includes 3 revisions in one week with 1 follow-up. The Growth package includes 10 revisions in one month with 2 follow-ups."
-            }
-          }
-        ]
-      : [
-          {
-            "@type": "Question",
-            "name": "AI SEO 更新套餐包含幾多次修改？",
-            "acceptedAnswer": {
-              "@type": "Answer",
-              "text": "Starter 套餐一星期內提供 3 次修改與 1 次 follow-up。Growth 套餐一個月內提供 10 次修改與 2 次 follow-up。"
-            }
-          }
-        ]
+    mainEntity: aiSeoFaqMainEntity(routeLocale),
   };
 
   const websiteSchema = {
     "@context": "https://schema.org",
     "@type": "WebSite",
     "@id": `${baseUrl}/#website`,
-    "url": baseUrl,
-    "name": "InnovateXP Limited",
-    "description": language === 'en'
-      ? "WhatsApp CRM, EventXP, AI training, cloud platform and on-premise deployment support for Hong Kong SMEs"
-      : "為香港中小企提供 WhatsApp CRM、EventXP、AI training、Cloud Platform 及 On-Premise 部署支援",
-    "publisher": {
+    url: baseUrl,
+    name: "InnovateXP Limited",
+    description: pickSchema(routeLocale, SCHEMA_WEBSITE_DESCRIPTION),
+    publisher: {
       "@type": "Organization",
-      "@id": `${baseUrl}/#organization`
+      "@id": `${baseUrl}/#organization`,
     },
-    "inLanguage": ["en-HK", "zh-HK", "zh-TW", "ja-JP", "de-DE"],
+    inLanguage: ["en-HK", "zh-HK", "zh-TW", "ja-JP", "de-DE"],
   };
 
   const consultingServiceSchema = {
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${baseUrl}/#consulting-service`,
-    "name": "InnovateXP Limited",
-    "description": language === 'en'
-      ? "We deliver practical AI-augmented workflow systems for Hong Kong SMEs, deployed on cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments where appropriate."
-      : "我們為香港中小企交付可落地的 AI-augmented workflow，系統上架可按需要支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署。",
-    "url": baseUrl,
-    "serviceType": "AI Consulting",
-    "provider": {
+    name: "InnovateXP Limited",
+    description: pickSchema(routeLocale, SCHEMA_CONSULTING_SERVICE_DESCRIPTION),
+    url: baseUrl,
+    serviceType: "AI Consulting",
+    provider: {
       "@type": "Organization",
-      "@id": `${baseUrl}/#organization`
+      "@id": `${baseUrl}/#organization`,
     },
-    "areaServed": [
-      { "@type": "Country", "name": "Hong Kong" },
-      { "@type": "Country", "name": "United States" },
-      { "@type": "Place", "name": "Global" }
+    areaServed: [
+      { "@type": "Country", name: "Hong Kong" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Place", name: "Global" },
     ],
-    "hasOfferCatalog": {
+    hasOfferCatalog: {
       "@type": "OfferCatalog",
-      "name": "AI Consulting & Solutions",
-      "itemListElement": [
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "AI Consulting" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "SmartSales CRM" } },
-        { "@type": "Offer", "itemOffered": { "@type": "Service", "name": "EventXP" } }
-      ]
-    }
+      name: "AI Consulting & Solutions",
+      itemListElement: [
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Consulting" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "SmartSales CRM" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "EventXP" } },
+      ],
+    },
   };
 
   const scopedServiceSchemas =
     resolvedScope === "home"
       ? [smartSalesCRMService, eventXPService, aiConsultingService]
       : resolvedScope === "smartsales"
-      ? [smartSalesCRMService]
-      : resolvedScope === "eventxp"
-      ? [eventXPService]
-      : resolvedScope === "ai-consulting"
-      ? [aiConsultingService]
-      : resolvedScope === "ai-seo-package"
-      ? [aiSeoUpdateService]
-      : [];
+        ? [smartSalesCRMService]
+        : resolvedScope === "eventxp"
+          ? [eventXPService]
+          : resolvedScope === "ai-consulting"
+            ? [aiConsultingService]
+            : resolvedScope === "ai-seo-package"
+              ? [aiSeoUpdateService]
+              : [];
 
   /** Product/detail pages expose richer FAQPage JSON-LD locally — avoid duplicate/conflicting FAQ here. */
   const scopedFaqSchemas =
-    resolvedScope === "home"
-      ? [homeFaqPageSchema]
-      : resolvedScope === "ai-seo-package"
-      ? [aiSeoUpdateFaqPageSchema]
-      : [];
+    resolvedScope === "home" ? [homeFaqPageSchema] : resolvedScope === "ai-seo-package" ? [aiSeoUpdateFaqPageSchema] : [];
 
-  const breadcrumbSchema = buildBreadcrumbJsonLd(pathname || "/", baseUrl, language);
+  const breadcrumbSchema = buildBreadcrumbJsonLd(pathname || "/", baseUrl, routeLocale);
 
   return (
     <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
       {scopedServiceSchemas.map((schema, idx) => (
         <script
           key={`service-schema-${idx}`}
@@ -651,19 +935,10 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
         />
       ))}
       {breadcrumbSchema ? (
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }}
-        />
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
       ) : null}
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }}
-      />
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(consultingServiceSchema) }}
-      />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(consultingServiceSchema) }} />
       {scopedFaqSchemas.map((schema, idx) => (
         <script
           key={`faq-schema-${idx}`}

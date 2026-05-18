@@ -1,10 +1,15 @@
 "use client"
 /* F01: Internationalization - Central EN/ZH strings, LanguageProvider, and t() lookups. */
-import React, { createContext, useContext, useState, useEffect, ReactNode } from 'react';
+import React, { createContext, useContext, ReactNode } from 'react';
+import type { AppLocale } from '@/lib/i18n-routing';
+import homeZhTw from '@/messages/homepage.zh-tw.json';
+import homeJa from '@/messages/homepage.ja.json';
+import homeDe from '@/messages/homepage.de.json';
 
 type Language = 'en' | 'zh';
 
 interface LanguageContextType {
+  locale: AppLocale;
   language: Language;
   setLanguage: (lang: Language) => void;
   t: (key: string) => string;
@@ -31,6 +36,12 @@ export const translations = {
     'hero.bottom_tagline': 'AI drafts. You approve. From chat to cash.',
     'hero.image_alt': 'Larry Lo presenting — InnovateXP founder, AI & CRM for Hong Kong SMEs',
     'hero.explore_services': 'Free 15-min chat',
+    'home.about.title': 'What is InnovateXP?',
+    'home.about.body':
+      'InnovateXP Limited is a Hong Kong SME–focused AI CRM and event-tech company founded by Larry Lo (14 years hands-on tech experience, former GDG Hong Kong organizer, HKSTP incubation alumnus). Three product lines: SmartSales CRM (WhatsApp AI CRM, from HKD 10,800), EventXP (event check-in, from HKD 4,800 pilot), and AI consulting (from HKD 8,000). We serve 3–15 person sales teams, event organizers, and membership communities. Cantonese and English support. Deployment: Cloud (Azure OpenAI, Alibaba Cloud, GCP, AWS) or On-Premise.',
+    'home.reliability.banner':
+      'Reliable AI, not autopilot hype: core workflows stay predictable, observable, and reversible; AI classifies, suggests, and drafts.',
+    'home.reliability.cta': 'See our reliability approach',
     'why.title': 'Why InnovateXP',
     'why.1.label': 'Missed follow-ups down 70%',
     'why.1.sub': 'Automation reminds your team before hot leads go cold.',
@@ -919,6 +930,11 @@ export const translations = {
     'hero.bottom_tagline': 'AI 幫你諗，你話事。由傾偈傾到收錢。',
     'hero.image_alt': 'Larry Lo 演講 — InnovateXP 創辦人，專注香港中小企 AI 與 CRM',
     'hero.explore_services': '免費傾 15 分鐘',
+    'home.about.title': 'InnovateXP 係邊間公司？做咩嘅？',
+    'home.about.body':
+      'InnovateXP Limited 係香港中小企 AI CRM 與活動科技公司，由 Larry Lo（14 年技術經驗、前 GDG Hong Kong organizer、HKSTP 孵化校友）創立。提供 3 個產品線：SmartSales CRM（WhatsApp AI CRM，HKD 10,800 起）、EventXP（活動簽到系統，HKD 4,800 試點起）、AI 顧問服務（HKD 8,000 起）。服務對象：3–15 人 sales team、活動主辦團隊、會員制社群。語言支援：粵英、中英夾雜。部署選項：Cloud（Azure OpenAI、Alibaba Cloud、GCP、AWS）或 On-Premise。',
+    'home.reliability.banner': '可靠 AI，不賭命：核心流程可預測、可監察、可回滾；AI 只做分類、建議同草稿。',
+    'home.reliability.cta': '睇我哋點樣做可靠 AI',
     'why.title': '為何選擇 InnovateXP',
     'why.1.label': '跟進遺漏 ↓ 70%',
     'why.1.sub': '自動提醒，熱門客唔再沉底。',
@@ -1753,29 +1769,42 @@ export const translations = {
 
 interface LanguageProviderProps {
   children: ReactNode;
-  initialLang: Language;
+  /** URL segment locale — single source of truth for `t()` and Chinese vs English UI flags. */
+  locale: AppLocale;
 }
 
-export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, initialLang }) => {
-  const [language, setLanguageState] = useState<Language>(initialLang);
-
-  useEffect(() => {
-    setLanguageState(initialLang);
-  }, [initialLang]);
+export const LanguageProvider: React.FC<LanguageProviderProps> = ({ children, locale }) => {
+  const language: Language = locale === 'zh-hk' ? 'zh' : 'en';
 
   const setLanguage = (lang: Language) => {
-    setLanguageState(lang);
     if (typeof window !== 'undefined') {
       localStorage.setItem('language', lang);
     }
   };
 
+  const enMap = translations.en as Record<string, string>;
+  const zhMap = translations.zh as Record<string, string>;
+  const twMap = homeZhTw as Record<string, string>;
+  const jaMap = homeJa as Record<string, string>;
+  const deMap = homeDe as Record<string, string>;
+
   const t = (key: string): string => {
-    return translations[language][key as keyof typeof translations.en] || key;
+    switch (locale) {
+      case 'zh-hk':
+        return zhMap[key] ?? enMap[key] ?? key;
+      case 'zh-tw':
+        return twMap[key] ?? enMap[key] ?? key;
+      case 'ja':
+        return jaMap[key] ?? enMap[key] ?? key;
+      case 'de':
+        return deMap[key] ?? enMap[key] ?? key;
+      default:
+        return enMap[key] ?? key;
+    }
   };
 
   return (
-    <LanguageContext.Provider value={{ language, setLanguage, t }}>
+    <LanguageContext.Provider value={{ locale, language, setLanguage, t }}>
       {children}
     </LanguageContext.Provider>
   );

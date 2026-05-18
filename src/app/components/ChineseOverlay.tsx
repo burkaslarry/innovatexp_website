@@ -16,9 +16,9 @@ const zhContent: Record<string, string> = {
 };
 
 export default function ChineseOverlay({ section }: ChineseOverlayProps) {
-  const { language } = useLanguage();
+  const { locale } = useLanguage();
 
-  if (language !== "zh") return null;
+  if (locale !== "zh-hk") return null;
 
   const text = zhContent[section];
   if (!text) return null;

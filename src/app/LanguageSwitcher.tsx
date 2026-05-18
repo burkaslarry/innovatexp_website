@@ -2,10 +2,8 @@
 
 import React from "react";
 import { usePathname, useRouter } from "next/navigation";
-import { useLanguage } from "./LanguageContext";
 import {
   getLocaleFromPathname,
-  localeToLanguage,
   stripLocaleFromPathname,
   withLocale,
   LOCALES,
@@ -24,7 +22,6 @@ const LABELS: Record<AppLocale, string> = {
  * Locale selector — navigates between hreflang-aligned URL prefixes (`/en`, `/zh-hk`, …).
  */
 export default function LanguageSwitcher() {
-  const { setLanguage } = useLanguage();
   const pathname = usePathname() || "/";
   const router = useRouter();
   const current = getLocaleFromPathname(pathname);
@@ -32,7 +29,6 @@ export default function LanguageSwitcher() {
 
   const onChange = (e: React.ChangeEvent<HTMLSelectElement>) => {
     const next = e.target.value as AppLocale;
-    setLanguage(localeToLanguage(next));
     router.push(withLocale(next, bare));
   };
 
