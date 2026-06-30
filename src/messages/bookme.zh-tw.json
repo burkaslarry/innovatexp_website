@@ -13,7 +13,7 @@
   "bookme.info.cancel": "• 如需取消或更改預約，請提前 24 小時通知",
   "bookme.info.confirmation": "• 預約成功後，您將收到確認信與行事曆邀請",
   "bookme.info.monday_friday": "• 預約時間為週一至週五，上午 9:00 至下午 5:00",
-  "bookme.info.notion": "• 時段與 Notion 同步：當日有任何含日期的行程都會占用該時段（例如 14:00–17:00 請設定開始與結束時間；可另設 NOTION_BUSY_DB_ID 連結第二個行事曆資料庫）",
+  "bookme.info.notion": "• 可預約時段與團隊行事曆同步，當日已有行程會自動占用該時段",
   "bookme.info.online": "• 諮詢可選線上會議或實體會面",
   "bookme.info.one_hour": "• 每個時段為 1 小時一對一諮詢",
   "bookme.info.title": "📋 預約須知",

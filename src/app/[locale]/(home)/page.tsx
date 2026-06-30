@@ -34,6 +34,7 @@ import { ProductMockupPlaceholder } from '@/components/ProductMockupPlaceholder'
 import { AIConsultingPackageCard } from '@/components/AIConsultingPackageCard';
 import { ImageCarouselModal } from '@/components/ImageCarouselModal';
 import { Button } from '@/components/ui/Button';
+import { innovatexpVision } from '@/content/service-pages';
 
 /** Homepage-only Service JSON-LD for Rich Results (SmartSales + EventXP sections). */
 const LD_SERVICE_EVENTXP = {
@@ -565,6 +566,51 @@ function LandingPage() {
           },
         ]}
       />
+
+      <section className="mb-16 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-900 md:p-8">
+        <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
+          <div>
+            <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+              AI training, coaching, and implementation
+            </p>
+            <h2 className="mb-3 text-3xl font-bold text-gray-900 dark:text-white">
+              {innovatexpVision.statement}
+            </h2>
+            <p className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
+              {innovatexpVision.reason}
+            </p>
+            <p className="leading-relaxed text-gray-700 dark:text-gray-300">
+              {innovatexpVision.helps}
+            </p>
+          </div>
+          <div className="rounded-2xl bg-slate-50 p-5 dark:bg-gray-800">
+            <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">Quick referral copy</h3>
+            <p className="mb-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+              {innovatexpVision.referralEnglish}
+            </p>
+            <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
+              {innovatexpVision.referralTraditionalChinese}
+            </p>
+          </div>
+        </div>
+        <div className="mt-6 flex flex-wrap gap-3">
+          {[
+            { href: '/ai-training', label: 'AI Training / AI 教班' },
+            { href: '/ai-coaching', label: 'AI Coaching / AI 陪跑課程' },
+            { href: '/sme-ai-workflow', label: 'SME AI Workflow' },
+            { href: '/proposal-to-cash-ai', label: 'Proposal-to-Cash AI' },
+            { href: '/case-studies', label: 'Project Cases' },
+          ].map((item) => (
+            <a
+              key={item.href}
+              href={loc(item.href)}
+              className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-600 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
+            >
+              {item.label}
+            </a>
+          ))}
+        </div>
+      </section>
 
       {/* Vision Section */}
       <section id="vision" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-gray-200 bg-white p-10 shadow-md dark:border-gray-700 dark:bg-gray-800">

@@ -197,6 +197,26 @@ export default async function EventXpPage({
           </p>
         </section>
 
+        <section className="mb-10 rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-gray-700 dark:bg-gray-800">
+          <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Related AI workflow pages</h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { href: "/sme-ai-workflow", label: "SME AI Workflow" },
+              { href: "/ai-training", label: "AI Training / AI 教班" },
+              { href: "/ai-coaching", label: "AI Coaching / AI 陪跑課程" },
+              { href: "/case-studies", label: "Case Studies" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={`/${locale}${item.href}`}
+                className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-600 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section className="bg-slate-50 dark:bg-gray-800 border border-slate-200 dark:border-gray-700 rounded-xl p-6">
           <h2 className="text-2xl font-bold text-gray-900 dark:text-white mb-2">
             Ready to run better events in Hong Kong?

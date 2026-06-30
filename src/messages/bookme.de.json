@@ -13,7 +13,7 @@
   "bookme.info.cancel": "• Für Stornierungen oder Änderungen bitte 24 Stunden im Voraus Bescheid geben",
   "bookme.info.confirmation": "• Nach erfolgreicher Buchung erhalten Sie eine Bestätigungs-E-Mail und eine Kalendereinladung",
   "bookme.info.monday_friday": "• Buchungszeiten: Montag bis Freitag, 9:00 bis 17:00 Uhr",
-  "bookme.info.notion": "• Freie Slots sind mit Notion synchronisiert: Jeder Termin mit Datum blockiert diese Stunden (z. B. 14:00–17:00 mit Start- und Endzeit erfassen; optional NOTION_BUSY_DB_ID für einen zweiten Kalender)",
+  "bookme.info.notion": "• Freie Slots sind mit dem Teamkalender synchronisiert — bestehende Termine an diesem Tag werden automatisch blockiert",
   "bookme.info.online": "• Die Beratung kann online oder vor Ort stattfinden",
   "bookme.info.one_hour": "• Jeder Slot ist eine einstündige Einzelberatung",
   "bookme.info.title": "📋 Hinweise zur Buchung",

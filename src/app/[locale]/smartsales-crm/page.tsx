@@ -217,7 +217,7 @@ export default async function SmartSalesCrmPage({
           <p className="mt-3 text-gray-700 dark:text-gray-300">Contact us for a custom quote for your Hong Kong team.</p>
         </section>
 
-        <p className="mb-12 text-gray-700 dark:text-gray-300">
+        <p className="mb-6 text-gray-700 dark:text-gray-300">
           Comparing CRMs? See{" "}
           <Link
             href={`/${locale}/compare/smartsales-vs-salesforce`}
@@ -227,6 +227,26 @@ export default async function SmartSalesCrmPage({
           </Link>
           .
         </p>
+
+        <section className="mb-12 rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-gray-700 dark:bg-gray-800">
+          <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Related AI workflow pages</h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { href: "/sme-ai-workflow", label: "SME AI Workflow" },
+              { href: "/proposal-to-cash-ai", label: "Proposal-to-Cash AI" },
+              { href: "/ai-coaching", label: "AI Coaching / AI 陪跑課程" },
+              { href: "/case-studies", label: "Case Studies" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={`/${locale}${item.href}`}
+                className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-600 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </section>
 
         <section className="mb-12">
           <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">FAQ</h2>

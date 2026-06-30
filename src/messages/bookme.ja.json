@@ -13,7 +13,7 @@
   "bookme.info.cancel": "• キャンセルや変更は 24 時間前までにご連絡ください",
   "bookme.info.confirmation": "• 予約完了後、確認メールとカレンダー招待が届きます",
   "bookme.info.monday_friday": "• 予約可能時間は月〜金 9:00〜17:00 です",
-  "bookme.info.notion": "• 空き枠は Notion と同期します。その日付に予定がある時間帯はブロックされます（例：14:00–17:00 は開始・終了時刻を設定；別カレンダー用に NOTION_BUSY_DB_ID を設定可能）",
+  "bookme.info.notion": "• 空き枠はチームのカレンダーと同期し、その日の既存予定は自動的にブロックされます",
   "bookme.info.online": "• オンライン面談または対面訪問を選択できます",
   "bookme.info.one_hour": "• 各枠は 1 時間のワンオンワン相談です",
   "bookme.info.title": "📋 ご予約について",

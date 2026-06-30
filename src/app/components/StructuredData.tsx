@@ -16,9 +16,9 @@ type FaqMainEntity = Array<{
 }>;
 
 const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
-  en: "We help Hong Kong SMEs turn event leads and WhatsApp inquiries into structured sales pipelines with AI-augmented workflows. System deployment can support cloud platforms including Azure OpenAI, Alibaba Cloud, GCP, AWS, or self-hosted / on-premise environments, plus practical AI training.",
+  en: "InnovateXP Limited helps Hong Kong SMEs, schools, and business teams adopt practical AI workflows through AI training, AI coaching, WhatsApp CRM automation, event intelligence, and founder-led implementation support.",
   "zh-hk":
-    "我們協助香港中小企將活動名單同 WhatsApp 查詢變成結構化 sales pipeline，透過 AI 輔助分類、下一步建議與回覆草稿。系統上架可支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署，並提供實戰 AI training。",
+    "InnovateXP Limited 協助香港中小企、學校同 business teams 透過 AI 教班、AI 陪跑課程、WhatsApp CRM 自動化、活動 intelligence 同 founder-led implementation support，將 AI 落地到實際工作流程。",
   "zh-tw":
     "我們協助中小企將活動名單與 WhatsApp 諮詢轉為結構化的業務銷售流程，透過 AI 輔助分類、下一步建議與回覆草稿。系統可部署於雲端平台（Azure OpenAI、阿里雲、GCP、AWS）或自建／地端環境，並提供實務 AI 培訓。",
   ja: "InnovateXP は香港の中小企業向けに、イベントからの見込み客や WhatsApp の問い合わせを AI ワークフローで構造化されたセールスパイプラインへ変える支援を行います。Azure OpenAI、Alibaba Cloud、GCP、AWS、オンプレミスへの展開と実践的な AI 研修に対応します。",
@@ -26,8 +26,8 @@ const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Built by a practitioner, not a consultant. Larry Lo has 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. He is the person who builds and supports your system — not a project manager who subcontracts. Former Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systems handling 2,000+ concurrent active users",
-  "zh-hk": "14年科技老兵，善敏教育中心 AI 顧問，前 GDG Hong Kong Organizer，曾管理 2,000+ 參與者活動，BNI Anchor 分會成員。",
+  en: "Larry Lo is an AI Solutions Trainer, SME AI Workflow Consultant, and founder of InnovateXP Limited. He has 13+ years of IT delivery, mobile apps, cloud architecture, agile delivery, and AI-powered business systems experience, and is an ex-Organizer of Google Developer Group Hong Kong.",
+  "zh-hk": "Larry Lo 係 AI Solutions Trainer、SME AI Workflow Consultant 及 InnovateXP Limited 創辦人，具備 13+ 年 IT delivery、mobile apps、cloud architecture、agile delivery 同 AI-powered business systems 經驗，亦係前 GDG Hong Kong Organizer。",
   "zh-tw":
     "Larry Lo 具備 14 年以上系統架構與落地實作經驗，包含香港政府與公共交通相關的高可用度專案。他親自參與建置與維運，而非層層轉包。曾任 Google Developer Group Hong Kong Organizer、香港科技園孵化校友，並曾支援 2,000 名以上並行使用者的系統等級。",
   ja: "現場の実装者として、Larry Lo はシステムアーキテクチャにおよそ 14 年の実務経験があります（香港の行政・公共交通向け高可用性案件を含む）。彼自身が構築・保守に入る体制で、請け負いだけの PM ではありません。元 Google Developer Group HK Organizer、HKSTP インキュベーション卒業・2,000 人以上同時アクティブ規模のシステム経験。",
@@ -176,6 +176,41 @@ const BREADCRUMB_SEGMENTS: Record<string, Record<AppLocale, string>> = {
     "zh-tw": "AI 顧問服務",
     ja: "AI コンサルティング",
     de: "KI-Beratung",
+  },
+  "ai-training": {
+    en: "AI Training",
+    "zh-hk": "AI 教班",
+    "zh-tw": "AI 教班",
+    ja: "AI トレーニング",
+    de: "AI-Training",
+  },
+  "ai-coaching": {
+    en: "AI Coaching",
+    "zh-hk": "AI 陪跑課程",
+    "zh-tw": "AI 陪跑課程",
+    ja: "AI コーチング",
+    de: "AI-Coaching",
+  },
+  "sme-ai-workflow": {
+    en: "SME AI Workflow",
+    "zh-hk": "中小企 AI 工作流",
+    "zh-tw": "中小企 AI 工作流",
+    ja: "SME AI ワークフロー",
+    de: "KMU AI-Workflow",
+  },
+  "proposal-to-cash-ai": {
+    en: "Proposal-to-Cash AI",
+    "zh-hk": "Proposal-to-Cash AI",
+    "zh-tw": "Proposal-to-Cash AI",
+    ja: "Proposal-to-Cash AI",
+    de: "Proposal-to-Cash AI",
+  },
+  "case-studies": {
+    en: "Case Studies",
+    "zh-hk": "案例與 proof points",
+    "zh-tw": "案例與 proof points",
+    ja: "ケーススタディ",
+    de: "Fallstudien",
   },
   "ai-seo-update-package": {
     en: "AI SEO update package",
@@ -524,7 +559,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "@type": "Person",
       "@id": `${baseUrl}/#founder`,
       name: "Larry Lo",
-      jobTitle: "Founder & AI Architect",
+      jobTitle: "AI Solutions Trainer & SME AI Workflow Consultant",
       url: "https://www.linkedin.com/in/larry-lo-804a50165/",
       sameAs: ["https://www.linkedin.com/in/larry-lo-804a50165/", "https://github.com/burkaslarry"],
     },
@@ -547,6 +582,11 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "AI-augmented Workflow Deployment",
       "On-Premise AI Deployment",
       "AI Training for SMEs",
+      "AI 教班",
+      "AI 陪跑課程",
+      "中小企 AI 升級",
+      "AI 工作流",
+      "Proposal-to-Cash AI",
       "Compliant Regional Cloud Architecture",
       "香港 WhatsApp CRM",
       "香港中小企 AI 自動化",
@@ -561,7 +601,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@type": "Person",
     "@id": `${baseUrl}/#founder`,
     name: "Larry Lo",
-    jobTitle: "Founder & AI Architect",
+    jobTitle: "AI Solutions Trainer & SME AI Workflow Consultant",
     description: pickSchema(routeLocale, SCHEMA_PERSON_DESCRIPTION),
     url: "https://www.linkedin.com/in/larry-lo-804a50165/",
     image: `${baseUrl}/mypresent.jpg`,
