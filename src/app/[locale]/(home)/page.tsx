@@ -3,6 +3,7 @@
 import React from 'react';
 import Image from 'next/image';
 import Script from 'next/script';
+import dynamic from 'next/dynamic';
 import { useEffect, useMemo, useState } from 'react';
 import {
   Bot,
@@ -32,9 +33,13 @@ import { WhyInnovateXP } from '@/components/WhyInnovateXP';
 import { ProductEntryGrid } from '@/components/ProductEntryGrid';
 import { ProductMockupPlaceholder } from '@/components/ProductMockupPlaceholder';
 import { AIConsultingPackageCard } from '@/components/AIConsultingPackageCard';
-import { ImageCarouselModal } from '@/components/ImageCarouselModal';
 import { Button } from '@/components/ui/Button';
 import { getInnovatexpVision } from '@/content/service-pages';
+
+const ImageCarouselModal = dynamic(
+  () => import('@/components/ImageCarouselModal').then((mod) => mod.ImageCarouselModal),
+  { ssr: false }
+);
 
 /** Homepage-only Service JSON-LD for Rich Results (SmartSales + EventXP sections). */
 const LD_SERVICE_EVENTXP = {

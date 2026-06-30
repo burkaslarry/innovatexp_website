@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Star } from "lucide-react";
 
 export interface PricingTableRow {
@@ -23,13 +20,7 @@ export function PricingComparisonTable({
   rows,
 }: PricingComparisonTableProps) {
   return (
-    <motion.div
-      className="mb-8 overflow-x-auto"
-      initial={{ opacity: 0, y: 12 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4 }}
-    >
+    <div className="mb-8 overflow-x-auto">
       <h3 className="mb-4 text-center text-2xl font-bold text-slate-900 dark:text-white">
         {title}
       </h3>
@@ -78,6 +69,6 @@ export function PricingComparisonTable({
           ))}
         </tbody>
       </table>
-    </motion.div>
+    </div>
   );
 }

@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Lightbulb, Sparkles } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 
@@ -33,13 +30,7 @@ export function PremiumPriceCard({
   ctaLabel,
 }: PremiumPriceCardProps) {
   return (
-    <motion.div
-      className="h-full w-full"
-      initial={{ opacity: 0, y: 20 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.45 }}
-    >
+    <div className="h-full w-full">
       <div
         className="flex h-full flex-col rounded-2xl p-[2px] shadow-xl"
         style={{
@@ -90,6 +81,6 @@ export function PremiumPriceCard({
           </div>
         </div>
       </div>
-    </motion.div>
+    </div>
   );
 }

@@ -24,11 +24,13 @@ export const metadata: Metadata = {
 const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
+  display: "swap",
 });
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
   subsets: ["latin"],
+  display: "swap",
 });
 
 export default function RootLayout({
@@ -62,6 +64,8 @@ export default function RootLayout({
           dangerouslySetInnerHTML={{
             __html: `
               window.addEventListener('load',function(){
+                if (!window.matchMedia || !window.matchMedia('(min-width: 1024px)').matches) return;
+                const loadHotjar = function(){
                 (function(h,o,t,j,a,r){
                   h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};
                   h._hjSettings={hjid:6607429,hjsv:6};
@@ -70,6 +74,9 @@ export default function RootLayout({
                   r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;
                   a.appendChild(r);
                 })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');
+                };
+                if ('requestIdleCallback' in window) window.requestIdleCallback(loadHotjar, { timeout: 4000 });
+                else window.setTimeout(loadHotjar, 3000);
               });
             `,
           }}

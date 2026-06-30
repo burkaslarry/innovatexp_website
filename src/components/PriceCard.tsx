@@ -1,6 +1,3 @@
-"use client";
-
-import { motion } from "framer-motion";
 import { Check } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { Card } from "@/components/ui/Card";
@@ -27,16 +24,9 @@ export function PriceCard({
   features,
   ctaHref,
   ctaLabel,
-  index = 0,
 }: PriceCardProps) {
   return (
-    <motion.div
-      className="h-full w-full"
-      initial={{ opacity: 0, y: 16 }}
-      whileInView={{ opacity: 1, y: 0 }}
-      viewport={{ once: true }}
-      transition={{ duration: 0.4, delay: index * 0.06 }}
-    >
+    <div className="h-full w-full">
       <Card
         className={[
           "relative flex h-full flex-col border-slate-100 transition-shadow hover:shadow-card-hover dark:border-slate-700",
@@ -78,6 +68,6 @@ export function PriceCard({
           </Button>
         </div>
       </Card>
-    </motion.div>
+    </div>
   );
 }

@@ -1,8 +1,6 @@
-"use client";
-
 /* F15: Hero section - Animated hero with primary/secondary CTAs and optional trust badges. */
-import { motion } from "framer-motion";
 import Image from "next/image";
+import type { MouseEvent } from "react";
 import { Button } from "@/components/ui/Button";
 
 export interface HeroProps {
@@ -12,11 +10,11 @@ export interface HeroProps {
   primaryHref: string;
   primaryLabel: string;
   /** When primary targets an in-page anchor, use for smooth scroll with header offset */
-  onPrimaryClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  onPrimaryClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
   /** Ghost CTA e.g. explore services */
   secondaryLabel: string;
   /** Use with #product-pillars or /bookme#quotation-wizard */
-  onSecondaryClick?: (e: React.MouseEvent<HTMLAnchorElement>) => void;
+  onSecondaryClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
   secondaryHref?: string;
   trustBadges?: string[];
   bottomTagline?: string;
@@ -40,11 +38,8 @@ export function Hero({
   imageAlt = "",
 }: HeroProps) {
   return (
-    <motion.section
+    <section
       role="banner"
-      initial={{ opacity: 0, y: 24 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.55, ease: [0.22, 1, 0.36, 1] }}
       className="mb-16 rounded-3xl border border-slate-100 bg-gradient-to-b from-white to-brand-cream/40 p-8 shadow-card dark:border-slate-700 dark:from-slate-900 dark:to-slate-900/90 md:p-12 lg:p-14"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1fr_minmax(0,420px)] lg:gap-14">
@@ -53,12 +48,18 @@ export function Hero({
             {title}
           </h1>
           {tagline?.trim() ? (
-            <p className="mt-4 text-xl font-bold text-brand-primary dark:text-teal-300 sm:text-2xl">
+            <p
+              className="mt-4 line-clamp-2 text-base font-bold leading-snug text-brand-primary dark:text-teal-300 sm:line-clamp-none sm:text-2xl"
+              title={tagline}
+            >
               {tagline}
             </p>
           ) : null}
           {description?.trim() ? (
-            <p className="mx-auto mt-6 max-w-xl text-base leading-[1.7] text-slate-600 dark:text-slate-300 lg:mx-0 lg:max-w-lg lg:text-lg">
+            <p
+              className="mx-auto mt-6 line-clamp-3 max-w-xl text-base leading-[1.7] text-slate-600 dark:text-slate-300 sm:line-clamp-none lg:mx-0 lg:max-w-lg lg:text-lg"
+              title={description}
+            >
               {description}
             </p>
           ) : null}
@@ -74,12 +75,7 @@ export function Hero({
           {bottomTagline?.trim() ? (
             <p className="mt-5 text-lg font-bold text-oxford dark:text-teal-300">{bottomTagline}</p>
           ) : null}
-          <motion.div
-            className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start"
-            initial={{ opacity: 0, y: 12 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.15, duration: 0.45 }}
-          >
+          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start">
             {onPrimaryClick && primaryHref.startsWith("#") ? (
               <a
                 href={primaryHref}
@@ -104,7 +100,7 @@ export function Hero({
             >
               {secondaryLabel}
             </a>
-          </motion.div>
+          </div>
         </div>
 
         <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
@@ -120,6 +116,6 @@ export function Hero({
           </div>
         </div>
       </div>
-    </motion.section>
+    </section>
   );
 }

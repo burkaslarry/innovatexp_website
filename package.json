@@ -1,6 +1,6 @@
 {
   "name": "innovatexp_website",
-  "version": "11.1.1",
+  "version": "11.1.2",
   "private": true,
   "scripts": {
     "dev": "NODE_OPTIONS='--inspect' next dev",
@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "seo:check": "node seo-diagnostics/seo-check.mjs",
-    "seo:validate-schema": "node scripts/validate-schema.mjs"
+    "seo:validate-schema": "node scripts/validate-schema.mjs",
+    "analyze": "ANALYZE=true next build"
   },
   "proxy": "https://python-mysql-http.onrender.com",
   "dependencies": {
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "@eslint/eslintrc": "^3",
+    "@next/bundle-analyzer": "^16.2.9",
     "@types/node": "^20",
     "@types/react": "^19",
     "@types/react-dom": "^19",
