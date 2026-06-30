@@ -318,11 +318,475 @@ export const servicePages: Record<ServicePageSlug, ServicePageContent> = {
   "proposal-to-cash-ai": proposalToCash,
 };
 
+const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
+  "ai-training": {
+    ...aiTraining,
+    title: "AI 培訓／AI 教班：給學校、中小企業與商務團隊",
+    metaTitle: "AI 培訓／AI 教班｜學校與中小企業 AI 實務課程｜InnovateXP",
+    metaDescription:
+      "Larry Lo 為學校、中小企業與商務團隊提供實務 AI 培訓：提示工程、AI 工具、AI 輔助編程、聊天機器人原型與工作流程自動化。",
+    eyebrow: "創辦人親自主講的 AI 培訓",
+    intro:
+      "InnovateXP 的 AI 培訓不是單純工具展示，而是協助學校、中小企業與商務團隊把 AI 用在真實工作：研究、寫作、客戶跟進、編程輔助、聊天機器人原型與流程自動化。課程可用粵語／英語進行，並加入繁體中文與香港、台灣團隊熟悉的 business workflow 例子，適合搜尋 AI 教班、中小企 AI 升級與 AI 工作流的團隊。",
+    audience: [
+      "正在建立 AI 素養的學校、教育中心與學生團體。",
+      "希望員工安全使用 AI 處理日常工作的中小企業主與主管。",
+      "需要可重複 AI 工作流的銷售、行銷、行政與客服團隊。",
+      "正在比較 WorkBuddy、騰訊 AI 工具、ZO Computer、Manus、AI 輔助編程與 no-code automation 的商務團隊。",
+    ],
+    painPoints: [
+      "員工試過 ChatGPT 或其他 AI 工具，但不知道如何變成穩定工作習慣。",
+      "AI demo 看起來很厲害，團隊最後仍回到手動複製貼上。",
+      "學校與企業需要貼近本地語言、流程與資料敏感度的範例。",
+      "管理層需要檢查與審批機制，避免 AI 內容未經驗證就對外使用。",
+    ],
+    deliverables: [
+      "依學校、SME 或商務團隊設計的客製化 workshop agenda。",
+      "針對寫作、分析、營運與客戶溝通的提示工程練習。",
+      "精選 AI 助手、聊天機器人、AI 輔助編程與 workflow automation 工具示範。",
+      "課後可繼續使用的 prompt templates 與工作流程 checklist。",
+      "隱私、審閱與 human approval 的實務風險指引。",
+    ],
+    expectedOutcomes: [
+      "團隊理解 AI 適合用在哪裡、哪裡有風險，以及如何檢查輸出。",
+      "參加者帶走貼近日常工作的 prompts 與流程，而不是泛泛的示範。",
+      "管理層取得共同語言，方便推動 AI adoption、review 與下一步 implementation。",
+      "組織能找出一至兩條值得落地的 AI 工作流候選項目。",
+    ],
+    modules: [
+      "AI mindset 與安全：哪些可自動化、哪些要審閱、哪些必須保留人工判斷。",
+      "商務寫作、研究、摘要與決策支援的提示工程。",
+      "本地團隊常見 AI 工具：WorkBuddy、騰訊 AI 工具、Manus-style agents 與 no-code automation。",
+      "給技術或半技術團隊的 AI 輔助編程與 chatbot prototyping。",
+      "由培訓走向工作流：挑選第一個 implementation sprint。",
+    ],
+    cta: {
+      ...aiTraining.cta,
+      label: "預約 AI 培訓諮詢",
+      note: "請告訴我們受眾、課程長度、語言偏好，以及希望學員練習的工作場景。",
+    },
+    faqs: [
+      {
+        question: "AI 培訓可以用粵語或中文進行嗎？",
+        answer: "可以。可用粵語／英語進行，並加入繁體中文商務語境與本地學校、中小企業案例。",
+      },
+      {
+        question: "非技術同事適合參加嗎？",
+        answer: "適合。課程可為非技術員工、主管或混合團隊設計；AI 輔助編程等技術模組可按需要加入。",
+      },
+      {
+        question: "課程會固定教某幾個工具嗎？",
+        answer: "不會。工具會依你的環境選擇，可能包含 WorkBuddy、騰訊 AI 工具、ZO Computer、Manus、prompt engineering、chatbot prototyping 與 workflow automation。",
+      },
+      {
+        question: "培訓後可以接續實作嗎？",
+        answer: "可以。很多團隊會先用培訓找出可落地的 AI 工作流，再接 AI 陪跑課程或 implementation sprint。",
+      },
+    ],
+  },
+  "ai-coaching": {
+    ...aiCoaching,
+    title: "AI 陪跑課程：中小企業 AI 實作教練",
+    metaTitle: "AI 陪跑課程｜中小企業 AI 導入與實作教練｜InnovateXP",
+    metaDescription:
+      "給中小企業的 AI 實作陪跑：選定一條工作流、做出第一版、訓練團隊，並逐步改善採用成效。",
+    eyebrow: "Done-with-you AI 實作陪跑",
+    intro:
+      "AI 陪跑課程適合不只想聽講座、而是希望有人陪同落地的團隊。InnovateXP 協助中小企業選定一條工作流、設計第一版、與團隊測試，再透過每週 coaching 持續改善。目標是實際採用：員工理解流程、信任系統，並在 sprint 後能繼續優化。",
+    audience: [
+      "想導入 AI、但不知道第一條流程該從哪裡開始的中小企業主。",
+      "培訓後需要 hands-on support 的營運、銷售、行銷與行政團隊。",
+      "希望以真實內部場景練習 AI 的學校或服務型企業。",
+      "需要有人橋接 business process、AI tools 與 technical implementation 的團隊。",
+    ],
+    painPoints: [
+      "會議中有很多 AI 想法，但沒有人真正負責第一個實作。",
+      "團隊需要信心與審閱習慣，不只是工具清單。",
+      "現有流程混亂，因此自動化前要先釐清流程。",
+      "管理層想看到進展，但暫時不想投入大型 transformation project。",
+    ],
+    deliverables: [
+      "AI workflow 選題與 readiness assessment。",
+      "針對一個優先 use case 的逐步 implementation roadmap。",
+      "每週 coaching sessions、任務、review checkpoints 與 adoption feedback。",
+      "Prompt library、workflow documentation 與 decision log。",
+      "依工作流需要提供 lightweight prototype 或 operating playbook。",
+    ],
+    expectedOutcomes: [
+      "一條真正的 AI 工作流由想法走到可測試的操作習慣。",
+      "團隊學會如何使用、審閱與改善 AI output。",
+      "管理者看清下一步哪些可自動化、哪些應保留人工處理。",
+      "企業建立內部 AI capability，而不是只依賴外判 IT service。",
+    ],
+    modules: [
+      "第 1 週：workflow discovery、risk boundaries 與 first use case selection。",
+      "第 2 週：prompt/system design、資料輸入與人工 review checkpoints。",
+      "第 3 週：prototype 或 operating playbook，並與團隊測試。",
+      "第 4 週：adoption review、改善 backlog 與下一個 sprint 建議。",
+    ],
+    cta: {
+      ...aiCoaching.cta,
+      label: "規劃 AI 陪跑 sprint",
+      note: "帶來一條你想改善的工作流；如果還不確定，我們也可以先協助找出最佳起點。",
+    },
+    faqs: [
+      {
+        question: "AI 陪跑與 AI 培訓有什麼不同？",
+        answer: "培訓偏向概念與工具練習；陪跑會跟著團隊做實作，讓一條工作流變成可重複的營運習慣。",
+      },
+      {
+        question: "一定需要技術人員參與嗎？",
+        answer: "不一定。有些 sprint 產出 prompts、playbooks 與 no-code workflows；較技術的 use case 可包含 chatbot prototype、dashboard 或 integration。",
+      },
+      {
+        question: "AI 陪跑課程通常多久？",
+        answer: "可由四週聚焦 sprint 開始；較大型的工作流可再延伸成後續 implementation cycles。",
+      },
+      {
+        question: "可以配合現有工具嗎？",
+        answer: "可以。我們會由你現有流程開始，只在工具能支援採用、治理與可衡量改善時才加入。",
+      },
+    ],
+  },
+  "sme-ai-workflow": {
+    ...smeWorkflow,
+    title: "中小企業 AI 工作流顧問服務",
+    metaTitle: "中小企業 AI 工作流顧問｜中小企 AI 升級｜InnovateXP",
+    metaDescription:
+      "InnovateXP 協助中小企業設計實用 AI 工作流：銷售跟進、營運、行政、CRM、WhatsApp 自動化、dashboard 與內部工具。",
+    eyebrow: "香港與台灣中小企業 AI 工作流自動化",
+    intro:
+      "InnovateXP 協助中小企業把零散的人工作業變成實用的 AI-assisted workflows。我們聚焦真實營運流程：WhatsApp CRM 自動化、sales follow-up、quotation follow-up、admin portal、dashboard、客服草稿與 internal AI tools。服務由 Larry Lo 親自帶領，他是 AI Solutions Trainer 與 SME AI Workflow Consultant，具備 13+ 年 IT delivery 與 architecture 經驗。",
+    audience: [
+      "需要提升銷售、營運與跟進紀律的 3-50 人中小企業。",
+      "仍由老闆親自協調大量流程的 founder-led service businesses。",
+      "WhatsApp、試算表、email、forms、dashboards 分散在太多地方的團隊。",
+      "想做 AI transformation，但需要 practical delivery 而不是抽象策略簡報的企業。",
+    ],
+    painPoints: [
+      "客戶 leads 來自 WhatsApp、forms、活動或 referral，但跟進不一致。",
+      "報價、invoice、payment 與 delivery status 分散在不同試算表。",
+      "管理者太晚才看到 bottlenecks。",
+      "AI adoption 卡住，因為企業還沒有選出第一條清晰工作流。",
+    ],
+    deliverables: [
+      "Workflow audit 與 priority map。",
+      "包含 AI assist points、human review points 與 data boundaries 的目標流程。",
+      "依需求用 web、automation、CRM、chatbot 或 dashboard tools 做 prototype 或 production implementation。",
+      "Team training 與 adoption guidance，讓員工理解新流程。",
+      "第一批成效指標，例如 response time、follow-up completion、admin time saved 或 missed handoffs 減少。",
+    ],
+    expectedOutcomes: [
+      "企業獲得一條清晰的第一個 AI workflow，而不是分散試驗。",
+      "員工取得能改善日常工作的工具與 review habits。",
+      "管理者更清楚看到進度、ownership 與 next actions。",
+      "AI 成為 empower 團隊的層次，而不是取代判斷的黑盒。",
+    ],
+    cta: {
+      ...smeWorkflow.cta,
+      label: "預約 SME AI 工作流諮詢",
+      note: "通常先由一條工作流與一個可衡量 adoption target 開始。",
+    },
+  },
+  "proposal-to-cash-ai": {
+    ...proposalToCash,
+    title: "Proposal-to-Cash AI：B2B 報價到收款工作流",
+    metaTitle: "Proposal-to-Cash AI｜B2B 報價跟進與收款流程自動化｜InnovateXP",
+    metaDescription:
+      "為中小企業設計的 AI-assisted workflow：B2B 報價、proposal follow-up、invoice/payment tracking 與管理可視性。",
+    eyebrow: "B2B quotation to payment workflow",
+    intro:
+      "Proposal-to-Cash AI 協助 B2B 團隊把報價、proposal follow-up、invoice status 與 payment tracking 串成更清晰的流程。與其讓 deals 掉在 WhatsApp、email、spreadsheets 與 accounting reminders 之間，團隊可以得到 structured next actions、AI draft follow-ups，以及由 proposal 到 collected cash 的可視性。",
+    audience: [
+      "大量發送報價、需要更有紀律跟進的 B2B service companies。",
+      "需要在 proposal、invoice、delivery 與 payment collection 之間交接的 sales/admin teams。",
+      "仍由老闆手動追每份 quotation 的 founder-led SMEs。",
+      "在投資完整 ERP 或 enterprise CRM 前，想先建立 practical AI 工作流的團隊。",
+    ],
+    painPoints: [
+      "報價已發出，但 follow-up timing 依賴記憶。",
+      "Sales、finance 與 delivery status 分散在不同地方。",
+      "管理層看不到 proposals 是 stuck、won、lost、invoiced 還是 paid。",
+      "不同同事對客戶的 follow-up language 不一致。",
+    ],
+    deliverables: [
+      "由 inquiry 到 quotation、follow-up、invoice、payment 與 renewal opportunity 的 workflow map。",
+      "用於 quote stage、owner、next action 與 payment state 的 status model 和 dashboard。",
+      "給 email 或 WhatsApp 使用的 AI-assisted follow-up prompts 與 message drafts。",
+      "逾期 proposals 或 unpaid invoices 的 reminder rules 與 escalation points。",
+      "可與 SmartSales CRM、spreadsheets、forms 或 custom admin portals 整合的 implementation plan。",
+    ],
+    expectedOutcomes: [
+      "更少 proposals 在發出後消失。",
+      "老闆與管理者在月底前看見 revenue blocked 在哪裡。",
+      "員工有更清晰 next actions 與 reusable follow-up language。",
+      "企業建立可重複 revenue operation，而不是一次次追報價。",
+    ],
+    cta: {
+      ...proposalToCash.cta,
+      label: "盤點你的報價到收款流程",
+      note: "請帶來目前 quotation stages，以及團隊追蹤 follow-up 的地方。",
+    },
+  },
+};
+
+const servicePagesJa: Record<ServicePageSlug, ServicePageContent> = {
+  "ai-training": {
+    ...aiTraining,
+    title: "学校・中小企業・ビジネスチーム向け AI トレーニング",
+    metaTitle: "香港 AI トレーニング | 学校・中小企業向け実践講座 | InnovateXP",
+    metaDescription:
+      "Larry Lo による実践型 AI トレーニング。プロンプト設計、AI ツール、AI 支援コーディング、チャットボット試作、ワークフロー自動化を扱います。",
+    eyebrow: "創業者による実践型 AI トレーニング",
+    intro:
+      "InnovateXP の AI トレーニングは、単なるツール紹介ではありません。学校、中小企業、ビジネスチームが研究、文章作成、顧客フォロー、コーディング支援、チャットボット試作、業務自動化に AI を使えるように設計します。広東語・英語での実施に対応し、香港の業務文脈に合わせた例を使います。",
+    audience: [
+      "AI リテラシーを高めたい学校、教育機関、学生グループ。",
+      "日常業務で安全に AI を使いたい中小企業の経営者・管理者。",
+      "再利用可能な AI ワークフローを必要とする営業、マーケティング、管理、CS チーム。",
+      "WorkBuddy、Tencent AI ツール、ZO Computer、Manus、AI 支援コーディング、ノーコード自動化を比較しているチーム。",
+    ],
+    painPoints: [
+      "ChatGPT などを試したが、継続的な仕事の型にできていない。",
+      "AI デモは良く見えるが、現場は手作業に戻ってしまう。",
+      "地域の言語、業務フロー、データ感度に合った例が必要。",
+      "AI 出力を外部利用する前に、確認と承認のルールが必要。",
+    ],
+    deliverables: [
+      "学校、SME、ビジネスチームに合わせたワークショップ設計。",
+      "文章作成、分析、業務、顧客対応に使うプロンプト演習。",
+      "AI アシスタント、チャットボット、AI 支援コーディング、ワークフロー自動化の実演。",
+      "研修後も使えるプロンプトテンプレートと業務チェックリスト。",
+      "プライバシー、レビュー、人による承認の実務ガイド。",
+    ],
+    expectedOutcomes: [
+      "チームが AI の有効領域、リスク、確認方法を理解する。",
+      "参加者が日常業務に近いプロンプトとワークフローを持ち帰る。",
+      "管理者が AI 導入、レビュー、次の実装について共通言語を持てる。",
+      "次に実装すべき AI ワークフロー候補を見つけられる。",
+    ],
+    modules: [
+      "AI の考え方と安全性：自動化すること、レビューすること、人が判断すること。",
+      "文章作成、調査、要約、意思決定支援のプロンプト設計。",
+      "地域チーム向け AI ツールとノーコード自動化。",
+      "技術・半技術チーム向け AI 支援コーディングとチャットボット試作。",
+      "研修から実装へ：最初の実装スプリントを選ぶ。",
+    ],
+    cta: {
+      ...aiTraining.cta,
+      label: "AI トレーニングを相談する",
+      note: "対象者、時間、言語、練習したい業務シナリオをお知らせください。",
+    },
+  },
+  "ai-coaching": {
+    ...aiCoaching,
+    title: "中小企業向け AI 実装コーチング",
+    metaTitle: "AI 実装コーチング | SME 向け AI 導入スプリント | InnovateXP",
+    metaDescription:
+      "1つの業務フローを選び、初版を作り、チームで試し、改善するための実践型 AI 実装コーチング。",
+    eyebrow: "伴走型 AI 実装コーチング",
+    intro:
+      "AI コーチングは、講座を聞くだけでなく実装まで進めたいチーム向けです。InnovateXP は SME が1つの業務フローを選び、初版を設計し、チームでテストし、毎週のコーチングで改善できるよう支援します。",
+    audience: [
+      "AI を導入したいが、最初の業務フローが決まっていない SME 経営者。",
+      "研修後に実践支援を必要とする業務、営業、マーケ、管理チーム。",
+      "実際の社内シナリオで AI を練習したい学校やサービス業。",
+      "業務プロセス、AI ツール、技術実装を橋渡しするコーチが必要なチーム。",
+    ],
+    painPoints: [
+      "AI アイデアは多いが、最初の実装責任者がいない。",
+      "ツール一覧よりも、自信とレビュー習慣が必要。",
+      "既存フローが複雑で、自動化前に整理が必要。",
+      "大規模投資の前に、目に見える進捗が欲しい。",
+    ],
+    deliverables: [
+      "AI ワークフロー選定と readiness assessment。",
+      "優先ユースケースの段階的 implementation roadmap。",
+      "毎週のコーチング、タスク、レビュー、採用フィードバック。",
+      "プロンプトライブラリ、業務ドキュメント、意思決定ログ。",
+      "選んだフローに応じた軽量プロトタイプまたは運用プレイブック。",
+    ],
+    expectedOutcomes: [
+      "AI ワークフローがアイデアからテスト可能な運用習慣へ進む。",
+      "チームが AI 出力の使い方、確認、改善方法を学ぶ。",
+      "管理者が次に自動化できる範囲と手作業に残す範囲を見極める。",
+      "外注だけに頼らず、社内の AI 活用力を育てる。",
+    ],
+    modules: [
+      "Week 1：業務発見、リスク境界、最初のユースケース選定。",
+      "Week 2：プロンプト／システム設計、データ入力、人のレビュー点。",
+      "Week 3：プロトタイプまたは運用プレイブックとチームテスト。",
+      "Week 4：採用レビュー、改善 backlog、次スプリント提案。",
+    ],
+    cta: {
+      ...aiCoaching.cta,
+      label: "AI コーチングスプリントを相談する",
+      note: "改善したい業務フローを1つお持ちください。未定の場合は起点選びから支援します。",
+    },
+  },
+  "sme-ai-workflow": {
+    ...smeWorkflow,
+    title: "香港中小企業向け SME AI ワークフローコンサルティング",
+    metaTitle: "SME AI ワークフローコンサルティング香港 | InnovateXP",
+    metaDescription:
+      "営業フォロー、業務、管理、CRM、WhatsApp 自動化、ダッシュボード、社内ツールのための実践的 AI ワークフロー設計。",
+    eyebrow: "香港 SME 向け AI ワークフロー自動化",
+    intro:
+      "InnovateXP は香港の SME が散らばった手作業を実用的な AI 支援ワークフローへ変える支援をします。WhatsApp CRM 自動化、営業フォロー、見積もりフォロー、管理ポータル、ダッシュボード、CS 草案、社内 AI ツールなど、実際の業務に焦点を当てます。",
+    audience: [
+      "営業、業務、フォローアップの規律を高めたい 3-50 名規模の SME。",
+      "経営者が多くの調整を抱えている founder-led service businesses。",
+      "WhatsApp、スプレッドシート、メール、フォーム、ダッシュボードが分散しているチーム。",
+      "抽象的な戦略資料ではなく、実装可能な AI transformation を求める企業。",
+    ],
+    cta: {
+      ...smeWorkflow.cta,
+      label: "SME AI ワークフローを相談する",
+      note: "通常は1つの業務フローと1つの測定可能な adoption target から始めます。",
+    },
+  },
+  "proposal-to-cash-ai": {
+    ...proposalToCash,
+    title: "Proposal-to-Cash AI：B2B 見積もりから回収までのワークフロー",
+    metaTitle: "Proposal-to-Cash AI | B2B 見積もりフォロー自動化 | InnovateXP",
+    metaDescription:
+      "B2B 見積もり、提案フォロー、請求／入金状況、管理可視性をつなぐ AI 支援ワークフロー。",
+    eyebrow: "B2B quotation to payment workflow",
+    intro:
+      "Proposal-to-Cash AI は、見積もり、提案フォロー、請求状況、入金確認を1つの見える業務フローにつなげます。WhatsApp、メール、スプレッドシート、会計リマインダーの間で案件を失わないよう、次アクション、AI 下書き、回収までの可視性を整えます。",
+    cta: {
+      ...proposalToCash.cta,
+      label: "Proposal-to-Cash ワークフローを相談する",
+      note: "現在の見積もりステージと、フォローアップを追跡している場所を共有してください。",
+    },
+  },
+};
+
+const servicePagesDe: Record<ServicePageSlug, ServicePageContent> = {
+  "ai-training": {
+    ...aiTraining,
+    title: "AI-Training für Schulen, KMUs und Business-Teams",
+    metaTitle: "AI-Training Hongkong | Praktische KI-Schulung für Schulen & KMUs | InnovateXP",
+    metaDescription:
+      "Praktisches AI-Training mit Larry Lo: Prompt Engineering, AI-Tools, AI-assisted Coding, Chatbot-Prototyping und Workflow-Automatisierung.",
+    eyebrow: "Founder-led AI-Training",
+    intro:
+      "InnovateXP bietet praktisches AI-Training für Schulen, KMUs und Business-Teams, die mehr brauchen als eine Tool-Demo. Larry Lo zeigt, wie Teams AI in echter Arbeit einsetzen: Recherche, Schreiben, Kunden-Follow-up, Coding-Unterstützung, Chatbot-Prototyping und Workflow-Automatisierung.",
+    audience: [
+      "Schulen, Bildungszentren und Studierendengruppen mit Fokus auf AI Literacy.",
+      "KMU-Inhaber und Manager, die AI sicher in tägliche Abläufe bringen wollen.",
+      "Sales-, Marketing-, Admin- und Customer-Service-Teams mit Bedarf an wiederholbaren AI-Workflows.",
+      "Teams, die WorkBuddy, Tencent AI Tools, ZO Computer, Manus, AI-assisted Coding und No-Code-Automation vergleichen.",
+    ],
+    painPoints: [
+      "Mitarbeitende haben AI-Tools ausprobiert, aber noch keine wiederholbaren Arbeitsgewohnheiten entwickelt.",
+      "Demos wirken stark, doch im Alltag bleibt es bei manuellem Copy-Paste.",
+      "Schulen und KMUs brauchen Beispiele, die zu Sprache, Workflow und Datenschutzrealität passen.",
+      "Manager brauchen Leitplanken, damit AI Qualität verbessert statt ungeprüfte Inhalte zu erzeugen.",
+    ],
+    deliverables: [
+      "Workshop-Agenda passend zu Schule, KMU oder Business-Team.",
+      "Hands-on Prompt-Engineering für Schreiben, Analyse, Betrieb und Kundenkommunikation.",
+      "Tool-Walkthroughs für AI-Assistenten, Chatbots, AI-assisted Coding und Workflow-Automation.",
+      "Prompt-Vorlagen und Workflow-Checklisten für die Nutzung nach dem Training.",
+      "Praktische Risikohinweise zu Datenschutz, Review und menschlicher Freigabe.",
+    ],
+    expectedOutcomes: [
+      "Das Team versteht, wo AI nützlich ist, wo Risiken liegen und wie Outputs geprüft werden.",
+      "Teilnehmende nehmen Prompts und Workflows mit, die zu ihrer täglichen Arbeit passen.",
+      "Manager erhalten eine gemeinsame Sprache für AI-Adoption, Review und nächste Umsetzungsschritte.",
+      "Die Organisation kann ein bis zwei AI-Workflow-Kandidaten für die Umsetzung identifizieren.",
+    ],
+    cta: {
+      ...aiTraining.cta,
+      label: "AI-Training anfragen",
+      note: "Teile Zielgruppe, Dauer, Sprache und die Arbeitsszenarien, die geübt werden sollen.",
+    },
+  },
+  "ai-coaching": {
+    ...aiCoaching,
+    title: "AI-Coaching für KMU-Implementierung",
+    metaTitle: "AI-Coaching Hongkong | KI-Implementierungssprint für KMUs | InnovateXP",
+    metaDescription:
+      "Begleitetes AI-Coaching für KMUs: einen Workflow wählen, erste Version bauen, Team trainieren und Adoption Schritt für Schritt verbessern.",
+    eyebrow: "Done-with-you Implementation Coaching",
+    intro:
+      "AI-Coaching ist für Teams, die Umsetzung statt nur Inspiration suchen. InnovateXP hilft KMUs, einen Workflow auszuwählen, die erste Version zu entwerfen, mit dem Team zu testen und in wöchentlichen Coachings zu verbessern.",
+    audience: [
+      "KMU-Inhaber, die AI einsetzen wollen, aber den ersten Workflow noch nicht kennen.",
+      "Operations-, Sales-, Marketing- und Admin-Teams, die nach Training praktische Unterstützung brauchen.",
+      "Schulen oder Servicebetriebe, die mit echten internen Szenarien üben möchten.",
+      "Teams, die Business-Prozess, AI-Tools und technische Umsetzung verbinden müssen.",
+    ],
+    painPoints: [
+      "AI-Ideen tauchen in Meetings auf, aber niemand verantwortet die erste Umsetzung.",
+      "Das Team braucht Vertrauen und Review-Gewohnheiten, nicht nur Tool-Listen.",
+      "Bestehende Abläufe sind unklar, daher braucht Automation zuerst Prozessklarheit.",
+      "Management braucht sichtbaren Fortschritt ohne sofort ein Großprojekt zu starten.",
+    ],
+    deliverables: [
+      "AI-Workflow-Auswahl und Readiness Assessment.",
+      "Schrittweiser Implementation Roadmap für einen priorisierten Use Case.",
+      "Wöchentliche Coachings mit Aufgaben, Review-Punkten und Adoption Feedback.",
+      "Prompt Library, Workflow-Dokumentation und Decision Log.",
+      "Leichter Prototyp oder Operating Playbook je nach Workflow.",
+    ],
+    expectedOutcomes: [
+      "Ein echter AI-Workflow wird von Idee zu testbarer Arbeitsgewohnheit.",
+      "Das Team lernt, AI-Outputs verantwortungsvoll zu nutzen, zu prüfen und zu verbessern.",
+      "Manager sehen klarer, was automatisiert werden kann und was manuell bleiben sollte.",
+      "Das Unternehmen baut interne AI-Fähigkeit auf statt nur externe IT-Leistung einzukaufen.",
+    ],
+    cta: {
+      ...aiCoaching.cta,
+      label: "AI-Coaching-Sprint planen",
+      note: "Bring einen Workflow mit, den du verbessern möchtest; wenn unklar, helfen wir beim Startpunkt.",
+    },
+  },
+  "sme-ai-workflow": {
+    ...smeWorkflow,
+    title: "SME AI Workflow Consulting für Unternehmen in Hongkong",
+    metaTitle: "SME AI Workflow Consulting Hongkong | InnovateXP",
+    metaDescription:
+      "Praktische AI-Workflows für Sales Follow-up, Operations, Admin, CRM, WhatsApp-Automation, Dashboards und interne Tools.",
+    eyebrow: "AI-Workflow-Automatisierung für KMUs",
+    intro:
+      "InnovateXP hilft KMUs in Hongkong, verstreute manuelle Arbeit in praktische AI-gestützte Workflows zu verwandeln: WhatsApp CRM Automation, Sales Follow-up, Angebots-Follow-up, Admin-Portale, Dashboards, CS-Entwürfe und interne AI-Tools.",
+    cta: {
+      ...smeWorkflow.cta,
+      label: "SME AI Workflow besprechen",
+      note: "Wir starten meist mit einem Workflow und einem messbaren Adoption-Ziel.",
+    },
+  },
+  "proposal-to-cash-ai": {
+    ...proposalToCash,
+    title: "Proposal-to-Cash AI Workflow für B2B-Teams",
+    metaTitle: "Proposal-to-Cash AI | B2B-Angebots-Follow-up Automation | InnovateXP",
+    metaDescription:
+      "AI-gestützter Workflow für B2B-Angebote, Proposal Follow-up, Rechnung/Zahlungsstatus und Management-Transparenz.",
+    eyebrow: "B2B-Angebot bis Zahlung",
+    intro:
+      "Proposal-to-Cash AI verbindet Angebot, Proposal Follow-up, Rechnungsstatus und Zahlungstracking in einem klareren Workflow. Statt Deals zwischen WhatsApp, E-Mail, Tabellen und Accounting-Remindern zu verlieren, erhält das Team strukturierte nächste Schritte, AI-Entwürfe und Sichtbarkeit bis zum Zahlungseingang.",
+    cta: {
+      ...proposalToCash.cta,
+      label: "Proposal-to-Cash Workflow besprechen",
+      note: "Bring Beispiel-Stages und die Orte mit, an denen dein Team Follow-ups heute verfolgt.",
+    },
+  },
+};
+
+const servicePagesByLocale: Record<AppLocale, Record<ServicePageSlug, ServicePageContent>> = {
+  en: servicePages,
+  "zh-hk": servicePagesZhTw,
+  "zh-tw": servicePagesZhTw,
+  ja: servicePagesJa,
+  de: servicePagesDe,
+};
+
 export const SERVICE_PAGE_SLUGS = Object.keys(servicePages) as ServicePageSlug[];
 
 export function getServicePage(slug: ServicePageSlug, locale: AppLocale): ServicePageContent {
-  void locale;
-  return servicePages[slug];
+  return servicePagesByLocale[locale][slug];
 }
 
 export const innovatexpVision: VisionCopy = {
@@ -343,3 +807,62 @@ export const innovatexpVision: VisionCopy = {
   referralTraditionalChinese:
     "如果你身邊有學校、中小企老闆、生意伙伴、客戶或朋友想學 AI、做 AI 教班、AI 陪跑課程、WhatsApp CRM 自動化或中小企 AI 升級，歡迎介紹 Larry Lo / InnovateXP Limited 幫佢哋由實際工作流程開始落地。",
 };
+
+const innovatexpVisionZhTw: VisionCopy = {
+  statement: "我是 Larry Lo，AI Solutions Trainer、SME AI Workflow Consultant，也是 InnovateXP Limited 創辦人。",
+  reason:
+    "因為我一路走過 IT delivery、developer communities、AI workshops、mobile apps、cloud architecture、agile delivery 與真實商務系統，我創立 InnovateXP，幫團隊把 AI 從 hype 變成真正有用的工作方式。",
+  helps: "InnovateXP 協助學校、中小企業、創辦人、sales teams、operations teams 與 business communities，把 AI 落地到真實工作流程。",
+  outcomes: [
+    "能被團隊實際使用的 AI systems 與 workflows。",
+    "透過 AI 培訓與 coaching 建立 AI literacy、confidence 與 team empowerment。",
+    "支援 CRM、WhatsApp automation、dashboards、booking flows、admin portals 與 custom AI agents 的實作。",
+    "用 tools、process、people 與 delivery discipline，建立更清晰的 AI transformation 路徑。",
+  ],
+  referralEnglish: innovatexpVision.referralEnglish,
+  referralTraditionalChinese: innovatexpVision.referralTraditionalChinese,
+};
+
+const innovatexpVisionJa: VisionCopy = {
+  statement: "私は Larry Lo、AI Solutions Trainer、SME AI Workflow Consultant、InnovateXP Limited の創業者です。",
+  reason:
+    "IT delivery、developer communities、AI workshops、mobile apps、cloud architecture、agile delivery、実際のビジネスシステムでの経験から、AI を hype ではなく実務に役立つ力へ変えるために InnovateXP を作りました。",
+  helps: "InnovateXP は学校、SME、創業者、sales teams、operations teams、business communities が AI を実際の業務フローへ導入する支援をします。",
+  outcomes: [
+    "チームが実際に使える AI systems と workflows。",
+    "AI training と coaching による AI literacy、confidence、team empowerment。",
+    "CRM、WhatsApp automation、dashboards、booking flows、admin portals、custom AI agents の実装支援。",
+    "tools、process、people、delivery discipline を組み合わせた AI transformation の明確な進め方。",
+  ],
+  referralEnglish: innovatexpVision.referralEnglish,
+  referralTraditionalChinese: innovatexpVision.referralTraditionalChinese,
+};
+
+const innovatexpVisionDe: VisionCopy = {
+  statement: "Ich bin Larry Lo, AI Solutions Trainer, SME AI Workflow Consultant und Gründer von InnovateXP Limited.",
+  reason:
+    "Aus meinen Erfahrungen in IT delivery, developer communities, AI workshops, mobile apps, cloud architecture, agile delivery und echten Business-Systemen habe ich InnovateXP aufgebaut, um AI von Hype in nützliche Arbeit zu übersetzen.",
+  helps: "InnovateXP hilft Schulen, KMUs, Gründern, Sales Teams, Operations Teams und Business Communities, AI in echte Workflows zu integrieren.",
+  outcomes: [
+    "Praktische AI systems und workflows, die Teams wirklich nutzen können.",
+    "AI literacy, confidence und team empowerment durch training und coaching.",
+    "Implementation support für CRM, WhatsApp automation, dashboards, booking flows, admin portals und custom AI agents.",
+    "Ein klarerer Weg zur AI transformation durch tools, process, people und delivery discipline.",
+  ],
+  referralEnglish: innovatexpVision.referralEnglish,
+  referralTraditionalChinese: innovatexpVision.referralTraditionalChinese,
+};
+
+export function getInnovatexpVision(locale: AppLocale): VisionCopy {
+  switch (locale) {
+    case "zh-hk":
+    case "zh-tw":
+      return innovatexpVisionZhTw;
+    case "ja":
+      return innovatexpVisionJa;
+    case "de":
+      return innovatexpVisionDe;
+    default:
+      return innovatexpVision;
+  }
+}

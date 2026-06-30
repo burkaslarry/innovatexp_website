@@ -2,6 +2,83 @@ import Link from "next/link";
 import type { AppLocale } from "@/lib/i18n-routing";
 import type { ServicePageContent } from "@/types/marketing";
 
+const LABELS: Record<
+  AppLocale,
+  {
+    home: string;
+    cases: string;
+    audience: string;
+    painPoints: string;
+    deliverables: string;
+    outcomes: string;
+    modules: string;
+    proofPoints: string;
+    faq: string;
+    related: string;
+  }
+> = {
+  en: {
+    home: "Home",
+    cases: "See project cases",
+    audience: "Target Audience",
+    painPoints: "Pain Points",
+    deliverables: "Deliverables",
+    outcomes: "Expected Outcomes",
+    modules: "Example Modules",
+    proofPoints: "Proof Points",
+    faq: "FAQ",
+    related: "Related InnovateXP Services",
+  },
+  "zh-hk": {
+    home: "首頁",
+    cases: "查看案例",
+    audience: "適合對象",
+    painPoints: "常見痛點",
+    deliverables: "交付內容",
+    outcomes: "預期成果",
+    modules: "課程／陪跑模組",
+    proofPoints: "經驗與 proof points",
+    faq: "常見問題",
+    related: "相關 InnovateXP 服務",
+  },
+  "zh-tw": {
+    home: "首頁",
+    cases: "查看案例",
+    audience: "適合對象",
+    painPoints: "常見痛點",
+    deliverables: "交付內容",
+    outcomes: "預期成果",
+    modules: "課程／陪跑模組",
+    proofPoints: "經驗與 proof points",
+    faq: "常見問題",
+    related: "相關 InnovateXP 服務",
+  },
+  ja: {
+    home: "ホーム",
+    cases: "事例を見る",
+    audience: "対象",
+    painPoints: "よくある課題",
+    deliverables: "提供内容",
+    outcomes: "期待できる成果",
+    modules: "モジュール例",
+    proofPoints: "実績・根拠",
+    faq: "FAQ",
+    related: "関連サービス",
+  },
+  de: {
+    home: "Start",
+    cases: "Projektbeispiele ansehen",
+    audience: "Zielgruppe",
+    painPoints: "Herausforderungen",
+    deliverables: "Leistungen",
+    outcomes: "Erwartete Ergebnisse",
+    modules: "Beispielmodule",
+    proofPoints: "Proof Points",
+    faq: "FAQ",
+    related: "Verwandte InnovateXP-Services",
+  },
+};
+
 function localizedHref(locale: AppLocale, href: string) {
   if (href.startsWith("http")) return href;
   const [path, hash] = href.split("#");
@@ -32,12 +109,14 @@ export function ServiceLandingPage({
   locale: AppLocale;
   content: ServicePageContent;
 }) {
+  const labels = LABELS[locale];
+
   return (
     <main className="min-h-screen bg-slate-50 text-slate-900 dark:bg-gray-950 dark:text-white">
       <div className="mx-auto max-w-5xl px-4 py-14 md:py-20">
         <nav className="mb-8 text-sm text-gray-500 dark:text-gray-400">
           <Link href={`/${locale}`} className="hover:text-brand-primary dark:hover:text-teal-300">
-            Home
+            {labels.home}
           </Link>
           <span className="mx-2">/</span>
           <span className="text-gray-700 dark:text-gray-300">{content.title}</span>
@@ -64,22 +143,22 @@ export function ServiceLandingPage({
               href={localizedHref(locale, "/case-studies")}
               className="rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-900 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:border-teal-300 dark:hover:text-teal-300"
             >
-              See project cases
+              {labels.cases}
             </Link>
           </div>
           <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">{content.cta.note}</p>
         </section>
 
         <div className="grid gap-6 md:grid-cols-2">
-          <BulletSection title="Target Audience" items={content.audience} />
-          <BulletSection title="Pain Points" items={content.painPoints} />
-          <BulletSection title="Deliverables" items={content.deliverables} />
-          <BulletSection title="Expected Outcomes" items={content.expectedOutcomes} />
+          <BulletSection title={labels.audience} items={content.audience} />
+          <BulletSection title={labels.painPoints} items={content.painPoints} />
+          <BulletSection title={labels.deliverables} items={content.deliverables} />
+          <BulletSection title={labels.outcomes} items={content.expectedOutcomes} />
         </div>
 
         {content.modules ? (
           <section className="mt-6 rounded-2xl border border-cyan-200 bg-cyan-50 p-6 dark:border-teal-500/30 dark:bg-teal-950/20">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Example Modules</h2>
+            <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{labels.modules}</h2>
             <ol className="space-y-3 text-gray-700 dark:text-gray-300">
               {content.modules.map((item, index) => (
                 <li key={item} className="flex gap-3 leading-relaxed">
@@ -94,7 +173,7 @@ export function ServiceLandingPage({
         ) : null}
 
         <section className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-6 dark:border-amber-500/30 dark:bg-amber-950/20">
-          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Proof Points</h2>
+          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{labels.proofPoints}</h2>
           <ul className="space-y-3 text-gray-700 dark:text-gray-300">
             {content.proofPoints.map((item) => (
               <li key={item} className="leading-relaxed">
@@ -105,7 +184,7 @@ export function ServiceLandingPage({
         </section>
 
         <section className="mt-10">
-          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">FAQ</h2>
+          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{labels.faq}</h2>
           <dl className="space-y-5">
             {content.faqs.map((faq) => (
               <div key={faq.question} className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800">
@@ -117,7 +196,7 @@ export function ServiceLandingPage({
         </section>
 
         <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
-          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">Related InnovateXP Services</h2>
+          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{labels.related}</h2>
           <div className="flex flex-wrap gap-3">
             {content.relatedLinks.map((link) => (
               <Link

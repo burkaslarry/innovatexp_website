@@ -34,7 +34,7 @@ import { ProductMockupPlaceholder } from '@/components/ProductMockupPlaceholder'
 import { AIConsultingPackageCard } from '@/components/AIConsultingPackageCard';
 import { ImageCarouselModal } from '@/components/ImageCarouselModal';
 import { Button } from '@/components/ui/Button';
-import { innovatexpVision } from '@/content/service-pages';
+import { getInnovatexpVision } from '@/content/service-pages';
 
 /** Homepage-only Service JSON-LD for Rich Results (SmartSales + EventXP sections). */
 const LD_SERVICE_EVENTXP = {
@@ -412,6 +412,7 @@ function LandingPage() {
   const { t, locale } = useLanguage();
   const loc = useLocalizedHref();
   const copy = HOME_PAGE_COPY[locale];
+  const visionCopy = getInnovatexpVision(locale);
   const [smartSalesCarouselOpen, setSmartSalesCarouselOpen] = useState(false);
   const [smartSalesCarouselIndex, setSmartSalesCarouselIndex] = useState(0);
 
@@ -574,22 +575,22 @@ function LandingPage() {
               AI training, coaching, and implementation
             </p>
             <h2 className="mb-3 text-3xl font-bold text-gray-900 dark:text-white">
-              {innovatexpVision.statement}
+              {visionCopy.statement}
             </h2>
             <p className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
-              {innovatexpVision.reason}
+              {visionCopy.reason}
             </p>
             <p className="leading-relaxed text-gray-700 dark:text-gray-300">
-              {innovatexpVision.helps}
+              {visionCopy.helps}
             </p>
           </div>
           <div className="rounded-2xl bg-slate-50 p-5 dark:bg-gray-800">
             <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">Quick referral copy</h3>
             <p className="mb-3 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              {innovatexpVision.referralEnglish}
+              {visionCopy.referralEnglish}
             </p>
             <p className="text-sm leading-relaxed text-gray-700 dark:text-gray-300">
-              {innovatexpVision.referralTraditionalChinese}
+              {visionCopy.referralTraditionalChinese}
             </p>
           </div>
         </div>
