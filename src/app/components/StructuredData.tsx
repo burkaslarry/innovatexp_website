@@ -196,9 +196,9 @@ const BREADCRUMB_SEGMENTS: Record<string, Record<AppLocale, string>> = {
     de: "Proposal-to-Cash AI",
   },
   "case-studies": {
-    en: "Case Studies",
-    "zh-hk": "案例與 proof points",
-    "zh-tw": "案例與 proof points",
+    en: "Relevant Experience & Delivery Capability",
+    "zh-hk": "相關經驗與交付能力",
+    "zh-tw": "相關經驗與交付能力",
     ja: "ケーススタディ",
     de: "Fallstudien",
   },

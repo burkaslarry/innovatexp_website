@@ -77,7 +77,7 @@ export const translations = {
     'product.entry.section_label': 'What are you trying to solve?',
     'product.entry.eventxp.title':
       'Spent HKD 50,000 on an event. What happened to the 200 contacts?',
-    'product.entry.eventxp.blurb': 'Auto-score follow-up lists so you chase the most valuable 20 first.',
+    'product.entry.eventxp.blurb': 'Organize follow-up priority so your team can review the most relevant contacts first.',
     'product.entry.eventxp.cta': 'Free 15-min chat',
     'product.entry.smartsales.title':
       'A customer WhatsApps you. You reply 3 days later?',
@@ -673,7 +673,7 @@ export const translations = {
     'pricing.crm.feature2.title': 'Intelligent Scheduling',
     'pricing.crm.feature2.desc': 'Auto-booking: Integrates with Google/Outlook Calendar, AI bot confirms availability in chat and sends meeting invites.',
     'pricing.crm.feature3.title': 'Insight Reporting',
-    'pricing.crm.feature3.desc': 'Sales forecasting: AI analyzes current pipeline and predicts monthly revenue achievement rate.',
+    'pricing.crm.feature3.desc': 'Follow-up priority: AI helps organize pipeline context for human review.',
     
     'pricing.crm.tier1.name': 'Starter',
     'pricing.crm.tier1.price': 'HKD $10,800',
@@ -747,7 +747,7 @@ export const translations = {
     'ai_consulting.package3.price': 'Starting from HKD $12,000',
     'ai_consulting.package3.desc': 'Hands-on training for your team to master AI prompting',
     'ai_consulting.package3.feature1': 'Interactive workshops',
-    'ai_consulting.package3.feature2': 'Real-world case studies',
+    'ai_consulting.package3.feature2': 'Real-world delivery examples',
     'ai_consulting.package3.feature3': 'Custom prompt library',
     
     // Navigation (anchors align to page sections)
@@ -776,7 +776,7 @@ export const translations = {
     // FAQ Sections
     'faq.smartsales.title': 'SmartSales CRM - Frequently Asked Questions',
     'faq.smartsales.q1': 'What is AI CRM and how does it differ from traditional CRM?',
-    'faq.smartsales.a1': 'AI CRM is customer relationship management software enhanced with artificial intelligence. Unlike traditional CRM that only stores data, AI CRM automatically drafts follow-up messages, predicts which leads will convert, and prioritizes prospects based on behavior patterns. It saves SMEs 3+ hours daily on repetitive sales tasks.',
+    'faq.smartsales.a1': 'AI CRM is customer relationship management software enhanced with artificial intelligence. Unlike traditional CRM that only stores data, AI CRM helps draft follow-up messages, organize prospect priority, and keep human approval in the loop.',
     'faq.smartsales.q2': 'Can AI CRM integrate with WhatsApp for Hong Kong businesses?',
     'faq.smartsales.a2': 'Yes. SmartSales CRM integrates directly with WhatsApp Business API, allowing Hong Kong businesses to receive inquiries, auto-draft responses in Cantonese or English, and track conversation history—all within one dashboard. Human approval is required before sending.',
     'faq.smartsales.q3': 'How much does AI CRM cost in Hong Kong?',
@@ -789,7 +789,7 @@ export const translations = {
     
     'faq.eventxp.title': 'EventXP - Frequently Asked Questions',
     'faq.eventxp.q1': 'What is EventXP event check-in system?',
-    'faq.eventxp.a1': 'EventXP is an event intelligence platform that transforms check-ins into business insights. Beyond attendance tracking, it predicts which attendees are most likely to buy, renew memberships, or require follow-up—turning event data into actionable sales leads.',
+    'faq.eventxp.a1': 'EventXP is an event operations platform that turns check-ins into cleaner attendance records, follow-up tasks, and priority lists for organizer review.',
     'faq.eventxp.q2': 'How does QR code check-in work for events?',
     'faq.eventxp.a2': 'Guests receive a unique QR code via email or WhatsApp. At the event, staff scan the code using EventXP\'s mobile app. The system instantly logs attendance, matches the guest profile to your CRM, and can trigger automated follow-ups post-event.',
     'faq.eventxp.q3': 'Can EventXP handle multiple simultaneous events?',
@@ -818,7 +818,7 @@ export const translations = {
     'eventxp.how.step4': 'Automated follow-ups are triggered post-event based on behavior',
     
     'aicrm.what.title': 'What is AI CRM?',
-    'aicrm.what.answer': 'AI CRM is customer relationship management software enhanced with artificial intelligence that automatically drafts follow-up messages, predicts lead conversion, and prioritizes prospects. Unlike traditional CRM that only stores data, AI CRM saves SMEs 3+ hours daily on repetitive sales tasks through intelligent automation.',
+    'aicrm.what.answer': 'AI CRM is customer relationship management software enhanced with artificial intelligence that helps draft follow-up messages, organize prospect priority, and reduce repetitive sales administration with human review.',
     'aicrm.benefits.title': 'Top 5 Benefits of AI CRM for Hong Kong SMEs:',
     'aicrm.benefits.1':
       'Our users typically reclaim 3+ hours per week previously spent on manual WhatsApp tracking and copy-pasting replies. (Based on onboarded SME clients, March 2026)',
@@ -867,7 +867,7 @@ export const translations = {
       'Sub-second verification, deduped records, and export-ready summaries when the event ends.',
     'eventxp.grid.ai_insight.title': 'Scored follow-up lists',
     'eventxp.grid.ai_insight.body':
-      'Stop guessing who was genuinely interested. EventXP scores every attendee based on check-in timing, session attendance, and engagement patterns — so your team follows up with the right 20 people, not all 200.',
+      'Stop sorting every attendee manually. EventXP helps organize attendance, session, and engagement signals so your team can review follow-up priority instead of chasing all 200 people equally.',
     'eventxp.grid.retention.title': 'Retention & sponsor-ready reporting',
     'eventxp.grid.retention.body':
       'Turn attendance into themes, re-engagement, and renewal conversations your partners can trust.',
@@ -891,8 +891,8 @@ export const translations = {
     'addon.luma.desc': 'Seamless bi-directional data flow and synchronization between Luma, EventXP, and your existing tools.',
     'addon.commission.title': 'Commission Logic Engine',
     'addon.commission.desc': 'Multi-stage Excel parsing and automated calculation engines with real-time agent dashboards.',
-    'addon.ai_predict.title': 'AI Persona & Sales Prediction',
-    'addon.ai_predict.desc': 'Deep data insights combining product analysis, buyer persona profiling, and AI forecasting.',
+    'addon.ai_predict.title': 'AI Customer Context & Follow-up Priority',
+    'addon.ai_predict.desc': 'Organize customer context, product fit, and follow-up priority for human review.',
     'addon.architecture.title': 'Enterprise Cloud Architecture',
     'addon.architecture.desc': 'Robust database schema design, QA testing, and scalable cloud deployment.',
     'referral.title': 'EventXP Automatic Referral Program & Welcome Gift',
@@ -1010,7 +1010,7 @@ export const translations = {
     'why.4.label': '廣東話／中英夾雜直接識聽',
     'why.4.sub': '貼近香港 SME 真實銷售語境。',
     'product.entry.eventxp.title': '花 HKD 50,000 辦活動，200 個聯絡人之後點？',
-    'product.entry.eventxp.blurb': '自動評分跟進名單，先追最值嗰 20 個。',
+    'product.entry.eventxp.blurb': '協助整理跟進優先次序，先 review 最相關的名單。',
     'product.entry.eventxp.cta': '免費傾 15 分鐘',
     'product.entry.smartsales.title': '客人 WhatsApp 你，3 日先覆？',
     'product.entry.smartsales.blurb': 'AI 2 分鐘幫你草擬好覆，你撳 Send 就得。',
@@ -1471,7 +1471,7 @@ export const translations = {
     'achievements.government': '高風險環境系統',
     'achievements.sme': '中小企業專案',
     'achievements.engagement': '提升用戶參與度達100%',
-    'achievements.case': 'AI × CRM成功案例',
+    'achievements.case': 'AI × CRM交付例子',
     
     // Credibility Badges
     'credibility.title': '合作夥伴與認可',
@@ -1684,7 +1684,7 @@ export const translations = {
     // FAQ Sections
     'faq.smartsales.title': 'SmartSales CRM - 常見問題',
     'faq.smartsales.q1': '什麼是 AI CRM？它與傳統 CRM 有何不同？',
-    'faq.smartsales.a1': 'AI CRM 是結合人工智能的客戶關係管理軟件。與僅儲存數據的傳統 CRM 不同，AI CRM 能自動草擬跟進訊息、預測哪些潛在客戶會轉化，並根據行為模式優先處理潛在客戶。它能為中小企業每天節省 3 小時以上的重複性銷售工作。',
+    'faq.smartsales.a1': 'AI CRM 是結合人工智能的客戶關係管理軟件。與僅儲存數據的傳統 CRM 不同，AI CRM 可協助草擬跟進訊息、整理潛在客戶優先次序，並保留人工審批。',
     'faq.smartsales.q2': 'AI CRM 能否與 WhatsApp 整合以服務香港企業？',
     'faq.smartsales.a2': '可以。SmartSales CRM 直接與 WhatsApp Business API 整合，讓香港企業接收查詢、自動草擬中文或英文回覆，並追蹤對話歷史——全部在一個平台上完成。發送前需要人工審批。',
     'faq.smartsales.q3': '在香港使用 AI CRM 需要多少費用？',
@@ -1696,7 +1696,7 @@ export const translations = {
     
     'faq.eventxp.title': 'EventXP - 常見問題',
     'faq.eventxp.q1': '什麼是 EventXP 活動簽到系統？',
-    'faq.eventxp.a1': 'EventXP 是一個活動情報平台，將簽到轉化為商業洞察。除了出席追蹤，它還能預測哪些參加者最有可能購買、續會或需要跟進——將活動數據轉化為可操作的銷售線索。',
+    'faq.eventxp.a1': 'EventXP 是一個活動營運平台，將簽到轉化為更清晰的出席紀錄、跟進任務和優先次序，方便主辦方 review 後續行動。',
     'faq.eventxp.q2': 'QR 碼簽到如何運作？',
     'faq.eventxp.a2': '賓客通過電郵或 WhatsApp 收到獨特的 QR 碼。在活動現場，工作人員使用 EventXP 手機應用掃描 QR 碼。系統即時記錄出席、將賓客資料與您的 CRM 配對，並可在活動後觸發自動跟進。',
     'faq.eventxp.q3': 'EventXP 能否處理多個同時進行的活動？',
@@ -1717,7 +1717,7 @@ export const translations = {
     
     // Answer-first content sections
     'eventxp.what.title': '什麼是 EventXP 活動簽到系統？',
-    'eventxp.what.answer': 'EventXP 是一個活動情報平台，將簽到轉化為商業洞察。除了出席追蹤，它使用 AI 預測哪些參加者最有可能購買、續會或需要跟進——將活動數據轉化為可操作的銷售線索，專為香港活動組織者設計。',
+    'eventxp.what.answer': 'EventXP 是一個活動營運平台，將簽到轉化為更清晰的出席紀錄、跟進任務和優先次序，方便香港活動主辦方 review 後續行動。',
     'eventxp.how.title': 'QR 碼簽到如何運作？',
     'eventxp.how.step1': '賓客通過電郵或 WhatsApp 收到獨特的 QR 碼',
     'eventxp.how.step2': '工作人員在活動現場使用 EventXP 手機應用掃描 QR 碼',
@@ -1725,12 +1725,12 @@ export const translations = {
     'eventxp.how.step4': '活動後根據行為自動觸發跟進',
     
     'aicrm.what.title': '什麼是 AI CRM？',
-    'aicrm.what.answer': 'AI CRM 是結合人工智能的客戶關係管理軟件，能自動草擬跟進訊息、預測潛在客戶轉化，並優先處理潛在客戶。與僅儲存數據的傳統 CRM 不同，AI CRM 透過智能自動化，為中小企業每天節省 3 小時以上的重複性銷售工作。',
+    'aicrm.what.answer': 'AI CRM 是結合人工智能的客戶關係管理軟件，可協助草擬跟進訊息、整理潛在客戶優先次序，並減少重複銷售行政。',
     'aicrm.benefits.title': '香港中小企業使用 AI CRM 的 5 大好處：',
     'aicrm.benefits.1': '自動化跟進減少 70% 遺漏機會',
     'aicrm.benefits.2': '智能排程消除重複預約，每天節省 3+ 小時',
     'aicrm.benefits.3': 'AI 驅動回覆提升 40% 潛在客戶回應時間',
-    'aicrm.benefits.4': '85% 準確度的銷售預測，助您更好規劃',
+    'aicrm.benefits.4': '整理銷售跟進優先次序，助你更好規劃',
     'aicrm.benefits.5': '專為香港商業通訊定制的 WhatsApp 整合',
     'aicrm.pricing.title': '香港 AI CRM 定價比較',
     'aicrm.pricing.plan': '計劃',
@@ -1764,8 +1764,8 @@ export const translations = {
     'eventxp.main.answer': 'EventXP 協助香港及大灣區活動團隊將簽到紀錄轉化為可執行的商業洞察。你可以即時查看出席情況、識別高意向參加者，並安排後續跟進流程，避免活動結束後只剩零散報表與難以行動的資料。',
     'eventxp.grid.checkin.title': 'QR 簽到與出席紀錄',
     'eventxp.grid.checkin.body': '極速驗證、去重名單，活動結束即可匯出摘要',
-    'eventxp.grid.ai_insight.title': '自動評分的跟進名單',
-    'eventxp.grid.ai_insight.body': '不再靠感覺猜誰最有興趣。EventXP 會根據簽到時間、出席狀況與互動訊號為每位參加者評分，讓你先跟進最值得的 20 人，而不是把 200 人全部都追一次。',
+    'eventxp.grid.ai_insight.title': '整理跟進優先次序',
+    'eventxp.grid.ai_insight.body': '不再靠感覺整理名單。EventXP 會協助整理簽到時間、出席狀況與互動訊號，讓團隊先 review 較值得跟進的人，而不是把 200 人全部同等處理。',
     'eventxp.grid.retention.title': '留存與贊助商報告',
     'eventxp.grid.retention.body': '將出席數據變成主題、再參與與續約對話，讓合作夥伴看得明白',
     'smartsales.main.answer': 'SmartSales CRM 為中小企業提供可落地的 AI CRM 流程，把 WhatsApp 對話、潛在客戶進度與跟進提醒整合到同一系統。團隊可減少手動更新與跨工具切換，讓銷售管道更清晰、回應更快、服務更一致。',
@@ -1787,8 +1787,8 @@ export const translations = {
     'addon.luma.desc': '實現 Luma、EventXP 與現有系統間的雙向數據同步，告別手動匯出 Excel。',
     'addon.commission.title': '自動化佣金計算引擎',
     'addon.commission.desc': '多階段 Excel 解析與自訂分佣邏輯，配備專屬 Dashboard 讓銷售表現一目了然。',
-    'addon.ai_predict.title': 'AI 買家畫像與銷售預測',
-    'addon.ai_predict.desc': '深度數據分析，結合產品定位、客戶畫像 (Persona) 及 AI 驅動的銷售預測模型。',
+    'addon.ai_predict.title': 'AI 客戶脈絡與跟進優先次序',
+    'addon.ai_predict.desc': '整理客戶脈絡、產品定位和跟進優先次序，輔助團隊做人工判斷。',
     'addon.architecture.title': '企業級雲端架構部署',
     'addon.architecture.desc': '穩健的資料庫 Schema 設計、嚴格 QA 測試與可擴展的雲端環境建置。',
     'referral.title': 'EventXP 自動轉介紹計劃與迎新禮遇',

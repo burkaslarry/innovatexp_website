@@ -21,6 +21,14 @@ type HealthCheckState = {
   pilotInvestment: string;
 };
 
+type LeadState = {
+  name: string;
+  email: string;
+  whatsapp: string;
+  company: string;
+  consent: boolean;
+};
+
 const initialState: HealthCheckState = {
   industry: "",
   teamSize: "",
@@ -34,6 +42,14 @@ const initialState: HealthCheckState = {
   urgency: "",
   internalOwner: "",
   pilotInvestment: "",
+};
+
+const initialLeadState: LeadState = {
+  name: "",
+  email: "",
+  whatsapp: "",
+  company: "",
+  consent: false,
 };
 
 const copy = {
@@ -53,6 +69,20 @@ const copy = {
     resultDetail:
       "如果你有內部負責人、願意提供基本流程資料，下一步可以做 30 日 Discovery Sprint：梳理一個核心流程、建立 SOP / KPI baseline，並驗證一個 AI 或 automation quick win。",
     book: "預約 30 分鐘流程診斷",
+    leadTitle: "想我跟進？可自願留下聯絡方法",
+    leadIntro:
+      "只需留下公司、email 和 WhatsApp，並同意 InnovateXP 用這次流程健康檢查內容聯絡你。不會要求你在公開表格提供客戶名單或敏感資料。",
+    leadName: "稱呼（選填）",
+    leadEmail: "Email",
+    leadWhatsapp: "WhatsApp",
+    leadCompany: "公司 / 機構",
+    consent:
+      "我同意 InnovateXP 使用以上聯絡資料及本次問卷答案，就 AI 商業升級、流程診斷或 30 日 Discovery Sprint 與我聯絡。",
+    leadSubmit: "送出並請 InnovateXP 跟進",
+    leadSending: "送出中...",
+    leadSuccess: "已收到，InnovateXP 會跟進。",
+    leadRequired: "請填寫公司、有效 email、WhatsApp，並勾選同意。",
+    leadFail: "暫時未能送出，請直接預約 30 分鐘流程診斷。",
     questions: {
       industry: "你的行業最接近哪一類？",
       teamSize: "團隊人數大約是？",
@@ -98,6 +128,20 @@ const copy = {
     resultDetail:
       "If you have an internal owner and can provide basic workflow context, the next step is a 30-day Discovery Sprint: map one core workflow, draft SOP / KPI baseline, and validate one AI or automation quick win.",
     book: "Book a 30-minute Workflow Review",
+    leadTitle: "Want follow-up? You can voluntarily leave your contact details",
+    leadIntro:
+      "Leave your company, email, and WhatsApp only if you want InnovateXP to follow up on this workflow health check. Do not enter customer lists or sensitive operational data in this public form.",
+    leadName: "Name (optional)",
+    leadEmail: "Email",
+    leadWhatsapp: "WhatsApp",
+    leadCompany: "Company / organisation",
+    consent:
+      "I consent to InnovateXP using my contact details and questionnaire answers to follow up about AI Business Upgrade, workflow review, or a 30-day Discovery Sprint.",
+    leadSubmit: "Submit and request follow-up",
+    leadSending: "Sending...",
+    leadSuccess: "Received. InnovateXP will follow up.",
+    leadRequired: "Please enter company, valid email, WhatsApp, and tick consent.",
+    leadFail: "Could not submit right now. Please book a 30-minute Workflow Review directly.",
     questions: {
       industry: "Which industry best describes you?",
       teamSize: "Approximate team size?",
@@ -139,6 +183,18 @@ const copy = {
   result: string;
   resultDetail: string;
   book: string;
+  leadTitle: string;
+  leadIntro: string;
+  leadName: string;
+  leadEmail: string;
+  leadWhatsapp: string;
+  leadCompany: string;
+  consent: string;
+  leadSubmit: string;
+  leadSending: string;
+  leadSuccess: string;
+  leadRequired: string;
+  leadFail: string;
   questions: Record<keyof HealthCheckState, string>;
   options: Record<keyof HealthCheckState, string[]>;
 }>;
@@ -157,8 +213,11 @@ export function WorkflowHealthCheck({
   const lang = languageFor(locale);
   const c = copy[lang];
   const [answers, setAnswers] = useState<HealthCheckState>(initialState);
+  const [lead, setLead] = useState<LeadState>(initialLeadState);
   const [submitted, setSubmitted] = useState(false);
   const [showError, setShowError] = useState(false);
+  const [leadStatus, setLeadStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const [leadError, setLeadError] = useState("");
 
   const fields = useMemo(
     () => Object.keys(initialState) as Array<keyof HealthCheckState>,
@@ -194,6 +253,57 @@ export function WorkflowHealthCheck({
     }
     setShowError(false);
     setSubmitted(true);
+  };
+
+  const formatSummary = () => {
+    const lines = fields.map((field) => {
+      const value = answers[field];
+      const display = Array.isArray(value) ? value.join(", ") : value;
+      return `${c.questions[field]}: ${display}`;
+    });
+    return [
+      languageFor(locale) === "zh" ? "3 分鐘流程健康檢查" : "3-minute Workflow Health Check",
+      "",
+      ...lines,
+      "",
+      `${c.resultTitle}: ${c.result}`,
+      c.resultDetail,
+    ].join("\n");
+  };
+
+  const submitLead = async () => {
+    setLeadError("");
+    const email = lead.email.trim();
+    const company = lead.company.trim();
+    const whatsapp = lead.whatsapp.trim();
+    if (!company || !whatsapp || !lead.consent || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
+      setLeadStatus("error");
+      setLeadError(c.leadRequired);
+      return;
+    }
+
+    setLeadStatus("sending");
+    try {
+      const response = await fetch("/api/wizard-lead", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          contactName: lead.name.trim() || "-",
+          email,
+          whatsapp,
+          company,
+          appointmentDetail: "Workflow Health Check follow-up requested",
+          pathId: "workflow-health-check",
+          formattedQa: formatSummary(),
+          subject: `Workflow Health Check lead — ${company}`,
+        }),
+      });
+      if (!response.ok) throw new Error("Lead submission failed");
+      setLeadStatus("success");
+    } catch {
+      setLeadStatus("error");
+      setLeadError(c.leadFail);
+    }
   };
 
   return (
@@ -283,8 +393,11 @@ export function WorkflowHealthCheck({
               variant="outline"
               onClick={() => {
                 setAnswers(initialState);
+                setLead(initialLeadState);
                 setSubmitted(false);
                 setShowError(false);
+                setLeadStatus("idle");
+                setLeadError("");
               }}
             >
               {c.reset}
@@ -310,6 +423,70 @@ export function WorkflowHealthCheck({
           </p>
           <div className="mt-6">
             <Button href={bookingHref}>{c.book}</Button>
+          </div>
+          <div className="mt-8 rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
+            <h4 className="text-lg font-bold text-gray-900 dark:text-white">{c.leadTitle}</h4>
+            <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{c.leadIntro}</p>
+            <div className="mt-4 grid gap-3 md:grid-cols-2">
+              <label className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                {c.leadName}
+                <input
+                  value={lead.name}
+                  onChange={(event) => setLead((current) => ({ ...current, name: event.target.value }))}
+                  className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+                  autoComplete="name"
+                />
+              </label>
+              <label className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                {c.leadCompany}
+                <input
+                  value={lead.company}
+                  onChange={(event) => setLead((current) => ({ ...current, company: event.target.value }))}
+                  className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+                  autoComplete="organization"
+                />
+              </label>
+              <label className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                {c.leadEmail}
+                <input
+                  type="email"
+                  value={lead.email}
+                  onChange={(event) => setLead((current) => ({ ...current, email: event.target.value }))}
+                  className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+                  autoComplete="email"
+                />
+              </label>
+              <label className="text-sm font-semibold text-slate-800 dark:text-slate-200">
+                {c.leadWhatsapp}
+                <input
+                  type="tel"
+                  value={lead.whatsapp}
+                  onChange={(event) => setLead((current) => ({ ...current, whatsapp: event.target.value }))}
+                  className="mt-1 w-full rounded-xl border border-slate-300 bg-white px-3 py-2 text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white"
+                  autoComplete="tel"
+                />
+              </label>
+            </div>
+            <label className="mt-4 flex gap-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              <input
+                type="checkbox"
+                checked={lead.consent}
+                onChange={(event) => setLead((current) => ({ ...current, consent: event.target.checked }))}
+                className="mt-1 h-4 w-4 rounded border-slate-300 text-brand-primary focus:ring-brand-primary"
+              />
+              <span>{c.consent}</span>
+            </label>
+            {leadStatus === "success" ? (
+              <p className="mt-3 text-sm font-semibold text-green-700 dark:text-green-300">{c.leadSuccess}</p>
+            ) : null}
+            {leadStatus === "error" ? (
+              <p className="mt-3 text-sm font-semibold text-red-700 dark:text-red-300">{leadError}</p>
+            ) : null}
+            <div className="mt-4">
+              <Button type="button" onClick={() => void submitLead()} disabled={leadStatus === "sending"}>
+                {leadStatus === "sending" ? c.leadSending : c.leadSubmit}
+              </Button>
+            </div>
           </div>
         </div>
       ) : null}

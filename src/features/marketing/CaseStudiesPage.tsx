@@ -22,11 +22,11 @@ const PAGE_COPY: Record<
 > = {
   en: {
     home: "Home",
-    crumb: "Case Studies",
-    eyebrow: "Project cases and proof points",
-    title: "InnovateXP project cases: AI workflows, training, CRM, and event intelligence",
+    crumb: "Delivery Capability",
+    eyebrow: "Relevant experience and delivery capability",
+    title: "Relevant Experience & Delivery Capability",
     intro:
-      "These examples show the kinds of work InnovateXP delivers: EventXP, SmartSales CRM, AI training / AI 教班, AI 陪跑課程, custom internal tools, dashboards, booking flows, system rescue, and clean architecture refactor. Proof points are phrased as experience and capabilities, not inflated guarantees.",
+      "These examples show the kinds of work InnovateXP can deliver: AI training / AI 教班, AI 陪跑課程, workflow mapping, dashboards, booking flows, internal tools, and system delivery. They are phrased as experience and capability, not formal client outcome stories or guaranteed outcomes.",
     vision: "Founder Vision",
     targetAudience: "Target audience",
     challenge: "Challenge",
@@ -38,11 +38,11 @@ const PAGE_COPY: Record<
   },
   "zh-hk": {
     home: "首頁",
-    crumb: "案例與 proof points",
-    eyebrow: "項目案例與 proof points",
-    title: "InnovateXP 案例：AI 工作流、AI 教班、CRM 與活動 intelligence",
+    crumb: "相關經驗與交付能力",
+    eyebrow: "相關經驗與交付能力",
+    title: "相關經驗與交付能力",
     intro:
-      "以下例子展示 InnovateXP 可交付的工作：EventXP、SmartSales CRM、AI training / AI 教班、AI 陪跑課程、custom internal tools、dashboards、booking flows、system rescue 與 clean architecture refactor。內容以經驗與能力描述，不誇大成保證成果。",
+      "以下例子展示 InnovateXP 可交付的工作：AI training / AI 教班、AI 陪跑課程、workflow mapping、dashboards、booking flows、internal tools 與系統交付。現階段以相關經驗與能力描述，不包裝成正式 client outcome stories 或保證成果。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",
@@ -54,11 +54,11 @@ const PAGE_COPY: Record<
   },
   "zh-tw": {
     home: "首頁",
-    crumb: "案例與 proof points",
-    eyebrow: "專案案例與 proof points",
-    title: "InnovateXP 案例：AI 工作流、AI 培訓、CRM 與活動 intelligence",
+    crumb: "相關經驗與交付能力",
+    eyebrow: "相關經驗與交付能力",
+    title: "相關經驗與交付能力",
     intro:
-      "以下例子展示 InnovateXP 可交付的工作：EventXP、SmartSales CRM、AI training / AI 教班、AI 陪跑課程、custom internal tools、dashboards、booking flows、system rescue 與 clean architecture refactor。內容以經驗與能力描述，不誇大成保證成果。",
+      "以下例子展示 InnovateXP 可交付的工作：AI training / AI 教班、AI 陪跑課程、workflow mapping、dashboards、booking flows、internal tools 與系統交付。現階段以相關經驗與能力描述，不包裝成正式 client outcome stories 或保證成果。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",

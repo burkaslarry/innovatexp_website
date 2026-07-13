@@ -110,7 +110,7 @@ const content = {
     },
     proof: {
       eyebrow: "相關經驗與已交付能力",
-      title: "不靠假 testimonial，先講可驗證能力。",
+      title: "相關經驗與已交付能力",
       columns: [
         {
           title: "Founder background",
@@ -155,9 +155,9 @@ const content = {
     },
     capabilities: {
       eyebrow: "Capabilities / Solutions",
-      title: "系統能力是落地選項，不是第一步。",
+      title: "按需系統落地能力",
       body:
-        "下方的 EventXP、SmartSales CRM、dashboard、booking portal 和 AI agent 能力，是已交付或可延伸的 implementation capability。它們會在 workflow、KPI 和 business case 驗證後才成為方案一部分。",
+        "EventXP、SmartSales CRM、dashboard、booking portal 和 AI agent 是按需落地能力，不是首頁主角。先確認 workflow、KPI 和 business case，再決定是否需要系統。",
     },
   },
   en: {
@@ -221,7 +221,7 @@ const content = {
     },
     proof: {
       eyebrow: "Relevant Experience & Delivery Capability",
-      title: "No fake testimonials. Only verifiable capability.",
+      title: "Relevant Experience & Delivery Capability",
       columns: [
         { title: "Founder background", points: ["13-14 years of IT delivery, product, cloud, and Agile experience", "Former Google Developer Group Hong Kong organizer", "Developer / community / workshop experience"] },
         { title: "Delivered systems", points: ["Check-in system and attendance workflows", "Booking portal and admin workflows", "CRM, dashboard, and workflow automation experience"] },
@@ -257,9 +257,9 @@ const content = {
     },
     capabilities: {
       eyebrow: "Capabilities / Solutions",
-      title: "Systems are implementation options, not the starting point.",
+      title: "On-demand systems implementation",
       body:
-        "EventXP, SmartSales CRM, dashboards, booking portals, and AI agent capabilities below are delivered or extendable implementation capabilities. They become part of the solution only after workflow, KPI, and business case validation.",
+        "EventXP, SmartSales CRM, dashboards, booking portals, and AI agents are implementation capabilities, not the homepage lead. They are considered only after workflow, KPI, and business case validation.",
     },
   },
 } as const;

@@ -13,19 +13,19 @@ const OG_IMAGE = "/opengraph-image" as const;
 
 const CASE_STUDY_META: Record<AppLocale, { title: string; description: string }> = {
   en: {
-    title: "InnovateXP Case Studies | AI Training, SME AI Workflow & CRM Projects",
+    title: "Relevant Experience & Delivery Capability | InnovateXP",
     description:
-      "Project cases and proof points for InnovateXP: EventXP, SmartSales CRM, AI training, AI coaching, Proposal-to-Cash AI, dashboards, internal tools, and clean architecture rescue.",
+      "Relevant experience and delivery capability for InnovateXP: AI training, AI coaching, SME workflow design, dashboards, booking flows, internal tools, and system delivery.",
   },
   "zh-hk": {
-    title: "InnovateXP 案例｜AI 教班、AI 陪跑、SME AI 工作流與 CRM",
+    title: "相關經驗與交付能力｜InnovateXP",
     description:
-      "InnovateXP 項目案例與 proof points：EventXP、SmartSales CRM、AI 教班、AI 陪跑課程、Proposal-to-Cash AI、dashboard、internal tools 與系統 rescue。",
+      "InnovateXP 相關經驗與交付能力：AI 教班、AI 陪跑課程、SME workflow design、dashboard、booking flows、internal tools 與系統交付。",
   },
   "zh-tw": {
-    title: "InnovateXP 案例｜AI 培訓、AI 陪跑、中小企業 AI 工作流與 CRM",
+    title: "相關經驗與交付能力｜InnovateXP",
     description:
-      "InnovateXP 專案案例與 proof points：EventXP、SmartSales CRM、AI 教班、AI 陪跑課程、Proposal-to-Cash AI、dashboard、internal tools 與系統 rescue。",
+      "InnovateXP 相關經驗與交付能力：AI 培訓、AI 陪跑課程、中小企業 workflow design、dashboard、booking flows、internal tools 與系統交付。",
   },
   ja: {
     title: "InnovateXP ケーススタディ | AI研修・SME AIワークフロー・CRM",
@@ -60,7 +60,7 @@ export async function generateMetadata({
       description,
       url: canonical,
       siteName: "InnovateXP Limited",
-      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "InnovateXP Case Studies" }],
+      images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "InnovateXP delivery capability" }],
     },
     twitter: {
       card: "summary_large_image",

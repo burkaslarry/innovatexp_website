@@ -35,7 +35,9 @@ export async function generateMetadata({
   const canonical = `${siteUrl}/${loc}`;
 
   return {
-    title: "InnovateXP | AI Business Upgrade Coach for Hong Kong SMEs",
+    title: localeUsesChineseCopy(loc)
+      ? "AI商業升級教練｜中小企AI陪跑、SOP及流程優化｜InnovateXP"
+      : "AI Business Upgrade Coach for SMEs | SOP & Workflow Optimization | InnovateXP",
     description: localeUsesChineseCopy(loc)
       ? "InnovateXP 由 Larry Lo 以 AI 商業升級教練身份，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。"
       : "InnovateXP helps Hong Kong SMEs fix workflows first, then adopt AI through structured coaching, SOP optimization, KPI review, practical trials, and optional automation or SaaS implementation.",
@@ -51,7 +53,9 @@ export async function generateMetadata({
       alternateLocale: ogAlternateLocales(loc),
       url: canonical,
       siteName: "InnovateXP Limited",
-      title: "InnovateXP | AI Business Upgrade Coach for Hong Kong SMEs",
+      title: localeUsesChineseCopy(loc)
+        ? "AI商業升級教練｜中小企AI陪跑、SOP及流程優化｜InnovateXP"
+        : "AI Business Upgrade Coach for SMEs | SOP & Workflow Optimization | InnovateXP",
       description: localeUsesChineseCopy(loc)
         ? "先執順流程，再落地 AI。30 日 Discovery Sprint、AI 商業升級加速計劃、顧問陪跑與按需系統落地。"
         : "Fix the workflow first. Then put AI to work through a 30-day Discovery Sprint, accelerator programs, advisory, and optional systems.",
@@ -64,7 +68,9 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "InnovateXP | AI Business Upgrade Coach for Hong Kong SMEs",
+      title: localeUsesChineseCopy(loc)
+        ? "AI商業升級教練｜中小企AI陪跑、SOP及流程優化｜InnovateXP"
+        : "AI Business Upgrade Coach for SMEs | SOP & Workflow Optimization | InnovateXP",
       description: localeUsesChineseCopy(loc)
         ? "AI 商業升級教練：先梳理 SOP 和 KPI，再試行 AI，最後按需要落地 automation、CRM 或 SaaS。"
         : "AI Business Upgrade Coach: clarify SOPs and KPIs first, trial AI, then implement automation, CRM, or SaaS only when needed.",

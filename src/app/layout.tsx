@@ -8,9 +8,9 @@ const siteUrl = getSiteUrl();
 const OG_IMAGE_REL = "/opengraph-image" as const;
 
 export const metadata: Metadata = {
-  title: "InnovateXP｜香港中小企 WhatsApp AI CRM・活動簽到・AI 顧問",
+  title: "AI商業升級教練｜中小企AI陪跑、SOP及流程優化｜InnovateXP",
   description:
-    "為香港中小企提供 SmartSales CRM、EventXP 活動簽到系統與 AI 顧問服務。將 WhatsApp 查詢與活動 200 人名單變成可跟進 sales pipeline。雲端／On-Premise 可諮詢。Founder-led、14 年實戰經驗，免費 15 分鐘諮詢。",
+    "InnovateXP 由 Larry Lo 擔任 AI 商業升級教練，陪香港中小企先梳理 SOP、流程與 KPI，再按需要落地 AI 陪跑、automation、CRM 或 SaaS。",
   metadataBase: new URL(siteUrl),
   openGraph: {
     images: [{ url: OG_IMAGE_REL, width: 1200, height: 630, alt: "InnovateXP" }],

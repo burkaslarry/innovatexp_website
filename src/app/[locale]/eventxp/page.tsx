@@ -204,7 +204,7 @@ export default async function EventXpPage({
               { href: "/sme-ai-workflow", label: "SME AI Workflow" },
               { href: "/ai-training", label: "AI Training / AI 教班" },
               { href: "/ai-coaching", label: "AI Coaching / AI 陪跑課程" },
-              { href: "/case-studies", label: "Case Studies" },
+              { href: "/case-studies", label: "Delivery Capability" },
             ].map((item) => (
               <Link
                 key={item.href}

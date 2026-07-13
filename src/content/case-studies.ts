@@ -4,7 +4,7 @@ import type { CaseStudyContent } from "@/types/marketing";
 export const caseStudies: CaseStudyContent[] = [
   {
     slug: "eventxp-event-follow-up",
-    title: "EventXP: event attendance to buyer intelligence",
+    title: "EventXP: event attendance to follow-up priority",
     summary:
       "EventXP turns event attendance records into cleaner follow-up signals for organizers, communities, and training teams.",
     context:
@@ -28,7 +28,7 @@ export const caseStudies: CaseStudyContent[] = [
     ],
     outcomes: [
       "Cleaner event operations and fewer manual reconciliation steps.",
-      "A practical base for buyer intelligence and follow-up planning.",
+      "A practical base for follow-up prioritization and planning.",
       "Better continuity between event attendance, sales follow-up, and community engagement.",
     ],
     relatedLinks: [
@@ -147,14 +147,14 @@ export function getCaseStudy(slug: string): CaseStudyContent | undefined {
 const caseStudiesZhTw: CaseStudyContent[] = [
   {
     ...caseStudies[0],
-    title: "EventXP：由活動出席紀錄走向 buyer intelligence",
+    title: "EventXP：由活動出席紀錄走向跟進優先次序",
     summary: "EventXP 將活動出席資料整理成更清晰的後續跟進訊號，適合活動主辦、社群與培訓團隊。",
     context: "活動結束後，團隊常只剩試算表、簽到紀錄與零散 notes。真正的商業價值取決於下一步：誰有出席、誰有興趣、誰值得優先跟進。",
     audience: "活動主辦、JCI/BNI 類型社群、培訓機構與會員制團體。",
     challenge: ["人手簽到容易產生不一致的出席紀錄。", "名單需要清理，導致活動後跟進延遲。", "主辦方難以比較不同活動的參與品質。"],
     approach: ["設計結構化 check-in 與 attendance model。", "準備支援 follow-up prioritization 的 reporting views。", "把活動營運連接到 sales 或 membership next actions。"],
     deliverables: ["活動 profile 與 attendee data structure。", "QR/check-in flow 與 attendance visibility。", "活動後 reporting 與 follow-up segmentation concept。"],
-    outcomes: ["活動營運更清晰，減少手動整理。", "建立 buyer intelligence 與 follow-up planning 的基礎。", "活動出席、銷售跟進與社群經營之間更有延續性。"],
+    outcomes: ["活動營運更清晰，減少手動整理。", "建立跟進優先次序與 follow-up planning 的基礎。", "活動出席、銷售跟進與社群經營之間更有延續性。"],
   },
   {
     ...caseStudies[1],
@@ -194,14 +194,14 @@ const caseStudiesZhTw: CaseStudyContent[] = [
 const caseStudiesJa: CaseStudyContent[] = [
   {
     ...caseStudies[0],
-    title: "EventXP：イベント出席データから buyer intelligence へ",
+    title: "EventXP：イベント出席データからフォロー優先順位へ",
     summary: "EventXP はイベント出席記録を整理し、主催者・コミュニティ・研修チームのフォローアップ判断を支援します。",
     context: "イベント後に残るのは表計算、出席印、断片的なメモになりがちです。価値は、誰が参加し、誰に関心があり、誰を優先フォローすべきかを見極めることにあります。",
     audience: "イベント主催者、JCI/BNI 型コミュニティ、研修提供者、会員組織。",
     challenge: ["手作業チェックインでは出席記録が不揃いになりやすい。", "リスト整理に時間がかかり、フォローアップが遅れる。", "複数イベント間で参加品質を比較しにくい。"],
     approach: ["構造化された check-in と attendance model を設計。", "フォロー優先度を判断できる reporting views を準備。", "イベント運営を sales または membership next actions に接続。"],
     deliverables: ["イベント profile と attendee data structure。", "QR/check-in flow と attendance visibility。", "イベント後 reporting と follow-up segmentation concept。"],
-    outcomes: ["イベント運営が整理され、手作業の照合作業が減る。", "buyer intelligence と follow-up planning の土台ができる。", "出席、営業フォロー、コミュニティ運営の連続性が高まる。"],
+    outcomes: ["イベント運営が整理され、手作業の照合作業が減る。", "フォロー優先順位と planning の土台ができる。", "出席、営業フォロー、コミュニティ運営の連続性が高まる。"],
   },
   {
     ...caseStudies[1],
@@ -248,7 +248,7 @@ const caseStudiesDe: CaseStudyContent[] = [
     challenge: ["Manuelles Check-in erzeugt inkonsistente Anwesenheitsdaten.", "Listen müssen erst bereinigt werden, wodurch Follow-up verzögert wird.", "Teilnahmequalität ist über wiederkehrende Events schwer vergleichbar."],
     approach: ["Strukturiertes Check-in- und Attendance-Modell entwerfen.", "Reporting Views für Follow-up-Priorisierung vorbereiten.", "Event Operations mit Sales- oder Membership-Next-Actions verbinden."],
     deliverables: ["Event-Profil und attendee data structure.", "QR/check-in flow und attendance visibility.", "Post-event reporting und follow-up segmentation concept."],
-    outcomes: ["Klarere Event Operations und weniger manuelle Abstimmung.", "Basis für buyer intelligence und follow-up planning.", "Bessere Verbindung zwischen Teilnahme, Sales Follow-up und Community Engagement."],
+    outcomes: ["Klarere Event Operations und weniger manuelle Abstimmung.", "Basis für Follow-up-Priorisierung und Planung.", "Bessere Verbindung zwischen Teilnahme, Sales Follow-up und Community Engagement."],
   },
   {
     ...caseStudies[1],

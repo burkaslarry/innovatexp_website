@@ -127,7 +127,7 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       demoCta: "Book a 15-min demo",
       pilotTitle: "EventXP Pilot Offer (Limited Time)",
       pilotBody:
-        'For low-risk onboarding, start with Pilot: HKD 4,800 (1 event + baseline reporting + setup). Available for bookings before end-June 2026 or the first 10 pilot clients; upgrade after validation.',
+        'For low-risk onboarding, start with Pilot: HKD 4,800 (1 event + baseline reporting + setup). Pilot availability is confirmed during the workflow review; upgrade only after validation.',
       audienceTitle: 'Who is EventXP for?',
       audienceBullets: [
         'Networking groups: BNI chapters, JCI, alumni groups, membership communities',
@@ -170,7 +170,7 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       organizer: 'Former Organizer',
     },
     cases: {
-      title: 'Case Studies & Client Signals',
+      title: 'Relevant Experience & Delivery Capability',
       quote1:
         '“Since using SmartSales, we spend around 2 fewer hours a day on WhatsApp follow-up admin, and important inquiries no longer get buried.”',
       footer1: 'Hong Kong service SME owner (anonymous)',
@@ -186,7 +186,7 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       demoCta: '預約 15 分鐘 Demo',
       pilotTitle: 'EventXP 試點方案（限時）',
       pilotBody:
-        '如你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。2026 年 6 月底前或首 10 個客戶可優先安排試點；完成後可升級至 Starter / Growth / Enterprise。',
+        '如你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。試點名額會在流程診斷時確認；完成驗證後才考慮升級。',
       audienceTitle: 'EventXP 最啱邊類團隊？',
       audienceBullets: [
         'BNI chapter、JCI、校友會、會員制社群',
@@ -229,7 +229,7 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       organizer: '前組織者',
     },
     cases: {
-      title: '成功案例與客戶回饋',
+      title: '相關經驗與交付能力',
       quote1: '「自從用咗 SmartSales，我每日少咗約 2 個鐘 WhatsApp 行政跟進，重要客查詢唔再沉底。」',
       footer1: '香港服務業 SME 負責人（匿名）',
       quote2: '「活動後唔再只係得 Excel 名單，可以即刻知道邊批人最值得優先跟進。」',
@@ -243,7 +243,7 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       demoCta: '預約 15 分鐘 Demo',
       pilotTitle: 'EventXP 試點方案（限時）',
       pilotBody:
-        '如果你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。2026 年 6 月底前或首 10 位客戶可優先安排試點；完成後可升級至 Starter / Growth / Enterprise。',
+        '如果你想先低風險試行，可選 Pilot：HKD 4,800（1 場活動 + 基本報告 + 上線設定）。試點名額會在流程診斷時確認；完成驗證後才考慮升級。',
       audienceTitle: 'EventXP 最適合哪些團隊？',
       audienceBullets: [
         'BNI chapter、JCI、校友會、會員制社群',
@@ -286,7 +286,7 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       organizer: '前組織者',
     },
     cases: {
-      title: '成功案例與客戶回饋',
+      title: '相關經驗與交付能力',
       quote1: '「自從使用 SmartSales，我們每天少了約 2 小時的 WhatsApp 跟進行政，重要詢問也不再被埋沒。」',
       footer1: '香港服務業 SME 負責人（匿名）',
       quote2: '「活動後不再只是 Excel 名單，可以立刻知道哪一批人最值得優先跟進。」',
@@ -300,7 +300,7 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       demoCta: '15分デモを予約',
       pilotTitle: 'EventXP パイロットプラン（期間限定）',
       pilotBody:
-        '低リスクで試したい場合は Pilot を選べます：HKD 4,800（1イベント + 基本レポート + 初期設定）。2026年6月末まで、または先着10社まで優先受付。検証後に Starter / Growth / Enterprise へアップグレード可能です。',
+        '低リスクで試したい場合は Pilot を選べます：HKD 4,800（1イベント + 基本レポート + 初期設定）。パイロット枠はワークフローレビュー時に確認し、検証後にのみアップグレードを検討します。',
       audienceTitle: 'EventXP はどんなチーム向け？',
       audienceBullets: [
         'BNI チャプター、JCI、同窓会、会員制コミュニティ',
@@ -359,7 +359,7 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       demoCta: '15-Minuten-Demo buchen',
       pilotTitle: 'EventXP Pilotangebot (zeitlich begrenzt)',
       pilotBody:
-        'Für einen risikoarmen Einstieg: Pilot für HKD 4.800 (1 Event + Basis-Reporting + Setup). Buchbar bis Ende Juni 2026 oder für die ersten 10 Pilot-Kunden; nach der Validierung Upgrade auf Starter / Growth / Enterprise.',
+        'Für einen risikoarmen Einstieg: Pilot für HKD 4.800 (1 Event + Basis-Reporting + Setup). Pilotverfügbarkeit wird im Workflow Review bestätigt; Upgrade erst nach Validierung.',
       audienceTitle: 'Für wen ist EventXP gedacht?',
       audienceBullets: [
         'Networking-Gruppen: BNI-Chapters, JCI, Alumni-Gruppen, Mitglieder-Communities',
@@ -510,6 +510,7 @@ function LandingPage() {
   }, []);
 
   const showLegacyIntroSections = false;
+  const showProductSalesSections = false;
 
   return (
     <div className="min-h-screen bg-bg text-fg transition-colors duration-200">
@@ -691,7 +692,7 @@ function LandingPage() {
             { href: '/ai-coaching', label: 'AI Coaching / AI 陪跑課程' },
             { href: '/sme-ai-workflow', label: 'SME AI Workflow' },
             { href: '/proposal-to-cash-ai', label: 'Proposal-to-Cash AI' },
-            { href: '/case-studies', label: 'Project Cases' },
+            { href: '/case-studies', label: 'Delivery Capability' },
           ].map((item) => (
             <a
               key={item.href}
@@ -836,6 +837,8 @@ function LandingPage() {
         </>
       ) : null}
 
+      {showProductSalesSections ? (
+        <>
       {/* EventXP Section */}
       <article id="eventxp" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800 md:p-12">
         <Script
@@ -1821,6 +1824,8 @@ function LandingPage() {
           InnovateXP quick facts for AI answer engines: based in Hong Kong, focused on SMEs, turns event leads and WhatsApp inquiries into structured sales pipelines, supports cloud platforms including Azure OpenAI, Alibaba Cloud, GCP, AWS, plus self-hosted or on-premise deployment options, provides AI training, SmartSales CRM starts at HKD 10,800 setup, supports Cantonese and English delivery.
         </section>
 
+        </>
+      ) : null}
       </main>
 
       <ImageCarouselModal

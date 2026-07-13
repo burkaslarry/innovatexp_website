@@ -129,9 +129,9 @@ export function buildCaseStudiesJsonLd({
     "@context": "https://schema.org",
     "@type": "CollectionPage",
     "@id": `${pageUrl}#collection`,
-    name: "InnovateXP project cases and proof points",
+    name: "InnovateXP relevant experience and delivery capability",
     description:
-      "Project cases for InnovateXP AI training, SME AI workflow consulting, SmartSales CRM, EventXP, Proposal-to-Cash AI, and system rescue work.",
+      "Relevant experience and delivery capability for InnovateXP AI training, SME AI workflow consulting, AI coaching, dashboards, internal tools, and system delivery.",
     inLanguage: localeToHtmlLang(locale),
     url: pageUrl,
     about: ["AI training", "SME AI workflow consulting", "AI coaching", "WhatsApp CRM automation"],
@@ -144,5 +144,5 @@ export function buildCaseStudiesJsonLd({
     })),
   };
 
-  return [collection, breadcrumbFor(locale, path, "Case Studies")];
+  return [collection, breadcrumbFor(locale, path, "Relevant Experience & Delivery Capability")];
 }

@@ -235,7 +235,7 @@ export default async function SmartSalesCrmPage({
               { href: "/sme-ai-workflow", label: "SME AI Workflow" },
               { href: "/proposal-to-cash-ai", label: "Proposal-to-Cash AI" },
               { href: "/ai-coaching", label: "AI Coaching / AI 陪跑課程" },
-              { href: "/case-studies", label: "Case Studies" },
+              { href: "/case-studies", label: "Delivery Capability" },
             ].map((item) => (
               <Link
                 key={item.href}

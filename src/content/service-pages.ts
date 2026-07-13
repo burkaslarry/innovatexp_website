@@ -5,7 +5,7 @@ const commonRelatedLinks = [
   { label: "AI Training / AI 教班", href: "/ai-training" },
   { label: "AI Coaching / AI 陪跑課程", href: "/ai-coaching" },
   { label: "SME AI Workflow", href: "/sme-ai-workflow" },
-  { label: "Case Studies", href: "/case-studies" },
+  { label: "Relevant Experience & Delivery Capability", href: "/case-studies" },
 ];
 
 const aiTraining: ServicePageContent = {
@@ -333,7 +333,7 @@ const proposalToCash: ServicePageContent = {
     { label: "SME AI Workflow", href: "/sme-ai-workflow" },
     { label: "SmartSales CRM", href: "/smartsales-crm" },
     { label: "AI Coaching", href: "/ai-coaching" },
-    { label: "Case Studies", href: "/case-studies" },
+    { label: "Relevant Experience & Delivery Capability", href: "/case-studies" },
   ],
   cta: {
     label: "Map your proposal-to-cash workflow",
