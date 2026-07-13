@@ -29,15 +29,15 @@ function safeTrim(v: unknown) {
 
 function buildEmailBody(p: EnquiryPayload) {
   const lines = [
-    "New website quotation enquiry",
+    "New website workflow review enquiry",
     "",
     `Name: ${p.name}`,
     `Company: ${p.company || "-"}`,
     `Email: ${p.email}`,
     `Phone / WhatsApp: ${p.phone}`,
-    `Product interest: ${p.productInterest}`,
-    `Recommended plan: ${p.recommendedPlan || "-"}`,
-    `Estimated range (HKD): ${p.estimatedRangeHKD || "-"}`,
+    `Workflow focus: ${p.productInterest}`,
+    `Suggested next step: ${p.recommendedPlan || "-"}`,
+    `Starting scope: ${p.estimatedRangeHKD || "-"}`,
     `Estimated midpoint (HKD): ${typeof p.estimatedMidpointHKD === "number" ? p.estimatedMidpointHKD : "-"}`,
     `Urgency: ${p.urgency}`,
     `Source: ${p.source || "Website Quiz"}`,

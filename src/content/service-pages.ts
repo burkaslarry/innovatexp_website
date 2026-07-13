@@ -223,7 +223,7 @@ const smeWorkflow: ServicePageContent = {
     "InnovateXP helps Hong Kong SMEs design practical AI workflows for sales follow-up, operations, admin, CRM, WhatsApp automation, dashboards, and internal tools.",
   eyebrow: "Hong Kong SME AI workflow automation",
   intro:
-    "InnovateXP helps Hong Kong SMEs turn scattered manual work into practical AI-assisted workflows. We focus on real operating processes: WhatsApp CRM 自動化, sales follow-up, quotation follow-up, admin portals, dashboards, customer service drafts, and internal AI tools. The work is founder-led by Larry Lo, an AI Solutions Trainer and SME AI Workflow Consultant with 13+ years of IT delivery and architecture experience.",
+    "InnovateXP helps Hong Kong SMEs turn scattered manual work into practical AI-assisted workflows. We focus on real operating processes: WhatsApp follow-up, quotation follow-up, admin portals, dashboards, customer service drafts, SOP handover, and internal AI tools. The work is founder-led by Larry Lo, an AI Business Upgrade Coach with 13+ years of IT delivery and architecture experience.",
   audience: [
     "3-50 person SMEs that need better sales, operations, and follow-up discipline.",
     "Founder-led service businesses where the owner still coordinates too much manually.",
@@ -562,7 +562,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
       "InnovateXP 協助中小企業設計實用 AI 工作流：銷售跟進、營運、行政、CRM、WhatsApp 自動化、dashboard 與內部工具。",
     eyebrow: "香港與台灣中小企業 AI 工作流自動化",
     intro:
-      "InnovateXP 協助中小企業把零散的人工作業變成實用的 AI-assisted workflows。我們聚焦真實營運流程：WhatsApp CRM 自動化、sales follow-up、quotation follow-up、admin portal、dashboard、客服草稿與 internal AI tools。服務由 Larry Lo 親自帶領，他是 AI Solutions Trainer 與 SME AI Workflow Consultant，具備 13+ 年 IT delivery 與 architecture 經驗。",
+      "InnovateXP 協助中小企業把零散的人工作業變成實用的 AI-assisted workflows。我們聚焦真實營運流程：WhatsApp follow-up、quotation follow-up、admin portal、dashboard、客服草稿、SOP 交接與 internal AI tools。服務由 Larry Lo 親自帶領，他是 AI 商業升級教練，具備 13+ 年 IT delivery 與 architecture 經驗。",
     audience: [
       "需要提升銷售、營運與跟進紀律的 3-50 人中小企業。",
       "仍由老闆親自協調大量流程的 founder-led service businesses。",
@@ -897,7 +897,7 @@ export function getServicePage(slug: ServicePageSlug, locale: AppLocale): Servic
 
 export const innovatexpVision: VisionCopy = {
   statement:
-    "I am Larry Lo, AI Solutions Trainer and SME AI Workflow Consultant, founder of InnovateXP Limited.",
+    "I am Larry Lo, AI Business Upgrade Coach and founder of InnovateXP Limited.",
   reason:
     "Because of my stories across IT delivery, developer communities, AI workshops, mobile apps, cloud architecture, agile delivery, and real business systems, I built InnovateXP to help people turn AI from hype into useful work.",
   helps:
@@ -915,7 +915,7 @@ export const innovatexpVision: VisionCopy = {
 };
 
 const innovatexpVisionZhTw: VisionCopy = {
-  statement: "我是 Larry Lo，AI Solutions Trainer、SME AI Workflow Consultant，也是 InnovateXP Limited 創辦人。",
+  statement: "我是 Larry Lo，AI 商業升級教練，也是 InnovateXP Limited 創辦人。",
   reason:
     "因為我一路走過 IT delivery、developer communities、AI workshops、mobile apps、cloud architecture、agile delivery 與真實商務系統，我創立 InnovateXP，幫團隊把 AI 從 hype 變成真正有用的工作方式。",
   helps: "InnovateXP 協助學校、中小企業、創辦人、sales teams、operations teams 與 business communities，把 AI 落地到真實工作流程。",
@@ -930,7 +930,7 @@ const innovatexpVisionZhTw: VisionCopy = {
 };
 
 const innovatexpVisionJa: VisionCopy = {
-  statement: "私は Larry Lo、AI Solutions Trainer、SME AI Workflow Consultant、InnovateXP Limited の創業者です。",
+  statement: "私は Larry Lo、AI Business Upgrade Coach、InnovateXP Limited の創業者です。",
   reason:
     "IT delivery、developer communities、AI workshops、mobile apps、cloud architecture、agile delivery、実際のビジネスシステムでの経験から、AI を hype ではなく実務に役立つ力へ変えるために InnovateXP を作りました。",
   helps: "InnovateXP は学校、SME、創業者、sales teams、operations teams、business communities が AI を実際の業務フローへ導入する支援をします。",
@@ -945,7 +945,7 @@ const innovatexpVisionJa: VisionCopy = {
 };
 
 const innovatexpVisionDe: VisionCopy = {
-  statement: "Ich bin Larry Lo, AI Solutions Trainer, SME AI Workflow Consultant und Gründer von InnovateXP Limited.",
+  statement: "Ich bin Larry Lo, AI Business Upgrade Coach und Gründer von InnovateXP Limited.",
   reason:
     "Aus meinen Erfahrungen in IT delivery, developer communities, AI workshops, mobile apps, cloud architecture, agile delivery und echten Business-Systemen habe ich InnovateXP aufgebaut, um AI von Hype in nützliche Arbeit zu übersetzen.",
   helps: "InnovateXP hilft Schulen, KMUs, Gründern, Sales Teams, Operations Teams und Business Communities, AI in echte Workflows zu integrieren.",

@@ -8,7 +8,7 @@
   "bookme.error.slots": "無法取得可預約時段",
   "bookme.error.title": "請填寫所有必填欄位，並選擇日期與時間。",
   "bookme.header.back": "← 返回首頁",
-  "bookme.header.subtitle": "預約商務諮詢",
+  "bookme.header.subtitle": "AI 商業升級教練",
   "bookme.header.title": "InnovateXP Limited",
   "bookme.info.cancel": "• 如需取消或更改預約，請提前 24 小時通知",
   "bookme.info.confirmation": "• 預約成功後，您將收到確認信與行事曆邀請",
@@ -22,7 +22,7 @@
   "bookme.selected.title": "已選擇：",
   "bookme.submit.confirm": "確認預約",
   "bookme.submit.processing": "處理中…",
-  "bookme.subtitle": "一對一商務諮詢 — 可預約時段已排除 Notion 行事曆上所有占用（預約與忙碌時段）",
+  "bookme.subtitle": "AI 商業升級流程診斷 — 先揀一條流程、釐清卡位，再決定下一步；未了解 workflow 前不會直接 quote 產品。",
   "bookme.success.subtitle": "您的預約未能完成！請盡快聯絡 InnovateXP Limited：info@innovatexp.co",
   "bookme.success.title": "您的商務諮詢預約已成功！已加入 Notion 行事曆。",
   "bookme.time.hour": "* 每個時段為 1 小時一對一諮詢",
@@ -30,7 +30,7 @@
   "bookme.time.loading": "載入中…",
   "bookme.time.no_slots": "此日期沒有可用的時段。<br />請選擇其他日期。",
   "bookme.time.select": "請先選擇日期",
-  "bookme.title": "📅 預約商務諮詢",
+  "bookme.title": "📅 預約 30 分鐘流程診斷",
   "bookme.visitor.company": "公司名稱",
   "bookme.visitor.email": "電子郵件",
   "bookme.visitor.message": "諮詢內容／留言",
@@ -38,7 +38,7 @@
   "bookme.visitor.phone": "聯絡電話",
   "bookme.visitor.placeholder.company": "您的公司名稱",
   "bookme.visitor.placeholder.email": "your@email.com",
-  "bookme.visitor.placeholder.message": "請簡述想諮詢的主題，例如：AI 整合方案、系統開發需求、企業培訓等…",
+  "bookme.visitor.placeholder.message": "請簡述你想改善的流程，例如：課程報名、報價跟進、行政審批、SOP 交接、團隊 AI adoption 等…",
   "bookme.visitor.placeholder.name": "請輸入姓名",
   "bookme.visitor.placeholder.phone": "+852 9123 4567 或 +886 912 345 678",
   "bookme.visitor.title": "👤 來賓資料",
@@ -46,5 +46,5 @@
   "bookme.whatsapp.later": "稍後再說",
   "bookme.whatsapp.message": "您的預約已成功加入 Notion 行事曆！點選下方按鈕以 WhatsApp 傳送確認訊息。",
   "bookme.whatsapp.title": "📱 傳送 WhatsApp 確認訊息",
-  "bookme.wizard.prompt": "請先完成上方的自助報價。在最後一步可留言給我們，或點「繼續預約」選擇日期 — 行事曆將顯示於下方。"
+  "bookme.wizard.prompt": "請先完成上方流程診斷。最後一步可以預約 30 分鐘 review；未了解你的 workflow 前，不會直接 quote 產品或系統。"
 }

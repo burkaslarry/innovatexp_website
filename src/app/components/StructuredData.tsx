@@ -549,7 +549,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "@type": "Person",
       "@id": `${baseUrl}/#founder`,
       name: "Larry Lo",
-      jobTitle: "AI Solutions Trainer & SME AI Workflow Consultant",
+      jobTitle: "AI Business Upgrade Coach",
       url: "https://www.linkedin.com/in/larry-lo-804a50165/",
       sameAs: ["https://www.linkedin.com/in/larry-lo-804a50165/", "https://github.com/burkaslarry"],
     },
