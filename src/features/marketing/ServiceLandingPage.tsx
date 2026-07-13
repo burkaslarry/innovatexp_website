@@ -12,6 +12,7 @@ const LABELS: Record<
     deliverables: string;
     outcomes: string;
     modules: string;
+    pricing: string;
     proofPoints: string;
     faq: string;
     related: string;
@@ -25,6 +26,7 @@ const LABELS: Record<
     deliverables: "Deliverables",
     outcomes: "Expected Outcomes",
     modules: "Example Modules",
+    pricing: "Pricing & Program Options",
     proofPoints: "Proof Points",
     faq: "FAQ",
     related: "Related InnovateXP Services",
@@ -37,6 +39,7 @@ const LABELS: Record<
     deliverables: "交付內容",
     outcomes: "預期成果",
     modules: "課程／陪跑模組",
+    pricing: "定價與計劃選項",
     proofPoints: "經驗與 proof points",
     faq: "常見問題",
     related: "相關 InnovateXP 服務",
@@ -49,6 +52,7 @@ const LABELS: Record<
     deliverables: "交付內容",
     outcomes: "預期成果",
     modules: "課程／陪跑模組",
+    pricing: "定價與計劃選項",
     proofPoints: "經驗與 proof points",
     faq: "常見問題",
     related: "相關 InnovateXP 服務",
@@ -61,6 +65,7 @@ const LABELS: Record<
     deliverables: "提供内容",
     outcomes: "期待できる成果",
     modules: "モジュール例",
+    pricing: "Pricing & Program Options",
     proofPoints: "実績・根拠",
     faq: "FAQ",
     related: "関連サービス",
@@ -73,6 +78,7 @@ const LABELS: Record<
     deliverables: "Leistungen",
     outcomes: "Erwartete Ergebnisse",
     modules: "Beispielmodule",
+    pricing: "Pricing & Program Options",
     proofPoints: "Proof Points",
     faq: "FAQ",
     related: "Verwandte InnovateXP-Services",
@@ -169,6 +175,33 @@ export function ServiceLandingPage({
                 </li>
               ))}
             </ol>
+          </section>
+        ) : null}
+
+        {content.pricing ? (
+          <section className="mt-6 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-900">
+            <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">{content.pricing.title || labels.pricing}</h2>
+            <p className="mb-6 leading-relaxed text-gray-700 dark:text-gray-300">{content.pricing.intro}</p>
+            <div className="grid gap-4 md:grid-cols-2">
+              {content.pricing.plans.map((plan) => (
+                <article key={plan.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
+                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
+                  <p className="mt-2 font-semibold text-brand-primary dark:text-teal-300">{plan.price}</p>
+                  <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">{plan.fit}</p>
+                  <ul className="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                    {plan.features.map((feature) => (
+                      <li key={feature} className="flex gap-2 leading-relaxed">
+                        <span className="font-bold text-brand-primary dark:text-teal-300">✓</span>
+                        <span>{feature}</span>
+                      </li>
+                    ))}
+                  </ul>
+                </article>
+              ))}
+            </div>
+            <p className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-gray-600 dark:border-slate-700 dark:bg-slate-800 dark:text-gray-300">
+              {content.pricing.note}
+            </p>
           </section>
         ) : null}
 

@@ -35,12 +35,12 @@ export async function generateMetadata({
   const canonical = `${siteUrl}/${loc}`;
 
   return {
-    title: "InnovateXP | WhatsApp CRM, EventXP, AI Training",
+    title: "InnovateXP | AI Business Upgrade Coach for Hong Kong SMEs",
     description: localeUsesChineseCopy(loc)
-      ? "香港中小企 AI CRM：將 WhatsApp 查詢同活動名單變成可跟進 pipeline，支援 Cloud Platform 或 On-Premise 上架及 AI training。"
-      : "Turn WhatsApp inquiries and event attendee lists into a structured sales pipeline for Hong Kong SMEs — cloud or on-premise deployment and practical AI training.",
+      ? "InnovateXP 由 Larry Lo 以 AI 商業升級教練身份，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。"
+      : "InnovateXP helps Hong Kong SMEs fix workflows first, then adopt AI through structured coaching, SOP optimization, KPI review, practical trials, and optional automation or SaaS implementation.",
     keywords:
-      "香港 WhatsApp CRM, 香港中小企 AI 自動化, BNI 跟進系統, AI training Hong Kong, Azure OpenAI implementation, Alibaba Cloud AI, GCP AI deployment, AWS AI deployment, on-premise AI deployment, AI consulting, AI CRM, Hong Kong SME AI automation, smart sales automation, WhatsApp CRM, event check-in system, EventXP, SmartSales CRM",
+      "AI 商業升級, AI 商業升級教練, 香港中小企 AI 顧問, AI 陪跑課程, SOP 流程優化, AI workflow automation Hong Kong, AI adoption for SMEs, business process automation, practical AI training for teams, AI consultant Hong Kong, AI Business Upgrade Accelerator, AI Business Upgrade Advisory",
     authors: [{ name: "Larry Lo", url: "https://www.linkedin.com/in/larry-lo-804a50165/" }],
     creator: "InnovateXP Limited",
     publisher: "InnovateXP Limited",
@@ -51,10 +51,10 @@ export async function generateMetadata({
       alternateLocale: ogAlternateLocales(loc),
       url: canonical,
       siteName: "InnovateXP Limited",
-      title: "InnovateXP | WhatsApp CRM, EventXP, AI Training",
+      title: "InnovateXP | AI Business Upgrade Coach for Hong Kong SMEs",
       description: localeUsesChineseCopy(loc)
-        ? "香港中小企 AI CRM：WhatsApp 查詢同活動名單變成可跟進 pipeline，支援 Cloud Platform / On-Premise 上架。"
-        : "Structured follow-up for Hong Kong SMEs: WhatsApp CRM, EventXP, AI training — cloud or on-premise.",
+        ? "先執順流程，再落地 AI。30 日 Discovery Sprint、AI 商業升級加速計劃、顧問陪跑與按需系統落地。"
+        : "Fix the workflow first. Then put AI to work through a 30-day Discovery Sprint, accelerator programs, advisory, and optional systems.",
       images: [
         {
           ...OG_IMAGE_DEFAULT,
@@ -64,10 +64,10 @@ export async function generateMetadata({
     },
     twitter: {
       card: "summary_large_image",
-      title: "InnovateXP | WhatsApp CRM, EventXP, AI Training",
+      title: "InnovateXP | AI Business Upgrade Coach for Hong Kong SMEs",
       description: localeUsesChineseCopy(loc)
-        ? "香港中小企 AI CRM：WhatsApp 查詢同活動名單變成可跟進 pipeline，支援 Cloud Platform / On-Premise 上架。"
-        : "Structured follow-up for Hong Kong SMEs: WhatsApp CRM, EventXP, AI training.",
+        ? "AI 商業升級教練：先梳理 SOP 和 KPI，再試行 AI，最後按需要落地 automation、CRM 或 SaaS。"
+        : "AI Business Upgrade Coach: clarify SOPs and KPIs first, trial AI, then implement automation, CRM, or SaaS only when needed.",
       images: [OG_IMAGE_DEFAULT.url],
       creator: "@innovatexp",
     },

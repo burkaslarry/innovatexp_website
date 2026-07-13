@@ -32,6 +32,17 @@ export type ServicePageContent = {
   expectedOutcomes: string[];
   proofPoints: string[];
   modules?: string[];
+  pricing?: {
+    title: string;
+    intro: string;
+    plans: Array<{
+      name: string;
+      price: string;
+      fit: string;
+      features: string[];
+    }>;
+    note: string;
+  };
   relatedLinks: MarketingLink[];
   cta: {
     label: string;

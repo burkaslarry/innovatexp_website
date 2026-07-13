@@ -71,15 +71,27 @@ export function buildServicePageJsonLd({
           audience: content.audience,
           hasOfferCatalog: {
             "@type": "OfferCatalog",
-            name: `${content.title} deliverables`,
-            itemListElement: content.deliverables.map((item, index) => ({
-              "@type": "Offer",
-              position: index + 1,
-              itemOffered: {
-                "@type": "Service",
-                name: item,
-              },
-            })),
+            name: content.pricing?.title ?? `${content.title} deliverables`,
+            itemListElement: content.pricing
+              ? content.pricing.plans.map((plan, index) => ({
+                  "@type": "Offer",
+                  position: index + 1,
+                  name: plan.name,
+                  priceCurrency: "HKD",
+                  description: `${plan.fit} ${plan.features.join(" ")}`,
+                  itemOffered: {
+                    "@type": "Service",
+                    name: plan.name,
+                  },
+                }))
+              : content.deliverables.map((item, index) => ({
+                  "@type": "Offer",
+                  position: index + 1,
+                  itemOffered: {
+                    "@type": "Service",
+                    name: item,
+                  },
+                })),
           },
           url: pageUrl,
         };

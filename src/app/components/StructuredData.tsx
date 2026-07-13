@@ -16,18 +16,18 @@ type FaqMainEntity = Array<{
 }>;
 
 const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
-  en: "InnovateXP Limited helps Hong Kong SMEs, schools, and business teams adopt practical AI workflows through AI training, AI coaching, WhatsApp CRM automation, event intelligence, and founder-led implementation support.",
+  en: "InnovateXP Limited helps Hong Kong SMEs fix workflows first, then adopt AI through structured coaching, SOP optimization, KPI review, practical trials, and optional automation or SaaS implementation.",
   "zh-hk":
-    "InnovateXP Limited 協助香港中小企、學校同 business teams 透過 AI 教班、AI 陪跑課程、WhatsApp CRM 自動化、活動 intelligence 同 founder-led implementation support，將 AI 落地到實際工作流程。",
+    "InnovateXP Limited 由 Larry Lo 以 AI 商業升級教練身份，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
   "zh-tw":
-    "我們協助中小企將活動名單與 WhatsApp 諮詢轉為結構化的業務銷售流程，透過 AI 輔助分類、下一步建議與回覆草稿。系統可部署於雲端平台（Azure OpenAI、阿里雲、GCP、AWS）或自建／地端環境，並提供實務 AI 培訓。",
+    "InnovateXP Limited 由 Larry Lo 以 AI 商業升級教練身份，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
   ja: "InnovateXP は香港の中小企業向けに、イベントからの見込み客や WhatsApp の問い合わせを AI ワークフローで構造化されたセールスパイプラインへ変える支援を行います。Azure OpenAI、Alibaba Cloud、GCP、AWS、オンプレミスへの展開と実践的な AI 研修に対応します。",
   de: "InnovateXP Limited hilft KMUs in Hongkong dabei, Event-Leads und WhatsApp-Anfragen mit KI-gestützten Workflows in strukturierte Vertriebspipelines zu verwandeln. Bereitstellung auf Azure OpenAI, Alibaba Cloud, GCP, AWS oder On-Premise sowie praktisches AI-Training.",
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Larry Lo is an AI Solutions Trainer, SME AI Workflow Consultant, and founder of InnovateXP Limited. He has 13+ years of IT delivery, mobile apps, cloud architecture, agile delivery, and AI-powered business systems experience, and is an ex-Organizer of Google Developer Group Hong Kong.",
-  "zh-hk": "Larry Lo 係 AI Solutions Trainer、SME AI Workflow Consultant 及 InnovateXP Limited 創辦人，具備 13+ 年 IT delivery、mobile apps、cloud architecture、agile delivery 同 AI-powered business systems 經驗，亦係前 GDG Hong Kong Organizer。",
+  en: "Larry Lo is the founder of InnovateXP Limited and an AI Business Upgrade Coach for Hong Kong SMEs. He has 13+ years of IT delivery, product, cloud, agile delivery, and AI-powered business systems experience, and is a former Google Developer Group Hong Kong organizer.",
+  "zh-hk": "Larry Lo 係 InnovateXP Limited 創辦人兼 AI 商業升級教練，具備 13+ 年 IT delivery、product、cloud、agile delivery 同 AI-powered business systems 經驗，亦係前 Google Developer Group Hong Kong organizer。",
   "zh-tw":
     "Larry Lo 具備 14 年以上系統架構與落地實作經驗，包含香港政府與公共交通相關的高可用度專案。他親自參與建置與維運，而非層層轉包。曾任 Google Developer Group Hong Kong Organizer、香港科技園孵化校友，並曾支援 2,000 名以上並行使用者的系統等級。",
   ja: "現場の実装者として、Larry Lo はシステムアーキテクチャにおよそ 14 年の実務経験があります（香港の行政・公共交通向け高可用性案件を含む）。彼自身が構築・保守に入る体制で、請け負いだけの PM ではありません。元 Google Developer Group HK Organizer、HKSTP インキュベーション卒業・2,000 人以上同時アクティブ規模のシステム経験。",
@@ -52,16 +52,6 @@ const SCHEMA_EVENTXP_DESCRIPTION: Record<AppLocale, string> = {
   de: "Intelligentes Event-Check-in: verwandelt Anwesenheitsdaten in Business-Insights mit QR-Scanning, Echtzeit-Reporting und KI-gestützter Teilnehmeranalyse.",
 };
 
-const SCHEMA_AI_CONSULTING_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Practical AI implementation consulting for Hong Kong SMEs, including cloud platform deployment (Azure OpenAI, Alibaba Cloud, GCP, AWS), on-premise options, AI training, and deterministic workflow automation design.",
-  "zh-hk":
-    "為香港中小企提供可落地的 AI 實作顧問，包括 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）、On-Premise 部署選項、AI training 與可控流程自動化設計。",
-  "zh-tw":
-    "為中小企提供可落地的 AI 導入顧問：包含雲端平台（Azure OpenAI、阿里雲、GCP、AWS）、地端／自建選項、AI 培訓，以及可預測的工作流程自動化設計。",
-  ja: "香港の中小企業向けの実践的 AI 導入コンサルティング。クラウド（Azure OpenAI、Alibaba Cloud、GCP、AWS）、オンプレミス、研修、決定的ワークフロー設計に対応。",
-  de: "Praktische KI-Implementierungsberatung für KMUs in Hongkong inkl. Cloud-Deployments (Azure OpenAI, Alibaba Cloud, GCP, AWS), On-Premise-Optionen, AI-Training und deterministisches Workflow-Automatisierungsdesign.",
-};
-
 const SCHEMA_AI_SEO_NAME: Record<AppLocale, string> = {
   en: "AI SEO Update Package",
   "zh-hk": "AI SEO 更新套餐",
@@ -79,19 +69,19 @@ const SCHEMA_AI_SEO_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
-  en: "WhatsApp CRM, EventXP, AI training, cloud platform and on-premise deployment support for Hong Kong SMEs",
-  "zh-hk": "為香港中小企提供 WhatsApp CRM、EventXP、AI training、Cloud Platform 及 On-Premise 部署支援",
-  "zh-tw": "提供 WhatsApp CRM、EventXP、AI 培訓，以及雲端／地端部署支援（服務香港與區內中小企業）",
+  en: "AI Business Upgrade coaching, Discovery Sprint, SOP optimization, KPI review, and optional workflow automation for Hong Kong SMEs",
+  "zh-hk": "為香港中小企提供 AI 商業升級陪跑、30 日 Discovery Sprint、SOP 流程優化、KPI review 及按需 workflow automation",
+  "zh-tw": "為香港中小企提供 AI 商業升級陪跑、30 日 Discovery Sprint、SOP 流程優化、KPI review 及按需 workflow automation",
   ja: "香港の中小企業向けに WhatsApp CRM、EventXP、AI 研修、クラウド／オンプレミス支援を提供",
   de: "WhatsApp-CRM, EventXP, AI-Schulungen sowie Cloud- und On-Premise-Deployments für KMUs in Hongkong",
 };
 
 const SCHEMA_CONSULTING_SERVICE_DESCRIPTION: Record<AppLocale, string> = {
-  en: "We deliver practical AI-augmented workflow systems for Hong Kong SMEs, deployed on cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments where appropriate.",
+  en: "We provide AI Business Upgrade coaching and advisory for Hong Kong SMEs: workflow health checks, SOP mapping, KPI baselines, practical AI trials, and optional automation or SaaS implementation after validation.",
   "zh-hk":
-    "我們為香港中小企交付可落地的 AI-augmented workflow，系統上架可按需要支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署。",
+    "我們為香港中小企提供 AI 商業升級陪跑及顧問：流程健康檢查、SOP mapping、KPI baseline、AI 試行，並在驗證後按需要落地 automation 或 SaaS。",
   "zh-tw":
-    "我們為中小企交付可落地的 AI 強化工作流程；可依需求部署於雲端（Azure OpenAI、阿里雲、GCP、AWS）或自建／地端環境。",
+    "我們為香港中小企提供 AI 商業升級陪跑及顧問：流程健康檢查、SOP mapping、KPI baseline、AI 試行，並在驗證後按需要落地 automation 或 SaaS。",
   ja: "香港の中小企業向けに実用的な AI 拡張ワークフローを提供。Azure OpenAI、Alibaba Cloud、GCP、AWS またはオンプレミスへの展開に対応。",
   de: "Wir liefern praktische KI-erweiterte Workflows für KMUs in Hongkong — auf Azure OpenAI, Alibaba Cloud, GCP, AWS oder bei Bedarf Self-Hosted/On-Premise.",
 };
@@ -581,18 +571,19 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "AWS AI Deployment",
       "AI-augmented Workflow Deployment",
       "On-Premise AI Deployment",
-      "AI Training for SMEs",
-      "AI 教班",
+      "AI Business Upgrade Coach",
+      "AI Business Upgrade Accelerator",
+      "AI consultant Hong Kong",
+      "AI adoption for SMEs",
+      "business process automation",
+      "SOP 流程優化",
+      "AI 商業升級",
+      "AI 商業升級教練",
       "AI 陪跑課程",
       "中小企 AI 升級",
       "AI 工作流",
-      "Proposal-to-Cash AI",
-      "Compliant Regional Cloud Architecture",
-      "香港 WhatsApp CRM",
-      "香港中小企 AI 自動化",
-      "BNI 跟進系統",
-      "Google Gemini API",
-      "WhatsApp CRM Integration",
+      "香港中小企 AI 顧問",
+      "30-day Discovery Sprint",
     ],
   };
 
@@ -601,7 +592,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@type": "Person",
     "@id": `${baseUrl}/#founder`,
     name: "Larry Lo",
-    jobTitle: "AI Solutions Trainer & SME AI Workflow Consultant",
+    jobTitle: "AI Business Upgrade Coach",
     description: pickSchema(routeLocale, SCHEMA_PERSON_DESCRIPTION),
     url: "https://www.linkedin.com/in/larry-lo-804a50165/",
     image: `${baseUrl}/mypresent.jpg`,
@@ -799,9 +790,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${baseUrl}/#ai-consulting`,
-    serviceType: "AI Consulting",
-    name: "AI Consulting Services",
-    description: pickSchema(routeLocale, SCHEMA_AI_CONSULTING_DESCRIPTION),
+    serviceType: "AI Business Upgrade Advisory",
+    name: "AI Business Upgrade Accelerator",
+    description: pickSchema(routeLocale, SCHEMA_CONSULTING_SERVICE_DESCRIPTION),
     provider: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
@@ -812,13 +803,13 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "AI Consulting Packages",
+      name: "AI Business Upgrade Programs",
       itemListElement: [
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "AI Readiness Audit",
+            name: "30-day AI Upgrade Discovery Sprint",
           },
           price: "8000",
           priceCurrency: "HKD",
@@ -827,7 +818,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Custom AI Workflow Build",
+            name: "AI Upgrade Foundation",
           },
           price: "25000",
           priceCurrency: "HKD",
@@ -836,7 +827,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "Prompt Training Bootcamp",
+            name: "AI Upgrade Accelerator",
           },
           price: "12000",
           priceCurrency: "HKD",
@@ -922,7 +913,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     name: "InnovateXP Limited",
     description: pickSchema(routeLocale, SCHEMA_CONSULTING_SERVICE_DESCRIPTION),
     url: baseUrl,
-    serviceType: "AI Consulting",
+    serviceType: "AI Business Upgrade Coaching and Advisory",
     provider: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
@@ -934,7 +925,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "AI Consulting & Solutions",
+      name: "AI Business Upgrade Coaching, Advisory, and Optional Solutions",
       itemListElement: [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Consulting" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "SmartSales CRM" } },

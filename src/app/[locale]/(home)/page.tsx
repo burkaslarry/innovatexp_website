@@ -34,6 +34,7 @@ import { ProductEntryGrid } from '@/components/ProductEntryGrid';
 import { ProductMockupPlaceholder } from '@/components/ProductMockupPlaceholder';
 import { AIConsultingPackageCard } from '@/components/AIConsultingPackageCard';
 import { Button } from '@/components/ui/Button';
+import { BusinessUpgradeHomepageFunnel } from '@/components/BusinessUpgradeHomepageFunnel';
 import { getInnovatexpVision } from '@/content/service-pages';
 
 const ImageCarouselModal = dynamic(
@@ -418,6 +419,7 @@ function LandingPage() {
   const loc = useLocalizedHref();
   const copy = HOME_PAGE_COPY[locale];
   const visionCopy = getInnovatexpVision(locale);
+  const isChineseLocale = locale === 'zh-hk' || locale === 'zh-tw';
   const [smartSalesCarouselOpen, setSmartSalesCarouselOpen] = useState(false);
   const [smartSalesCarouselIndex, setSmartSalesCarouselIndex] = useState(0);
 
@@ -449,20 +451,38 @@ function LandingPage() {
   };
 
   const navItems = useMemo(
-    () => [
-      { label: t('nav.eventxp'), href: '#eventxp' },
-      { label: t('nav.smartsales'), href: '#smartsales' },
-      { label: t('nav.ai_consulting'), href: '#ai-consulting' },
-      { label: t('nav.reliability'), href: loc('/reliability') },
-      { label: t('nav.ai_quality'), href: loc('/ai-era-quality') },
-      { label: t('nav.premium_offer'), href: loc('/premium-ai-consulting') },
-      { label: t('nav.ai_seo_package'), href: loc('/ai-seo-update-package') },
-      { label: t('nav.pitch_decks'), href: loc('/pitch-decks') },
-      { label: t('nav.pricing'), href: '#pricing' },
-      { label: t('nav.about'), href: '#about-us' },
-      { label: t('nav.contact'), href: loc('/bookme#quotation-wizard') },
-    ],
-    [t, loc]
+    () => {
+      const labels = isChineseLocale
+        ? {
+            upgrade: 'AI 商業升級',
+            sprint: '30 日 Sprint',
+            programs: '加速計劃',
+            advisory: '顧問',
+            useCases: '示範場景',
+            about: 'About Larry',
+            contact: '聯絡',
+          }
+        : {
+            upgrade: 'AI Business Upgrade',
+            sprint: '30-day Sprint',
+            programs: 'Accelerator Programs',
+            advisory: 'Advisory',
+            useCases: 'Use Cases',
+            about: 'About Larry',
+            contact: 'Contact',
+          };
+
+      return [
+        { label: labels.upgrade, href: '#ai-business-upgrade' },
+        { label: labels.sprint, href: '#discovery-sprint' },
+        { label: labels.programs, href: '#programs' },
+        { label: labels.advisory, href: '#capability-proof' },
+        { label: labels.useCases, href: '#use-cases' },
+        { label: labels.about, href: '#about-larry' },
+        { label: labels.contact, href: loc('/bookme') },
+      ];
+    },
+    [isChineseLocale, loc]
   );
 
   const openSmartSalesCarouselAt = (index: number) => {
@@ -489,6 +509,7 @@ function LandingPage() {
     fetchData();
   }, []);
 
+  const showLegacyIntroSections = false;
 
   return (
     <div className="min-h-screen bg-bg text-fg transition-colors duration-200">
@@ -505,20 +526,85 @@ function LandingPage() {
         title={t('hero.title')}
         tagline={t('hero.tagline')}
         description={t('hero.description')}
-        primaryHref={loc("/bookme")}
+        primaryHref="#workflow-health-check"
         primaryLabel={t('hero.book_meeting')}
-        onPrimaryClick={undefined}
-        secondaryHref="#case-studies"
+        onPrimaryClick={(e) => scrollToAnchor(e, '#workflow-health-check')}
+        secondaryHref={loc("/bookme")}
         secondaryLabel={t('hero.case_studies')}
-        onSecondaryClick={(e) => scrollToAnchor(e, '#case-studies')}
+        onSecondaryClick={undefined}
         trustBadges={[t('hero.badge.experience'), t('hero.badge.language')]}
         bottomTagline={t('hero.bottom_tagline')}
         imageAlt={t('hero.image_alt')}
       />
 
+      <BusinessUpgradeHomepageFunnel locale={locale} bookingHref={loc('/bookme')} />
+
+      {showLegacyIntroSections ? (
+        <>
       <section id="about-innovatexp" className="mx-auto max-w-4xl px-6 py-12">
         <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{t('home.about.title')}</h2>
         <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">{t('home.about.body')}</p>
+      </section>
+
+      <section className="mb-16 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-gray-900 md:p-10">
+        <div className="mx-auto max-w-3xl text-center">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+            {t('home.problem.eyebrow')}
+          </p>
+          <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+            {t('home.problem.title')}
+          </h2>
+          <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+            {t('home.problem.intro')}
+          </p>
+        </div>
+        <div className="mt-8 grid gap-4 md:grid-cols-2 lg:grid-cols-3">
+          {[
+            'home.problem.point1',
+            'home.problem.point2',
+            'home.problem.point3',
+            'home.problem.point4',
+            'home.problem.point5',
+            'home.problem.point6',
+          ].map((key) => (
+            <div key={key} className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-gray-800 dark:text-slate-300">
+              {t(key)}
+            </div>
+          ))}
+        </div>
+      </section>
+
+      <section className="mb-16 rounded-2xl border border-brand-primary/25 bg-gradient-to-br from-cyan-50 via-white to-amber-50 p-6 shadow-sm dark:border-teal-500/30 dark:from-slate-900 dark:via-gray-900 dark:to-slate-900 md:p-10">
+        <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
+          <div>
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+              {t('home.solution.eyebrow')}
+            </p>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+              {t('home.solution.title')}
+            </h2>
+            <p className="text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+              {t('home.solution.intro')}
+            </p>
+          </div>
+          <div className="grid gap-4 sm:grid-cols-2">
+            {[
+              { icon: Search, key: 'home.solution.step1' },
+              { icon: PenLine, key: 'home.solution.step2' },
+              { icon: LayoutDashboard, key: 'home.solution.step3' },
+              { icon: CalendarClock, key: 'home.solution.step4' },
+              { icon: GraduationCap, key: 'home.solution.step5' },
+              { icon: Bot, key: 'home.solution.step6' },
+            ].map(({ icon: Icon, key }) => (
+              <div key={key} className="rounded-xl border border-white/80 bg-white/80 p-5 shadow-sm dark:border-slate-700 dark:bg-gray-800/80">
+                <Icon className="mb-3 h-6 w-6 text-brand-primary dark:text-teal-300" strokeWidth={2} aria-hidden />
+                <p className="text-sm font-semibold leading-relaxed text-slate-800 dark:text-slate-200">
+                  {t(key)}
+                </p>
+              </div>
+            ))}
+          </div>
+        </div>
       </section>
 
       <WhyInnovateXP
@@ -684,89 +770,71 @@ function LandingPage() {
         <h2 className="mb-8 text-center text-4xl font-bold text-gray-900 dark:text-white">
           {t('services.title')}
         </h2>
-        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-3">
-          <div className="flex h-full min-h-0 flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
-            <h3 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{t('services.ai_crm.title')}</h3>
-            <p className="mb-4 text-sm font-semibold italic text-brand-primary dark:text-teal-300 ">{t('services.ai_crm.subtitle')}</p>
-            <ul className="flex min-h-0 flex-1 flex-col space-y-2">
-              <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
-                <span>{t('services.ai_crm.benefit1')}</span>
-              </li>
-              <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
-                <span>{t('services.ai_crm.benefit2')}</span>
-              </li>
-              <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
-                <span>{t('services.ai_crm.benefit3')}</span>
-              </li>
-            </ul>
-            <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
-              <a
-                href={loc("/bookme")}
-                className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
-              >
-                {t('services.ai_crm.cta')}
-              </a>
+        <p className="mx-auto mb-8 max-w-3xl text-center text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          {t('services.intro')}
+        </p>
+        <div className="grid grid-cols-1 items-stretch gap-6 md:grid-cols-2 xl:grid-cols-4">
+          {[
+            { prefix: 'services.advisory', icon: Target },
+            { prefix: 'services.workflow', icon: LayoutDashboard },
+            { prefix: 'services.training', icon: GraduationCap },
+            { prefix: 'services.tools', icon: Bot },
+          ].map(({ prefix, icon: Icon }) => (
+            <div key={prefix} className="flex h-full min-h-0 flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
+              <Icon className="mb-4 h-8 w-8 text-brand-primary dark:text-teal-300" strokeWidth={2} aria-hidden />
+              <h3 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{t(`${prefix}.title`)}</h3>
+              <p className="mb-4 text-sm font-semibold text-brand-primary dark:text-teal-300">{t(`${prefix}.subtitle`)}</p>
+              <p className="mb-4 text-sm leading-relaxed text-gray-700 dark:text-gray-300">{t(`${prefix}.body`)}</p>
+              <ul className="flex min-h-0 flex-1 flex-col space-y-2">
+                {[1, 2, 3].map((item) => (
+                  <li key={item} className="flex items-start text-sm text-gray-700 dark:text-gray-300">
+                    <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
+                    <span>{t(`${prefix}.benefit${item}`)}</span>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
+                <a
+                  href={loc("/bookme")}
+                  className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+                >
+                  {t('services.cta')}
+                </a>
+              </div>
             </div>
-          </div>
+          ))}
+        </div>
+      </section>
 
-          <div className="flex h-full min-h-0 flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
-            <h3 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{t('services.checkin.title')}</h3>
-            <p className="mb-4 text-sm font-semibold italic text-brand-primary dark:text-teal-300 ">{t('services.checkin.subtitle')}</p>
-            <ul className="flex min-h-0 flex-1 flex-col space-y-2">
-              <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
-                <span>{t('services.checkin.benefit1')}</span>
-              </li>
-              <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
-                <span>{t('services.checkin.benefit2')}</span>
-              </li>
-              <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
-                <span>{t('services.checkin.benefit3')}</span>
-              </li>
-            </ul>
-            <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
-              <a
-                href={loc("/bookme")}
-                className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
-              >
-                {t('services.checkin.cta')}
-              </a>
-            </div>
+      <section id="founder-note" className="mb-16 scroll-mt-[var(--header-offset)] overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm dark:border-slate-700 dark:bg-gray-900">
+        <div className="grid gap-0 lg:grid-cols-[0.85fr_1.15fr]">
+          <div className="relative min-h-[260px]">
+            <Image
+              src="/mypresent.jpg"
+              alt={t('founder_note.image_alt')}
+              fill
+              className="object-cover"
+              sizes="(max-width: 1024px) 100vw, 420px"
+              loading="lazy"
+            />
           </div>
-
-          <div className="flex h-full min-h-0 flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
-            <h3 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{t('services.courses.title')}</h3>
-            <p className="mb-4 text-sm font-semibold italic text-brand-primary  dark:text-teal-300">{t('services.courses.subtitle')}</p>
-            <ul className="flex min-h-0 flex-1 flex-col space-y-2">
-              <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
-                <span>{t('services.courses.benefit1')}</span>
-              </li>
-              <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
-                <span>{t('services.courses.benefit2')}</span>
-              </li>
-              <li className="flex items-start text-gray-700 dark:text-gray-300">
-                <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
-                <span>{t('services.courses.benefit3')}</span>
-              </li>
-            </ul>
-            <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
-              <a
-                href={loc("/bookme#quotation-wizard")}
-                className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary py-2 px-6 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
-              >
-                {t('services.courses.cta')}
-              </a>
+          <div className="p-6 md:p-10">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+              {t('founder_note.eyebrow')}
+            </p>
+            <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+              {t('founder_note.title')}
+            </h2>
+            <div className="space-y-4 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+              <p>{t('founder_note.p1')}</p>
+              <p>{t('founder_note.p2')}</p>
+              <p className="font-semibold text-gray-900 dark:text-white">{t('founder_note.p3')}</p>
             </div>
           </div>
         </div>
       </section>
+        </>
+      ) : null}
 
       {/* EventXP Section */}
       <article id="eventxp" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800 md:p-12">

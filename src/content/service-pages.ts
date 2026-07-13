@@ -87,14 +87,14 @@ const aiTraining: ServicePageContent = {
 
 const aiCoaching: ServicePageContent = {
   slug: "ai-coaching",
-  schemaKind: "Course",
-  title: "AI Coaching / AI 陪跑課程 for SME Implementation",
-  metaTitle: "AI 陪跑課程 Hong Kong | SME AI Implementation Coaching | InnovateXP",
+  schemaKind: "ProfessionalService",
+  title: "AI Business Upgrade Coaching / AI 陪跑課程 for Hong Kong SMEs",
+  metaTitle: "AI 陪跑課程 Hong Kong | AI Business Upgrade Coach | InnovateXP",
   metaDescription:
-    "Guided AI implementation coaching for Hong Kong SMEs: choose one workflow, build the first version, train the team, and improve adoption step by step.",
-  eyebrow: "Done-with-you implementation coaching",
+    "AI Business Upgrade coaching for Hong Kong SMEs: 30-day Discovery Sprint, 3-month Foundation, 6-month Accelerator, and advisory for SOPs, KPIs, workflow trials, and AI adoption.",
+  eyebrow: "AI Business Upgrade coaching",
   intro:
-    "AI 陪跑課程 is for teams that want guided implementation, not another inspirational seminar. InnovateXP helps SMEs choose one workflow, design the first version, test it with the team, and improve it through weekly coaching. The goal is practical adoption: your staff understand the system, trust the process, and can continue improving after the sprint.",
+    "AI 陪跑課程 is for SMEs that want structured business upgrade support, not another one-off AI class and not a software-first project. InnovateXP helps your team clarify SOPs, define KPIs, run practical AI trials, and decide whether automation, CRM, or SaaS is actually needed after the workflow is validated.",
   audience: [
     "SME owners who want to adopt AI but do not know which workflow should come first.",
     "Operations, sales, marketing, and admin teams that need hands-on support after training.",
@@ -110,7 +110,7 @@ const aiCoaching: ServicePageContent = {
   deliverables: [
     "AI workflow selection and readiness assessment.",
     "Step-by-step implementation roadmap for one priority use case.",
-    "Weekly coaching sessions with tasks, review checkpoints, and adoption feedback.",
+    "Coaching sessions with tasks, review checkpoints, and adoption feedback.",
     "Prompt library, workflow documentation, and decision log.",
     "Lightweight prototype or operating playbook depending on the chosen workflow.",
   ],
@@ -126,14 +126,67 @@ const aiCoaching: ServicePageContent = {
     "Suitable after AI training or as a direct implementation sprint for teams ready to move.",
   ],
   modules: [
-    "Week 1: workflow discovery, risk boundaries, and first use case selection.",
-    "Week 2: prompt/system design, data inputs, and human review checkpoints.",
-    "Week 3: prototype or operating playbook with team testing.",
-    "Week 4: adoption review, improvement backlog, and next sprint recommendation.",
+    "30-day Discovery Sprint: questionnaire, kickoff, stakeholder interviews, one workflow map, KPI baseline, quick-win recommendation, and 30/60/90-day roadmap.",
+    "3-month AI Upgrade Foundation: 1-2 workflows, SOP v1, monthly checkpoints, KPI review, one team training.",
+    "6-month AI Upgrade Accelerator: one department or 3-4 workflows, Agile reviews, adoption tracking, up to two workshops.",
+    "12-month AI Business Upgrade Partnership: annual roadmap, SOP governance, management reviews, and up to four workshops.",
   ],
+  pricing: {
+    title: "AI 陪跑 / AI Business Upgrade program pricing",
+    intro:
+      "Pricing is scoped around coaching and advisory first. Custom SaaS, CRM, AI agent development, large data migration, API integration, and third-party subscriptions are separate after the workflow and business case are validated.",
+    plans: [
+      {
+        name: "30-day AI Upgrade Discovery Sprint",
+        price: "From HKD $8,000",
+        fit: "Best for SMEs that know one workflow is messy and want a paid pilot before committing to a larger program.",
+        features: [
+          "3-minute workflow health check and detailed questionnaire",
+          "60-minute kickoff and up to two stakeholder interviews",
+          "One workflow map, SOP / workflow draft, KPI baseline",
+          "One AI / automation quick-win recommendation and 30/60/90-day roadmap",
+        ],
+      },
+      {
+        name: "3-month AI Upgrade Foundation",
+        price: "From HKD $28,000",
+        fit: "Best for teams improving 1-2 workflows and building the first reviewable adoption result.",
+        features: [
+          "SOP v1, role responsibility, and handoff design",
+          "Monthly planning, checkpoint, and KPI review",
+          "Improvement backlog and AI / automation quick-win trials",
+          "One practical team training and monthly outcome summary",
+        ],
+      },
+      {
+        name: "6-month AI Upgrade Accelerator",
+        price: "From HKD $58,000",
+        fit: "Best for one department or 3-4 related workflows that need adoption tracking and management visibility.",
+        features: [
+          "Agile checkpoints and KPI / adoption review",
+          "SOP v2, exception handling, and cross-role handoff",
+          "AI workflow, CRM, or automation solution design when justified",
+          "Up to two practical workshops and management roadmap review",
+        ],
+      },
+      {
+        name: "12-month AI Business Upgrade Partnership",
+        price: "Custom annual advisory",
+        fit: "Best for long-term AI adoption governance after the model is validated.",
+        features: [
+          "Annual AI / process upgrade roadmap",
+          "Cross-department opportunity mapping and prioritization",
+          "SOP governance, knowledge management, and management reviews",
+          "Up to four team workshops and implementation governance",
+        ],
+      },
+    ],
+    note:
+      "Not included: custom SaaS / CRM / AI agent development, large data migration, API integration, daily operations outsourcing, legal/accounting/tax/HR/audit/compliance advice, third-party software or API costs, and guaranteed ROI or revenue outcomes.",
+  },
   relatedLinks: commonRelatedLinks,
   cta: {
-    label: "Plan an AI coaching sprint",
+    label: "Book a 30-minute Workflow Review",
     href: "/bookme",
     note: "Bring one workflow you want to improve, or ask us to help identify the best starting point.",
   },
@@ -386,13 +439,13 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
   },
   "ai-coaching": {
     ...aiCoaching,
-    title: "AI 陪跑課程：中小企業 AI 實作教練",
-    metaTitle: "AI 陪跑課程｜中小企業 AI 導入與實作教練｜InnovateXP",
+    title: "AI 商業升級陪跑課程：香港中小企 SOP、KPI 與 AI adoption",
+    metaTitle: "AI 陪跑課程｜AI 商業升級教練｜香港中小企 AI 顧問｜InnovateXP",
     metaDescription:
-      "給中小企業的 AI 實作陪跑：選定一條工作流、做出第一版、訓練團隊，並逐步改善採用成效。",
-    eyebrow: "Done-with-you AI 實作陪跑",
+      "InnovateXP 為香港中小企提供 AI 商業升級陪跑：30 日 Discovery Sprint、3 個月 Foundation、6 個月 Accelerator，協助梳理 SOP、設定 KPI、試行 AI 並改善團隊採用。",
+    eyebrow: "AI 商業升級陪跑",
     intro:
-      "AI 陪跑課程適合不只想聽講座、而是希望有人陪同落地的團隊。InnovateXP 協助中小企業選定一條工作流、設計第一版、與團隊測試，再透過每週 coaching 持續改善。目標是實際採用：員工理解流程、信任系統，並在 sprint 後能繼續優化。",
+      "AI 陪跑課程適合想先執順流程、再落地 AI 的香港中小企。InnovateXP 不會一開始叫你重做系統，而是先透過問卷、訪談、SOP mapping、KPI baseline 和 review checkpoint，陪團隊試行最值得改善的一條 workflow；確認 business case 後，才另行建議 automation、CRM 或 SaaS。",
     audience: [
       "想導入 AI、但不知道第一條流程該從哪裡開始的中小企業主。",
       "培訓後需要 hands-on support 的營運、銷售、行銷與行政團隊。",
@@ -408,7 +461,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
     deliverables: [
       "AI workflow 選題與 readiness assessment。",
       "針對一個優先 use case 的逐步 implementation roadmap。",
-      "每週 coaching sessions、任務、review checkpoints 與 adoption feedback。",
+      "Coaching sessions、任務、review checkpoints 與 adoption feedback。",
       "Prompt library、workflow documentation 與 decision log。",
       "依工作流需要提供 lightweight prototype 或 operating playbook。",
     ],
@@ -419,15 +472,68 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
       "企業建立內部 AI capability，而不是只依賴外判 IT service。",
     ],
     modules: [
-      "第 1 週：workflow discovery、risk boundaries 與 first use case selection。",
-      "第 2 週：prompt/system design、資料輸入與人工 review checkpoints。",
-      "第 3 週：prototype 或 operating playbook，並與團隊測試。",
-      "第 4 週：adoption review、改善 backlog 與下一個 sprint 建議。",
+      "30 日 Discovery Sprint：流程健康檢查、kickoff、最多兩次訪談、一條 workflow map、KPI baseline、quick-win 建議與 30/60/90 日 roadmap。",
+      "3 個月 AI Upgrade Foundation：改善 1-2 條 workflow、SOP v1、每月 checkpoint、KPI review、一次團隊實戰培訓。",
+      "6 個月 AI Upgrade Accelerator：擴展至一個部門或 3-4 條流程，Agile reviews、adoption tracking、最多兩次 workshop。",
+      "12 個月 AI Business Upgrade Partnership：年度 roadmap、跨部門優先排序、SOP governance、管理層 reviews、最多四次 workshop。",
     ],
+    pricing: {
+      title: "AI 陪跑課程定價與計劃",
+      intro:
+        "定價以 coaching / advisory 為主，不是軟件套裝。客製化 SaaS、CRM、AI agent、大型 data migration、API integration、第三方訂閱和雲端成本，會在 workflow 和 business case 驗證後另行 scope。",
+      plans: [
+        {
+          name: "30 日 AI Upgrade Discovery Sprint",
+          price: "HKD $8,000 起",
+          fit: "適合已知道一條流程很亂、想先付費驗證再決定是否擴展的 SME。",
+          features: [
+            "3 分鐘流程健康檢查與詳細 active questionnaire",
+            "60 分鐘 kickoff 與最多 2 次持份者訪談",
+            "1 條 workflow map、SOP / workflow draft、KPI baseline",
+            "1 個 AI / automation quick-win 建議及 30/60/90 日 roadmap",
+          ],
+        },
+        {
+          name: "3 個月 AI Upgrade Foundation",
+          price: "HKD $28,000 起",
+          fit: "適合改善 1-2 條流程，建立第一個可驗收 adoption 成果。",
+          features: [
+            "SOP v1、角色責任與 handoff 設計",
+            "每月 planning、checkpoint 與 KPI review",
+            "Improvement backlog 與 AI / automation quick-win trials",
+            "1 次團隊實戰培訓與月度成果摘要",
+          ],
+        },
+        {
+          name: "6 個月 AI Upgrade Accelerator",
+          price: "HKD $58,000 起",
+          fit: "適合一個部門或 3-4 條相關流程，需要 adoption tracking 與管理層可視性。",
+          features: [
+            "Agile checkpoints 與 KPI / adoption review",
+            "SOP v2、exception handling 與跨角色 handoff",
+            "在有需要時設計 AI workflow、CRM 或 automation solution",
+            "最多 2 次實戰 workshop 與管理層 roadmap review",
+          ],
+        },
+        {
+          name: "12 個月 AI Business Upgrade Partnership",
+          price: "年度顧問 Custom 報價",
+          fit: "適合已驗證模式後，將 AI adoption、SOP 和流程優化變成長期管理能力。",
+          features: [
+            "年度 AI / 流程升級 roadmap",
+            "跨部門 opportunity mapping 與優先排序",
+            "SOP governance、知識管理與管理層 reviews",
+            "最多 4 次團隊 workshop 與 implementation governance",
+          ],
+        },
+      ],
+      note:
+        "不包括：客製化 SaaS / CRM / AI agent 開發、大型 data migration、API integration、代替日常營運、法律 / 會計 / 稅務 / HR / 審計 / 合規意見、第三方軟件或 API 成本，以及保證 ROI 或收入成果。",
+    },
     cta: {
       ...aiCoaching.cta,
-      label: "規劃 AI 陪跑 sprint",
-      note: "帶來一條你想改善的工作流；如果還不確定，我們也可以先協助找出最佳起點。",
+      label: "預約 30 分鐘流程診斷",
+      note: "帶來一條你想改善的流程；如果還不確定，我們會先用流程健康檢查協助找出最佳起點。",
     },
     faqs: [
       {
