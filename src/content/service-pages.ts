@@ -14,10 +14,10 @@ const aiTraining: ServicePageContent = {
   title: "AI Training / AI 教班 for Schools, SMEs, and Business Teams",
   metaTitle: "AI Training Hong Kong | AI 教班 for Schools & SMEs | InnovateXP",
   metaDescription:
-    "Practical AI training by Larry Lo for schools, SMEs, and business teams in Hong Kong: prompt engineering, AI tools, AI-assisted coding, chatbot prototyping, and workflow automation.",
+    "Practical AI training by InnovateXP for schools, SMEs, and business teams in Hong Kong: prompt engineering, AI tools, AI-assisted coding, chatbot prototyping, and workflow automation.",
   eyebrow: "Founder-led AI training",
   intro:
-    "InnovateXP runs practical AI training for Hong Kong schools, SMEs, and business teams that need more than a tool demo. Larry Lo teaches teams how to use AI in real work: research, writing, customer follow-up, coding support, chatbot prototyping, and workflow automation. Cantonese/English delivery is available, with Traditional Chinese phrases and examples for local teams searching for AI 教班 and 中小企 AI 升級.",
+    "InnovateXP runs practical AI training for Hong Kong schools, SMEs, and business teams that need more than a tool demo. InnovateXP teaches teams how to use AI in real work: research, writing, customer follow-up, coding support, chatbot prototyping, and workflow automation. Cantonese/English delivery is available, with Traditional Chinese phrases and examples for local teams searching for AI 教班 and 中小企 AI 升級.",
   audience: [
     "Schools, education centres, and student groups exploring practical AI literacy.",
     "SME owners and managers who want staff to use AI safely in daily operations.",
@@ -44,7 +44,7 @@ const aiTraining: ServicePageContent = {
     "The organization can identify one or two practical AI 工作流 candidates for follow-up implementation.",
   ],
   proofPoints: [
-    "Larry Lo is an ex-Organizer of Google Developer Group Hong Kong and has been involved in community learning formats such as Flutter Study Group, Build with AI, Google I/O Extended, and DevFest Hong Kong.",
+    "Founder-led delivery includes ex-Organizer experience with Google Developer Group Hong Kong and community learning formats such as Flutter Study Group, Build with AI, Google I/O Extended, and DevFest Hong Kong.",
     "InnovateXP has delivered AI workshop/demo sessions for JCI Peninsula.",
     "Founder experience combines 13+ years of IT delivery, mobile apps, cloud architecture, agile delivery, and AI-powered business systems.",
   ],
@@ -121,7 +121,7 @@ const aiCoaching: ServicePageContent = {
     "The business builds internal AI capability instead of depending only on outsourced IT service.",
   ],
   proofPoints: [
-    "Founder-led coaching by Larry Lo, combining system delivery, community teaching, and SME workflow design.",
+    "Founder-led coaching by InnovateXP, combining system delivery, community teaching, and SME workflow design.",
     "Grounded in practical systems such as SmartSales CRM, EventXP, custom AI agents, and internal dashboards.",
     "Suitable after AI training or as a direct implementation sprint for teams ready to move.",
   ],
@@ -132,14 +132,14 @@ const aiCoaching: ServicePageContent = {
     "12-month AI Business Upgrade Partnership: annual roadmap, SOP governance, management reviews, and up to four workshops.",
   ],
   pricing: {
-    title: "AI 陪跑 / AI Business Upgrade program pricing",
+    title: "AI Coaching Pricing / Founder Pilot Offer",
     intro:
-      "Pricing is scoped around coaching and advisory first. Custom SaaS, CRM, AI agent development, large data migration, API integration, and third-party subscriptions are separate after the workflow and business case are validated.",
+      "Pricing is scoped around coaching and advisory first. Founder Pilot / talk offer pricing is valid for the first 3 companies, or when a 30-minute Workflow Review is booked within 7 days after the talk. Each package assumes one company and 3-5 core participants / stakeholders. Custom SaaS, CRM, AI agent development, large data migration, API integration, 20-person focus groups, larger workshops, third-party software, AI API, hosting, and subscriptions are separate after the workflow and business case are validated.",
     plans: [
       {
         name: "30-day AI Upgrade Discovery Sprint",
-        price: "From HKD $8,000",
-        fit: "Best for SMEs that know one workflow is messy and want a paid pilot before committing to a larger program.",
+        price: "HK$10,000 -> HK$6,800",
+        fit: "Best for a 2-4 person focus group / 3-5 core participants that want to validate one workflow before committing to a larger program.",
         features: [
           "3-minute workflow health check and detailed questionnaire",
           "60-minute kickoff and up to two stakeholder interviews",
@@ -149,8 +149,8 @@ const aiCoaching: ServicePageContent = {
       },
       {
         name: "3-month AI Upgrade Foundation",
-        price: "From HKD $28,000",
-        fit: "Best for teams improving 1-2 workflows and building the first reviewable adoption result.",
+        price: "HK$26,000 -> HK$22,800",
+        fit: "Best for 3-5 core participants improving 1-2 workflows and building the first reviewable adoption result.",
         features: [
           "SOP v1, role responsibility, and handoff design",
           "Monthly planning, checkpoint, and KPI review",
@@ -160,8 +160,8 @@ const aiCoaching: ServicePageContent = {
       },
       {
         name: "6-month AI Upgrade Accelerator",
-        price: "From HKD $58,000",
-        fit: "Best for one department or 3-4 related workflows that need adoption tracking and management visibility.",
+        price: "HK$50,000 -> HK$42,800",
+        fit: "Best for a small core team or department representatives improving 3-4 related workflows that need adoption tracking and management visibility.",
         features: [
           "Agile checkpoints and KPI / adoption review",
           "SOP v2, exception handling, and cross-role handoff",
@@ -171,8 +171,8 @@ const aiCoaching: ServicePageContent = {
       },
       {
         name: "12-month AI Business Upgrade Partnership",
-        price: "Custom annual advisory",
-        fit: "Best for long-term AI adoption governance after the model is validated.",
+        price: "HK$98,000 -> HK$88,000",
+        fit: "Best for management / core owners building long-term AI adoption governance after the model is validated.",
         features: [
           "Annual AI / process upgrade roadmap",
           "Cross-department opportunity mapping and prioritization",
@@ -182,7 +182,7 @@ const aiCoaching: ServicePageContent = {
       },
     ],
     note:
-      "Not included: custom SaaS / CRM / AI agent development, large data migration, API integration, daily operations outsourcing, legal/accounting/tax/HR/audit/compliance advice, third-party software or API costs, and guaranteed ROI or revenue outcomes.",
+      "BNI Founder Offer: valid for the first 3 companies, or when a 30-minute Workflow Review is booked within 7 days after the talk. Not included: 20-person focus groups or large workshops, custom SaaS / CRM / AI agent development, large data migration, API integration, daily operations outsourcing, legal/accounting/tax/HR/audit/compliance advice, third-party software, AI API, hosting costs, and guaranteed ROI or revenue outcomes. Extra participants, departments, workshops, or training sessions are scoped separately by headcount, session count, and preparation work.",
   },
   relatedLinks: commonRelatedLinks,
   cta: {
@@ -223,7 +223,7 @@ const smeWorkflow: ServicePageContent = {
     "InnovateXP helps Hong Kong SMEs design practical AI workflows for sales follow-up, operations, admin, CRM, WhatsApp automation, dashboards, and internal tools.",
   eyebrow: "Hong Kong SME AI workflow automation",
   intro:
-    "InnovateXP helps Hong Kong SMEs turn scattered manual work into practical AI-assisted workflows. We focus on real operating processes: WhatsApp follow-up, quotation follow-up, admin portals, dashboards, customer service drafts, SOP handover, and internal AI tools. The work is founder-led by Larry Lo, an AI Business Upgrade Coach with 13+ years of IT delivery and architecture experience.",
+    "InnovateXP helps Hong Kong SMEs turn scattered manual work into practical AI-assisted workflows. We focus on real operating processes: WhatsApp follow-up, quotation follow-up, admin portals, dashboards, customer service drafts, SOP handover, and internal AI tools. The work is founder-led by InnovateXP, an AI Business Upgrade Coach with 13+ years of IT delivery and architecture experience.",
   audience: [
     "3-50 person SMEs that need better sales, operations, and follow-up discipline.",
     "Founder-led service businesses where the owner still coordinates too much manually.",
@@ -251,7 +251,7 @@ const smeWorkflow: ServicePageContent = {
   ],
   proofPoints: [
     "Examples include EventXP, SmartSales CRM, Proposal-to-Cash AI, booking flows, dashboards, admin portals, and custom AI agents.",
-    "Larry Lo brings 13+ years across mobile apps, cloud architecture, agile delivery, and AI-powered business systems.",
+    "InnovateXP brings 13+ years across mobile apps, cloud architecture, agile delivery, and AI-powered business systems.",
     "Community and training background includes Google Developer Group Hong Kong and AI workshop/demo delivery.",
   ],
   relatedLinks: [
@@ -377,7 +377,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
     title: "AI 培訓／AI 教班：給學校、中小企業與商務團隊",
     metaTitle: "AI 培訓／AI 教班｜學校與中小企業 AI 實務課程｜InnovateXP",
     metaDescription:
-      "Larry Lo 為學校、中小企業與商務團隊提供實務 AI 培訓：提示工程、AI 工具、AI 輔助編程、聊天機器人原型與工作流程自動化。",
+      "InnovateXP 為學校、中小企業與商務團隊提供實務 AI 培訓：提示工程、AI 工具、AI 輔助編程、聊天機器人原型與工作流程自動化。",
     eyebrow: "創辦人親自主講的 AI 培訓",
     intro:
       "InnovateXP 的 AI 培訓不是單純工具展示，而是協助學校、中小企業與商務團隊把 AI 用在真實工作：研究、寫作、客戶跟進、編程輔助、聊天機器人原型與流程自動化。課程可用粵語／英語進行，並加入繁體中文與香港、台灣團隊熟悉的 business workflow 例子，適合搜尋 AI 教班、中小企 AI 升級與 AI 工作流的團隊。",
@@ -478,14 +478,14 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
       "12 個月 AI Business Upgrade Partnership：年度 roadmap、跨部門優先排序、SOP governance、管理層 reviews、最多四次 workshop。",
     ],
     pricing: {
-      title: "AI 陪跑課程定價與計劃",
+      title: "AI 陪跑定價｜Founder Pilot Offer",
       intro:
-        "定價以 coaching / advisory 為主，不是軟件套裝。客製化 SaaS、CRM、AI agent、大型 data migration、API integration、第三方訂閱和雲端成本，會在 workflow 和 business case 驗證後另行 scope。",
+        "定價以 coaching / advisory 為主，不是軟件套裝。Founder Pilot / 演講限定價只限首 3 間合作企業，或演講後 7 日內預約 30 分鐘流程診斷。每個 package 以 1 間公司、3-5 位核心參與者 / stakeholders 為基準；客製化 SaaS、CRM、AI agent、大型 data migration、API integration、20 人 focus group、大班 workshop、第三方軟件、AI API、hosting 和雲端成本，會在 workflow 和 business case 驗證後另行 scope。",
       plans: [
         {
           name: "30 日 AI Upgrade Discovery Sprint",
-          price: "HKD $8,000 起",
-          fit: "適合已知道一條流程很亂、想先付費驗證再決定是否擴展的 SME。",
+          price: "HK$10,000 -> HK$6,800",
+          fit: "適合 2-4 人 focus group／3-5 位核心參與者先試一個 workflow，再決定是否擴展的 SME。",
           features: [
             "3 分鐘流程健康檢查與詳細 active questionnaire",
             "60 分鐘 kickoff 與最多 2 次持份者訪談",
@@ -495,8 +495,8 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
         },
         {
           name: "3 個月 AI Upgrade Foundation",
-          price: "HKD $28,000 起",
-          fit: "適合改善 1-2 條流程，建立第一個可驗收 adoption 成果。",
+          price: "HK$26,000 -> HK$22,800",
+          fit: "適合 3-5 位核心參與者改善 1-2 條流程，建立第一個可驗收 adoption 成果。",
           features: [
             "SOP v1、角色責任與 handoff 設計",
             "每月 planning、checkpoint 與 KPI review",
@@ -506,8 +506,8 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
         },
         {
           name: "6 個月 AI Upgrade Accelerator",
-          price: "HKD $58,000 起",
-          fit: "適合一個部門或 3-4 條相關流程，需要 adoption tracking 與管理層可視性。",
+          price: "HK$50,000 -> HK$42,800",
+          fit: "適合一個小核心團隊或部門代表改善 3-4 條相關流程，需要 adoption tracking 與管理層可視性。",
           features: [
             "Agile checkpoints 與 KPI / adoption review",
             "SOP v2、exception handling 與跨角色 handoff",
@@ -517,8 +517,8 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
         },
         {
           name: "12 個月 AI Business Upgrade Partnership",
-          price: "年度顧問 Custom 報價",
-          fit: "適合已驗證模式後，將 AI adoption、SOP 和流程優化變成長期管理能力。",
+          price: "HK$98,000 -> HK$88,000",
+          fit: "適合已驗證模式後，由管理層 / 核心 owner 將 AI adoption、SOP 和流程優化變成長期管理能力。",
           features: [
             "年度 AI / 流程升級 roadmap",
             "跨部門 opportunity mapping 與優先排序",
@@ -528,7 +528,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
         },
       ],
       note:
-        "不包括：客製化 SaaS / CRM / AI agent 開發、大型 data migration、API integration、代替日常營運、法律 / 會計 / 稅務 / HR / 審計 / 合規意見、第三方軟件或 API 成本，以及保證 ROI 或收入成果。",
+        "BNI Founder Offer：只限首 3 間合作企業／演講後 7 日內預約 30 分鐘流程診斷。不包括：20 人 focus group 或大型 workshop、客製化 SaaS / CRM / AI agent 開發、大型 data migration、API integration、代替日常營運、法律 / 會計 / 稅務 / HR / 審計 / 合規意見、第三方軟件、AI API、hosting 費用，以及保證 ROI 或收入成果。額外參與者、部門、workshop 或培訓場次會按人數、場次和準備工作另行報價。",
     },
     cta: {
       ...aiCoaching.cta,
@@ -562,7 +562,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
       "InnovateXP 協助中小企業設計實用 AI 工作流：銷售跟進、營運、行政、CRM、WhatsApp 自動化、dashboard 與內部工具。",
     eyebrow: "香港與台灣中小企業 AI 工作流自動化",
     intro:
-      "InnovateXP 協助中小企業把零散的人工作業變成實用的 AI-assisted workflows。我們聚焦真實營運流程：WhatsApp follow-up、quotation follow-up、admin portal、dashboard、客服草稿、SOP 交接與 internal AI tools。服務由 Larry Lo 親自帶領，他是 AI 商業升級教練，具備 13+ 年 IT delivery 與 architecture 經驗。",
+      "InnovateXP 協助中小企業把零散的人工作業變成實用的 AI-assisted workflows。我們聚焦真實營運流程：WhatsApp follow-up、quotation follow-up、admin portal、dashboard、客服草稿、SOP 交接與 internal AI tools。服務由 InnovateXP founder 親自帶領，他是 AI 商業升級教練，具備 13+ 年 IT delivery 與 architecture 經驗。",
     audience: [
       "需要提升銷售、營運與跟進紀律的 3-50 人中小企業。",
       "仍由老闆親自協調大量流程的 founder-led service businesses。",
@@ -642,7 +642,7 @@ const servicePagesJa: Record<ServicePageSlug, ServicePageContent> = {
     title: "学校・中小企業・ビジネスチーム向け AI トレーニング",
     metaTitle: "香港 AI トレーニング | 学校・中小企業向け実践講座 | InnovateXP",
     metaDescription:
-      "Larry Lo による実践型 AI トレーニング。プロンプト設計、AI ツール、AI 支援コーディング、チャットボット試作、ワークフロー自動化を扱います。",
+      "InnovateXP による実践型 AI トレーニング。プロンプト設計、AI ツール、AI 支援コーディング、チャットボット試作、ワークフロー自動化を扱います。",
     eyebrow: "創業者による実践型 AI トレーニング",
     intro:
       "InnovateXP の AI トレーニングは、単なるツール紹介ではありません。学校、中小企業、ビジネスチームが研究、文章作成、顧客フォロー、コーディング支援、チャットボット試作、業務自動化に AI を使えるように設計します。広東語・英語での実施に対応し、香港の業務文脈に合わせた例を使います。",
@@ -774,10 +774,10 @@ const servicePagesDe: Record<ServicePageSlug, ServicePageContent> = {
     title: "AI-Training für Schulen, KMUs und Business-Teams",
     metaTitle: "AI-Training Hongkong | Praktische KI-Schulung für Schulen & KMUs | InnovateXP",
     metaDescription:
-      "Praktisches AI-Training mit Larry Lo: Prompt Engineering, AI-Tools, AI-assisted Coding, Chatbot-Prototyping und Workflow-Automatisierung.",
+      "Praktisches AI-Training mit InnovateXP: Prompt Engineering, AI-Tools, AI-assisted Coding, Chatbot-Prototyping und Workflow-Automatisierung.",
     eyebrow: "Founder-led AI-Training",
     intro:
-      "InnovateXP bietet praktisches AI-Training für Schulen, KMUs und Business-Teams, die mehr brauchen als eine Tool-Demo. Larry Lo zeigt, wie Teams AI in echter Arbeit einsetzen: Recherche, Schreiben, Kunden-Follow-up, Coding-Unterstützung, Chatbot-Prototyping und Workflow-Automatisierung.",
+      "InnovateXP bietet praktisches AI-Training für Schulen, KMUs und Business-Teams, die mehr brauchen als eine Tool-Demo. InnovateXP zeigt, wie Teams AI in echter Arbeit einsetzen: Recherche, Schreiben, Kunden-Follow-up, Coding-Unterstützung, Chatbot-Prototyping und Workflow-Automatisierung.",
     audience: [
       "Schulen, Bildungszentren und Studierendengruppen mit Fokus auf AI Literacy.",
       "KMU-Inhaber und Manager, die AI sicher in tägliche Abläufe bringen wollen.",
@@ -897,7 +897,7 @@ export function getServicePage(slug: ServicePageSlug, locale: AppLocale): Servic
 
 export const innovatexpVision: VisionCopy = {
   statement:
-    "I am Larry Lo, AI Business Upgrade Coach and founder of InnovateXP Limited.",
+    "InnovateXP Limited is founder-led by an AI Business Upgrade Coach.",
   reason:
     "Because of my stories across IT delivery, developer communities, AI workshops, mobile apps, cloud architecture, agile delivery, and real business systems, I built InnovateXP to help people turn AI from hype into useful work.",
   helps:
@@ -909,13 +909,13 @@ export const innovatexpVision: VisionCopy = {
     "A clearer path for AI transformation that combines tools, process, people, and delivery discipline.",
   ],
   referralEnglish:
-    "If you know a school, SME, founder, business partner, or client who wants practical AI training, AI coaching, WhatsApp CRM automation, or AI workflow implementation, please refer them to Larry Lo at InnovateXP Limited.",
+    "If you know a school, SME, founder, business partner, or client who wants practical AI training, AI coaching, WhatsApp CRM automation, or AI workflow implementation, please refer them to InnovateXP Limited.",
   referralTraditionalChinese:
-    "如果你身邊有學校、中小企老闆、生意伙伴、客戶或朋友想學 AI、做 AI 教班、AI 陪跑課程、WhatsApp CRM 自動化或中小企 AI 升級，歡迎介紹 Larry Lo / InnovateXP Limited 幫佢哋由實際工作流程開始落地。",
+    "如果你身邊有學校、中小企老闆、生意伙伴、客戶或朋友想學 AI、做 AI 教班、AI 陪跑課程、WhatsApp CRM 自動化或中小企 AI 升級，歡迎介紹 InnovateXP Limited，從實際工作流程開始落地。",
 };
 
 const innovatexpVisionZhTw: VisionCopy = {
-  statement: "我是 Larry Lo，AI 商業升級教練，也是 InnovateXP Limited 創辦人。",
+  statement: "InnovateXP Limited 由 AI 商業升級教練以 founder-led 方式交付服務。",
   reason:
     "因為我一路走過 IT delivery、developer communities、AI workshops、mobile apps、cloud architecture、agile delivery 與真實商務系統，我創立 InnovateXP，幫團隊把 AI 從 hype 變成真正有用的工作方式。",
   helps: "InnovateXP 協助學校、中小企業、創辦人、sales teams、operations teams 與 business communities，把 AI 落地到真實工作流程。",
@@ -930,7 +930,7 @@ const innovatexpVisionZhTw: VisionCopy = {
 };
 
 const innovatexpVisionJa: VisionCopy = {
-  statement: "私は Larry Lo、AI Business Upgrade Coach、InnovateXP Limited の創業者です。",
+  statement: "私は InnovateXP Limited の創業者であり、AI Business Upgrade Coach です。",
   reason:
     "IT delivery、developer communities、AI workshops、mobile apps、cloud architecture、agile delivery、実際のビジネスシステムでの経験から、AI を hype ではなく実務に役立つ力へ変えるために InnovateXP を作りました。",
   helps: "InnovateXP は学校、SME、創業者、sales teams、operations teams、business communities が AI を実際の業務フローへ導入する支援をします。",
@@ -945,7 +945,7 @@ const innovatexpVisionJa: VisionCopy = {
 };
 
 const innovatexpVisionDe: VisionCopy = {
-  statement: "Ich bin Larry Lo, AI Business Upgrade Coach und Gründer von InnovateXP Limited.",
+  statement: "InnovateXP Limited ist founder-led und wird von einem AI Business Upgrade Coach geführt.",
   reason:
     "Aus meinen Erfahrungen in IT delivery, developer communities, AI workshops, mobile apps, cloud architecture, agile delivery und echten Business-Systemen habe ich InnovateXP aufgebaut, um AI von Hype in nützliche Arbeit zu übersetzen.",
   helps: "InnovateXP hilft Schulen, KMUs, Gründern, Sales Teams, Operations Teams und Business Communities, AI in echte Workflows zu integrieren.",

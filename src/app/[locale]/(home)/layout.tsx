@@ -4,7 +4,7 @@ import { localeAlternates } from "@/lib/alternate-metadata";
 
 const HOME_TITLE = "AI商業升級教練｜中小企AI陪跑、SOP及流程優化｜InnovateXP";
 const HOME_DESCRIPTION =
-  "InnovateXP 由 Larry Lo 擔任 AI 商業升級教練，陪香港中小企先梳理 SOP、流程與 KPI，再按需要落地 AI 陪跑、automation、CRM 或 SaaS。";
+  "InnovateXP 以 AI 商業升級教練定位，陪香港中小企先梳理 SOP、流程與 KPI，再按需要落地 AI 陪跑、automation、CRM 或 SaaS。";
 
 const OG_IMAGE = { url: "/opengraph-image" as const, width: 1200, height: 630 };
 

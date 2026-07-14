@@ -16,7 +16,7 @@ export function getOrganizationSchema() {
     logo: `${siteUrl}/innovatexp_color_no_bg.svg`,
     sameAs: [
       "https://www.linkedin.com/company/innovatexp",
-      "https://www.linkedin.com/in/larry-lo-804a50165/",
+      "https://www.linkedin.com/in/innovatexp/",
     ],
   };
 }

@@ -18,20 +18,20 @@ type FaqMainEntity = Array<{
 const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
   en: "InnovateXP Limited helps Hong Kong SMEs fix workflows first, then adopt AI through structured coaching, SOP optimization, KPI review, practical trials, and optional automation or SaaS implementation.",
   "zh-hk":
-    "InnovateXP Limited 由 Larry Lo 以 AI 商業升級教練身份，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
+    "InnovateXP Limited 以 AI 商業升級教練定位，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
   "zh-tw":
-    "InnovateXP Limited 由 Larry Lo 以 AI 商業升級教練身份，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
+    "InnovateXP Limited 以 AI 商業升級教練定位，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
   ja: "InnovateXP は香港の中小企業向けに、イベントからの見込み客や WhatsApp の問い合わせを AI ワークフローで構造化されたセールスパイプラインへ変える支援を行います。Azure OpenAI、Alibaba Cloud、GCP、AWS、オンプレミスへの展開と実践的な AI 研修に対応します。",
   de: "InnovateXP Limited hilft KMUs in Hongkong dabei, Event-Leads und WhatsApp-Anfragen mit KI-gestützten Workflows in strukturierte Vertriebspipelines zu verwandeln. Bereitstellung auf Azure OpenAI, Alibaba Cloud, GCP, AWS oder On-Premise sowie praktisches AI-Training.",
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Larry Lo is the founder of InnovateXP Limited and an AI Business Upgrade Coach for Hong Kong SMEs. He has 13+ years of IT delivery, product, cloud, agile delivery, and AI-powered business systems experience, and is a former Google Developer Group Hong Kong organizer.",
-  "zh-hk": "Larry Lo 係 InnovateXP Limited 創辦人兼 AI 商業升級教練，具備 13+ 年 IT delivery、product、cloud、agile delivery 同 AI-powered business systems 經驗，亦係前 Google Developer Group Hong Kong organizer。",
+  en: "InnovateXP Limited is founder-led by an AI Business Upgrade Coach for Hong Kong SMEs, with 13+ years of IT delivery, product, cloud, agile delivery, and AI-powered business systems experience, plus former Google Developer Group Hong Kong organizer experience.",
+  "zh-hk": "InnovateXP Limited 以 founder-led 方式提供 AI 商業升級教練服務，具備 13+ 年 IT delivery、product、cloud、agile delivery 同 AI-powered business systems 經驗，亦有前 Google Developer Group Hong Kong organizer 背景。",
   "zh-tw":
-    "Larry Lo 具備 14 年以上系統架構與落地實作經驗，包含香港政府與公共交通相關的高可用度專案。他親自參與建置與維運，而非層層轉包。曾任 Google Developer Group Hong Kong Organizer、香港科技園孵化校友，並曾支援 2,000 名以上並行使用者的系統等級。",
-  ja: "現場の実装者として、Larry Lo はシステムアーキテクチャにおよそ 14 年の実務経験があります（香港の行政・公共交通向け高可用性案件を含む）。彼自身が構築・保守に入る体制で、請け負いだけの PM ではありません。元 Google Developer Group HK Organizer、HKSTP インキュベーション卒業・2,000 人以上同時アクティブ規模のシステム経験。",
-  de: "Larry Lo ist seit über 14 Jahren praktisch in der Systemarchitektur tätig — inklusive Hochverfügbarkeitsprojekten für öffentliche Auftraggeber und Verkehr in Hongkong. Er baut und betreut die Systeme selbst, statt nur zu delegieren. Ehem. Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systeme mit 2.000+ gleichzeitig aktiven Nutzern.",
+    "InnovateXP Limited 以 founder-led 方式交付，具備 14 年以上系統架構與落地實作經驗，包含香港政府與公共交通相關的高可用度專案；曾任 Google Developer Group Hong Kong Organizer、香港科技園孵化校友，並曾支援 2,000 名以上並行使用者的系統等級。",
+  ja: "現場の実装者として、InnovateXP はシステムアーキテクチャにおよそ 14 年の実務経験があります（香港の行政・公共交通向け高可用性案件を含む）。彼自身が構築・保守に入る体制で、請け負いだけの PM ではありません。元 Google Developer Group HK Organizer、HKSTP インキュベーション卒業・2,000 人以上同時アクティブ規模のシステム経験。",
+  de: "InnovateXP ist seit über 14 Jahren praktisch in der Systemarchitektur tätig — inklusive Hochverfügbarkeitsprojekten für öffentliche Auftraggeber und Verkehr in Hongkong. Er baut und betreut die Systeme selbst, statt nur zu delegieren. Ehem. Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systeme mit 2.000+ gleichzeitig aktiven Nutzern.",
 };
 
 const SCHEMA_SMARTSALES_DESCRIPTION: Record<AppLocale, string> = {
@@ -548,12 +548,12 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     founder: {
       "@type": "Person",
       "@id": `${baseUrl}/#founder`,
-      name: "Larry Lo",
+      name: "InnovateXP founder",
       jobTitle: "AI Business Upgrade Coach",
-      url: "https://www.linkedin.com/in/larry-lo-804a50165/",
-      sameAs: ["https://www.linkedin.com/in/larry-lo-804a50165/", "https://github.com/burkaslarry"],
+      url: baseUrl,
+      sameAs: ["https://www.linkedin.com/company/innovatexp"],
     },
-    sameAs: ["https://www.linkedin.com/company/innovatexp", "https://www.linkedin.com/in/larry-lo-804a50165/"],
+    sameAs: ["https://www.linkedin.com/company/innovatexp"],
     knowsAbout: [
       "AI CRM",
       "SME AI Automation",
@@ -591,12 +591,12 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${baseUrl}/#founder`,
-    name: "Larry Lo",
+    name: "InnovateXP founder",
     jobTitle: "AI Business Upgrade Coach",
     description: pickSchema(routeLocale, SCHEMA_PERSON_DESCRIPTION),
-    url: "https://www.linkedin.com/in/larry-lo-804a50165/",
+    url: baseUrl,
     image: `${baseUrl}/mypresent.jpg`,
-    sameAs: ["https://www.linkedin.com/in/larry-lo-804a50165/", "https://github.com/burkaslarry"],
+    sameAs: ["https://www.linkedin.com/company/innovatexp"],
     worksFor: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,

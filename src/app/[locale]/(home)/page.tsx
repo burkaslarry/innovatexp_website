@@ -459,7 +459,7 @@ function LandingPage() {
             programs: '加速計劃',
             advisory: '顧問',
             useCases: '示範場景',
-            about: 'About Larry',
+            about: '關於創辦人',
             contact: '聯絡',
           }
         : {
@@ -468,7 +468,7 @@ function LandingPage() {
             programs: 'Accelerator Programs',
             advisory: 'Advisory',
             useCases: 'Use Cases',
-            about: 'About Larry',
+            about: 'About Founder',
             contact: 'Contact',
           };
 
@@ -478,7 +478,7 @@ function LandingPage() {
         { label: labels.programs, href: '#programs' },
         { label: labels.advisory, href: '#capability-proof' },
         { label: labels.useCases, href: '#use-cases' },
-        { label: labels.about, href: '#about-larry' },
+        { label: labels.about, href: '#about-founder' },
         { label: labels.contact, href: loc('/bookme') },
       ];
     },
@@ -527,9 +527,9 @@ function LandingPage() {
         title={t('hero.title')}
         tagline={t('hero.tagline')}
         description={t('hero.description')}
-        primaryHref="#workflow-health-check"
+        primaryHref="#ai-coaching-pricing"
         primaryLabel={t('hero.book_meeting')}
-        onPrimaryClick={(e) => scrollToAnchor(e, '#workflow-health-check')}
+        onPrimaryClick={(e) => scrollToAnchor(e, '#ai-coaching-pricing')}
         secondaryHref={loc("/bookme")}
         secondaryLabel={t('hero.case_studies')}
         onSecondaryClick={undefined}
@@ -718,7 +718,7 @@ function LandingPage() {
           <div className="relative rounded-2xl overflow-hidden shadow-xl w-full h-full">
             <Image
               src="/mypresent.jpg"
-              alt="Larry Lo presenting at tech event - InnovateXP Founder and AI Consultant with 14 years experience"
+              alt="InnovateXP founder presenting at tech event - InnovateXP Founder and AI Consultant with 14 years experience"
               width={1200}
               height={800}
               className="w-full h-full object-cover"
@@ -1515,11 +1515,11 @@ function LandingPage() {
             <p className="text-gray-600 dark:text-gray-400 text-sm">
               {t('about.author.byline')}{' '}
               <a
-                href="https://www.linkedin.com/in/larry-lo-804a50165/"
-                rel="me author"
+                href="https://www.linkedin.com/company/innovatexp"
+                rel="author"
                 className="font-semibold text-brand-primary hover:text-brand-primary-hover dark:text-teal-300 dark:hover:text-teal-200"
               >
-                Larry Lo
+                InnovateXP
               </a>
               , {t('about.author.title')}
             </p>
@@ -1593,20 +1593,20 @@ function LandingPage() {
           {/* 社交媒體連結 with rel="me" for verification */}
           <div className="mt-6 flex gap-4 justify-center">
             <a 
-              href="https://www.linkedin.com/in/larry-lo-804a50165/" 
+              href="https://www.linkedin.com/company/innovatexp" 
               target="_blank" 
-              rel="me noopener noreferrer"
+              rel="noopener noreferrer"
               className="bg-[#0077B5] text-white font-semibold py-2 px-6 rounded-full hover:bg-[#005885] transition duration-300 shadow-md"
             >
               LinkedIn
             </a>
             <a 
-              href="https://github.com/burkaslarry" 
+              href="https://www.innovatexp.co" 
               target="_blank" 
-              rel="me noopener noreferrer"
+              rel="noopener noreferrer"
               className="bg-gray-900 text-white font-semibold py-2 px-6 rounded-full hover:bg-gray-700 transition duration-300 shadow-md"
             >
-              GitHub
+              Website
             </a>
           </div>
           

@@ -30,14 +30,14 @@ export const translations = {
     'hero.title': 'Fix the workflow first. Then put AI to work.',
     'hero.tagline': 'InnovateXP helps Hong Kong SMEs clarify SOPs, define KPIs, improve existing tools, and adopt AI through structured coaching, practical trials, and regular review checkpoints.',
     'hero.description':
-      'Not a one-off AI class, and not software-first. Start with a 3-minute Workflow Health Check, then validate one workflow through a 30-day Discovery Sprint before any AI solution or SaaS implementation.',
+      'Not a one-off AI class, and not software-first. Start by reviewing the AI coaching pricing, then validate one workflow through a 30-day Discovery Sprint before any AI solution or SaaS implementation.',
     'hero.cta': 'Contact Us',
-    'hero.book_meeting': 'Take the 3-minute Workflow Health Check',
+    'hero.book_meeting': 'See AI coaching pricing',
     'hero.case_studies': 'Book a 30-minute Workflow Review',
-    'hero.badge.experience': 'Larry Lo, AI Business Upgrade Coach',
+    'hero.badge.experience': 'Founder-led AI Business Upgrade Coach',
     'hero.badge.language': 'Cantonese / English support',
     'hero.bottom_tagline': 'Coaching brings you in. Advisory improves continuously. Systems land only when needed.',
-    'hero.image_alt': 'Larry Lo presenting — InnovateXP founder, AI & CRM for Hong Kong SMEs',
+    'hero.image_alt': 'Founder-led presentation on AI business upgrade and workflow design',
     'hero.explore_services': 'Free 15-min chat',
     'home.about.title': 'What is InnovateXP?',
     'home.about.body':
@@ -207,12 +207,12 @@ export const translations = {
       'When sales, admin, training, customer follow-up, and documents are concentrated in a few people, revenue can grow while the operating rhythm becomes harder to control.',
     'founder_note.p3':
       'For me, the real value of AI is not replacing people. It is helping teams turn experience into SOPs, hand repeat work to systems, and give people back the space to focus on judgment, creation, and relationships.',
-    'founder_note.image_alt': 'Larry Lo presenting about AI transformation and workflow design',
+    'founder_note.image_alt': 'InnovateXP founder presenting about AI transformation and workflow design',
     
     // About Section - REVISED: Technical Authority & Corrected Facts
     'about.title': 'About Us',
     'about.intro.title': 'About InnovateXP Limited',
-    'about.intro.p1': "Not slideware. Built by a practitioner: Larry Lo brings 14 years of hands-on system design and implementation experience.",
+    'about.intro.p1': "Not slideware. Built by a practitioner with 14 years of hands-on system design and implementation experience.",
     'about.intro.p2': 'We help SMEs move from scattered WhatsApp chats and post-event Excel files into structured follow-up workflows that owners can see and manage.',
     'about.intro.p3': 'System deployment can support cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments when data policy or operations require it.',
     
@@ -535,7 +535,7 @@ export const translations = {
     
     // Founder Section
     'founder.title': 'Founder & Credentials',
-    'founder.name': 'Larry Lo',
+    'founder.name': 'InnovateXP founder',
     'founder.credential1': 'SAFe Certified',
     'founder.credential2': 'Google Developer Group Speaker',
     'founder.credential3': '200+ Developer Training Experience',
@@ -857,7 +857,7 @@ export const translations = {
       'You\'ve been quoted $200,000 for an AI project and want a reality check',
     'aiconsulting.who.4': 'You need someone who will actually build it, not just slide-deck it',
     'aiconsulting.who.5':
-      'Built by a practitioner, not a consultant. Larry Lo has 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. He is the person who builds and supports your system — not a project manager who subcontracts. Former Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systems handling 2,000+ concurrent active users',
+      'Built by a practitioner, not a slide-deck consultant. InnovateXP brings 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. Delivery is founder-led, with former Google Developer Group HK Organizer experience, HKSTP Incubation Alumni background, and systems handling 2,000+ concurrent active users.',
 
     // Main section direct answers + GEO content gap sections
     'eventxp.main.answer':
@@ -949,7 +949,7 @@ export const translations = {
     
     'about.author.byline': 'By',
     'about.author.title':
-      'Built by a practitioner, not a consultant. Larry Lo has 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. He is the person who builds and supports your system — not a project manager who subcontracts. Former Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systems handling 2,000+ concurrent active users',
+      'Built by a practitioner, not a slide-deck consultant. InnovateXP brings 14 years of hands-on system architecture experience, including high-availability projects for government and public transport in Hong Kong. Delivery is founder-led, with former Google Developer Group HK Organizer experience, HKSTP Incubation Alumni background, and systems handling 2,000+ concurrent active users.',
     'about.author.updated': 'Last Updated:',
     'about.author.updated.value': '2026-04-26',
     'footer.localized_deployment': 'Built for Hong Kong SMEs: practical AI-augmented workflows deployed on cloud platforms (Azure OpenAI, Alibaba Cloud, GCP, AWS) or self-hosted / on-premise environments when required.',
@@ -966,14 +966,14 @@ export const translations = {
     // Hero Section
     'hero.title': '先執順流程，再落地 AI。',
     'hero.tagline': 'InnovateXP 透過 30 日、3 個月及 6 個月 AI 商業升級計劃，陪香港中小企梳理 SOP、設定 KPI、改善現有工具，並協助團隊將 AI 真正應用於日常工作。',
-    'hero.description': '唔係淨係上一堂 AI 課程，亦唔係一開始就賣系統。由問卷、訪談、試行到 review checkpoint，一步一步驗證成效。',
+    'hero.description': '唔係淨係上一堂 AI 課程，亦唔係一開始就賣系統。先睇清楚 AI 陪跑定價，再由訪談、試行到 review checkpoint，一步一步驗證成效。',
     'hero.cta': '聯絡我們',
-    'hero.book_meeting': '做 3 分鐘流程健康檢查',
+    'hero.book_meeting': '查看 AI 陪跑定價',
     'hero.case_studies': '預約 30 分鐘流程診斷',
-    'hero.badge.experience': 'Larry Lo，AI 商業升級教練',
+    'hero.badge.experience': 'InnovateXP 創辦人，AI 商業升級教練',
     'hero.badge.language': '廣東話／英文支援',
     'hero.bottom_tagline': '陪跑帶入場 → 顧問持續改善 → 系統按需要落地',
-    'hero.image_alt': 'Larry Lo 演講 — InnovateXP 創辦人，專注香港中小企 AI 與 CRM',
+    'hero.image_alt': 'InnovateXP 創辦人分享 AI 商業升級與流程設計',
     'hero.explore_services': '免費傾 15 分鐘',
     'home.about.title': 'InnovateXP 做什麼？',
     'home.about.body':
@@ -1137,12 +1137,12 @@ export const translations = {
       '當一盤生意的銷售、行政、培訓、客戶跟進和文件整理都集中在少數人身上，收入可以有增長，但生活和營運節奏卻愈來愈難控制。',
     'founder_note.p3':
       '對我來說，AI 的真正價值不是取代人，而是把經驗變成 SOP，把重複工作交給系統，把零散資訊整理成可用知識，讓人重新專注在判斷、創造和關係上。',
-    'founder_note.image_alt': 'Larry Lo 分享 AI 轉型與工作流設計',
+    'founder_note.image_alt': 'InnovateXP 創辦人分享 AI 轉型與工作流設計',
     
     // About Section
     'about.title': '關於我們',
     'about.intro.title': '關於 InnovateXP Limited',
-    'about.intro.p1': '唔係紙上談兵，係實戰派。Larry Lo 有 14 年系統設計同落地經驗，Founder 親自落場拆流程、落 code、交付。',
+    'about.intro.p1': '唔係紙上談兵，係實戰派。InnovateXP 創辦人具備 14 年系統設計與落地經驗，Founder 親自落場拆流程、落 code、交付。',
     'about.intro.p2': '我們幫中小企將零散 WhatsApp、活動 Excel 名單同人手記憶，變成老闆睇得見、團隊跟得到嘅 pipeline。',
     'about.intro.p3': '系統上架可按業務需要支援 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）或自家主機／On-Premise 部署，同時提供團隊 AI training，確保唔只 demo 靚，日常都用到。',
     
@@ -1458,7 +1458,7 @@ export const translations = {
     
     // Founder Section
     'founder.title': '創辦人與資歷',
-    'founder.name': 'Larry Lo',
+    'founder.name': 'InnovateXP founder',
     'founder.credential1': 'SAFe認證',
     'founder.credential2': 'Google Developer Group 講者',
     'founder.credential3': '200+開發者培訓經驗',

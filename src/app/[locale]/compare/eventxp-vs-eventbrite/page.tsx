@@ -26,7 +26,7 @@ export async function generateMetadata({
   return {
     title,
     description,
-    authors: [{ name: "Larry Lo", url: "https://www.linkedin.com/in/larry-lo-804a50165/" }],
+    authors: [{ name: "InnovateXP founder", url: "https://www.linkedin.com/in/innovatexp/" }],
     alternates,
     openGraph: {
       title,
@@ -90,8 +90,8 @@ export default async function EventXpVsEventbritePage({
     image: [`${siteUrl}/innovatexp_color_no_bg.svg`],
     author: {
       "@type": "Person",
-      name: "Larry Lo",
-      url: "https://www.linkedin.com/in/larry-lo-804a50165/",
+      name: "InnovateXP founder",
+      url: "https://www.linkedin.com/in/innovatexp/",
     },
     publisher: {
       "@type": "Organization",

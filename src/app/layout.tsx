@@ -10,7 +10,7 @@ const OG_IMAGE_REL = "/opengraph-image" as const;
 export const metadata: Metadata = {
   title: "AI商業升級教練｜中小企AI陪跑、SOP及流程優化｜InnovateXP",
   description:
-    "InnovateXP 由 Larry Lo 擔任 AI 商業升級教練，陪香港中小企先梳理 SOP、流程與 KPI，再按需要落地 AI 陪跑、automation、CRM 或 SaaS。",
+    "InnovateXP 以 AI 商業升級教練定位，陪香港中小企先梳理 SOP、流程與 KPI，再按需要落地 AI 陪跑、automation、CRM 或 SaaS。",
   metadataBase: new URL(siteUrl),
   openGraph: {
     images: [{ url: OG_IMAGE_REL, width: 1200, height: 630, alt: "InnovateXP" }],

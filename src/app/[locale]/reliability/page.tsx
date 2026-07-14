@@ -45,8 +45,8 @@ export default async function ReliabilityPage({
     image: [`${siteUrl}/innovatexp_color_no_bg.svg`],
     author: {
       "@type": "Person",
-      name: "Larry Lo",
-      url: "https://www.linkedin.com/in/larry-lo-804a50165/",
+      name: "InnovateXP founder",
+      url: "https://www.linkedin.com/in/innovatexp/",
     },
     publisher: {
       "@type": "Organization",

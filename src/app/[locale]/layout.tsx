@@ -39,11 +39,11 @@ export async function generateMetadata({
       ? "AI商業升級教練｜中小企AI陪跑、SOP及流程優化｜InnovateXP"
       : "AI Business Upgrade Coach for SMEs | SOP & Workflow Optimization | InnovateXP",
     description: localeUsesChineseCopy(loc)
-      ? "InnovateXP 由 Larry Lo 以 AI 商業升級教練身份，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。"
+      ? "InnovateXP 以 AI 商業升級教練定位，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。"
       : "InnovateXP helps Hong Kong SMEs fix workflows first, then adopt AI through structured coaching, SOP optimization, KPI review, practical trials, and optional automation or SaaS implementation.",
     keywords:
       "AI 商業升級, AI 商業升級教練, 香港中小企 AI 顧問, AI 陪跑課程, SOP 流程優化, AI workflow automation Hong Kong, AI adoption for SMEs, business process automation, practical AI training for teams, AI consultant Hong Kong, AI Business Upgrade Accelerator, AI Business Upgrade Advisory",
-    authors: [{ name: "Larry Lo", url: "https://www.linkedin.com/in/larry-lo-804a50165/" }],
+    authors: [{ name: "InnovateXP Limited", url: "https://www.innovatexp.co" }],
     creator: "InnovateXP Limited",
     publisher: "InnovateXP Limited",
     metadataBase: new URL(siteUrl),

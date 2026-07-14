@@ -68,8 +68,8 @@ export default async function BlogPostPage({ params }: Props) {
     inLanguage: localeToHtmlLang(loc),
     author: {
       "@type": "Person",
-      name: "Larry Lo",
-      url: "https://www.linkedin.com/in/larry-lo-804a50165/",
+      name: "InnovateXP founder",
+      url: "https://www.linkedin.com/in/innovatexp/",
     },
     publisher: {
       "@type": "Organization",
