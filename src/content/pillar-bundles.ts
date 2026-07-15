@@ -314,7 +314,7 @@ const PREM_ZH: PillarPageBundle = {
     "創辦人主導、做得到嘅 Premium 方案：為香港中小企梳理 AI 工作流程同 CRM／活動跟進，固定節奏 review，首 call 後有清晰下一步。",
   headline: "高票價、做得到嘅 AI／CRM 落地顧問",
   intro: [
-    "InnovateXP 服務嘅係要結果、唔要堆 slide 嘅團隊。Premium 項目會將發現、架構抉擇、實作支援同落地教練綁喺一兩條真正影響 pipeline、跟進質素或營運負載嘅 workflow 上面。",
+    "InnovateXP 服務嘅係要結果、唔要堆 slide 嘅團隊。Premium 項目會將發現、架構抉擇、實作支援同落地陪跑綁喺一兩條真正影響 pipeline、跟進質素或營運負載嘅 workflow 上面。",
     "呢頁說明邊類客戶最合適、「Premium」喺交付上代表咩，以及如何判斷是否值得開案。",
   ],
   sections: [
@@ -336,7 +336,7 @@ const PREM_ZH: PillarPageBundle = {
     {
       title: "商業形態（清晰、唔玩花招）",
       paragraphs: [
-        "多數項目以階段式報價（項目 + 落地教練）；常見係先以數萬港元級別嘅首階段驗證價值，再決定是否擴展——實際金額視整合、資料準備同合規要求而定。",
+        "多數項目以階段式報價（項目 + 落地陪跑）；常見係先以數萬港元級別嘅首階段驗證價值，再決定是否擴展——實際金額視整合、資料準備同合規要求而定。",
       ],
     },
   ],

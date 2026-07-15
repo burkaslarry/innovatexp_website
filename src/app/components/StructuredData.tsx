@@ -16,18 +16,18 @@ type FaqMainEntity = Array<{
 }>;
 
 const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
-  en: "InnovateXP Limited helps Hong Kong SMEs fix workflows first, then adopt AI through structured coaching, SOP optimization, KPI review, practical trials, and optional automation or SaaS implementation.",
+  en: "InnovateXP Limited helps Hong Kong SMEs fix workflows first, then adopt AI through structured advisory, SOP optimization, KPI review, practical trials, and optional automation or SaaS implementation.",
   "zh-hk":
-    "InnovateXP Limited 以 AI 商業升級教練定位，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
+    "InnovateXP Limited 以 AI 商業顧問定位，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
   "zh-tw":
-    "InnovateXP Limited 以 AI 商業升級教練定位，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
+    "InnovateXP Limited 以 AI 商業顧問定位，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
   ja: "InnovateXP は香港の中小企業向けに、イベントからの見込み客や WhatsApp の問い合わせを AI ワークフローで構造化されたセールスパイプラインへ変える支援を行います。Azure OpenAI、Alibaba Cloud、GCP、AWS、オンプレミスへの展開と実践的な AI 研修に対応します。",
   de: "InnovateXP Limited hilft KMUs in Hongkong dabei, Event-Leads und WhatsApp-Anfragen mit KI-gestützten Workflows in strukturierte Vertriebspipelines zu verwandeln. Bereitstellung auf Azure OpenAI, Alibaba Cloud, GCP, AWS oder On-Premise sowie praktisches AI-Training.",
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
-  en: "InnovateXP Limited is founder-led by an AI Business Upgrade Coach for Hong Kong SMEs, with 13+ years of IT delivery, product, cloud, agile delivery, and AI-powered business systems experience, plus former Google Developer Group Hong Kong organizer experience.",
-  "zh-hk": "InnovateXP Limited 以 founder-led 方式提供 AI 商業升級教練服務，具備 13+ 年 IT delivery、product、cloud、agile delivery 同 AI-powered business systems 經驗，亦有前 Google Developer Group Hong Kong organizer 背景。",
+  en: "InnovateXP Limited is founder-led as an AI Business Consultancy for Hong Kong SMEs, with 13+ years of IT delivery, product, cloud, agile delivery, and AI-powered business systems experience, plus former Google Developer Group Hong Kong organizer experience.",
+  "zh-hk": "InnovateXP Limited 以 founder-led 方式提供 AI 商業顧問服務，具備 13+ 年 IT delivery、product、cloud、agile delivery 同 AI-powered business systems 經驗，亦有前 Google Developer Group Hong Kong organizer 背景。",
   "zh-tw":
     "InnovateXP Limited 以 founder-led 方式交付，具備 14 年以上系統架構與落地實作經驗，包含香港政府與公共交通相關的高可用度專案；曾任 Google Developer Group Hong Kong Organizer、香港科技園孵化校友，並曾支援 2,000 名以上並行使用者的系統等級。",
   ja: "現場の実装者として、InnovateXP はシステムアーキテクチャにおよそ 14 年の実務経験があります（香港の行政・公共交通向け高可用性案件を含む）。彼自身が構築・保守に入る体制で、請け負いだけの PM ではありません。元 Google Developer Group HK Organizer、HKSTP インキュベーション卒業・2,000 人以上同時アクティブ規模のシステム経験。",
@@ -69,7 +69,7 @@ const SCHEMA_AI_SEO_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
-  en: "AI Business Upgrade coaching, Discovery Sprint, SOP optimization, KPI review, and optional workflow automation for Hong Kong SMEs",
+  en: "AI Business Consultancy, Discovery Sprint, SOP optimization, KPI review, and optional workflow automation for Hong Kong SMEs",
   "zh-hk": "為香港中小企提供 AI 商業升級陪跑、30 日 Discovery Sprint、SOP 流程優化、KPI review 及按需 workflow automation",
   "zh-tw": "為香港中小企提供 AI 商業升級陪跑、30 日 Discovery Sprint、SOP 流程優化、KPI review 及按需 workflow automation",
   ja: "香港の中小企業向けに WhatsApp CRM、EventXP、AI 研修、クラウド／オンプレミス支援を提供",
@@ -77,7 +77,7 @@ const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_CONSULTING_SERVICE_DESCRIPTION: Record<AppLocale, string> = {
-  en: "We provide AI Business Upgrade coaching and advisory for Hong Kong SMEs: workflow health checks, SOP mapping, KPI baselines, practical AI trials, and optional automation or SaaS implementation after validation.",
+  en: "We provide AI Business Consultancy and advisory for Hong Kong SMEs: workflow health checks, SOP mapping, KPI baselines, practical AI trials, and optional automation or SaaS implementation after validation.",
   "zh-hk":
     "我們為香港中小企提供 AI 商業升級陪跑及顧問：流程健康檢查、SOP mapping、KPI baseline、AI 試行，並在驗證後按需要落地 automation 或 SaaS。",
   "zh-tw":
@@ -549,7 +549,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "@type": "Person",
       "@id": `${baseUrl}/#founder`,
       name: "InnovateXP founder",
-      jobTitle: "AI Business Upgrade Coach",
+      jobTitle: "AI Business Consultant",
       url: baseUrl,
       sameAs: ["https://www.linkedin.com/company/innovatexp"],
     },
@@ -571,14 +571,14 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "AWS AI Deployment",
       "AI-augmented Workflow Deployment",
       "On-Premise AI Deployment",
-      "AI Business Upgrade Coach",
+      "AI Business Consultancy",
       "AI Business Upgrade Accelerator",
       "AI consultant Hong Kong",
       "AI adoption for SMEs",
       "business process automation",
       "SOP 流程優化",
       "AI 商業升級",
-      "AI 商業升級教練",
+      "AI 商業顧問",
       "AI 陪跑課程",
       "中小企 AI 升級",
       "AI 工作流",
@@ -592,7 +592,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@type": "Person",
     "@id": `${baseUrl}/#founder`,
     name: "InnovateXP founder",
-    jobTitle: "AI Business Upgrade Coach",
+    jobTitle: "AI Business Consultant",
     description: pickSchema(routeLocale, SCHEMA_PERSON_DESCRIPTION),
     url: baseUrl,
     image: `${baseUrl}/mypresent.jpg`,
@@ -913,7 +913,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     name: "InnovateXP Limited",
     description: pickSchema(routeLocale, SCHEMA_CONSULTING_SERVICE_DESCRIPTION),
     url: baseUrl,
-    serviceType: "AI Business Upgrade Coaching and Advisory",
+    serviceType: "AI Business Consultancy and Advisory",
     provider: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
@@ -925,7 +925,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "AI Business Upgrade Coaching, Advisory, and Optional Solutions",
+      name: "AI Business Consultancy, Advisory, and Optional Solutions",
       itemListElement: [
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Consulting" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "SmartSales CRM" } },

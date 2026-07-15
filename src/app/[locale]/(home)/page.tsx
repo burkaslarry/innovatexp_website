@@ -664,7 +664,7 @@ function LandingPage() {
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
             <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
-              AI training, coaching, and implementation
+              AI training, advisory, and implementation
             </p>
             <h2 className="mb-3 text-3xl font-bold text-gray-900 dark:text-white">
               {visionCopy.statement}

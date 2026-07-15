@@ -24,19 +24,19 @@ export const translations = {
   en: {
     // Header
     'header.title': 'InnovateXP Limited',
-    'header.subtitle': 'AI Business Upgrade Coach for Hong Kong SMEs',
+    'header.subtitle': 'AI Business Consultancy for Hong Kong SMEs',
     'quick.product': 'Quick Product/Service Overview',
     // Hero Section
     'hero.title': 'Fix the workflow first. Then put AI to work.',
-    'hero.tagline': 'InnovateXP helps Hong Kong SMEs clarify SOPs, define KPIs, improve existing tools, and adopt AI through structured coaching, practical trials, and regular review checkpoints.',
+    'hero.tagline': 'InnovateXP helps Hong Kong SMEs clarify SOPs, define KPIs, improve existing tools, and adopt AI through structured advisory, practical trials, and regular review checkpoints.',
     'hero.description':
-      'Not a one-off AI class, and not software-first. Start by reviewing the AI coaching pricing, then validate one workflow through a 30-day Discovery Sprint before any AI solution or SaaS implementation.',
+      'Not a one-off AI class, and not software-first. Start by reviewing the AI program pricing, then validate one workflow through a 30-day Discovery Sprint before any AI solution or SaaS implementation.',
     'hero.cta': 'Contact Us',
-    'hero.book_meeting': 'See AI coaching pricing',
+    'hero.book_meeting': 'See AI program pricing',
     'hero.case_studies': 'Book a 30-minute Workflow Review',
-    'hero.badge.experience': 'Founder-led AI Business Upgrade Coach',
+    'hero.badge.experience': 'Founder-led AI Business Consultancy',
     'hero.badge.language': 'Cantonese / English support',
-    'hero.bottom_tagline': 'Coaching brings you in. Advisory improves continuously. Systems land only when needed.',
+    'hero.bottom_tagline': 'Programs bring you in. Advisory improves continuously. Systems land only when needed.',
     'hero.image_alt': 'Founder-led presentation on AI business upgrade and workflow design',
     'hero.explore_services': 'Free 15-min chat',
     'home.about.title': 'What is InnovateXP?',
@@ -106,7 +106,7 @@ export const translations = {
     'bookme.title': '📅 Book a 30-minute Workflow Review',
     'bookme.subtitle': 'A practical AI Business Upgrade review — pick one workflow, clarify the bottleneck, and decide the next step before quoting any system.',
     'bookme.header.title': 'InnovateXP Limited',
-    'bookme.header.subtitle': 'AI Business Upgrade Coach',
+    'bookme.header.subtitle': 'AI Business Consultancy',
     'bookme.header.back': '← Back to Home',
     'bookme.success.title': 'Your business consultation booking has been successful! Added to Notion calendar.',
     'bookme.success.subtitle': 'Your business consultation booking was not successful! Please contact InnovateXP Limited ASAP: info@innovatexp.co',
@@ -309,7 +309,7 @@ export const translations = {
       'Thank you. Based on your answers, the next step is to clarify the workflow before quoting any system.',
     'wizard.finale.recommend_label': 'Recommended direction',
     'wizard.finale.roi':
-      'We will review one workflow, identify the bottleneck, then decide whether coaching, advisory, automation, CRM, or SaaS is actually needed.',
+      'We will review one workflow, identify the bottleneck, then decide whether a program, advisory, automation, CRM, or SaaS is actually needed.',
     'wizard.finale.team_note': 'Our team has received your diagnosis summary.',
     'wizard.finale.download': 'Download your summary (TXT)',
     'wizard.finale.next_calendar': 'Continue — select a time',
@@ -960,7 +960,7 @@ export const translations = {
   zh: {
     // Header
     'header.title': 'InnovateXP Limited',
-    'header.subtitle': '香港中小企 AI 商業升級教練',
+    'header.subtitle': '香港中小企 AI 商業顧問',
     'quick.product': '快速閱覽產品/服務',
     
     // Hero Section
@@ -970,7 +970,7 @@ export const translations = {
     'hero.cta': '聯絡我們',
     'hero.book_meeting': '查看 AI 陪跑定價',
     'hero.case_studies': '預約 30 分鐘流程診斷',
-    'hero.badge.experience': 'InnovateXP 創辦人，AI 商業升級教練',
+    'hero.badge.experience': 'InnovateXP 創辦人，AI 商業顧問',
     'hero.badge.language': '廣東話／英文支援',
     'hero.bottom_tagline': '陪跑帶入場 → 顧問持續改善 → 系統按需要落地',
     'hero.image_alt': 'InnovateXP 創辦人分享 AI 商業升級與流程設計',
@@ -1037,7 +1037,7 @@ export const translations = {
     'bookme.title': '預約 30 分鐘流程診斷',
     'bookme.subtitle': 'AI 商業升級流程診斷 — 先揀一條流程、釐清卡位，再決定下一步；未了解 workflow 前不會直接 quote 產品。',
     'bookme.header.title': 'InnovateXP Limited',
-    'bookme.header.subtitle': 'AI 商業升級教練',
+    'bookme.header.subtitle': 'AI 商業顧問',
     'bookme.header.back': '← 返回首頁',
     'bookme.success.title': '您的業務拜訪預約已成功！已添加到  InnovateXP Limited 日曆。',
     'bookme.success.subtitle': '您的業務拜訪未能預約成功！盡快聯絡InnovateXP Limited : info@innovatexp.co',

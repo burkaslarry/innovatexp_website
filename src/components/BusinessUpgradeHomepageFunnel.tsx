@@ -33,8 +33,8 @@ const content = {
       ],
     },
     sprint: {
-      eyebrow: "Primary Entry Offer",
-      title: "30 日 Founder Pilot / AI Upgrade Discovery Sprint",
+      eyebrow: "起步方案",
+      title: "30 日 AI Upgrade Discovery Sprint",
       intro:
         "付費體驗及需求驗證。集中處理一個核心流程，例如課程報名、報價跟進、HR 審批或收據行政，不承諾一次完成全面轉型。",
       deliverablesTitle: "包括",
@@ -64,44 +64,30 @@ const content = {
       eyebrow: "AI 陪跑定價",
       title: "先睇清楚投入，再決定由邊一步開始。",
       intro:
-        "首頁先講清楚服務範圍同起步價，避免一開始就叫你填大份問卷。以下是 coaching / advisory 定價，以 1 間公司、3-5 位核心參與者 / stakeholders 為基準；客製化系統、CRM、AI agent、API integration、20 人 focus group 或大班 workshop 會另行 scope。",
-      pilotOffer: {
-        eyebrow: "7 分鐘演講限定",
-        title: "Founder Pilot Offer｜首 3 間企業限定",
-        subtitle: "先由一個流程開始，驗證 AI 是否真正幫到團隊。",
-        name: "30 日 AI Upgrade Discovery Sprint",
-        originalPrice: "HK$10,000",
-        offerPrice: "HK$6,800",
-        includesTitle: "包括",
-        excludesTitle: "不包括",
-        includes: ["1 個核心 workflow 診斷", "SOP／流程圖", "KPI baseline", "1 個 AI quick win", "90 日改善路線圖"],
-        excludes: ["大型系統開發", "大型 data migration 或 API integration", "第三方軟件、AI API、hosting 費用", "保證 ROI 或收入結果"],
-        condition: "BNI Founder Offer：只限首 3 間合作企業／演講後 7 日內預約 30 分鐘流程診斷。",
-        cta: "預約 30 分鐘流程診斷",
-      },
+        "首頁先講清楚服務範圍同起步價，避免一開始就叫你填大份問卷。以下是陪跑計劃 / advisory 定價，以 1 間公司、3-5 位核心參與者 / stakeholders 為基準；客製化系統、CRM、AI agent、API integration、20 人 focus group 或大班 workshop 會另行 scope。",
       plans: [
         {
           name: "30 日 Discovery Sprint",
-          price: "HK$10,000 → HK$6,800",
+          price: "HK$10,000",
           fit: "適合 2-4 人 focus group／3-5 位核心參與者先試一個 workflow。",
           points: ["60 分鐘 kickoff", "最多 2 次訪談", "1 條 workflow map", "SOP / KPI baseline", "30/60/90 日 roadmap"],
         },
         {
           name: "3 個月 AI Upgrade Foundation",
-          price: "HK$26,000 → HK$22,800",
+          price: "HK$26,000",
           fit: "適合 3-5 位核心參與者改善 1-2 條流程，建立第一個可驗收 adoption 成果。",
           points: ["SOP v1 與角色責任", "每月 checkpoint", "KPI review", "1 次團隊實戰培訓"],
           featured: true,
         },
         {
           name: "6 個月 AI Upgrade Accelerator",
-          price: "HK$50,000 → HK$42,800",
+          price: "HK$50,000",
           fit: "適合一個小核心團隊或部門代表改善 3-4 條相關流程，需要 adoption tracking。",
           points: ["Agile reviews", "SOP v2", "Adoption review", "最多 2 次 workshop"],
         },
         {
           name: "12 個月 Partnership",
-          price: "HK$98,000 → HK$88,000",
+          price: "HK$98,000",
           fit: "適合已驗證方向後，以管理層 / 核心 owner 節奏建立長期 AI adoption governance。",
           points: ["年度 roadmap", "跨部門 prioritization", "SOP governance", "管理層 reviews"],
         },
@@ -110,10 +96,10 @@ const content = {
       cta: "預約 30 分鐘流程診斷",
     },
     programs: {
-      eyebrow: "Accelerator Programs",
+      eyebrow: "加速計劃",
       title: "陪跑帶入場 → 顧問持續改善 → 系統按需要落地",
       intro:
-        "這些是 coaching and advisory programs，不是軟件套裝。Automation、CRM、AI agent 或 SaaS 只會在 workflow 和 business case 驗證後另行 scope。",
+        "這些是陪跑計劃與顧問方案，不是軟件套裝。Automation、CRM、AI agent 或 SaaS 只會在 workflow 和 business case 驗證後另行 scope。",
       cards: [
         {
           name: "3 個月 | AI Upgrade Foundation",
@@ -159,7 +145,7 @@ const content = {
       title: "相關經驗與已交付能力",
       columns: [
         {
-          title: "Founder background",
+          title: "創辦人背景",
           points: ["13-14 年 IT delivery、product、cloud、Agile 經驗", "Former Google Developer Group Hong Kong organizer", "Developer / community / workshop experience"],
         },
         {
@@ -168,17 +154,17 @@ const content = {
         },
         {
           title: "Delivery style",
-          points: ["廣東話 / English support", "Practical AI training for teams", "Founder Pilot 正在招募適合的 SME workflow"],
+          points: ["廣東話 / English support", "Practical AI training for teams", "現正歡迎適合的 SME 參加 30 日 Discovery Sprint"],
         },
       ],
     },
     founder: {
       eyebrow: "關於創辦人",
-      title: "InnovateXP 創辦人，AI 商業升級教練",
+      title: "InnovateXP 創辦人，AI 商業顧問",
       body:
         "我們不會一開始就叫你重做系統，而是先和你梳理流程、設定 KPI，並和團隊試行最值得做的改善；確認有需要，才再建議合適工具或系統。",
       support:
-        "我的角色是 practical B2B coach + technical implementation partner：先幫管理層和團隊看清工作方式，再決定 AI、automation、CRM 或 SaaS 是否值得落地。",
+        "我的角色是 practical B2B consultant + technical implementation partner：先幫管理層和團隊看清工作方式，再決定 AI、automation、CRM 或 SaaS 是否值得落地。",
     },
     faq: {
       title: "AI 商業升級 FAQ",
@@ -200,7 +186,7 @@ const content = {
       book: "預約 30 分鐘流程診斷",
     },
     capabilities: {
-      eyebrow: "Capabilities / Solutions",
+      eyebrow: "能力 / 解決方案",
       title: "按需系統落地能力",
       body:
         "EventXP、SmartSales CRM、dashboard、booking portal 和 AI agent 是按需落地能力，不是首頁主角。先確認 workflow、KPI 和 business case，再決定是否需要系統。",
@@ -236,7 +222,7 @@ const content = {
     },
     sprint: {
       eyebrow: "Primary Entry Offer",
-      title: "30-day Founder Pilot / AI Upgrade Discovery Sprint",
+      title: "30-day AI Upgrade Discovery Sprint",
       intro:
         "A paid discovery and validation sprint focused on one core workflow, such as course enrolment, quotation follow-up, HR approval, or receipt administration. It does not promise full transformation in one month.",
       deliverablesTitle: "Includes",
@@ -246,47 +232,33 @@ const content = {
       cta: "Book a 30-minute Workflow Review",
     },
     pricing: {
-      eyebrow: "AI Coaching Pricing",
+      eyebrow: "AI Program Pricing",
       title: "See the investment before filling out a long form.",
       intro:
-        "The homepage should make the offer and starting prices clear first. These prices cover coaching and advisory. Each package assumes one company and 3-5 core participants / stakeholders. Custom systems, CRM, AI agents, API integrations, 20-person focus groups, larger workshops, and third-party costs are scoped separately.",
-      pilotOffer: {
-        eyebrow: "7-minute talk offer",
-        title: "Founder Pilot Offer | First 3 Companies Only",
-        subtitle: "Start with one workflow and validate whether AI can genuinely help the team.",
-        name: "30-day AI Upgrade Discovery Sprint",
-        originalPrice: "HK$10,000",
-        offerPrice: "HK$6,800",
-        includesTitle: "Includes",
-        excludesTitle: "Excludes",
-        includes: ["One core workflow diagnosis", "SOP / workflow map", "KPI baseline", "One AI quick win", "90-day improvement roadmap"],
-        excludes: ["Large system development", "Large data migration or API integration", "Third-party software, AI API, or hosting costs", "Guaranteed ROI or revenue outcomes"],
-        condition: "BNI Founder Offer: valid for the first 3 companies, or when a 30-minute Workflow Review is booked within 7 days after the talk.",
-        cta: "Book a 30-minute Workflow Review",
-      },
+        "The homepage should make the offer and starting prices clear first. These prices cover program and advisory scopes. Each package assumes one company and 3-5 core participants / stakeholders. Custom systems, CRM, AI agents, API integrations, 20-person focus groups, larger workshops, and third-party costs are scoped separately.",
       plans: [
         {
           name: "30-day Discovery Sprint",
-          price: "HK$10,000 → HK$6,800",
+          price: "HK$10,000",
           fit: "For a 2-4 person focus group / 3-5 core participants validating one workflow.",
           points: ["60-minute kickoff", "Up to two interviews", "One workflow map", "SOP / KPI baseline", "30/60/90-day roadmap"],
         },
         {
           name: "3-month AI Upgrade Foundation",
-          price: "HK$26,000 → HK$22,800",
+          price: "HK$26,000",
           fit: "For 3-5 core participants improving 1-2 workflows and building the first reviewable adoption result.",
           points: ["SOP v1 and ownership", "Monthly checkpoint", "KPI review", "One practical team training"],
           featured: true,
         },
         {
           name: "6-month AI Upgrade Accelerator",
-          price: "HK$50,000 → HK$42,800",
+          price: "HK$50,000",
           fit: "For a small core team or department representatives improving 3-4 related workflows with adoption tracking.",
           points: ["Agile reviews", "SOP v2", "Adoption review", "Up to two workshops"],
         },
         {
           name: "12-month Partnership",
-          price: "HK$98,000 → HK$88,000",
+          price: "HK$98,000",
           fit: "For management / core owners building long-term AI adoption governance after the model is validated.",
           points: ["Annual roadmap", "Cross-department prioritization", "SOP governance", "Management reviews"],
         },
@@ -296,9 +268,9 @@ const content = {
     },
     programs: {
       eyebrow: "Accelerator Programs",
-      title: "Coaching brings you in → Advisory improves continuously → Systems land only when needed",
+      title: "Programs bring you in → Advisory improves continuously → Systems land only when needed",
       intro:
-        "These are coaching and advisory programs, not software packages. Automation, CRM, AI agents, or SaaS implementation is scoped separately only after the workflow and business case are validated.",
+        "These are program and advisory offers, not software packages. Automation, CRM, AI agents, or SaaS implementation is scoped separately only after the workflow and business case are validated.",
       cards: [
         { name: "3 months | AI Upgrade Foundation", body: "Move from diagnosis to the first reviewable improvement.", points: ["1-2 workflows", "SOP v1, roles, and handoff", "Monthly planning, checkpoint, KPI review", "One practical team training"] },
         { name: "6 months | AI Upgrade Accelerator", body: "Expand to one department or 3-4 related workflows with adoption habits.", points: ["Agile reviews", "SOP v2 and exception handling", "KPI dashboard / adoption review", "Up to two workshops"], featured: true },
@@ -320,21 +292,21 @@ const content = {
       columns: [
         { title: "Founder background", points: ["13-14 years of IT delivery, product, cloud, and Agile experience", "Former Google Developer Group Hong Kong organizer", "Developer / community / workshop experience"] },
         { title: "Delivered systems", points: ["Check-in system and attendance workflows", "Booking portal and admin workflows", "CRM, dashboard, and workflow automation experience"] },
-        { title: "Delivery style", points: ["Cantonese and English support", "Practical AI training for teams", "Founder Pilot recruitment for suitable SME workflows"] },
+        { title: "Delivery style", points: ["Cantonese and English support", "Practical AI training for teams", "Discovery Sprint openings for suitable SME workflows"] },
       ],
     },
     founder: {
       eyebrow: "About the founder",
-      title: "Founder-led AI Business Upgrade Coach",
+      title: "Founder-led AI Business Consultancy",
       body:
         "I do not start by telling you to rebuild your system. I first help you clarify the workflow, define KPIs, and trial the most valuable improvement with your team. Only when the need is validated do I recommend suitable tools or systems.",
       support:
-        "My role is practical B2B coach plus technical implementation partner: help leadership and teams see how work really happens, then decide whether AI, automation, CRM, or SaaS is worth implementing.",
+        "My role is practical B2B consultant plus technical implementation partner: help leadership and teams see how work really happens, then decide whether AI, automation, CRM, or SaaS is worth implementing.",
     },
     faq: {
       title: "AI Business Upgrade FAQ",
       items: [
-        ["Are you selling software?", "Software is not the first step. InnovateXP primarily provides AI Business Upgrade coaching and advisory. Automation, CRM, AI agents, or SaaS are scoped separately only after the workflow, SOP, KPI, and business case are clear."],
+        ["Are you selling software?", "Software is not the first step. InnovateXP primarily provides AI Business Consultancy and advisory. Automation, CRM, AI agents, or SaaS are scoped separately only after the workflow, SOP, KPI, and business case are clear."],
         ["Is this just AI training?", "No. Training is only one part. The accelerator includes questionnaires, interviews, SOP mapping, KPI baseline, review checkpoints, team feedback, and practical trials."],
         ["Is this suitable for a small team?", "Yes, especially 3-30 person teams where the owner or senior employee is the single point of failure. A small team usually benefits from fixing one core workflow first."],
         ["Do we need to replace our current system?", "Not necessarily. We usually improve how you use existing spreadsheets, forms, WhatsApp, CRM, or other tools first. New systems are recommended only when the workflow and business case are validated."],
@@ -347,7 +319,7 @@ const content = {
       title: "No long questionnaire on the homepage. Pick one workflow and review it.",
       body:
         "If you already know one workflow is stuck, book a 30-minute Workflow Review. Basic diagnostic questions can be handled during booking or follow-up without turning the homepage into a long form.",
-      health: "See AI coaching pricing",
+      health: "See AI program pricing",
       book: "Book a 30-minute Workflow Review",
     },
     capabilities: {
@@ -406,46 +378,39 @@ const localizedContent = {
     },
     programs: {
       ...content.zh.programs,
-      title: "陪跑帶入門 → 顧問持續改善 → 系統按需要落地",
+      title: "陪跑帶入場 → 顧問持續改善 → 系統按需要落地",
       intro:
-        "這些是 coaching and advisory programs，不是軟體套裝。Automation、CRM、AI agent 或 SaaS 只會在 workflow 和 business case 驗證後另行 scope。",
+        "這些是陪跑計劃與顧問方案，不是軟體套裝。Automation、CRM、AI agent 或 SaaS 只會在 workflow 和 business case 驗證後另行 scope。",
     },
     pricing: {
       ...content.zh.pricing,
       eyebrow: "AI 陪跑定價",
       title: "先看清楚投入，再決定從哪一步開始。",
       intro:
-        "首頁先講清楚服務範圍與起步價，避免一開始就要求你填長問卷。以下是 coaching / advisory 定價，以 1 間公司、3-5 位核心參與者 / stakeholders 為基準；客製化系統、CRM、AI agent、API integration、20 人 focus group 或大班 workshop 會另行 scope。",
-      pilotOffer: {
-        ...content.zh.pricing.pilotOffer,
-        eyebrow: "7 分鐘演講限定",
-        title: "Founder Pilot Offer｜首 3 間企業限定",
-        subtitle: "先從一個流程開始，驗證 AI 是否真的幫得到團隊。",
-        condition: "BNI Founder Offer：只限首 3 間合作企業／演講後 7 日內預約 30 分鐘流程診斷。",
-      },
+        "首頁先講清楚服務範圍與起步價，避免一開始就要求你填長問卷。以下是陪跑計劃 / advisory 定價，以 1 間公司、3-5 位核心參與者 / stakeholders 為基準；客製化系統、CRM、AI agent、API integration、20 人 focus group 或大班 workshop 會另行 scope。",
       plans: [
         {
           name: "30 日 Discovery Sprint",
-          price: "HK$10,000 → HK$6,800",
+          price: "HK$10,000",
           fit: "適合 2-4 人 focus group／3-5 位核心參與者先試一個 workflow。",
           points: ["60 分鐘 kickoff", "最多 2 次訪談", "1 條 workflow map", "SOP / KPI baseline", "30/60/90 日 roadmap"],
         },
         {
           name: "3 個月 AI Upgrade Foundation",
-          price: "HK$26,000 → HK$22,800",
+          price: "HK$26,000",
           fit: "適合 3-5 位核心參與者改善 1-2 條流程，建立第一個可驗收 adoption 成果。",
           points: ["SOP v1 與角色責任", "每月 checkpoint", "KPI review", "1 次團隊實戰培訓"],
           featured: true,
         },
         {
           name: "6 個月 AI Upgrade Accelerator",
-          price: "HK$50,000 → HK$42,800",
+          price: "HK$50,000",
           fit: "適合一個小核心團隊或部門代表改善 3-4 條相關流程，需要 adoption tracking。",
           points: ["Agile reviews", "SOP v2", "Adoption review", "最多 2 次 workshop"],
         },
         {
           name: "12 個月 Partnership",
-          price: "HK$98,000 → HK$88,000",
+          price: "HK$98,000",
           fit: "適合已驗證方向後，以管理層 / 核心 owner 節奏建立長期 AI adoption governance。",
           points: ["年度 roadmap", "跨部門 prioritization", "SOP governance", "管理層 reviews"],
         },
@@ -465,17 +430,17 @@ const localizedContent = {
         },
         {
           title: "交付方式",
-          points: ["繁體中文 / English support", "Practical AI training for teams", "Founder Pilot 正在招募適合的 SME workflow"],
+          points: ["繁體中文 / English support", "Practical AI training for teams", "現正歡迎適合的 SME 參加 30 日 Discovery Sprint"],
         },
       ],
     },
     founder: {
       eyebrow: "關於創辦人",
-      title: "InnovateXP 創辦人，AI 商業升級教練",
+      title: "InnovateXP 創辦人，AI 商業顧問",
       body:
         "我們不會一開始就要求你重做系統，而是先和你梳理流程、設定 KPI，並和團隊試行最值得做的改善；確認有需要後，才建議合適工具或系統。",
       support:
-        "我們的角色是 practical B2B coach + technical implementation partner：先協助管理層和團隊看清楚工作方式，再決定 AI、automation、CRM 或 SaaS 是否值得落地。",
+        "我們的角色是 practical B2B consultant + technical implementation partner：先協助管理層和團隊看清楚工作方式，再決定 AI、automation、CRM 或 SaaS 是否值得落地。",
     },
     finalCta: {
       ...content.zh.finalCta,
@@ -500,7 +465,7 @@ const localizedContent = {
       ],
     },
     method: {
-      eyebrow: "AI Business Upgrade Method",
+      eyebrow: "AIビジネスアップグレードの方法",
       title: "質問 → 可視化 → KPI定義 → 優先順位 → 試行 → レビュー",
       intro:
         "InnovateXPは最初からシステム再構築を勧めません。質問票、インタビュー、チームフィードバックで業務を理解し、小さなAgile checkpointで検証します。",
@@ -514,8 +479,8 @@ const localizedContent = {
       ],
     },
     sprint: {
-      eyebrow: "Primary Entry Offer",
-      title: "30日 Founder Pilot / AI Upgrade Discovery Sprint",
+      eyebrow: "最初の入口オファー",
+      title: "30日 AI Upgrade Discovery Sprint",
       intro:
         "1つの中核ワークフローに集中する有料の発見・検証スプリントです。コース申込、見積フォロー、HR承認、領収書処理などを対象にします。",
       deliverablesTitle: "含まれる内容",
@@ -525,71 +490,57 @@ const localizedContent = {
       cta: "30分ワークフローレビューを予約",
     },
     programs: {
-      eyebrow: "Accelerator Programs",
-      title: "コーチングで開始 → アドバイザリーで継続改善 → 必要な時だけシステム化",
+      eyebrow: "アクセラレータープログラム",
+      title: "プログラムで開始 → アドバイザリーで継続改善 → 必要な時だけシステム化",
       intro:
-        "これはソフトウェアパッケージではなく、coaching and advisory programです。Automation、CRM、AI agent、SaaSは、workflowとbusiness caseの検証後に別途scopeします。",
+        "ソフトウェアのパッケージ販売ではなく、伴走プログラムとアドバイザリーです。Automation、CRM、AI agent、SaaSは、workflowとbusiness caseの検証後に別途scopeします。",
       cards: content.en.programs.cards,
     },
     pricing: {
-      eyebrow: "AI Coaching Pricing",
+      eyebrow: "AIプログラム料金",
       title: "長いフォームに進む前に、まず料金感を確認できます。",
       intro:
-        "ホームページでは、まずサービス範囲と開始価格を明確にします。以下はcoaching / advisoryの料金で、1社・3〜5名のcore participants / stakeholdersを想定しています。Custom systems、CRM、AI agents、API integrations、20名focus group、大人数workshop、第三者サービス費用は別途scopeします。",
-      pilotOffer: {
-        eyebrow: "7分トーク限定",
-        title: "Founder Pilot Offer｜先着3社限定",
-        subtitle: "まず1つのworkflowから始め、AIが本当にチームの役に立つか検証します。",
-        name: "30日 AI Upgrade Discovery Sprint",
-        originalPrice: "HK$10,000",
-        offerPrice: "HK$6,800",
-        includesTitle: "含まれる内容",
-        excludesTitle: "含まれない内容",
-        includes: ["1つのcore workflow診断", "SOP / workflow map", "KPI baseline", "1つのAI quick win", "90日改善roadmap"],
-        excludes: ["大規模システム開発", "大規模data migrationまたはAPI integration", "第三者software、AI API、hosting費用", "ROIまたは売上成果の保証"],
-        condition: "BNI Founder Offer：先着3社、または講演後7日以内に30分Workflow Reviewを予約した企業に適用。",
-        cta: "30分ワークフローレビューを予約",
-      },
+        "ホームページでは、まずサービス範囲と開始価格を明確にします。以下は伴走プログラム / アドバイザリーの料金で、1社・3〜5名のcore participants / stakeholdersを想定しています。Custom systems、CRM、AI agents、API integrations、20名focus group、大人数workshop、第三者サービス費用は別途scopeします。",
       plans: [
-        { name: "30日 Discovery Sprint", price: "HK$10,000 → HK$6,800", fit: "2〜4名focus group / 3〜5名core participantsで、1つのworkflowを検証したいチーム向け。", points: ["60分kickoff", "最大2回のインタビュー", "1つのworkflow map", "SOP / KPI baseline", "30/60/90日roadmap"] },
-        { name: "3か月 AI Upgrade Foundation", price: "HK$26,000 → HK$22,800", fit: "3〜5名のcore participantsで、1-2個のworkflowを改善したいチーム向け。", points: ["SOP v1と責任整理", "月次checkpoint", "KPI review", "1回の実践型チーム研修"], featured: true },
-        { name: "6か月 AI Upgrade Accelerator", price: "HK$50,000 → HK$42,800", fit: "小さなcore teamまたは部門代表で、3-4個の関連workflowを改善したいチーム向け。", points: ["Agile reviews", "SOP v2", "Adoption review", "最大2回のworkshop"] },
-        { name: "12か月 Partnership", price: "HK$98,000 → HK$88,000", fit: "方向性検証後、management / core ownersで長期的なAI adoption governanceを整えたいチーム向け。", points: ["年間roadmap", "部門横断prioritization", "SOP governance", "Management reviews"] },
+        { name: "30日 Discovery Sprint", price: "HK$10,000", fit: "2〜4名focus group / 3〜5名core participantsで、1つのworkflowを検証したいチーム向け。", points: ["60分kickoff", "最大2回のインタビュー", "1つのworkflow map", "SOP / KPI baseline", "30/60/90日roadmap"] },
+        { name: "3か月 AI Upgrade Foundation", price: "HK$26,000", fit: "3〜5名のcore participantsで、1-2個のworkflowを改善したいチーム向け。", points: ["SOP v1と責任整理", "月次checkpoint", "KPI review", "1回の実践型チーム研修"], featured: true },
+        { name: "6か月 AI Upgrade Accelerator", price: "HK$50,000", fit: "小さなcore teamまたは部門代表で、3-4個の関連workflowを改善したいチーム向け。", points: ["Agile reviews", "SOP v2", "Adoption review", "最大2回のworkshop"] },
+        { name: "12か月 Partnership", price: "HK$98,000", fit: "方向性検証後、management / core ownersで長期的なAI adoption governanceを整えたいチーム向け。", points: ["年間roadmap", "部門横断prioritization", "SOP governance", "Management reviews"] },
       ],
       note: "上記はソフトウェアパッケージではなく、20名focus groupの料金でもありません。大人数focus group、複数部門workshop、追加研修、stakeholder追加は人数・回数・準備工数に応じて別途見積します。",
       cta: "30分ワークフローレビューを予約",
     },
     useCases: {
-      eyebrow: "Example Workflow",
+      eyebrow: "ワークフロー例",
       title: "まず1つの具体的なワークフローで検証し、システムが必要か判断します。",
       cards: content.en.useCases.cards,
     },
     proof: {
-      eyebrow: "Relevant Experience & Delivery Capability",
+      eyebrow: "関連経験と提供能力",
       title: "関連経験と提供能力",
       columns: content.en.proof.columns,
     },
     founder: {
-      eyebrow: "About the founder",
-      title: "Founder-led AI Business Upgrade Coach",
+      eyebrow: "創業者について",
+      title: "創業者主導のAIビジネスコンサルティング",
       body:
         "最初からシステムを作り直す提案はしません。まずワークフローとKPIを整理し、チームと一緒に価値の高い改善を試行します。必要性が検証されてから、適切なツールやシステムを提案します。",
       support:
-        "役割は practical B2B coach と technical implementation partner の組み合わせです。業務の実態を見える化してから、AI、automation、CRM、SaaSを導入すべきか判断します。",
+        "役割は実践的なB2Bコンサルタントとテクニカル実装パートナーの組み合わせです。業務の実態を見える化してから、AI、automation、CRM、SaaSを導入すべきか判断します。",
     },
     faq: {
-      title: "AI Business Upgrade FAQ",
+      title: "AIビジネスアップグレード FAQ",
       items: content.en.faq.items,
     },
     finalCta: {
       title: "次のステップを決める前に、3分で確認しましょう。",
       body:
         "詰まっているワークフローが分かっている場合は30分レビューを予約してください。まだ不明な場合は Workflow Health Check から始めてください。",
-      health: "3分ワークフロー診断を受ける",
+      health: "プログラム料金を見る",
       book: "30分レビューを予約",
     },
     capabilities: {
-      eyebrow: "Capabilities / Solutions",
+      eyebrow: "実装能力 / ソリューション",
       title: "必要に応じたシステム実装",
       body:
         "EventXP、SmartSales CRM、dashboards、booking portals、AI agentsは実装能力であり、最初の提案ではありません。workflow、KPI、business caseの検証後に検討します。",
@@ -611,7 +562,7 @@ const localizedContent = {
       ],
     },
     method: {
-      eyebrow: "AI Business Upgrade Method",
+      eyebrow: "Methode für AI Business Upgrade",
       title: "Fragen → Abbilden → KPIs definieren → Priorisieren → Testen → Review",
       intro:
         "InnovateXP startet nicht mit einem System-Neubau. Wir verstehen den Workflow über Fragebogen, Interviews und Teamfeedback und testen Verbesserungen über praktische Agile Checkpoints.",
@@ -625,8 +576,8 @@ const localizedContent = {
       ],
     },
     sprint: {
-      eyebrow: "Primary Entry Offer",
-      title: "30-day Founder Pilot / AI Upgrade Discovery Sprint",
+      eyebrow: "Einstiegsangebot",
+      title: "30-Tage AI Upgrade Discovery Sprint",
       intro:
         "Ein bezahlter Discovery- und Validierungssprint für einen Kernworkflow, z.B. Kursanmeldung, Angebots-Follow-up, HR-Freigabe oder Belegadministration.",
       deliverablesTitle: "Enthalten",
@@ -636,71 +587,57 @@ const localizedContent = {
       cta: "30-Minuten-Workflow-Review buchen",
     },
     programs: {
-      eyebrow: "Accelerator Programs",
-      title: "Coaching zum Start → Advisory für laufende Verbesserung → Systeme nur bei Bedarf",
+      eyebrow: "Accelerator-Programme",
+      title: "Programme zum Start → Advisory für laufende Verbesserung → Systeme nur bei Bedarf",
       intro:
-        "Dies sind Coaching- und Advisory-Programme, keine Softwarepakete. Automation, CRM, AI agents oder SaaS werden erst nach validiertem Workflow und Business Case separat scoped.",
+        "Dies sind Programm- und Advisory-Angebote, keine Softwarepakete. Automation, CRM, AI agents oder SaaS werden erst nach validiertem Workflow und Business Case separat scoped.",
       cards: content.en.programs.cards,
     },
     pricing: {
-      eyebrow: "AI-Coaching-Preise",
+      eyebrow: "AI-Programmpreise",
       title: "Erst die Investition verstehen, dann den nächsten Schritt wählen.",
       intro:
-        "Die Startseite zeigt zuerst Angebot und Einstiegspreise, statt mit einem langen Formular zu beginnen. Die Preise gelten für coaching / advisory und setzen ein Unternehmen mit 3-5 core participants / stakeholders voraus. Custom systems, CRM, AI agents, API integrations, 20-person focus groups, größere workshops und Drittanbieter-Kosten werden separat scoped.",
-      pilotOffer: {
-        eyebrow: "7-Minuten-Talk-Angebot",
-        title: "Founder Pilot Offer | Nur für die ersten 3 Unternehmen",
-        subtitle: "Mit einem Workflow starten und validieren, ob AI dem Team wirklich hilft.",
-        name: "30-day AI Upgrade Discovery Sprint",
-        originalPrice: "HK$10,000",
-        offerPrice: "HK$6,800",
-        includesTitle: "Enthalten",
-        excludesTitle: "Nicht enthalten",
-        includes: ["Eine core workflow Diagnose", "SOP / workflow map", "KPI baseline", "Ein AI quick win", "90-day improvement roadmap"],
-        excludes: ["Große Systementwicklung", "Große data migration oder API integration", "Drittanbieter-Software, AI API oder hosting Kosten", "Garantierter ROI oder Umsatz"],
-        condition: "BNI Founder Offer: gültig für die ersten 3 Unternehmen oder bei Buchung eines 30-Minuten-Workflow-Reviews innerhalb von 7 Tagen nach dem Talk.",
-        cta: "30-Minuten-Workflow-Review buchen",
-      },
+        "Die Startseite zeigt zuerst Angebot und Einstiegspreise, statt mit einem langen Formular zu beginnen. Die Preise gelten für Programme / Advisory und setzen ein Unternehmen mit 3-5 core participants / stakeholders voraus. Custom systems, CRM, AI agents, API integrations, 20-person focus groups, größere workshops und Drittanbieter-Kosten werden separat scoped.",
       plans: [
-        { name: "30-day Discovery Sprint", price: "HK$10,000 → HK$6,800", fit: "Für eine 2-4 person focus group / 3-5 core participants, die einen Workflow validieren.", points: ["60-Minuten-kickoff", "Bis zu 2 Interviews", "Ein workflow map", "SOP / KPI baseline", "30/60/90-day roadmap"] },
-        { name: "3-month AI Upgrade Foundation", price: "HK$26,000 → HK$22,800", fit: "Für 3-5 core participants, die 1-2 Workflows und das erste überprüfbare adoption Ergebnis erarbeiten.", points: ["SOP v1 und ownership", "Monatlicher checkpoint", "KPI review", "Ein praktisches Teamtraining"], featured: true },
-        { name: "6-month AI Upgrade Accelerator", price: "HK$50,000 → HK$42,800", fit: "Für ein kleines core team oder Abteilungsvertreter mit 3-4 verbundenen Workflows und adoption tracking.", points: ["Agile reviews", "SOP v2", "Adoption review", "Bis zu 2 workshops"] },
-        { name: "12-month Partnership", price: "HK$98,000 → HK$88,000", fit: "Für management / core owners, die nach validierter Richtung langfristige AI adoption governance aufbauen.", points: ["Annual roadmap", "Cross-department prioritization", "SOP governance", "Management reviews"] },
+        { name: "30-Tage Discovery Sprint", price: "HK$10,000", fit: "Für eine 2-4-köpfige Focus Group / 3-5 Kernbeteiligte, die einen Workflow validieren.", points: ["60-Minuten-Kickoff", "Bis zu 2 Interviews", "Eine Workflow-Map", "SOP-/KPI-Baseline", "30/60/90-Tage-Roadmap"] },
+        { name: "3-Monate AI Upgrade Foundation", price: "HK$26,000", fit: "Für 3-5 Kernbeteiligte, die 1-2 Workflows und das erste überprüfbare Adoption-Ergebnis erarbeiten.", points: ["SOP v1 und Ownership", "Monatlicher Checkpoint", "KPI-Review", "Ein praktisches Teamtraining"], featured: true },
+        { name: "6-Monate AI Upgrade Accelerator", price: "HK$50,000", fit: "Für ein kleines Kernteam oder Abteilungsvertreter mit 3-4 verbundenen Workflows und Adoption-Tracking.", points: ["Agile Reviews", "SOP v2", "Adoption-Review", "Bis zu 2 Workshops"] },
+        { name: "12-Monate Partnership", price: "HK$98,000", fit: "Für Management / Kern-Owner, die nach validierter Richtung langfristige AI-Adoption-Governance aufbauen.", points: ["Jahres-Roadmap", "Abteilungsübergreifende Priorisierung", "SOP-Governance", "Management-Reviews"] },
       ],
-      note: "Dies sind keine Softwarepakete und keine Preise für 20-person focus groups. Größere focus groups, multi-department workshops, zusätzliche Trainings oder mehr stakeholders werden nach Teilnehmerzahl, Sessions und Vorbereitung separat angeboten.",
+      note: "Dies sind keine Softwarepakete und keine Preise für 20-Personen-Focus-Groups. Größere Focus Groups, abteilungsübergreifende Workshops, zusätzliche Trainings oder mehr Stakeholder werden nach Teilnehmerzahl, Sessions und Vorbereitung separat angeboten.",
       cta: "30-Minuten-Workflow-Review buchen",
     },
     useCases: {
-      eyebrow: "Example Workflow",
+      eyebrow: "Beispiel-Workflow",
       title: "Einen konkreten Workflow validieren, bevor ein System entschieden wird.",
       cards: content.en.useCases.cards,
     },
     proof: {
-      eyebrow: "Relevant Experience & Delivery Capability",
+      eyebrow: "Relevante Erfahrung & Lieferfähigkeit",
       title: "Relevante Erfahrung und Lieferfähigkeit",
       columns: content.en.proof.columns,
     },
     founder: {
-      eyebrow: "About the founder",
-      title: "Founder-led AI Business Upgrade Coach",
+      eyebrow: "Über den Gründer",
+      title: "Gründergeführte AI Business Consultancy",
       body:
         "Wir empfehlen nicht sofort einen System-Neubau. Zuerst klären wir Workflow und KPIs und testen mit dem Team die wertvollste Verbesserung. Erst wenn der Bedarf validiert ist, empfehlen wir passende Tools oder Systeme.",
       support:
-        "Die Rolle ist practical B2B coach plus technical implementation partner: erst die Arbeitsweise verstehen, dann entscheiden, ob AI, automation, CRM oder SaaS sinnvoll ist.",
+        "Die Rolle ist praktischer B2B-Berater plus technischer Umsetzungspartner: erst die Arbeitsweise verstehen, dann entscheiden, ob AI, Automation, CRM oder SaaS sinnvoll ist.",
     },
     faq: {
-      title: "AI Business Upgrade FAQ",
+      title: "FAQ zu AI Business Upgrade",
       items: content.en.faq.items,
     },
     finalCta: {
       title: "Drei Minuten prüfen, bevor der nächste Schritt entschieden wird.",
       body:
         "Wenn ein Workflow bereits klar blockiert ist, buche einen 30-Minuten-Review. Wenn der Startpunkt unklar ist, beginne mit dem Workflow Health Check.",
-      health: "3-Minuten-Workflow-Check starten",
+      health: "Programmpreise ansehen",
       book: "30-Minuten-Review buchen",
     },
     capabilities: {
-      eyebrow: "Capabilities / Solutions",
+      eyebrow: "Fähigkeiten / Solutions",
       title: "Systemimplementierung nach Bedarf",
       body:
         "EventXP, SmartSales CRM, Dashboards, Booking Portals und AI Agents sind Implementierungsfähigkeiten, nicht der Startpunkt. Sie werden erst nach Workflow-, KPI- und Business-Case-Validierung berücksichtigt.",
@@ -763,58 +700,6 @@ export function BusinessUpgradeHomepageFunnel({
 
       <section id="ai-coaching-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
         <SectionIntro eyebrow={c.pricing.eyebrow} title={c.pricing.title} intro={c.pricing.intro} />
-        <div className="mb-8 rounded-3xl border-2 border-amber-300 bg-gradient-to-br from-amber-50 via-white to-cyan-50 p-6 shadow-sm dark:border-amber-400/50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-900 md:p-8">
-          <div className="grid gap-6 lg:grid-cols-[0.9fr_1.1fr] lg:items-start">
-            <div>
-              <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">
-                {c.pricing.pilotOffer.eyebrow}
-              </p>
-              <h3 className="text-3xl font-extrabold tracking-tight text-gray-900 dark:text-white">
-                {c.pricing.pilotOffer.title}
-              </h3>
-              <p className="mt-3 text-base leading-relaxed text-slate-700 dark:text-slate-300">
-                {c.pricing.pilotOffer.subtitle}
-              </p>
-              <div className="mt-5 rounded-2xl border border-amber-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-800">
-                <p className="text-sm font-bold text-slate-600 dark:text-slate-300">{c.pricing.pilotOffer.name}</p>
-                <div className="mt-2 flex flex-wrap items-end gap-3">
-                  <span className="text-lg font-semibold text-slate-400 line-through">{c.pricing.pilotOffer.originalPrice}</span>
-                  <span className="text-4xl font-extrabold text-brand-primary dark:text-teal-300">{c.pricing.pilotOffer.offerPrice}</span>
-                </div>
-                <p className="mt-3 text-sm font-semibold leading-relaxed text-amber-800 dark:text-amber-300">
-                  {c.pricing.pilotOffer.condition}
-                </p>
-              </div>
-              <div className="mt-5">
-                <Button href={bookingHref}>{c.pricing.pilotOffer.cta}</Button>
-              </div>
-            </div>
-            <div className="grid gap-4 md:grid-cols-2">
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-800">
-                <h4 className="text-lg font-bold text-gray-900 dark:text-white">{c.pricing.pilotOffer.includesTitle}</h4>
-                <ul className="mt-4 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                  {c.pricing.pilotOffer.includes.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="font-bold text-brand-primary dark:text-teal-300">✓</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-              <div className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-800">
-                <h4 className="text-lg font-bold text-gray-900 dark:text-white">{c.pricing.pilotOffer.excludesTitle}</h4>
-                <ul className="mt-4 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                  {c.pricing.pilotOffer.excludes.map((item) => (
-                    <li key={item} className="flex gap-2">
-                      <span className="font-bold text-slate-400">•</span>
-                      <span>{item}</span>
-                    </li>
-                  ))}
-                </ul>
-              </div>
-            </div>
-          </div>
-        </div>
         <div className="grid gap-5 lg:grid-cols-4">
           {c.pricing.plans.map((plan) => (
             <article
