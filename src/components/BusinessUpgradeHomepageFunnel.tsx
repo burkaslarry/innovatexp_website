@@ -189,8 +189,25 @@ const content = {
     capabilities: {
       eyebrow: "能力 / 解決方案",
       title: "按需系統落地能力",
-      body:
-        "EventXP、SmartSales CRM、dashboard、booking portal 和 AI agent 是按需落地能力，不是首頁主角。先確認 workflow、KPI 和 business case，再決定是否需要系統。",
+      intro:
+        "EventXP、SmartSales CRM、Accounting Receipt Chatbot、dashboard、booking portal 同 AI agent 都係按需落地能力，唔係首頁主角。先確認 workflow、KPI 同 business case，再決定需唔需要系統。",
+      items: [
+        {
+          name: "EventXP",
+          body: "活動簽到、名單評分、follow-up 自動化 — 試用 HKD 4,000（1 場活動）。",
+          href: "/eventxp",
+        },
+        {
+          name: "SmartSales CRM",
+          body: "WhatsApp 銷售 workflow、CRM 基礎、pipeline 跟進 — 試用 HKD 5,000。",
+          href: "/smartsales-crm",
+        },
+        {
+          name: "Accounting Receipt Chatbot",
+          body: "WhatsApp / chatbot 收條 upload → AI Agent 分類 → 每週狀態報告（示範場景，需先診斷）。",
+          href: "#accounting-tools-demo",
+        },
+      ],
     },
   },
   en: {
@@ -326,8 +343,25 @@ const content = {
     capabilities: {
       eyebrow: "Capabilities / Solutions",
       title: "On-demand systems implementation",
-      body:
-        "EventXP, SmartSales CRM, dashboards, booking portals, and AI agents are implementation capabilities, not the homepage lead. They are considered only after workflow, KPI, and business case validation.",
+      intro:
+        "EventXP, SmartSales CRM, Accounting Receipt Chatbot, dashboards, booking portals, and AI agents are implementation capabilities — not the homepage lead. Validate workflow, KPIs, and business case first.",
+      items: [
+        {
+          name: "EventXP",
+          body: "Event check-in, lead scoring, follow-up automation — trial HKD 4,000 (one event).",
+          href: "/eventxp",
+        },
+        {
+          name: "SmartSales CRM",
+          body: "WhatsApp sales workflow, CRM baseline, pipeline follow-up — trial HKD 5,000.",
+          href: "/smartsales-crm",
+        },
+        {
+          name: "Accounting Receipt Chatbot",
+          body: "Chatbot receipt upload → AI agent classification → weekly status reports (example scenario; diagnosis first).",
+          href: "#accounting-tools-demo",
+        },
+      ],
     },
   },
 } as const;
@@ -543,8 +577,9 @@ const localizedContent = {
     capabilities: {
       eyebrow: "実装能力 / ソリューション",
       title: "必要に応じたシステム実装",
-      body:
-        "EventXP、SmartSales CRM、dashboards、booking portals、AI agentsは実装能力であり、最初の提案ではありません。workflow、KPI、business caseの検証後に検討します。",
+      intro:
+        "EventXP、SmartSales CRM、Accounting Receipt Chatbot、dashboards、booking portals、AI agentsは実装能力であり、最初の提案ではありません。workflow、KPI、business caseの検証後に検討します。",
+      items: content.en.capabilities.items,
     },
   },
   de: {
@@ -640,8 +675,9 @@ const localizedContent = {
     capabilities: {
       eyebrow: "Fähigkeiten / Solutions",
       title: "Systemimplementierung nach Bedarf",
-      body:
-        "EventXP, SmartSales CRM, Dashboards, Booking Portals und AI Agents sind Implementierungsfähigkeiten, nicht der Startpunkt. Sie werden erst nach Workflow-, KPI- und Business-Case-Validierung berücksichtigt.",
+      intro:
+        "EventXP, SmartSales CRM, Accounting Receipt Chatbot, Dashboards, Booking Portals und AI Agents sind Implementierungsfähigkeiten, nicht der Startpunkt. Sie werden erst nach Workflow-, KPI- und Business-Case-Validierung berücksichtigt.",
+      items: content.en.capabilities.items,
     },
   },
 } as unknown as Record<AppLocale, typeof content.en>;
@@ -897,14 +933,28 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="capabilities" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-200 bg-white p-6 text-center shadow-card dark:border-slate-700 dark:bg-slate-900 md:p-10">
-        <SectionIntro {...c.capabilities} />
-        <div className="mx-auto grid max-w-4xl gap-4 md:grid-cols-3">
-          {[MessageSquareText, BarChart3, Bot].map((Icon, index) => (
-            <div key={index} className="rounded-2xl bg-slate-50 p-5 dark:bg-slate-800">
-              <Icon className="mx-auto h-7 w-7 text-brand-primary dark:text-teal-300" aria-hidden />
-            </div>
-          ))}
+      <section id="capabilities" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900 md:p-10">
+        <SectionIntro eyebrow={c.capabilities.eyebrow} title={c.capabilities.title} intro={c.capabilities.intro} />
+        <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
+          {c.capabilities.items.map((item, index) => {
+            const icons = [MessageSquareText, BarChart3, Bot];
+            const Icon = icons[index] ?? Bot;
+            const href = item.href.startsWith("#") ? item.href : `${localePrefix}${item.href}`;
+            return (
+              <a
+                key={item.name}
+                href={href}
+                className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left transition hover:border-brand-primary/50 hover:shadow-md dark:border-slate-700 dark:bg-slate-800"
+              >
+                <Icon className="mb-3 h-7 w-7 text-brand-primary dark:text-teal-300" aria-hidden />
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">{item.name}</h3>
+                <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{item.body}</p>
+                <span className="mt-4 text-sm font-semibold text-brand-primary group-hover:underline dark:text-teal-300">
+                  {locale === "zh-hk" || locale === "zh-tw" ? "了解詳情 →" : "Learn more →"}
+                </span>
+              </a>
+            );
+          })}
         </div>
       </section>
     </>
