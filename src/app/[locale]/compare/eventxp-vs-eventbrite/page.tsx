@@ -150,7 +150,7 @@ export default async function EventXpVsEventbritePage({
                   <th className="p-3 font-medium text-gray-900 dark:text-white align-top" scope="row">
                     Typical pricing shape
                   </th>
-                  <td className="p-3">HKD 880/mo + setup (predictable ops fee)</td>
+                  <td className="p-3">Trial HKD 4,000 (1 event) + optional maintenance</td>
                   <td className="p-3">Organizer plan + per-ticket / processing fees</td>
                 </tr>
                 <tr className="border-b border-slate-100 dark:border-gray-800">

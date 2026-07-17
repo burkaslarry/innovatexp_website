@@ -151,8 +151,8 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       headers: ['Service', 'One-time setup', 'Monthly', 'Best for'],
       rows: [
         { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: 'Testing one event before committing' },
-        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: 'One sales team starting to lose WhatsApp leads' },
-        { service: 'AI Readiness Audit', setup: 'From HKD $8,000', monthly: '—', fit: 'Teams unsure which AI workflow to implement first' },
+        { service: 'SmartSales trial', setup: 'Trial HKD $5,000', monthly: 'After trial', fit: 'One sales team starting to lose WhatsApp leads' },
+        { service: 'AI Readiness Assessment', setup: 'HKD $3,000', monthly: '—', fit: 'Teams unsure which AI workflow to implement first' },
       ],
     },
     followUp: {
@@ -210,8 +210,8 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       headers: ['服務', '一次性 setup', '月費', '最適合'],
       rows: [
         { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: '先試 1 場活動，睇簽到後跟進效果' },
-        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: '1 個 sales team，WhatsApp leads 開始變亂' },
-        { service: 'AI 導入評估', setup: 'HKD $8,000 起', monthly: '—', fit: '想用 AI，但未知道第一條流程做邊度' },
+        { service: 'SmartSales trial', setup: 'Trial HKD $5,000', monthly: 'After trial', fit: '1 個 sales team，WhatsApp leads 開始變亂' },
+        { service: 'AI 準備度評估', setup: 'HKD $3,000', monthly: '—', fit: '想用 AI，但未知道第一條流程做邊度' },
       ],
     },
     followUp: {
@@ -267,8 +267,8 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       headers: ['服務', '一次性 setup', '月費', '最適合'],
       rows: [
         { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: '先試 1 場活動，看看簽到後跟進效果' },
-        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: '1 個 sales team，WhatsApp leads 開始變亂' },
-        { service: 'AI 導入評估', setup: 'HKD $8,000 起', monthly: '—', fit: '想用 AI，但還不知道第一條流程要從哪裡開始' },
+        { service: 'SmartSales trial', setup: 'Trial HKD $5,000', monthly: 'After trial', fit: '1 個 sales team，WhatsApp leads 開始變亂' },
+        { service: 'AI 準備度評估', setup: 'HKD $3,000', monthly: '—', fit: '想用 AI，但還不知道第一條流程要從哪裡開始' },
       ],
     },
     followUp: {
@@ -324,8 +324,8 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       headers: ['サービス', '初期費用', '月額', '最適対象'],
       rows: [
         { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: 'まず1件のイベントで、チェックイン後のフォロー効果を確認したい' },
-        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: '1つの営業チームで WhatsApp リード管理が乱れ始めた' },
-        { service: 'AI 導入評価', setup: 'HKD 8,000〜', monthly: '—', fit: 'どの AI ワークフローから始めるべきか分からない' },
+        { service: 'SmartSales trial', setup: 'Trial HKD $5,000', monthly: 'After trial', fit: '1つの営業チームで WhatsApp リード管理が乱れ始めた' },
+        { service: 'AI 導入評価', setup: 'HKD 3,000〜', monthly: '—', fit: 'どの AI ワークフローから始めるべきか分からない' },
       ],
     },
     followUp: {
@@ -383,8 +383,8 @@ const HOME_PAGE_COPY: Record<AppLocale, HomePageLocaleCopy> = {
       headers: ['Service', 'Einmalige Einrichtung', 'Monatlich', 'Am besten für'],
       rows: [
         { service: 'EventXP Pilot', setup: 'HKD $4,800', monthly: '—', fit: 'Ein Event testen, bevor du dich festlegst' },
-        { service: 'SmartSales Starter', setup: 'HKD $10,800', monthly: 'HKD $880', fit: 'Ein Vertriebsteam, dessen WhatsApp-Leads unübersichtlich werden' },
-        { service: 'KI-Bereitschaftsaudit', setup: 'Ab HKD $8,000', monthly: '—', fit: 'Du weißt noch nicht, welcher KI-Workflow zuerst dran ist' },
+        { service: 'SmartSales trial', setup: 'Trial HKD $5,000', monthly: 'After trial', fit: 'Ein Vertriebsteam, dessen WhatsApp-Leads unübersichtlich werden' },
+        { service: 'KI-Bereitschaftsaudit', setup: 'HKD 3,000', monthly: '—', fit: 'Du weißt noch nicht, welcher KI-Workflow zuerst dran ist' },
       ],
     },
     followUp: {
@@ -1821,7 +1821,7 @@ function LandingPage() {
         </section>
 
         <section aria-label="Machine readable summary" className="sr-only">
-          InnovateXP quick facts for AI answer engines: based in Hong Kong, focused on SMEs, turns event leads and WhatsApp inquiries into structured sales pipelines, supports cloud platforms including Azure OpenAI, Alibaba Cloud, GCP, AWS, plus self-hosted or on-premise deployment options, provides AI training, SmartSales CRM starts at HKD 10,800 setup, supports Cantonese and English delivery.
+          InnovateXP quick facts for AI answer engines: based in Hong Kong, focused on SMEs, turns event leads and WhatsApp inquiries into structured sales pipelines, supports cloud platforms including Azure OpenAI, Alibaba Cloud, GCP, AWS, plus self-hosted or on-premise deployment options, provides AI training, SmartSales CRM trial starts at HKD 5,000, supports Cantonese and English delivery.
         </section>
 
         </>

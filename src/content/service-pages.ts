@@ -134,11 +134,11 @@ const aiCoaching: ServicePageContent = {
   pricing: {
     title: "AI Upgrade Program Pricing",
     intro:
-      "Pricing is scoped around advisory programs first. Each package assumes one company and 3-5 core participants / stakeholders. Custom SaaS, CRM, AI agent development, large data migration, API integration, 20-person focus groups, larger workshops, third-party software, AI API, hosting, and subscriptions are separate after the workflow and business case are validated.",
+      "Pricing is scoped around advisory programs first. Quick-cash offers and tool trials (EventXP HK$4,000, SmartSales HK$5,000) are separate entry points. Each package assumes one company and 3-5 core participants / stakeholders. Custom SaaS, CRM, AI agent development, large data migration, API integration, 20-person focus groups, larger workshops, third-party software, AI API, hosting, and subscriptions are separate after the workflow and business case are validated.",
     plans: [
       {
         name: "30-day AI Upgrade Discovery Sprint",
-        price: "HK$10,000",
+        price: "HK$6,800",
         fit: "Best for a 2-4 person focus group / 3-5 core participants that want to validate one workflow before committing to a larger program.",
         features: [
           "3-minute workflow health check and detailed questionnaire",
@@ -484,7 +484,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
       plans: [
         {
           name: "30 日 AI Upgrade Discovery Sprint",
-          price: "HK$10,000",
+          price: "HK$6,800",
           fit: "適合 2-4 人 focus group／3-5 位核心參與者先試一個 workflow，再決定是否擴展的 SME。",
           features: [
             "3 分鐘流程健康檢查與詳細 active questionnaire",

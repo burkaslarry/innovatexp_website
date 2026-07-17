@@ -207,14 +207,17 @@ export default async function SmartSalesCrmPage({
         <section className="mb-10">
           <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">Pricing</h2>
           <p className="mb-3 text-gray-700 dark:text-gray-300">
-            SmartSales CRM is available as a simple monthly subscription, with no long-term lock-in.
+            Start with a SmartSales CRM trial (HKD 5,000: WhatsApp workflow setup, CRM baseline, and one sales process trial run). Full rollout and maintenance tiers are scoped after validation — not a software-only subscription pitch.
           </p>
           <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Trial: WhatsApp workflow + CRM baseline for one core sales process.</li>
             <li>Starter: for small teams building a structured sales process.</li>
             <li>Growth: for teams that need stronger automation and reporting cadence.</li>
             <li>Enterprise: for multi-team workflows and deeper integration requirements.</li>
           </ul>
-          <p className="mt-3 text-gray-700 dark:text-gray-300">Contact us for a custom quote for your Hong Kong team.</p>
+          <p className="mt-3 text-gray-700 dark:text-gray-300">
+            Verified BNI members receive 30% off advisory and quick-cash services. Book a workflow review to confirm scope.
+          </p>
         </section>
 
         <p className="mb-6 text-gray-700 dark:text-gray-300">

@@ -1,0 +1,34 @@
+---
+description: SRAA-aligned gate — npm audit fix + build must pass before any Vercel deploy
+alwaysApply: true
+---
+
+# Vercel deploy gate (SRAA)
+
+Before **any** Vercel deploy (`vercel --prod`, production alias, or equivalent), the agent **MUST** complete this gate. Do not skip, reorder, or deploy on failure.
+
+This aligns with Hong Kong **SRAA** (Security Risk Assessment and Audit) practice:
+
+- **SRA (Security Risk Assessment):** identify and remediate dependency / supply-chain vulnerabilities (`npm audit` / `npm audit fix`).
+- **SA (Security Audit):** verify the release builds cleanly and does not ship known broken or unaudited changes (`npm run build`).
+
+## Mandatory pre-deploy sequence
+
+Run in this order from the repo root (preferred one-liner: `npm run predeploy:sraa`):
+
+1. `npm audit fix`
+2. `npm audit` — confirm outcome; if **critical/high** remain that `audit fix` cannot resolve without breaking changes, **stop**, report remaining advisories, and ask the user before `npm audit fix --force` or manual upgrades.
+3. `npm run build` — must exit **0** with no build errors.
+4. Only then: commit any lockfile/dependency fixes if needed, then deploy (and tag if the user requested tags).
+
+Prefer `package.json` `overrides` (or targeted upgrades) over `npm audit fix --force` when a transitive fix would otherwise downgrade Next.js.
+
+## Hard stops
+
+- Do **not** deploy if `npm run build` fails.
+- Do **not** deploy if `npm audit` still reports unresolved **critical** or **high** issues unless the user explicitly accepts residual risk in writing in the conversation.
+- Do **not** use `--force` / skip hooks / ignore audit for speed.
+
+## After deploy
+
+Briefly report: audit summary (remaining counts if any), build result, deploy URL / alias, and any residual risk accepted by the user.

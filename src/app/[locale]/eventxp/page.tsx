@@ -154,15 +154,16 @@ export default async function EventXpPage({
         <section className="mb-10">
           <h2 className="text-3xl font-bold text-gray-900 dark:text-white mb-4">Pricing</h2>
           <p className="text-gray-700 dark:text-gray-300 mb-3">
-            EventXP uses a simple monthly subscription model and does not require long lock-in terms for standard plans.
+            Start with an advisor-led EventXP trial (HKD 4,000 for one event: check-in setup, lead scoring, and follow-up automation). Monthly maintenance plans are scoped after the trial — not a pure SaaS rental.
           </p>
           <ul className="list-disc list-inside space-y-2 text-gray-700 dark:text-gray-300">
+            <li>Trial: one event with check-in, scoring, and follow-up workflow setup.</li>
             <li>Starter: core check-in and attendance visibility for smaller programs.</li>
             <li>Growth: enhanced reporting and operational support for regular events.</li>
             <li>Enterprise: advanced workflow and integration support for large-scale operations.</li>
           </ul>
           <p className="text-gray-700 dark:text-gray-300 mt-3">
-            Contact us for a custom quote for your Hong Kong event team.
+            Verified BNI members receive 30% off advisory and quick-cash services. Book a workflow review to confirm scope.
           </p>
         </section>
 

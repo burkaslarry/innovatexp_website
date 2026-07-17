@@ -32,9 +32,8 @@ const RANGE = {
   hkd_2800_mo: "wizard.range.hkd_2800_mo",
   hkd_4800_mo: "wizard.range.hkd_4800_mo",
   hkd_4800_15000: "wizard.range.hkd_4800_15000",
-  from_8000: "wizard.range.from_8000",
-  from_12000: "wizard.range.from_12000",
-  from_25000: "wizard.range.from_25000",
+  from_6800: "wizard.range.from_6800",
+  from_2500_day: "wizard.range.from_2500_day",
   from_80000: "wizard.range.from_80000",
 } as const;
 
@@ -165,7 +164,7 @@ export function computeQuote(path: QuotePath, answers: QuoteAnswers): QuoteCompu
     return {
       path,
       planKey: PLAN.consulting_bootcamp,
-      rangeKey: RANGE.from_12000,
+      rangeKey: RANGE.from_2500_day,
       rationaleKeys: [R.consulting_training_goal],
     };
   }
@@ -174,7 +173,7 @@ export function computeQuote(path: QuotePath, answers: QuoteAnswers): QuoteCompu
     return {
       path,
       planKey: PLAN.consulting_agent,
-      rangeKey: RANGE.from_25000,
+      rangeKey: RANGE.from_6800,
       rationaleKeys: [R.consulting_build_focus],
     };
   }
@@ -191,7 +190,7 @@ export function computeQuote(path: QuotePath, answers: QuoteAnswers): QuoteCompu
   return {
     path,
     planKey: PLAN.consulting_audit,
-    rangeKey: RANGE.from_8000,
+    rangeKey: RANGE.from_6800,
     rationaleKeys: [R.consulting_audit_entry],
   };
 }

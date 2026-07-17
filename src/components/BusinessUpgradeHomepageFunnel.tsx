@@ -1,6 +1,7 @@
 import Image from "next/image";
 import { BarChart3, Bot, CheckCircle2, ClipboardCheck, GraduationCap, LayoutDashboard, MessageSquareText, ShieldCheck, Users } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { consultancyPlanPrice, PricingFunnelSections } from "@/components/PricingFunnelSections";
 import type { AppLocale } from "@/lib/i18n-routing";
 
 const content = {
@@ -683,6 +684,7 @@ export function BusinessUpgradeHomepageFunnel({
   bookingHref: string;
 }) {
   const c = contentFor(locale);
+  const localePrefix = locale === "en" ? "" : `/${locale}`;
 
   return (
     <>
@@ -698,10 +700,17 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
+      <PricingFunnelSections
+        locale={locale}
+        bookingHref={bookingHref}
+        eventXpHref={`${localePrefix}/eventxp`}
+        smartSalesHref={`${localePrefix}/smartsales-crm`}
+      />
+
       <section id="ai-coaching-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
         <SectionIntro eyebrow={c.pricing.eyebrow} title={c.pricing.title} intro={c.pricing.intro} />
         <div className="grid gap-5 lg:grid-cols-4">
-          {c.pricing.plans.map((plan) => (
+          {c.pricing.plans.map((plan, planIndex) => (
             <article
               key={plan.name}
               className={`flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
@@ -711,7 +720,7 @@ export function BusinessUpgradeHomepageFunnel({
               }`}
             >
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
-              <p className="mt-3 text-lg font-extrabold text-brand-primary dark:text-teal-300">{plan.price}</p>
+              <p className="mt-3 text-lg font-extrabold text-brand-primary dark:text-teal-300">{consultancyPlanPrice(planIndex, locale)}</p>
               <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{plan.fit}</p>
               <ul className="mt-5 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                 {plan.points.map((point) => (

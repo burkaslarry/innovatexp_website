@@ -157,7 +157,7 @@ export default async function SmartSalesVsSalesforcePage({
                   <th className="p-3 font-medium text-gray-900 dark:text-white align-top" scope="row">
                     Starting price
                   </th>
-                  <td className="p-3">HKD 10,800 + HKD 880/mo</td>
+                  <td className="p-3">Trial HKD 5,000 (advisor-led setup)</td>
                   <td className="p-3">USD 25/user/mo + impl. cost</td>
                 </tr>
                 <tr className="border-b border-slate-100 dark:border-gray-800">
