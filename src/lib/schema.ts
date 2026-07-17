@@ -29,10 +29,10 @@ export function getSmartSalesProductSchema() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "SmartSales CRM is a practical CRM solution for Hong Kong sales teams that centralizes lead follow-up and improves pipeline visibility.",
+      "SmartSales CRM is a practical CRM for WhatsApp-led sales teams: centralize leads, chat context, reminders, and pipeline stages without enterprise overhead.",
     offers: {
       "@type": "Offer",
-      price: "18888",
+      price: "5000",
       priceCurrency: "HKD",
     },
     url: `${siteUrl}/smartsales-crm`,

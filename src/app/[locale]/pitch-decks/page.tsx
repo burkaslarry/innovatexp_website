@@ -1,8 +1,9 @@
 /* F12: Pitch decks download page - Lists PDF deck links under public/decks. */
 import type { Metadata } from "next";
 import { BackToHomeControl } from "@/components/BackToHomeControl";
-import { isValidLocale } from "@/lib/i18n-routing";
+import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
+import { pitchDecksSeo } from "@/content/page-seo";
 
 export async function generateMetadata({
   params,
@@ -11,10 +12,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
+  const seo = pitchDecksSeo(locale as AppLocale);
   return {
-    title: "Pitch Deck Downloads | InnovateXP",
-    description:
-      "Download InnovateXP pitch decks for SmartSales CRM, EventXP, and customised website projects.",
+    title: seo.title,
+    description: seo.description,
     alternates: localeAlternates(locale, "/pitch-decks"),
   };
 }

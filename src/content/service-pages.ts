@@ -218,9 +218,9 @@ const smeWorkflow: ServicePageContent = {
   slug: "sme-ai-workflow",
   schemaKind: "ProfessionalService",
   title: "SME AI Workflow Consulting for Hong Kong Businesses",
-  metaTitle: "SME AI Workflow Consulting Hong Kong | 中小企 AI 升級 | InnovateXP",
+  metaTitle: "SME Automation Consultant | AI Workflow Upgrade | InnovateXP",
   metaDescription:
-    "InnovateXP helps Hong Kong SMEs design practical AI workflows for sales follow-up, operations, admin, CRM, WhatsApp automation, dashboards, and internal tools.",
+    "SME automation consulting: map workflows first, then automate sales follow-up, admin, CRM, WhatsApp, and reporting. Practical AI upgrade for SMEs—not tool hype.",
   eyebrow: "Hong Kong SME AI workflow automation",
   intro:
     "InnovateXP helps Hong Kong SMEs turn scattered manual work into practical AI-assisted workflows. We focus on real operating processes: WhatsApp follow-up, quotation follow-up, admin portals, dashboards, customer service drafts, SOP handover, and internal AI tools. The work is founder-led by InnovateXP, an AI Business Consultancy with 13+ years of IT delivery and architecture experience.",
@@ -557,7 +557,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
   "sme-ai-workflow": {
     ...smeWorkflow,
     title: "中小企業 AI 工作流顧問服務",
-    metaTitle: "中小企業 AI 工作流顧問｜中小企 AI 升級｜InnovateXP",
+    metaTitle: "中小企自動化顧問｜SME AI Workflow｜InnovateXP",
     metaDescription:
       "InnovateXP 協助中小企業設計實用 AI 工作流：銷售跟進、營運、行政、CRM、WhatsApp 自動化、dashboard 與內部工具。",
     eyebrow: "香港與台灣中小企業 AI 工作流自動化",

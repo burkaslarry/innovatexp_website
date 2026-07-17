@@ -24,6 +24,15 @@ function pathnameHasLocale(pathname: string) {
 }
 
 export function middleware(request: NextRequest) {
+  const host = request.headers.get("host")?.split(":")[0]?.toLowerCase();
+  // Canonical host: www (consolidate apex ↔ www ranking signal)
+  if (host === "innovatexp.co") {
+    const url = request.nextUrl.clone();
+    url.host = "www.innovatexp.co";
+    url.protocol = "https:";
+    return NextResponse.redirect(url, 308);
+  }
+
   const { pathname } = request.nextUrl;
   if (shouldSkipLocale(pathname)) return NextResponse.next();
   if (pathnameHasLocale(pathname)) return NextResponse.next();

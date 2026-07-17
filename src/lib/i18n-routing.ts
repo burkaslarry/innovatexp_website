@@ -20,7 +20,7 @@ export function languageToLocale(lang: "en" | "zh"): AppLocale {
 export function localeToOgLocale(locale: AppLocale): string {
   switch (locale) {
     case "en":
-      return "en_HK";
+      return "en_US";
     case "zh-hk":
       return "zh_HK";
     case "zh-tw":

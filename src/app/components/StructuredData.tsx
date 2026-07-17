@@ -674,13 +674,28 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "SmartSales CRM - Starter",
+            name: "SmartSales CRM - Trial",
           },
-          price: "2800",
+          price: "5000",
           priceCurrency: "HKD",
           priceSpecification: {
             "@type": "UnitPriceSpecification",
-            price: "2800",
+            price: "5000",
+            priceCurrency: "HKD",
+            unitText: "trial",
+          },
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
+            name: "SmartSales CRM - Starter maintenance",
+          },
+          price: "880",
+          priceCurrency: "HKD",
+          priceSpecification: {
+            "@type": "UnitPriceSpecification",
+            price: "880",
             priceCurrency: "HKD",
             unitText: "per month",
           },
@@ -689,13 +704,13 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "SmartSales CRM - Pro",
+            name: "SmartSales CRM - Growth maintenance",
           },
-          price: "4800",
+          price: "1280",
           priceCurrency: "HKD",
           priceSpecification: {
             "@type": "UnitPriceSpecification",
-            price: "4800",
+            price: "1280",
             priceCurrency: "HKD",
             unitText: "per month",
           },
@@ -705,7 +720,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "HKD",
-      lowPrice: "10800",
+      lowPrice: "5000",
       highPrice: "18880",
       offerCount: 3,
     },

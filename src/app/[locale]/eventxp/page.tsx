@@ -2,8 +2,9 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import ChineseOverlay from "../../components/ChineseOverlay";
 import { getEventXPProductSchema, getFAQPageSchema } from "@/lib/schema";
-import { isValidLocale } from "@/lib/i18n-routing";
+import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
+import { eventXpSeo } from "@/content/page-seo";
 
 const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
@@ -15,26 +16,24 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
+  const seo = eventXpSeo(locale as AppLocale);
   const alternates = localeAlternates(locale, "/eventxp");
   const ogUrl = typeof alternates?.canonical === "string" ? alternates.canonical : `${siteUrlMeta}/${locale}/eventxp`;
   return {
-    title: "EventXP | Event Check-In and Follow-Up",
-    description:
-      "Run check-in smoothly, track attendance clearly, and follow up faster after events.",
+    title: seo.title,
+    description: seo.description,
     alternates,
     openGraph: {
-      title: "EventXP | Event Check-In and Follow-Up",
-      description:
-        "Run check-in smoothly, track attendance clearly, and follow up faster after events.",
+      title: seo.title,
+      description: seo.description,
       url: ogUrl,
       siteName: "InnovateXP Limited",
       images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP EventXP" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: "EventXP | Event Check-In and Follow-Up",
-      description:
-        "Run check-in smoothly, track attendance clearly, and follow up faster after events.",
+      title: seo.title,
+      description: seo.description,
     },
   };
 }

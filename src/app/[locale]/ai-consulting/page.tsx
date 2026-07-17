@@ -5,32 +5,12 @@ import ChineseOverlay from "../../components/ChineseOverlay";
 import { getFAQPageSchema } from "@/lib/schema";
 import { isValidLocale, localeUsesChineseCopy, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
+import { aiConsultingSeo } from "@/content/page-seo";
 
 const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
 const OG_IMAGE = "/opengraph-image" as const;
-
-function aiConsultingMeta(locale: AppLocale) {
-  if (localeUsesChineseCopy(locale)) {
-    return {
-      title: "AI 顧問｜香港落地 Premium 方案・私有雲／On-Premise AI",
-      description:
-        "InnovateXP 提供創辦人主導嘅 AI／CRM 落地顧問：先做試點再擴展，涵蓋 WhatsApp／銷售流程、Azure OpenAI／多云／On-Premise，並附實操 AI training。",
-      ogTitle: "InnovateXP AI 顧問 — 香港落地",
-      ogDesc:
-        "清晰範疇、固定 review、Premium done-with-you：將 AI 做成可量化嘅工作流程，唔係只得 slide。",
-    };
-  }
-  return {
-    title: "AI Consulting Hong Kong | Premium Implementation & Private AI Stack Advisory",
-    description:
-      "Founder-led AI consulting for Hong Kong SMEs: scoped pilots, workflow-first delivery, cloud or on-premise AI deployment options (Azure OpenAI, Alibaba Cloud, GCP, AWS), plus practical AI training.",
-    ogTitle: "InnovateXP AI Consulting — Hong Kong",
-    ogDesc:
-      "Premium done-with-you engagements with explicit scope, review cadence, and measurable pilots—not slide-only strategy.",
-  };
-}
 
 export async function generateMetadata({
   params,
@@ -39,8 +19,7 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
-  const loc = locale as AppLocale;
-  const m = aiConsultingMeta(loc);
+  const m = aiConsultingSeo(locale as AppLocale);
   const alternates = localeAlternates(locale, "/ai-consulting");
   const ogUrl =
     typeof alternates?.canonical === "string" ? alternates.canonical : `${siteUrlMeta}/${locale}/ai-consulting`;
@@ -49,16 +28,16 @@ export async function generateMetadata({
     description: m.description,
     alternates,
     openGraph: {
-      title: m.ogTitle,
-      description: m.ogDesc,
+      title: m.ogTitle ?? m.title,
+      description: m.ogDescription ?? m.description,
       url: ogUrl,
       siteName: "InnovateXP Limited",
       images: [{ url: OG_IMAGE, width: 1200, height: 630, alt: "InnovateXP AI Consulting" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: m.ogTitle,
-      description: m.ogDesc,
+      title: m.ogTitle ?? m.title,
+      description: m.ogDescription ?? m.description,
       images: [OG_IMAGE],
     },
   };

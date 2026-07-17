@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { BackToHomeControl } from "@/components/BackToHomeControl";
-import { isValidLocale } from "@/lib/i18n-routing";
+import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
+import { aiSeoPackageSeo } from "@/content/page-seo";
 
 export async function generateMetadata({
   params,
@@ -11,10 +12,10 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
+  const seo = aiSeoPackageSeo(locale as AppLocale);
   return {
-    title: "AI SEO 更新套餐 | InnovateXP",
-    description:
-      "AI SEO 更新套餐：Starter HKD 2,000（3次改動、1星期、1次follow-up）及 Growth HKD 6,000（10次改動、1個月、2次follow-up）。",
+    title: seo.title,
+    description: seo.description,
     alternates: localeAlternates(locale, "/ai-seo-update-package"),
   };
 }

@@ -1,10 +1,7 @@
 import type { Metadata } from "next";
-import { isValidLocale, localeToOgLocale, ogAlternateLocales } from "@/lib/i18n-routing";
+import { isValidLocale, localeToOgLocale, ogAlternateLocales, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
-
-const HOME_TITLE = "AI商業顧問｜中小企AI陪跑、SOP及流程優化｜InnovateXP";
-const HOME_DESCRIPTION =
-  "InnovateXP 以 AI 商業顧問定位，陪香港中小企先梳理 SOP、流程與 KPI，再按需要落地 AI 陪跑、automation、CRM 或 SaaS。";
+import { homeSeo } from "@/content/page-seo";
 
 const OG_IMAGE = { url: "/opengraph-image" as const, width: 1200, height: 630 };
 
@@ -15,11 +12,12 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
+  const seo = homeSeo(locale as AppLocale);
   const alternates = localeAlternates(locale, "/");
   const ogUrl = typeof alternates?.canonical === "string" ? alternates.canonical : undefined;
   return {
-    title: HOME_TITLE,
-    description: HOME_DESCRIPTION,
+    title: seo.title,
+    description: seo.description,
     alternates,
     openGraph: {
       type: "website",
@@ -27,14 +25,14 @@ export async function generateMetadata({
       alternateLocale: ogAlternateLocales(locale),
       url: ogUrl,
       siteName: "InnovateXP Limited",
-      title: HOME_TITLE,
-      description: HOME_DESCRIPTION,
-      images: [{ ...OG_IMAGE, alt: "InnovateXP – AI Business Consultancy for Hong Kong SMEs" }],
+      title: seo.title,
+      description: seo.description,
+      images: [{ ...OG_IMAGE, alt: "InnovateXP – AI Business Consultancy" }],
     },
     twitter: {
       card: "summary_large_image",
-      title: HOME_TITLE,
-      description: HOME_DESCRIPTION,
+      title: seo.title,
+      description: seo.description,
       images: [OG_IMAGE.url],
       creator: "@innovatexp",
     },

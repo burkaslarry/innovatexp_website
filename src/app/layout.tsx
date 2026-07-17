@@ -8,9 +8,12 @@ const siteUrl = getSiteUrl();
 const OG_IMAGE_REL = "/opengraph-image" as const;
 
 export const metadata: Metadata = {
-  title: "AI商業顧問｜中小企AI陪跑、SOP及流程優化｜InnovateXP",
+  title: {
+    default: "AI Business Consultancy | Fix Workflows, Then AI | InnovateXP",
+    template: "%s | InnovateXP",
+  },
   description:
-    "InnovateXP 以 AI 商業顧問定位，陪香港中小企先梳理 SOP、流程與 KPI，再按需要落地 AI 陪跑、automation、CRM 或 SaaS。",
+    "InnovateXP helps SMEs clarify SOPs and KPIs first, then adopt AI through advisory programs, trials, and optional CRM or automation.",
   metadataBase: new URL(siteUrl),
   openGraph: {
     images: [{ url: OG_IMAGE_REL, width: 1200, height: 630, alt: "InnovateXP" }],
