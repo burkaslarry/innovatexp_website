@@ -1,11 +1,10 @@
 import Link from "next/link";
-import { CalendarCheck, MessageSquare, Receipt, Sparkles, Target, Users } from "lucide-react";
+import { CalendarCheck, MessageSquare, Receipt } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import {
   PRICING,
   formatBniDiscountNote,
   formatHkd,
-  formatHkdFrom,
   type PricingLocale,
 } from "@/content/pricing";
 import type { AppLocale } from "@/lib/i18n-routing";
@@ -17,34 +16,38 @@ function toPricingLocale(locale: AppLocale): PricingLocale {
 
 const copy = {
   "zh-hk": {
-    quickEyebrow: "Quick Cash 入場",
-    quickTitle: "低門檻開始，先驗證一條流程",
-    quickIntro:
-      "主打 advisory 同 quick-cash 服務。工具試用係 product-led 入口；客製 AI workflow 實施唔會喺網站公開報價，完成 AI Discovery Sprint 後先會收到固定實施報價。",
     toolsEyebrow: "工具試用",
-    toolsTitle: "EventXP 先 · SmartSales 後",
-    toolsIntro: "唔係租軟件套餐，而係顧問式試用：先設定 workflow，再決定值唔值得長期落地。",
+    toolsTitle: "Product-led 入門 — 先試用，再決定落地",
+    toolsIntro:
+      "工具係引流入口；consultation / 陪跑先係 service 實體。試用期滿可以約我傾買斷、訂閱或唔續；填好 feedback 問卷，下次回購有 discount；referral 成功亦有折扣，BNI 會友再折。",
     eventTitle: "EventXP 試用",
     eventBody: "1 場活動：簽到設定、名單評分、follow-up 自動化設定（唔只係 QR check-in app）。",
     eventCta: "了解 EventXP 試用",
     salesTitle: "SmartSales CRM 試用",
     salesBody: "WhatsApp workflow 接入、CRM 基礎設定、1 條銷售流程試跑。",
     salesCta: "了解 SmartSales 試用",
-    trainTitle: "Prompt 實戰訓練營",
-    trainBody: "1 日實戰體驗價，幫團隊建立 AI 使用習慣，再決定是否進入陪跑計劃。",
-    auditTitle: "AI 準備度評估",
-    auditBody: "快速診斷 + 優先排序清單，適合未清楚第一條 workflow 做邊度嘅團隊。",
-    sprintTitle: "AI Discovery Sprint",
-    sprintBody: "1–2 週：workshop、workflow map、優先排序、固定實施報價（取代「Contact us for custom quote」）。",
-    sprintCta: "預約 Discovery Sprint",
-    accountingEyebrow: "Accounting Receipt Chatbot · 示範場景",
-    accountingTitle: "收據 Chatbot：upload → AI 分類 → 每週報告",
+    accountingCardTitle: "Accounting Chatbot 試用",
+    accountingCardBody:
+      "WhatsApp 收條 upload → AI 分類 → 每週報告。由 receipt 整理起步，可延伸至銀行月結單 reminder 同存取款對數（示範場景）。",
+    accountingCardCta: "睇示範同定價",
+    accountingEyebrow: "Accounting Chatbot · 示範場景",
+    accountingTitle: "收據 / 銀行對數 Chatbot",
     accountingIntro:
-      "團隊透過 WhatsApp / chatbot upload 收條，AI Agent 做初步分類、狀態追蹤同每週摘要。以下係 deck 示範場景嘅預期效果；實際方案需先 workflow 診斷。",
+      "類似中四 Accounting 嘅 Bank Reconciliation：先 reminder 同事定期拎公司銀行月結單，鼓勵 upload 存款 / 取款單，再做初步對數。Receipt upload、AI 分類、每週狀態報告一條龍；data policy 嚴格，入庫資料加密處理（圖片 OCR 按 scope 配置）。",
     accountingBefore: "Before：收據散落 WhatsApp/email、人手輸入 Excel、月尾先對數、老闆追問先知進度。",
-    accountingAfter: "After：單據集中收集、AI 輔助分類、每週狀態檢查、業務報告摘要。",
+    accountingAfter: "After：單據集中收集、AI 輔助分類、銀行單據 reminder、每週狀態同對數摘要。",
+    trialTitle: "試用定價",
+    trialWeek: "1 星期試用",
+    trialMonth: "1 個月試用",
+    trialFunnelTitle: "試用後 funnel",
+    trialFunnelSteps: [
+      "試用期滿 → 約 30 分鐘 review，決定買斷、訂閱或唔續",
+      "填寫 feedback 問卷 → 下次回購 / 升級可享折扣",
+      "成功 referral 其他團隊 → referral discount",
+      "查證 BNI 會友 → 額外 BNI 折扣（可與 referral 分開確認）",
+    ],
     outcomesTitle: "預期效果（示範場景）",
-    outcomesDisclaimer: "示範場景，實際方案需先診斷。KPI 會按你公司流程 baseline 調整。",
+    outcomesDisclaimer: "示範場景，實際方案需先 workflow 診斷。KPI 會按你公司流程 baseline 調整。",
     outcomes: [
       { label: "每月整理時間", before: "50–70 小時人手", after: "約 2.5 小時 AI 初步處理" },
       { label: "漏交 / 遲交率", before: "10–15%", after: "<3%" },
@@ -52,35 +55,40 @@ const copy = {
       { label: "管理層可見度", before: "月尾先知數", after: "每週自動報告" },
     ],
     outcomesHighlight: "AI 約 1 分鐘處理 7 張 receipt · 每月可節省 70–80% 整理時間",
-    videoCaption: "示範：Accounting Receipt Chatbot — 收條 upload → AI 分類 → 每週報告",
+    videoCaption: "示範：Accounting Chatbot — 收條 upload → AI 分類 → 每週報告",
+    trialCta: "預約試用 Accounting Chatbot",
   },
   en: {
-    quickEyebrow: "Quick entry offers",
-    quickTitle: "Start low-friction, validate one workflow first",
-    quickIntro:
-      "Advisory and quick-cash offers lead. Tool trials are product-led entry points. Custom AI workflow implementation is not listed publicly — you receive a fixed quote after the AI Discovery Sprint.",
     toolsEyebrow: "Tool trials",
-    toolsTitle: "EventXP first · SmartSales second",
-    toolsIntro: "Not a software rental — advisor-led trials that set up your workflow before you commit to full rollout.",
+    toolsTitle: "Product-led entry — try first, then decide rollout",
+    toolsIntro:
+      "Tools are the lead-in; consultation and advisory programs are the core service. After your trial, book a review to choose buyout, subscription, or stop. Complete the feedback form for a return discount; referrals and verified BNI members receive additional discounts.",
     eventTitle: "EventXP trial",
     eventBody: "One event: check-in setup, lead scoring, and follow-up automation — not just a QR check-in app.",
     eventCta: "Explore EventXP trial",
     salesTitle: "SmartSales CRM trial",
     salesBody: "WhatsApp workflow setup, CRM baseline, and one sales process trial run.",
     salesCta: "Explore SmartSales trial",
-    trainTitle: "Prompt practical training camp",
-    trainBody: "One-day experiential pricing to build team AI habits before a longer advisory program.",
-    auditTitle: "AI readiness assessment",
-    auditBody: "Fast diagnosis plus a prioritized improvement list for teams unsure where to start.",
-    sprintTitle: "AI Discovery Sprint",
-    sprintBody: "1–2 weeks: workshop, workflow map, prioritization, and a fixed implementation quote — replacing vague “contact us for custom quote”.",
-    sprintCta: "Book Discovery Sprint",
-    accountingEyebrow: "Accounting Receipt Chatbot · Example workflow",
-    accountingTitle: "Receipt chatbot: upload → AI classify → weekly report",
+    accountingCardTitle: "Accounting Chatbot trial",
+    accountingCardBody:
+      "WhatsApp receipt upload → AI classify → weekly report. Starts with receipt admin; can extend to bank-statement reminders and deposit/withdrawal reconciliation (example scope).",
+    accountingCardCta: "See demo & pricing",
+    accountingEyebrow: "Accounting Chatbot · Example workflow",
+    accountingTitle: "Receipt / bank reconciliation chatbot",
     accountingIntro:
-      "Teams upload receipts via WhatsApp / chatbot; an AI agent handles first-pass classification, status tracking, and weekly summaries. Expected outcomes below are from our pitch-deck example — actual scope requires workflow diagnosis first.",
+      "Inspired by Form 4 bank reconciliation: reminders to collect monthly bank statements, encourage upload of deposit/withdrawal slips, then first-pass matching. Receipt upload, AI classification, and weekly status in one flow. Strict data policy with encrypted storage; image OCR configured per scope.",
     accountingBefore: "Before: receipts scattered across WhatsApp/email, manual Excel entry, month-end reconciliation, owner chasing for status.",
-    accountingAfter: "After: centralized collection, AI-assisted classification, weekly status checks, and summary reports.",
+    accountingAfter: "After: centralized collection, AI-assisted classification, bank-slip reminders, weekly status and reconciliation summaries.",
+    trialTitle: "Trial pricing",
+    trialWeek: "1-week trial",
+    trialMonth: "1-month trial",
+    trialFunnelTitle: "After the trial",
+    trialFunnelSteps: [
+      "Trial ends → 30-minute review to decide buyout, subscription, or stop",
+      "Complete feedback form → discount on your next purchase or upgrade",
+      "Successful referral → referral discount",
+      "Verified BNI member → additional BNI discount (confirmed separately)",
+    ],
     outcomesTitle: "Expected outcomes (example scenario)",
     outcomesDisclaimer: "Example scenario only. Actual KPIs are baselined during diagnosis.",
     outcomes: [
@@ -90,7 +98,8 @@ const copy = {
       { label: "Management visibility", before: "Numbers known at month-end", after: "Weekly automated reports" },
     ],
     outcomesHighlight: "AI ~1 minute for 7 receipts · save 70–80% monthly processing time",
-    videoCaption: "Demo: Accounting Receipt Chatbot — upload → classify → weekly report",
+    videoCaption: "Demo: Accounting Chatbot — upload → classify → weekly report",
+    trialCta: "Book Accounting Chatbot trial",
   },
 } as const;
 
@@ -112,10 +121,11 @@ export function PricingFunnelSections({
 }) {
   const pl = toPricingLocale(locale);
   const c = localeCopy(locale);
-  const from = formatHkdFrom(pl);
   const q = PRICING.quickCash;
+  const weekSuffix = pl.startsWith("zh") ? "/ 星期" : "/ week";
+  const monthSuffix = pl.startsWith("zh") ? "/ 月" : "/ month";
 
-  const cards = [
+  const productCards = [
     {
       icon: CalendarCheck,
       title: c.eventTitle,
@@ -123,7 +133,6 @@ export function PricingFunnelSections({
       body: c.eventBody,
       href: eventXpHref,
       cta: c.eventCta,
-      featured: true,
     },
     {
       icon: MessageSquare,
@@ -134,60 +143,39 @@ export function PricingFunnelSections({
       cta: c.salesCta,
     },
     {
-      icon: Target,
-      title: c.auditTitle,
-      price: from(q.aiReadinessAssessment),
-      body: c.auditBody,
-      href: bookingHref,
-      cta: c.sprintCta,
-    },
-    {
-      icon: Users,
-      title: c.trainTitle,
-      price: `${formatHkd(q.promptTrainingDay, pl)}${pl.startsWith("zh") ? "/日" : "/ day"}`,
-      body: c.trainBody,
-      href: bookingHref,
-      cta: c.sprintCta,
-    },
-    {
-      icon: Sparkles,
-      title: c.sprintTitle,
-      price: formatHkd(q.aiDiscoverySprint, pl),
-      body: c.sprintBody,
-      href: bookingHref,
-      cta: c.sprintCta,
+      icon: Receipt,
+      title: c.accountingCardTitle,
+      price: `${formatHkd(q.accountingChatbotTrialWeek, pl)}${weekSuffix} · ${formatHkd(q.accountingChatbotTrialMonth, pl)}${monthSuffix}`,
+      body: c.accountingCardBody,
+      href: "#accounting-tools-demo",
+      cta: c.accountingCardCta,
       featured: true,
     },
   ];
 
   return (
     <>
-      <section id="quick-cash-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-amber-200 bg-gradient-to-br from-amber-50 via-white to-cyan-50 p-6 shadow-card dark:border-amber-500/30 dark:from-slate-900 dark:via-slate-900 dark:to-slate-900 md:p-10">
+      <section id="tool-trials-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
         <div className="mx-auto mb-8 max-w-3xl text-center">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-amber-700 dark:text-amber-300">
-            {c.quickEyebrow}
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+            {c.toolsEyebrow}
           </p>
-          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">{c.quickTitle}</h2>
-          <p className="mt-4 text-base leading-relaxed text-slate-700 dark:text-slate-300 md:text-lg">{c.quickIntro}</p>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">{c.toolsTitle}</h2>
+          <p className="mt-4 text-base leading-relaxed text-slate-700 dark:text-slate-300 md:text-lg">{c.toolsIntro}</p>
         </div>
-        <div className="mb-6 text-center">
-          <p className="text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">{c.toolsEyebrow}</p>
-          <h3 className="mt-2 text-2xl font-bold text-gray-900 dark:text-white">{c.toolsTitle}</h3>
-          <p className="mx-auto mt-3 max-w-2xl text-sm leading-relaxed text-slate-700 dark:text-slate-300">{c.toolsIntro}</p>
-        </div>
-        <div className="grid gap-5 md:grid-cols-2 xl:grid-cols-3">
-          {cards.map(({ icon: Icon, title, price, body, href, cta, featured }) => (
+        <div className="grid gap-5 md:grid-cols-3">
+          {productCards.map(({ icon: Icon, title, price, body, href, cta, featured }) => (
             <article
               key={title}
               className={`flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
                 featured
-                  ? "border-brand-primary/55 bg-white dark:border-teal-500/50 dark:bg-slate-800"
-                  : "border-slate-200 bg-white/90 dark:border-slate-700 dark:bg-slate-800"
+                  ? "border-brand-primary/55 bg-gradient-to-br from-cyan-50 via-white to-amber-50 dark:border-teal-500/50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-900"
+                  : "border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800"
               }`}
             >
               <Icon className="mb-3 h-6 w-6 text-brand-primary dark:text-teal-300" aria-hidden />
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
-              <p className="mt-2 text-2xl font-extrabold text-brand-primary dark:text-teal-300">{price}</p>
+              <p className="mt-2 text-lg font-extrabold leading-snug text-brand-primary dark:text-teal-300">{price}</p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{body}</p>
               <Link
                 href={href}
@@ -198,7 +186,7 @@ export function PricingFunnelSections({
             </article>
           ))}
         </div>
-        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-amber-200 bg-white/80 p-4 text-center text-sm leading-relaxed text-amber-900 dark:border-amber-500/40 dark:bg-slate-800 dark:text-amber-100">
+        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
           {formatBniDiscountNote(pl)}
         </p>
       </section>
@@ -220,6 +208,37 @@ export function PricingFunnelSections({
                 {c.accountingAfter}
               </li>
             </ul>
+
+            <div className="mt-8 grid gap-4 sm:grid-cols-2">
+              <div className="rounded-2xl border border-brand-primary/30 bg-cyan-50 p-4 dark:border-teal-500/40 dark:bg-slate-800">
+                <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300">{c.trialWeek}</p>
+                <p className="mt-1 text-2xl font-extrabold text-gray-900 dark:text-white">
+                  {formatHkd(q.accountingChatbotTrialWeek, pl)}
+                  <span className="text-base font-semibold text-slate-600 dark:text-slate-400">{weekSuffix}</span>
+                </p>
+              </div>
+              <div className="rounded-2xl border border-brand-primary/30 bg-cyan-50 p-4 dark:border-teal-500/40 dark:bg-slate-800">
+                <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300">{c.trialMonth}</p>
+                <p className="mt-1 text-2xl font-extrabold text-gray-900 dark:text-white">
+                  {formatHkd(q.accountingChatbotTrialMonth, pl)}
+                  <span className="text-base font-semibold text-slate-600 dark:text-slate-400">{monthSuffix}</span>
+                </p>
+              </div>
+            </div>
+
+            <div className="mt-8">
+              <h3 className="text-lg font-bold text-gray-900 dark:text-white">{c.trialFunnelTitle}</h3>
+              <ol className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                {c.trialFunnelSteps.map((step, index) => (
+                  <li key={step} className="flex gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-xs font-bold text-white dark:bg-teal-500 dark:text-slate-950">
+                      {index + 1}
+                    </span>
+                    <span>{step}</span>
+                  </li>
+                ))}
+              </ol>
+            </div>
 
             <div className="mt-8">
               <h3 className="text-lg font-bold text-gray-900 dark:text-white">{c.outcomesTitle}</h3>
@@ -250,13 +269,13 @@ export function PricingFunnelSections({
             </div>
 
             <div className="mt-6">
-              <Button href={bookingHref}>{c.sprintCta}</Button>
+              <Button href={bookingHref}>{c.trialCta}</Button>
             </div>
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-lg dark:border-slate-700">
             <div className="border-b border-slate-800 bg-slate-900 px-4 py-3">
-              <p className="text-sm font-semibold text-teal-300">Accounting Receipt Chatbot</p>
+              <p className="text-sm font-semibold text-teal-300">Accounting Chatbot</p>
               <p className="text-xs text-slate-400">WhatsApp · upload receipt · AI classify</p>
             </div>
             <video

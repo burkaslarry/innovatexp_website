@@ -4,8 +4,11 @@
  */
 export const PRICING_CURRENCY = "HKD" as const;
 
-/** Verified BNI member discount on advisory / quick-cash services (not automatic on custom implementation). */
+/** Verified BNI member discount on advisory / tool-trial services (stacked with referral where noted). */
 export const BNI_MEMBER_DISCOUNT_PERCENT = 30;
+
+/** Referral discount when a referred team starts a tool trial (before BNI stack). */
+export const REFERRAL_DISCOUNT_PERCENT = 10;
 
 export const PRICING = {
   quickCash: {
@@ -17,6 +20,10 @@ export const PRICING = {
     eventXpTrial: 4_000,
     /** SmartSales CRM 試用 */
     smartSalesTrial: 5_000,
+    /** Accounting Chatbot 試用 — 1 星期 */
+    accountingChatbotTrialWeek: 800,
+    /** Accounting Chatbot 試用 — 1 個月 */
+    accountingChatbotTrialMonth: 3_000,
     /** AI Discovery Sprint — custom workflow entry (1–2 weeks) */
     aiDiscoverySprint: 6_800,
   },
@@ -74,13 +81,13 @@ export function formatBniDiscountNote(locale: PricingLocale): string {
   switch (locale) {
     case "zh-hk":
     case "zh-tw":
-      return `如經查證為 BNI 會員，advisory 及 quick-cash 服務可享 ${pct}% 折扣（工具試用及客製實施按 scope 另行確認）。`;
+      return `工具試用期滿可約談買斷或續期。填寫試用 feedback 可享下次回購折扣；成功 referral 可享 ${REFERRAL_DISCOUNT_PERCENT}% 折扣；如經查證為 BNI 會員，advisory 及工具試用可再享 ${pct}% 折扣（客製實施按 scope 另行確認）。`;
     case "ja":
       return `BNI会員であることが確認された場合、advisoryおよびクイックキャッシュサービスは${pct}%割引（ツール試用・カスタム実装は別途）。`;
     case "de":
       return `Verifizierte BNI-Mitglieder erhalten ${pct}% Rabatt auf Advisory- und Quick-Cash-Services (Tool-Trials und Custom Implementation separat).`;
     default:
-      return `Verified BNI members receive ${pct}% off advisory and quick-cash services (tool trials and custom implementation scoped separately).`;
+      return `After a tool trial, book a review to decide buyout or subscription. Trial feedback unlocks a return discount; successful referrals receive ${REFERRAL_DISCOUNT_PERCENT}% off; verified BNI members receive an additional ${pct}% off advisory and tool trials (custom implementation scoped separately).`;
   }
 }
 
@@ -108,8 +115,10 @@ export function getQuickCashOffers(locale: PricingLocale) {
   return [
     { id: "eventXpTrial", price: formatHkd(q.eventXpTrial, locale), order: 1 },
     { id: "smartSalesTrial", price: formatHkd(q.smartSalesTrial, locale), order: 2 },
-    { id: "aiReadinessAssessment", price: formatHkdFrom(locale)(q.aiReadinessAssessment), order: 3 },
-    { id: "promptTrainingDay", price: `${formatHkd(q.promptTrainingDay, locale)}${day}`, order: 4 },
-    { id: "aiDiscoverySprint", price: formatHkd(q.aiDiscoverySprint, locale), order: 5 },
+    { id: "accountingChatbotTrialWeek", price: formatHkd(q.accountingChatbotTrialWeek, locale), order: 3 },
+    { id: "accountingChatbotTrialMonth", price: formatHkd(q.accountingChatbotTrialMonth, locale), order: 4 },
+    { id: "aiReadinessAssessment", price: formatHkdFrom(locale)(q.aiReadinessAssessment), order: 5 },
+    { id: "promptTrainingDay", price: `${formatHkd(q.promptTrainingDay, locale)}${day}`, order: 6 },
+    { id: "aiDiscoverySprint", price: formatHkd(q.aiDiscoverySprint, locale), order: 7 },
   ].sort((a, b) => a.order - b.order);
 }

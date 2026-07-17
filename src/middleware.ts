@@ -2,7 +2,7 @@
 import { NextResponse, type NextRequest } from "next/server";
 import { DEFAULT_LOCALE, LOCALES } from "@/lib/i18n-routing";
 
-const FILE_EXTENSION = /\.(ico|png|jpg|jpeg|svg|webp|gif|txt|xml|pdf|webmanifest)$/i;
+const FILE_EXTENSION = /\.(ico|png|jpg|jpeg|svg|webp|gif|txt|xml|pdf|webmanifest|mp4|mov|webm|m4v)$/i;
 
 function shouldSkipLocale(pathname: string) {
   return (

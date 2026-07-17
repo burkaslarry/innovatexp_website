@@ -190,7 +190,7 @@ const content = {
       eyebrow: "能力 / 解決方案",
       title: "按需系統落地能力",
       intro:
-        "EventXP、SmartSales CRM、Accounting Receipt Chatbot、dashboard、booking portal 同 AI agent 都係按需落地能力，唔係首頁主角。先確認 workflow、KPI 同 business case，再決定需唔需要系統。",
+        "EventXP、SmartSales CRM、Accounting Chatbot、dashboard、booking portal 同 AI agent 都係按需落地能力，唔係首頁主角。先確認 workflow、KPI 同 business case，再決定需唔需要系統。",
       items: [
         {
           name: "EventXP",
@@ -203,8 +203,8 @@ const content = {
           href: "/smartsales-crm",
         },
         {
-          name: "Accounting Receipt Chatbot",
-          body: "WhatsApp / chatbot 收條 upload → AI Agent 分類 → 每週狀態報告（示範場景，需先診斷）。",
+          name: "Accounting Chatbot",
+          body: "WhatsApp 收條 / 銀行單據 upload → AI 分類 → 每週報告 — 試用 HK$800/星期 或 HK$3,000/月。",
           href: "#accounting-tools-demo",
         },
       ],
@@ -344,7 +344,7 @@ const content = {
       eyebrow: "Capabilities / Solutions",
       title: "On-demand systems implementation",
       intro:
-        "EventXP, SmartSales CRM, Accounting Receipt Chatbot, dashboards, booking portals, and AI agents are implementation capabilities — not the homepage lead. Validate workflow, KPIs, and business case first.",
+        "EventXP, SmartSales CRM, Accounting Chatbot, dashboards, booking portals, and AI agents are implementation capabilities — not the homepage lead. Validate workflow, KPIs, and business case first.",
       items: [
         {
           name: "EventXP",
@@ -357,8 +357,8 @@ const content = {
           href: "/smartsales-crm",
         },
         {
-          name: "Accounting Receipt Chatbot",
-          body: "Chatbot receipt upload → AI agent classification → weekly status reports (example scenario; diagnosis first).",
+          name: "Accounting Chatbot",
+          body: "WhatsApp receipt / bank-slip upload → AI classify → weekly reports — trial HK$800/week or HK$3,000/month.",
           href: "#accounting-tools-demo",
         },
       ],
@@ -578,7 +578,7 @@ const localizedContent = {
       eyebrow: "実装能力 / ソリューション",
       title: "必要に応じたシステム実装",
       intro:
-        "EventXP、SmartSales CRM、Accounting Receipt Chatbot、dashboards、booking portals、AI agentsは実装能力であり、最初の提案ではありません。workflow、KPI、business caseの検証後に検討します。",
+        "EventXP、SmartSales CRM、Accounting Chatbot、dashboards、booking portals、AI agentsは実装能力であり、最初の提案ではありません。workflow、KPI、business caseの検証後に検討します。",
       items: content.en.capabilities.items,
     },
   },
@@ -676,7 +676,7 @@ const localizedContent = {
       eyebrow: "Fähigkeiten / Solutions",
       title: "Systemimplementierung nach Bedarf",
       intro:
-        "EventXP, SmartSales CRM, Accounting Receipt Chatbot, Dashboards, Booking Portals und AI Agents sind Implementierungsfähigkeiten, nicht der Startpunkt. Sie werden erst nach Workflow-, KPI- und Business-Case-Validierung berücksichtigt.",
+        "EventXP, SmartSales CRM, Accounting Chatbot, Dashboards, Booking Portals und AI Agents sind Implementierungsfähigkeiten, nicht der Startpunkt. Sie werden erst nach Workflow-, KPI- und Business-Case-Validierung berücksichtigt.",
       items: content.en.capabilities.items,
     },
   },
