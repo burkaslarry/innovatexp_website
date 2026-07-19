@@ -29,6 +29,8 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
   { path: "/blog", priority: 0.58, changeFrequency: "weekly" },
   { path: "/compare/smartsales-vs-salesforce", priority: 0.68, changeFrequency: "monthly" },
   { path: "/compare/eventxp-vs-eventbrite", priority: 0.68, changeFrequency: "monthly" },
+  { path: "/privacy-policy", priority: 0.55, changeFrequency: "yearly" },
+  { path: "/zomate-system/privacy-policy", priority: 0.5, changeFrequency: "yearly" },
 ]);
 
 export function buildLocalizedSitemap(): MetadataRoute.Sitemap {
