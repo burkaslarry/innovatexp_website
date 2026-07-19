@@ -1,5 +1,5 @@
 import Link from "next/link";
-import type { PrivacyPolicyContent } from "@/types/legal";
+import type { LegalDocumentContent } from "@/types/legal";
 import { localeUsesChineseCopy, type AppLocale } from "@/lib/i18n-routing";
 
 export function LegalPolicyPage({
@@ -8,7 +8,7 @@ export function LegalPolicyPage({
   homeLabel,
 }: {
   locale: AppLocale;
-  content: PrivacyPolicyContent;
+  content: LegalDocumentContent;
   homeLabel?: string;
 }) {
   const home = homeLabel ?? (localeUsesChineseCopy(locale) ? "首頁" : "Home");

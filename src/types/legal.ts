@@ -4,8 +4,8 @@ export type LegalSection = {
   bullets?: string[];
 };
 
-export type PrivacyPolicyContent = {
-  slug: "innovatexp" | "zomate-system";
+export type LegalDocumentContent = {
+  slug: string;
   metaTitle: string;
   metaDescription: string;
   breadcrumb: string;
@@ -16,4 +16,9 @@ export type PrivacyPolicyContent = {
   sections: LegalSection[];
   contactTitle: string;
   contactLines: string[];
+};
+
+/** @deprecated Use LegalDocumentContent */
+export type PrivacyPolicyContent = LegalDocumentContent & {
+  slug: "innovatexp" | "zomate-system";
 };
