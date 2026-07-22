@@ -454,18 +454,29 @@ export function WorkflowHealthCheck({
 
     setLeadStatus("sending");
     try {
-      const response = await fetch("/api/wizard-lead", {
+      const response = await fetch("/api/questionnaire", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          contactName: lead.name.trim() || "-",
-          email,
-          whatsapp,
-          company,
-          appointmentDetail: "Workflow Health Check follow-up requested",
           pathId: "workflow-health-check",
-          formattedQa: formatSummary(),
+          questionnaireType: "Workflow Health Check",
           subject: `Workflow Health Check lead — ${company}`,
+          name: lead.name.trim() || "-",
+          company,
+          profession: String(answers.industry || ""),
+          email,
+          phone: whatsapp,
+          industry: answers.industry,
+          urgency: answers.urgency,
+          interest: answers.pilotInvestment,
+          formattedQa: formatSummary(),
+          answers: {
+            ...answers,
+            name: lead.name,
+            company: lead.company,
+            email: lead.email,
+            phone: lead.whatsapp,
+          },
         }),
       });
       if (!response.ok) throw new Error("Lead submission failed");

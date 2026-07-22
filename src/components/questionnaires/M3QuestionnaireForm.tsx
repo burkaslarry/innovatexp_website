@@ -174,19 +174,29 @@ export function M3QuestionnaireForm({
     }
 
     const formattedQa = formatQa(questions, answers);
+    const profession = String(answers.role || answers.profession || "").trim();
+    const industry = String(answers.industry || "").trim();
+    const urgency = String(answers.urgency || "").trim();
+    const interest = String(answers.interest || "").trim();
+
     try {
-      const response = await fetch("/api/wizard-lead", {
+      const response = await fetch("/api/questionnaire", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
-          contactName: name,
-          email: email || "noreply@innovatexp.co",
-          whatsapp: phone === "n/a" && !requireContact ? "feedback-form" : phone,
-          company: company || "Feedback",
-          appointmentDetail: `${pathId} submitted`,
           pathId,
-          formattedQa,
+          questionnaireType: subjectPrefix,
           subject: `${subjectPrefix} — ${company || name}`,
+          name,
+          company: company || "Feedback",
+          profession,
+          email: email || undefined,
+          phone: phone === "n/a" ? undefined : phone,
+          industry,
+          urgency,
+          interest,
+          formattedQa,
+          answers,
         }),
       });
       if (!response.ok) throw new Error("fail");

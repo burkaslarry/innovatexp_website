@@ -24,5 +24,6 @@ if (NOTION_TOKEN) {
 }
 
 export { notion, CALENDAR_DB_ID, NOTION_BUSY_DB_ID };
+export const QUESTIONNAIRE_DB_ID = process.env.NOTION_QUESTIONNAIRE_DB_ID?.trim() || undefined;
 export type { NotionClient };
 
