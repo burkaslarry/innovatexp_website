@@ -3,7 +3,7 @@ import { notFound } from "next/navigation";
 import { ThemeProvider } from "../ThemeContext";
 import { LanguageProvider } from "../LanguageContext";
 import StructuredData from "../components/StructuredData";
-import { FloatingWhatsAppButton } from "@/components/FloatingWhatsAppButton";
+import { FloatingActionMenu } from "@/components/FloatingActionMenu";
 import { LocaleHtmlLang } from "../components/LocaleHtmlLang";
 import {
   isValidLocale,
@@ -115,7 +115,7 @@ export default async function LocaleLayout({
         <LanguageProvider locale={locale as AppLocale}>
           <StructuredData />
           {children}
-          <FloatingWhatsAppButton />
+          <FloatingActionMenu />
         </LanguageProvider>
       </ThemeProvider>
     </>

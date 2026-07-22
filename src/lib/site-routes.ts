@@ -11,6 +11,8 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
 >([
   { path: "/", priority: 1, changeFrequency: "weekly" },
   { path: "/bookme", priority: 0.85, changeFrequency: "monthly" },
+  { path: "/ai-consultation-questionnaire", priority: 0.84, changeFrequency: "monthly" },
+  { path: "/ai-feedback-questionnaire", priority: 0.4, changeFrequency: "yearly" },
   { path: "/smartsales-crm", priority: 0.82, changeFrequency: "monthly" },
   { path: "/eventxp", priority: 0.82, changeFrequency: "monthly" },
   { path: "/ai-consulting", priority: 0.82, changeFrequency: "monthly" },
