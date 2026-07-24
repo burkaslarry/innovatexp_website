@@ -1,6 +1,6 @@
 import { NextResponse } from "next/server";
 import { sendQuestionnaireResendEmail } from "@/lib/resend-mail";
-import { createQuestionnaireNotionPage } from "@/lib/notion-questionnaire";
+import { insertQuestionnaireLead } from "@/lib/questionnaire-db";
 import { submitToWeb3FormsContact } from "@/lib/web3forms-submit";
 
 export type QuestionnaireApiBody = {
@@ -73,7 +73,7 @@ export async function POST(req: Request) {
 
     const notifyEmail = email && email.includes("@") ? email : "noreply@innovatexp.co";
 
-    const [resendResult, notionResult] = await Promise.all([
+    const [resendResult, dbResult] = await Promise.all([
       sendQuestionnaireResendEmail({
         subject,
         questionnaireType,
@@ -87,7 +87,8 @@ export async function POST(req: Request) {
         interest,
         formattedQa,
       }),
-      createQuestionnaireNotionPage({
+      insertQuestionnaireLead({
+        pathId,
         questionnaireType,
         name,
         company,
@@ -98,7 +99,7 @@ export async function POST(req: Request) {
         urgency,
         interest,
         formattedQa,
-        pathId,
+        answers: body.answers,
       }),
     ]);
 
@@ -125,15 +126,15 @@ export async function POST(req: Request) {
     }
 
     const emailOk = resendResult.ok || Boolean(web3?.success);
-    const notionOk = notionResult.ok;
+    const dbOk = dbResult.ok;
 
-    if (!emailOk && !notionOk) {
+    if (!emailOk || !dbOk) {
       return NextResponse.json(
         {
           ok: false,
-          error: "Could not email or save to Notion. Check RESEND_API_KEY / NOTION_QUESTIONNAIRE_DB_ID.",
+          error: "Could not save lead and/or send email. Check DATABASE_URL / RESEND_API_KEY.",
           resend: resendResult,
-          notion: notionResult,
+          db: dbResult,
           web3,
         },
         { status: 502 },
@@ -147,7 +148,7 @@ export async function POST(req: Request) {
         resend: resendResult,
         web3,
       },
-      notion: notionResult,
+      db: dbResult,
     });
   } catch (e) {
     console.error("questionnaire API:", e);

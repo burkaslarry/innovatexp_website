@@ -40,7 +40,7 @@ export default async function AiConsultationQuestionnairePage({
     : undefined;
 
   return (
-    <main className="min-h-screen bg-[#f7f9fc] py-16 dark:bg-gray-950">
+    <main className="min-h-screen bg-[#f7f9fc] py-16 text-slate-900 dark:bg-gray-950 dark:text-slate-100">
       <div className="container mx-auto max-w-3xl px-4">
         <AiConsultationQuestionnaire
           locale={loc}

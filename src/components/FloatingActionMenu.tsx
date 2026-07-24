@@ -18,7 +18,7 @@ import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import RateReviewIcon from "@mui/icons-material/RateReview";
 import { getLocaleFromPathname, localeUsesChineseCopy, withLocale } from "@/lib/i18n-routing";
-import { innovateXpM3Theme } from "@/lib/m3-theme";
+import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
 
 const defaultWhatsAppMessage =
   "你好！我喺 InnovateXP 網站睇到，想了解點樣將 WhatsApp inquiry / 活動 lead 變成可跟進 pipeline。";
@@ -29,6 +29,7 @@ export function FloatingActionMenu() {
   const locale = getLocaleFromPathname(pathname);
   const zh = localeUsesChineseCopy(locale);
   const [open, setOpen] = useState(false);
+  const theme = useInnovateXpM3Theme();
 
   const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
   const whatsappHref = rawNumber
@@ -89,7 +90,7 @@ export function FloatingActionMenu() {
   };
 
   return (
-    <ThemeProvider theme={innovateXpM3Theme}>
+    <ThemeProvider theme={theme}>
       <Backdrop open={open} sx={{ zIndex: (t) => t.zIndex.speedDial - 1 }} />
       <SpeedDial
         ariaLabel={zh ? "InnovateXP 快捷聯絡" : "InnovateXP quick actions"}
@@ -105,7 +106,7 @@ export function FloatingActionMenu() {
         open={open}
         FabProps={{
           color: "primary",
-          sx: { width: 56, height: 56 },
+          sx: { width: 56, height: 56, color: "#fff" },
         }}
       >
         {actions.map((action) => (

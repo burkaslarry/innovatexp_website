@@ -17,7 +17,7 @@ import {
 } from "@mui/material";
 import Link from "next/link";
 import type { QuestionField } from "@/content/questionnaires/consultation";
-import { innovateXpM3Theme } from "@/lib/m3-theme";
+import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
 
 export type Answers = Record<string, string | string[]>;
 
@@ -105,6 +105,7 @@ export function M3QuestionnaireForm({
   const [consent, setConsent] = useState(false);
   const [error, setError] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  const theme = useInnovateXpM3Theme();
 
   const progress = ((stepIndex + 1) / stepDefs.length) * 100;
   const current = stepDefs[stepIndex];
@@ -207,11 +208,19 @@ export function M3QuestionnaireForm({
     }
   };
 
+  const shellSx = {
+    p: { xs: 3, md: 5 },
+    border: "1px solid",
+    borderColor: "divider",
+    bgcolor: "background.paper",
+    color: "text.primary",
+  } as const;
+
   if (status === "success") {
     const high = isHighIntent?.(answers);
     return (
-      <ThemeProvider theme={innovateXpM3Theme}>
-        <Paper elevation={0} sx={{ p: { xs: 3, md: 5 }, border: "1px solid", borderColor: "divider" }}>
+      <ThemeProvider theme={theme}>
+        <Paper elevation={0} sx={shellSx}>
           <Typography variant="h4" gutterBottom>
             {copy.successTitle}
           </Typography>
@@ -220,7 +229,7 @@ export function M3QuestionnaireForm({
           </Typography>
           {showBookingOnSuccess && bookingHref ? (
             <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
-              <Button component={Link} href={bookingHref} variant="contained" size="large">
+              <Button component={Link} href={bookingHref} variant="contained" size="large" sx={{ color: "#fff" }}>
                 {copy.bookCta}
               </Button>
               {whatsappHref ? (
@@ -243,7 +252,11 @@ export function M3QuestionnaireForm({
               </Typography>
               <Stack spacing={1.5}>
                 {copy.pricingCards.map((card) => (
-                  <Paper key={card.name} variant="outlined" sx={{ p: 2, borderRadius: 3 }}>
+                  <Paper
+                    key={card.name}
+                    variant="outlined"
+                    sx={{ p: 2, borderRadius: 3, bgcolor: "background.default" }}
+                  >
                     <Stack direction="row" justifyContent="space-between" alignItems="baseline" gap={2}>
                       <Box>
                         <Typography fontWeight={700}>{card.name}</Typography>
@@ -266,8 +279,8 @@ export function M3QuestionnaireForm({
   }
 
   return (
-    <ThemeProvider theme={innovateXpM3Theme}>
-      <Paper elevation={0} sx={{ p: { xs: 3, md: 5 }, border: "1px solid", borderColor: "divider" }}>
+    <ThemeProvider theme={theme}>
+      <Paper elevation={0} sx={shellSx}>
         <Typography variant="overline" color="primary" fontWeight={800}>
           {eyebrow}
         </Typography>
@@ -277,7 +290,7 @@ export function M3QuestionnaireForm({
         <Typography color="text.secondary" sx={{ mb: 2, lineHeight: 1.7 }}>
           {intro}
         </Typography>
-        <Alert severity="info" sx={{ mb: 3, borderRadius: 3 }}>
+        <Alert severity="info" sx={{ mb: 3 }}>
           {privacy}
         </Alert>
 
@@ -306,10 +319,37 @@ export function M3QuestionnaireForm({
                         label={opt.label}
                         color={selected ? "primary" : "default"}
                         variant={selected ? "filled" : "outlined"}
+                        clickable
                         onClick={() =>
                           q.type === "multi" ? toggleMulti(q, opt.id) : setSingle(q.id, opt.id)
                         }
-                        sx={{ maxWidth: "100%", height: "auto", py: 1, "& .MuiChip-label": { whiteSpace: "normal" } }}
+                        sx={{
+                          maxWidth: "100%",
+                          height: "auto",
+                          py: 1.1,
+                          px: 0.25,
+                          ...(selected
+                            ? {
+                                color: "#ffffff !important",
+                                bgcolor: "primary.main",
+                                "& .MuiChip-label": {
+                                  whiteSpace: "normal",
+                                  color: "#ffffff !important",
+                                  fontWeight: 700,
+                                },
+                                "&:hover": {
+                                  bgcolor: "primary.dark",
+                                  color: "#ffffff !important",
+                                  "& .MuiChip-label": { color: "#ffffff !important" },
+                                },
+                              }
+                            : {
+                                "& .MuiChip-label": {
+                                  whiteSpace: "normal",
+                                  fontWeight: 600,
+                                },
+                              }),
+                        }}
                       />
                     );
                   })}
@@ -336,9 +376,7 @@ export function M3QuestionnaireForm({
           ) : null}
 
           {error ? (
-            <Alert severity="error" sx={{ borderRadius: 3 }}>
-              {error}
-            </Alert>
+            <Alert severity="error">{error}</Alert>
           ) : null}
 
           <Stack direction={{ xs: "column", sm: "row" }} spacing={1.5} justifyContent="space-between">
@@ -358,11 +396,12 @@ export function M3QuestionnaireForm({
                 size="large"
                 disabled={status === "sending"}
                 onClick={() => void submit()}
+                sx={{ color: "#fff" }}
               >
                 {status === "sending" ? copy.sending : copy.submit}
               </Button>
             ) : (
-              <Button variant="contained" size="large" onClick={goNext}>
+              <Button variant="contained" size="large" onClick={goNext} sx={{ color: "#fff" }}>
                 {copy.next}
               </Button>
             )}
