@@ -42,7 +42,7 @@ export function PriceCard({
         ) : null}
         <h3 className="text-2xl font-bold text-slate-900 dark:text-white">{name}</h3>
         <div className="mt-2">
-          <span className="text-3xl font-bold text-brand-primary dark:text-teal-300">{price}</span>
+          <span className="text-3xl font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{price}</span>
           <span className="text-slate-500 dark:text-slate-400">{period}</span>
         </div>
         {target ? (

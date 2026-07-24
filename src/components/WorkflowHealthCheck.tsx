@@ -493,7 +493,7 @@ export function WorkflowHealthCheck({
       className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-gradient-to-br from-cyan-50 via-white to-amber-50 p-6 shadow-card dark:border-teal-500/30 dark:from-slate-900 dark:via-slate-900 dark:to-gray-900 md:p-10"
     >
       <div className="mx-auto max-w-3xl text-center">
-        <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+        <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
           {c.eyebrow}
         </p>
         <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
@@ -596,7 +596,7 @@ export function WorkflowHealthCheck({
           <h3 className="text-2xl font-bold text-gray-900 dark:text-white">
             {c.resultTitle}
           </h3>
-          <p className="mt-3 text-lg font-semibold leading-relaxed text-brand-primary dark:text-teal-300">
+          <p className="mt-3 text-lg font-semibold leading-relaxed text-brand-primary dark:text-[color:var(--primary-hover)]">
             {c.result}
           </p>
           <p className="mt-3 leading-relaxed text-slate-700 dark:text-slate-300">

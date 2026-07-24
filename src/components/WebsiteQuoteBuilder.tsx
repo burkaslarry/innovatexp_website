@@ -62,7 +62,7 @@ export function WebsiteQuoteBuilder({ locale, onQuoteChange }: Props) {
   return (
     <div className="space-y-6">
       <div className="rounded-2xl border border-brand-primary/30 bg-cyan-50/80 p-5 dark:border-teal-500/40 dark:bg-slate-800/80">
-        <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300">
+        <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-[color:var(--primary-hover)]">
           {zh ? "Base Package（一次）" : "Base Package (one-time)"}
         </p>
         <p className="mt-1 text-3xl font-extrabold text-gray-900 dark:text-white">
@@ -97,7 +97,7 @@ export function WebsiteQuoteBuilder({ locale, onQuoteChange }: Props) {
                   }`}
                 >
                   <span className="font-semibold">{labels[id]}</span>
-                  <span className={`shrink-0 font-bold ${selected ? "text-white" : "text-brand-primary dark:text-teal-300"}`}>
+                  <span className={`shrink-0 font-bold ${selected ? "text-white" : "text-brand-primary dark:text-[color:var(--primary-hover)]"}`}>
                     {formatHkd(PRICING.websiteAddons[id], locale)}
                   </span>
                 </button>
@@ -169,7 +169,7 @@ export function WebsiteQuoteBuilder({ locale, onQuoteChange }: Props) {
         <p className="text-sm font-semibold text-slate-600 dark:text-slate-400">
           {zh ? "一次性合計" : "One-time total"}
         </p>
-        <p className="mt-1 text-3xl font-extrabold text-brand-primary dark:text-teal-300">
+        <p className="mt-1 text-3xl font-extrabold text-brand-primary dark:text-[color:var(--primary-hover)]">
           {formatHkd(quote.totalOneTime, locale)}
         </p>
         {quote.rushAmount > 0 ? (

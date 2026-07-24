@@ -48,7 +48,7 @@ export default async function AiSeoUpdatePackagePage({
     <main className="mx-auto min-h-screen max-w-5xl px-6 py-12 text-slate-900 dark:text-slate-100">
       <BackToHomeControl />
       <section className="mb-8 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-teal-300">
+        <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-[color:var(--primary-hover)]">
           InnovateXP Service
         </p>
         <h1 className="mt-3 text-3xl font-bold md:text-4xl">AI SEO 更新套餐</h1>
@@ -66,7 +66,7 @@ export default async function AiSeoUpdatePackagePage({
             key={plan.name}
             className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900"
           >
-            <h2 className="text-2xl font-bold text-brand-primary dark:text-teal-300">{plan.name}</h2>
+            <h2 className="text-2xl font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{plan.name}</h2>
             <p className="mt-3 text-3xl font-bold">{plan.price}</p>
             <ul className="mt-5 space-y-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
               <li>改動次數：{plan.revisions}</li>

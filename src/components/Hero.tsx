@@ -49,7 +49,7 @@ export function Hero({
           </h1>
           {tagline?.trim() ? (
             <p
-              className="mt-4 line-clamp-2 text-base font-bold leading-snug text-brand-primary dark:text-teal-300 sm:line-clamp-none sm:text-2xl"
+              className="mt-4 line-clamp-2 text-base font-bold leading-snug text-brand-primary dark:text-[color:var(--primary-hover)] sm:line-clamp-none sm:text-2xl"
               title={tagline}
             >
               {tagline}
@@ -73,7 +73,7 @@ export function Hero({
             </ul>
           ) : null}
           {bottomTagline?.trim() ? (
-            <p className="mt-5 text-lg font-bold text-oxford dark:text-teal-300">{bottomTagline}</p>
+            <p className="mt-5 text-lg font-bold text-oxford dark:text-[color:var(--primary-hover)]">{bottomTagline}</p>
           ) : null}
           <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start">
             {onPrimaryClick && primaryHref.startsWith("#") ? (
@@ -96,7 +96,7 @@ export function Hero({
             <a
               href={secondaryHref}
               onClick={onSecondaryClick}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-300/90 bg-transparent px-8 py-3 text-base font-semibold text-slate-800 transition-all hover:border-[#00B9B3]/60 hover:bg-[#00B9B3]/5 active:scale-[0.98] dark:border-slate-500 dark:text-slate-100 dark:hover:border-[#00B9B3]/50 dark:hover:bg-[#00B9B3]/10"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-300/90 bg-transparent px-8 py-3 text-base font-semibold text-slate-800 transition-all hover:border-[#00B9B3]/60 hover:bg-[#00B9B3]/5 active:scale-[0.98] dark:border-slate-500 dark:text-slate-100 dark:hover:border-brand-primary/50 dark:hover:bg-[#00B9B3]/10"
             >
               {secondaryLabel}
             </a>

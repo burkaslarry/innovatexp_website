@@ -365,7 +365,7 @@ export default async function SmartSalesCrmPage({
           {zh ? "比較 CRM？" : "Comparing CRMs?"}{" "}
           <Link
             href={`/${locale}/compare/smartsales-vs-salesforce`}
-            className="font-semibold text-brand-primary underline dark:text-teal-300"
+            className="font-semibold text-brand-primary underline dark:text-[color:var(--primary-hover)]"
           >
             {zh ? "SmartSales vs Salesforce（SME 視角）" : "SmartSales vs Salesforce (SME lens)"}
           </Link>
@@ -418,7 +418,7 @@ export default async function SmartSalesCrmPage({
           </p>
           <Link
             href={`/${locale}/bookme`}
-            className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+            className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-primary-hover "
           >
             {zh ? "預約免費諮詢" : "Book a free consultation"}
           </Link>

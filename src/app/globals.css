@@ -7,6 +7,27 @@
     font-family: var(--font-faq-title);
   }
 }
+@layer components {
+  .surface-card {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  .surface-section {
+    background-color: var(--bg-surface);
+    border: 1px solid var(--border-light);
+    border-radius: var(--radius-lg);
+    box-shadow: var(--shadow-sm);
+  }
+  .btn-focus-ring {
+    outline: none;
+  }
+  .btn-focus-ring:focus-visible {
+    box-shadow: 0 0 0 3px var(--primary-muted);
+  }
+}
+
 
 @layer base {
   h1,
@@ -17,94 +38,124 @@
 }
 
 /* ====================================
-   Light Mode CSS Variables (Default)
+   Light Mode — 冷調避土金（水木）
    ==================================== */
 :root {
   --header-offset: 180px;
 
-  /* Background Colors */
-  --bg-primary: #ffffff;
-  --bg-secondary: #f8f9fa;
-  --bg-tertiary: #e9ecef;
-  
-  /* Text Colors */
-  --text-primary: #1a1a1a;
-  --text-secondary: #374151;
-  --text-tertiary: #6b7280;
-  
-  /* Accent Colors */
-  --accent-primary: #ff7a00;
-  --accent-secondary: #00d4ff;
-  --accent-tertiary: #4ade80;
-  
-  /* Status Colors */
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
-  --info: #3b82f6;
-  
-  /* Border Colors */
-  --border-light: #e0e0e0;
-  --border-medium: #d0d0d0;
-  
-  /* Legacy Variables */
-  --background: #fffcf7;
-  --foreground: #1a1a1a;
-  --oxford-blue: #002147;
-  --heading-foreground: #002147;
-  /* Align with Tailwind theme.extend.colors.brand */
-  --brand-primary: #1242de;
-  --brand-primary-hover: #0e35b5;
-  --brand-accent-teal: #00b9b3;
-  --brand-accent-teal-hover: #009e98;
-  
-  /* Fonts */
+  --bg-base: #f4f7fa;
+  --bg-primary: #f4f7fa;
+  --bg-secondary: #f2f9f6;
+  --bg-tertiary: #e8f0f4;
+  --bg-surface: #f2f9f6;
+  --bg-elevated: #eef5f8;
+
+  --text-primary: #1e293b;
+  --text-secondary: #475569;
+  --text-tertiary: #64748b;
+  --heading-foreground: #1e3a8a;
+
+  --primary-color: #16a34a;
+  --primary-hover: #15803d;
+  --primary-muted: rgba(22, 163, 74, 0.12);
+  --accent-primary: #16a34a;
+  --brand-primary: #16a34a;
+  --brand-primary-hover: #15803d;
+
+  --secondary-color: #1e3a8a;
+  --secondary-hover: #1d4ed8;
+  --accent-secondary: #1d4ed8;
+  --accent-tertiary: #0f766e;
+  --brand-accent-teal: #0f766e;
+  --brand-accent-teal-hover: #0d9488;
+
+  --success: #16a34a;
+  --warning: #0ea5e9;
+  --error: #dc2626;
+  --info: #1d4ed8;
+
+  --border-light: rgba(71, 85, 105, 0.16);
+  --border-medium: rgba(71, 85, 105, 0.28);
+
+  --shadow-sm: 0 1px 2px rgba(15, 23, 42, 0.05), 0 1px 1px rgba(15, 23, 42, 0.04);
+  --shadow-md: 0 8px 24px rgba(15, 23, 42, 0.08);
+  --shadow-fab: 0 6px 20px rgba(22, 163, 74, 0.28);
+
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 20px;
+  --radius-pill: 999px;
+  --motion-fast: 150ms;
+  --motion-normal: 220ms;
+  --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
+
+  --background: #f4f7fa;
+  --foreground: #1e293b;
+  --oxford-blue: #1e3a8a;
+  --brand-cream: #f2f9f6;
+  --brand-cream-warm: #f4f7fa;
+  --brand-ink: #1e293b;
+  --brand-muted: #64748b;
+
   --font-handwriting: "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive;
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, "Inter", sans-serif;
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-faq-title: "Songti TC", "Songti SC", "PMingLiU", "Microsoft JhengHei", serif;
-  
-  /* Theme */
+
   color-scheme: light;
 }
 
 /* ====================================
-   Dark Mode CSS Variables
+   Dark Mode — 水木相生
    ==================================== */
 .dark {
-  /* Background Colors - Deep navy/black palette */
-  --bg-primary: #0f1419;
-  --bg-secondary: #1a2332;
-  --bg-tertiary: #242f3d;
-  
-  /* Text Colors - Light grays for readability */
-  --text-primary: #f5f5f5;
-  --text-secondary: #cbd5e1;
-  --text-tertiary: #94a3b8;
-  
-  /* Accent Colors - Vibrant for dark backgrounds */
-  --accent-primary: #ff7a00;
-  --accent-secondary: #00d4ff;
-  --accent-tertiary: #4ade80;
-  
-  /* Status Colors */
-  --success: #10b981;
-  --warning: #f59e0b;
-  --error: #ef4444;
+  --bg-base: #0b1220;
+  --bg-primary: #0b1220;
+  --bg-secondary: #0d1117;
+  --bg-tertiary: #121a2b;
+  --bg-surface: #121a2b;
+  --bg-elevated: #152033;
+
+  --text-primary: #e8eef7;
+  --text-secondary: #94a3b8;
+  --text-tertiary: #64748b;
+  --heading-foreground: #e8eef7;
+
+  --primary-color: #1f9d6b;
+  --primary-hover: #2ecc71;
+  --primary-muted: rgba(31, 157, 107, 0.18);
+  --accent-primary: #1f9d6b;
+  --brand-primary: #1f9d6b;
+  --brand-primary-hover: #2ecc71;
+
+  --secondary-color: #3b82f6;
+  --secondary-hover: #0ea5e9;
+  --accent-secondary: #3b82f6;
+  --accent-tertiary: #0ea5e9;
+  --brand-accent-teal: #2ecc71;
+  --brand-accent-teal-hover: #1f9d6b;
+
+  --success: #2ecc71;
+  --warning: #0ea5e9;
+  --error: #f87171;
   --info: #3b82f6;
-  
-  /* Border Colors - Subtle borders for dark mode */
-  --border-light: #3a4557;
-  --border-medium: #4a5f7f;
-  
-  /* Legacy Variables */
-  --background: #0f1419;
-  --foreground: #f5f5f5;
-  --oxford-blue: #002147;
-  --heading-foreground: #f8fafc;
+
+  --border-light: rgba(148, 163, 184, 0.16);
+  --border-medium: rgba(148, 163, 184, 0.28);
+
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.35);
+  --shadow-md: 0 10px 28px rgba(0, 0, 0, 0.45);
+  --shadow-fab: 0 6px 22px rgba(31, 157, 107, 0.35);
+
+  --background: #0b1220;
+  --foreground: #e8eef7;
+  --oxford-blue: #3b82f6;
+  --brand-cream: #121a2b;
+  --brand-cream-warm: #0d1117;
+  --brand-ink: #e8eef7;
+  --brand-muted: #94a3b8;
 
   --font-faq-title: "Songti TC", "Songti SC", "PMingLiU", "Microsoft JhengHei", serif;
-  
-  /* Theme */
+
   color-scheme: dark;
 }
 
@@ -191,9 +242,9 @@ p, span {
 }
 
 .btn-primary:hover {
-  background-color: #e66a00;
-  transform: translateY(-2px);
-  box-shadow: 0 8px 16px rgba(255, 122, 0, 0.3);
+  background-color: var(--primary-hover);
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-md);
 }
 
 .btn-secondary {
@@ -224,8 +275,8 @@ input, select, textarea {
 }
 
 input:focus, select:focus, textarea:focus {
-  border-color: var(--accent-primary);
-  box-shadow: 0 0 0 3px rgba(255, 122, 0, 0.1);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 3px var(--primary-muted);
   outline: none;
 }
 

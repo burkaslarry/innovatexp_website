@@ -6,7 +6,7 @@ import { createTheme, ThemeProvider } from "@mui/material/styles";
 import { useTheme as useAppTheme } from "./ThemeContext";
 
 /** InnovateXP brand — aligned with Tailwind `brand.primary` / dark CTA teal */
-const BRAND = "#1242de";
+const BRAND = "#16A34A";
 const BRAND_DARK = "#0e35b5";
 const TEAL = "#00b9b3";
 

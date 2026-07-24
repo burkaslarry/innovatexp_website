@@ -29,7 +29,7 @@ export default function BookVisitPage() {
                 Email:{' '}
                 <a
                   href="mailto:info@innovatexp.co"
-                  className="font-semibold text-brand-primary underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary-hover dark:text-teal-300"
+                  className="font-semibold text-brand-primary underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary-hover dark:text-[color:var(--primary-hover)]"
                 >
                   info@innovatexp.co
                 </a>
@@ -58,27 +58,27 @@ export default function BookVisitPage() {
                   <div className="mt-3 rounded-xl border border-gray-200 bg-white p-5 text-sm text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
                     <ul className="space-y-2">
                       <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
+                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
                         <span>{t('bookme.info.monday_friday')}</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
+                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
                         <span>{t('bookme.info.one_hour')}</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
+                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
                         <span>{t('bookme.info.confirmation')}</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
+                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
                         <span>{t('bookme.info.cancel')}</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
+                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
                         <span>{t('bookme.info.online')}</span>
                       </li>
                       <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-teal-300">•</span>
+                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
                         <span>{t('bookme.info.notion')}</span>
                       </li>
                     </ul>

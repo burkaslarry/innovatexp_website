@@ -11,17 +11,17 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  "flex min-h-[48px] items-center justify-center gap-2 rounded-full px-8 py-3 text-center text-base font-bold transition-all duration-300 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 dark:focus-visible:ring-[#00B9B3]";
+  "flex min-h-[48px] items-center justify-center gap-2 rounded-full px-8 py-3 text-center text-base font-bold transition-all duration-normal ease-[cubic-bezier(0.25,0.1,0.25,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 active:scale-[0.96]";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-primary text-white shadow-md hover:bg-brand-primary-hover hover:shadow-lg active:scale-[0.98] dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98] dark:shadow-none",
+    "bg-brand-primary text-white shadow-card hover:bg-brand-primary-hover hover:shadow-card-hover",
   outline:
-    "border-2 border-slate-200 bg-white text-slate-900 shadow-sm hover:border-brand-primary/40 hover:bg-brand-cream dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:bg-slate-800 active:scale-[0.98]",
+    "border border-[color:var(--border-medium)] bg-surface text-[color:var(--text-primary)] shadow-card hover:border-brand-primary/40 hover:bg-surface-secondary",
   ghost:
-    "text-brand-primary hover:bg-brand-primary/10 dark:text-teal-300 dark:hover:bg-white/5",
+    "text-secondary hover:bg-primary/10 dark:text-[color:var(--secondary-color)] dark:hover:bg-white/5",
   ctaLight:
-    "group border-2 border-slate-900/20 bg-white text-slate-900 shadow-md hover:border-black hover:bg-black hover:text-white active:scale-[0.98] dark:border-slate-500 dark:bg-white dark:text-slate-950 dark:hover:border-black dark:hover:bg-black dark:hover:text-white",
+    "border border-[color:var(--border-medium)] bg-surface text-[color:var(--text-primary)] shadow-card hover:bg-brand-primary hover:text-white hover:border-brand-primary",
 };
 
 export function Button({

@@ -129,7 +129,7 @@ export function ServiceLandingPage({
         </nav>
 
         <section className="mb-10 rounded-3xl border border-brand-primary/20 bg-white p-8 shadow-sm dark:border-teal-400/20 dark:bg-gray-900 md:p-10">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
             {content.eyebrow}
           </p>
           <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-gray-950 dark:text-white md:text-5xl">
@@ -141,7 +141,7 @@ export function ServiceLandingPage({
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href={localizedHref(locale, content.cta.href)}
-              className="rounded-full bg-brand-primary px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+              className="rounded-full bg-brand-primary px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-brand-primary-hover "
             >
               {content.cta.label}
             </Link>
@@ -186,12 +186,12 @@ export function ServiceLandingPage({
               {content.pricing.plans.map((plan) => (
                 <article key={plan.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
                   <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
-                  <p className="mt-2 font-semibold text-brand-primary dark:text-teal-300">{plan.price}</p>
+                  <p className="mt-2 font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">{plan.price}</p>
                   <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">{plan.fit}</p>
                   <ul className="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
                     {plan.features.map((feature) => (
                       <li key={feature} className="flex gap-2 leading-relaxed">
-                        <span className="font-bold text-brand-primary dark:text-teal-300">✓</span>
+                        <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">✓</span>
                         <span>{feature}</span>
                       </li>
                     ))}

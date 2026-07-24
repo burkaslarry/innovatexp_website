@@ -3,8 +3,7 @@ import { notFound } from "next/navigation";
 import { ThemeProvider } from "../ThemeContext";
 import { LanguageProvider } from "../LanguageContext";
 import StructuredData from "../components/StructuredData";
-import { FloatingActionMenu } from "@/components/FloatingActionMenu";
-import { InquiryCartFab } from "@/components/inquiry-cart/InquiryCartFab";
+import { PrimaryFabCluster } from "@/components/PrimaryFabCluster";
 import { InquiryCheckoutDrawer } from "@/components/inquiry-cart/InquiryCheckoutDrawer";
 import { InquiryCartProvider } from "@/context/InquiryCartContext";
 import { LocaleHtmlLang } from "../components/LocaleHtmlLang";
@@ -119,9 +118,8 @@ export default async function LocaleLayout({
           <InquiryCartProvider>
             <StructuredData />
             {children}
-            <InquiryCartFab />
             <InquiryCheckoutDrawer />
-            <FloatingActionMenu />
+            <PrimaryFabCluster />
           </InquiryCartProvider>
         </LanguageProvider>
       </ThemeProvider>

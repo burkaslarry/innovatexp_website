@@ -386,7 +386,7 @@ export default function QuotationWizard({
   );
 
   const pathBanner = path ? (
-    <p className="mb-4 text-left text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300 md:text-center">
+    <p className="mb-4 text-left text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-[color:var(--primary-hover)] md:text-center">
       {path === "eventxp"
         ? t("wizard.path_tagline.eventxp")
         : path === "smartsales"
@@ -419,9 +419,9 @@ export default function QuotationWizard({
                   key={p}
                   type="button"
                   onClick={() => onPickPath(p)}
-                  className="rounded-2xl border-2 border-slate-200 bg-white px-3 py-3.5 text-left shadow-sm transition hover:border-brand-primary/40 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/60 dark:hover:border-[#00B9B3]/50 sm:px-4 sm:py-4 md:px-4"
+                  className="rounded-2xl border-2 border-slate-200 bg-white px-3 py-3.5 text-left shadow-sm transition hover:border-brand-primary/40 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/60 dark:hover:border-brand-primary/50 sm:px-4 sm:py-4 md:px-4"
                 >
-                  <span className="block text-xs font-bold text-brand-primary dark:text-teal-300">
+                  <span className="block text-xs font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">
                     {t(`wizard.path_tagline.${p}`)}
                   </span>
                   <span className="mt-2 block text-sm font-semibold text-slate-900 dark:text-white">
@@ -791,7 +791,7 @@ export default function QuotationWizard({
               <button
                 type="button"
                 onClick={() => computeAndShowResult()}
-                className="min-h-[48px] rounded-full bg-brand-primary px-6 py-3 text-sm font-bold text-white dark:bg-[#00B9B3] dark:text-slate-950"
+                className="min-h-[48px] rounded-full bg-brand-primary px-6 py-3 text-sm font-bold text-white "
               >
                 {t("wizard.next")}
               </button>
@@ -833,7 +833,7 @@ export default function QuotationWizard({
             <div className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-950/40 sm:p-5">
               <div className="text-sm text-slate-700 dark:text-slate-300">
                 <div className="font-semibold text-slate-900 dark:text-white">{t("wizard.finale.recommend_label")}</div>
-                <div className="mt-1 text-base font-bold text-brand-primary dark:text-teal-300">{t(result.planKey)}</div>
+                <div className="mt-1 text-base font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{t(result.planKey)}</div>
                 <div className="mt-4 font-semibold text-slate-900 dark:text-white">{t("wizard.result.estimated")}</div>
                 <div className="mt-1 text-base font-bold text-slate-900 dark:text-white">
                   {result.amountHkd != null ? formatHkd(result.amountHkd) : t(result.rangeKey)}
@@ -866,7 +866,7 @@ export default function QuotationWizard({
                 onClick={() => {
                   setStep("flowx_booking");
                 }}
-                className="min-h-[48px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
+                className="min-h-[48px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover "
               >
                 {t("wizard.finale.next_calendar")}
               </button>
@@ -989,14 +989,14 @@ export default function QuotationWizard({
                 type="button"
                 disabled={fxBusy}
                 onClick={() => void submitFlowX()}
-                className="min-h-[52px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-lg transition hover:bg-brand-primary-hover disabled:opacity-60 dark:bg-[#00B9B3] dark:text-slate-950"
+                className="min-h-[52px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-lg transition hover:bg-brand-primary-hover disabled:opacity-60 "
               >
                 {fxBusy ? "…" : t("wizard.flowx.submit")}
               </button>
               <button
                 type="button"
                 onClick={() => setStep("flowx_booking")}
-                className="w-full text-center text-sm font-semibold text-brand-primary underline dark:text-teal-300"
+                className="w-full text-center text-sm font-semibold text-brand-primary underline dark:text-[color:var(--primary-hover)]"
               >
                 {t("wizard.back")}
               </button>
@@ -1014,7 +1014,7 @@ export default function QuotationWizard({
               <button
                 type="button"
                 onClick={() => (result ? setStep("result") : path ? goToFirstPathStep(path) : setStep("q0"))}
-                className="text-sm font-semibold text-brand-primary underline dark:text-teal-300"
+                className="text-sm font-semibold text-brand-primary underline dark:text-[color:var(--primary-hover)]"
               >
                 {t("wizard.back")}
               </button>
@@ -1037,7 +1037,7 @@ export default function QuotationWizard({
                       modifiersClassNames={{
                         selected: "bg-brand-primary text-white font-bold rounded-lg dark:bg-[#00B9B3]",
                         today:
-                          "border-2 border-brand-primary rounded-lg font-bold text-brand-primary dark:border-[#00B9B3] dark:text-teal-300",
+                          "border-2 border-brand-primary rounded-lg font-bold text-brand-primary dark:border-[#00B9B3] dark:text-[color:var(--primary-hover)]",
                         disabled: "text-gray-400 dark:text-gray-600 opacity-40 cursor-not-allowed",
                       }}
                       className="text-gray-900 dark:text-white touch-manipulation"
@@ -1161,7 +1161,7 @@ function ChoiceStep({
         <h3 className="text-base font-semibold text-slate-900 dark:text-white">{title}</h3>
         <button
           type="button"
-          className="text-sm font-semibold text-brand-primary underline decoration-brand-primary/30 underline-offset-2 dark:text-teal-300"
+          className="text-sm font-semibold text-brand-primary underline decoration-brand-primary/30 underline-offset-2 dark:text-[color:var(--primary-hover)]"
           onClick={onBack}
         >
           {backLabel}
@@ -1210,7 +1210,7 @@ function MultiSelectStep({
         <h3 className="text-base font-semibold text-slate-900 dark:text-white">{title}</h3>
         <button
           type="button"
-          className="text-sm font-semibold text-brand-primary underline decoration-brand-primary/30 underline-offset-2 dark:text-teal-300"
+          className="text-sm font-semibold text-brand-primary underline decoration-brand-primary/30 underline-offset-2 dark:text-[color:var(--primary-hover)]"
           onClick={onBack}
         >
           {backLabel}
@@ -1244,7 +1244,7 @@ function MultiSelectStep({
           type="button"
           onClick={onNext}
           disabled={value.length === 0}
-          className="min-h-[48px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover disabled:cursor-not-allowed disabled:bg-brand-primary/40 dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+          className="min-h-[48px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover disabled:cursor-not-allowed disabled:bg-brand-primary/40 "
         >
           {nextLabel}
         </button>
@@ -1281,7 +1281,7 @@ function TextStep({
         <h3 className="text-base font-semibold text-slate-900 dark:text-white">{title}</h3>
         <button
           type="button"
-          className="text-sm font-semibold text-brand-primary underline decoration-brand-primary/30 underline-offset-2 dark:text-teal-300"
+          className="text-sm font-semibold text-brand-primary underline decoration-brand-primary/30 underline-offset-2 dark:text-[color:var(--primary-hover)]"
           onClick={onBack}
         >
           {backLabel}
@@ -1298,7 +1298,7 @@ function TextStep({
         <button
           type="button"
           onClick={onNext}
-          className="min-h-[48px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+          className="min-h-[48px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover "
         >
           {nextLabel}
         </button>

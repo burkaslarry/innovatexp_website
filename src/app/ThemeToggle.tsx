@@ -17,11 +17,11 @@ export default function ThemeToggle() {
   if (!mounted) {
     return (
       <button
-        className="rounded-lg bg-brand-primary/15 p-2 opacity-50 transition-colors duration-200 dark:bg-[#00B9B3]/50"
+        className="rounded-lg bg-brand-primary/15 p-2 opacity-50 transition-colors duration-200"
         aria-label="Toggle theme"
         disabled
       >
-        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brand-primary dark:text-white" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+        <svg xmlns="http://www.w3.org/2000/svg" className="h-6 w-6 text-brand-primary" fill="none" viewBox="0 0 24 24" stroke="currentColor">
           <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
         </svg>
       </button>
@@ -31,7 +31,7 @@ export default function ThemeToggle() {
   return (
     <button
       onClick={toggleTheme}
-      className="rounded-lg bg-brand-primary/15 p-2 text-brand-primary transition-colors duration-200 hover:bg-brand-primary/25 dark:bg-[#00B9B3] dark:text-white dark:hover:bg-[#009e98]"
+      className="rounded-lg bg-brand-primary/15 p-2 text-brand-primary transition-colors duration-200 hover:bg-brand-primary/25 dark:text-[color:var(--primary-hover)]"
       aria-label="Toggle theme"
     >
       {theme === 'light' ? (

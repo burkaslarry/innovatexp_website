@@ -549,7 +549,7 @@ function LandingPage() {
 
       <section className="mb-16 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-gray-900 md:p-10">
         <div className="mx-auto max-w-3xl text-center">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
             {t('home.problem.eyebrow')}
           </p>
           <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
@@ -578,7 +578,7 @@ function LandingPage() {
       <section className="mb-16 rounded-2xl border border-brand-primary/25 bg-gradient-to-br from-cyan-50 via-white to-amber-50 p-6 shadow-sm dark:border-teal-500/30 dark:from-slate-900 dark:via-gray-900 dark:to-slate-900 md:p-10">
         <div className="grid gap-8 lg:grid-cols-[0.95fr_1.05fr] lg:items-start">
           <div>
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
               {t('home.solution.eyebrow')}
             </p>
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
@@ -598,7 +598,7 @@ function LandingPage() {
               { icon: Bot, key: 'home.solution.step6' },
             ].map(({ icon: Icon, key }) => (
               <div key={key} className="rounded-xl border border-white/80 bg-white/80 p-5 shadow-sm dark:border-slate-700 dark:bg-gray-800/80">
-                <Icon className="mb-3 h-6 w-6 text-brand-primary dark:text-teal-300" strokeWidth={2} aria-hidden />
+                <Icon className="mb-3 h-6 w-6 text-brand-primary dark:text-[color:var(--primary-hover)]" strokeWidth={2} aria-hidden />
                 <p className="text-sm font-semibold leading-relaxed text-slate-800 dark:text-slate-200">
                   {t(key)}
                 </p>
@@ -663,7 +663,7 @@ function LandingPage() {
       <section className="mb-16 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-900 md:p-8">
         <div className="grid gap-6 lg:grid-cols-[1.1fr_0.9fr]">
           <div>
-            <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+            <p className="mb-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
               AI training, advisory, and implementation
             </p>
             <h2 className="mb-3 text-3xl font-bold text-gray-900 dark:text-white">
@@ -710,7 +710,7 @@ function LandingPage() {
         <div className="text-center mb-8">
           <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">{t('vision.title')}</h2>
           <p className="text-xl text-gray-700 dark:text-gray-300 font-semibold mb-1">{t('vision.brand')}</p>
-          <p className="text-2xl text-brand-primary dark:text-teal-300 font-bold tracking-wider">{t('vision.tagline')}</p>
+          <p className="text-2xl text-brand-primary dark:text-[color:var(--primary-hover)] font-bold tracking-wider">{t('vision.tagline')}</p>
         </div>
         
         {/* Team Photo - aspect ratio prevents CLS; lazy load below fold */}
@@ -736,7 +736,7 @@ function LandingPage() {
 
         <div className="mx-auto grid max-w-5xl grid-cols-1 gap-6 md:grid-cols-3">
           <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-brand-primary/50 hover:bg-brand-primary/5 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
-            <div className="mb-4 flex justify-center text-oxford dark:text-teal-300">
+            <div className="mb-4 flex justify-center text-oxford dark:text-[color:var(--primary-hover)]">
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-oxford/10 dark:bg-oxford-light/20">
                 <Lightbulb className="h-7 w-7" strokeWidth={2} aria-hidden />
               </span>
@@ -746,7 +746,7 @@ function LandingPage() {
           </div>
 
           <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-green-400 hover:bg-green-50 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
-            <div className="mb-4 flex justify-center text-oxford dark:text-teal-300">
+            <div className="mb-4 flex justify-center text-oxford dark:text-[color:var(--primary-hover)]">
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-oxford/10 dark:bg-oxford-light/20">
                 <Rocket className="h-7 w-7" strokeWidth={2} aria-hidden />
               </span>
@@ -756,7 +756,7 @@ function LandingPage() {
           </div>
 
           <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-amber-400 hover:bg-amber-50/80 dark:border-gray-600 dark:bg-gray-700 dark:hover:bg-gray-600">
-            <div className="mb-4 flex justify-center text-oxford dark:text-teal-300">
+            <div className="mb-4 flex justify-center text-oxford dark:text-[color:var(--primary-hover)]">
               <span className="flex h-14 w-14 items-center justify-center rounded-2xl bg-oxford/10 dark:bg-oxford-light/20">
                 <Sparkles className="h-7 w-7" strokeWidth={2} aria-hidden />
               </span>
@@ -782,14 +782,14 @@ function LandingPage() {
             { prefix: 'services.tools', icon: Bot },
           ].map(({ prefix, icon: Icon }) => (
             <div key={prefix} className="flex h-full min-h-0 flex-col rounded-xl border-2 border-gray-200 bg-white p-6 shadow-md transition-all duration-200 hover:-translate-y-1 hover:border-brand-primary/40 hover:shadow-xl dark:border-gray-700 dark:bg-gray-800">
-              <Icon className="mb-4 h-8 w-8 text-brand-primary dark:text-teal-300" strokeWidth={2} aria-hidden />
+              <Icon className="mb-4 h-8 w-8 text-brand-primary dark:text-[color:var(--primary-hover)]" strokeWidth={2} aria-hidden />
               <h3 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">{t(`${prefix}.title`)}</h3>
-              <p className="mb-4 text-sm font-semibold text-brand-primary dark:text-teal-300">{t(`${prefix}.subtitle`)}</p>
+              <p className="mb-4 text-sm font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">{t(`${prefix}.subtitle`)}</p>
               <p className="mb-4 text-sm leading-relaxed text-gray-700 dark:text-gray-300">{t(`${prefix}.body`)}</p>
               <ul className="flex min-h-0 flex-1 flex-col space-y-2">
                 {[1, 2, 3].map((item) => (
                   <li key={item} className="flex items-start text-sm text-gray-700 dark:text-gray-300">
-                    <span className="mr-2 font-bold text-brand-primary dark:text-teal-300">✓</span>
+                    <span className="mr-2 font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">✓</span>
                     <span>{t(`${prefix}.benefit${item}`)}</span>
                   </li>
                 ))}
@@ -797,7 +797,7 @@ function LandingPage() {
               <div className="mt-auto flex w-full shrink-0 justify-center pt-6">
                 <a
                   href={loc("/bookme")}
-                  className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+                  className="flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-center text-sm font-bold text-white shadow-md transition duration-300 hover:bg-brand-primary-hover "
                 >
                   {t('services.cta')}
                 </a>
@@ -820,7 +820,7 @@ function LandingPage() {
             />
           </div>
           <div className="p-6 md:p-10">
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
               {t('founder_note.eyebrow')}
             </p>
             <h2 className="mb-4 text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
@@ -877,13 +877,13 @@ function LandingPage() {
               </ol>
             </div>
             
-            <p className="text-xl text-brand-primary dark:text-teal-300  font-semibold mb-6">
+            <p className="text-xl text-brand-primary dark:text-[color:var(--primary-hover)]  font-semibold mb-6">
               {t('pricing.insight.tagline')}
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8">
               {t('pricing.insight.description')}
             </p>
-            <p className="text-lg font-semibold text-brand-primary dark:text-teal-300">
+            <p className="text-lg font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">
               {t('pricing.insight.value')}
             </p>
           </div>
@@ -897,7 +897,7 @@ function LandingPage() {
             <div className="mt-4 text-center">
               <a
                 href={loc("/bookme")}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover "
               >
                 {copy.eventxp.demoCta}
               </a>
@@ -907,21 +907,21 @@ function LandingPage() {
           {/* EventXP Features */}
           <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-[color:var(--primary-hover)]">
                 <LayoutDashboard className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('eventxp.grid.checkin.title')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">{t('eventxp.grid.checkin.body')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-[color:var(--primary-hover)]">
                 <ScanSearch className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('eventxp.grid.ai_insight.title')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">{t('eventxp.grid.ai_insight.body')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-gray-50 p-6 transition-all hover:border-brand-primary/50 dark:border-gray-600 dark:bg-gray-700">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-teal-300">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-brand-primary/15 text-brand-primary dark:text-[color:var(--primary-hover)]">
                 <Target className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('eventxp.grid.retention.title')}</h3>
@@ -942,7 +942,7 @@ function LandingPage() {
                 <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-amber-400 px-3 py-1 text-xs font-bold text-slate-900 shadow-md sm:text-sm">
                   {t('pricing.insight.tier1.badge')}
                 </div>
-                <p className="text-lg font-bold text-brand-primary dark:text-teal-300">{t('eventxp.golive.tier1.name')}</p>
+                <p className="text-lg font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{t('eventxp.golive.tier1.name')}</p>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-700 dark:text-gray-300">
                   {t('eventxp.golive.tier1.desc')}
                 </p>
@@ -952,7 +952,7 @@ function LandingPage() {
               <div
                 className="h-full rounded-2xl p-[2px] shadow-xl"
                 style={{
-                  background: 'linear-gradient(135deg, #00B9B3, #1242de, #0f766e)',
+                  background: 'var(--primary-color)',
                 }}
               >
                 <div className="relative flex h-full min-h-0 flex-col rounded-[14px] bg-gradient-to-br from-cyan-50 via-white to-amber-50 px-5 pb-6 pt-10 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950">
@@ -966,10 +966,10 @@ function LandingPage() {
 
               {/* Enterprise — teal accent highlight */}
               <div className="relative flex h-full flex-col rounded-2xl border-2 border-brand-primary/45 bg-gradient-to-b from-gray-50 via-white to-teal-50/40 px-5 pb-6 pt-10 text-left shadow-md dark:border-teal-500/45 dark:from-gray-800 dark:via-slate-900 dark:to-teal-950/30">
-                <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-gradient-to-r from-[#00B9B3] to-[#1242de] px-3 py-1 text-xs font-bold text-white shadow-md sm:text-sm">
+                <div className="absolute -top-3 left-1/2 z-10 -translate-x-1/2 rounded-full bg-brand-primary px-3 py-1 text-xs font-bold text-white shadow-md sm:text-sm">
                   {t('eventxp.golive.tier3.badge')}
                 </div>
-                <p className="text-lg font-bold text-brand-primary dark:text-teal-300">{t('eventxp.golive.tier3.name')}</p>
+                <p className="text-lg font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{t('eventxp.golive.tier3.name')}</p>
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-gray-700 dark:text-slate-300">
                   {t('eventxp.golive.tier3.desc')}
                 </p>
@@ -1009,7 +1009,7 @@ function LandingPage() {
             </p>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-3">
               <div>
-                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-teal-300">
+                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">
                   {t('referral.feedback_loop.title')}
                 </h4>
                 <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
@@ -1017,7 +1017,7 @@ function LandingPage() {
                 </p>
               </div>
               <div>
-                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-teal-300">
+                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">
                   {t('referral.commission.title')}
                 </h4>
                 <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
@@ -1025,7 +1025,7 @@ function LandingPage() {
                 </p>
               </div>
               <div>
-                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-teal-300">
+                <h4 className="mb-2 text-sm font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">
                   {t('referral.welcome_gift.title')}
                 </h4>
                 <p className="text-sm leading-relaxed text-gray-600 dark:text-gray-300">
@@ -1093,7 +1093,7 @@ function LandingPage() {
             {t('pricing.insight.setup')}
             <a
               href={loc("/bookme")}
-              className="font-semibold text-brand-primary underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary-hover dark:text-teal-300"
+              className="font-semibold text-brand-primary underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary-hover dark:text-[color:var(--primary-hover)]"
             >
               {t('pricing.insight.setup_cta')}
             </a>
@@ -1150,17 +1150,17 @@ function LandingPage() {
               </ol>
             </div>
             
-            <p className="text-xl font-semibold text-brand-primary dark:text-teal-300 mb-6">
+            <p className="text-xl font-semibold text-brand-primary dark:text-[color:var(--primary-hover)] mb-6">
               {t('pricing.crm.tagline')}
             </p>
             <p className="text-lg text-gray-600 dark:text-gray-300 max-w-4xl mx-auto mb-8">
               {t('pricing.crm.description')}
             </p>
-            <p className="text-lg font-semibold text-brand-primary dark:text-teal-300">
+            <p className="text-lg font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">
               {t('pricing.crm.value')}
             </p>
             <div className="mt-6 max-w-2xl mx-auto rounded-lg border border-brand-primary/30 bg-white p-4 dark:border-brand-primary/40 dark:bg-gray-800">
-              <p className="font-bold text-brand-primary dark:text-teal-300">
+              <p className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">
                 💰 {t('pricing.crm.tier3.name')}: {t('pricing.crm.tier3.price')}
               </p>
             </div>
@@ -1169,21 +1169,21 @@ function LandingPage() {
           {/* SmartSales CRM Features */}
           <div className="mb-12 grid grid-cols-1 gap-8 md:grid-cols-3">
             <div className="rounded-xl border-2 border-gray-200 bg-white p-6 transition-all hover:border-oxford/40 dark:border-gray-500 dark:bg-gray-600">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-teal-300">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-[color:var(--primary-hover)]">
                 <PenLine className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.crm.feature1.title')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">{t('pricing.crm.feature1.desc')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-white p-6 transition-all hover:border-oxford/40 dark:border-gray-500 dark:bg-gray-600">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-teal-300">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-[color:var(--primary-hover)]">
                 <CalendarClock className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.crm.feature2.title')}</h3>
               <p className="text-sm text-gray-600 dark:text-gray-300">{t('pricing.crm.feature2.desc')}</p>
             </div>
             <div className="rounded-xl border-2 border-gray-200 bg-white p-6 transition-all hover:border-oxford/40 dark:border-gray-500 dark:bg-gray-600">
-              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-teal-300">
+              <div className="mb-4 flex h-12 w-12 items-center justify-center rounded-xl bg-oxford/10 text-oxford dark:bg-oxford-light/15 dark:text-[color:var(--primary-hover)]">
                 <BarChart3 className="h-6 w-6" strokeWidth={2} aria-hidden />
               </div>
               <h3 className="mb-3 text-xl font-bold text-gray-900 dark:text-white">{t('pricing.crm.feature3.title')}</h3>
@@ -1192,7 +1192,7 @@ function LandingPage() {
           </div>
 
           <div className="-mx-6 mb-10 max-w-6xl mx-auto space-y-4 sm:-mx-12">
-            <p className="text-center text-sm font-semibold text-brand-primary md:text-base dark:text-teal-300">
+            <p className="text-center text-sm font-semibold text-brand-primary md:text-base dark:text-[color:var(--primary-hover)]">
               {t('mockup.pipeline')}
             </p>
             <div className="grid grid-cols-1 gap-8 md:grid-cols-2">
@@ -1212,7 +1212,7 @@ function LandingPage() {
             <div className="text-center">
               <a
                 href={loc("/bookme")}
-                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950"
+                className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 py-2 text-sm font-bold text-white shadow-md transition hover:bg-brand-primary-hover "
               >
                 {copy.smartsales.demoCta}
               </a>
@@ -1451,7 +1451,7 @@ function LandingPage() {
             <tbody>
               {copy.comparison.rows.map((row) => (
                 <tr key={row.service} className="rounded-xl bg-white shadow-sm dark:bg-gray-800">
-                  <td className="rounded-l-xl px-4 py-4 font-bold text-brand-primary dark:text-teal-300">{row.service}</td>
+                  <td className="rounded-l-xl px-4 py-4 font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{row.service}</td>
                   <td className="px-4 py-4 text-gray-700 dark:text-gray-300">{row.setup}</td>
                   <td className="px-4 py-4 text-gray-700 dark:text-gray-300">{row.monthly}</td>
                   <td className="rounded-r-xl px-4 py-4 text-gray-700 dark:text-gray-300">{row.fit}</td>
@@ -1517,7 +1517,7 @@ function LandingPage() {
               <a
                 href="https://www.linkedin.com/company/innovatexp"
                 rel="author"
-                className="font-semibold text-brand-primary hover:text-brand-primary-hover dark:text-teal-300 dark:hover:text-teal-200"
+                className="font-semibold text-brand-primary hover:text-brand-primary-hover dark:text-[color:var(--primary-hover)] dark:hover:text-teal-200"
               >
                 InnovateXP
               </a>
@@ -1544,7 +1544,7 @@ function LandingPage() {
             <h3 className="text-2xl font-bold text-gray-900 dark:text-white mb-4">{t('about.tags.title')}</h3>
             <ul className="space-y-4">
               <li className="leading-relaxed text-gray-600 dark:text-slate-300">
-                <strong className="text-lg text-brand-primary dark:text-teal-300">{t('about.tags.red_ocean.title')}:</strong>
+                <strong className="text-lg text-brand-primary dark:text-[color:var(--primary-hover)]">{t('about.tags.red_ocean.title')}:</strong>
                 <br />
                 {t('about.tags.red_ocean.description')}
               </li>
@@ -1554,7 +1554,7 @@ function LandingPage() {
                 {t('about.tags.desert_oasis.description')}
               </li>
               <li className="leading-relaxed text-gray-600 dark:text-slate-300">
-                <strong className="text-lg text-brand-primary dark:text-teal-300">{t('about.tags.community.title')}:</strong>
+                <strong className="text-lg text-brand-primary dark:text-[color:var(--primary-hover)]">{t('about.tags.community.title')}:</strong>
                 <br />
                 {t('about.tags.community.description')}
               </li>
@@ -1567,10 +1567,10 @@ function LandingPage() {
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 items-stretch">
             {/* Step 1: Red Ocean */}
             <div className="relative flex flex-col items-center rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-brand-primary/50 dark:border-gray-700">
-              <div className="mb-4 text-5xl font-bold text-brand-primary dark:text-teal-300">1</div>
+              <div className="mb-4 text-5xl font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">1</div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-black mb-3">{t('story.step1.title')}</h3>
               <p className="text-gray-600">{t('story.step1.description')}</p>
-              <div className="absolute -right-3 top-1/2 hidden -translate-y-1/2 transform text-3xl text-brand-primary dark:text-teal-300 md:block">→</div>
+              <div className="absolute -right-3 top-1/2 hidden -translate-y-1/2 transform text-3xl text-brand-primary dark:text-[color:var(--primary-hover)] md:block">→</div>
             </div>
 
             {/* Step 2: Desert Oasis */}
@@ -1583,7 +1583,7 @@ function LandingPage() {
 
             {/* Step 3: Coca-Cola Theory */}
             <div className="flex flex-col items-center rounded-xl border-2 border-gray-200 bg-gray-50 p-6 text-center transition duration-300 hover:border-brand-primary/50 dark:border-gray-700">
-              <div className="mb-4 text-5xl font-bold text-brand-primary/80 dark:text-teal-300">3</div>
+              <div className="mb-4 text-5xl font-bold text-brand-primary/80 dark:text-[color:var(--primary-hover)]">3</div>
               <h3 className="text-xl font-bold text-gray-900 dark:text-black mb-3">{t('story.step3.title')}</h3>
               <p className="text-gray-600">{t('story.step3.description')}</p>
           </div>
@@ -1644,7 +1644,7 @@ function LandingPage() {
             </p>
             <a
               href={loc("/ai-seo-update-package")}
-              className="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-8 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+              className="mt-6 inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-8 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover "
             >
               {t('ai_seo_cta.button')}
             </a>
@@ -1659,13 +1659,13 @@ function LandingPage() {
           <div className="grid grid-cols-1 gap-6 md:grid-cols-2">
             <blockquote className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
               {copy.cases.quote1}
-              <footer className="mt-3 font-semibold text-brand-primary dark:text-teal-300">
+              <footer className="mt-3 font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">
                 {copy.cases.footer1}
               </footer>
             </blockquote>
             <blockquote className="rounded-xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-600 dark:bg-slate-900 dark:text-slate-300">
               {copy.cases.quote2}
-              <footer className="mt-3 font-semibold text-brand-primary dark:text-teal-300">
+              <footer className="mt-3 font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">
                 {copy.cases.footer2}
               </footer>
             </blockquote>
@@ -1675,7 +1675,7 @@ function LandingPage() {
         <section id="partnership" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border-2 border-gray-200 bg-white p-10 shadow-lg dark:border-gray-700 dark:bg-gray-800">
           <div className="text-center mb-12">
             <h2 className="text-4xl font-bold text-gray-900 dark:text-white mb-4">{t('partnership.title')}</h2>
-            <p className="text-xl font-semibold text-brand-primary dark:text-teal-300">{t('partnership.subtitle')}</p>
+            <p className="text-xl font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">{t('partnership.subtitle')}</p>
           </div>
           
           <div className="mx-auto grid max-w-6xl grid-cols-1 gap-8 md:grid-cols-2 xl:grid-cols-3">
@@ -1839,7 +1839,7 @@ function LandingPage() {
 
         {/* Desktop sticky CTA → /bookme (mobile uses twin bar below; old “booking-form” submit was dead) */}
       <div
-        className="fixed bottom-0 left-0 right-0 z-40 hidden border-t border-gray-200 bg-white/95 shadow-2xl backdrop-blur-md dark:border-gray-700 dark:bg-gray-800/95 md:block"
+        className="fixed bottom-0 left-0 right-0 z-40 hidden border-t border-[color:var(--border-light)] bg-surface/90 shadow-card backdrop-blur-md md:block"
         style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
       >
         <div className="mx-auto max-w-4xl px-6 py-4">
@@ -1853,7 +1853,7 @@ function LandingPage() {
           </Button>
         </div>
       </div>
-      <footer className="border-t-2 border-gray-300 bg-[#fffcf7] py-12 text-center dark:border-gray-700 dark:bg-gray-900">
+      <footer className="border-t border-[color:var(--border-light)] bg-surface-secondary py-12 text-center">
         <div className="container mx-auto px-4">
           <div className="mb-10">
             <Button href={loc("/bookme")} variant="ctaLight">
@@ -1866,7 +1866,7 @@ function LandingPage() {
             <p className="text-gray-900 dark:text-gray-300">{t('footer.copyright')}</p>
             <p className="mt-2 text-gray-600 dark:text-gray-400">
               Email:{' '}
-              <a href="mailto:info@innovatexp.co" className="text-[#00B9B3] hover:underline dark:text-teal-300">
+              <a href="mailto:info@innovatexp.co" className="text-secondary hover:underline">
                 info@innovatexp.co
               </a>
             </p>
@@ -1875,7 +1875,7 @@ function LandingPage() {
         </div>
       </footer>
 
-      <div className="fixed bottom-0 left-0 right-0 z-40 flex gap-1.5 border-t border-gray-200 bg-white/95 px-2 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-[0_-4px_6px_-1px_rgba(0,0,0,0.08)] backdrop-blur-md dark:border-gray-700 dark:bg-gray-900/95 sm:gap-2 sm:p-3 sm:pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
+      <div className="fixed bottom-0 left-0 right-0 z-30 flex gap-1.5 border-t border-[color:var(--border-light)] bg-surface/90 px-2 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-card backdrop-blur-md sm:gap-2 sm:p-3 sm:pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
         <Button
           href={loc("/bookme")}
           variant="ctaLight"

@@ -734,7 +734,7 @@ function SectionIntro({
 }) {
   return (
     <div className="mx-auto mb-8 max-w-3xl text-center">
-      <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+      <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
         {eyebrow}
       </p>
       <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
@@ -761,12 +761,12 @@ export function BusinessUpgradeHomepageFunnel({
 
   return (
     <>
-      <section id="ai-business-upgrade" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900 md:p-10">
+      <section id="ai-business-upgrade" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro {...c.problem} />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-5">
           {c.problem.points.map((point) => (
             <div key={point} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-              <CheckCircle2 className="mb-3 h-5 w-5 text-brand-primary dark:text-teal-300" aria-hidden />
+              <CheckCircle2 className="mb-3 h-5 w-5 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
               {point}
             </div>
           ))}
@@ -780,13 +780,13 @@ export function BusinessUpgradeHomepageFunnel({
         smartSalesHref={`${localePrefix}/smartsales-crm`}
       />
 
-      <section id="why-innovatexp" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
+      <section id="why-innovatexp" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro eyebrow={c.whyUs.eyebrow} title={c.whyUs.title} intro={c.whyUs.intro} />
         <div className="grid gap-4 md:grid-cols-2">
           {c.whyUs.points.map(([title, body]) => (
             <div key={title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
               <div className="mb-3 flex items-center gap-2">
-                <Wrench className="h-5 w-5 text-brand-primary dark:text-teal-300" aria-hidden />
+                <Wrench className="h-5 w-5 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">{title}</h3>
               </div>
               <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300">{body}</p>
@@ -795,7 +795,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="ai-coaching-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
+      <section id="ai-coaching-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro eyebrow={c.pricing.eyebrow} title={c.pricing.title} intro={c.pricing.intro} />
         <div className="grid gap-5 lg:grid-cols-4">
           {c.pricing.plans.map((plan, planIndex) => (
@@ -803,17 +803,17 @@ export function BusinessUpgradeHomepageFunnel({
               key={plan.name}
               className={`flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
                 "featured" in plan && plan.featured
-                  ? "border-brand-primary/55 bg-gradient-to-br from-cyan-50 via-white to-amber-50 dark:border-teal-500/50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-900"
-                  : "border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800"
+                  ? "border-brand-primary/40 bg-surface-secondary"
+                  : "border-[color:var(--border-light)] bg-surface-secondary"
               }`}
             >
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
-              <p className="mt-3 text-lg font-extrabold text-brand-primary dark:text-teal-300">{consultancyPlanPrice(planIndex, locale)}</p>
+              <p className="mt-3 text-lg font-extrabold text-brand-primary dark:text-[color:var(--primary-hover)]">{consultancyPlanPrice(planIndex, locale)}</p>
               <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{plan.fit}</p>
               <ul className="mt-5 grid flex-1 gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                 {plan.points.map((point) => (
                   <li key={point} className="flex gap-2">
-                    <span className="font-bold text-brand-primary dark:text-teal-300">✓</span>
+                    <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">✓</span>
                     <span>{point}</span>
                   </li>
                 ))}
@@ -824,7 +824,7 @@ export function BusinessUpgradeHomepageFunnel({
             </article>
           ))}
         </div>
-        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-[color:var(--border-light)] bg-surface-secondary p-4 text-center text-sm leading-relaxed text-[color:var(--text-secondary)]">
           {c.pricing.note}
         </p>
         <div className="mt-6 flex flex-wrap justify-center gap-3">
@@ -833,7 +833,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="method" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
+      <section id="method" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro {...c.method} />
         <div className="grid gap-4 md:grid-cols-2 lg:grid-cols-3">
           {c.method.steps.map(([title, body], index) => (
@@ -848,26 +848,26 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="discovery-sprint" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-amber-50 p-6 shadow-card dark:border-slate-700 dark:from-slate-900 dark:via-slate-900 dark:to-gray-900 md:p-10">
+      <section id="discovery-sprint" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-200 rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro eyebrow={c.sprint.eyebrow} title={c.sprint.title} intro={c.sprint.intro} />
         <div className="grid gap-6 lg:grid-cols-2">
-          <div className="rounded-2xl bg-white p-6 shadow-sm dark:bg-slate-900">
+          <div className="rounded-2xl bg-surface-secondary p-6 shadow-card">
             <h3 className="mb-4 flex items-center gap-2 text-2xl font-bold text-gray-900 dark:text-white">
-              <ClipboardCheck className="h-6 w-6 text-brand-primary dark:text-teal-300" aria-hidden />
+              <ClipboardCheck className="h-6 w-6 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
               {c.sprint.deliverablesTitle}
             </h3>
             <ul className="grid gap-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300 sm:grid-cols-2">
               {c.sprint.deliverables.map((item) => (
                 <li key={item} className="flex gap-2">
-                  <span className="font-bold text-brand-primary dark:text-teal-300">✓</span>
+                  <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">✓</span>
                   <span>{item}</span>
                 </li>
               ))}
             </ul>
           </div>
-          <div className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
+          <div className="rounded-2xl border border-[color:var(--border-light)] bg-surface-secondary p-6 shadow-card">
             <h3 className="mb-4 flex items-center gap-2 text-2xl font-bold text-gray-900 dark:text-white">
-              <ShieldCheck className="h-6 w-6 text-brand-primary dark:text-teal-300" aria-hidden />
+              <ShieldCheck className="h-6 w-6 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
               {c.sprint.exclusionsTitle}
             </h3>
             <ul className="grid gap-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
@@ -885,7 +885,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="programs" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900 md:p-10">
+      <section id="programs" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro {...c.programs} />
         <div className="grid gap-6 lg:grid-cols-3">
           {c.programs.cards.map((program) => (
@@ -893,8 +893,8 @@ export function BusinessUpgradeHomepageFunnel({
               key={program.name}
               className={`rounded-2xl border p-6 shadow-sm ${
                 "featured" in program && program.featured
-                  ? "border-brand-primary/50 bg-gradient-to-br from-cyan-50 via-white to-amber-50 dark:border-teal-500/50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-900"
-                  : "border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800"
+                  ? "border-brand-primary/50 border-brand-primary/40 bg-surface-secondary"
+                  : "border-[color:var(--border-light)] bg-surface-secondary"
               }`}
             >
               <h3 className="text-2xl font-bold text-gray-900 dark:text-white">{program.name}</h3>
@@ -902,7 +902,7 @@ export function BusinessUpgradeHomepageFunnel({
               <ul className="mt-5 grid gap-3 text-sm text-slate-700 dark:text-slate-300">
                 {program.points.map((point) => (
                   <li key={point} className="flex gap-2">
-                    <span className="font-bold text-brand-primary dark:text-teal-300">✓</span>
+                    <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">✓</span>
                     <span>{point}</span>
                   </li>
                 ))}
@@ -916,23 +916,23 @@ export function BusinessUpgradeHomepageFunnel({
         <SectionIntro {...c.useCases} />
         <div className="grid gap-6 lg:grid-cols-3">
           {c.useCases.cards.map((item) => (
-            <div key={item.title} className="rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-800">
+            <div key={item.title} className="rounded-2xl border border-[color:var(--border-light)] bg-surface-secondary p-6">
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">{item.title}</h3>
               <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{item.before}</p>
-              <p className="mt-3 text-sm font-semibold leading-relaxed text-brand-primary dark:text-teal-300">{item.after}</p>
+              <p className="mt-3 text-sm font-semibold leading-relaxed text-brand-primary dark:text-[color:var(--primary-hover)]">{item.after}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section id="capability-proof" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900 md:p-10">
+      <section id="capability-proof" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro {...c.proof} />
         <div className="grid gap-6 lg:grid-cols-3">
           {c.proof.columns.map((column, index) => {
             const Icon = [Users, LayoutDashboard, GraduationCap][index] ?? CheckCircle2;
             return (
               <div key={column.title} className="rounded-2xl border border-slate-200 bg-slate-50 p-6 dark:border-slate-700 dark:bg-slate-800">
-                <Icon className="mb-4 h-7 w-7 text-brand-primary dark:text-teal-300" aria-hidden />
+                <Icon className="mb-4 h-7 w-7 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
                 <h3 className="text-xl font-bold text-gray-900 dark:text-white">{column.title}</h3>
                 <ul className="mt-4 grid gap-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                   {column.points.map((point) => (
@@ -958,7 +958,7 @@ export function BusinessUpgradeHomepageFunnel({
             />
           </div>
           <div className="p-6 md:p-10">
-            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+            <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
               {c.founder.eyebrow}
             </p>
             <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">{c.founder.title}</h2>
@@ -968,19 +968,19 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="faq" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900 md:p-10">
+      <section id="faq" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">{c.faq.title}</h2>
         <div className="divide-y divide-slate-200 dark:divide-slate-700">
           {c.faq.items.map(([question, answer]) => (
             <div key={question} className="py-5">
-              <h3 className="text-lg font-bold text-brand-primary dark:text-teal-300">{question}</h3>
+              <h3 className="text-lg font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{question}</h3>
               <p className="mt-2 leading-relaxed text-slate-700 dark:text-slate-300">{answer}</p>
             </div>
           ))}
         </div>
       </section>
 
-      <section className="mb-16 rounded-3xl border border-brand-primary/25 bg-gradient-to-r from-cyan-50 via-white to-amber-50 p-6 text-center shadow-card dark:border-teal-500/30 dark:from-slate-900 dark:via-slate-900 dark:to-gray-900 md:p-10">
+      <section className="mb-16 rounded-3xl border border-brand-primary/25 rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10 text-center">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">{c.finalCta.title}</h2>
         <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-slate-700 dark:text-slate-300">{c.finalCta.body}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -989,7 +989,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="capabilities" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-200 bg-white p-6 shadow-card dark:border-slate-700 dark:bg-slate-900 md:p-10">
+      <section id="capabilities" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro eyebrow={c.capabilities.eyebrow} title={c.capabilities.title} intro={c.capabilities.intro} />
         <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-3">
           {c.capabilities.items.map((item, index) => {
@@ -1002,10 +1002,10 @@ export function BusinessUpgradeHomepageFunnel({
                 href={href}
                 className="group flex h-full flex-col rounded-2xl border border-slate-200 bg-slate-50 p-5 text-left transition hover:border-brand-primary/50 hover:shadow-md dark:border-slate-700 dark:bg-slate-800"
               >
-                <Icon className="mb-3 h-7 w-7 text-brand-primary dark:text-teal-300" aria-hidden />
+                <Icon className="mb-3 h-7 w-7 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
                 <h3 className="text-lg font-bold text-gray-900 dark:text-white">{item.name}</h3>
                 <p className="mt-2 flex-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{item.body}</p>
-                <span className="mt-4 text-sm font-semibold text-brand-primary group-hover:underline dark:text-teal-300">
+                <span className="mt-4 text-sm font-semibold text-brand-primary group-hover:underline dark:text-[color:var(--primary-hover)]">
                   {locale === "zh-hk" || locale === "zh-tw" ? "了解詳情 →" : "Learn more →"}
                 </span>
               </a>

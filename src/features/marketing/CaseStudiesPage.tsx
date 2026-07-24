@@ -146,7 +146,7 @@ export function CaseStudiesPage({
         </nav>
 
         <section className="mb-10 rounded-3xl border border-brand-primary/20 bg-white p-8 shadow-sm dark:border-teal-400/20 dark:bg-gray-900 md:p-10">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
             {copy.eyebrow}
           </p>
           <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-gray-950 dark:text-white md:text-5xl">
@@ -179,7 +179,7 @@ export function CaseStudiesPage({
               key={item.slug}
               className="rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900 md:p-8"
             >
-              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-brand-primary dark:text-teal-300">
+              <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-brand-primary dark:text-[color:var(--primary-hover)]">
                 {item.proofType.replace(/-/g, " ")}
               </p>
               <h2 className="mb-3 text-3xl font-bold text-gray-900 dark:text-white">{item.title}</h2>
@@ -217,7 +217,7 @@ export function CaseStudiesPage({
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">{vision.referralTraditionalChinese}</p>
           <Link
             href={`/${locale}/bookme`}
-            className="mt-6 inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+            className="mt-6 inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-brand-primary-hover "
           >
             {copy.cta}
           </Link>

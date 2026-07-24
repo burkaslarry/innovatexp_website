@@ -85,7 +85,7 @@ export default async function PrivateAiSolutionsPage({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
         />
-        <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+        <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
           Private AI Solutions
         </p>
         <h1 className="mb-6 text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
@@ -174,13 +174,13 @@ export default async function PrivateAiSolutionsPage({
           <div className="flex flex-wrap gap-3">
             <Link
               href={`/${locale}/bookme`}
-              className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white dark:bg-[#00B9B3] dark:text-slate-950"
+              className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white "
             >
               {zh ? "預約諮詢" : "Book a consultation"}
             </Link>
             <Link
               href={`/${locale}/ai-consulting`}
-              className="inline-block rounded-full border-2 border-brand-primary px-6 py-3 font-semibold text-brand-primary dark:border-teal-300 dark:text-teal-300"
+              className="inline-block rounded-full border-2 border-brand-primary px-6 py-3 font-semibold text-brand-primary dark:border-brand-primary dark:text-[color:var(--primary-hover)]"
             >
               {zh ? "AI 顧問服務" : "AI consulting"}
             </Link>

@@ -161,7 +161,7 @@ export default async function AiEraQualityPage({
           <p className="mb-4 text-gray-700 dark:text-gray-300">{b.metaDescription}</p>
           <Link
             href={`/${locale}/bookme`}
-            className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+            className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-primary-hover "
           >
             {bookLabel}
           </Link>

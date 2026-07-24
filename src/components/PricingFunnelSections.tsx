@@ -169,9 +169,9 @@ export function PricingFunnelSections({
 
   return (
     <>
-      <section id="tool-trials-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
+      <section id="tool-trials-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <div className="mx-auto mb-8 max-w-3xl text-center">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
             {c.toolsEyebrow}
           </p>
           <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">{c.toolsTitle}</h2>
@@ -183,19 +183,19 @@ export function PricingFunnelSections({
               key={title}
               className={`flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
                 featured
-                  ? "border-brand-primary/55 bg-gradient-to-br from-cyan-50 via-white to-amber-50 dark:border-teal-500/50 dark:from-slate-800 dark:via-slate-900 dark:to-slate-900"
-                  : "border-slate-200 bg-slate-50 dark:border-slate-700 dark:bg-slate-800"
+                  ? "border-brand-primary/40 bg-surface-secondary"
+                  : "border-[color:var(--border-light)] bg-surface-secondary"
               }`}
             >
-              <Icon className="mb-3 h-6 w-6 text-brand-primary dark:text-teal-300" aria-hidden />
+              <Icon className="mb-3 h-6 w-6 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
-              <p className="mt-2 text-lg font-extrabold leading-snug text-brand-primary dark:text-teal-300">{price}</p>
+              <p className="mt-2 text-lg font-extrabold leading-snug text-brand-primary dark:text-[color:var(--primary-hover)]">{price}</p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{body}</p>
               <div className="mt-5 grid gap-2">
                 <AddToInquiryButton itemId={inquiryId} />
                 <Link
                   href={href}
-                  className="inline-flex min-h-[44px] items-center justify-center rounded-full border-2 border-brand-primary px-4 py-2 text-sm font-bold text-brand-primary transition hover:bg-brand-primary hover:text-white dark:border-teal-300 dark:text-teal-300 dark:hover:bg-teal-300 dark:hover:text-slate-950"
+                  className="inline-flex min-h-[44px] items-center justify-center rounded-full border-2 border-brand-primary px-4 py-2 text-sm font-bold text-brand-primary transition hover:bg-brand-primary hover:text-white dark:border-brand-primary dark:text-[color:var(--primary-hover)] dark:hover:bg-brand-primary dark:hover:text-white"
                 >
                   {cta}
                 </Link>
@@ -203,15 +203,15 @@ export function PricingFunnelSections({
             </article>
           ))}
         </div>
-        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+        <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-[color:var(--border-light)] bg-surface-secondary p-4 text-center text-sm leading-relaxed text-[color:var(--text-secondary)]">
           {formatBniDiscountNote(pl)}
         </p>
       </section>
 
-      <section id="accounting-tools-demo" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
+      <section id="accounting-tools-demo" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-start">
           <div>
-            <p className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-teal-300">
+            <p className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
               <Receipt className="h-4 w-4" aria-hidden />
               {c.accountingEyebrow}
             </p>
@@ -227,8 +227,8 @@ export function PricingFunnelSections({
             </ul>
 
             <div className="mt-8 grid gap-4 sm:grid-cols-2">
-              <div className="rounded-2xl border border-brand-primary/30 bg-cyan-50 p-4 dark:border-teal-500/40 dark:bg-slate-800">
-                <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300">{c.trialWeek}</p>
+              <div className="rounded-2xl border border-brand-primary/25 bg-surface-secondary p-4">
+                <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-[color:var(--primary-hover)]">{c.trialWeek}</p>
                 <p className="mt-1 text-2xl font-extrabold text-gray-900 dark:text-white">
                   {formatHkd(q.accountXpExperience, pl)}
                 </p>
@@ -238,8 +238,8 @@ export function PricingFunnelSections({
                     : "Receipt pilot setup + first month live use"}
                 </p>
               </div>
-              <div className="rounded-2xl border border-brand-primary/30 bg-cyan-50 p-4 dark:border-teal-500/40 dark:bg-slate-800">
-                <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300">{c.trialMonth}</p>
+              <div className="rounded-2xl border border-brand-primary/25 bg-surface-secondary p-4">
+                <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-[color:var(--primary-hover)]">{c.trialMonth}</p>
                 <p className="mt-1 text-lg font-extrabold leading-snug text-gray-900 dark:text-white">
                   {formatHkd(ax.maintenanceStarterMonthly, pl)}
                   <span className="text-sm font-semibold text-slate-500"> / </span>
@@ -288,7 +288,7 @@ export function PricingFunnelSections({
                   </tbody>
                 </table>
               </div>
-              <p className="mt-4 rounded-xl border border-brand-primary/30 bg-cyan-50 p-4 text-sm font-semibold leading-relaxed text-brand-primary dark:border-teal-500/40 dark:bg-slate-800 dark:text-teal-300">
+              <p className="mt-4 rounded-xl border border-brand-primary/25 bg-surface-secondary p-4 text-sm font-semibold leading-relaxed text-brand-primary">
                 {c.outcomesHighlight}
               </p>
             </div>

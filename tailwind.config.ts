@@ -14,41 +14,64 @@ export default {
         foreground: "var(--foreground)",
         bg: "var(--background)",
         fg: "var(--foreground)",
-        brand: {
-          primary: "#1242de",
-          "primary-hover": "#0e35b5",
-          cream: "#FFF9F2",
-          "cream-warm": "#FEF9E7",
-          ink: "#1a1a2e",
-          muted: "#64748b",
+        canvas: "var(--bg-base)",
+        surface: {
+          DEFAULT: "var(--bg-surface)",
+          secondary: "var(--bg-secondary)",
+          elevated: "var(--bg-elevated)",
         },
-        /** Oxford Blue — headings, primary actions (light), icon accents */
+        brand: {
+          primary: "var(--brand-primary)",
+          "primary-hover": "var(--brand-primary-hover)",
+          cream: "var(--brand-cream)",
+          "cream-warm": "var(--brand-cream-warm)",
+          ink: "var(--brand-ink)",
+          muted: "var(--brand-muted)",
+        },
         oxford: {
-          DEFAULT: "#002147",
-          muted: "#1e3a5f",
-          light: "#4a6fa5",
+          DEFAULT: "var(--oxford-blue)",
+          muted: "var(--secondary-color)",
+          light: "var(--secondary-hover)",
+        },
+        primary: {
+          DEFAULT: "var(--primary-color)",
+          hover: "var(--primary-hover)",
+          muted: "var(--primary-muted)",
+        },
+        secondary: {
+          DEFAULT: "var(--secondary-color)",
+          hover: "var(--secondary-hover)",
         },
       },
       fontFamily: {
         sans: [
           "var(--font-main)",
-          "Inter",
           "system-ui",
           "-apple-system",
           "BlinkMacSystemFont",
+          "SF Pro Text",
           "Segoe UI",
           "sans-serif",
         ],
       },
+      borderRadius: {
+        soft: "var(--radius-sm)",
+        card: "var(--radius-lg)",
+        pill: "var(--radius-pill)",
+      },
       boxShadow: {
-        card: "0 1px 3px 0 rgb(0 0 0 / 0.06), 0 1px 2px -1px rgb(0 0 0 / 0.06)",
-        "card-hover": "0 10px 40px -10px rgb(18 66 222 / 0.22)",
+        card: "var(--shadow-sm)",
+        "card-hover": "var(--shadow-md)",
+        fab: "var(--shadow-fab)",
+      },
+      transitionDuration: {
+        fast: "150ms",
+        normal: "220ms",
       },
       backgroundImage: {
-        "brand-gradient":
-          "linear-gradient(135deg, #7c3aed 0%, #4f46e5 35%, #0f172a 100%)",
-        "premium-border":
-          "linear-gradient(135deg, #EAB308, #1242de, #6366f1)",
+        /* deprecated loud SaaS gradients — keep keys for compatibility as flat soft fills */
+        "brand-gradient": "linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-base) 100%)",
+        "premium-border": "linear-gradient(180deg, var(--border-medium), var(--border-light))",
       },
     },
   },

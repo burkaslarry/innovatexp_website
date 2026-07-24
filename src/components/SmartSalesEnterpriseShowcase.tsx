@@ -16,7 +16,7 @@ import { useLanguage } from "@/app/LanguageContext";
 const cardClass =
   "rounded-2xl border border-slate-200 bg-white p-6 shadow-md backdrop-blur-sm transition-all duration-300 hover:-translate-y-0.5 hover:border-oxford/25 hover:shadow-lg dark:border-slate-700 dark:bg-slate-800/60 dark:shadow-lg dark:backdrop-blur-md dark:hover:border-sky-500/40 dark:hover:shadow-sky-500/10";
 
-const iconClass = "mb-4 h-8 w-8 text-oxford dark:text-teal-300";
+const iconClass = "mb-4 h-8 w-8 text-oxford dark:text-[color:var(--primary-hover)]";
 
 type SmartSalesEnterpriseShowcaseProps = {
   onOpenGallery?: () => void;

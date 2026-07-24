@@ -90,7 +90,7 @@ export default async function BlogPostPage({ params }: Props) {
   };
 
   return (
-    <main className="min-h-screen bg-[#fffcf7] dark:bg-gray-900">
+    <main className="min-h-screen bg-canvas dark:bg-gray-900">
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
@@ -118,7 +118,7 @@ export default async function BlogPostPage({ params }: Props) {
             <p className="mt-8">
               <Link
                 href={`/${locale}/blog`}
-                className="font-medium text-brand-primary hover:underline dark:text-teal-300"
+                className="font-medium text-brand-primary hover:underline dark:text-[color:var(--primary-hover)]"
               >
                 ← Back to blog
               </Link>
@@ -133,7 +133,7 @@ export default async function BlogPostPage({ params }: Props) {
                   <li key={s.path}>
                     <Link
                       href={`/${locale}${s.path}`}
-                      className="font-medium text-brand-primary hover:underline dark:text-teal-300"
+                      className="font-medium text-brand-primary hover:underline dark:text-[color:var(--primary-hover)]"
                     >
                       {s.name}
                     </Link>
@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: Props) {
               </ul>
               <Link
                 href={`/${locale}/bookme`}
-                className="mt-4 flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white transition duration-300 hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+                className="mt-4 flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white transition duration-300 hover:bg-brand-primary-hover "
               >
                 Book a call
               </Link>

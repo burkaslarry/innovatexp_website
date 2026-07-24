@@ -66,7 +66,7 @@ export default async function PitchDecksPage({
     <main className="mx-auto min-h-screen max-w-5xl px-6 py-12 text-slate-900 dark:text-slate-100">
       <BackToHomeControl />
       <section className="rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-teal-300">
+        <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-[color:var(--primary-hover)]">
           InnovateXP Downloads
         </p>
         <h1 className="mt-3 text-3xl font-bold md:text-4xl">
@@ -85,7 +85,7 @@ export default async function PitchDecksPage({
             key={deck.href}
             className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900"
           >
-            <h2 className="text-xl font-bold text-brand-primary dark:text-teal-300">{deck.title}</h2>
+            <h2 className="text-xl font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{deck.title}</h2>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
               {deck.description}
             </p>
@@ -109,7 +109,7 @@ export default async function PitchDecksPage({
             ? "收據擷取 pilot 設定 + 首月正式使用（一次性），取代舊有按星期／按月雙軌。"
             : "Receipt-capture pilot setup + first month live use (one-time), replacing the old weekly/monthly dual track."}
         </p>
-        <p className="mt-4 text-3xl font-extrabold text-brand-primary dark:text-teal-300">
+        <p className="mt-4 text-3xl font-extrabold text-brand-primary dark:text-[color:var(--primary-hover)]">
           {formatHkd(ax.experience, pl)}
         </p>
         <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">

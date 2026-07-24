@@ -202,7 +202,7 @@ export function ContactForm({
               <button
                 type="submit"
                 disabled={!valid || submitting}
-                className="flex w-full min-h-[52px] items-center justify-center gap-2 rounded-xl bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition-all hover:bg-brand-primary-hover hover:shadow-lg disabled:cursor-not-allowed disabled:bg-brand-primary/40 disabled:shadow-none dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+                className="flex w-full min-h-[52px] items-center justify-center gap-2 rounded-xl bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition-all hover:bg-brand-primary-hover hover:shadow-lg disabled:cursor-not-allowed disabled:bg-brand-primary/40 disabled:shadow-none "
               >
                 {submitting ? (
                   <>

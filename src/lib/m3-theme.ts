@@ -2,48 +2,67 @@ import { createTheme, type Theme } from "@mui/material/styles";
 
 type Mode = "light" | "dark";
 
-/** Material 3–inspired MUI theme aligned to InnovateXP brand (#1242de). */
+/**
+ * Material 3 interaction + 水木 palette
+ * Light: CTA #16A34A / Dark: CTA #1F9D6B
+ */
 export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
   const isDark = mode === "dark";
+  const primary = isDark ? "#1F9D6B" : "#16A34A";
+  const primaryHover = isDark ? "#2ECC71" : "#15803D";
+  const secondary = isDark ? "#3B82F6" : "#1E3A8A";
+  const canvas = isDark ? "#0B1220" : "#F4F7FA";
+  const paper = isDark ? "#121A2B" : "#F2F9F6";
 
   return createTheme({
     palette: {
       mode,
       primary: {
-        main: isDark ? "#6b8cff" : "#1242de",
-        light: isDark ? "#9bb0ff" : "#5b7fff",
-        dark: isDark ? "#4a6ef0" : "#0e35b5",
+        main: primary,
+        light: isDark ? "#2ECC71" : "#22C55E",
+        dark: primaryHover,
         contrastText: "#ffffff",
       },
       secondary: {
-        main: "#00B9B3",
-        light: "#5ee0db",
-        dark: "#008f8a",
-        contrastText: isDark ? "#003735" : "#003735",
+        main: secondary,
+        light: isDark ? "#0EA5E9" : "#1D4ED8",
+        dark: isDark ? "#2563EB" : "#1E3A8A",
+        contrastText: "#ffffff",
       },
       background: {
-        default: isDark ? "#0b1220" : "#f7f9fc",
-        paper: isDark ? "#121a2b" : "#ffffff",
+        default: canvas,
+        paper,
       },
       text: {
-        primary: isDark ? "#e8eaed" : "#1a1c1e",
-        secondary: isDark ? "#a8adb8" : "#44474e",
+        primary: isDark ? "#E8EEF7" : "#1E293B",
+        secondary: isDark ? "#94A3B8" : "#475569",
       },
-      divider: isDark ? "rgba(255,255,255,0.12)" : "rgba(0,0,0,0.08)",
+      divider: isDark ? "rgba(148,163,184,0.16)" : "rgba(71,85,105,0.16)",
     },
     shape: { borderRadius: 16 },
     typography: {
-      fontFamily: 'var(--font-geist-sans), "Noto Sans TC", "Helvetica Neue", Arial, sans-serif',
-      h1: { fontWeight: 800, letterSpacing: "-0.02em" },
+      fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif',
+      h1: { fontWeight: 700, letterSpacing: "-0.02em" },
       h2: { fontWeight: 700, letterSpacing: "-0.01em" },
-      h3: { fontWeight: 700 },
+      h3: { fontWeight: 650 },
       button: { textTransform: "none", fontWeight: 700 },
+    },
+    transitions: {
+      duration: {
+        shortest: 150,
+        shorter: 180,
+        short: 220,
+        standard: 220,
+      },
+      easing: {
+        easeInOut: "cubic-bezier(0.25, 0.1, 0.25, 1)",
+      },
     },
     components: {
       MuiCssBaseline: {
         styleOverrides: {
           body: {
-            backgroundColor: isDark ? "#0b1220" : "#f7f9fc",
+            backgroundColor: canvas,
           },
         },
       },
@@ -54,13 +73,15 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
             minHeight: 48,
             paddingInline: 20,
             boxShadow: "none",
+            transition: "transform 180ms cubic-bezier(0.25, 0.1, 0.25, 1), background-color 180ms ease, box-shadow 180ms ease",
+            "&:active": { transform: "scale(0.96)" },
           },
           contained: {
-            boxShadow: isDark ? "none" : "0 1px 2px rgba(18, 66, 222, 0.2)",
+            boxShadow: isDark ? "none" : "0 1px 2px rgba(22, 163, 74, 0.2)",
           },
           containedPrimary: {
             color: "#ffffff",
-            "&:hover": { color: "#ffffff" },
+            "&:hover": { color: "#ffffff", backgroundColor: primaryHover },
             "&.Mui-disabled": { color: "rgba(255,255,255,0.7)" },
           },
         },
@@ -75,21 +96,21 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
           filled: {
             "&.MuiChip-colorPrimary": {
               color: "#ffffff",
-              backgroundColor: isDark ? "#6b8cff" : "#1242de",
+              backgroundColor: primary,
               "& .MuiChip-label": { color: "#ffffff" },
               "& .MuiChip-icon": { color: "#ffffff" },
               "&:hover": {
-                backgroundColor: isDark ? "#4a6ef0" : "#0e35b5",
+                backgroundColor: primaryHover,
                 color: "#ffffff",
                 "& .MuiChip-label": { color: "#ffffff" },
               },
             },
           },
           outlined: {
-            borderColor: isDark ? "rgba(255,255,255,0.22)" : "rgba(0,0,0,0.18)",
-            color: isDark ? "#e8eaed" : "#1a1c1e",
+            borderColor: isDark ? "rgba(148,163,184,0.28)" : "rgba(71,85,105,0.28)",
+            color: isDark ? "#E8EEF7" : "#1E293B",
             "&:hover": {
-              backgroundColor: isDark ? "rgba(107,140,255,0.12)" : "rgba(18,66,222,0.06)",
+              backgroundColor: isDark ? "rgba(31,157,107,0.14)" : "rgba(22,163,74,0.08)",
             },
           },
         },
@@ -98,9 +119,19 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
         styleOverrides: {
           root: {
             backgroundImage: "none",
+            backgroundColor: paper,
           },
           rounded: {
-            borderRadius: 24,
+            borderRadius: 20,
+          },
+        },
+      },
+      MuiDrawer: {
+        styleOverrides: {
+          paper: {
+            backgroundColor: paper,
+            borderTopLeftRadius: 20,
+            borderBottomLeftRadius: 20,
           },
         },
       },
@@ -108,11 +139,19 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
         styleOverrides: {
           root: {
             boxShadow: isDark
-              ? "0 4px 20px rgba(0, 0, 0, 0.45)"
-              : "0 4px 16px rgba(18, 66, 222, 0.35)",
+              ? "0 6px 22px rgba(31, 157, 107, 0.35)"
+              : "0 6px 20px rgba(22, 163, 74, 0.28)",
+            transition: "transform 180ms cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 180ms ease",
+            "&:active": { transform: "scale(0.96)" },
+            "&:focus-visible": {
+              outline: `3px solid ${isDark ? "rgba(46,204,113,0.45)" : "rgba(22,163,74,0.35)"}`,
+              outlineOffset: 2,
+            },
           },
           primary: {
             color: "#ffffff",
+            backgroundColor: primary,
+            "&:hover": { backgroundColor: primaryHover },
           },
         },
       },
@@ -130,14 +169,14 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
         styleOverrides: {
           root: {
             "& .MuiFilledInput-root": {
-              borderRadius: 12,
+              borderRadius: 14,
               overflow: "hidden",
-              backgroundColor: isDark ? "rgba(255,255,255,0.06)" : "#eef1f8",
+              backgroundColor: isDark ? "rgba(255,255,255,0.06)" : "#E8F0F4",
               "&:hover": {
-                backgroundColor: isDark ? "rgba(255,255,255,0.09)" : "#e6eaf3",
+                backgroundColor: isDark ? "rgba(255,255,255,0.09)" : "#DEE8EE",
               },
               "&.Mui-focused": {
-                backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#e6eaf3",
+                backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#DEE8EE",
               },
               "&:before, &:after": { display: "none" },
             },
@@ -147,7 +186,15 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
       MuiLinearProgress: {
         styleOverrides: {
           root: {
-            backgroundColor: isDark ? "rgba(255,255,255,0.08)" : "rgba(18,66,222,0.12)",
+            backgroundColor: isDark ? "rgba(255,255,255,0.08)" : "rgba(22,163,74,0.12)",
+          },
+        },
+      },
+      MuiSpeedDial: {
+        styleOverrides: {
+          fab: {
+            width: 56,
+            height: 56,
           },
         },
       },

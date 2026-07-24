@@ -138,7 +138,7 @@ export default async function AiConsultingPage({
           </p>
           <Link
             href={premiumHref}
-            className="inline-flex rounded-full bg-brand-primary px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+            className="inline-flex rounded-full bg-brand-primary px-5 py-2.5 text-sm font-bold text-white transition-colors hover:bg-brand-primary-hover "
           >
             {localeUsesChineseCopy(loc) ? "了解 Premium 方案" : "Explore premium programmes"}
           </Link>
@@ -222,7 +222,7 @@ export default async function AiConsultingPage({
           </p>
           <Link
             href={`/${locale}/bookme`}
-            className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-primary-hover dark:bg-[#00B9B3] dark:text-slate-950 dark:hover:bg-[#009e98]"
+            className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-primary-hover "
           >
             Book a free consultation
           </Link>

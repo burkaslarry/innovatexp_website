@@ -59,7 +59,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-[#fffcf7] dark:bg-gray-900 transition-colors duration-200`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-canvas dark:bg-[color:var(--bg-base)] transition-colors duration-200`}
         suppressHydrationWarning
       >
         {children}

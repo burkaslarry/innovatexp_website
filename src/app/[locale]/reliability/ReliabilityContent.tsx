@@ -112,7 +112,7 @@ export function ReliabilityContent() {
     <main className="mx-auto min-h-screen max-w-6xl px-6 py-12 text-slate-900 dark:text-slate-100">
       <BackToHomeControl />
       <section className="rounded-3xl border border-slate-200 bg-gradient-to-br from-cyan-50 via-white to-amber-50 p-8 shadow-sm dark:border-slate-700 dark:from-slate-900 dark:via-slate-950 dark:to-slate-900">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-teal-300">
+        <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-[color:var(--primary-hover)]">
           {copy.eyebrow}
         </p>
         <h1 className="mt-3 text-3xl font-bold md:text-5xl">{copy.title}</h1>
@@ -154,7 +154,7 @@ export function ReliabilityContent() {
       <section className="mt-8 grid gap-6 md:grid-cols-3">
         {copy.examples.map((item) => (
           <article key={item.title} className="flex h-full flex-col rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-            <h2 className="text-xl font-bold text-brand-primary dark:text-teal-300">{item.title}</h2>
+            <h2 className="text-xl font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{item.title}</h2>
             <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{item.body}</p>
             <a
               href={item.download ? item.href : loc(item.href)}

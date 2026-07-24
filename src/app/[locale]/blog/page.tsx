@@ -17,7 +17,7 @@ export default async function BlogIndexPage({
   if (!isValidLocale(locale)) notFound();
 
   return (
-    <main className="min-h-screen bg-[#fffcf7] dark:bg-gray-900">
+    <main className="min-h-screen bg-canvas dark:bg-gray-900">
       <div className="container mx-auto px-4 py-12 max-w-4xl">
         <h1 className="text-4xl font-bold text-gray-900 dark:text-white mb-2">
           Blog & Delivery Capability
@@ -42,11 +42,11 @@ export default async function BlogIndexPage({
         </ul>
         <p className="mt-12 text-gray-500 dark:text-gray-400 text-sm">
           More posts are on the way.{" "}
-          <Link href={`/${locale}`} className="text-brand-primary hover:underline dark:text-teal-300">
+          <Link href={`/${locale}`} className="text-brand-primary hover:underline dark:text-[color:var(--primary-hover)]">
             Back to home
           </Link>
           {" · "}
-          <Link href={`/${locale}/bookme`} className="text-brand-primary hover:underline dark:text-teal-300">
+          <Link href={`/${locale}/bookme`} className="text-brand-primary hover:underline dark:text-[color:var(--primary-hover)]">
             Book a call
           </Link>
         </p>

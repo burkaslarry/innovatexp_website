@@ -17,7 +17,7 @@ import { ThemeProvider, createTheme } from '@mui/material/styles';
 
 const muiBrandTheme = createTheme({
   palette: {
-    primary: { main: '#1242de' },
+    primary: { main: '#16A34A' },
   },
 });
 import ErrorIcon from '@mui/icons-material/Error';
