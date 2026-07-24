@@ -1,5 +1,6 @@
 /**
  * Single source of truth for InnovateXP public pricing (HKD).
+ * Aligned with Notion「定價政策 — Quick Cash Funnel（2026-07）」.
  * All pages should reference these values — do not hard-code prices elsewhere.
  */
 export const PRICING_CURRENCY = "HKD" as const;
@@ -15,7 +16,7 @@ export const RUSH_SURCHARGE_PERCENT = 30;
 
 export const PRICING = {
   quickCash: {
-    /** Prompt 實戰訓練營 — 1 day */
+    /** Prompt 實戰訓練營 — 1 day（新手體驗／限時價） */
     promptTrainingDay: 2_500,
     /** AI 準備度評估 */
     aiReadinessAssessment: 3_000,
@@ -27,17 +28,17 @@ export const PRICING = {
      * AccountXP（Accounting Tools）體驗方案 — 一次性
      * 收據擷取 pilot 設定 + 首月正式使用
      */
-    accountXpExperience: 1_880,
+    accountXpExperience: 3_000,
     /** @deprecated Use accountXpExperience — kept for migration grep only */
-    accountingChatbotTrialWeek: 1_880,
+    accountingChatbotTrialWeek: 3_000,
     /** @deprecated Use accountXpExperience */
-    accountingChatbotTrialMonth: 1_880,
+    accountingChatbotTrialMonth: 3_000,
     /** AI Discovery Sprint — custom workflow entry (1–2 weeks) */
     aiDiscoverySprint: 6_800,
     /** Customised Website Starter — 一次性 Base Package */
-    websiteStarter: 3_800,
+    websiteStarter: 7_800,
   },
-  /** AI 商業升級陪跑 — aligned with pitch deck */
+  /** AI 商業升級陪跑 — aligned with pitch deck / AI 商務顧問 page */
   consultancy: {
     discoverySprint30Day: 6_800,
     foundation3Month: 26_000,
@@ -48,10 +49,10 @@ export const PRICING = {
   tools: {
     eventXp: {
       trial: 4_000,
-      /** Aligned 3-tier monthly scale (with AccountXP) */
-      maintenanceStarterMonthly: 480,
-      maintenanceGrowthMonthly: 680,
-      maintenanceEnterpriseMonthly: 1_080,
+      /** Aligned 3-tier monthly scale (with AccountXP) — Quick Cash Funnel */
+      maintenanceStarterMonthly: 880,
+      maintenanceGrowthMonthly: 1_280,
+      maintenanceEnterpriseMonthly: 1_480,
     },
     smartSales: {
       trial: 5_000,
@@ -62,28 +63,28 @@ export const PRICING = {
       maintenanceEnterpriseMonthly: 1_680,
     },
     accountXp: {
-      experience: 1_880,
-      maintenanceStarterMonthly: 480,
-      maintenanceGrowthMonthly: 680,
-      maintenanceEnterpriseMonthly: 1_080,
+      experience: 3_000,
+      maintenanceStarterMonthly: 880,
+      maintenanceGrowthMonthly: 1_280,
+      maintenanceEnterpriseMonthly: 1_480,
     },
     website: {
-      starter: 3_800,
+      starter: 7_800,
       deliveryWorkingDays: 10,
       maintenanceStarterMonthly: 880,
       maintenanceGrowthMonthly: 1_280,
       maintenanceEnterpriseMonthly: 1_680,
     },
   },
-  /** Customised Website 點心紙（Add-on Menu） */
+  /** Customised Website 點心紙（Add-on Menu）— Notion Quick Cash Funnel */
   websiteAddons: {
-    extraPage: 1_200,
+    extraPage: 800,
     extraLocale: 1_500,
-    ecommerceGatewayConnect: 2_800,
-    ecommerceGatewaySetup: 4_800,
+    ecommerceGatewayConnect: 3_800,
+    ecommerceGatewaySetup: 3_800,
     whatsappBookingIntegration: 1_800,
-    blogCms: 3_200,
-    brandLogoVisual: 2_800,
+    blogCms: 1_200,
+    brandLogoVisual: 2_500,
     geoSeoSetupPlus3Months: 1_800,
   },
 } as const;
@@ -209,23 +210,23 @@ const ADDON_LABEL_KEYS: Record<WebsiteAddonId, string> = {
 export const WEBSITE_ADDON_LABELS_EN: Record<WebsiteAddonId, string> = {
   extraPage: "Extra page (each)",
   extraLocale: "Extra language version (each)",
-  ecommerceGatewayConnect: "E-commerce (20 SKUs + payment gateway connect)",
-  ecommerceGatewaySetup: "E-commerce (20 SKUs + payment gateway setup)",
-  whatsappBookingIntegration: "WhatsApp + Booking System integration",
-  blogCms: "Blog / news layout + CMS",
+  ecommerceGatewayConnect: "E-commerce (basic, up to 20 products)",
+  ecommerceGatewaySetup: "E-commerce (basic, up to 20 products)",
+  whatsappBookingIntegration: "WhatsApp / Booking automation integration",
+  blogCms: "Blog / news layout",
   brandLogoVisual: "Brand logo / visual design",
-  geoSeoSetupPlus3Months: "GEO + SEO advanced setup + 3 months optimisation",
+  geoSeoSetupPlus3Months: "Advanced SEO package",
 };
 
 export const WEBSITE_ADDON_LABELS_ZH: Record<WebsiteAddonId, string> = {
   extraPage: "額外頁面（每頁）",
   extraLocale: "多語言版本（每種）",
-  ecommerceGatewayConnect: "網店／電商（20 件 SKU + Payment gateway 接駁）",
-  ecommerceGatewaySetup: "網店／電商（20 件 SKU + Payment gateway setup）",
-  whatsappBookingIntegration: "WhatsApp + Booking System 整合",
-  blogCms: "Blog／新聞版面 + CMS",
+  ecommerceGatewayConnect: "網店／電商功能（基本，20 件產品內）",
+  ecommerceGatewaySetup: "網店／電商功能（基本，20 件產品內）",
+  whatsappBookingIntegration: "WhatsApp／Booking 自動化整合",
+  blogCms: "Blog／新聞版面",
   brandLogoVisual: "品牌 Logo／視覺設計",
-  geoSeoSetupPlus3Months: "GEO + SEO 進階包（首次 setup）+ 再優化 3 個月",
+  geoSeoSetupPlus3Months: "SEO 進階優化包",
 };
 
 /**

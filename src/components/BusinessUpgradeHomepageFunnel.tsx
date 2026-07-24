@@ -1,7 +1,10 @@
 import Image from "next/image";
-import { BarChart3, Bot, CheckCircle2, ClipboardCheck, GraduationCap, LayoutDashboard, MessageSquareText, ShieldCheck, Users } from "lucide-react";
+import { BarChart3, Bot, CheckCircle2, ClipboardCheck, GraduationCap, LayoutDashboard, MessageSquareText, ShieldCheck, Users, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { AddToInquiryButton } from "@/components/inquiry-cart/AddToInquiryButton";
 import { consultancyPlanPrice, PricingFunnelSections } from "@/components/PricingFunnelSections";
+import { consultancyCatalogId } from "@/content/inquiry-catalog";
+import { formatHkd, PRICING } from "@/content/pricing";
 import type { AppLocale } from "@/lib/i18n-routing";
 
 const content = {
@@ -69,7 +72,7 @@ const content = {
       plans: [
         {
           name: "30 日 Discovery Sprint",
-          price: "HK$10,000",
+          price: "HK$6,800",
           fit: "適合 2-4 人 focus group／3-5 位核心參與者先試一個 workflow。",
           points: ["60 分鐘 kickoff", "最多 2 次訪談", "1 條 workflow map", "SOP / KPI baseline", "30/60/90 日 roadmap"],
         },
@@ -182,9 +185,21 @@ const content = {
     finalCta: {
       title: "唔使喺首頁填長問卷。先揀一條流程傾清楚。",
       body:
-        "如果你已經知道有一條流程卡住，直接預約 30 分鐘流程診斷。需要診斷時，會在預約前後用簡短問題收集基本背景，不會在首頁逼你填一大堆題目。",
+        "如果你已經知道有一條流程卡住，直接預約 30 分鐘流程診斷。亦可將感興趣嘅服務加入查詢購物車，一次過提交。",
       health: "查看 AI 陪跑定價",
       book: "預約 30 分鐘流程診斷",
+    },
+    whyUs: {
+      eyebrow: "點解揀 InnovateXP",
+      title: "Hands-on Architect — 唔只講，一齊做到跑得起。",
+      intro:
+        "對外定位：AI 商務顧問。陪中小企先執順流程，再用 AI 將查詢、跟進、報價、SOP 同報表升級成可持續系統。",
+      points: [
+        ["Hands-on Architect", "13+ 年 PM／Agile；同你由 0 到 1 一齊建，唔止交 PowerPoint。"],
+        ["活動數據變生意", "EventXP 唔只記出席——評分、回流洞察、高潛力名單，令活動變成可跟進 pipeline。"],
+        ["Desert Oasis 定位", "唔賣紅海 check-in／CRM 標籤；幫你用 AI 建立對手難抄嘅數據護城河。"],
+        ["先執流程，再落地工具", "陪跑帶入場 → 顧問持續改善 → 系統按需要落地。"],
+      ],
     },
     capabilities: {
       eyebrow: "能力 / 解決方案",
@@ -204,12 +219,12 @@ const content = {
         },
         {
           name: "AccountXP",
-          body: "收據擷取 pilot 設定 + 首月正式使用 — 體驗方案 HKD 1,880（一次）；維護月費 480 / 680 / 1,080。",
+          body: `收據擷取 pilot 設定 + 首月正式使用 — 體驗方案 ${formatHkd(PRICING.quickCash.accountXpExperience, "zh-hk")}（一次）；維護月費 880 / 1,280 / 1,480。`,
           href: "#accounting-tools-demo",
         },
         {
           name: "Customised Website",
-          body: "Starter Base Package HKD 3,800（一次）：1 Landing Page + Mobile + WhatsApp/Booking + 基本 SEO + 1 語言（10 工作日）；可加點心紙 add-on。",
+          body: `Starter Base Package ${formatHkd(PRICING.quickCash.websiteStarter, "zh-hk")}（一次）：1 Landing Page + Mobile + WhatsApp/Booking + 基本 SEO + 1 語言（10 工作日）；可加點心紙 add-on。`,
           href: "/pitch-decks",
         },
       ],
@@ -262,7 +277,7 @@ const content = {
       plans: [
         {
           name: "30-day Discovery Sprint",
-          price: "HK$10,000",
+          price: "HK$6,800",
           fit: "For a 2-4 person focus group / 3-5 core participants validating one workflow.",
           points: ["60-minute kickoff", "Up to two interviews", "One workflow map", "SOP / KPI baseline", "30/60/90-day roadmap"],
         },
@@ -341,9 +356,21 @@ const content = {
     finalCta: {
       title: "No long questionnaire on the homepage. Pick one workflow and review it.",
       body:
-        "If you already know one workflow is stuck, book a 30-minute Workflow Review. Basic diagnostic questions can be handled during booking or follow-up without turning the homepage into a long form.",
+        "If you already know one workflow is stuck, book a 30-minute Workflow Review — or add the offers you want to the inquiry cart and submit once.",
       health: "See AI program pricing",
       book: "Book a 30-minute Workflow Review",
+    },
+    whyUs: {
+      eyebrow: "Why InnovateXP",
+      title: "Hands-on Architect — we don’t just talk; we build until it runs.",
+      intro:
+        "External positioning: AI Business Consultancy. We help SMEs fix workflows first, then use AI to upgrade inquiries, follow-up, quotations, SOPs, and reporting into a repeatable system.",
+      points: [
+        ["Hands-on Architect", "13+ years PM / Agile. We build with you from 0 to 1 — not slide decks only."],
+        ["Event data → revenue", "EventXP doesn’t only track attendance — scoring, retention insight, and high-intent lists turn events into a follow-up pipeline."],
+        ["Desert Oasis positioning", "Not another red-ocean check-in or CRM label. We help you build an AI data moat competitors can’t copy easily."],
+        ["Workflow first, tools second", "Programs bring you in → advisory improves continuously → systems land only when needed."],
+      ],
     },
     capabilities: {
       eyebrow: "Capabilities / Solutions",
@@ -363,12 +390,12 @@ const content = {
         },
         {
           name: "AccountXP",
-          body: "Receipt-capture pilot setup + first month live use — experience HKD 1,880 (one-time); maintenance HKD 480 / 680 / 1,080.",
+          body: `Receipt-capture pilot setup + first month live use — experience ${formatHkd(PRICING.quickCash.accountXpExperience)} (one-time); maintenance HKD 880 / 1,280 / 1,480.`,
           href: "#accounting-tools-demo",
         },
         {
           name: "Customised Website",
-          body: "Starter Base Package HKD 3,800 (one-time): 1 landing page + mobile + WhatsApp/Booking + basic SEO + 1 language (10 working days); add-on menu available.",
+          body: `Starter Base Package ${formatHkd(PRICING.quickCash.websiteStarter)} (one-time): 1 landing page + mobile + WhatsApp/Booking + basic SEO + 1 language (10 working days); add-on menu available.`,
           href: "/pitch-decks",
         },
       ],
@@ -436,7 +463,7 @@ const localizedContent = {
       plans: [
         {
           name: "30 日 Discovery Sprint",
-          price: "HK$10,000",
+          price: "HK$6,800",
           fit: "適合 2-4 人 focus group／3-5 位核心參與者先試一個 workflow。",
           points: ["60 分鐘 kickoff", "最多 2 次訪談", "1 條 workflow map", "SOP / KPI baseline", "30/60/90 日 roadmap"],
         },
@@ -547,7 +574,7 @@ const localizedContent = {
       intro:
         "ホームページでは、まずサービス範囲と開始価格を明確にします。以下は伴走プログラム / アドバイザリーの料金で、1社・3〜5名のcore participants / stakeholdersを想定しています。Custom systems、CRM、AI agents、API integrations、20名focus group、大人数workshop、第三者サービス費用は別途scopeします。",
       plans: [
-        { name: "30日 Discovery Sprint", price: "HK$10,000", fit: "2〜4名focus group / 3〜5名core participantsで、1つのworkflowを検証したいチーム向け。", points: ["60分kickoff", "最大2回のインタビュー", "1つのworkflow map", "SOP / KPI baseline", "30/60/90日roadmap"] },
+        { name: "30日 Discovery Sprint", price: "HK$6,800", fit: "2〜4名focus group / 3〜5名core participantsで、1つのworkflowを検証したいチーム向け。", points: ["60分kickoff", "最大2回のインタビュー", "1つのworkflow map", "SOP / KPI baseline", "30/60/90日roadmap"] },
         { name: "3か月 AI Upgrade Foundation", price: "HK$26,000", fit: "3〜5名のcore participantsで、1-2個のworkflowを改善したいチーム向け。", points: ["SOP v1と責任整理", "月次checkpoint", "KPI review", "1回の実践型チーム研修"], featured: true },
         { name: "6か月 AI Upgrade Accelerator", price: "HK$50,000", fit: "小さなcore teamまたは部門代表で、3-4個の関連workflowを改善したいチーム向け。", points: ["Agile reviews", "SOP v2", "Adoption review", "最大2回のworkshop"] },
         { name: "12か月 Partnership", price: "HK$98,000", fit: "方向性検証後、management / core ownersで長期的なAI adoption governanceを整えたいチーム向け。", points: ["年間roadmap", "部門横断prioritization", "SOP governance", "Management reviews"] },
@@ -645,7 +672,7 @@ const localizedContent = {
       intro:
         "Die Startseite zeigt zuerst Angebot und Einstiegspreise, statt mit einem langen Formular zu beginnen. Die Preise gelten für Programme / Advisory und setzen ein Unternehmen mit 3-5 core participants / stakeholders voraus. Custom systems, CRM, AI agents, API integrations, 20-person focus groups, größere workshops und Drittanbieter-Kosten werden separat scoped.",
       plans: [
-        { name: "30-Tage Discovery Sprint", price: "HK$10,000", fit: "Für eine 2-4-köpfige Focus Group / 3-5 Kernbeteiligte, die einen Workflow validieren.", points: ["60-Minuten-Kickoff", "Bis zu 2 Interviews", "Eine Workflow-Map", "SOP-/KPI-Baseline", "30/60/90-Tage-Roadmap"] },
+        { name: "30-Tage Discovery Sprint", price: "HK$6,800", fit: "Für eine 2-4-köpfige Focus Group / 3-5 Kernbeteiligte, die einen Workflow validieren.", points: ["60-Minuten-Kickoff", "Bis zu 2 Interviews", "Eine Workflow-Map", "SOP-/KPI-Baseline", "30/60/90-Tage-Roadmap"] },
         { name: "3-Monate AI Upgrade Foundation", price: "HK$26,000", fit: "Für 3-5 Kernbeteiligte, die 1-2 Workflows und das erste überprüfbare Adoption-Ergebnis erarbeiten.", points: ["SOP v1 und Ownership", "Monatlicher Checkpoint", "KPI-Review", "Ein praktisches Teamtraining"], featured: true },
         { name: "6-Monate AI Upgrade Accelerator", price: "HK$50,000", fit: "Für ein kleines Kernteam oder Abteilungsvertreter mit 3-4 verbundenen Workflows und Adoption-Tracking.", points: ["Agile Reviews", "SOP v2", "Adoption-Review", "Bis zu 2 Workshops"] },
         { name: "12-Monate Partnership", price: "HK$98,000", fit: "Für Management / Kern-Owner, die nach validierter Richtung langfristige AI-Adoption-Governance aufbauen.", points: ["Jahres-Roadmap", "Abteilungsübergreifende Priorisierung", "SOP-Governance", "Management-Reviews"] },
@@ -753,6 +780,21 @@ export function BusinessUpgradeHomepageFunnel({
         smartSalesHref={`${localePrefix}/smartsales-crm`}
       />
 
+      <section id="why-innovatexp" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
+        <SectionIntro eyebrow={c.whyUs.eyebrow} title={c.whyUs.title} intro={c.whyUs.intro} />
+        <div className="grid gap-4 md:grid-cols-2">
+          {c.whyUs.points.map(([title, body]) => (
+            <div key={title} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
+              <div className="mb-3 flex items-center gap-2">
+                <Wrench className="h-5 w-5 text-brand-primary dark:text-teal-300" aria-hidden />
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">{title}</h3>
+              </div>
+              <p className="text-sm leading-relaxed text-slate-700 dark:text-slate-300">{body}</p>
+            </div>
+          ))}
+        </div>
+      </section>
+
       <section id="ai-coaching-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-brand-primary/25 bg-white p-6 shadow-card dark:border-teal-500/30 dark:bg-slate-900 md:p-10">
         <SectionIntro eyebrow={c.pricing.eyebrow} title={c.pricing.title} intro={c.pricing.intro} />
         <div className="grid gap-5 lg:grid-cols-4">
@@ -768,7 +810,7 @@ export function BusinessUpgradeHomepageFunnel({
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
               <p className="mt-3 text-lg font-extrabold text-brand-primary dark:text-teal-300">{consultancyPlanPrice(planIndex, locale)}</p>
               <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{plan.fit}</p>
-              <ul className="mt-5 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+              <ul className="mt-5 grid flex-1 gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                 {plan.points.map((point) => (
                   <li key={point} className="flex gap-2">
                     <span className="font-bold text-brand-primary dark:text-teal-300">✓</span>
@@ -776,13 +818,17 @@ export function BusinessUpgradeHomepageFunnel({
                   </li>
                 ))}
               </ul>
+              <div className="mt-5">
+                <AddToInquiryButton itemId={consultancyCatalogId(planIndex)} />
+              </div>
             </article>
           ))}
         </div>
         <p className="mx-auto mt-6 max-w-3xl rounded-2xl border border-slate-200 bg-slate-50 p-4 text-center text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
           {c.pricing.note}
         </p>
-        <div className="mt-6 flex justify-center">
+        <div className="mt-6 flex flex-wrap justify-center gap-3">
+          <AddToInquiryButton itemId="discoverySprint30Day" fullWidth={false} />
           <Button href={bookingHref}>{c.pricing.cta}</Button>
         </div>
       </section>

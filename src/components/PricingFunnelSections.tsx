@@ -1,12 +1,14 @@
 import Link from "next/link";
 import { CalendarCheck, MessageSquare, Receipt } from "lucide-react";
 import { Button } from "@/components/ui/Button";
+import { AddToInquiryButton } from "@/components/inquiry-cart/AddToInquiryButton";
 import {
   PRICING,
   formatBniDiscountNote,
   formatHkd,
   type PricingLocale,
 } from "@/content/pricing";
+import type { InquiryCatalogItemId } from "@/content/inquiry-catalog";
 import type { AppLocale } from "@/lib/i18n-routing";
 
 function toPricingLocale(locale: AppLocale): PricingLocale {
@@ -28,7 +30,7 @@ const copy = {
     salesCta: "了解 SmartSales 試用",
     accountingCardTitle: "AccountXP 體驗方案",
     accountingCardBody:
-      "收據擷取 pilot 設定 + 首月正式使用（一次性）。WhatsApp 收條 upload → AI 分類 → 每週報告；其後維護月費 480 / 680 / 1,080。",
+      "收據擷取 pilot 設定 + 首月正式使用（一次性）。WhatsApp 收條 upload → AI 分類 → 每週報告；其後維護月費 880 / 1,280 / 1,480。",
     accountingCardCta: "睇示範同定價",
     accountingEyebrow: "AccountXP · Accounting Tools",
     accountingTitle: "收據 / 銀行對數 Chatbot（AccountXP）",
@@ -71,7 +73,7 @@ const copy = {
     salesCta: "Explore SmartSales trial",
     accountingCardTitle: "AccountXP experience",
     accountingCardBody:
-      "Receipt-capture pilot setup + first month live use (one-time). WhatsApp upload → AI classify → weekly report; then maintenance at HKD 480 / 680 / 1,080.",
+      "Receipt-capture pilot setup + first month live use (one-time). WhatsApp upload → AI classify → weekly report; then maintenance at HKD 880 / 1,280 / 1,480.",
     accountingCardCta: "See demo & pricing",
     accountingEyebrow: "AccountXP · Accounting Tools",
     accountingTitle: "Receipt / bank reconciliation chatbot (AccountXP)",
@@ -125,7 +127,16 @@ export function PricingFunnelSections({
   const ax = PRICING.tools.accountXp;
   const monthSuffix = pl.startsWith("zh") ? "/ 月" : "/ mo";
 
-  const productCards = [
+  const productCards: {
+    icon: typeof CalendarCheck;
+    title: string;
+    price: string;
+    body: string;
+    href: string;
+    cta: string;
+    inquiryId: InquiryCatalogItemId;
+    featured?: boolean;
+  }[] = [
     {
       icon: CalendarCheck,
       title: c.eventTitle,
@@ -133,6 +144,7 @@ export function PricingFunnelSections({
       body: c.eventBody,
       href: eventXpHref,
       cta: c.eventCta,
+      inquiryId: "eventXpTrial",
     },
     {
       icon: MessageSquare,
@@ -141,6 +153,7 @@ export function PricingFunnelSections({
       body: c.salesBody,
       href: smartSalesHref,
       cta: c.salesCta,
+      inquiryId: "smartSalesTrial",
     },
     {
       icon: Receipt,
@@ -149,6 +162,7 @@ export function PricingFunnelSections({
       body: c.accountingCardBody,
       href: "#accounting-tools-demo",
       cta: c.accountingCardCta,
+      inquiryId: "accountXpExperience",
       featured: true,
     },
   ];
@@ -164,7 +178,7 @@ export function PricingFunnelSections({
           <p className="mt-4 text-base leading-relaxed text-slate-700 dark:text-slate-300 md:text-lg">{c.toolsIntro}</p>
         </div>
         <div className="grid gap-5 md:grid-cols-3">
-          {productCards.map(({ icon: Icon, title, price, body, href, cta, featured }) => (
+          {productCards.map(({ icon: Icon, title, price, body, href, cta, inquiryId, featured }) => (
             <article
               key={title}
               className={`flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
@@ -177,12 +191,15 @@ export function PricingFunnelSections({
               <h3 className="text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
               <p className="mt-2 text-lg font-extrabold leading-snug text-brand-primary dark:text-teal-300">{price}</p>
               <p className="mt-3 flex-1 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{body}</p>
-              <Link
-                href={href}
-                className="mt-5 inline-flex min-h-[44px] items-center justify-center rounded-full border-2 border-brand-primary px-4 py-2 text-sm font-bold text-brand-primary transition hover:bg-brand-primary hover:text-white dark:border-teal-300 dark:text-teal-300 dark:hover:bg-teal-300 dark:hover:text-slate-950"
-              >
-                {cta}
-              </Link>
+              <div className="mt-5 grid gap-2">
+                <AddToInquiryButton itemId={inquiryId} />
+                <Link
+                  href={href}
+                  className="inline-flex min-h-[44px] items-center justify-center rounded-full border-2 border-brand-primary px-4 py-2 text-sm font-bold text-brand-primary transition hover:bg-brand-primary hover:text-white dark:border-teal-300 dark:text-teal-300 dark:hover:bg-teal-300 dark:hover:text-slate-950"
+                >
+                  {cta}
+                </Link>
+              </div>
             </article>
           ))}
         </div>
@@ -276,7 +293,8 @@ export function PricingFunnelSections({
               </p>
             </div>
 
-            <div className="mt-6">
+            <div className="mt-6 grid gap-3 sm:grid-cols-2">
+              <AddToInquiryButton itemId="accountXpExperience" />
               <Button href={bookingHref}>{c.trialCta}</Button>
             </div>
           </div>

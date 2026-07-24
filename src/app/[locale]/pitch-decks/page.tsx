@@ -39,7 +39,7 @@ const decks = [
   {
     title: "Customised Website Pitch Deck",
     description:
-      "Website Starter from HKD 3,800 plus add-on menu — landing, SEO, WhatsApp/Booking, and optional e-commerce.",
+      "Website Starter from HKD 7,800 plus add-on menu — landing, SEO, WhatsApp/Booking, and optional e-commerce.",
     href: "/decks/ixp-customised-website-pitch-deck.pdf",
     filename: "IXP_Customised_Website_Pitch_Deck.pdf",
   },

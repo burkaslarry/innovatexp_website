@@ -54,14 +54,9 @@ export function FloatingActionMenu() {
       href: withLocale(locale, "/bookme"),
     },
     {
-      icon: <LanguageIcon />,
-      name: zh ? "客製網站" : "Custom website",
-      href: withLocale(locale, "/pitch-decks"),
-    },
-    {
-      icon: <ReceiptLongIcon />,
-      name: "Accounting Chatbot",
-      href: withLocale(locale, "/#accounting-tools-demo"),
+      icon: <EventAvailableIcon />,
+      name: "EventXP",
+      href: withLocale(locale, "/eventxp"),
     },
     {
       icon: <HubIcon />,
@@ -69,9 +64,14 @@ export function FloatingActionMenu() {
       href: withLocale(locale, "/smartsales-crm"),
     },
     {
-      icon: <EventAvailableIcon />,
-      name: "EventXP",
-      href: withLocale(locale, "/eventxp"),
+      icon: <LanguageIcon />,
+      name: zh ? "客製網站" : "Custom website",
+      href: withLocale(locale, "/pitch-decks"),
+    },
+    {
+      icon: <ReceiptLongIcon />,
+      name: "AccountXP",
+      href: withLocale(locale, "/#accounting-tools-demo"),
     },
     {
       icon: <RateReviewIcon />,

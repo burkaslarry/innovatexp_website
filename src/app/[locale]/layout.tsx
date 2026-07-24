@@ -4,6 +4,9 @@ import { ThemeProvider } from "../ThemeContext";
 import { LanguageProvider } from "../LanguageContext";
 import StructuredData from "../components/StructuredData";
 import { FloatingActionMenu } from "@/components/FloatingActionMenu";
+import { InquiryCartFab } from "@/components/inquiry-cart/InquiryCartFab";
+import { InquiryCheckoutDrawer } from "@/components/inquiry-cart/InquiryCheckoutDrawer";
+import { InquiryCartProvider } from "@/context/InquiryCartContext";
 import { LocaleHtmlLang } from "../components/LocaleHtmlLang";
 import {
   isValidLocale,
@@ -113,9 +116,13 @@ export default async function LocaleLayout({
       <LocaleHtmlLang locale={locale} />
       <ThemeProvider>
         <LanguageProvider locale={locale as AppLocale}>
-          <StructuredData />
-          {children}
-          <FloatingActionMenu />
+          <InquiryCartProvider>
+            <StructuredData />
+            {children}
+            <InquiryCartFab />
+            <InquiryCheckoutDrawer />
+            <FloatingActionMenu />
+          </InquiryCartProvider>
         </LanguageProvider>
       </ThemeProvider>
     </>
