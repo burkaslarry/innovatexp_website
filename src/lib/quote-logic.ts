@@ -1,4 +1,13 @@
-export type QuotePath = "eventxp" | "smartsales" | "consulting" | "bundle";
+import {
+  PRICING,
+  computeWebsiteQuote,
+  formatHkd,
+  formatWebsiteQuoteSummary,
+  type WebsiteAddonId,
+  WEBSITE_ADDON_IDS,
+} from "@/content/pricing";
+
+export type QuotePath = "eventxp" | "smartsales" | "consulting" | "bundle" | "website" | "accountxp";
 
 /** Machine-readable quote result; use LanguageContext `t(planKey)` etc. for display */
 export type QuoteComputed = {
@@ -6,6 +15,10 @@ export type QuoteComputed = {
   planKey: string;
   rangeKey: string;
   rationaleKeys: string[];
+  /** Concrete one-time HKD total when calculator produced a fixed quote */
+  amountHkd?: number;
+  /** Multi-line breakdown for download / CRM */
+  detailSummary?: string;
 };
 
 export type QuoteAnswers = Record<string, string | string[]>;
@@ -23,6 +36,8 @@ const PLAN = {
   consulting_agent: "wizard.plan.consulting_agent",
   consulting_full: "wizard.plan.consulting_full",
   consulting_audit: "wizard.plan.consulting_audit",
+  website_starter: "wizard.plan.website_starter",
+  accountxp_experience: "wizard.plan.accountxp_experience",
 } as const;
 
 const RANGE = {
@@ -35,6 +50,8 @@ const RANGE = {
   from_6800: "wizard.range.from_6800",
   from_2500_day: "wizard.range.from_2500_day",
   from_80000: "wizard.range.from_80000",
+  website_calculated: "wizard.range.website_calculated",
+  accountxp_1880: "wizard.range.accountxp_1880",
 } as const;
 
 const R = {
@@ -51,9 +68,48 @@ const R = {
   consulting_build_focus: "wizard.rationale.consulting_build_focus",
   consulting_budget_scope: "wizard.rationale.consulting_budget_scope",
   consulting_audit_entry: "wizard.rationale.consulting_audit_entry",
+  website_menu: "wizard.rationale.website_menu",
+  accountxp_pilot: "wizard.rationale.accountxp_pilot",
 } as const;
 
+function parseWebsiteAddons(answers: QuoteAnswers): WebsiteAddonId[] {
+  const raw = answers.website_addons;
+  const ids = Array.isArray(raw) ? raw : raw ? [String(raw)] : [];
+  return ids.filter((id): id is WebsiteAddonId =>
+    (WEBSITE_ADDON_IDS as string[]).includes(id),
+  );
+}
+
 export function computeQuote(path: QuotePath, answers: QuoteAnswers): QuoteComputed {
+  if (path === "website") {
+    const quote = computeWebsiteQuote({
+      extraPages: Number(answers.website_extra_pages || 0),
+      extraLocales: Number(answers.website_extra_locales || 0),
+      addons: parseWebsiteAddons(answers),
+      rush: String(answers.website_rush || "") === "yes",
+    });
+    return {
+      path,
+      planKey: PLAN.website_starter,
+      rangeKey: RANGE.website_calculated,
+      rationaleKeys: [R.website_menu],
+      amountHkd: quote.totalOneTime,
+      detailSummary: formatWebsiteQuoteSummary(quote, "en"),
+    };
+  }
+
+  if (path === "accountxp") {
+    const amount = PRICING.tools.accountXp.experience;
+    return {
+      path,
+      planKey: PLAN.accountxp_experience,
+      rangeKey: RANGE.accountxp_1880,
+      rationaleKeys: [R.accountxp_pilot],
+      amountHkd: amount,
+      detailSummary: `AccountXP experience: ${formatHkd(amount)}\nMaintenance: ${formatHkd(PRICING.tools.accountXp.maintenanceStarterMonthly)} / ${formatHkd(PRICING.tools.accountXp.maintenanceGrowthMonthly)} / ${formatHkd(PRICING.tools.accountXp.maintenanceEnterpriseMonthly)} monthly`,
+    };
+  }
+
   if (path === "bundle") {
     return {
       path,
@@ -213,6 +269,7 @@ export const WIZARD_ANSWER_OPTION_PREFIX: Record<string, string> = {
   consulting_goal: "wizard.consulting.goal",
   consulting_budget: "wizard.consulting.budget",
   bundle_products: "wizard.bundle.product",
+  accountxp_confirm: "wizard.accountxp.confirm",
 };
 
 const SUMMARY_ANSWER_ORDER: string[] = [
@@ -233,11 +290,22 @@ const SUMMARY_ANSWER_ORDER: string[] = [
   "consulting_budget",
   "bundle_products",
   "bundle_goal",
+  "website_addons",
+  "website_extra_pages",
+  "website_extra_locales",
+  "website_rush",
+  "accountxp_confirm",
   "wizard_skip",
 ];
 
 function formatAnswerValue(key: string, value: string | string[], t: (k: string) => string): string {
   if (key === "bundle_goal" || key === "wizard_skip") return String(value);
+  if (key === "website_addons" && Array.isArray(value)) {
+    return value.join(", ");
+  }
+  if (key === "website_rush") {
+    return value === "yes" ? t("wizard.website.rush.yes") : t("wizard.website.rush.no");
+  }
 
   if (Array.isArray(value)) {
     const prefix = WIZARD_ANSWER_OPTION_PREFIX[key];
@@ -257,7 +325,15 @@ export function formatQuoteSummary(computed: QuoteComputed, answers: QuoteAnswer
   const lines: string[] = [];
   lines.push(`${t("wizard.summary.product")}: ${t(`wizard.paths.${computed.path}`)}`);
   lines.push(`${t("wizard.summary.plan")}: ${t(computed.planKey)}`);
-  lines.push(`${t("wizard.summary.estimated")}: ${t(computed.rangeKey)}`);
+  if (computed.amountHkd != null) {
+    lines.push(`${t("wizard.summary.estimated")}: ${formatHkd(computed.amountHkd)}`);
+  } else {
+    lines.push(`${t("wizard.summary.estimated")}: ${t(computed.rangeKey)}`);
+  }
+  if (computed.detailSummary) {
+    lines.push("");
+    lines.push(computed.detailSummary);
+  }
 
   if (computed.rationaleKeys.length) {
     lines.push("");

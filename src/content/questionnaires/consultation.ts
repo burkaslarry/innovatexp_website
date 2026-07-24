@@ -86,9 +86,14 @@ function zhConsultation(): LocaleBlock {
         note: "1–2 週：map、KPI、固定實施報價",
       },
       {
-        name: "Accounting Chatbot 試用",
-        price: `${formatHkd(PRICING.quickCash.accountingChatbotTrialWeek, "zh-hk")}/星期`,
-        note: `或 ${formatHkd(PRICING.quickCash.accountingChatbotTrialMonth, "zh-hk")}/月`,
+        name: "AccountXP 體驗方案",
+        price: formatHkd(PRICING.quickCash.accountXpExperience, "zh-hk"),
+        note: "收據 pilot + 首月使用；維護 480 / 680 / 1,080",
+      },
+      {
+        name: "Website Starter",
+        price: formatHkd(PRICING.quickCash.websiteStarter, "zh-hk"),
+        note: "1 Landing + Mobile + WhatsApp/Booking + SEO（10 工作日）",
       },
     ],
     consent:
@@ -329,9 +334,14 @@ function enConsultation(): LocaleBlock {
         note: "1–2 weeks: map, KPIs, fixed implementation quote",
       },
       {
-        name: "Accounting Chatbot trial",
-        price: `${formatHkd(PRICING.quickCash.accountingChatbotTrialWeek, "en")}/week`,
-        note: `or ${formatHkd(PRICING.quickCash.accountingChatbotTrialMonth, "en")}/month`,
+        name: "AccountXP experience",
+        price: formatHkd(PRICING.quickCash.accountXpExperience, "en"),
+        note: "Receipt pilot + first month; maintenance 480 / 680 / 1,080",
+      },
+      {
+        name: "Website Starter",
+        price: formatHkd(PRICING.quickCash.websiteStarter, "en"),
+        note: "1 landing + mobile + WhatsApp/Booking + SEO (10 working days)",
       },
     ],
     consent:

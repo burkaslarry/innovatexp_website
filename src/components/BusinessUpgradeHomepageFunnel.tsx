@@ -203,9 +203,14 @@ const content = {
           href: "/smartsales-crm",
         },
         {
-          name: "Accounting Chatbot",
-          body: "WhatsApp 收條 / 銀行單據 upload → AI 分類 → 每週報告 — 試用 HK$800/星期 或 HK$3,000/月。",
+          name: "AccountXP",
+          body: "收據擷取 pilot 設定 + 首月正式使用 — 體驗方案 HKD 1,880（一次）；維護月費 480 / 680 / 1,080。",
           href: "#accounting-tools-demo",
+        },
+        {
+          name: "Customised Website",
+          body: "Starter Base Package HKD 3,800（一次）：1 Landing Page + Mobile + WhatsApp/Booking + 基本 SEO + 1 語言（10 工作日）；可加點心紙 add-on。",
+          href: "/pitch-decks",
         },
       ],
     },
@@ -357,9 +362,14 @@ const content = {
           href: "/smartsales-crm",
         },
         {
-          name: "Accounting Chatbot",
-          body: "WhatsApp receipt / bank-slip upload → AI classify → weekly reports — trial HK$800/week or HK$3,000/month.",
+          name: "AccountXP",
+          body: "Receipt-capture pilot setup + first month live use — experience HKD 1,880 (one-time); maintenance HKD 480 / 680 / 1,080.",
           href: "#accounting-tools-demo",
+        },
+        {
+          name: "Customised Website",
+          body: "Starter Base Package HKD 3,800 (one-time): 1 landing page + mobile + WhatsApp/Booking + basic SEO + 1 language (10 working days); add-on menu available.",
+          href: "/pitch-decks",
         },
       ],
     },

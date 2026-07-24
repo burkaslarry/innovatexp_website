@@ -26,22 +26,22 @@ const copy = {
     salesTitle: "SmartSales CRM 試用",
     salesBody: "WhatsApp workflow 接入、CRM 基礎設定、1 條銷售流程試跑。",
     salesCta: "了解 SmartSales 試用",
-    accountingCardTitle: "Accounting Chatbot 試用",
+    accountingCardTitle: "AccountXP 體驗方案",
     accountingCardBody:
-      "WhatsApp 收條 upload → AI 分類 → 每週報告。由 receipt 整理起步，可延伸至銀行月結單 reminder 同存取款對數（示範場景）。",
+      "收據擷取 pilot 設定 + 首月正式使用（一次性）。WhatsApp 收條 upload → AI 分類 → 每週報告；其後維護月費 480 / 680 / 1,080。",
     accountingCardCta: "睇示範同定價",
-    accountingEyebrow: "Accounting Chatbot · 示範場景",
-    accountingTitle: "收據 / 銀行對數 Chatbot",
+    accountingEyebrow: "AccountXP · Accounting Tools",
+    accountingTitle: "收據 / 銀行對數 Chatbot（AccountXP）",
     accountingIntro:
       "類似中四 Accounting 嘅 Bank Reconciliation：先 reminder 同事定期拎公司銀行月結單，鼓勵 upload 存款 / 取款單，再做初步對數。Receipt upload、AI 分類、每週狀態報告一條龍；data policy 嚴格，入庫資料加密處理（圖片 OCR 按 scope 配置）。",
     accountingBefore: "Before：收據散落 WhatsApp/email、人手輸入 Excel、月尾先對數、老闆追問先知進度。",
     accountingAfter: "After：單據集中收集、AI 輔助分類、銀行單據 reminder、每週狀態同對數摘要。",
-    trialTitle: "試用定價",
-    trialWeek: "1 星期試用",
-    trialMonth: "1 個月試用",
-    trialFunnelTitle: "試用後 funnel",
+    trialTitle: "體驗方案定價",
+    trialWeek: "體驗方案（一次）",
+    trialMonth: "維護月費（三層）",
+    trialFunnelTitle: "體驗後 funnel",
     trialFunnelSteps: [
-      "試用期滿 → 約 30 分鐘 review，決定買斷、訂閱或唔續",
+      "體驗期滿 → 約 30 分鐘 review，決定續維護、升級或唔續",
       "填寫 feedback 問卷 → 下次回購 / 升級可享折扣",
       "成功 referral 其他團隊 → referral discount",
       "查證 BNI 會友 → 額外 BNI 折扣（可與 referral 分開確認）",
@@ -56,7 +56,7 @@ const copy = {
     ],
     outcomesHighlight: "AI 約 1 分鐘處理 7 張 receipt · 每月可節省 70–80% 整理時間",
     videoCaption: "示範：Accounting Chatbot — 收條 upload → AI 分類 → 每週報告",
-    trialCta: "預約試用 Accounting Chatbot",
+    trialCta: "預約 AccountXP 體驗方案",
   },
   en: {
     toolsEyebrow: "Tool trials",
@@ -69,22 +69,22 @@ const copy = {
     salesTitle: "SmartSales CRM trial",
     salesBody: "WhatsApp workflow setup, CRM baseline, and one sales process trial run.",
     salesCta: "Explore SmartSales trial",
-    accountingCardTitle: "Accounting Chatbot trial",
+    accountingCardTitle: "AccountXP experience",
     accountingCardBody:
-      "WhatsApp receipt upload → AI classify → weekly report. Starts with receipt admin; can extend to bank-statement reminders and deposit/withdrawal reconciliation (example scope).",
+      "Receipt-capture pilot setup + first month live use (one-time). WhatsApp upload → AI classify → weekly report; then maintenance at HKD 480 / 680 / 1,080.",
     accountingCardCta: "See demo & pricing",
-    accountingEyebrow: "Accounting Chatbot · Example workflow",
-    accountingTitle: "Receipt / bank reconciliation chatbot",
+    accountingEyebrow: "AccountXP · Accounting Tools",
+    accountingTitle: "Receipt / bank reconciliation chatbot (AccountXP)",
     accountingIntro:
       "Inspired by Form 4 bank reconciliation: reminders to collect monthly bank statements, encourage upload of deposit/withdrawal slips, then first-pass matching. Receipt upload, AI classification, and weekly status in one flow. Strict data policy with encrypted storage; image OCR configured per scope.",
     accountingBefore: "Before: receipts scattered across WhatsApp/email, manual Excel entry, month-end reconciliation, owner chasing for status.",
     accountingAfter: "After: centralized collection, AI-assisted classification, bank-slip reminders, weekly status and reconciliation summaries.",
-    trialTitle: "Trial pricing",
-    trialWeek: "1-week trial",
-    trialMonth: "1-month trial",
-    trialFunnelTitle: "After the trial",
+    trialTitle: "Experience pricing",
+    trialWeek: "Experience package (one-time)",
+    trialMonth: "Maintenance (3 tiers)",
+    trialFunnelTitle: "After the experience",
     trialFunnelSteps: [
-      "Trial ends → 30-minute review to decide buyout, subscription, or stop",
+      "Package ends → 30-minute review to decide maintenance, upgrade, or stop",
       "Complete feedback form → discount on your next purchase or upgrade",
       "Successful referral → referral discount",
       "Verified BNI member → additional BNI discount (confirmed separately)",
@@ -99,7 +99,7 @@ const copy = {
     ],
     outcomesHighlight: "AI ~1 minute for 7 receipts · save 70–80% monthly processing time",
     videoCaption: "Demo: Accounting Chatbot — upload → classify → weekly report",
-    trialCta: "Book Accounting Chatbot trial",
+    trialCta: "Book AccountXP experience",
   },
 } as const;
 
@@ -122,8 +122,8 @@ export function PricingFunnelSections({
   const pl = toPricingLocale(locale);
   const c = localeCopy(locale);
   const q = PRICING.quickCash;
-  const weekSuffix = pl.startsWith("zh") ? "/ 星期" : "/ week";
-  const monthSuffix = pl.startsWith("zh") ? "/ 月" : "/ month";
+  const ax = PRICING.tools.accountXp;
+  const monthSuffix = pl.startsWith("zh") ? "/ 月" : "/ mo";
 
   const productCards = [
     {
@@ -145,7 +145,7 @@ export function PricingFunnelSections({
     {
       icon: Receipt,
       title: c.accountingCardTitle,
-      price: `${formatHkd(q.accountingChatbotTrialWeek, pl)}${weekSuffix} · ${formatHkd(q.accountingChatbotTrialMonth, pl)}${monthSuffix}`,
+      price: formatHkd(q.accountXpExperience, pl),
       body: c.accountingCardBody,
       href: "#accounting-tools-demo",
       cta: c.accountingCardCta,
@@ -213,14 +213,22 @@ export function PricingFunnelSections({
               <div className="rounded-2xl border border-brand-primary/30 bg-cyan-50 p-4 dark:border-teal-500/40 dark:bg-slate-800">
                 <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300">{c.trialWeek}</p>
                 <p className="mt-1 text-2xl font-extrabold text-gray-900 dark:text-white">
-                  {formatHkd(q.accountingChatbotTrialWeek, pl)}
-                  <span className="text-base font-semibold text-slate-600 dark:text-slate-400">{weekSuffix}</span>
+                  {formatHkd(q.accountXpExperience, pl)}
+                </p>
+                <p className="mt-1 text-xs text-slate-600 dark:text-slate-400">
+                  {pl.startsWith("zh")
+                    ? "收據擷取 pilot 設定 + 首月正式使用"
+                    : "Receipt pilot setup + first month live use"}
                 </p>
               </div>
               <div className="rounded-2xl border border-brand-primary/30 bg-cyan-50 p-4 dark:border-teal-500/40 dark:bg-slate-800">
                 <p className="text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-teal-300">{c.trialMonth}</p>
-                <p className="mt-1 text-2xl font-extrabold text-gray-900 dark:text-white">
-                  {formatHkd(q.accountingChatbotTrialMonth, pl)}
+                <p className="mt-1 text-lg font-extrabold leading-snug text-gray-900 dark:text-white">
+                  {formatHkd(ax.maintenanceStarterMonthly, pl)}
+                  <span className="text-sm font-semibold text-slate-500"> / </span>
+                  {formatHkd(ax.maintenanceGrowthMonthly, pl)}
+                  <span className="text-sm font-semibold text-slate-500"> / </span>
+                  {formatHkd(ax.maintenanceEnterpriseMonthly, pl)}
                   <span className="text-base font-semibold text-slate-600 dark:text-slate-400">{monthSuffix}</span>
                 </p>
               </div>
@@ -275,7 +283,7 @@ export function PricingFunnelSections({
 
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-lg dark:border-slate-700">
             <div className="border-b border-slate-800 bg-slate-900 px-4 py-3">
-              <p className="text-sm font-semibold text-teal-300">Accounting Chatbot</p>
+              <p className="text-sm font-semibold text-teal-300">AccountXP</p>
               <p className="text-xs text-slate-400">WhatsApp · upload receipt · AI classify</p>
             </div>
             <video

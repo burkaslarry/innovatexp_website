@@ -16,6 +16,8 @@ import {
   type QuotePath,
   type QuoteComputed,
 } from "@/lib/quote-logic";
+import { formatHkd } from "@/content/pricing";
+import { WebsiteQuoteBuilder } from "@/components/WebsiteQuoteBuilder";
 import { normalizeWhatsappE164 } from "@/lib/normalize-whatsapp";
 import { PHONE_DIAL_CUSTOM, PHONE_DIAL_OPTIONS } from "@/lib/phone-dial-codes";
 import { buildBookingConfirmationWeb3Fields } from "@/lib/build-booking-web3forms-fields";
@@ -52,6 +54,8 @@ type StepId =
   | "consulting_q5"
   | "bundle_q1"
   | "bundle_q2"
+  | "website_q1"
+  | "accountxp_q1"
   | "result"
   | "flowx_identity"
   | "flowx_booking";
@@ -82,6 +86,8 @@ function hookCopy(path: QuotePath | null, step: StepId, t: (k: string) => string
   if (path === "smartsales") return { body: t("wizard.hook.smartsales.body"), cta: t("wizard.hook.smartsales.cta") };
   if (path === "eventxp") return { body: t("wizard.hook.eventxp.body"), cta: t("wizard.hook.eventxp.cta") };
   if (path === "consulting") return { body: t("wizard.hook.consulting.body"), cta: t("wizard.hook.consulting.cta") };
+  if (path === "website") return { body: t("wizard.hook.website.body"), cta: t("wizard.hook.website.cta") };
+  if (path === "accountxp") return { body: t("wizard.hook.accountxp.body"), cta: t("wizard.hook.accountxp.cta") };
   return { body: t("wizard.hook.bundle.body"), cta: t("wizard.hook.bundle.cta") };
 }
 
@@ -197,6 +203,8 @@ export default function QuotationWizard({
     if (p === "eventxp") setStep("eventxp_q1");
     else if (p === "smartsales") setStep("smartsales_q1");
     else if (p === "consulting") setStep("consulting_q1");
+    else if (p === "website") setStep("website_q1");
+    else if (p === "accountxp") setStep("accountxp_q1");
     else setStep("bundle_q1");
   }
 
@@ -406,7 +414,7 @@ export default function QuotationWizard({
           <>
             <h3 className="text-base font-semibold leading-snug text-slate-900 dark:text-white">{t("wizard.q0")}</h3>
             <div className="mt-4 grid grid-cols-1 gap-3">
-              {(["eventxp", "smartsales", "consulting", "bundle"] as const).map((p) => (
+              {(["eventxp", "smartsales", "accountxp", "website", "consulting", "bundle"] as const).map((p) => (
                 <button
                   key={p}
                   type="button"
@@ -414,22 +422,10 @@ export default function QuotationWizard({
                   className="rounded-2xl border-2 border-slate-200 bg-white px-3 py-3.5 text-left shadow-sm transition hover:border-brand-primary/40 hover:shadow-md dark:border-slate-700 dark:bg-slate-900/60 dark:hover:border-[#00B9B3]/50 sm:px-4 sm:py-4 md:px-4"
                 >
                   <span className="block text-xs font-bold text-brand-primary dark:text-teal-300">
-                    {p === "eventxp"
-                      ? t("wizard.path_tagline.eventxp")
-                      : p === "smartsales"
-                        ? t("wizard.path_tagline.smartsales")
-                        : p === "consulting"
-                          ? t("wizard.path_tagline.consulting")
-                          : t("wizard.path_tagline.bundle")}
+                    {t(`wizard.path_tagline.${p}`)}
                   </span>
                   <span className="mt-2 block text-sm font-semibold text-slate-900 dark:text-white">
-                    {p === "eventxp"
-                      ? t("wizard.path_intro.eventxp")
-                      : p === "smartsales"
-                        ? t("wizard.path_intro.smartsales")
-                        : p === "consulting"
-                          ? t("wizard.path_intro.consulting")
-                          : t("wizard.path_intro.bundle")}
+                    {t(`wizard.path_intro.${p}`)}
                   </span>
                 </button>
               ))}
@@ -768,6 +764,64 @@ export default function QuotationWizard({
           </>
         ) : null}
 
+        {step === "website_q1" ? (
+          <>
+            <h3 className="text-base font-semibold leading-snug text-slate-900 dark:text-white">
+              {t("wizard.website.builder.q")}
+            </h3>
+            <div className="mt-4">
+              <WebsiteQuoteBuilder
+                locale={usesChineseUi ? "zh-hk" : "en"}
+                onQuoteChange={(payload) => {
+                  setA("website_addons", payload.addons);
+                  setA("website_extra_pages", String(payload.extraPages));
+                  setA("website_extra_locales", String(payload.extraLocales));
+                  setA("website_rush", payload.rush ? "yes" : "no");
+                }}
+              />
+            </div>
+            <div className="mt-6 flex flex-col gap-3 sm:flex-row sm:justify-between">
+              <button
+                type="button"
+                onClick={() => setStep("q0")}
+                className="min-h-[48px] rounded-full border border-slate-300 px-6 py-3 text-sm font-semibold dark:border-slate-600"
+              >
+                {t("wizard.back")}
+              </button>
+              <button
+                type="button"
+                onClick={() => computeAndShowResult()}
+                className="min-h-[48px] rounded-full bg-brand-primary px-6 py-3 text-sm font-bold text-white dark:bg-[#00B9B3] dark:text-slate-950"
+              >
+                {t("wizard.next")}
+              </button>
+            </div>
+            <ExpertShortcut path={path} step={step} onSkip={skipToExpert} t={t} />
+          </>
+        ) : null}
+
+        {step === "accountxp_q1" ? (
+          <>
+            <ChoiceStep
+              title={t("wizard.accountxp.confirm.q")}
+              options={[
+                { id: "yes", label: t("wizard.accountxp.confirm.yes") },
+              ]}
+              onPick={(id) => {
+                const nextAnswers = { ...answers, accountxp_confirm: id };
+                setAnswers(nextAnswers);
+                setPath("accountxp");
+                const r = computeQuote("accountxp", nextAnswers);
+                setResult(r);
+                setStep("result");
+              }}
+              onBack={() => setStep("q0")}
+              backLabel={t("wizard.back")}
+            />
+            <ExpertShortcut path={path} step={step} onSkip={skipToExpert} t={t} />
+          </>
+        ) : null}
+
         {step === "result" && result ? (
           <div>
             <p className="text-base font-semibold leading-relaxed text-slate-800 dark:text-slate-100">
@@ -781,7 +835,14 @@ export default function QuotationWizard({
                 <div className="font-semibold text-slate-900 dark:text-white">{t("wizard.finale.recommend_label")}</div>
                 <div className="mt-1 text-base font-bold text-brand-primary dark:text-teal-300">{t(result.planKey)}</div>
                 <div className="mt-4 font-semibold text-slate-900 dark:text-white">{t("wizard.result.estimated")}</div>
-                <div className="mt-1 text-base font-bold text-slate-900 dark:text-white">{t(result.rangeKey)}</div>
+                <div className="mt-1 text-base font-bold text-slate-900 dark:text-white">
+                  {result.amountHkd != null ? formatHkd(result.amountHkd) : t(result.rangeKey)}
+                </div>
+                {result.detailSummary ? (
+                  <pre className="mt-3 whitespace-pre-wrap rounded-xl bg-white/70 p-3 text-xs leading-relaxed text-slate-700 dark:bg-slate-900/60 dark:text-slate-300">
+                    {result.detailSummary}
+                  </pre>
+                ) : null}
                 {result.rationaleKeys.length ? (
                   <ul className="mt-4 list-disc space-y-1 pl-5">
                     {result.rationaleKeys.map((rk) => (

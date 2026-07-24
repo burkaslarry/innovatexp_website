@@ -1,9 +1,11 @@
 /* F12: Pitch decks download page - Lists PDF deck links under public/decks. */
 import type { Metadata } from "next";
 import { BackToHomeControl } from "@/components/BackToHomeControl";
-import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
+import { WebsiteQuoteBuilder } from "@/components/WebsiteQuoteBuilder";
+import { isValidLocale, localeUsesChineseCopy, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { pitchDecksSeo } from "@/content/page-seo";
+import { PRICING, formatHkd, type PricingLocale } from "@/content/pricing";
 
 export async function generateMetadata({
   params,
@@ -37,18 +39,28 @@ const decks = [
   {
     title: "Customised Website Pitch Deck",
     description:
-      "Website development package for SMEs that need clearer positioning, SEO, and conversion flow.",
+      "Website Starter from HKD 3,800 plus add-on menu — landing, SEO, WhatsApp/Booking, and optional e-commerce.",
     href: "/decks/ixp-customised-website-pitch-deck.pdf",
     filename: "IXP_Customised_Website_Pitch_Deck.pdf",
   },
 ];
+
+function toPricingLocale(locale: AppLocale): PricingLocale {
+  if (locale === "zh-hk" || locale === "zh-tw" || locale === "ja" || locale === "de") return locale;
+  return "en";
+}
 
 export default async function PitchDecksPage({
   params,
 }: {
   params: Promise<{ locale: string }>;
 }) {
-  await params;
+  const { locale: loc } = await params;
+  const locale = (isValidLocale(loc) ? loc : "en") as AppLocale;
+  const zh = localeUsesChineseCopy(locale);
+  const pl = toPricingLocale(locale);
+  const web = PRICING.tools.website;
+  const ax = PRICING.tools.accountXp;
 
   return (
     <main className="mx-auto min-h-screen max-w-5xl px-6 py-12 text-slate-900 dark:text-slate-100">
@@ -57,9 +69,13 @@ export default async function PitchDecksPage({
         <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-teal-300">
           InnovateXP Downloads
         </p>
-        <h1 className="mt-3 text-3xl font-bold md:text-4xl">Pitch Deck Downloads</h1>
+        <h1 className="mt-3 text-3xl font-bold md:text-4xl">
+          {zh ? "Pitch Deck 下載 + 公開定價" : "Pitch decks + public pricing"}
+        </h1>
         <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">
-          Download the latest compressed PDF decks for SmartSales CRM, EventXP, and customised website projects.
+          {zh
+            ? "下載 SmartSales、EventXP、客製網站 deck；Website Starter 可用點心紙即時計價。"
+            : "Download SmartSales, EventXP, and customised website decks. Build a Website Starter quote from the add-on menu."}
         </p>
       </section>
 
@@ -82,6 +98,41 @@ export default async function PitchDecksPage({
             </a>
           </article>
         ))}
+      </section>
+
+      <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900 md:p-8">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          {zh ? "AccountXP 體驗方案" : "AccountXP experience"}
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+          {zh
+            ? "收據擷取 pilot 設定 + 首月正式使用（一次性），取代舊有按星期／按月雙軌。"
+            : "Receipt-capture pilot setup + first month live use (one-time), replacing the old weekly/monthly dual track."}
+        </p>
+        <p className="mt-4 text-3xl font-extrabold text-brand-primary dark:text-teal-300">
+          {formatHkd(ax.experience, pl)}
+        </p>
+        <p className="mt-2 text-sm text-slate-700 dark:text-slate-300">
+          {zh ? "維護月費" : "Maintenance"}:{" "}
+          <strong>
+            {formatHkd(ax.maintenanceStarterMonthly, pl)} / {formatHkd(ax.maintenanceGrowthMonthly, pl)} /{" "}
+            {formatHkd(ax.maintenanceEnterpriseMonthly, pl)}
+          </strong>
+        </p>
+      </section>
+
+      <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900 md:p-8">
+        <h2 className="text-2xl font-bold text-gray-900 dark:text-white">
+          {zh ? "Customised Website Starter" : "Customised Website Starter"}
+        </h2>
+        <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+          {zh
+            ? `公開起步價 ${formatHkd(web.starter, pl)}（一次），唔再只靠純 custom quote。`
+            : `Public starting price ${formatHkd(web.starter, pl)} (one-time) — not custom-quote-only.`}
+        </p>
+        <div className="mt-6">
+          <WebsiteQuoteBuilder locale={pl} />
+        </div>
       </section>
     </main>
   );
