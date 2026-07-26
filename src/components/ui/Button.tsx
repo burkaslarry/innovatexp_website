@@ -15,13 +15,13 @@ const base =
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-primary text-white shadow-card hover:bg-brand-primary-hover hover:shadow-card-hover",
+    "bg-brand-primary text-white shadow-card hover:bg-brand-primary-hover hover:shadow-card-hover [&_svg]:text-white",
   outline:
     "border border-[color:var(--border-medium)] bg-surface text-[color:var(--text-primary)] shadow-card hover:border-brand-primary/40 hover:bg-surface-secondary",
   ghost:
     "text-secondary hover:bg-primary/10 dark:text-[color:var(--secondary-color)] dark:hover:bg-white/5",
   ctaLight:
-    "border border-[color:var(--border-medium)] bg-surface text-[color:var(--text-primary)] shadow-card hover:bg-brand-primary hover:text-white hover:border-brand-primary",
+    "border border-[color:var(--border-medium)] bg-surface text-[color:var(--text-primary)] shadow-card hover:bg-brand-primary hover:text-white hover:border-brand-primary hover:[&_svg]:text-white",
 };
 
 export function Button({

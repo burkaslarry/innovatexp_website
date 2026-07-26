@@ -18,10 +18,10 @@ function toPricingLocale(locale: AppLocale): PricingLocale {
 
 const copy = {
   "zh-hk": {
-    toolsEyebrow: "工具試用",
-    toolsTitle: "Product-led 入門 — 先試用，再決定落地",
+    toolsEyebrow: "入場磚（Quick Cash）",
+    toolsTitle: "低門檻試用 — 引流入口，唔係主打",
     toolsIntro:
-      "工具係引流入口；consultation / 陪跑先係 service 實體。試用期滿可以約我傾買斷、訂閱或唔續；填好 feedback 問卷，下次回購有 discount；referral 成功亦有折扣，BNI 會友再折。",
+      "EventXP／SmartSales／AccountXP 方便先試。想系統性執流程，請由 Discovery Sprint 或 Premium Accelerator 開始。",
     eventTitle: "EventXP 試用",
     eventBody: "1 場活動：簽到設定、名單評分、follow-up 自動化設定（唔只係 QR check-in app）。",
     eventCta: "了解 EventXP 試用",
@@ -32,75 +32,71 @@ const copy = {
     accountingCardBody:
       "收據擷取 pilot 設定 + 首月正式使用（一次性）。WhatsApp 收條 upload → AI 分類 → 每週報告；其後維護月費 880 / 1,280 / 1,480。",
     accountingCardCta: "睇示範同定價",
-    accountingEyebrow: "AccountXP · Accounting Tools",
-    accountingTitle: "收據 / 銀行對數 Chatbot（AccountXP）",
+    accountingEyebrow: "AccountXP · 入場磚",
+    accountingTitle: "收據／銀行對數 Chatbot",
     accountingIntro:
-      "類似中四 Accounting 嘅 Bank Reconciliation：先 reminder 同事定期拎公司銀行月結單，鼓勵 upload 存款 / 取款單，再做初步對數。Receipt upload、AI 分類、每週狀態報告一條龍；data policy 嚴格，入庫資料加密處理（圖片 OCR 按 scope 配置）。",
-    accountingBefore: "Before：收據散落 WhatsApp/email、人手輸入 Excel、月尾先對數、老闆追問先知進度。",
-    accountingAfter: "After：單據集中收集、AI 輔助分類、銀行單據 reminder、每週狀態同對數摘要。",
-    trialTitle: "體驗方案定價",
+      "WhatsApp 收條 → AI 分類 → 每週報告；可加銀行月結單 reminder 做初步對數。資料加密；OCR 按 scope。",
+    accountingBefore: "Before：收據散落、人手 Excel、月尾先對數。",
+    accountingAfter: "After：集中收集、AI 分類、每週狀態摘要。",
+    trialTitle: "體驗定價",
     trialWeek: "體驗方案（一次）",
     trialMonth: "維護月費（三層）",
-    trialFunnelTitle: "體驗後 funnel",
+    trialFunnelTitle: "體驗後",
     trialFunnelSteps: [
-      "體驗期滿 → 約 30 分鐘 review，決定續維護、升級或唔續",
-      "填寫 feedback 問卷 → 下次回購 / 升級可享折扣",
-      "成功 referral 其他團隊 → referral discount",
-      "查證 BNI 會友 → 額外 BNI 折扣（可與 referral 分開確認）",
+      "約 30 分鐘 review → 續維護／升級／唔續",
+      "Feedback 問卷 → 下次回購折扣",
+      "Referral／BNI 可另享折扣",
     ],
-    outcomesTitle: "預期效果（示範場景）",
-    outcomesDisclaimer: "示範場景，實際方案需先 workflow 診斷。KPI 會按你公司流程 baseline 調整。",
+    outcomesTitle: "示範效果",
+    outcomesDisclaimer: "示範場景；實際 KPI 診斷後定。",
     outcomes: [
-      { label: "每月整理時間", before: "50–70 小時人手", after: "約 2.5 小時 AI 初步處理" },
-      { label: "漏交 / 遲交率", before: "10–15%", after: "<3%" },
+      { label: "每月整理", before: "50–70 小時", after: "約 2.5 小時預處理" },
+      { label: "漏／遲交", before: "10–15%", after: "<3%" },
       { label: "月尾結算", before: "3–5 日", after: "半日內" },
-      { label: "管理層可見度", before: "月尾先知數", after: "每週自動報告" },
     ],
-    outcomesHighlight: "AI 約 1 分鐘處理 7 張 receipt · 每月可節省 70–80% 整理時間",
-    videoCaption: "示範：Accounting Chatbot — 收條 upload → AI 分類 → 每週報告",
-    trialCta: "預約 AccountXP 體驗方案",
+    outcomesHighlight: "約 1 分鐘處理 7 張 receipt · 可省七成以上整理時間",
+    videoCaption: "示範：upload → 分類 → 每週報告",
+    trialCta: "預約 AccountXP 體驗",
   },
   en: {
-    toolsEyebrow: "Tool trials",
-    toolsTitle: "Product-led entry — try first, then decide rollout",
+    toolsEyebrow: "Entry bricks (Quick Cash)",
+    toolsTitle: "Low-friction trials — lead-in, not the core offer",
     toolsIntro:
-      "Tools are the lead-in; consultation and advisory programs are the core service. After your trial, book a review to choose buyout, subscription, or stop. Complete the feedback form for a return discount; referrals and verified BNI members receive additional discounts.",
+      "EventXP / SmartSales / AccountXP let you try first. For a structured workflow upgrade, start with Discovery Sprint or Premium Accelerator.",
     eventTitle: "EventXP trial",
-    eventBody: "One event: check-in setup, lead scoring, and follow-up automation — not just a QR check-in app.",
+    eventBody: "One event: check-in, lead scoring, follow-up automation.",
     eventCta: "Explore EventXP trial",
     salesTitle: "SmartSales CRM trial",
-    salesBody: "WhatsApp workflow setup, CRM baseline, and one sales process trial run.",
+    salesBody: "WhatsApp workflow, CRM baseline, one sales process trial.",
     salesCta: "Explore SmartSales trial",
     accountingCardTitle: "AccountXP experience",
     accountingCardBody:
-      "Receipt-capture pilot setup + first month live use (one-time). WhatsApp upload → AI classify → weekly report; then maintenance at HKD 880 / 1,280 / 1,480.",
+      "Receipt pilot + first month live (one-time). Then maintenance HKD 880 / 1,280 / 1,480.",
     accountingCardCta: "See demo & pricing",
-    accountingEyebrow: "AccountXP · Accounting Tools",
-    accountingTitle: "Receipt / bank reconciliation chatbot (AccountXP)",
+    accountingEyebrow: "AccountXP · entry brick",
+    accountingTitle: "Receipt / bank reconciliation chatbot",
     accountingIntro:
-      "Inspired by Form 4 bank reconciliation: reminders to collect monthly bank statements, encourage upload of deposit/withdrawal slips, then first-pass matching. Receipt upload, AI classification, and weekly status in one flow. Strict data policy with encrypted storage; image OCR configured per scope.",
-    accountingBefore: "Before: receipts scattered across WhatsApp/email, manual Excel entry, month-end reconciliation, owner chasing for status.",
-    accountingAfter: "After: centralized collection, AI-assisted classification, bank-slip reminders, weekly status and reconciliation summaries.",
+      "WhatsApp upload → AI classify → weekly report; optional bank-statement reminders. Encrypted storage; OCR per scope.",
+    accountingBefore: "Before: scattered receipts, manual Excel, month-end scramble.",
+    accountingAfter: "After: centralized intake, AI classification, weekly status.",
     trialTitle: "Experience pricing",
     trialWeek: "Experience package (one-time)",
     trialMonth: "Maintenance (3 tiers)",
     trialFunnelTitle: "After the experience",
     trialFunnelSteps: [
-      "Package ends → 30-minute review to decide maintenance, upgrade, or stop",
-      "Complete feedback form → discount on your next purchase or upgrade",
-      "Successful referral → referral discount",
-      "Verified BNI member → additional BNI discount (confirmed separately)",
+      "30-minute review → maintain / upgrade / stop",
+      "Feedback form → return discount",
+      "Referral / BNI discounts available",
     ],
-    outcomesTitle: "Expected outcomes (example scenario)",
-    outcomesDisclaimer: "Example scenario only. Actual KPIs are baselined during diagnosis.",
+    outcomesTitle: "Example outcomes",
+    outcomesDisclaimer: "Example only; KPIs baselined in diagnosis.",
     outcomes: [
-      { label: "Monthly processing time", before: "50–70 hours manual", after: "~2.5 hours AI pre-processing" },
-      { label: "Missed / late receipts", before: "10–15%", after: "<3%" },
+      { label: "Monthly processing", before: "50–70 hrs", after: "~2.5 hrs pre-process" },
+      { label: "Missed / late", before: "10–15%", after: "<3%" },
       { label: "Month-end close", before: "3–5 days", after: "Within half a day" },
-      { label: "Management visibility", before: "Numbers known at month-end", after: "Weekly automated reports" },
     ],
-    outcomesHighlight: "AI ~1 minute for 7 receipts · save 70–80% monthly processing time",
-    videoCaption: "Demo: Accounting Chatbot — upload → classify → weekly report",
+    outcomesHighlight: "~1 minute for 7 receipts · often 70%+ less processing time",
+    videoCaption: "Demo: upload → classify → weekly report",
     trialCta: "Book AccountXP experience",
   },
 } as const;
@@ -163,7 +159,6 @@ export function PricingFunnelSections({
       href: "#accounting-tools-demo",
       cta: c.accountingCardCta,
       inquiryId: "accountXpExperience",
-      featured: true,
     },
   ];
 
@@ -256,7 +251,7 @@ export function PricingFunnelSections({
               <ol className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                 {c.trialFunnelSteps.map((step, index) => (
                   <li key={step} className="flex gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-xs font-bold text-white dark:bg-teal-500 dark:text-slate-950">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-xs font-bold text-white">
                       {index + 1}
                     </span>
                     <span>{step}</span>

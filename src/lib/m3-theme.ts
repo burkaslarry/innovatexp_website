@@ -83,6 +83,18 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
             color: "#ffffff",
             "&:hover": { color: "#ffffff", backgroundColor: primaryHover },
             "&.Mui-disabled": { color: "rgba(255,255,255,0.7)" },
+            "& .MuiButton-startIcon, & .MuiButton-endIcon, & .MuiSvgIcon-root, & .MuiButton-icon": {
+              color: "#ffffff",
+            },
+            "&:hover .MuiButton-startIcon, &:hover .MuiButton-endIcon, &:hover .MuiSvgIcon-root, &:hover .MuiButton-icon": {
+              color: "#ffffff",
+            },
+          },
+          containedSecondary: {
+            color: "#ffffff",
+            "& .MuiButton-startIcon, & .MuiButton-endIcon, & .MuiSvgIcon-root, & .MuiButton-icon": {
+              color: "#ffffff",
+            },
           },
         },
       },
@@ -151,7 +163,8 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
           primary: {
             color: "#ffffff",
             backgroundColor: primary,
-            "&:hover": { backgroundColor: primaryHover },
+            "&:hover": { backgroundColor: primaryHover, color: "#ffffff" },
+            "& .MuiSvgIcon-root, & .MuiFab-icon": { color: "#ffffff" },
           },
         },
       },

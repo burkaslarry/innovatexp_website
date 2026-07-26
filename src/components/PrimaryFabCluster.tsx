@@ -92,7 +92,7 @@ export function PrimaryFabCluster() {
             sx={fabSx}
           >
             <Badge badgeContent={itemCount} color="secondary" max={9} overlap="circular">
-              <ShoppingCartIcon />
+              <ShoppingCartIcon sx={{ color: "#fff" }} />
             </Badge>
           </Fab>
         </Zoom>
