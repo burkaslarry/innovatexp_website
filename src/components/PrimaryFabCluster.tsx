@@ -17,11 +17,13 @@ import AssignmentIcon from "@mui/icons-material/Assignment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { getLocaleFromPathname, localeUsesChineseCopy, withLocale } from "@/lib/i18n-routing";
+import { uiStrings } from "@/content/ui-strings";
 import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
 import { useInquiryCart } from "@/context/InquiryCartContext";
 
-const defaultWhatsAppMessage =
-  "你好！我喺 InnovateXP 網站睇到，想了解點樣將 WhatsApp inquiry / 活動 lead 變成可跟進 pipeline。";
+function whatsappPrefillForLocale(locale: ReturnType<typeof getLocaleFromPathname>) {
+  return uiStrings(locale).whatsappPrefill;
+}
 
 const fabSx = {
   position: "fixed" as const,
@@ -50,7 +52,7 @@ export function PrimaryFabCluster() {
 
   const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
   const whatsappHref = rawNumber
-    ? `https://wa.me/${rawNumber}?text=${encodeURIComponent(defaultWhatsAppMessage)}`
+    ? `https://wa.me/${rawNumber}?text=${encodeURIComponent(whatsappPrefillForLocale(locale))}`
     : withLocale(locale, "/bookme");
 
   const actions: { icon: React.ReactNode; name: string; href: string; external?: boolean }[] = [

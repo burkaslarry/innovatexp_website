@@ -27,7 +27,7 @@ export function FaqAccordion({ title, id, faqs, defaultOpenIndex = 0 }: FaqAccor
   return (
     <section
       id={id}
-      className="mb-16 rounded-3xl border border-slate-100 bg-white p-8 shadow-card dark:border-slate-700 dark:bg-slate-900/80"
+      className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-100 bg-white p-8 shadow-card dark:border-slate-700 dark:bg-slate-900/80"
     >
       <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-3xl">{title}</h2>
       <ul className="divide-y divide-slate-200 dark:divide-slate-600">
@@ -62,12 +62,12 @@ export function FaqAccordion({ title, id, faqs, defaultOpenIndex = 0 }: FaqAccor
                 id={panelId}
                 role="region"
                 aria-labelledby={buttonId}
-                hidden={!isOpen}
-                className={isOpen ? "pb-4" : ""}
+                className="grid transition-[grid-template-rows] duration-200 ease-out"
+                style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
               >
-                {isOpen ? (
-                  <p className="text-sm leading-relaxed text-slate-600 dark:text-slate-300">{faq.answer}</p>
-                ) : null}
+                <div className="overflow-hidden">
+                  <p className="pb-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{faq.answer}</p>
+                </div>
               </div>
             </li>
           );

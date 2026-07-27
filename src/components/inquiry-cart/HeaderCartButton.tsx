@@ -12,19 +12,25 @@ export function HeaderCartButton() {
   const ui = uiStrings(locale);
   const { itemCount, setDrawerOpen } = useInquiryCart();
 
-  if (itemCount <= 0) return null;
+  const ariaLabel = itemCount > 0 ? ui.mobileBar.cartAria(itemCount) : ui.cart.emptyAria;
 
   return (
     <button
       type="button"
       onClick={() => setDrawerOpen(true)}
-      className="relative flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--border-light)] bg-surface-secondary text-brand-primary transition hover:border-brand-primary/40 hover:bg-surface active:scale-95"
-      aria-label={ui.mobileBar.cartAria(itemCount)}
+      className={`relative flex h-10 w-10 items-center justify-center rounded-full border transition active:scale-95 ${
+        itemCount > 0
+          ? "border-brand-primary/40 bg-surface-secondary text-brand-primary hover:bg-surface"
+          : "border-[color:var(--border-light)] bg-surface-secondary text-[color:var(--text-tertiary)] hover:border-brand-primary/30 hover:text-brand-primary"
+      }`}
+      aria-label={ariaLabel}
     >
       <ShoppingCart className="h-5 w-5" aria-hidden />
-      <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand-primary px-0.5 text-[10px] font-bold leading-none text-white">
-        {itemCount > 9 ? "9+" : itemCount}
-      </span>
+      {itemCount > 0 ? (
+        <span className="absolute -right-0.5 -top-0.5 flex h-4 min-w-4 items-center justify-center rounded-full bg-brand-primary px-0.5 text-[10px] font-bold leading-none text-white">
+          {itemCount > 9 ? "9+" : itemCount}
+        </span>
+      ) : null}
     </button>
   );
 }

@@ -674,39 +674,62 @@ export function BusinessUpgradeHomepageFunnel({
 
       <section id="programs" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro eyebrow={c.programs.eyebrow} title={c.programs.title} intro={c.programs.intro} />
-        <div className="grid gap-5 lg:grid-cols-3">
+        <p className="mx-auto mb-8 max-w-2xl text-center text-sm font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">
+          <a href="#ai-coaching-pricing" className="underline decoration-brand-primary/40 underline-offset-2 hover:decoration-brand-primary">
+            {uiStrings(locale).programsSection.pricingLink}
+          </a>
+        </p>
+        <ol className="relative mx-auto max-w-4xl space-y-0">
           {c.programs.cards.map((card, cardIndex) => {
             const planIndex = cardIndex + 1;
+            const duration = uiStrings(locale).programsSection.durationLabels[cardIndex];
             return (
-              <article
+              <li
                 key={card.name}
-                className={`flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
-                  "featured" in card && card.featured
-                    ? "border-brand-primary/40 bg-surface-secondary"
-                    : "border-[color:var(--border-light)] bg-surface-secondary"
+                className={`relative flex gap-4 pb-8 last:pb-0 md:gap-6 ${
+                  cardIndex < c.programs.cards.length - 1 ? "border-l-2 border-brand-primary/25 pl-6 md:pl-8 ml-3 md:ml-4" : "pl-6 md:pl-8 ml-3 md:ml-4"
                 }`}
               >
-                <h3 className="text-xl font-bold text-gray-900 dark:text-white">{card.name}</h3>
-                <p className="mt-3 text-lg font-extrabold text-brand-primary dark:text-[color:var(--primary-hover)]">
-                  {consultancyPlanPrice(planIndex, locale)}
-                </p>
-                <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{card.body}</p>
-                <ul className="mt-5 grid flex-1 gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                  {card.points.map((point) => (
-                    <li key={point} className="flex gap-2">
-                      <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">✓</span>
-                      <span>{point}</span>
-                    </li>
-                  ))}
-                </ul>
-                <div className="mt-5">
-                  <AddToInquiryButton itemId={consultancyCatalogId(planIndex)} />
-                </div>
-              </article>
+                <span
+                  className={`absolute left-0 top-0 flex h-6 w-6 -translate-x-1/2 items-center justify-center rounded-full text-xs font-bold md:h-7 md:w-7 ${
+                    "featured" in card && card.featured
+                      ? "bg-brand-primary text-white"
+                      : "border-2 border-brand-primary bg-surface text-brand-primary"
+                  }`}
+                >
+                  {cardIndex + 1}
+                </span>
+                <article
+                  className={`flex-1 rounded-2xl border p-5 shadow-sm ${
+                    "featured" in card && card.featured
+                      ? "border-brand-primary/40 bg-surface-secondary"
+                      : "border-[color:var(--border-light)] bg-surface-secondary"
+                  }`}
+                >
+                  <div className="flex flex-wrap items-center gap-2">
+                    <h3 className="text-lg font-bold text-gray-900 dark:text-white">{card.name}</h3>
+                    <span className="rounded-full bg-brand-primary/10 px-2.5 py-0.5 text-xs font-bold text-brand-primary dark:bg-brand-primary/20 dark:text-[color:var(--primary-hover)]">
+                      {duration}
+                    </span>
+                  </div>
+                  <p className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{card.body}</p>
+                  <ul className="mt-4 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                    {card.points.map((point) => (
+                      <li key={point} className="flex gap-2">
+                        <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">✓</span>
+                        <span>{point}</span>
+                      </li>
+                    ))}
+                  </ul>
+                  <div className="mt-4">
+                    <AddToInquiryButton itemId={consultancyCatalogId(planIndex)} />
+                  </div>
+                </article>
+              </li>
             );
           })}
-        </div>
-        <div className="mt-6 flex justify-center">
+        </ol>
+        <div className="mt-8 flex justify-center">
           <Button href={bookingHref}>{c.pricing.cta}</Button>
         </div>
       </section>

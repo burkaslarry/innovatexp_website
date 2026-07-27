@@ -3,11 +3,16 @@
 
 import { useState } from 'react';
 import { useLanguage } from '../../LanguageContext';
+import { uiStrings } from '@/content/ui-strings';
+import { getLocaleFromPathname } from '@/lib/i18n-routing';
+import { usePathname } from 'next/navigation';
 import Header from '../../components/Header';
 import QuotationWizard from '@/components/QuotationWizard';
 
 export default function BookVisitPage() {
   const { t } = useLanguage();
+  const pathname = usePathname();
+  const ui = uiStrings(getLocaleFromPathname(pathname));
   const [showGuidelines, setShowGuidelines] = useState(false);
 
   return (
@@ -56,7 +61,7 @@ export default function BookVisitPage() {
                   onClick={() => setShowGuidelines((v) => !v)}
                   className="mt-4 flex w-full items-center justify-between gap-3 text-left text-sm font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]"
                 >
-                  <span>{showGuidelines ? t('bookme.info.hide_details') : t('bookme.info.show_details')}</span>
+                  <span>{showGuidelines ? ui.bookme.hideDetails : ui.bookme.showDetails}</span>
                   <svg
                     className={`h-5 w-5 transition-transform ${showGuidelines ? 'rotate-180' : ''}`}
                     fill="none"

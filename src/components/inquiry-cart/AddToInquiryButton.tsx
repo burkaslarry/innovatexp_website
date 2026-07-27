@@ -1,16 +1,15 @@
 "use client";
 
-import { Button, ThemeProvider } from "@mui/material";
-import AddShoppingCartIcon from "@mui/icons-material/AddShoppingCart";
+import { ShoppingCart } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, localeUsesChineseCopy } from "@/lib/i18n-routing";
 import { useInquiryCart } from "@/context/InquiryCartContext";
-import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
 import {
   catalogTitle,
   getInquiryCatalogItem,
   type InquiryCatalogItemId,
 } from "@/content/inquiry-catalog";
+import { uiStrings } from "@/content/ui-strings";
 
 export function AddToInquiryButton({
   itemId,
@@ -24,36 +23,28 @@ export function AddToInquiryButton({
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
   const zh = localeUsesChineseCopy(locale);
+  const ui = uiStrings(locale);
   const { addItem } = useInquiryCart();
   const catalog = getInquiryCatalogItem(itemId);
-  const theme = useInnovateXpM3Theme();
 
   if (!catalog) return null;
 
+  const sizeClass =
+    size === "small" ? "min-h-[40px] px-4 text-sm" : size === "large" ? "min-h-[52px] px-8 text-base" : "min-h-[44px] px-6 text-sm";
+
   return (
-    <ThemeProvider theme={theme}>
-      <Button
-        variant="contained"
-        color="primary"
-        size={size}
-        fullWidth={fullWidth}
-        startIcon={<AddShoppingCartIcon sx={{ color: "#fff" }} />}
-        onClick={() =>
-          addItem(itemId, {
-            title: catalogTitle(catalog, zh),
-            amountHkd: catalog.amountHkd,
-          })
-        }
-        sx={{
-          fontWeight: 800,
-          minHeight: 44,
-          borderRadius: 999,
-          color: "#fff",
-          "& .MuiButton-startIcon, & .MuiSvgIcon-root": { color: "#fff" },
-        }}
-      >
-        {zh ? "加入查詢" : "Add to inquiry"}
-      </Button>
-    </ThemeProvider>
+    <button
+      type="button"
+      className={`inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary font-bold text-white shadow-card transition hover:bg-brand-primary-hover active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 ${sizeClass} ${fullWidth ? "w-full" : ""}`}
+      onClick={() =>
+        addItem(itemId, {
+          title: catalogTitle(catalog, zh),
+          amountHkd: catalog.amountHkd,
+        })
+      }
+    >
+      <ShoppingCart className="h-4 w-4 shrink-0" aria-hidden />
+      {ui.inquiry.addLabel}
+    </button>
   );
 }

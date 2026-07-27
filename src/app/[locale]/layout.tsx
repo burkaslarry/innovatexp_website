@@ -5,6 +5,7 @@ import { LanguageProvider } from "../LanguageContext";
 import StructuredData from "../components/StructuredData";
 import { PrimaryFabCluster } from "@/components/PrimaryFabCluster";
 import { MobileConversionBar } from "@/components/MobileConversionBar";
+import { DesktopScrollCta } from "@/components/DesktopScrollCta";
 import { InquiryCheckoutDrawer } from "@/components/inquiry-cart/InquiryCheckoutDrawer";
 import { InquiryCartProvider } from "@/context/InquiryCartContext";
 import { LocaleHtmlLang } from "../components/LocaleHtmlLang";
@@ -124,6 +125,7 @@ export default async function LocaleLayout({
             <InquiryCheckoutDrawer />
             <PrimaryFabCluster />
             <MobileConversionBar />
+            <DesktopScrollCta />
           </InquiryCartProvider>
         </LanguageProvider>
       </ThemeProvider>

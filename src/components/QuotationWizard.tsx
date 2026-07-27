@@ -990,7 +990,7 @@ export default function QuotationWizard({
                 <select
                   value={fxDialSelect}
                   onChange={(e) => setFxDialSelect(e.target.value)}
-                  className="mt-1 w-full min-h-[48px] rounded-xl border-2 border-slate-300 bg-white px-3 text-base text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-[#00B9B3]"
+                  className="mt-1 w-full min-h-[48px] rounded-xl border-2 border-slate-300 bg-white px-3 text-base text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-brand-primary"
                   aria-label={t("wizard.flowx.country")}
                 >
                   {PHONE_DIAL_OPTIONS.map((o) => (
@@ -1026,7 +1026,7 @@ export default function QuotationWizard({
                   value={fxWa}
                   onChange={(e) => setFxWa(e.target.value)}
                   placeholder={t("bookme.visitor.placeholder.phone")}
-                  className="mt-1 w-full min-h-[52px] rounded-xl border-2 border-slate-300 bg-white px-4 text-base text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-[#00B9B3]"
+                  className="mt-1 w-full min-h-[52px] rounded-xl border-2 border-slate-300 bg-white px-4 text-base text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:focus:border-brand-primary"
                   autoComplete="tel-national"
                 />
                 <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{t("wizard.flowx.whatsapp_hint")}</p>
@@ -1098,9 +1098,9 @@ export default function QuotationWizard({
                       locale={usesChineseUi ? zhTW : enUS}
                       defaultMonth={new Date()}
                       modifiersClassNames={{
-                        selected: "bg-brand-primary text-white font-bold rounded-lg dark:bg-[#00B9B3]",
+                        selected: "bg-brand-primary text-white font-bold rounded-lg dark:bg-brand-primary",
                         today:
-                          "border-2 border-brand-primary rounded-lg font-bold text-brand-primary dark:border-[#00B9B3] dark:text-[color:var(--primary-hover)]",
+                          "border-2 border-brand-primary rounded-lg font-bold text-brand-primary dark:border-brand-primary dark:text-[color:var(--primary-hover)]",
                         disabled: "text-gray-400 dark:text-gray-600 opacity-40 cursor-not-allowed",
                       }}
                       className="text-gray-900 dark:text-white touch-manipulation"
@@ -1129,7 +1129,7 @@ export default function QuotationWizard({
                   ) : null}
                   {isFetchingSlots ? (
                     <div className="flex flex-col items-center justify-center py-10">
-                      <div className="h-10 w-10 animate-spin rounded-full border-3 border-brand-primary border-t-transparent dark:border-[#00B9B3]" />
+                      <div className="h-10 w-10 animate-spin rounded-full border-3 border-brand-primary border-t-transparent dark:border-brand-primary" />
                       <span className="mt-3 text-slate-600 dark:text-slate-400 text-sm">{t("bookme.time.loading")}</span>
                     </div>
                   ) : null}
@@ -1148,7 +1148,7 @@ export default function QuotationWizard({
                           className={[
                             "min-h-[52px] px-4 py-3 rounded-xl text-base font-semibold transition-all duration-200 active:scale-95 touch-manipulation border-2",
                             selectedTimeSlot?.start === slot.start
-                              ? "bg-brand-primary text-white shadow-lg border-brand-primary-hover ring-2 ring-brand-primary/30 dark:bg-[#00B9B3] dark:border-[#009e98] dark:ring-[#00B9B3]/40"
+                              ? "bg-brand-primary text-white shadow-lg border-brand-primary-hover ring-2 ring-brand-primary/30 dark:bg-brand-primary dark:border-brand-primary-hover dark:ring-brand-primary/40"
                               : "bg-white dark:bg-slate-900 text-slate-700 dark:text-slate-200 border-slate-300 dark:border-slate-600 hover:border-brand-primary/50 hover:bg-brand-primary/5 dark:hover:bg-slate-800",
                           ].join(" ")}
                         >
@@ -1293,7 +1293,7 @@ function MultiSelectStep({
               className={[
                 "rounded-2xl border-2 px-3 py-3.5 text-left font-semibold text-sm leading-snug shadow-sm transition sm:px-4 sm:py-4 sm:text-base",
                 checked
-                  ? "border-brand-primary bg-brand-primary/10 text-slate-900 dark:border-[#00B9B3] dark:bg-[#00B9B3]/10 dark:text-white"
+                  ? "border-brand-primary bg-brand-primary/10 text-slate-900 dark:border-brand-primary dark:bg-brand-primary/10 dark:text-white"
                   : "border-slate-200 bg-white text-slate-900 hover:border-oxford/30 dark:border-slate-700 dark:bg-slate-900/60 dark:text-white",
               ].join(" ")}
             >
@@ -1355,7 +1355,7 @@ function TextStep({
         onChange={(e) => onChange(e.target.value)}
         placeholder={placeholder}
         rows={4}
-        className="mt-4 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900/60 dark:text-white dark:focus:border-[#00B9B3]"
+        className="mt-4 w-full rounded-2xl border border-slate-300 bg-white px-4 py-3 text-base text-slate-900 outline-none focus:border-brand-primary dark:border-slate-600 dark:bg-slate-900/60 dark:text-white dark:focus:border-brand-primary"
       />
       <div className="mt-5 flex gap-3">
         <button

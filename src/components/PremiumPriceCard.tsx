@@ -34,7 +34,7 @@ export function PremiumPriceCard({
       <div
         className="flex h-full flex-col rounded-2xl p-[2px] shadow-xl"
         style={{
-          background: "linear-gradient(135deg, #00B9B3, #1242de, #0f766e)",
+          background: "linear-gradient(135deg, var(--brand-accent-teal), var(--oxford-blue), var(--brand-accent-teal-hover))",
         }}
       >
         <div className="relative flex min-h-0 flex-1 flex-col rounded-[14px] bg-gradient-to-br from-cyan-50 via-white to-amber-50 px-6 pb-8 pt-10 text-slate-900 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 dark:text-white">

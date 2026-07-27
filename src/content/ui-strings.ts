@@ -13,21 +13,44 @@ type UiStrings = {
     reportLink: string;
     reportPrefix: string;
   };
+  whatsappPrefill: string;
   mobileBar: {
     book: string;
     whatsapp: string;
     questionnaire: string;
     cart: string;
+    more: string;
+    closeMore: string;
     cartAria: (count: number) => string;
+  };
+  desktopCta: {
+    book: string;
+  };
+  cart: {
+    emptyAria: string;
+    coachmark: string;
+    emptyHint: string;
+  };
+  inquiry: {
+    addLabel: string;
+  };
+  bookme: {
+    showDetails: string;
+    hideDetails: string;
   };
   nav: {
     upgrade: string;
+    products: string;
     sprint: string;
     programs: string;
     advisory: string;
     useCases: string;
     about: string;
     contact: string;
+  };
+  programsSection: {
+    pricingLink: string;
+    durationLabels: [string, string, string];
   };
   productStrip: {
     eyebrow: string;
@@ -60,21 +83,45 @@ const en: UiStrings = {
     reportPrefix: "If you followed a broken link, you can",
     reportLink: "report it to us",
   },
+  whatsappPrefill:
+    "Hi — I found InnovateXP online and would like to learn how to turn WhatsApp inquiries / event leads into a follow-up pipeline.",
   mobileBar: {
     book: "Book review",
     whatsapp: "WhatsApp",
     questionnaire: "Questionnaire",
     cart: "Inquiry cart",
+    more: "More",
+    closeMore: "Close menu",
     cartAria: (n) => `Open inquiry cart, ${n} items`,
+  },
+  desktopCta: {
+    book: "Book a 30-minute review",
+  },
+  cart: {
+    emptyAria: "Open inquiry cart",
+    coachmark: "You can bundle several packages here and send one inquiry — no payment on the site.",
+    emptyHint: "Cart is empty. Tap “Add to inquiry” on any offer card.",
+  },
+  inquiry: {
+    addLabel: "Add to inquiry",
+  },
+  bookme: {
+    showDetails: "Show all booking details",
+    hideDetails: "Hide extra details",
   },
   nav: {
     upgrade: "AI Business Upgrade",
+    products: "Products",
     sprint: "30-day Sprint",
     programs: "Accelerator Programs",
     advisory: "Advisory",
     useCases: "Use Cases",
     about: "About Founder",
     contact: "Contact",
+  },
+  programsSection: {
+    pricingLink: "Full pricing is in the Sprint / Accelerator section above ↑",
+    durationLabels: ["3 months", "6 months", "12 months"],
   },
   productStrip: {
     eyebrow: "Product entry points",
@@ -119,21 +166,45 @@ const zh: UiStrings = {
     reportPrefix: "如你透過失效連結進入，可以",
     reportLink: "通知我們",
   },
+  whatsappPrefill:
+    "你好！我喺 InnovateXP 網站睇到，想了解點樣將 WhatsApp inquiry / 活動 lead 變成可跟進 pipeline。",
   mobileBar: {
     book: "預約診斷",
     whatsapp: "WhatsApp",
     questionnaire: "填問卷",
     cart: "查詢購物車",
+    more: "更多",
+    closeMore: "關閉選單",
     cartAria: (n) => `開啟查詢購物車，${n} 項`,
+  },
+  desktopCta: {
+    book: "預約 30 分鐘診斷",
+  },
+  cart: {
+    emptyAria: "開啟查詢購物車",
+    coachmark: "可以一次過加入多個方案再提交查詢，網站唔會收款。",
+    emptyHint: "購物車係空嘅。喺定價卡撳「加入查詢」開始。",
+  },
+  inquiry: {
+    addLabel: "加入查詢",
+  },
+  bookme: {
+    showDetails: "顯示全部預約須知",
+    hideDetails: "收起其他須知",
   },
   nav: {
     upgrade: "AI 商業升級",
+    products: "產品入口",
     sprint: "30 日 Sprint",
     programs: "加速計劃",
     advisory: "顧問",
     useCases: "示範場景",
     about: "關於創辦人",
     contact: "聯絡",
+  },
+  programsSection: {
+    pricingLink: "完整價格見上方「Sprint／Accelerator 定價」↑",
+    durationLabels: ["3 個月", "6 個月", "12 個月"],
   },
   productStrip: {
     eyebrow: "產品入口",
@@ -179,21 +250,45 @@ const ja: UiStrings = {
     reportPrefix: "壊れたリンクから来た場合は、",
     reportLink: "ご報告ください",
   },
+  whatsappPrefill:
+    "InnovateXPのサイトを見ました。WhatsApp問い合わせやイベントリードをフォロー可能なパイプラインにしたいです。",
   mobileBar: {
     book: "レビューを予約",
     whatsapp: "WhatsApp",
     questionnaire: "アンケート",
     cart: "お問い合わせカート",
+    more: "その他",
+    closeMore: "閉じる",
     cartAria: (n) => `お問い合わせカートを開く（${n}件）`,
+  },
+  desktopCta: {
+    book: "30分レビューを予約",
+  },
+  cart: {
+    emptyAria: "お問い合わせカートを開く",
+    coachmark: "複数パッケージをまとめて問い合わせできます。サイト上での決済はありません。",
+    emptyHint: "カートは空です。オファーカードの「Add to inquiry」をタップしてください。",
+  },
+  inquiry: {
+    addLabel: "お問い合わせに追加",
+  },
+  bookme: {
+    showDetails: "予約詳細をすべて表示",
+    hideDetails: "詳細を隠す",
   },
   nav: {
     upgrade: "AIビジネスアップグレード",
+    products: "プロダクト",
     sprint: "30日スプリント",
     programs: "アクセラレーター",
     advisory: "アドバイザリー",
     useCases: "ユースケース",
     about: "創設者について",
     contact: "連絡",
+  },
+  programsSection: {
+    pricingLink: "料金は上の Sprint / Accelerator セクションを参照 ↑",
+    durationLabels: ["3ヶ月", "6ヶ月", "12ヶ月"],
   },
   productStrip: {
     eyebrow: "プロダクト入口",
@@ -239,21 +334,45 @@ const de: UiStrings = {
     reportPrefix: "Wenn Sie einem defekten Link gefolgt sind, können Sie uns",
     reportLink: "Bescheid geben",
   },
+  whatsappPrefill:
+    "Hallo — ich habe InnovateXP online gefunden und möchte erfahren, wie WhatsApp-Anfragen / Event-Leads in eine Follow-up-Pipeline werden.",
   mobileBar: {
     book: "Review buchen",
     whatsapp: "WhatsApp",
     questionnaire: "Fragebogen",
     cart: "Anfrage-Warenkorb",
+    more: "Mehr",
+    closeMore: "Menü schließen",
     cartAria: (n) => `Anfrage-Warenkorb öffnen, ${n} Artikel`,
+  },
+  desktopCta: {
+    book: "30-Minuten-Review buchen",
+  },
+  cart: {
+    emptyAria: "Anfrage-Warenkorb öffnen",
+    coachmark: "Mehrere Pakete bündeln und eine Anfrage senden — keine Zahlung auf der Website.",
+    emptyHint: "Warenkorb ist leer. „Add to inquiry“ auf einer Angebotskarte tippen.",
+  },
+  inquiry: {
+    addLabel: "Zur Anfrage hinzufügen",
+  },
+  bookme: {
+    showDetails: "Alle Buchungsdetails anzeigen",
+    hideDetails: "Details ausblenden",
   },
   nav: {
     upgrade: "AI Business Upgrade",
+    products: "Produkte",
     sprint: "30-Tage-Sprint",
     programs: "Accelerator-Programme",
     advisory: "Beratung",
     useCases: "Anwendungsfälle",
     about: "Über den Gründer",
     contact: "Kontakt",
+  },
+  programsSection: {
+    pricingLink: "Preise siehe Sprint / Accelerator oben ↑",
+    durationLabels: ["3 Monate", "6 Monate", "12 Monate"],
   },
   productStrip: {
     eyebrow: "Produkt-Einstieg",
@@ -288,7 +407,11 @@ const de: UiStrings = {
 const map: Record<AppLocale, UiStrings> = {
   en: en,
   "zh-hk": zh,
-  "zh-tw": { ...zh, notFound: { ...zh.notFound, heading: "找不到頁面", blog: "部落格" } },
+  "zh-tw": {
+    ...zh,
+    notFound: { ...zh.notFound, heading: "找不到頁面", blog: "部落格" },
+    inquiry: { addLabel: "加入查詢" },
+  },
   ja: ja,
   de: de,
 };

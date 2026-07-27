@@ -1,6 +1,6 @@
 "use client";
 
-import { FormEvent, useState } from "react";
+import { FormEvent, useEffect, useState } from "react";
 import {
   Alert,
   Box,
@@ -17,6 +17,7 @@ import CloseIcon from "@mui/icons-material/Close";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, localeUsesChineseCopy } from "@/lib/i18n-routing";
+import { uiStrings } from "@/content/ui-strings";
 import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
 import { useInquiryCart } from "@/context/InquiryCartContext";
 import { formatHkd, type PricingLocale } from "@/content/pricing";
@@ -34,6 +35,7 @@ export function InquiryCheckoutDrawer() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
   const zh = localeUsesChineseCopy(locale);
+  const ui = uiStrings(locale);
   const pl = toPricingLocale(locale);
   const theme = useInnovateXpM3Theme();
   const { items, itemCount, estimatedTotal, drawerOpen, setDrawerOpen, removeItem, setQty, clear } =
@@ -47,6 +49,20 @@ export function InquiryCheckoutDrawer() {
   const [submitting, setSubmitting] = useState(false);
   const [error, setError] = useState<string | null>(null);
   const [success, setSuccess] = useState(false);
+  const [showCoachmark, setShowCoachmark] = useState(false);
+
+  useEffect(() => {
+    if (!drawerOpen || items.length === 0) return;
+    try {
+      const seen = window.localStorage.getItem("ixp-inquiry-coachmark-v1");
+      if (!seen && items.length >= 1) {
+        setShowCoachmark(true);
+        window.localStorage.setItem("ixp-inquiry-coachmark-v1", "1");
+      }
+    } catch {
+      setShowCoachmark(items.length >= 1);
+    }
+  }, [drawerOpen, items.length]);
 
   const resetForm = () => {
     setName("");
@@ -155,12 +171,16 @@ export function InquiryCheckoutDrawer() {
           </Alert>
         ) : null}
 
+        {showCoachmark && items.length > 0 ? (
+          <Alert severity="info" onClose={() => setShowCoachmark(false)}>
+            {ui.cart.coachmark}
+          </Alert>
+        ) : null}
+
         <Box sx={{ flex: 1, overflowY: "auto" }}>
           {items.length === 0 ? (
             <Typography variant="body2" color="text.secondary" sx={{ py: 3 }}>
-              {zh
-                ? "購物車係空嘅。喺定價卡撳「加入查詢」開始。"
-                : "Cart is empty. Tap “Add to inquiry” on any offer card."}
+              {ui.cart.emptyHint}
             </Typography>
           ) : (
             <Stack spacing={1.5}>
