@@ -4,6 +4,7 @@ import { ThemeProvider } from "../ThemeContext";
 import { LanguageProvider } from "../LanguageContext";
 import StructuredData from "../components/StructuredData";
 import { PrimaryFabCluster } from "@/components/PrimaryFabCluster";
+import { MobileConversionBar } from "@/components/MobileConversionBar";
 import { InquiryCheckoutDrawer } from "@/components/inquiry-cart/InquiryCheckoutDrawer";
 import { InquiryCartProvider } from "@/context/InquiryCartContext";
 import { LocaleHtmlLang } from "../components/LocaleHtmlLang";
@@ -117,9 +118,12 @@ export default async function LocaleLayout({
         <LanguageProvider locale={locale as AppLocale}>
           <InquiryCartProvider>
             <StructuredData />
-            {children}
+            <div className="pb-[calc(4.25rem+env(safe-area-inset-bottom))] md:pb-0">
+              {children}
+            </div>
             <InquiryCheckoutDrawer />
             <PrimaryFabCluster />
+            <MobileConversionBar />
           </InquiryCartProvider>
         </LanguageProvider>
       </ThemeProvider>

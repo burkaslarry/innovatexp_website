@@ -25,7 +25,7 @@ const defaultWhatsAppMessage =
 
 const fabSx = {
   position: "fixed" as const,
-  bottom: { xs: 88, md: 28 },
+  bottom: 28,
   right: 24,
   zIndex: (t: { zIndex: { speedDial: number } }) => t.zIndex.speedDial,
   width: 56,
@@ -83,56 +83,58 @@ export function PrimaryFabCluster() {
 
   return (
     <ThemeProvider theme={theme}>
-      {itemCount > 0 ? (
-        <Zoom in>
-          <Fab
-            color="primary"
-            aria-label={zh ? `開啟查詢購物車，${itemCount} 項` : `Open inquiry cart, ${itemCount} items`}
-            onClick={() => setDrawerOpen(true)}
-            sx={fabSx}
-          >
-            <Badge badgeContent={itemCount} color="secondary" max={9} overlap="circular">
-              <ShoppingCartIcon sx={{ color: "#fff" }} />
-            </Badge>
-          </Fab>
-        </Zoom>
-      ) : (
-        <>
-          <Backdrop open={open} sx={{ zIndex: (t) => t.zIndex.speedDial - 1 }} />
-          <SpeedDial
-            ariaLabel={zh ? "快捷操作" : "Quick actions"}
-            sx={{
-              position: "fixed",
-              bottom: { xs: 88, md: 28 },
-              right: 24,
-              zIndex: (t) => t.zIndex.speedDial,
-            }}
-            icon={<SpeedDialIcon />}
-            onClose={() => setOpen(false)}
-            onOpen={() => setOpen(true)}
-            open={open}
-            FabProps={{
-              color: "primary",
-              sx: { width: 56, height: 56, color: "#fff", boxShadow: "var(--shadow-fab)" },
-              "aria-label": zh ? "開啟快捷選單" : "Open quick actions",
-            }}
-          >
-            {actions.map((action) => (
-              <SpeedDialAction
-                key={action.name}
-                icon={action.icon}
-                tooltipTitle={action.name}
-                tooltipOpen={false}
-                FabProps={{
-                  sx: { minWidth: 44, minHeight: 44 },
-                  "aria-label": action.name,
-                }}
-                onClick={() => go(action.href, action.external)}
-              />
-            ))}
-          </SpeedDial>
-        </>
-      )}
+      <div className="hidden md:block">
+        {itemCount > 0 ? (
+          <Zoom in>
+            <Fab
+              color="primary"
+              aria-label={zh ? `開啟查詢購物車，${itemCount} 項` : `Open inquiry cart, ${itemCount} items`}
+              onClick={() => setDrawerOpen(true)}
+              sx={fabSx}
+            >
+              <Badge badgeContent={itemCount} color="secondary" max={9} overlap="circular">
+                <ShoppingCartIcon sx={{ color: "#fff" }} />
+              </Badge>
+            </Fab>
+          </Zoom>
+        ) : (
+          <>
+            <Backdrop open={open} sx={{ zIndex: (t) => t.zIndex.speedDial - 1 }} />
+            <SpeedDial
+              ariaLabel={zh ? "快捷操作" : "Quick actions"}
+              sx={{
+                position: "fixed",
+                bottom: 28,
+                right: 24,
+                zIndex: (t) => t.zIndex.speedDial,
+              }}
+              icon={<SpeedDialIcon />}
+              onClose={() => setOpen(false)}
+              onOpen={() => setOpen(true)}
+              open={open}
+              FabProps={{
+                color: "primary",
+                sx: { width: 56, height: 56, color: "#fff", boxShadow: "var(--shadow-fab)" },
+                "aria-label": zh ? "開啟快捷選單" : "Open quick actions",
+              }}
+            >
+              {actions.map((action) => (
+                <SpeedDialAction
+                  key={action.name}
+                  icon={action.icon}
+                  tooltipTitle={action.name}
+                  tooltipOpen
+                  FabProps={{
+                    sx: { minWidth: 44, minHeight: 44 },
+                    "aria-label": action.name,
+                  }}
+                  onClick={() => go(action.href, action.external)}
+                />
+              ))}
+            </SpeedDial>
+          </>
+        )}
+      </div>
     </ThemeProvider>
   );
 }

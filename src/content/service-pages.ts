@@ -1,5 +1,22 @@
 import type { AppLocale } from "@/lib/i18n-routing";
 import type { ServicePageContent, ServicePageSlug, VisionCopy } from "@/types/marketing";
+import { PRICING, formatHkd } from "@/content/pricing";
+
+function consultancyDisplayPrices(locale: "en" | "zh-hk") {
+  const pl = locale;
+  const c = PRICING.consultancy;
+  return {
+    discovery: formatHkd(c.discoverySprint30Day, pl),
+    foundation: formatHkd(c.foundation3Month, pl),
+    accelerator: formatHkd(c.accelerator6Month, pl),
+    partnership: formatHkd(c.partnership12Month, pl),
+    eventTrial: formatHkd(PRICING.quickCash.eventXpTrial, pl),
+    salesTrial: formatHkd(PRICING.quickCash.smartSalesTrial, pl),
+  };
+}
+
+const enPrices = consultancyDisplayPrices("en");
+const zhPrices = consultancyDisplayPrices("zh-hk");
 
 const commonRelatedLinks = [
   { label: "AI Training / AI 教班", href: "/ai-training" },
@@ -134,11 +151,11 @@ const aiCoaching: ServicePageContent = {
   pricing: {
     title: "AI Upgrade Program Pricing",
     intro:
-      "Pricing is scoped around advisory programs first. Quick-cash offers and tool trials (EventXP HK$4,000, SmartSales HK$5,000) are separate entry points. Each package assumes one company and 3-5 core participants / stakeholders. Custom SaaS, CRM, AI agent development, large data migration, API integration, 20-person focus groups, larger workshops, third-party software, AI API, hosting, and subscriptions are separate after the workflow and business case are validated.",
+      `Pricing is scoped around advisory programs first. Quick-cash offers and tool trials (EventXP ${enPrices.eventTrial}, SmartSales ${enPrices.salesTrial}) are separate entry points. Each package assumes one company and 3-5 core participants / stakeholders. Custom SaaS, CRM, AI agent development, large data migration, API integration, 20-person focus groups, larger workshops, third-party software, AI API, hosting, and subscriptions are separate after the workflow and business case are validated.`,
     plans: [
       {
         name: "30-day AI Upgrade Discovery Sprint",
-        price: "HK$6,800",
+        price: enPrices.discovery,
         fit: "Best for a 2-4 person focus group / 3-5 core participants that want to validate one workflow before committing to a larger program.",
         features: [
           "3-minute workflow health check and detailed questionnaire",
@@ -149,7 +166,7 @@ const aiCoaching: ServicePageContent = {
       },
       {
         name: "3-month AI Upgrade Foundation",
-        price: "HK$26,000",
+        price: enPrices.foundation,
         fit: "Best for 3-5 core participants improving 1-2 workflows and building the first reviewable adoption result.",
         features: [
           "SOP v1, role responsibility, and handoff design",
@@ -160,7 +177,7 @@ const aiCoaching: ServicePageContent = {
       },
       {
         name: "6-month AI Upgrade Accelerator",
-        price: "HK$50,000",
+        price: enPrices.accelerator,
         fit: "Best for a small core team or department representatives improving 3-4 related workflows that need adoption tracking and management visibility.",
         features: [
           "Agile checkpoints and KPI / adoption review",
@@ -171,7 +188,7 @@ const aiCoaching: ServicePageContent = {
       },
       {
         name: "12-month AI Business Upgrade Partnership",
-        price: "HK$98,000",
+        price: enPrices.partnership,
         fit: "Best for management / core owners building long-term AI adoption governance after the model is validated.",
         features: [
           "Annual AI / process upgrade roadmap",
@@ -484,7 +501,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
       plans: [
         {
           name: "30 日 AI Upgrade Discovery Sprint",
-          price: "HK$6,800",
+          price: zhPrices.discovery,
           fit: "適合 2-4 人 focus group／3-5 位核心參與者先試一個 workflow，再決定是否擴展的 SME。",
           features: [
             "3 分鐘流程健康檢查與詳細 active questionnaire",
@@ -495,7 +512,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
         },
         {
           name: "3 個月 AI Upgrade Foundation",
-          price: "HK$26,000",
+          price: zhPrices.foundation,
           fit: "適合 3-5 位核心參與者改善 1-2 條流程，建立第一個可驗收 adoption 成果。",
           features: [
             "SOP v1、角色責任與 handoff 設計",
@@ -506,7 +523,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
         },
         {
           name: "6 個月 AI Upgrade Accelerator",
-          price: "HK$50,000",
+          price: zhPrices.accelerator,
           fit: "適合一個小核心團隊或部門代表改善 3-4 條相關流程，需要 adoption tracking 與管理層可視性。",
           features: [
             "Agile checkpoints 與 KPI / adoption review",
@@ -517,7 +534,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
         },
         {
           name: "12 個月 AI Business Upgrade Partnership",
-          price: "HK$98,000",
+          price: zhPrices.partnership,
           fit: "適合已驗證模式後，由管理層 / 核心 owner 將 AI adoption、SOP 和流程優化變成長期管理能力。",
           features: [
             "年度 AI / 流程升級 roadmap",

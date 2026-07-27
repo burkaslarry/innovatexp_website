@@ -96,7 +96,7 @@ export function Hero({
             <a
               href={secondaryHref}
               onClick={onSecondaryClick}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-300/90 bg-transparent px-8 py-3 text-base font-semibold text-slate-800 transition-all hover:border-[#00B9B3]/60 hover:bg-[#00B9B3]/5 active:scale-[0.98] dark:border-slate-500 dark:text-slate-100 dark:hover:border-brand-primary/50 dark:hover:bg-[#00B9B3]/10"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-300/90 bg-transparent px-8 py-3 text-base font-semibold text-slate-800 transition-all hover:border-brand-accent-teal/60 hover:bg-brand-accent-teal/5 active:scale-[0.98] dark:border-slate-500 dark:text-slate-100 dark:hover:border-brand-primary/50 dark:hover:bg-brand-accent-teal/10"
             >
               {secondaryLabel}
             </a>

@@ -4,7 +4,7 @@ import React from 'react';
 import Image from 'next/image';
 import Script from 'next/script';
 import dynamic from 'next/dynamic';
-import { useEffect, useMemo, useState } from 'react';
+import { useMemo, useState } from 'react';
 import {
   Bot,
   Lightbulb,
@@ -36,13 +36,15 @@ import { AIConsultingPackageCard } from '@/components/AIConsultingPackageCard';
 import { Button } from '@/components/ui/Button';
 import { BusinessUpgradeHomepageFunnel } from '@/components/BusinessUpgradeHomepageFunnel';
 import { getInnovatexpVision } from '@/content/service-pages';
+import { PRICING } from '@/content/pricing';
+import { uiStrings } from '@/content/ui-strings';
 
 const ImageCarouselModal = dynamic(
   () => import('@/components/ImageCarouselModal').then((mod) => mod.ImageCarouselModal),
   { ssr: false }
 );
 
-/** Homepage-only Service JSON-LD for Rich Results (SmartSales + EventXP sections). */
+/** Homepage-only Service JSON-LD — prices from pricing.ts (Notion Quick Cash Funnel 2026-07). */
 const LD_SERVICE_EVENTXP = {
   '@context': 'https://schema.org',
   '@type': 'Service',
@@ -52,10 +54,10 @@ const LD_SERVICE_EVENTXP = {
   provider: { '@type': 'Organization', name: 'InnovateXP Limited' },
   areaServed: 'Hong Kong',
   offers: [
-    { '@type': 'Offer', name: 'Pilot', price: '4800', priceCurrency: 'HKD' },
-    { '@type': 'Offer', name: 'Starter', price: '6800', priceCurrency: 'HKD' },
-    { '@type': 'Offer', name: 'Growth', price: '8800', priceCurrency: 'HKD' },
-    { '@type': 'Offer', name: 'Enterprise', price: '9800', priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Trial (1 event)', price: String(PRICING.quickCash.eventXpTrial), priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Maintenance Starter', price: String(PRICING.tools.eventXp.maintenanceStarterMonthly), priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Maintenance Growth', price: String(PRICING.tools.eventXp.maintenanceGrowthMonthly), priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Maintenance Enterprise', price: String(PRICING.tools.eventXp.maintenanceEnterpriseMonthly), priceCurrency: 'HKD' },
   ],
 };
 
@@ -67,8 +69,9 @@ const LD_SERVICE_SMARTSALES = {
   provider: { '@type': 'Organization', name: 'InnovateXP Limited' },
   areaServed: 'Hong Kong',
   offers: [
-    { '@type': 'Offer', name: 'Starter', price: '10800', priceCurrency: 'HKD' },
-    { '@type': 'Offer', name: 'Growth', price: '18880', priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Trial', price: String(PRICING.quickCash.smartSalesTrial), priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Setup Starter', price: String(PRICING.tools.smartSales.setupStarter), priceCurrency: 'HKD' },
+    { '@type': 'Offer', name: 'Setup Growth', price: String(PRICING.tools.smartSales.setupGrowth), priceCurrency: 'HKD' },
     {
       '@type': 'Offer',
       name: 'Enterprise',
@@ -419,7 +422,6 @@ function LandingPage() {
   const loc = useLocalizedHref();
   const copy = HOME_PAGE_COPY[locale];
   const visionCopy = getInnovatexpVision(locale);
-  const isChineseLocale = locale === 'zh-hk' || locale === 'zh-tw';
   const [smartSalesCarouselOpen, setSmartSalesCarouselOpen] = useState(false);
   const [smartSalesCarouselIndex, setSmartSalesCarouselIndex] = useState(0);
 
@@ -452,26 +454,7 @@ function LandingPage() {
 
   const navItems = useMemo(
     () => {
-      const labels = isChineseLocale
-        ? {
-            upgrade: 'AI 商業升級',
-            sprint: '30 日 Sprint',
-            programs: '加速計劃',
-            advisory: '顧問',
-            useCases: '示範場景',
-            about: '關於創辦人',
-            contact: '聯絡',
-          }
-        : {
-            upgrade: 'AI Business Upgrade',
-            sprint: '30-day Sprint',
-            programs: 'Accelerator Programs',
-            advisory: 'Advisory',
-            useCases: 'Use Cases',
-            about: 'About Founder',
-            contact: 'Contact',
-          };
-
+      const labels = uiStrings(locale).nav;
       return [
         { label: labels.upgrade, href: '#ai-business-upgrade' },
         { label: labels.sprint, href: '#discovery-sprint' },
@@ -482,7 +465,7 @@ function LandingPage() {
         { label: labels.contact, href: loc('/bookme') },
       ];
     },
-    [isChineseLocale, loc]
+    [locale, loc]
   );
 
   const openSmartSalesCarouselAt = (index: number) => {
@@ -502,13 +485,6 @@ function LandingPage() {
     setSmartSalesCarouselIndex((prev) => (prev + 1) % smartSalesSlides.length);
   };
 
-  useEffect(() => {
-    async function fetchData() {
-
-    }
-    fetchData();
-  }, []);
-
   const showLegacyIntroSections = false;
   const showProductSalesSections = false;
 
@@ -521,7 +497,7 @@ function LandingPage() {
         navItems={navItems}
       />
 
-      <main className="mx-auto max-w-7xl bg-bg px-6 py-12 pb-36 text-fg md:pb-28 md:leading-relaxed">
+      <main className="mx-auto max-w-7xl bg-bg px-6 py-12 pb-8 text-fg md:leading-relaxed">
       
       <Hero
         title={t('hero.title')}
@@ -1838,21 +1814,6 @@ function LandingPage() {
       />
 
         {/* Desktop sticky CTA → /bookme (mobile uses twin bar below; old “booking-form” submit was dead) */}
-      <div
-        className="fixed bottom-0 left-0 right-0 z-40 hidden border-t border-[color:var(--border-light)] bg-surface/90 shadow-card backdrop-blur-md md:block"
-        style={{ paddingBottom: "env(safe-area-inset-bottom)" }}
-      >
-        <div className="mx-auto max-w-4xl px-6 py-4">
-          <Button
-            href={loc("/bookme")}
-            variant="ctaLight"
-            className="flex min-h-[54px] w-full items-center justify-center gap-2 rounded-xl text-lg shadow-lg"
-          >
-            <CalendarClock className="h-6 w-6 shrink-0 text-slate-950 group-hover:text-white" strokeWidth={2} aria-hidden />
-            <span>{t("hero.book_meeting")}</span>
-          </Button>
-        </div>
-      </div>
       <footer className="border-t border-[color:var(--border-light)] bg-surface-secondary py-12 text-center">
         <div className="container mx-auto px-4">
           <div className="mb-10">
@@ -1874,16 +1835,6 @@ function LandingPage() {
           </address>
         </div>
       </footer>
-
-      <div className="fixed bottom-0 left-0 right-0 z-30 flex gap-1.5 border-t border-[color:var(--border-light)] bg-surface/90 px-2 py-2 pb-[max(0.5rem,env(safe-area-inset-bottom))] shadow-card backdrop-blur-md sm:gap-2 sm:p-3 sm:pb-[max(0.75rem,env(safe-area-inset-bottom))] md:hidden">
-        <Button
-          href={loc("/bookme")}
-          variant="ctaLight"
-          className="min-h-[48px] min-w-0 flex-[1.15] px-2 text-center text-xs leading-tight sm:px-3 sm:text-sm max-[400px]:flex-1"
-        >
-          {t('hero.book_meeting')}
-        </Button>
-      </div>
     </div>
   );
 };

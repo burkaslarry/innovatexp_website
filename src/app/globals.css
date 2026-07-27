@@ -191,10 +191,13 @@ body {
 h1, h2, h3 {
   color: var(--text-primary);
   line-height: 1.2;
-  transition: color 0.3s ease;
+  font-family: var(--font-main);
+  font-weight: 700;
 }
 
-h1, h2, h3.handwriting {
+h1.handwriting,
+h2.handwriting,
+h3.handwriting {
   font-family: var(--font-handwriting);
   font-weight: 600;
 }
@@ -412,17 +415,21 @@ header, nav {
 }
 
 /* ====================================
-   Smooth Transitions
+   Smooth Transitions (scoped — avoid global * repaints)
    ==================================== */
-* {
-  transition-property: background-color, color, border-color;
-  transition-duration: 0.3s;
-  transition-timing-function: ease;
-}
-
-/* Disable transitions for elements that shouldn't animate */
-button, a, input, select, textarea {
+a,
+button,
+input,
+select,
+textarea,
+.card,
+.surface-card,
+.surface-section,
+header,
+nav {
   transition-property: background-color, color, border-color, transform, box-shadow;
+  transition-duration: var(--motion-normal);
+  transition-timing-function: var(--ease-standard);
 }
 
 /* ====================================

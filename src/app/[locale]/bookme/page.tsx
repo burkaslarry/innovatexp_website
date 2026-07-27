@@ -36,19 +36,33 @@ export default function BookVisitPage() {
               </p>
 
               <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-950/40 sm:p-5 md:p-5">
+                <p className="text-sm font-bold text-slate-900 dark:text-white">{t('bookme.info.title')}</p>
+                <ul className="mt-3 grid gap-2 text-sm text-slate-700 dark:text-slate-300 sm:grid-cols-3">
+                  <li className="flex items-start gap-2 rounded-lg bg-white px-3 py-2 dark:bg-slate-900/60">
+                    <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
+                    <span>{t('bookme.info.monday_friday')}</span>
+                  </li>
+                  <li className="flex items-start gap-2 rounded-lg bg-white px-3 py-2 dark:bg-slate-900/60">
+                    <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
+                    <span>{t('bookme.info.one_hour')}</span>
+                  </li>
+                  <li className="flex items-start gap-2 rounded-lg bg-white px-3 py-2 dark:bg-slate-900/60">
+                    <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
+                    <span>{t('bookme.info.confirmation')}</span>
+                  </li>
+                </ul>
                 <button
                   type="button"
                   onClick={() => setShowGuidelines((v) => !v)}
-                  className="flex w-full items-center justify-between gap-3 text-left"
+                  className="mt-4 flex w-full items-center justify-between gap-3 text-left text-sm font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]"
                 >
-                  <span className="text-sm font-bold text-slate-900 dark:text-white">{t('bookme.info.title')}</span>
+                  <span>{showGuidelines ? t('bookme.info.hide_details') : t('bookme.info.show_details')}</span>
                   <svg
-                    className={`h-5 w-5 text-slate-600 transition-transform dark:text-slate-300 ${
-                      showGuidelines ? 'rotate-180' : ''
-                    }`}
+                    className={`h-5 w-5 transition-transform ${showGuidelines ? 'rotate-180' : ''}`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
+                    aria-hidden
                   >
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
                   </svg>
@@ -57,18 +71,6 @@ export default function BookVisitPage() {
                 {showGuidelines ? (
                   <div className="mt-3 rounded-xl border border-gray-200 bg-white p-5 text-sm text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
                     <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
-                        <span>{t('bookme.info.monday_friday')}</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
-                        <span>{t('bookme.info.one_hour')}</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
-                        <span>{t('bookme.info.confirmation')}</span>
-                      </li>
                       <li className="flex items-start gap-2">
                         <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
                         <span>{t('bookme.info.cancel')}</span>

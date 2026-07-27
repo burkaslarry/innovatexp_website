@@ -2,6 +2,9 @@ import Image from "next/image";
 import { BarChart3, Bot, CheckCircle2, ClipboardCheck, GraduationCap, LayoutDashboard, MessageSquareText, ShieldCheck, Users, Wrench } from "lucide-react";
 import { Button } from "@/components/ui/Button";
 import { AddToInquiryButton } from "@/components/inquiry-cart/AddToInquiryButton";
+import { ProductEntryGrid } from "@/components/ProductEntryGrid";
+import { FaqAccordion } from "@/components/FaqAccordion";
+import { uiStrings } from "@/content/ui-strings";
 import { consultancyPlanPrice, PricingFunnelSections } from "@/components/PricingFunnelSections";
 import { consultancyCatalogId } from "@/content/inquiry-catalog";
 import { formatHkd, PRICING } from "@/content/pricing";
@@ -558,6 +561,42 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
+      <section id="product-pillars" className="mb-16 scroll-mt-[var(--header-offset)]">
+        <div className="mx-auto mb-8 max-w-3xl text-center">
+          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
+            {uiStrings(locale).productStrip.eyebrow}
+          </p>
+          <h2 className="text-3xl font-bold tracking-tight text-gray-900 dark:text-white md:text-4xl">
+            {uiStrings(locale).productStrip.title}
+          </h2>
+        </div>
+        <ProductEntryGrid
+          items={[
+            {
+              href: `${localePrefix}/eventxp`,
+              title: uiStrings(locale).productStrip.eventxp.title,
+              blurb: `${uiStrings(locale).productStrip.eventxp.blurb} · ${formatHkd(PRICING.quickCash.eventXpTrial, locale === "de" ? "de" : locale === "ja" ? "ja" : locale.startsWith("zh") ? "zh-hk" : "en")} trial`,
+              cta: uiStrings(locale).productStrip.eventxp.cta,
+              icon: "event",
+            },
+            {
+              href: `${localePrefix}/smartsales-crm`,
+              title: uiStrings(locale).productStrip.smartsales.title,
+              blurb: `${uiStrings(locale).productStrip.smartsales.blurb} · ${formatHkd(PRICING.quickCash.smartSalesTrial, locale === "de" ? "de" : locale === "ja" ? "ja" : locale.startsWith("zh") ? "zh-hk" : "en")} trial`,
+              cta: uiStrings(locale).productStrip.smartsales.cta,
+              icon: "crm",
+            },
+            {
+              href: "#ai-coaching-pricing",
+              title: uiStrings(locale).productStrip.ai.title,
+              blurb: uiStrings(locale).productStrip.ai.blurb,
+              cta: uiStrings(locale).productStrip.ai.cta,
+              icon: "ai",
+            },
+          ]}
+        />
+      </section>
+
       <section id="ai-coaching-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro eyebrow={c.pricing.eyebrow} title={c.pricing.title} intro={c.pricing.intro} />
         <div className="grid gap-5 lg:grid-cols-4">
@@ -630,6 +669,45 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
         <div className="mt-8 flex justify-center">
           <Button href={bookingHref}>{c.sprint.cta}</Button>
+        </div>
+      </section>
+
+      <section id="programs" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+        <SectionIntro eyebrow={c.programs.eyebrow} title={c.programs.title} intro={c.programs.intro} />
+        <div className="grid gap-5 lg:grid-cols-3">
+          {c.programs.cards.map((card, cardIndex) => {
+            const planIndex = cardIndex + 1;
+            return (
+              <article
+                key={card.name}
+                className={`flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
+                  "featured" in card && card.featured
+                    ? "border-brand-primary/40 bg-surface-secondary"
+                    : "border-[color:var(--border-light)] bg-surface-secondary"
+                }`}
+              >
+                <h3 className="text-xl font-bold text-gray-900 dark:text-white">{card.name}</h3>
+                <p className="mt-3 text-lg font-extrabold text-brand-primary dark:text-[color:var(--primary-hover)]">
+                  {consultancyPlanPrice(planIndex, locale)}
+                </p>
+                <p className="mt-3 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{card.body}</p>
+                <ul className="mt-5 grid flex-1 gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
+                  {card.points.map((point) => (
+                    <li key={point} className="flex gap-2">
+                      <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">✓</span>
+                      <span>{point}</span>
+                    </li>
+                  ))}
+                </ul>
+                <div className="mt-5">
+                  <AddToInquiryButton itemId={consultancyCatalogId(planIndex)} />
+                </div>
+              </article>
+            );
+          })}
+        </div>
+        <div className="mt-6 flex justify-center">
+          <Button href={bookingHref}>{c.pricing.cta}</Button>
         </div>
       </section>
 
@@ -711,17 +789,12 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="faq" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
-        <h2 className="mb-6 text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">{c.faq.title}</h2>
-        <div className="divide-y divide-slate-200 dark:divide-slate-700">
-          {c.faq.items.map(([question, answer]) => (
-            <div key={question} className="py-5">
-              <h3 className="text-lg font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{question}</h3>
-              <p className="mt-2 leading-relaxed text-slate-700 dark:text-slate-300">{answer}</p>
-            </div>
-          ))}
-        </div>
-      </section>
+      <FaqAccordion
+        id="faq"
+        title={c.faq.title}
+        faqs={c.faq.items.map(([question, answer]) => ({ question, answer }))}
+        defaultOpenIndex={0}
+      />
 
       <section className="mb-16 rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10 text-center">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">{c.finalCta.title}</h2>

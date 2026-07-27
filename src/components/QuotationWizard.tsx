@@ -23,6 +23,9 @@ import { PHONE_DIAL_CUSTOM, PHONE_DIAL_OPTIONS } from "@/lib/phone-dial-codes";
 import { buildBookingConfirmationWeb3Fields } from "@/lib/build-booking-web3forms-fields";
 import { submitToWeb3FormsContact } from "@/lib/web3forms-submit";
 import { useLanguage } from "@/app/LanguageContext";
+import { getWizardProgress, type WizardStepId } from "@/lib/wizard-progress";
+import { uiStrings } from "@/content/ui-strings";
+import { withLocale } from "@/lib/i18n-routing";
 
 /*
  * InnovateXP Quotation Wizard — conversion flow
@@ -385,6 +388,64 @@ export default function QuotationWizard({
     [t]
   );
 
+  const ui = uiStrings(locale);
+  const progress = getWizardProgress(step as WizardStepId, path);
+  const rawWaNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
+  const escapeWhatsAppHref = rawWaNumber
+    ? `https://wa.me/${rawWaNumber}?text=${encodeURIComponent(
+        usesChineseUi
+          ? "你好！我想直接透過 WhatsApp 了解 InnovateXP 服務。"
+          : "Hi — I'd like to learn about InnovateXP via WhatsApp.",
+      )}`
+    : withLocale(locale, "/bookme");
+
+  const wizardProgressBar =
+    step !== "q0" ? (
+      <div className="mb-6">
+        <div className="flex items-center justify-between gap-3 text-xs font-semibold text-slate-600 dark:text-slate-400">
+          <span>{ui.wizardProgress.label(progress.current, progress.total)}</span>
+          <span>
+            {progress.phase === "path"
+              ? ui.wizardProgress.phasePath
+              : progress.phase === "result"
+                ? ui.wizardProgress.phaseResult
+                : progress.phase === "booking"
+                  ? ui.wizardProgress.phaseBooking
+                  : progress.phase === "identity"
+                    ? ui.wizardProgress.phaseIdentity
+                    : ""}
+          </span>
+        </div>
+        <div className="mt-2 h-2 overflow-hidden rounded-full bg-slate-200 dark:bg-slate-700">
+          <div
+            className="h-full rounded-full bg-brand-primary transition-all duration-300"
+            style={{ width: `${Math.min(100, progress.percent)}%` }}
+            role="progressbar"
+            aria-valuenow={progress.current}
+            aria-valuemin={1}
+            aria-valuemax={progress.total}
+          />
+        </div>
+        <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-xs">
+          <a
+            href={escapeWhatsAppHref}
+            target={rawWaNumber ? "_blank" : undefined}
+            rel={rawWaNumber ? "noopener noreferrer" : undefined}
+            className="font-semibold text-brand-primary underline decoration-brand-primary/30 underline-offset-2 dark:text-[color:var(--primary-hover)]"
+          >
+            {ui.wizardProgress.escapeWhatsApp}
+          </a>
+          <button
+            type="button"
+            onClick={skipToExpert}
+            className="font-semibold text-slate-600 underline decoration-slate-400/40 underline-offset-2 dark:text-slate-400"
+          >
+            {ui.wizardProgress.escapeBook}
+          </button>
+        </div>
+      </div>
+    ) : null;
+
   const pathBanner = path ? (
     <p className="mb-4 text-left text-xs font-bold uppercase tracking-wide text-brand-primary dark:text-[color:var(--primary-hover)] md:text-center">
       {path === "eventxp"
@@ -408,6 +469,8 @@ export default function QuotationWizard({
           <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{t("wizard.subtitle")}</p>
         </div>
       ) : null}
+
+      {wizardProgressBar}
 
       <div className={!["result", "flowx_identity"].includes(step) ? "mt-6" : ""}>
         {step === "q0" ? (

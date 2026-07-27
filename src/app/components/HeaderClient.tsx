@@ -7,6 +7,7 @@ import ThemeToggle from '../ThemeToggle';
 import LanguageSwitcher from '../LanguageSwitcher';
 import type { HeaderProps } from './Header';
 import { useLocalizedHref } from '@/hooks/useLocalizedHref';
+import { HeaderCartButton } from '@/components/inquiry-cart/HeaderCartButton';
 
 const LOGO_ALT = 'InnovateXP Limited - AI CRM and Event Management Solutions Hong Kong';
 
@@ -45,10 +46,8 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b backdrop-blur-md transition-[background-color,box-shadow,border-color] duration-300 dark:border-neutral-800 dark:backdrop-blur-md ${
-        scrolled
-          ? 'border-slate-200 bg-white shadow-md dark:border-neutral-900 dark:bg-black'
-          : 'border-slate-200/90 bg-white shadow-sm dark:bg-black'
+      className={`sticky top-0 z-50 border-b border-[color:var(--border-light)] bg-surface/95 backdrop-blur-md transition-[background-color,box-shadow,border-color] duration-300 ${
+        scrolled ? 'shadow-md' : 'shadow-sm'
       }`}
       id={isMain ? 'main-header' : undefined}
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
@@ -93,6 +92,7 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
         </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
+          <HeaderCartButton />
           <ThemeToggle />
           {variant === 'booking' && <LanguageSwitcher />}
           {isMain && (
@@ -116,14 +116,14 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
       </div>
 
       {showNav && mobileMenuOpen && (
-        <nav className="animate-in slide-in-from-top-2 border-t border-slate-200 bg-slate-50 dark:border-neutral-800 dark:bg-neutral-950 md:hidden">
+        <nav className="animate-in slide-in-from-top-2 border-t border-[color:var(--border-light)] bg-surface-secondary md:hidden">
           <div className="mx-auto px-6 py-4 max-w-7xl">
             <div className="flex flex-col items-center gap-4">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
-                  className="w-full rounded-lg px-4 py-3 text-center font-medium text-slate-600 transition-colors hover:bg-white hover:text-brand-primary dark:text-slate-200 dark:hover:bg-neutral-900 dark:hover:text-teal-300"
+                  className="w-full rounded-lg px-4 py-3 text-center font-medium text-[color:var(--text-secondary)] transition-colors hover:bg-surface hover:text-brand-primary dark:hover:text-[color:var(--primary-hover)]"
                   onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.label}
@@ -136,10 +136,8 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
 
       {showNav && (
         <nav
-          className={`hidden border-t md:block dark:border-neutral-800 ${
-            scrolled
-              ? 'border-slate-200 bg-slate-50 dark:bg-neutral-950'
-              : 'border-slate-200/90 bg-slate-50 dark:bg-neutral-950'
+          className={`hidden border-t border-[color:var(--border-light)] bg-surface-secondary md:block ${
+            scrolled ? '' : ''
           }`}
         >
           <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6">
@@ -148,7 +146,7 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
                 <a
                   key={item.href}
                   href={item.href}
-                  className="rounded-lg px-3 py-2 text-sm font-medium text-slate-600 transition-colors hover:bg-white hover:text-brand-primary dark:text-slate-200 dark:hover:bg-neutral-900 dark:hover:text-teal-300 sm:px-4 sm:text-[15px]"
+                  className="rounded-lg px-3 py-2 text-sm font-medium text-[color:var(--text-secondary)] transition-colors hover:bg-surface hover:text-brand-primary dark:hover:text-[color:var(--primary-hover)] sm:px-4 sm:text-[15px]"
                   onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.label}
