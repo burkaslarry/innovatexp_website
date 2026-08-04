@@ -70,7 +70,7 @@ function LandingPage() {
       <footer className="border-t border-[color:var(--border-light)] bg-surface-secondary py-12 text-center">
         <div className="container mx-auto px-4">
           <div className="mb-10">
-            <Button href={loc("/bookme")} variant="ctaLight">
+            <Button href={loc("/bookme")} variant="primary">
               {t("hero.book_meeting")}
             </Button>
           </div>

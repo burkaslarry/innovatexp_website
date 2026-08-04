@@ -98,8 +98,12 @@
   --brand-muted: #64748b;
 
   --font-handwriting: "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive;
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  --font-main: var(--font-geist-sans), system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", sans-serif;
   --font-faq-title: "Songti TC", "Songti SC", "PMingLiU", "Microsoft JhengHei", serif;
+
+  --motion-fluid: cubic-bezier(0.32, 0.72, 0, 1);
+  --brand-gradient-teal: #00BFA5;
+  --brand-gradient-blue: #009DF2;
 
   color-scheme: light;
 }
@@ -232,20 +236,65 @@ p, span {
 }
 
 /* ====================================
+   Landing page design system (buttons & cards)
+   ==================================== */
+.btn {
+  color: #fff;
+  background: linear-gradient(90deg, #00BFA5, #009DF2);
+  border: none;
+}
+
+.dark .btn {
+  color: #fff;
+  background: linear-gradient(90deg, #00BFA5, #009DF2);
+}
+
+.gradient-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #00E998, #00C7C9, #009DF2);
+  z-index: 1;
+}
+
+.hero-heading-gradient {
+  background: linear-gradient(90deg, #000000, #666666);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .hero-heading-gradient {
+  background: linear-gradient(90deg, #ffffff, #9b9b9b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ====================================
    Button Styles
    ==================================== */
 .btn-primary {
-  background-color: var(--accent-primary);
-  color: #ffffff;
+  color: #fff;
+  background: linear-gradient(90deg, #00BFA5, #009DF2);
   border: none;
   border-radius: 24px;
-  padding: 12px 32px;
+  padding: 8px 12px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  transition: all 700ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  filter: brightness(1.05);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -427,9 +476,9 @@ textarea,
 .surface-section,
 header,
 nav {
-  transition-property: background-color, color, border-color, transform, box-shadow;
-  transition-duration: var(--motion-normal);
-  transition-timing-function: var(--ease-standard);
+  transition-property: background-color, color, border-color, transform, box-shadow, opacity, filter;
+  transition-duration: 700ms;
+  transition-timing-function: var(--motion-fluid);
 }
 
 /* ====================================

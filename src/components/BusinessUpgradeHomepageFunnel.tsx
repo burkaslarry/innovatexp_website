@@ -4,6 +4,8 @@ import { Button } from "@/components/ui/Button";
 import { AddToInquiryButton } from "@/components/inquiry-cart/AddToInquiryButton";
 import { ProductEntryGrid } from "@/components/ProductEntryGrid";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { ScrollReveal } from "@/components/ScrollReveal";
+import { TaglineRevealSection } from "@/components/TaglineRevealSection";
 import { uiStrings } from "@/content/ui-strings";
 import { consultancyPlanPrice, PricingFunnelSections } from "@/components/PricingFunnelSections";
 import { consultancyCatalogId } from "@/content/inquiry-catalog";
@@ -40,6 +42,9 @@ const content = {
         ["試", "改善現有做法，驗證一個 AI／automation quick win。"],
         ["驗", "Review checkpoint 決定下一步（Sprint／Accelerator／工具）。"],
       ],
+    },
+    taglineReveal: {
+      lines: ["先執順一條核心流程", "再決定 AI、CRM 或自動化值唔值"],
     },
     sprint: {
       eyebrow: "入場主線",
@@ -246,6 +251,9 @@ const content = {
         ["Review", "Checkpoint decides Sprint / Accelerator / tool next steps."],
       ],
     },
+    taglineReveal: {
+      lines: ["Clarify one core workflow first", "Then decide if AI, CRM, or automation pays off"],
+    },
     sprint: {
       eyebrow: "Primary entry",
       title: "30-day Discovery Sprint",
@@ -410,6 +418,9 @@ const localizedContent = {
       title: "不用填長問卷。先選一條流程談清楚。",
       body: "已知卡點 → 約 30 分鐘診斷；想一次問多項 → 加入查詢購物車提交。",
     },
+    taglineReveal: {
+      lines: ["先梳理一條核心流程", "再決定 AI、CRM 或自動化是否值得"],
+    },
   },
   ja: {
     ...content.en,
@@ -454,6 +465,9 @@ const localizedContent = {
       health: "Sprint／Accelerator料金を見る",
       book: "30分レビューを予約",
     },
+    taglineReveal: {
+      lines: ["まず1つのコアワークフローを整理", "その後 AI、CRM、自動化の価値を判断"],
+    },
   },
   de: {
     ...content.en,
@@ -490,6 +504,9 @@ const localizedContent = {
       ...content.en.finalCta,
       health: "Sprint-/Accelerator-Preise ansehen",
       book: "30-Minuten-Review buchen",
+    },
+    taglineReveal: {
+      lines: ["Zuerst einen Kern-Workflow klären", "Dann prüfen, ob AI, CRM oder Automatisierung zahlt"],
     },
   },
 } as unknown as Record<AppLocale, typeof content.en>;
@@ -536,19 +553,24 @@ export function BusinessUpgradeHomepageFunnel({
 
   return (
     <>
-      <section id="ai-business-upgrade" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
-        <SectionIntro {...c.problem} />
-        <div className="grid gap-4 md:grid-cols-3">
-          {c.problem.points.map((point) => (
-            <div key={point} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
-              <CheckCircle2 className="mb-3 h-5 w-5 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
-              {point}
-            </div>
-          ))}
-        </div>
-      </section>
+      <ScrollReveal>
+        <section id="ai-business-upgrade" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+          <SectionIntro {...c.problem} />
+          <div className="grid gap-4 md:grid-cols-3">
+            {c.problem.points.map((point) => (
+              <div key={point} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 text-sm leading-relaxed text-slate-700 dark:border-slate-700 dark:bg-slate-800 dark:text-slate-300">
+                <CheckCircle2 className="mb-3 h-5 w-5 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
+                {point}
+              </div>
+            ))}
+          </div>
+        </section>
+      </ScrollReveal>
 
-      <section id="offer-paths" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <TaglineRevealSection id="tagline-reveal" lines={c.taglineReveal.lines} />
+
+      <ScrollReveal>
+        <section id="offer-paths" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
         <SectionIntro eyebrow={c.paths.eyebrow} title={c.paths.title} />
         <div className="grid gap-4 md:grid-cols-3">
           {c.paths.items.map(([label, title, body]) => (
@@ -560,6 +582,24 @@ export function BusinessUpgradeHomepageFunnel({
           ))}
         </div>
       </section>
+      </ScrollReveal>
+
+      <ScrollReveal>
+        <section id="how-it-works" className="mb-16 scroll-mt-[var(--header-offset)] rounded-2xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+          <SectionIntro eyebrow={c.method.eyebrow} title={c.method.title} intro={c.method.intro} />
+          <ol className="mx-auto grid max-w-4xl gap-4 md:grid-cols-3">
+            {c.method.steps.map(([step, body], index) => (
+              <li key={step} className="gradient-card rounded-2xl border border-[color:var(--border-light)] bg-surface-secondary p-5">
+                <p className="text-xs font-bold uppercase tracking-[0.16em] text-brand-primary dark:text-[color:var(--primary-hover)]">
+                  Step {index + 1}
+                </p>
+                <h3 className="mt-2 text-lg font-bold text-gray-900 dark:text-white">{step}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">{body}</p>
+              </li>
+            ))}
+          </ol>
+        </section>
+      </ScrollReveal>
 
       <section id="product-pillars" className="mb-16 scroll-mt-[var(--header-offset)]">
         <div className="mx-auto mb-8 max-w-3xl text-center">
@@ -603,7 +643,7 @@ export function BusinessUpgradeHomepageFunnel({
           {c.pricing.plans.map((plan, planIndex) => (
             <article
               key={plan.name}
-              className={`flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
+              className={`gradient-card flex h-full flex-col rounded-2xl border p-5 shadow-sm ${
                 "featured" in plan && plan.featured
                   ? "border-brand-primary/40 bg-surface-secondary"
                   : "border-[color:var(--border-light)] bg-surface-secondary"
@@ -700,7 +740,7 @@ export function BusinessUpgradeHomepageFunnel({
                   {cardIndex + 1}
                 </span>
                 <article
-                  className={`flex-1 rounded-2xl border p-5 shadow-sm ${
+                  className={`gradient-card flex-1 rounded-2xl border p-5 shadow-sm ${
                     "featured" in card && card.featured
                       ? "border-brand-primary/40 bg-surface-secondary"
                       : "border-[color:var(--border-light)] bg-surface-secondary"
@@ -823,7 +863,7 @@ export function BusinessUpgradeHomepageFunnel({
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">{c.finalCta.title}</h2>
         <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-slate-700 dark:text-slate-300">{c.finalCta.body}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
-          <Button href="#ai-coaching-pricing">{c.finalCta.health}</Button>
+          <Button href="#ai-coaching-pricing" variant="primary">{c.finalCta.health}</Button>
           <Button href={bookingHref} variant="outline">{c.finalCta.book}</Button>
         </div>
       </section>

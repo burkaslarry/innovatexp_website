@@ -45,6 +45,7 @@ export default {
       },
       fontFamily: {
         sans: [
+          "var(--font-geist-sans)",
           "var(--font-main)",
           "system-ui",
           "-apple-system",
@@ -53,6 +54,7 @@ export default {
           "Segoe UI",
           "sans-serif",
         ],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
       },
       borderRadius: {
         soft: "var(--radius-sm)",

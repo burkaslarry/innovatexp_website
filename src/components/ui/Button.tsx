@@ -11,11 +11,11 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  "flex min-h-[48px] items-center justify-center gap-2 rounded-full px-8 py-3 text-center text-base font-bold transition-all duration-normal ease-[cubic-bezier(0.25,0.1,0.25,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 active:scale-[0.96]";
+  "flex min-h-[48px] items-center justify-center gap-2 rounded-full px-3 py-2 text-center text-base font-semibold transition-all duration-700 ease-[cubic-bezier(0.32,0.72,0,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98] active:translate-y-px";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
-    "bg-brand-primary text-white shadow-card hover:bg-brand-primary-hover hover:shadow-card-hover [&_svg]:text-white",
+    "btn shadow-card hover:shadow-card-hover hover:brightness-105 [&_svg]:text-white",
   outline:
     "border border-[color:var(--border-medium)] bg-surface text-[color:var(--text-primary)] shadow-card hover:border-brand-primary/40 hover:bg-surface-secondary",
   ghost:
