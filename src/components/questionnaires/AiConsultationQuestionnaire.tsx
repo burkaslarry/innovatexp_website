@@ -20,7 +20,7 @@ export function AiConsultationQuestionnaire({
     { title: c.sectionA, questionIds: ["industry", "role", "teamSize"] },
     { title: c.sectionB, questionIds: ["workflows", "painPoints", "weeklyHours", "keyPersonRisk"] },
     { title: c.sectionC, questionIds: ["currentTools", "outcomes", "urgency"] },
-    { title: c.sectionD, questionIds: ["interest", "name", "company", "email", "phone", "website"] },
+    { title: c.sectionD, questionIds: ["name", "company", "email", "phone", "website"] },
   ];
 
   return (
