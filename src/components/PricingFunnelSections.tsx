@@ -245,53 +245,6 @@ export function PricingFunnelSections({
                 </p>
               </div>
             </div>
-
-            <div className="mt-8">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">{c.trialFunnelTitle}</h3>
-              <ol className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
-                {c.trialFunnelSteps.map((step, index) => (
-                  <li key={step} className="flex gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center btn-brand text-xs font-bold ">
-                      {index + 1}
-                    </span>
-                    <span>{step}</span>
-                  </li>
-                ))}
-              </ol>
-            </div>
-
-            <div className="mt-8">
-              <h3 className="text-lg font-bold text-gray-900 dark:text-white">{c.outcomesTitle}</h3>
-              <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{c.outcomesDisclaimer}</p>
-              <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
-                <table className="w-full text-left text-sm">
-                  <thead className="bg-slate-100 dark:bg-slate-800">
-                    <tr>
-                      <th className="p-3 font-semibold text-slate-700 dark:text-slate-200">KPI</th>
-                      <th className="p-3 font-semibold text-red-700 dark:text-red-300">Before</th>
-                      <th className="p-3 font-semibold text-emerald-700 dark:text-emerald-300">After</th>
-                    </tr>
-                  </thead>
-                  <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
-                    {c.outcomes.map((row) => (
-                      <tr key={row.label} className="bg-white dark:bg-slate-900">
-                        <td className="p-3 font-medium text-slate-800 dark:text-slate-200">{row.label}</td>
-                        <td className="p-3 text-slate-600 dark:text-slate-400">{row.before}</td>
-                        <td className="p-3 font-semibold text-emerald-800 dark:text-emerald-200">{row.after}</td>
-                      </tr>
-                    ))}
-                  </tbody>
-                </table>
-              </div>
-              <p className="mt-4 rounded-xl border border-brand-primary/25 bg-surface-secondary p-4 text-sm font-semibold leading-relaxed text-brand-primary">
-                {c.outcomesHighlight}
-              </p>
-            </div>
-
-            <div className="mt-6 grid gap-3 sm:grid-cols-2">
-              <AddToInquiryButton itemId="accountXpExperience" />
-              <Button href={bookingHref}>{c.trialCta}</Button>
-            </div>
           </div>
 
           <div className="overflow-hidden rounded-2xl border border-slate-200 bg-slate-950 shadow-lg dark:border-slate-700">
@@ -312,6 +265,53 @@ export function PricingFunnelSections({
             </video>
             <p className="px-4 py-3 text-center text-xs text-slate-400">{c.videoCaption}</p>
           </div>
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white">{c.trialFunnelTitle}</h3>
+          <ol className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300 md:grid-cols-3">
+            {c.trialFunnelSteps.map((step, index) => (
+              <li key={step} className="flex gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800">
+                <span className="flex h-6 w-6 shrink-0 items-center justify-center btn-brand text-xs font-bold ">
+                  {index + 1}
+                </span>
+                <span>{step}</span>
+              </li>
+            ))}
+          </ol>
+        </div>
+
+        <div className="mt-10">
+          <h3 className="text-lg font-bold text-gray-900 dark:text-white">{c.outcomesTitle}</h3>
+          <p className="mt-1 text-xs text-slate-500 dark:text-slate-400">{c.outcomesDisclaimer}</p>
+          <div className="mt-4 overflow-hidden rounded-2xl border border-slate-200 dark:border-slate-700">
+            <table className="w-full text-left text-sm">
+              <thead className="bg-slate-100 dark:bg-slate-800">
+                <tr>
+                  <th className="p-3 font-semibold text-slate-700 dark:text-slate-200">KPI</th>
+                  <th className="p-3 font-semibold text-red-700 dark:text-red-300">Before</th>
+                  <th className="p-3 font-semibold text-emerald-700 dark:text-emerald-300">After</th>
+                </tr>
+              </thead>
+              <tbody className="divide-y divide-slate-200 dark:divide-slate-700">
+                {c.outcomes.map((row) => (
+                  <tr key={row.label} className="bg-white dark:bg-slate-900">
+                    <td className="p-3 font-medium text-slate-800 dark:text-slate-200">{row.label}</td>
+                    <td className="p-3 text-slate-600 dark:text-slate-400">{row.before}</td>
+                    <td className="p-3 font-semibold text-emerald-800 dark:text-emerald-200">{row.after}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          <p className="mt-4 rounded-xl border border-brand-primary/25 bg-surface-secondary p-4 text-sm font-semibold leading-relaxed text-brand-primary">
+            {c.outcomesHighlight}
+          </p>
+        </div>
+
+        <div className="mt-6 grid gap-3 sm:grid-cols-2 lg:max-w-xl">
+          <AddToInquiryButton itemId="accountXpExperience" />
+          <Button href={bookingHref}>{c.trialCta}</Button>
         </div>
       </section>
     </>
