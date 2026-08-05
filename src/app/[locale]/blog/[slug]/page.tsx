@@ -142,7 +142,7 @@ export default async function BlogPostPage({ params }: Props) {
               </ul>
               <Link
                 href={`/${locale}/bookme`}
-                className="mt-4 flex min-h-[44px] w-full touch-manipulation items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white transition duration-300 hover:bg-brand-primary-hover "
+                className="mt-4 flex min-h-[44px] w-full touch-manipulation items-center justify-center btn-brand text-sm font-bold transition duration-300 hover:brightness-105 "
               >
                 Book a call
               </Link>

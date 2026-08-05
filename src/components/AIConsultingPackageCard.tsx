@@ -37,7 +37,7 @@ export function AIConsultingPackageCard({
       </ul>
       <a
         href={ctaHref}
-        className="mt-auto block rounded-full bg-brand-primary py-3 text-center font-bold text-white transition duration-300 hover:bg-brand-primary-hover "
+        className="mt-auto block btn-brand py-3 text-center font-bold transition duration-300 hover:brightness-105 "
       >
         {ctaLabel}
       </a>

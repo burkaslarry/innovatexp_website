@@ -854,7 +854,7 @@ export default function QuotationWizard({
               <button
                 type="button"
                 onClick={() => computeAndShowResult()}
-                className="min-h-[48px] rounded-full bg-brand-primary px-6 py-3 text-sm font-bold text-white "
+                className="min-h-[48px] btn-brand px-6 py-3 text-sm font-bold "
               >
                 {t("wizard.next")}
               </button>
@@ -929,7 +929,7 @@ export default function QuotationWizard({
                 onClick={() => {
                   setStep("flowx_booking");
                 }}
-                className="min-h-[48px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover "
+                className="min-h-[48px] w-full btn-brand px-6 py-3 text-base font-bold transition hover:brightness-105 "
               >
                 {t("wizard.finale.next_calendar")}
               </button>
@@ -1052,7 +1052,7 @@ export default function QuotationWizard({
                 type="button"
                 disabled={fxBusy}
                 onClick={() => void submitFlowX()}
-                className="min-h-[52px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-lg transition hover:bg-brand-primary-hover disabled:opacity-60 "
+                className="min-h-[52px] w-full btn-brand px-6 py-3 text-base font-bold transition hover:brightness-105 disabled:opacity-60 "
               >
                 {fxBusy ? "…" : t("wizard.flowx.submit")}
               </button>
@@ -1307,7 +1307,7 @@ function MultiSelectStep({
           type="button"
           onClick={onNext}
           disabled={value.length === 0}
-          className="min-h-[48px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover disabled:cursor-not-allowed disabled:bg-brand-primary/40 "
+          className="min-h-[48px] w-full btn-brand px-6 py-3 text-base font-bold transition hover:brightness-105 disabled:cursor-not-allowed disabled:bg-brand-primary/40 "
         >
           {nextLabel}
         </button>
@@ -1361,7 +1361,7 @@ function TextStep({
         <button
           type="button"
           onClick={onNext}
-          className="min-h-[48px] w-full rounded-full bg-brand-primary px-6 py-3 text-base font-bold text-white shadow-md transition hover:bg-brand-primary-hover "
+          className="min-h-[48px] w-full btn-brand px-6 py-3 text-base font-bold transition hover:brightness-105 "
         >
           {nextLabel}
         </button>

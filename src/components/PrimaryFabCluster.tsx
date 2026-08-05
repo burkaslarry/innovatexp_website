@@ -32,7 +32,7 @@ const fabSx = {
   zIndex: (t: { zIndex: { speedDial: number } }) => t.zIndex.speedDial,
   width: 56,
   height: 56,
-  color: "#fff",
+  color: "var(--btn-primary-fg)",
   boxShadow: "var(--shadow-fab)",
 };
 

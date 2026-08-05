@@ -22,7 +22,7 @@ export default function NotFound() {
         <nav className="flex flex-wrap gap-4 justify-center">
           <Link
             href={h("/")}
-            className="inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-6 font-bold text-white transition duration-300 hover:bg-brand-primary-hover"
+            className="inline-flex min-h-[44px] items-center justify-center btn-brand px-6 font-bold transition duration-300 hover:brightness-105"
           >
             {ui.notFound.home}
           </Link>

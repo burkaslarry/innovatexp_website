@@ -217,7 +217,7 @@ export function CaseStudiesPage({
           <p className="leading-relaxed text-gray-700 dark:text-gray-300">{vision.referralTraditionalChinese}</p>
           <Link
             href={`/${locale}/bookme`}
-            className="mt-6 inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-brand-primary-hover "
+            className="mt-6 inline-block btn-brand px-6 py-3 font-semibold shadow-sm transition-colors hover:bg-brand-primary-hover "
           >
             {copy.cta}
           </Link>

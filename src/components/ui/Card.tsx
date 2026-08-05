@@ -15,7 +15,8 @@ export function Card({
   return (
     <div
       className={[
-        "rounded-3xl border border-slate-100 bg-white shadow-card transition-shadow duration-300 dark:border-slate-700 dark:bg-slate-900/80",
+        /* Style 3 light accent bar + Style B dark flat card via .ixp-card */
+        "ixp-card transition-shadow duration-300",
         padded ? "p-8" : "",
         className,
       ]

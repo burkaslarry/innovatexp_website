@@ -67,7 +67,7 @@ export function MobileConversionBar() {
         <div className="flex items-stretch gap-1 px-2 py-2">
           <Link
             href={bookHref}
-            className="flex min-h-[48px] flex-1 items-center justify-center gap-1 rounded-xl bg-brand-primary px-1.5 text-[11px] font-bold text-white transition active:scale-[0.98] sm:text-xs"
+            className="btn-brand flex min-h-[48px] flex-1 items-center justify-center gap-1 px-1.5 text-[11px] font-bold transition active:scale-[0.98] sm:text-xs"
           >
             <CalendarClock className="h-4 w-4 shrink-0" aria-hidden />
             <span className="truncate">{ui.mobileBar.book}</span>

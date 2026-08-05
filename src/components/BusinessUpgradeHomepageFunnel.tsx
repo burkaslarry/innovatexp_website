@@ -536,7 +536,7 @@ export function BusinessUpgradeHomepageFunnel({
 
   return (
     <>
-      <section id="ai-business-upgrade" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="ai-business-upgrade" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <SectionIntro {...c.problem} />
         <div className="grid gap-4 md:grid-cols-3">
           {c.problem.points.map((point) => (
@@ -548,7 +548,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="offer-paths" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="offer-paths" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <SectionIntro eyebrow={c.paths.eyebrow} title={c.paths.title} />
         <div className="grid gap-4 md:grid-cols-3">
           {c.paths.items.map(([label, title, body]) => (
@@ -597,7 +597,7 @@ export function BusinessUpgradeHomepageFunnel({
         />
       </section>
 
-      <section id="ai-coaching-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="ai-coaching-pricing" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <SectionIntro eyebrow={c.pricing.eyebrow} title={c.pricing.title} intro={c.pricing.intro} />
         <div className="grid gap-5 lg:grid-cols-4">
           {c.pricing.plans.map((plan, planIndex) => (
@@ -635,7 +635,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="discovery-sprint" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="discovery-sprint" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <SectionIntro eyebrow={c.sprint.eyebrow} title={c.sprint.title} intro={c.sprint.intro} />
         <div className="grid gap-6 lg:grid-cols-2">
           <div className="rounded-2xl bg-surface-secondary p-6 shadow-card">
@@ -672,7 +672,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="programs" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="programs" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <SectionIntro eyebrow={c.programs.eyebrow} title={c.programs.title} intro={c.programs.intro} />
         <p className="mx-auto mb-8 max-w-2xl text-center text-sm font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">
           <a href="#ai-coaching-pricing" className="underline decoration-brand-primary/40 underline-offset-2 hover:decoration-brand-primary">
@@ -734,7 +734,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="why-innovatexp" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="why-innovatexp" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <SectionIntro eyebrow={c.whyUs.eyebrow} title={c.whyUs.title} intro={c.whyUs.intro} />
         <div className="grid gap-4 md:grid-cols-2">
           {c.whyUs.points.map(([title, body]) => (
@@ -769,7 +769,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="capability-proof" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="capability-proof" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <SectionIntro {...c.proof} />
         <div className="grid gap-6 lg:grid-cols-3">
           {c.proof.columns.map((column, index) => {
@@ -819,7 +819,7 @@ export function BusinessUpgradeHomepageFunnel({
         defaultOpenIndex={0}
       />
 
-      <section className="mb-16 rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10 text-center">
+      <section className="mb-16 surface-card p-6 md:p-10 text-center">
         <h2 className="text-3xl font-bold text-gray-900 dark:text-white md:text-4xl">{c.finalCta.title}</h2>
         <p className="mx-auto mt-4 max-w-3xl leading-relaxed text-slate-700 dark:text-slate-300">{c.finalCta.body}</p>
         <div className="mt-8 flex flex-col gap-3 sm:flex-row sm:justify-center">
@@ -828,7 +828,7 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </section>
 
-      <section id="capabilities" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="capabilities" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <SectionIntro eyebrow={c.capabilities.eyebrow} title={c.capabilities.title} intro={c.capabilities.intro} />
         <div className="mx-auto grid max-w-5xl gap-5 md:grid-cols-2 lg:grid-cols-4">
           {c.capabilities.items.map((item, index) => {

@@ -29,7 +29,7 @@ export function DesktopScrollCta() {
     >
       <Link
         href={withLocale(locale, "/bookme")}
-        className="pointer-events-auto inline-flex min-h-[52px] items-center gap-2 rounded-full bg-brand-primary px-8 py-3 text-base font-bold text-white shadow-lg transition hover:bg-brand-primary-hover active:scale-[0.98]"
+        className="pointer-events-auto inline-flex min-h-[52px] items-center gap-2 btn-brand px-8 py-3 text-base font-bold shadow-none transition hover:brightness-105 active:scale-[0.98]"
       >
         <CalendarClock className="h-5 w-5" aria-hidden />
         {ui.desktopCta.book}

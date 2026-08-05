@@ -164,7 +164,7 @@ export function PricingFunnelSections({
 
   return (
     <>
-      <section id="tool-trials-pricing" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="tool-trials-pricing" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <div className="mx-auto mb-8 max-w-3xl text-center">
           <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
             {c.toolsEyebrow}
@@ -203,7 +203,7 @@ export function PricingFunnelSections({
         </p>
       </section>
 
-      <section id="accounting-tools-demo" className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-[color:var(--border-light)] bg-surface p-6 shadow-card md:p-10">
+      <section id="accounting-tools-demo" className="mb-16 scroll-mt-[var(--header-offset)] surface-card p-6 md:p-10">
         <div className="grid gap-8 lg:grid-cols-[1fr_1.05fr] lg:items-start">
           <div>
             <p className="mb-3 flex items-center gap-2 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
@@ -251,7 +251,7 @@ export function PricingFunnelSections({
               <ol className="mt-3 grid gap-2 text-sm leading-relaxed text-slate-700 dark:text-slate-300">
                 {c.trialFunnelSteps.map((step, index) => (
                   <li key={step} className="flex gap-3 rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-800">
-                    <span className="flex h-6 w-6 shrink-0 items-center justify-center rounded-full bg-brand-primary text-xs font-bold text-white">
+                    <span className="flex h-6 w-6 shrink-0 items-center justify-center btn-brand text-xs font-bold ">
                       {index + 1}
                     </span>
                     <span>{step}</span>

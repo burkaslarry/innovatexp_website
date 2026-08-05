@@ -35,7 +35,7 @@ export function AddToInquiryButton({
   return (
     <button
       type="button"
-      className={`inline-flex items-center justify-center gap-2 rounded-full bg-brand-primary font-bold text-white shadow-card transition hover:bg-brand-primary-hover active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 ${sizeClass} ${fullWidth ? "w-full" : ""}`}
+      className={`inline-flex items-center justify-center gap-2 btn-brand font-bold shadow-none transition hover:brightness-105 active:scale-[0.98] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary focus-visible:ring-offset-2 ${sizeClass} ${fullWidth ? "w-full" : ""}`}
       onClick={() =>
         addItem(itemId, {
           title: catalogTitle(catalog, zh),

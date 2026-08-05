@@ -11,17 +11,17 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  "flex min-h-[48px] items-center justify-center gap-2 rounded-full px-8 py-3 text-center text-base font-bold transition-all duration-normal ease-[cubic-bezier(0.25,0.1,0.25,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 active:scale-[0.96]";
+  "flex min-h-[44px] items-center justify-center gap-2 rounded-[var(--btn-radius)] px-8 py-3 text-center text-sm font-bold transition-all duration-normal ease-[cubic-bezier(0.25,0.1,0.25,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 active:scale-[0.96]";
 
 const variants: Record<ButtonVariant, string> = {
-  primary:
-    "bg-brand-primary text-white shadow-card hover:bg-brand-primary-hover hover:shadow-card-hover [&_svg]:text-white",
+  /* Style 3 light / Style B dark CTA gradient */
+  primary: "btn-brand shadow-none hover:shadow-none [&_svg]:text-inherit",
   outline:
-    "border border-[color:var(--border-medium)] bg-surface text-[color:var(--text-primary)] shadow-card hover:border-brand-primary/40 hover:bg-surface-secondary",
+    "border border-[color:var(--border-medium)] bg-[color:var(--card-bg)] text-[color:var(--text-primary)] shadow-card hover:border-brand-primary/40 hover:bg-surface-secondary",
   ghost:
     "text-secondary hover:bg-primary/10 dark:text-[color:var(--secondary-color)] dark:hover:bg-white/5",
   ctaLight:
-    "border border-[color:var(--border-medium)] bg-surface text-[color:var(--text-primary)] shadow-card hover:bg-brand-primary hover:text-white hover:border-brand-primary hover:[&_svg]:text-white",
+    "border border-[color:var(--border-medium)] bg-[color:var(--card-bg)] text-[color:var(--text-primary)] shadow-card hover:border-transparent hover:bg-brand-cta hover:text-[color:var(--btn-primary-fg)] hover:[&_svg]:text-inherit",
 };
 
 export function Button({

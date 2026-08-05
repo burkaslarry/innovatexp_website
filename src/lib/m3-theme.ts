@@ -3,30 +3,32 @@ import { createTheme, type Theme } from "@mui/material/styles";
 type Mode = "light" | "dark";
 
 /**
- * Material 3 interaction + 水木 palette
- * Light: CTA #16A34A / Dark: CTA #1F9D6B
+ * Material 3 interaction + InnovateXP brand
+ * Light: Style 3 gradient CTA / Dark: Style B gradient CTA (black label)
  */
 export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
   const isDark = mode === "dark";
-  const primary = isDark ? "#1F9D6B" : "#16A34A";
-  const primaryHover = isDark ? "#2ECC71" : "#15803D";
-  const secondary = isDark ? "#3B82F6" : "#1E3A8A";
-  const canvas = isDark ? "#0B1220" : "#F4F7FA";
-  const paper = isDark ? "#121A2B" : "#F2F9F6";
+  const primary = "#00BFA5";
+  const primaryHover = "#009DF2";
+  const secondary = isDark ? "#42D8D7" : "#087FC1";
+  const canvas = isDark ? "#191919" : "#F7F6F3";
+  const paper = isDark ? "#222222" : "#FFFFFF";
+  const btnFg = isDark ? "#000000" : "#FFFFFF";
+  const ctaGradient = "linear-gradient(90deg, #00BFA5, #009DF2)";
 
   return createTheme({
     palette: {
       mode,
       primary: {
         main: primary,
-        light: isDark ? "#2ECC71" : "#22C55E",
+        light: isDark ? "#42D8D7" : "#00E998",
         dark: primaryHover,
-        contrastText: "#ffffff",
+        contrastText: btnFg,
       },
       secondary: {
         main: secondary,
-        light: isDark ? "#0EA5E9" : "#1D4ED8",
-        dark: isDark ? "#2563EB" : "#1E3A8A",
+        light: isDark ? "#00E998" : "#009DF2",
+        dark: isDark ? "#00C7C9" : "#087FC1",
         contrastText: "#ffffff",
       },
       background: {
@@ -34,18 +36,19 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
         paper,
       },
       text: {
-        primary: isDark ? "#E8EEF7" : "#1E293B",
-        secondary: isDark ? "#94A3B8" : "#475569",
+        primary: isDark ? "#FFFFFF" : "#20201F",
+        secondary: isDark ? "rgba(255,255,255,0.64)" : "#74716D",
       },
-      divider: isDark ? "rgba(148,163,184,0.16)" : "rgba(71,85,105,0.16)",
+      divider: isDark ? "rgba(255,255,255,0.17)" : "#E4E2DE",
     },
-    shape: { borderRadius: 16 },
+    shape: { borderRadius: 12 },
     typography: {
-      fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Noto Sans HK", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif',
+      fontFamily:
+        'system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Noto Sans HK", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif',
       h1: { fontWeight: 700, letterSpacing: "-0.02em" },
       h2: { fontWeight: 700, letterSpacing: "-0.01em" },
       h3: { fontWeight: 650 },
-      button: { textTransform: "none", fontWeight: 700 },
+      button: { textTransform: "none", fontWeight: 670 },
     },
     transitions: {
       duration: {
@@ -69,26 +72,37 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
       MuiButton: {
         styleOverrides: {
           root: {
-            borderRadius: 999,
-            minHeight: 48,
+            borderRadius: 8,
+            minHeight: 44,
             paddingInline: 20,
             boxShadow: "none",
-            transition: "transform 180ms cubic-bezier(0.25, 0.1, 0.25, 1), background-color 180ms ease, box-shadow 180ms ease",
+            transition:
+              "transform 180ms cubic-bezier(0.25, 0.1, 0.25, 1), filter 180ms ease, box-shadow 180ms ease",
             "&:active": { transform: "scale(0.96)" },
           },
           contained: {
-            boxShadow: isDark ? "none" : "0 1px 2px rgba(22, 163, 74, 0.2)",
+            boxShadow: "none",
           },
           containedPrimary: {
-            color: "#ffffff",
-            "&:hover": { color: "#ffffff", backgroundColor: primaryHover },
-            "&.Mui-disabled": { color: "rgba(255,255,255,0.7)" },
+            color: btnFg,
+            backgroundImage: ctaGradient,
+            backgroundColor: "transparent",
+            "&:hover": {
+              color: btnFg,
+              backgroundImage: ctaGradient,
+              backgroundColor: "transparent",
+              filter: "brightness(1.04)",
+            },
+            "&.Mui-disabled": {
+              color: isDark ? "rgba(0,0,0,0.45)" : "rgba(255,255,255,0.7)",
+            },
             "& .MuiButton-startIcon, & .MuiButton-endIcon, & .MuiSvgIcon-root, & .MuiButton-icon": {
-              color: "#ffffff",
+              color: btnFg,
             },
-            "&:hover .MuiButton-startIcon, &:hover .MuiButton-endIcon, &:hover .MuiSvgIcon-root, &:hover .MuiButton-icon": {
-              color: "#ffffff",
-            },
+            "&:hover .MuiButton-startIcon, &:hover .MuiButton-endIcon, &:hover .MuiSvgIcon-root, &:hover .MuiButton-icon":
+              {
+                color: btnFg,
+              },
           },
           containedSecondary: {
             color: "#ffffff",
@@ -101,28 +115,30 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
       MuiChip: {
         styleOverrides: {
           root: {
-            borderRadius: 12,
+            borderRadius: 6,
             height: 40,
-            fontWeight: 600,
+            fontWeight: 650,
           },
           filled: {
             "&.MuiChip-colorPrimary": {
-              color: "#ffffff",
-              backgroundColor: primary,
-              "& .MuiChip-label": { color: "#ffffff" },
-              "& .MuiChip-icon": { color: "#ffffff" },
+              color: isDark ? "#42D8D7" : "#087FC1",
+              backgroundColor: isDark ? "rgba(0,199,201,0.13)" : "#E8F6FD",
+              "& .MuiChip-label": { color: isDark ? "#42D8D7" : "#087FC1" },
+              "& .MuiChip-icon": { color: isDark ? "#42D8D7" : "#087FC1" },
               "&:hover": {
-                backgroundColor: primaryHover,
-                color: "#ffffff",
-                "& .MuiChip-label": { color: "#ffffff" },
+                backgroundColor: isDark ? "rgba(0,199,201,0.2)" : "#D8EFFA",
+                color: isDark ? "#42D8D7" : "#087FC1",
+                "& .MuiChip-label": { color: isDark ? "#42D8D7" : "#087FC1" },
               },
             },
           },
           outlined: {
-            borderColor: isDark ? "rgba(148,163,184,0.28)" : "rgba(71,85,105,0.28)",
-            color: isDark ? "#E8EEF7" : "#1E293B",
+            borderColor: isDark ? "rgba(255,255,255,0.17)" : "#E4E2DE",
+            color: isDark ? "#FFFFFF" : "#20201F",
             "&:hover": {
-              backgroundColor: isDark ? "rgba(31,157,107,0.14)" : "rgba(22,163,74,0.08)",
+              backgroundColor: isDark
+                ? "rgba(0,199,201,0.14)"
+                : "rgba(0,191,165,0.08)",
             },
           },
         },
@@ -132,9 +148,15 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
           root: {
             backgroundImage: "none",
             backgroundColor: paper,
+            borderColor: isDark ? "rgba(255,255,255,0.17)" : "#E4E2DE",
           },
           rounded: {
-            borderRadius: 20,
+            borderRadius: 12,
+          },
+          elevation1: {
+            boxShadow: isDark
+              ? "none"
+              : "0 1px 2px rgba(0,0,0,.04), 0 6px 20px rgba(0,0,0,.035)",
           },
         },
       },
@@ -142,29 +164,43 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
         styleOverrides: {
           paper: {
             backgroundColor: paper,
-            borderTopLeftRadius: 20,
-            borderBottomLeftRadius: 20,
+            borderTopLeftRadius: 12,
+            borderBottomLeftRadius: 12,
           },
         },
       },
       MuiFab: {
         styleOverrides: {
           root: {
-            boxShadow: isDark
-              ? "0 6px 22px rgba(31, 157, 107, 0.35)"
-              : "0 6px 20px rgba(22, 163, 74, 0.28)",
-            transition: "transform 180ms cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 180ms ease",
+            color: btnFg,
+            backgroundImage: ctaGradient,
+            backgroundColor: "transparent",
+            boxShadow: "0 6px 20px rgba(0, 157, 242, 0.28)",
+            transition:
+              "transform 180ms cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 180ms ease, filter 180ms ease",
             "&:active": { transform: "scale(0.96)" },
+            "&:hover": {
+              backgroundImage: ctaGradient,
+              backgroundColor: "transparent",
+              filter: "brightness(1.04)",
+            },
             "&:focus-visible": {
-              outline: `3px solid ${isDark ? "rgba(46,204,113,0.45)" : "rgba(22,163,74,0.35)"}`,
+              outline: `3px solid ${isDark ? "rgba(66,216,215,0.45)" : "rgba(0,191,165,0.35)"}`,
               outlineOffset: 2,
             },
+            "& .MuiSvgIcon-root, & .MuiFab-icon": { color: btnFg },
           },
           primary: {
-            color: "#ffffff",
-            backgroundColor: primary,
-            "&:hover": { backgroundColor: primaryHover, color: "#ffffff" },
-            "& .MuiSvgIcon-root, & .MuiFab-icon": { color: "#ffffff" },
+            color: btnFg,
+            backgroundImage: ctaGradient,
+            backgroundColor: "transparent",
+            "&:hover": {
+              backgroundImage: ctaGradient,
+              backgroundColor: "transparent",
+              color: btnFg,
+              filter: "brightness(1.04)",
+            },
+            "& .MuiSvgIcon-root, & .MuiFab-icon": { color: btnFg },
           },
         },
       },
@@ -182,14 +218,14 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
         styleOverrides: {
           root: {
             "& .MuiFilledInput-root": {
-              borderRadius: 14,
+              borderRadius: 12,
               overflow: "hidden",
-              backgroundColor: isDark ? "rgba(255,255,255,0.06)" : "#E8F0F4",
+              backgroundColor: isDark ? "rgba(255,255,255,0.06)" : "#EEF0F1",
               "&:hover": {
-                backgroundColor: isDark ? "rgba(255,255,255,0.09)" : "#DEE8EE",
+                backgroundColor: isDark ? "rgba(255,255,255,0.09)" : "#E4E2DE",
               },
               "&.Mui-focused": {
-                backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#DEE8EE",
+                backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#E4E2DE",
               },
               "&:before, &:after": { display: "none" },
             },
@@ -199,7 +235,9 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
       MuiLinearProgress: {
         styleOverrides: {
           root: {
-            backgroundColor: isDark ? "rgba(255,255,255,0.08)" : "rgba(22,163,74,0.12)",
+            backgroundColor: isDark
+              ? "rgba(255,255,255,0.08)"
+              : "rgba(0,191,165,0.12)",
           },
         },
       },

@@ -149,7 +149,7 @@ export default async function PremiumAiConsultingPage({
         <section className="rounded-xl border border-slate-200 bg-slate-50 p-6 dark:border-gray-700 dark:bg-gray-800">
           <Link
             href={`/${locale}/bookme`}
-            className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white transition-colors hover:bg-brand-primary-hover "
+            className="inline-block btn-brand px-6 py-3 font-semibold transition hover:brightness-105 "
           >
             {bookLabel}
           </Link>

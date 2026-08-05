@@ -92,7 +92,7 @@ export default async function PitchDecksPage({
             <a
               href={deck.href}
               download={deck.filename}
-              className="mt-6 inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-5 py-2 text-sm font-bold text-white transition hover:bg-brand-primary-hover dark:bg-teal-400 dark:text-slate-950"
+              className="mt-6 inline-flex min-h-[44px] items-center justify-center btn-brand px-5 py-2 text-sm font-bold transition hover:brightness-105 "
             >
               Download PDF
             </a>

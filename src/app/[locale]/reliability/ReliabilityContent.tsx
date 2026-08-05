@@ -122,7 +122,7 @@ export function ReliabilityContent() {
         <div className="mt-8 grid gap-4 md:grid-cols-3">
           {copy.promises.map((promise) => (
             <div key={promise} className="rounded-2xl border border-slate-200 bg-white p-5 text-sm leading-relaxed text-slate-700 shadow-sm dark:border-slate-700 dark:bg-slate-900 dark:text-slate-300">
-              <span className="mb-3 inline-flex h-8 w-8 items-center justify-center rounded-full bg-brand-primary text-white dark:bg-teal-400 dark:text-slate-950">✓</span>
+              <span className="mb-3 inline-flex h-8 w-8 items-center justify-center btn-brand ">✓</span>
               <p>{promise}</p>
             </div>
           ))}
@@ -159,7 +159,7 @@ export function ReliabilityContent() {
             <a
               href={item.download ? item.href : loc(item.href)}
               download={item.download ? "" : undefined}
-              className="mt-5 inline-flex min-h-[44px] items-center justify-center rounded-full bg-brand-primary px-5 py-2 text-sm font-bold text-white transition hover:bg-brand-primary-hover dark:bg-teal-400 dark:text-slate-950"
+              className="mt-5 inline-flex min-h-[44px] items-center justify-center btn-brand px-5 py-2 text-sm font-bold transition hover:brightness-105 "
             >
               {item.cta}
             </a>

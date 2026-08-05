@@ -174,7 +174,7 @@ export default async function CustomerExperienceConsultingPage({
           <div className="flex flex-wrap gap-3">
             <Link
               href={`/${locale}/bookme`}
-              className="inline-block rounded-full bg-brand-primary px-6 py-3 font-semibold text-white "
+              className="inline-block btn-brand px-6 py-3 font-semibold "
             >
               {zh ? "預約諮詢" : "Book a consultation"}
             </Link>

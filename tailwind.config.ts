@@ -61,11 +61,12 @@ export default {
       },
       borderRadius: {
         soft: "var(--radius-sm)",
-        card: "var(--radius-lg)",
+        card: "var(--card-radius)",
         pill: "var(--radius-pill)",
+        btn: "var(--btn-radius)",
       },
       boxShadow: {
-        card: "var(--shadow-sm)",
+        card: "var(--card-shadow)",
         "card-hover": "var(--shadow-md)",
         fab: "var(--shadow-fab)",
       },
@@ -74,9 +75,10 @@ export default {
         normal: "220ms",
       },
       backgroundImage: {
-        /* deprecated loud SaaS gradients — keep keys for compatibility as flat soft fills */
         "brand-gradient": "linear-gradient(180deg, var(--bg-secondary) 0%, var(--bg-base) 100%)",
         "premium-border": "linear-gradient(180deg, var(--border-medium), var(--border-light))",
+        "brand-cta": "var(--btn-primary-bg)",
+        "card-accent": "var(--card-accent)",
       },
     },
   },

@@ -141,7 +141,7 @@ export function ServiceLandingPage({
           <div className="mt-8 flex flex-wrap gap-3">
             <Link
               href={localizedHref(locale, content.cta.href)}
-              className="rounded-full bg-brand-primary px-6 py-3 font-semibold text-white shadow-sm transition-colors hover:bg-brand-primary-hover "
+              className="btn-brand px-6 py-3 font-semibold shadow-sm transition-colors hover:bg-brand-primary-hover "
             >
               {content.cta.label}
             </Link>
@@ -168,7 +168,7 @@ export function ServiceLandingPage({
             <ol className="space-y-3 text-gray-700 dark:text-gray-300">
               {content.modules.map((item, index) => (
                 <li key={item} className="flex gap-3 leading-relaxed">
-                  <span className="flex h-7 w-7 flex-none items-center justify-center rounded-full bg-brand-primary text-sm font-bold text-white dark:bg-teal-300 dark:text-slate-950">
+                  <span className="flex h-7 w-7 flex-none items-center justify-center btn-brand text-sm font-bold dark:bg-teal-300 ">
                     {index + 1}
                   </span>
                   <span>{item}</span>

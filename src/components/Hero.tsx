@@ -40,7 +40,7 @@ export function Hero({
   return (
     <section
       role="banner"
-      className="mb-16 rounded-3xl border border-slate-100 bg-gradient-to-b from-white to-brand-cream/40 p-8 shadow-card dark:border-slate-700 dark:from-slate-900 dark:to-slate-900/90 md:p-12 lg:p-14"
+      className="ixp-card mb-16 p-8 md:p-12 lg:p-14"
     >
       <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1fr_minmax(0,420px)] lg:gap-14">
         <div className="min-w-0 text-center lg:text-left">

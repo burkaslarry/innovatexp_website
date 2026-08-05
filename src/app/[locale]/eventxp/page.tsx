@@ -226,7 +226,7 @@ export default async function EventXpPage({
           </p>
           <Link
             href={`/${locale}/bookme`}
-            className="inline-block rounded-full bg-brand-primary py-3 px-6 font-semibold text-white transition-colors hover:bg-brand-primary-hover "
+            className="inline-block btn-brand px-6 py-3 font-semibold transition hover:brightness-105 "
           >
             Book a free consultation
           </Link>

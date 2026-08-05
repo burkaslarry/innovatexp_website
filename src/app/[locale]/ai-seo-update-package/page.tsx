@@ -91,7 +91,7 @@ export default async function AiSeoUpdatePackagePage({
         <div className="mt-6">
           <Link
             href={`/${locale}/bookme#quotation-wizard`}
-            className="inline-flex min-h-[48px] items-center justify-center rounded-full bg-brand-primary px-6 py-3 text-sm font-bold text-white transition hover:bg-brand-primary-hover dark:bg-teal-400 dark:text-slate-950"
+            className="inline-flex min-h-[44px] items-center justify-center btn-brand px-6 py-3 text-sm font-bold transition hover:brightness-105"
           >
             預約 AI SEO 更新套餐
           </Link>
