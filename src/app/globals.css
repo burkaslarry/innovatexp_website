@@ -249,6 +249,14 @@ p, span {
   background: linear-gradient(90deg, #00BFA5, #009DF2);
 }
 
+.dark a.btn,
+.dark a.btn:hover,
+.dark a.btn:focus-visible,
+.dark button.btn,
+.dark button.btn:hover {
+  color: #ffffff;
+}
+
 .gradient-card {
   position: relative;
   overflow: hidden;
@@ -454,12 +462,12 @@ header, nav {
   filter: invert(1);
 }
 
-/* Ensure proper contrast for links in dark mode */
-.dark a {
+/* Ensure proper contrast for links in dark mode (exclude gradient buttons) */
+.dark a:not(.btn):not(.btn-primary):not(.btn-secondary) {
   color: var(--accent-secondary);
 }
 
-.dark a:hover {
+.dark a:not(.btn):not(.btn-primary):not(.btn-secondary):hover {
   color: var(--accent-primary);
 }
 
