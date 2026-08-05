@@ -41,7 +41,7 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
     },
     shape: { borderRadius: 16 },
     typography: {
-      fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Noto Sans TC", "Helvetica Neue", Arial, sans-serif',
+      fontFamily: 'system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Noto Sans HK", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif',
       h1: { fontWeight: 700, letterSpacing: "-0.02em" },
       h2: { fontWeight: 700, letterSpacing: "-0.01em" },
       h3: { fontWeight: 650 },

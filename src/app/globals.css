@@ -98,7 +98,8 @@
   --brand-muted: #64748b;
 
   --font-handwriting: "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive;
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+  /* PingFang / Heiti before Latin-only faces so Safari CJK does not fall back to Songti */
+  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Noto Sans HK", "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-faq-title: "Songti TC", "Songti SC", "PMingLiU", "Microsoft JhengHei", serif;
 
   color-scheme: light;
