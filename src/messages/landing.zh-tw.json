@@ -1,0 +1,280 @@
+{
+  "brandTitle": "InnovateXP Limited",
+  "brandSubtitle": "AI 商業顧問 Larry Lo",
+  "nav": {
+    "home": "首頁",
+    "diagnosis": "流程診斷",
+    "services": "服務方式",
+    "plans": "服務方案",
+    "cases": "行業實例",
+    "about": "關於 Larry",
+    "faq": "常見問題",
+    "cta": "預約 30 分鐘診斷"
+  },
+  "hero": {
+    "eyebrow": "AI 商業顧問｜14+ 年 IT 交付與流程落地經驗",
+    "title": "協助香港小團隊止住漏單、慢報價與交接混亂。",
+    "description": "Larry 會先與您鎖定一條最影響收入或營運的流程，在 30 日內釐清責任、SOP 與追蹤方式；有需要時才接入 CRM、AI 或自動化。",
+    "fitAudience": "適合香港 3–30 人培訓、課程及專業服務團隊",
+    "primaryCta": "預約 30 分鐘流程診斷",
+    "secondaryCta": "查看服務方案與起步價格",
+    "trustPoints": [
+      "14+ 年 IT 交付經驗",
+      "專注香港 3–30 人小團隊",
+      "由流程診斷到實際落地"
+    ],
+    "diagnosticInputs": [
+      "WhatsApp 查詢",
+      "Excel 跟進表",
+      "線上表單",
+      "同事交接"
+    ],
+    "diagnosticOutput": "一條看得見、跟得上、有人負責的 workflow",
+    "diagnosticCaption": "先看清漏點，再決定 AI、CRM 或 automation 是否真正有幫助。",
+    "imageAlt": "InnovateXP 創辦人 Larry Lo 於演講分享 AI 商業升級與流程設計"
+  },
+  "problem": {
+    "eyebrow": "流程卡點",
+    "title": "問題往往不是公司沒有客戶，而是流程讓客戶流失。",
+    "items": [
+      {
+        "title": "查詢分散",
+        "body": "WhatsApp、Excel、表單各自為政。"
+      },
+      {
+        "title": "報價緩慢",
+        "body": "資料要找、要問、要等。"
+      },
+      {
+        "title": "交接混亂",
+        "body": "沒有人清楚下一步由誰跟進。"
+      },
+      {
+        "title": "老闆救火",
+        "body": "一個人請假，整條流程就停擺。"
+      }
+    ],
+    "quote": "一個人請假就停的流程，不叫流程，叫人質。"
+  },
+  "approach": {
+    "eyebrow": "服務方式",
+    "title": "不是一開始就叫您買系統。先看清楚哪一條流程最值得整理。",
+    "intro": "聚焦一條流程，而不是大規模數位轉型。先止血，再視情況接入工具。",
+    "steps": [
+      {
+        "label": "Step 1",
+        "title": "30 分鐘流程診斷",
+        "body": "鎖定最值得優先處理的收入／營運卡點。"
+      },
+      {
+        "label": "Step 2",
+        "title": "30 日 Workflow Sprint",
+        "body": "交付流程圖、責任人、SOP、追蹤節點與一個可執行的 quick win。"
+      },
+      {
+        "label": "Step 3",
+        "title": "Adoption & KPI Review",
+        "body": "協助團隊實際使用；於 Day 30／60／90 檢討漏跟進、報價時間與交接完成率。有需要時才接入 CRM、AI 或自動化。"
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "服務範圍",
+    "title": "依您公司真正的問題，落地最少但最有效的工具。",
+    "items": [
+      {
+        "title": "Workflow Health Check",
+        "body": "找出漏單、慢報價、交接不清的流程漏洞。"
+      },
+      {
+        "title": "WhatsApp-first CRM",
+        "body": "將分散查詢變成可追蹤、有責任的跟進流程。"
+      },
+      {
+        "title": "AI Chatbot & Automation",
+        "body": "處理重複查詢、資料整理與日常行政。"
+      },
+      {
+        "title": "Event & Lead Follow-up",
+        "body": "將活動參加者變成可跟進的銷售機會。"
+      },
+      {
+        "title": "Team AI Enablement",
+        "body": "讓團隊能在既有 SOP 中安全、實際地使用 AI。"
+      }
+    ]
+  },
+  "consultancy": {
+    "eyebrow": "主線方案",
+    "title": "潛在客戶進來，最先應該看到的只有這條主線。",
+    "intro": "由 30 日驗證一條流程開始；再依需要升級到 3／6／12 個月陪跑。工具試用放在次級頁面，不與主線搶注意力。",
+    "fitNote": "不是先賣您一套系統；而是從流程診斷、落地、團隊採用到 KPI review，協助您把卡住收入的流程真正跑順。",
+    "startingBadge": "建議起步",
+    "plans": [
+      {
+        "name": "30 日 Discovery Sprint",
+        "priceLabel": "HK$6,800",
+        "body": "先驗證一條最影響收入或營運的流程。",
+        "deliverables": [
+          "流程圖",
+          "責任分工",
+          "SOP／跟進節點",
+          "簡單 KPI",
+          "一個 quick win"
+        ],
+        "cta": "由 Sprint 開始"
+      },
+      {
+        "name": "3 個月 Foundation",
+        "priceLabel": "視 SOP 複雜程度決定",
+        "body": "1–2 條流程落地、SOP v1、每月 checkpoint、一次團隊培訓。",
+        "deliverables": [
+          "1–2 條流程",
+          "SOP v1",
+          "每月 checkpoint",
+          "1 次團隊培訓"
+        ],
+        "cta": "了解 Foundation"
+      },
+      {
+        "name": "6 個月 Accelerator",
+        "priceLabel": "視 SOP 複雜程度決定",
+        "body": "一個部門／3–4 條流程、adoption 追蹤、最多兩次工作坊。",
+        "deliverables": [
+          "3–4 條流程",
+          "Adoption 追蹤",
+          "最多 2 次工作坊"
+        ],
+        "cta": "了解 Accelerator"
+      },
+      {
+        "name": "12 個月 Partnership",
+        "priceLabel": "視 SOP 複雜程度決定",
+        "body": "年度 roadmap、SOP governance、管理層 review。",
+        "deliverables": [
+          "年度 roadmap",
+          "SOP governance",
+          "管理層 review"
+        ],
+        "cta": "了解 Partnership"
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "行業實例",
+    "title": "同一套方法，在不同行業如何落地。",
+    "intro": "以下為匿名情境（Before → 30 日做法 → After → 可觀察指標）。未經驗證的數字不作 ROI 承諾。",
+    "beforeLabel": "Before",
+    "sprintLabel": "30 日做法",
+    "afterLabel": "After",
+    "metricLabel": "可觀察指標",
+    "items": [
+      {
+        "industry": "培訓／課程",
+        "title": "報名查詢散落在 WhatsApp，跟進靠記憶",
+        "before": "查詢、試堂、報名、收款各自使用不同聊天與 Excel；同事請假就不知道跟到哪裡。",
+        "sprint": "鎖定「查詢 → 試堂 → 報名」一條線；寫清責任人、跟進節點與簡單狀態表。",
+        "after": "每條查詢都有負責人與下一步；老闆不必每天追問進度。",
+        "metric": "漏跟進明顯減少；報名轉換可在一頁看清。"
+      },
+      {
+        "industry": "專業服務",
+        "title": "報價慢、版本多、交接靠口頭",
+        "before": "報價資料要問完才能出；同事各自有一份「最新版」；客戶催完才發現漏跟。",
+        "sprint": "釐清報價資料來源、責任與審批節點；固定一份可追蹤清單。",
+        "after": "報價有標準節奏；交接不再只靠口頭。",
+        "metric": "平均報價時間縮短；重複詢問資料次數下降。"
+      },
+      {
+        "industry": "Studio 行業（方法實例）",
+        "title": "排程／收款／出勤靠 WhatsApp + Excel",
+        "before": "教練記堂、催未付、對佣金各用各方法；Admin 每天救火。",
+        "sprint": "用同一套「先整理流程再落地工具」方法：責任、狀態、reminder、匯出對數。",
+        "after": "排程、學員狀態、付款提醒集中一處；不再靠記憶撐住 studio。",
+        "metric": "未付追蹤有提醒；出勤／佣金對數可匯出。"
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "為什麼選擇 Larry",
+    "title": "多數人賣工具，有些人賣建議。我先把流程整理好。",
+    "intro": "對比式差異化——談客戶利益，不談內部產品策略。",
+    "rows": [
+      {
+        "opponent": "管理顧問（交報告就離開）",
+        "difference": "我能建置、串接，並帶團隊真正用起來"
+      },
+      {
+        "opponent": "SaaS 供應商（賣 licence）",
+        "difference": "我可以告訴您其實不需要買"
+      },
+      {
+        "opponent": "自動化／AI freelancer（接案）",
+        "difference": "我先問商業問題，再談工具"
+      },
+      {
+        "opponent": "大型 IT 公司（六位數專案）",
+        "difference": "HK$6,800 先試一條流程，風險極低"
+      }
+    ],
+    "punchline": "如果您不需要系統，我會直接告訴您。"
+  },
+  "about": {
+    "eyebrow": "關於 Larry",
+    "title": "我是那個會建議您「先不要買」的顧問。",
+    "intro": "做了十多年 IT 交付，我見過最多的失敗，不是系統建不好，而是系統建好了、完美交付、然後不好用。",
+    "body": [
+      "同一批人照舊用 WhatsApp、照舊開 Excel，沒有人肯說。",
+      "後來回頭看，發現問題從來不是工具——是本來那條流程就沒有人真正釐清過。SOP 只存在老闆的腦裡，一個人請假就斷掉。",
+      "所以我改變了整個做法：先與您釐清一條流程，真的有效、團隊真的在用，才談要不要加 AI 或系統。"
+    ],
+    "identity": "我是那個會建議您「先不要買」的顧問。",
+    "portraitAlt": "Larry Lo 於研討會分享 AI 商業顧問與客戶管理流程"
+  },
+  "faq": {
+    "title": "常見問題",
+    "items": [
+      {
+        "question": "我們現在適合用 AI 嗎？",
+        "answer": "未必一開始就要。通常建議先選一條最影響收入或營運的核心流程來看清楚，評估過效益，再決定是否值得加 AI。"
+      },
+      {
+        "question": "一定要先買 CRM 嗎？",
+        "answer": "不一定。最重要先理順團隊的責任、交接與跟進節奏。如果現有工具已經夠用，就未必需要立刻換系統。"
+      },
+      {
+        "question": "要多久才看得到改善？",
+        "answer": "不會一開始就做全公司大翻新（Overhaul）。通常由一條流程開始，很快就會看到可觀察的改善，然後再決定要不要擴大。"
+      },
+      {
+        "question": "同事不習慣新系統怎麼辦？",
+        "answer": "使用習慣（Adoption）與歸屬感（Ownership）跟工具本身一樣重要。我們的做法是盡量貼近團隊現有的工作習慣，減少「硬推」引起的抗拒。"
+      },
+      {
+        "question": "30 分鐘流程診斷會做什麼？",
+        "answer": "集中協助您檢視一條最卡手的流程，精準找出漏點、責任不清之處，以及最值得優先整理的位置。"
+      },
+      {
+        "question": "公司很小，值得做嗎？",
+        "answer": "如果公司「一個人請假，整個運作就會卡住」，就非常值得做。小團隊更需要先整理好核心流程。主線由 HK$6,800 的 30 日 Sprint 起步，風險可控。"
+      },
+      {
+        "question": "服務方案怎麼起步？",
+        "answer": "由淺入深，按部就班：\n30 日 Discovery Sprint（HK$6,800）\n3 個月 Foundation（視 SOP 複雜程度決定）\n6 個月 Accelerator（視 SOP 複雜程度決定）\n12 個月 Partnership（視 SOP 複雜程度決定）\n（註：我們著重協助您解決實際問題，盲目試用新工具絕對不是首頁主打。）"
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "想知道您公司哪一條流程最值得先整理？",
+    "body": "預約 30 分鐘流程診斷，找出公司最容易漏單、慢報價或卡交接的一條流程。",
+    "primary": "預約 30 分鐘流程診斷",
+    "secondary": "WhatsApp 聯絡 Larry"
+  },
+  "footer": {
+    "title": "Larry Lo / InnovateXP",
+    "role": "AI 商業顧問",
+    "tagline": "先整理流程，再落地 AI",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2026 InnovateXP Limited. All rights reserved."
+  }
+}

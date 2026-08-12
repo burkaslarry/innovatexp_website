@@ -8,6 +8,7 @@ import {
   formatHkd,
   type PricingLocale,
 } from "@/content/pricing";
+import { SCOPED_SOP_PRICE_LABEL } from "@/content/pricing-labels";
 import type { InquiryCatalogItemId } from "@/content/inquiry-catalog";
 import type { AppLocale } from "@/lib/i18n-routing";
 
@@ -320,14 +321,7 @@ export function PricingFunnelSections({
 
 export function consultancyPlanPrice(planIndex: number, locale: AppLocale): string {
   const pl = toPricingLocale(locale);
-  const scoped =
-    pl.startsWith("zh")
-      ? "視 SOP 複雜程度決定"
-      : pl === "ja"
-        ? "SOPの複雑さに応じて見積"
-        : pl === "de"
-          ? "Je nach SOP-Komplexität"
-          : "Quoted based on SOP complexity";
+  const scoped = SCOPED_SOP_PRICE_LABEL[pl] ?? SCOPED_SOP_PRICE_LABEL.en;
   const plans = [
     formatHkd(PRICING.consultancy.discoverySprint30Day, pl),
     scoped,

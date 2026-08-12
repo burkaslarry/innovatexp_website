@@ -1,0 +1,280 @@
+{
+  "brandTitle": "InnovateXP Limited",
+  "brandSubtitle": "AI Business Consultant Larry Lo",
+  "nav": {
+    "home": "Home",
+    "diagnosis": "Diagnosis",
+    "services": "Approach",
+    "plans": "Programs",
+    "cases": "Industry examples",
+    "about": "About Larry",
+    "faq": "FAQ",
+    "cta": "Book a 30-min diagnosis"
+  },
+  "hero": {
+    "eyebrow": "AI Business Consultant | 14+ years in IT delivery and workflow implementation",
+    "title": "Stop leaked leads, slow quotes, and messy handoffs for Hong Kong small teams.",
+    "description": "Larry locks onto the one workflow hurting revenue or operations most, then clarifies ownership, SOP, and tracking within 30 days — CRM, AI, or automation only when justified.",
+    "fitAudience": "Built for Hong Kong training, course, and professional-service teams of 3–30 people",
+    "primaryCta": "Book a 30-minute workflow diagnosis",
+    "secondaryCta": "See programs and starting price",
+    "trustPoints": [
+      "14+ years of delivery experience",
+      "Focused on Hong Kong teams of 3–30",
+      "From diagnosis to practical implementation"
+    ],
+    "diagnosticInputs": [
+      "WhatsApp enquiries",
+      "Spreadsheet tracker",
+      "Web form",
+      "Team handoff"
+    ],
+    "diagnosticOutput": "One visible workflow with clear ownership",
+    "diagnosticCaption": "Fix the leak first. Then decide whether AI, CRM, or automation is justified.",
+    "imageAlt": "Founder-led presentation on AI business upgrade and workflow design"
+  },
+  "problem": {
+    "eyebrow": "Pain points",
+    "title": "The issue is rarely a lack of leads. It is the workflow leaking them.",
+    "items": [
+      {
+        "title": "Scattered enquiries",
+        "body": "WhatsApp, spreadsheets, and forms all run separately."
+      },
+      {
+        "title": "Slow quotations",
+        "body": "People need to search, ask, and wait."
+      },
+      {
+        "title": "Messy handoffs",
+        "body": "No one knows clearly who owns the next step."
+      },
+      {
+        "title": "Owner firefighting",
+        "body": "One person on leave and the workflow stalls."
+      }
+    ],
+    "quote": "If one person takes leave and the process stops, that is not a process. That is a hostage situation."
+  },
+  "approach": {
+    "eyebrow": "Approach",
+    "title": "No system pitch first. First see which workflow is worth fixing.",
+    "intro": "One workflow at a time — not a company-wide digital transformation.",
+    "steps": [
+      {
+        "label": "Step 1",
+        "title": "30-minute workflow diagnosis",
+        "body": "Lock onto the revenue or operations bottleneck worth fixing first."
+      },
+      {
+        "label": "Step 2",
+        "title": "30-day Workflow Sprint",
+        "body": "Deliver process map, owners, SOP, tracking points, and one executable quick win."
+      },
+      {
+        "label": "Step 3",
+        "title": "Adoption & KPI review",
+        "body": "Help the team use it. Review missed follow-ups, quote time, and handoff completion on Day 30 / 60 / 90. Add CRM, AI, or automation only when needed."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Service areas",
+    "title": "Use the least tool needed to solve the real business problem.",
+    "items": [
+      {
+        "title": "Workflow Health Check",
+        "body": "Find leakage in follow-up, slow quotations, and unclear handoffs."
+      },
+      {
+        "title": "WhatsApp-first CRM",
+        "body": "Turn scattered enquiries into a traceable follow-up workflow."
+      },
+      {
+        "title": "AI Chatbot & Automation",
+        "body": "Handle repetitive enquiries, data sorting, and admin work."
+      },
+      {
+        "title": "Event & Lead Follow-up",
+        "body": "Turn event attendees into visible sales opportunities."
+      },
+      {
+        "title": "Team AI Enablement",
+        "body": "Help the team use AI safely and practically inside existing SOPs."
+      }
+    ]
+  },
+  "consultancy": {
+    "eyebrow": "Main programs",
+    "title": "The only path a serious buyer should see first.",
+    "intro": "Start by validating one workflow in 30 days, then expand to 3 / 6 / 12 months. Tool trials stay on secondary pages.",
+    "fitNote": "Not selling you a system first — diagnosis, implementation, adoption, and KPI review until one revenue-blocking workflow actually runs.",
+    "startingBadge": "Recommended start",
+    "plans": [
+      {
+        "name": "30-day Discovery Sprint",
+        "priceLabel": "HK$6,800",
+        "body": "Validate one workflow that affects revenue or operations.",
+        "deliverables": [
+          "Process map",
+          "Ownership",
+          "SOP / follow-up nodes",
+          "Simple KPI",
+          "One quick win"
+        ],
+        "cta": "Start with Sprint"
+      },
+      {
+        "name": "3-month Foundation",
+        "priceLabel": "Scoped by SOP complexity",
+        "body": "Land 1–2 workflows, SOP v1, monthly checkpoints, one team training.",
+        "deliverables": [
+          "1–2 workflows",
+          "SOP v1",
+          "Monthly checkpoints",
+          "1 team training"
+        ],
+        "cta": "See Foundation"
+      },
+      {
+        "name": "6-month Accelerator",
+        "priceLabel": "Scoped by SOP complexity",
+        "body": "One department / 3–4 workflows, adoption tracking, up to two workshops.",
+        "deliverables": [
+          "3–4 workflows",
+          "Adoption tracking",
+          "Up to 2 workshops"
+        ],
+        "cta": "See Accelerator"
+      },
+      {
+        "name": "12-month Partnership",
+        "priceLabel": "Scoped by SOP complexity",
+        "body": "Annual roadmap, SOP governance, management reviews.",
+        "deliverables": [
+          "Annual roadmap",
+          "SOP governance",
+          "Management reviews"
+        ],
+        "cta": "See Partnership"
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "Industry examples",
+    "title": "The same method, applied in different industries.",
+    "intro": "Anonymous scenarios (Before → 30-day approach → After → observable metric). No unverified ROI claims.",
+    "beforeLabel": "Before",
+    "sprintLabel": "30-day approach",
+    "afterLabel": "After",
+    "metricLabel": "Observable metric",
+    "items": [
+      {
+        "industry": "Training / courses",
+        "title": "Enrolment enquiries scattered across WhatsApp",
+        "before": "Enquiry, trial class, enrolment, and payment lived in different chats and sheets; leave days broke continuity.",
+        "sprint": "Locked onto enquiry → trial → enrolment; clarified owners, follow-up nodes, and a simple status board.",
+        "after": "Every enquiry has an owner and next step; the owner stops chasing daily updates.",
+        "metric": "Fewer missed follow-ups; enrolment conversion visible on one page."
+      },
+      {
+        "industry": "Professional services",
+        "title": "Slow quotes, many versions, verbal handoffs",
+        "before": "Quotes waited on missing data; each colleague had a different “latest” version; reminders exposed missed follow-ups.",
+        "sprint": "Clarified quote inputs, ownership, and approval nodes; one trackable checklist.",
+        "after": "Quotes follow a standard rhythm; handoffs are no longer verbal-only.",
+        "metric": "Shorter average quote time; fewer repeat data requests."
+      },
+      {
+        "industry": "Studio industry (method example)",
+        "title": "Schedule / payments / attendance on WhatsApp + Excel",
+        "before": "Coaches tracked classes, unpaid students, and commissions differently; admins firefought daily.",
+        "sprint": "Applied the same “fix workflow, then tools” method: ownership, status, reminders, export reconciliation.",
+        "after": "Schedule, student status, and payment reminders live in one place — memory no longer runs the studio.",
+        "metric": "Unpaid follow-up has reminders; attendance / commission export is possible."
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Why Larry",
+    "title": "Most people sell tools. Some sell advice. I fix the workflow first.",
+    "intro": "Contrast for client benefit — not internal product strategy language.",
+    "rows": [
+      {
+        "opponent": "Management consultants (report and leave)",
+        "difference": "I build, connect, and help the team adopt"
+      },
+      {
+        "opponent": "SaaS vendors (sell licences)",
+        "difference": "I can tell you not to buy"
+      },
+      {
+        "opponent": "Automation / AI freelancers (take jobs)",
+        "difference": "I ask the business question before naming tools"
+      },
+      {
+        "opponent": "Large IT firms (six-figure projects)",
+        "difference": "HK$6,800 to try one workflow — low risk"
+      }
+    ],
+    "punchline": "If you do not need a system, I will tell you directly."
+  },
+  "about": {
+    "eyebrow": "About Larry",
+    "title": "I am the consultant who may tell you not to buy yet.",
+    "intro": "After more than a decade in IT delivery, the failure I saw most was not bad builds — it was perfect delivery that nobody used.",
+    "body": [
+      "The same people kept using WhatsApp and Excel, and nobody said so out loud.",
+      "Looking back, the problem was rarely the tool — the workflow itself had never been clarified. The SOP lived only in the owner’s head, so one leave day broke everything.",
+      "So I changed the approach: fix one workflow first until it works and the team actually uses it — then talk about AI or systems."
+    ],
+    "identity": "I am the consultant who may tell you not to buy yet.",
+    "portraitAlt": "Larry Lo speaking about AI business consulting and client workflow design"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {
+        "question": "Are we ready for AI now?",
+        "answer": "Not every team should start with AI immediately. Start with one workflow and decide based on real operational value."
+      },
+      {
+        "question": "Do we need a CRM first?",
+        "answer": "Not always. Ownership, handoff clarity, and follow-up rhythm usually come before buying a new system."
+      },
+      {
+        "question": "How quickly can we see improvement?",
+        "answer": "Usually by focusing on one workflow first. We do not start with a company-wide overhaul."
+      },
+      {
+        "question": "What if the team resists a new system?",
+        "answer": "Adoption matters as much as the tool. The workflow and handoff design must fit how the team actually works."
+      },
+      {
+        "question": "What happens in the 30-minute diagnosis?",
+        "answer": "We focus on one workflow, identify leakage and ownership gaps, and decide what is worth fixing first."
+      },
+      {
+        "question": "We are a very small company. Is it still worth doing?",
+        "answer": "Yes, especially when one absence can stall the whole workflow. The main path starts at HK$6,800 for a 30-day Sprint."
+      },
+      {
+        "question": "How do the programs start?",
+        "answer": "Step by step:\n30-day Discovery Sprint (HK$6,800)\n3-month Foundation (scoped by SOP complexity)\n6-month Accelerator (scoped by SOP complexity)\n12-month Partnership (scoped by SOP complexity)\n(Note: we focus on real operating problems. Tool trials are not the homepage headline.)"
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Want to know which workflow your company should fix first?",
+    "body": "Book a 30-minute workflow diagnosis and find the one process most likely to leak leads, slow quotes, or stall handoffs.",
+    "primary": "Book a 30-minute workflow diagnosis",
+    "secondary": "WhatsApp Larry"
+  },
+  "footer": {
+    "title": "Larry Lo / InnovateXP",
+    "role": "AI Business Consultant",
+    "tagline": "Fix the workflow first. Then make AI work.",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2026 InnovateXP Limited. All rights reserved."
+  }
+}

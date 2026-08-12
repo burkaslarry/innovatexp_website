@@ -1,11 +1,12 @@
 import type { AppLocale } from "@/lib/i18n-routing";
 import type { ServicePageContent, ServicePageSlug, VisionCopy } from "@/types/marketing";
 import { PRICING, formatHkd } from "@/content/pricing";
+import { SCOPED_SOP_PRICE_LABEL } from "@/content/pricing-labels";
 
 function consultancyDisplayPrices(locale: "en" | "zh-hk") {
   const pl = locale;
   const c = PRICING.consultancy;
-  const scoped = locale.startsWith("zh") ? "視 SOP 複雜程度決定" : "Quoted based on SOP complexity";
+  const scoped = SCOPED_SOP_PRICE_LABEL[pl];
   return {
     discovery: formatHkd(c.discoverySprint30Day, pl),
     foundation: scoped,

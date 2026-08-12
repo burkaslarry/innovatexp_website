@@ -1,0 +1,280 @@
+{
+  "brandTitle": "InnovateXP Limited",
+  "brandSubtitle": "AI-Business-Berater Larry Lo",
+  "nav": {
+    "home": "Start",
+    "diagnosis": "Diagnose",
+    "services": "Vorgehen",
+    "plans": "Programme",
+    "cases": "Branchenbeispiele",
+    "about": "Über Larry",
+    "faq": "FAQ",
+    "cta": "30-Min-Diagnose buchen"
+  },
+  "hero": {
+    "eyebrow": "AI-Business-Berater | 14+ Jahre IT-Lieferung und Prozessumsetzung",
+    "title": "Stoppen Sie verlorene Leads, langsame Angebote und chaotische Übergaben in Hongkonger Kleinteams.",
+    "description": "Larry fokussiert zuerst den einen Prozess, der Umsatz oder Betrieb am stärksten belastet, und klärt in 30 Tagen Verantwortung, SOP und Nachverfolgung — CRM, AI oder Automatisierung nur wenn gerechtfertigt.",
+    "fitAudience": "Für Hongkonger Trainings-, Kurs- und Professional-Service-Teams mit 3–30 Personen",
+    "primaryCta": "30-Minuten-Prozessdiagnose buchen",
+    "secondaryCta": "Programme und Einstiegspreis ansehen",
+    "trustPoints": [
+      "14+ Jahre Liefererfahrung",
+      "Fokus auf Hongkonger Teams mit 3–30 Personen",
+      "Von der Diagnose bis zur Umsetzung"
+    ],
+    "diagnosticInputs": [
+      "WhatsApp-Anfragen",
+      "Excel-Tracker",
+      "Webformular",
+      "Team-Übergabe"
+    ],
+    "diagnosticOutput": "Ein sichtbarer Workflow mit klarer Verantwortung",
+    "diagnosticCaption": "Zuerst das Leck stopfen. Dann entscheiden, ob AI, CRM oder Automatisierung nötig ist.",
+    "imageAlt": "Gründerpräsentation zu AI Business Upgrade und Prozessdesign"
+  },
+  "problem": {
+    "eyebrow": "Prozessengpässe",
+    "title": "Das Problem ist selten fehlende Leads — der Prozess lässt sie durchsickern.",
+    "items": [
+      {
+        "title": "Verstreute Anfragen",
+        "body": "WhatsApp, Tabellen und Formulare laufen getrennt."
+      },
+      {
+        "title": "Langsame Angebote",
+        "body": "Suchen, fragen und warten kostet Zeit."
+      },
+      {
+        "title": "Chaotische Übergaben",
+        "body": "Niemand weiß klar, wer den nächsten Schritt besitzt."
+      },
+      {
+        "title": "Feuerlöschen durch den Chef",
+        "body": "Eine Person im Urlaub — und der Prozess steht."
+      }
+    ],
+    "quote": "Wenn eine Abwesenheit den Prozess stoppt, ist das kein Prozess. Das ist Geiselnahme."
+  },
+  "approach": {
+    "eyebrow": "Vorgehen",
+    "title": "Kein Systempitch zuerst. Zuerst klären, welcher Prozess sich lohnt.",
+    "intro": "Ein Prozess nach dem anderen — keine unternehmensweite Digitaltransformation. Erst stabilisieren, dann Tools prüfen.",
+    "steps": [
+      {
+        "label": "Step 1",
+        "title": "30-Minuten-Prozessdiagnose",
+        "body": "Den umsatz- oder betriebsrelevanten Engpass priorisieren."
+      },
+      {
+        "label": "Step 2",
+        "title": "30-Tage Workflow Sprint",
+        "body": "Prozesskarte, Owner, SOP, Tracking-Punkte und einen umsetzbaren Quick Win liefern."
+      },
+      {
+        "label": "Step 3",
+        "title": "Adoption & KPI-Review",
+        "body": "Das Team beim Nutzen unterstützen. An Tag 30 / 60 / 90 verpasste Follow-ups, Angebotszeit und Übergaben prüfen. CRM, AI oder Automatisierung nur bei Bedarf."
+      }
+    ]
+  },
+  "services": {
+    "eyebrow": "Leistungsbereiche",
+    "title": "Nutzen Sie das kleinste wirksame Mittel für das echte Geschäftsproblem.",
+    "items": [
+      {
+        "title": "Workflow Health Check",
+        "body": "Lecks bei Follow-up, langsamen Angeboten und unklaren Übergaben finden."
+      },
+      {
+        "title": "WhatsApp-first CRM",
+        "body": "Verstreute Anfragen in einen nachverfolgbaren Follow-up-Prozess verwandeln."
+      },
+      {
+        "title": "AI Chatbot & Automation",
+        "body": "Wiederkehrende Anfragen, Datensortierung und Admin-Arbeit übernehmen."
+      },
+      {
+        "title": "Event & Lead Follow-up",
+        "body": "Event-Teilnehmer in sichtbare Verkaufschancen verwandeln."
+      },
+      {
+        "title": "Team AI Enablement",
+        "body": "Dem Team helfen, AI sicher und praktisch innerhalb bestehender SOPs zu nutzen."
+      }
+    ]
+  },
+  "consultancy": {
+    "eyebrow": "Hauptprogramme",
+    "title": "Der einzige Pfad, den ein ernsthafter Käufer zuerst sehen sollte.",
+    "intro": "In 30 Tagen einen Prozess validieren, dann bei Bedarf auf 3 / 6 / 12 Monate erweitern. Tool-Trials bleiben auf Sekundärseiten.",
+    "fitNote": "Kein Systemverkauf zuerst — Diagnose, Umsetzung, Adoption und KPI-Review, bis ein umsatzblockierender Prozess wirklich läuft.",
+    "startingBadge": "Empfohlener Einstieg",
+    "plans": [
+      {
+        "name": "30-Tage Discovery Sprint",
+        "priceLabel": "HK$6,800",
+        "body": "Zuerst einen Prozess validieren, der Umsatz oder Betrieb beeinflusst.",
+        "deliverables": [
+          "Prozesskarte",
+          "Verantwortung",
+          "SOP / Follow-up-Knoten",
+          "Einfache KPI",
+          "Ein Quick Win"
+        ],
+        "cta": "Mit Sprint starten"
+      },
+      {
+        "name": "3-Monats Foundation",
+        "priceLabel": "Je nach SOP-Komplexität",
+        "body": "1–2 Prozesse umsetzen, SOP v1, monatliche Checkpoints, ein Teamtraining.",
+        "deliverables": [
+          "1–2 Prozesse",
+          "SOP v1",
+          "Monatliche Checkpoints",
+          "1 Teamtraining"
+        ],
+        "cta": "Foundation ansehen"
+      },
+      {
+        "name": "6-Monats Accelerator",
+        "priceLabel": "Je nach SOP-Komplexität",
+        "body": "Eine Abteilung / 3–4 Prozesse, Adoption-Tracking, bis zu zwei Workshops.",
+        "deliverables": [
+          "3–4 Prozesse",
+          "Adoption-Tracking",
+          "Bis zu 2 Workshops"
+        ],
+        "cta": "Accelerator ansehen"
+      },
+      {
+        "name": "12-Monats Partnership",
+        "priceLabel": "Je nach SOP-Komplexität",
+        "body": "Jahres-Roadmap, SOP-Governance, Management-Reviews.",
+        "deliverables": [
+          "Jahres-Roadmap",
+          "SOP-Governance",
+          "Management-Reviews"
+        ],
+        "cta": "Partnership ansehen"
+      }
+    ]
+  },
+  "cases": {
+    "eyebrow": "Branchenbeispiele",
+    "title": "Dieselbe Methode — in verschiedenen Branchen umgesetzt.",
+    "intro": "Anonyme Szenarien (Before → 30-Tage-Ansatz → After → beobachtbare Kennzahl). Keine ungeprüften ROI-Versprechen.",
+    "beforeLabel": "Before",
+    "sprintLabel": "30-Tage-Ansatz",
+    "afterLabel": "After",
+    "metricLabel": "Beobachtbare Kennzahl",
+    "items": [
+      {
+        "industry": "Training / Kurse",
+        "title": "Anmeldungsanfragen verstreut in WhatsApp, Follow-up aus dem Gedächtnis",
+        "before": "Anfrage, Probetraining, Anmeldung und Zahlung lagen in unterschiedlichen Chats und Tabellen; Urlaub unterbrach die Kontinuität.",
+        "sprint": "Anfrage → Probetraining → Anmeldung fixiert; Owner, Knoten und ein einfaches Statusboard geklärt.",
+        "after": "Jede Anfrage hat Owner und nächsten Schritt; der Chef muss nicht täglich nachhaken.",
+        "metric": "Weniger verpasste Follow-ups; Anmeldungskonversion auf einer Seite sichtbar."
+      },
+      {
+        "industry": "Professional Services",
+        "title": "Langsame Angebote, viele Versionen, mündliche Übergaben",
+        "before": "Angebote warteten auf fehlende Daten; jeder hatte eine andere „neueste“ Version; Erinnerungen deckten Lücken auf.",
+        "sprint": "Angebotsquellen, Verantwortung und Freigabeknoten geklärt; eine nachverfolgbare Checkliste fixiert.",
+        "after": "Angebote folgen einem Standardrhythmus; Übergaben sind nicht mehr nur mündlich.",
+        "metric": "Kürzere durchschnittliche Angebotszeit; weniger wiederholte Datenfragen."
+      },
+      {
+        "industry": "Studio-Branche (Methodenbeispiel)",
+        "title": "Planung / Zahlung / Anwesenheit über WhatsApp + Excel",
+        "before": "Coaches führten Kurse, offene Zahlungen und Provisionen unterschiedlich; Admins löschten täglich Feuer.",
+        "sprint": "Dieselbe Methode „zuerst Prozess, dann Tool“: Verantwortung, Status, Reminder, Export-Abstimmung.",
+        "after": "Plan, Schülerstatus und Zahlungsreminder an einem Ort — das Studio läuft nicht mehr über Erinnerung.",
+        "metric": "Offene Zahlungen haben Reminder; Anwesenheit / Provisionen sind exportierbar."
+      }
+    ]
+  },
+  "whyUs": {
+    "eyebrow": "Warum Larry",
+    "title": "Die meisten verkaufen Tools. Manche verkaufen Rat. Ich repariere zuerst den Prozess.",
+    "intro": "Kontrast zugunsten des Kunden — keine interne Produktstrategie-Sprache.",
+    "rows": [
+      {
+        "opponent": "Managementberater (Bericht und weg)",
+        "difference": "Ich baue, verbinde und helfe dem Team bei der Adoption"
+      },
+      {
+        "opponent": "SaaS-Anbieter (Lizenzen verkaufen)",
+        "difference": "Ich kann sagen, dass Sie nicht kaufen müssen"
+      },
+      {
+        "opponent": "Automatisierungs-/AI-Freelancer (Jobs annehmen)",
+        "difference": "Ich stelle die Geschäftsfrage vor dem Toolnamen"
+      },
+      {
+        "opponent": "Große IT-Firmen (sechsstellige Projekte)",
+        "difference": "HK$6,800 für einen Prozessversuch — geringes Risiko"
+      }
+    ],
+    "punchline": "Wenn Sie kein System brauchen, sage ich das klar."
+  },
+  "about": {
+    "eyebrow": "Über Larry",
+    "title": "Ich bin der Berater, der Ihnen sagen kann, noch nicht zu kaufen.",
+    "intro": "Nach mehr als einem Jahrzehnt IT-Lieferung sah ich am häufigsten nicht schlechte Builds — sondern perfekte Lieferungen, die niemand nutzte.",
+    "body": [
+      "Dieselben Leute nutzten weiter WhatsApp und Excel, und niemand sagte es laut.",
+      "Rückblickend war das Problem selten das Tool — der Prozess war nie geklärt. Die SOP lebte nur im Kopf des Eigentümers, deshalb brach ein Urlaubstag alles ab.",
+      "Deshalb habe ich den Ansatz geändert: zuerst einen Prozess reparieren, bis er wirkt und das Team ihn wirklich nutzt — dann über AI oder Systeme sprechen."
+    ],
+    "identity": "Ich bin der Berater, der Ihnen sagen kann, noch nicht zu kaufen.",
+    "portraitAlt": "Larry Lo spricht über AI-Business-Beratung und Kundenprozessdesign"
+  },
+  "faq": {
+    "title": "FAQ",
+    "items": [
+      {
+        "question": "Sind wir jetzt bereit für AI?",
+        "answer": "Nicht jedes Team sollte sofort mit AI starten. Beginnen Sie mit einem Prozess und entscheiden Sie anhand des operativen Nutzens."
+      },
+      {
+        "question": "Müssen wir zuerst ein CRM kaufen?",
+        "answer": "Nicht unbedingt. Verantwortung, Übergaben und Follow-up-Rhythmus kommen meist vor dem Systemkauf. Reichen vorhandene Tools, muss nicht sofort gewechselt werden."
+      },
+      {
+        "question": "Wie schnell sehen wir Verbesserung?",
+        "answer": "Wir starten nicht mit einem unternehmensweiten Overhaul. Meist wird zuerst ein Prozess verbessert; danach entscheiden wir über die Ausweitung."
+      },
+      {
+        "question": "Was, wenn das Team ein neues System ablehnt?",
+        "answer": "Adoption und Ownership sind genauso wichtig wie das Tool. Wir orientieren uns an der bestehenden Arbeitsweise und vermeiden Zwang."
+      },
+      {
+        "question": "Was passiert in der 30-Minuten-Diagnose?",
+        "answer": "Wir fokussieren einen besonders stockenden Prozess, finden Lecks und unklare Verantwortung und priorisieren, was zuerst repariert werden sollte."
+      },
+      {
+        "question": "Wir sind sehr klein. Lohnt es sich trotzdem?",
+        "answer": "Ja — besonders wenn eine Abwesenheit den ganzen Betrieb stoppt. Kleine Teams brauchen zuerst einen klaren Kernprozess. Der Hauptpfad startet mit dem 30-Tage-Sprint für HK$6,800 und bleibt risikoarm."
+      },
+      {
+        "question": "Wie starten die Programme?",
+        "answer": "Schritt für Schritt:\n30-Tage Discovery Sprint (HK$6,800)\n3-Monats Foundation (je nach SOP-Komplexität)\n6-Monats Accelerator (je nach SOP-Komplexität)\n12-Monats Partnership (je nach SOP-Komplexität)\n(Hinweis: Wir lösen echte Betriebsprobleme. Tool-Trials sind nicht die Homepage-Hauptaussage.)"
+      }
+    ]
+  },
+  "finalCta": {
+    "title": "Welchen Prozess sollte Ihr Unternehmen zuerst reparieren?",
+    "body": "Buchen Sie eine 30-Minuten-Prozessdiagnose und finden Sie den Prozess, der am ehesten Leads verliert, Angebote verlangsamt oder Übergaben blockiert.",
+    "primary": "30-Minuten-Prozessdiagnose buchen",
+    "secondary": "Larry per WhatsApp kontaktieren"
+  },
+  "footer": {
+    "title": "Larry Lo / InnovateXP",
+    "role": "AI-Business-Berater",
+    "tagline": "Zuerst den Prozess reparieren. Dann AI wirksam machen.",
+    "privacy": "Privacy Policy",
+    "copyright": "© 2026 InnovateXP Limited. All rights reserved."
+  }
+}

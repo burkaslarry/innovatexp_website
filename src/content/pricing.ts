@@ -3,6 +3,8 @@
  * Aligned with Notion「定價政策 — Quick Cash Funnel（2026-07）」.
  * All pages should reference these values — do not hard-code prices elsewhere.
  */
+import { SCOPED_SOP_PRICE_LABEL } from "@/content/pricing-labels";
+
 export const PRICING_CURRENCY = "HKD" as const;
 
 /** Verified BNI member discount on advisory / tool-trial services (stacked with referral where noted). */
@@ -146,14 +148,7 @@ export const CONSULTANCY_PLAN_KEYS = [
 
 export function getConsultancyPlans(locale: PricingLocale) {
   const fixed = (n: number) => formatHkd(n, locale);
-  const scoped =
-    locale.startsWith("zh")
-      ? "視 SOP 複雜程度決定"
-      : locale === "ja"
-        ? "SOPの複雑さに応じて見積"
-        : locale === "de"
-          ? "Je nach SOP-Komplexität"
-          : "Quoted based on SOP complexity";
+  const scoped = SCOPED_SOP_PRICE_LABEL[locale] ?? SCOPED_SOP_PRICE_LABEL.en;
   const c = PRICING.consultancy;
   return [
     { key: "discoverySprint30Day" as const, price: fixed(c.discoverySprint30Day) },
