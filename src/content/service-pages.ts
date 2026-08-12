@@ -5,11 +5,12 @@ import { PRICING, formatHkd } from "@/content/pricing";
 function consultancyDisplayPrices(locale: "en" | "zh-hk") {
   const pl = locale;
   const c = PRICING.consultancy;
+  const scoped = locale.startsWith("zh") ? "視 SOP 複雜程度決定" : "Quoted based on SOP complexity";
   return {
     discovery: formatHkd(c.discoverySprint30Day, pl),
-    foundation: formatHkd(c.foundation3Month, pl),
-    accelerator: formatHkd(c.accelerator6Month, pl),
-    partnership: formatHkd(c.partnership12Month, pl),
+    foundation: scoped,
+    accelerator: scoped,
+    partnership: scoped,
     eventTrial: formatHkd(PRICING.quickCash.eventXpTrial, pl),
     salesTrial: formatHkd(PRICING.quickCash.smartSalesTrial, pl),
   };

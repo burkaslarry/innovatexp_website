@@ -226,7 +226,6 @@ export function computeQuote(path: QuotePath, answers: QuoteAnswers): QuoteCompu
       planKey: PLAN.consulting_foundation,
       rangeKey: RANGE.hkd_26000,
       rationaleKeys: [R.consulting_build_focus],
-      amountHkd: c.foundation3Month,
     };
   }
 
@@ -236,7 +235,6 @@ export function computeQuote(path: QuotePath, answers: QuoteAnswers): QuoteCompu
       planKey: PLAN.consulting_accelerator,
       rangeKey: RANGE.hkd_50000,
       rationaleKeys: [R.consulting_budget_scope],
-      amountHkd: c.accelerator6Month,
     };
   }
 
@@ -246,7 +244,6 @@ export function computeQuote(path: QuotePath, answers: QuoteAnswers): QuoteCompu
       planKey: PLAN.consulting_partnership,
       rangeKey: RANGE.hkd_98000,
       rationaleKeys: [R.consulting_budget_scope],
-      amountHkd: c.partnership12Month,
     };
   }
 

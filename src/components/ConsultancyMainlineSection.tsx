@@ -2,26 +2,9 @@ import { AddToInquiryButton } from "@/components/inquiry-cart/AddToInquiryButton
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getHomepageContent } from "@/content/homepage";
-import {
-  CONSULTANCY_PLAN_KEYS,
-  formatHkd,
-  PRICING,
-  type PricingLocale,
-} from "@/content/pricing";
+import { CONSULTANCY_PLAN_KEYS } from "@/content/pricing";
 import type { InquiryCatalogItemId } from "@/content/inquiry-catalog";
 import type { AppLocale } from "@/lib/i18n-routing";
-
-function toPricingLocale(locale: AppLocale): PricingLocale {
-  if (locale === "zh-hk" || locale === "zh-tw" || locale === "ja" || locale === "de") return locale;
-  return "en";
-}
-
-const PLAN_AMOUNTS = [
-  PRICING.consultancy.discoverySprint30Day,
-  PRICING.consultancy.foundation3Month,
-  PRICING.consultancy.accelerator6Month,
-  PRICING.consultancy.partnership12Month,
-] as const;
 
 export function ConsultancyMainlineSection({
   locale,
@@ -31,7 +14,6 @@ export function ConsultancyMainlineSection({
   bookingHref: string;
 }) {
   const c = getHomepageContent(locale);
-  const pl = toPricingLocale(locale);
   const plans = c.consultancy.plans;
 
   return (
@@ -51,7 +33,6 @@ export function ConsultancyMainlineSection({
       <div className="grid gap-4 md:grid-cols-2">
         {plans.map((plan, index) => {
           const inquiryId = CONSULTANCY_PLAN_KEYS[index] as InquiryCatalogItemId;
-          const amount = PLAN_AMOUNTS[index];
           const featured = index === 0;
           return (
             <article
@@ -66,9 +47,7 @@ export function ConsultancyMainlineSection({
                 </p>
               ) : null}
               <h3 className="text-xl font-semibold text-[color:var(--heading-foreground)]">{plan.name}</h3>
-              <p className="mt-2 text-2xl font-extrabold text-[color:var(--brand-primary)]">
-                {formatHkd(amount, pl)}
-              </p>
+              <p className="mt-2 text-2xl font-extrabold text-[color:var(--brand-primary)]">{plan.priceLabel}</p>
               <p className="mt-3 flex-1 text-base leading-8 text-[color:var(--text-secondary)]">{plan.body}</p>
               <ul className="mt-4 grid gap-2">
                 {plan.deliverables.map((item) => (

@@ -146,12 +146,20 @@ export const CONSULTANCY_PLAN_KEYS = [
 
 export function getConsultancyPlans(locale: PricingLocale) {
   const fixed = (n: number) => formatHkd(n, locale);
+  const scoped =
+    locale.startsWith("zh")
+      ? "視 SOP 複雜程度決定"
+      : locale === "ja"
+        ? "SOPの複雑さに応じて見積"
+        : locale === "de"
+          ? "Je nach SOP-Komplexität"
+          : "Quoted based on SOP complexity";
   const c = PRICING.consultancy;
   return [
     { key: "discoverySprint30Day" as const, price: fixed(c.discoverySprint30Day) },
-    { key: "foundation3Month" as const, price: fixed(c.foundation3Month) },
-    { key: "accelerator6Month" as const, price: fixed(c.accelerator6Month) },
-    { key: "partnership12Month" as const, price: fixed(c.partnership12Month) },
+    { key: "foundation3Month" as const, price: scoped },
+    { key: "accelerator6Month" as const, price: scoped },
+    { key: "partnership12Month" as const, price: scoped },
   ];
 }
 

@@ -15,9 +15,11 @@ import {
 import ChatIcon from "@mui/icons-material/Chat";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import GroupsIcon from "@mui/icons-material/Groups";
 import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { getLocaleFromPathname, localeUsesChineseCopy, withLocale } from "@/lib/i18n-routing";
+import { getBniPowerTeamCopy } from "@/content/bni-power-team";
 import { uiStrings } from "@/content/ui-strings";
 import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
 import { useInquiryCart } from "@/context/InquiryCartContext";
@@ -51,6 +53,7 @@ export function PrimaryFabCluster() {
   const [open, setOpen] = useState(false);
   const theme = useInnovateXpM3Theme();
   const { itemCount, setDrawerOpen } = useInquiryCart();
+  const bniFabLabel = getBniPowerTeamCopy(locale).fabLabel;
 
   const whatsappHref = buildWhatsAppHref(whatsappPrefillForLocale(locale));
 
@@ -92,6 +95,11 @@ export function PrimaryFabCluster() {
       icon: <AssignmentIcon />,
       name: zh ? "填諮詢問卷" : "Consultation questionnaire",
       href: withLocale(locale, "/ai-consultation-questionnaire"),
+    },
+    {
+      icon: <GroupsIcon />,
+      name: bniFabLabel,
+      href: withLocale(locale, "/bni-power-team"),
     },
   ];
 

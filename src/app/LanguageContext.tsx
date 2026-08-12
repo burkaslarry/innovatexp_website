@@ -490,9 +490,9 @@ export const translations = {
     'wizard.consulting.budget.q':
       'Which main program fits your next step?',
     'wizard.consulting.budget.under_10k': '30-day Discovery Sprint — HK$6,800 (validate one workflow)',
-    'wizard.consulting.budget.10_30k': '3-month Foundation — HK$26,000',
-    'wizard.consulting.budget.30_80k': '6-month Accelerator — HK$50,000',
-    'wizard.consulting.budget.80k_plus': '12-month Partnership — HK$98,000',
+    'wizard.consulting.budget.10_30k': '3-month Foundation — quoted based on SOP complexity',
+    'wizard.consulting.budget.30_80k': '6-month Accelerator — quoted based on SOP complexity',
+    'wizard.consulting.budget.80k_plus': '12-month Partnership — quoted based on SOP complexity',
     'wizard.consulting.budget.undecided': 'Not decided yet',
 
     'wizard.bundle.products.q':
@@ -531,9 +531,9 @@ export const translations = {
     'wizard.range.from_6800_alt': 'AI Discovery Sprint HKD $6,800',
     'wizard.range.from_80000': 'Accelerator scope after review',
     'wizard.range.hkd_6800': 'HK$6,800',
-    'wizard.range.hkd_26000': 'HK$26,000',
-    'wizard.range.hkd_50000': 'HK$50,000',
-    'wizard.range.hkd_98000': 'HK$98,000',
+    'wizard.range.hkd_26000': 'Quoted based on SOP complexity',
+    'wizard.range.hkd_50000': 'Quoted based on SOP complexity',
+    'wizard.range.hkd_98000': 'Quoted based on SOP complexity',
     'wizard.rationale.bundle_multi': 'Several workflow areas were selected, so prioritisation should come before any system quote.',
     'wizard.rationale.eventxp_large': 'This workflow has enough moving parts to justify a mapped Discovery Sprint.',
     'wizard.rationale.eventxp_integration': 'Integration questions should be scoped only after the operating flow is clear.',
@@ -1453,9 +1453,9 @@ export const translations = {
     'wizard.consulting.budget.q':
       '你下一步最想揀邊個主線方案？',
     'wizard.consulting.budget.under_10k': '30 日 Discovery Sprint — HK$6,800（先驗證一條流程）',
-    'wizard.consulting.budget.10_30k': '3 個月 Foundation — HK$26,000',
-    'wizard.consulting.budget.30_80k': '6 個月 Accelerator — HK$50,000',
-    'wizard.consulting.budget.80k_plus': '12 個月 Partnership — HK$98,000',
+    'wizard.consulting.budget.10_30k': '3 個月 Foundation — 視 SOP 複雜程度決定',
+    'wizard.consulting.budget.30_80k': '6 個月 Accelerator — 視 SOP 複雜程度決定',
+    'wizard.consulting.budget.80k_plus': '12 個月 Partnership — 視 SOP 複雜程度決定',
     'wizard.consulting.budget.undecided': '尚未決定',
 
     'wizard.bundle.products.q':
@@ -1494,9 +1494,9 @@ export const translations = {
     'wizard.range.from_6800_alt': 'AI Discovery Sprint HKD $6,800',
     'wizard.range.from_80000': 'Accelerator 範圍需 review 後確認',
     'wizard.range.hkd_6800': 'HK$6,800',
-    'wizard.range.hkd_26000': 'HK$26,000',
-    'wizard.range.hkd_50000': 'HK$50,000',
-    'wizard.range.hkd_98000': 'HK$98,000',
+    'wizard.range.hkd_26000': '視 SOP 複雜程度決定',
+    'wizard.range.hkd_50000': '視 SOP 複雜程度決定',
+    'wizard.range.hkd_98000': '視 SOP 複雜程度決定',
     'wizard.rationale.bundle_multi': '你選了多個流程範圍，應先排優先次序，而不是立即 quote 幾套系統。',
     'wizard.rationale.eventxp_large': '這條流程涉及較多角色和交接，適合先做 Discovery Sprint。',
     'wizard.rationale.eventxp_integration': '整合需求要等操作流程清楚後才適合 scope。',

@@ -320,11 +320,19 @@ export function PricingFunnelSections({
 
 export function consultancyPlanPrice(planIndex: number, locale: AppLocale): string {
   const pl = toPricingLocale(locale);
-  const prices = [
-    PRICING.consultancy.discoverySprint30Day,
-    PRICING.consultancy.foundation3Month,
-    PRICING.consultancy.accelerator6Month,
-    PRICING.consultancy.partnership12Month,
+  const scoped =
+    pl.startsWith("zh")
+      ? "視 SOP 複雜程度決定"
+      : pl === "ja"
+        ? "SOPの複雑さに応じて見積"
+        : pl === "de"
+          ? "Je nach SOP-Komplexität"
+          : "Quoted based on SOP complexity";
+  const plans = [
+    formatHkd(PRICING.consultancy.discoverySprint30Day, pl),
+    scoped,
+    scoped,
+    scoped,
   ];
-  return formatHkd(prices[planIndex] ?? prices[0], pl);
+  return plans[planIndex] ?? plans[0];
 }

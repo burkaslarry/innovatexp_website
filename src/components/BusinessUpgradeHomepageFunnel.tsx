@@ -1,11 +1,13 @@
 import Image from "next/image";
-import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare } from "lucide-react";
+import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare, UsersRound } from "lucide-react";
 import { ConsultancyMainlineSection } from "@/components/ConsultancyMainlineSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { getBniPowerTeamCopy } from "@/content/bni-power-team";
 import { getHomepageContent } from "@/content/homepage";
 import type { AppLocale } from "@/lib/i18n-routing";
+import { withLocale } from "@/lib/i18n-routing";
 
 function SectionShell({
   id,
@@ -33,7 +35,9 @@ export function BusinessUpgradeHomepageFunnel({
   whatsappHref: string;
 }) {
   const c = getHomepageContent(locale);
+  const bni = getBniPowerTeamCopy(locale);
   const problemIcons = [MessagesSquare, Clock3, ChevronRight, BriefcaseBusiness];
+  const bniHref = withLocale(locale, "/bni-power-team");
 
   return (
     <>
@@ -79,6 +83,36 @@ export function BusinessUpgradeHomepageFunnel({
             </li>
           ))}
         </ol>
+      </SectionShell>
+
+      <SectionShell id="bni-power-team">
+        <article className="ixp-card relative overflow-hidden p-6 md:p-8">
+          <div
+            aria-hidden
+            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.14),transparent_55%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.12),transparent_50%)]"
+          />
+          <div className="relative grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_auto] lg:items-center">
+            <div>
+              <p className="mb-3 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">
+                {bni.cardEyebrow}
+              </p>
+              <div className="flex items-start gap-3">
+                <UsersRound className="mt-1 h-7 w-7 shrink-0 text-[color:var(--brand-primary)]" aria-hidden />
+                <h2 className="max-w-[22ch] text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
+                  {bni.cardTitle}
+                </h2>
+              </div>
+              <p className="mt-4 max-w-[68ch] text-base leading-8 text-[color:var(--text-secondary)]">
+                {bni.cardBody}
+              </p>
+            </div>
+            <div className="flex lg:justify-end">
+              <Button href={bniHref} variant="primary">
+                {bni.cardCta}
+              </Button>
+            </div>
+          </div>
+        </article>
       </SectionShell>
 
       <ConsultancyMainlineSection locale={locale} bookingHref={bookingHref} />
