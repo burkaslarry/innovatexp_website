@@ -82,7 +82,9 @@ export function FaqAccordion({
                 hidden={!isOpen}
                 className="pb-4"
               >
-                <p className="max-w-[75ch] text-base leading-8 text-[color:var(--text-secondary)]">{faq.answer}</p>
+                <p className="max-w-[75ch] whitespace-pre-line text-base leading-8 text-[color:var(--text-secondary)]">
+                  {faq.answer}
+                </p>
               </div>
             </li>
           );
