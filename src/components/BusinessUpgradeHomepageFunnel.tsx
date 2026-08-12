@@ -1,4 +1,5 @@
 import { BriefcaseBusiness, CheckCircle2, ChevronRight, Clock3, HandCoins, MessagesSquare } from "lucide-react";
+import { FlagshipProductsSection } from "@/components/FlagshipProductsSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ProductMockupPlaceholder } from "@/components/ProductMockupPlaceholder";
 import { Button } from "@/components/ui/Button";
@@ -96,6 +97,8 @@ export function BusinessUpgradeHomepageFunnel({
           ))}
         </div>
       </SectionShell>
+
+      <FlagshipProductsSection locale={locale} bookingHref={bookingHref} />
 
       <SectionShell id="case-directions">
         <SectionHeader

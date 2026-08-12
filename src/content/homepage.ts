@@ -21,6 +21,7 @@ type HomepageContent = {
     home: string;
     diagnosis: string;
     services: string;
+    flagship: string;
     cases: string;
     about: string;
     faq: string;
@@ -53,6 +54,36 @@ type HomepageContent = {
     eyebrow: string;
     title: string;
     items: SectionItem[];
+  };
+  flagshipProducts: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    flowLabels: {
+      intro: string;
+      benefits: string;
+      features: string;
+    };
+    account: {
+      name: string;
+      audience: string;
+      intro: string;
+      benefits: string[];
+      features: string[];
+      cta: string;
+      videoSubtitles: [string, ...string[]];
+      videoCaptions: [string, ...string[]];
+    };
+    fitness: {
+      name: string;
+      audience: string;
+      intro: string;
+      benefits: string[];
+      features: string[];
+      cta: string;
+      videoSubtitles: [string, string];
+      videoCaptions: [string, string];
+    };
   };
   beforeAfter: {
     eyebrow: string;
@@ -98,6 +129,7 @@ const zhHk: HomepageContent = {
     home: "首頁",
     diagnosis: "流程診斷",
     services: "服務方式",
+    flagship: "皇牌產品",
     cases: "案例方向",
     about: "關於 Larry",
     faq: "常見問題",
@@ -159,6 +191,64 @@ const zhHk: HomepageContent = {
       { title: "Team AI Enablement", body: "令團隊懂得在既有 SOP 裡安全、實際地使用 AI。" },
     ],
   },
+  flagshipProducts: {
+    eyebrow: "皇牌產品",
+    title: "流程執順之後，用月費 SaaS 真正幫你頂住日常營運。",
+    intro: "先講俾對象聽：Accounting / HR 同 Fitness Coach / Gym Studio 老闆，各自面對唔同痛點。下面係系統介紹、帶來好處，同附帶功能同使用體驗。",
+    flowLabels: {
+      intro: "系統介紹",
+      benefits: "帶來好處",
+      features: "功能與體驗",
+    },
+    account: {
+      name: "AccountXP",
+      audience: "Accounting · HR · 行政",
+      intro:
+        "AccountXP 係 Telegram／WhatsApp 收據助手：影相或上傳 PDF／JPG／PNG，bot 自動存入 batch；send `/export` 就生成財務報表 spreadsheet，含日期、分類、金額、幣種同原檔連結。",
+      benefits: [
+        "唔使再逐張 receipt 人手 key Excel，月尾對數快好多。",
+        "支援多幣種（HKD、USD、CNY 等），適合有跨境支出嘅公司。",
+        "收據集中一個 chat，HR／Accounting 同老闆都睇到同一版本。",
+        "由 upload → 分類 → export，一條 flow 頂住日常行政。",
+      ],
+      features: [
+        "Telegram bot 上傳收據（PDF／JPG／PNG／WEBP 等）",
+        "Batch 暫存 + `/export` 一鍵出財務報表",
+        "Payment Date · Category · Amount · Currency · Reference File",
+        "WhatsApp 收條 upload（按需要接入）",
+        "加密儲存 · 按 scope 做 OCR",
+      ],
+      cta: "了解 AccountXP 月費方案",
+      videoSubtitles: ["Telegram 上傳收據 → batch → /export 出報表"],
+      videoCaptions: ["示範：upload 收據 → 存入 batch → /export 生成 financial statement"],
+    },
+    fitness: {
+      name: "FitnessXP",
+      audience: "Fitness Coach · Gym Studio 老闆",
+      intro:
+        "FitnessXP 係 mobile-first 教練／studio 工作台：排程、學員、報課、付款、出勤一個 app 搞掂；Coach 用週／月曆睇堂，Admin 管帳號權限，系統自動提醒未付學員。",
+      benefits: [
+        "Coach 唔使再靠 WhatsApp + Excel 記堂同收款，一個畫面睇晒今日 schedule。",
+        "未付學員有 reminder，減少漏追、減少老闆親自催數。",
+        "出勤可 export Excel，方便對 coach 佣金同 studio payroll。",
+        "Admin／Coach／Clerk 分權，studio 大咗都唔亂。",
+      ],
+      features: [
+        "教練工作台：週曆／月曆排程（Google Calendar 式）",
+        "學員 CRM · 報課 · 已付／未付狀態",
+        "WhatsApp 付款 reminder",
+        "出勤記錄 · 一對一／小班／瑜珈等分類",
+        "系統帳號：Admin · Coach · Clerk · 重設密碼／停用",
+        "匯出 Excel 做 payroll / 對數",
+      ],
+      cta: "了解 FitnessXP 月費方案",
+      videoSubtitles: ["系統帳號 · 權限管理", "教練工作台 · 排程 · 出勤 · 匯出"],
+      videoCaptions: [
+        "示範：Admin 管理 Coach／Clerk 帳號同權限",
+        "示範：Coach 排程、學員跟進、出勤匯出 Excel",
+      ],
+    },
+  },
   beforeAfter: {
     eyebrow: "Before → After",
     title: "由「日日追、日日問」，變成「睇到、跟到、交到」。",
@@ -219,9 +309,41 @@ const zhHk: HomepageContent = {
 
 const zhTw: HomepageContent = {
   ...zhHk,
+  nav: {
+    ...zhHk.nav,
+    flagship: "皇牌產品",
+  },
   hero: {
     ...zhHk.hero,
     title: "幫香港小團隊梳理一條流程，\n先止血，再落 AI。",
+  },
+  flagshipProducts: {
+    ...zhHk.flagshipProducts,
+    intro: "先講給對象聽：Accounting / HR 與 Fitness Coach / Gym Studio 老闆，各自面對不同痛點。下面是系統介紹、帶來好處，以及附帶功能與使用體驗。",
+    account: {
+      ...zhHk.flagshipProducts.account,
+      intro:
+        "AccountXP 是 Telegram／WhatsApp 收據助手：拍照或上傳 PDF／JPG／PNG，bot 自動存入 batch；send `/export` 就生成財務報表 spreadsheet，含日期、分類、金額、幣別與原檔連結。",
+      benefits: [
+        "不必再逐張 receipt 人工 key Excel，月底對帳快很多。",
+        "支援多幣別（HKD、USD、CNY 等），適合有跨境支出的公司。",
+        "收據集中一個 chat，HR／Accounting 與老闆都看到同一版本。",
+        "由 upload → 分類 → export，一條 flow 撐住日常行政。",
+      ],
+      cta: "了解 AccountXP 月費方案",
+    },
+    fitness: {
+      ...zhHk.flagshipProducts.fitness,
+      intro:
+        "FitnessXP 是 mobile-first 教練／studio 工作台：排程、學員、報課、付款、出勤一個 app 搞定；Coach 用週／月曆看堂，Admin 管帳號權限，系統自動提醒未付學員。",
+      benefits: [
+        "Coach 不必再靠 WhatsApp + Excel 記堂與收款，一個畫面看完整日 schedule。",
+        "未付學員有 reminder，減少漏追、減少老闆親自催款。",
+        "出勤可 export Excel，方便對 coach 佣金與 studio payroll。",
+        "Admin／Coach／Clerk 分權，studio 大了也不亂。",
+      ],
+      cta: "了解 FitnessXP 月費方案",
+    },
   },
   about: {
     ...zhHk.about,
@@ -247,6 +369,7 @@ const en: HomepageContent = {
     home: "Home",
     diagnosis: "Diagnosis",
     services: "Approach",
+    flagship: "Flagship SaaS",
     cases: "Use Cases",
     about: "About Larry",
     faq: "FAQ",
@@ -295,6 +418,65 @@ const en: HomepageContent = {
       { title: "Event & Lead Follow-up", body: "Turn event attendees into visible sales opportunities." },
       { title: "Team AI Enablement", body: "Help the team use AI safely and practically inside existing SOPs." },
     ],
+  },
+  flagshipProducts: {
+    eyebrow: "Flagship products",
+    title: "After the workflow is clear, monthly SaaS keeps daily operations running.",
+    intro:
+      "Pitch to the right audience first: accounting / HR teams and fitness coaches / gym studio owners face different bottlenecks. Below: system intro, benefits, and the features you get.",
+    flowLabels: {
+      intro: "System intro",
+      benefits: "Benefits",
+      features: "Features & experience",
+    },
+    account: {
+      name: "AccountXP",
+      audience: "Accounting · HR · Admin",
+      intro:
+        "AccountXP is a Telegram / WhatsApp receipt assistant. Snap or upload PDF / JPG / PNG receipts; the bot batches them; send `/export` to generate a financial spreadsheet with date, category, amount, currency, and file reference.",
+      benefits: [
+        "Stop re-keying receipts into Excel — month-end reconciliation gets much faster.",
+        "Multi-currency support (HKD, USD, CNY, etc.) for cross-border expenses.",
+        "One chat thread for receipts so accounting, HR, and the owner share one truth.",
+        "Upload → classify → export in one flow for daily admin.",
+      ],
+      features: [
+        "Telegram bot receipt upload (PDF / JPG / PNG / WEBP, etc.)",
+        "Batch queue + `/export` financial statement",
+        "Payment Date · Category · Amount · Currency · Reference File",
+        "WhatsApp receipt upload (when wired)",
+        "Encrypted storage · OCR per scope",
+      ],
+      cta: "See AccountXP monthly plan",
+      videoSubtitles: ["Telegram upload → batch → /export report"],
+      videoCaptions: ["Demo: upload receipts → batch → /export financial statement"],
+    },
+    fitness: {
+      name: "FitnessXP",
+      audience: "Fitness Coach · Gym Studio Owner",
+      intro:
+        "FitnessXP is a mobile-first coach / studio workbench: schedule, students, enrolment, payments, and attendance in one app. Coaches use week / month views; admins manage roles; the system nudges unpaid students.",
+      benefits: [
+        "Coaches stop juggling WhatsApp + Excel for classes and payments — one screen for today’s schedule.",
+        "Payment reminders for unpaid students — less chasing, less owner firefighting.",
+        "Export attendance to Excel for coach commissions and studio payroll.",
+        "Admin / Coach / Clerk roles so the studio stays organised as it grows.",
+      ],
+      features: [
+        "Coach workbench: week / month schedule (Google Calendar style)",
+        "Student CRM · enrolment · paid / unpaid status",
+        "WhatsApp payment reminders",
+        "Attendance · 1-on-1 / small group / yoga categories",
+        "System accounts: Admin · Coach · Clerk · reset / deactivate",
+        "Export Excel for payroll / reconciliation",
+      ],
+      cta: "See FitnessXP monthly plan",
+      videoSubtitles: ["System accounts · permissions", "Coach workbench · schedule · attendance export"],
+      videoCaptions: [
+        "Demo: admin manages coach / clerk accounts and permissions",
+        "Demo: coach schedule, student follow-up, attendance Excel export",
+      ],
+    },
   },
   beforeAfter: {
     eyebrow: "Before → After",
@@ -354,12 +536,140 @@ const en: HomepageContent = {
   },
 };
 
+const ja: HomepageContent = {
+  ...en,
+  nav: { ...en.nav, flagship: "主力プロダクト" },
+  flagshipProducts: {
+    eyebrow: "主力プロダクト",
+    title: "ワークフローを整理した後、月額SaaSで日常業務を支えます。",
+    intro:
+      "まず対象者に語りかけます：経理／HRチームとフィットネスコーチ／ジムスタジオオーナーでは課題が異なります。以下はシステム紹介、メリット、機能と体験です。",
+    flowLabels: {
+      intro: "システム紹介",
+      benefits: "メリット",
+      features: "機能と体験",
+    },
+    account: {
+      name: "AccountXP",
+      audience: "経理 · HR · 管理",
+      intro:
+        "AccountXPはTelegram／WhatsAppの領収書アシスタントです。PDF／JPG／PNGをアップロードするとbotがバッチ保存し、`/export`で日付・カテゴリ・金額・通貨・参照ファイル付きの財務スプレッドシートを生成します。",
+      benefits: [
+        "領収書をExcelに手入力する手間を削減し、月末の照合を高速化。",
+        "HKD・USD・CNYなど多通貨に対応。",
+        "領収書を1つのチャットに集約し、経理・HR・オーナーが同じ情報を共有。",
+        "アップロード→分類→エクスポートの一連フローで日常管理を支援。",
+      ],
+      features: [
+        "Telegram botで領収書アップロード（PDF／JPG／PNG／WEBP等）",
+        "バッチキュー + `/export` 財務レポート",
+        "Payment Date · Category · Amount · Currency · Reference File",
+        "WhatsApp領収書アップロード（接続時）",
+        "暗号化保存 · スコープに応じたOCR",
+      ],
+      cta: "AccountXP月額プランを見る",
+      videoSubtitles: ["Telegramアップロード → バッチ → /export"],
+      videoCaptions: ["デモ：領収書アップロード → バッチ → 財務レポート生成"],
+    },
+    fitness: {
+      name: "FitnessXP",
+      audience: "フィットネスコーチ · ジムスタジオオーナー",
+      intro:
+        "FitnessXPはモバイルファーストのコーチ／スタジオワークベンチです。スケジュール、生徒、受講登録、支払い、出勤を1アプリで管理。コーチは週／月カレンダー、管理者は権限管理、未払い生徒へのリマインダー付き。",
+      benefits: [
+        "WhatsApp + Excelの二重管理から解放。1画面で今日のスケジュールを把握。",
+        "未払い生徒へのリマインダーで督促漏れを削減。",
+        "出勤データをExcel出力し、コーチ報酬や給与計算に活用。",
+        "Admin／Coach／Clerkの役割分担でスタジオ拡大時も整理。",
+      ],
+      features: [
+        "コーチワークベンチ：週／月スケジュール（Googleカレンダー風）",
+        "生徒CRM · 受講登録 · 支払い状況",
+        "WhatsApp支払いリマインダー",
+        "出勤記録 · マンツーマン／グループ／ヨガ等",
+        "システムアカウント：Admin · Coach · Clerk",
+        "Excelエクスポート（給与・照合用）",
+      ],
+      cta: "FitnessXP月額プランを見る",
+      videoSubtitles: ["システムアカウント · 権限管理", "コーチワークベンチ · スケジュール · 出勤"],
+      videoCaptions: [
+        "デモ：AdminがCoach／Clerkアカウントと権限を管理",
+        "デモ：コーチのスケジュール、生徒フォロー、出勤Excel出力",
+      ],
+    },
+  },
+};
+
+const de: HomepageContent = {
+  ...en,
+  nav: { ...en.nav, flagship: "Flagship-Produkte" },
+  flagshipProducts: {
+    eyebrow: "Flagship-Produkte",
+    title: "Nach dem Workflow-Fix hält monatliches SaaS den Alltag am Laufen.",
+    intro:
+      "Zuerst die richtige Zielgruppe: Buchhaltung / HR und Fitness-Coaches / Studio-Inhaber haben unterschiedliche Engpässe. Unten: System, Nutzen, Funktionen und Erlebnis.",
+    flowLabels: {
+      intro: "System",
+      benefits: "Nutzen",
+      features: "Funktionen & Erlebnis",
+    },
+    account: {
+      name: "AccountXP",
+      audience: "Buchhaltung · HR · Admin",
+      intro:
+        "AccountXP ist ein Telegram-/WhatsApp-Beleg-Assistent. PDF/JPG/PNG hochladen, der Bot sammelt sie im Batch; mit `/export` entsteht ein Finanz-Spreadsheet mit Datum, Kategorie, Betrag, Währung und Dateireferenz.",
+      benefits: [
+        "Kein manuelles Abtippen in Excel — Monatsabschluss wird deutlich schneller.",
+        "Mehrwährungsfähig (HKD, USD, CNY u. a.).",
+        "Alle Belege in einem Chat — Buchhaltung, HR und Inhaber sehen dieselbe Version.",
+        "Upload → Klassifizierung → Export in einem Flow.",
+      ],
+      features: [
+        "Telegram-Bot für Belege (PDF/JPG/PNG/WEBP usw.)",
+        "Batch-Warteschlange + `/export` Finanzbericht",
+        "Payment Date · Category · Amount · Currency · Reference File",
+        "WhatsApp-Beleg-Upload (wenn angebunden)",
+        "Verschlüsselte Speicherung · OCR nach Scope",
+      ],
+      cta: "AccountXP Monatsplan ansehen",
+      videoSubtitles: ["Telegram-Upload → Batch → /export"],
+      videoCaptions: ["Demo: Belege hochladen → Batch → Finanzbericht"],
+    },
+    fitness: {
+      name: "FitnessXP",
+      audience: "Fitness-Coach · Studio-Inhaber",
+      intro:
+        "FitnessXP ist eine mobile Coach-/Studio-Workbench: Terminplan, Schüler, Anmeldung, Zahlungen und Anwesenheit in einer App. Wochen-/Monatskalender für Coaches, Rollenverwaltung für Admins, Erinnerungen für unbezahlte Schüler.",
+      benefits: [
+        "Schluss mit WhatsApp + Excel — ein Bildschirm für den Tagesplan.",
+        "Zahlungserinnerungen reduzieren Nachfassen durch den Inhaber.",
+        "Anwesenheit als Excel für Coach-Provisionen und Lohn.",
+        "Admin/Coach/Clerk-Rollen halten wachsende Studios organisiert.",
+      ],
+      features: [
+        "Coach-Workbench: Wochen-/Monatsplan (Google-Kalender-Stil)",
+        "Schüler-CRM · Anmeldung · bezahlt/offen",
+        "WhatsApp-Zahlungserinnerungen",
+        "Anwesenheit · 1:1 / Gruppe / Yoga",
+        "Systemkonten: Admin · Coach · Clerk",
+        "Excel-Export für Lohn/Abstimmung",
+      ],
+      cta: "FitnessXP Monatsplan ansehen",
+      videoSubtitles: ["Systemkonten · Berechtigungen", "Coach-Workbench · Plan · Anwesenheit"],
+      videoCaptions: [
+        "Demo: Admin verwaltet Coach-/Clerk-Konten",
+        "Demo: Coach-Plan, Schüler-Follow-up, Excel-Export",
+      ],
+    },
+  },
+};
+
 const byLocale: Record<AppLocale, HomepageContent> = {
   en,
   "zh-hk": zhHk,
   "zh-tw": zhTw,
-  ja: en,
-  de: en,
+  ja,
+  de,
 };
 
 export function getHomepageContent(locale: AppLocale): HomepageContent {

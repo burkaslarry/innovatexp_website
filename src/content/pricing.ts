@@ -64,9 +64,15 @@ export const PRICING = {
     },
     accountXp: {
       experience: 3_000,
+      /** 皇牌月費 — AccountingXP receipt workflow */
+      flagshipMonthly: 99,
       maintenanceStarterMonthly: 880,
       maintenanceGrowthMonthly: 1_280,
       maintenanceEnterpriseMonthly: 1_480,
+    },
+    fitnessXp: {
+      /** 皇牌月費 — coach / gym studio workbench */
+      flagshipMonthly: 499,
     },
     website: {
       starter: 7_800,
