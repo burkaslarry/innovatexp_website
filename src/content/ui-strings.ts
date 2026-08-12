@@ -161,7 +161,7 @@ const zh: UiStrings = {
     home: "返回首頁",
     contact: "聯絡我們",
     book: "預約通話",
-    aiConsulting: "AI 商務顧問",
+    aiConsulting: "AI 商業顧問",
     blog: "Blog",
     reportPrefix: "如你透過失效連結進入，可以",
     reportLink: "通知我們",

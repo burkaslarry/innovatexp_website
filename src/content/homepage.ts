@@ -121,7 +121,7 @@ type HomepageContent = {
 
 const zhHk: HomepageContent = {
   brandTitle: "InnovateXP Limited",
-  brandSubtitle: "AI 商務顧問 Larry Lo",
+  brandSubtitle: "AI 商業顧問 Larry Lo",
   nav: {
     home: "首頁",
     diagnosis: "流程診斷",
@@ -133,7 +133,7 @@ const zhHk: HomepageContent = {
     cta: "預約 30 分鐘診斷",
   },
   hero: {
-    eyebrow: "AI 商務顧問｜14+ 年 IT 交付及流程落地經驗",
+    eyebrow: "AI 商業顧問｜14+ 年 IT 交付及流程落地經驗",
     title: "幫香港小團隊止住漏單、慢報價同交接混亂。",
     description:
       "Larry 會先同你鎖定一條最影響收入或營運嘅流程，30 日內執清責任、SOP 同追蹤方式；需要時先接 CRM、AI 或自動化。",
@@ -302,7 +302,7 @@ const zhHk: HomepageContent = {
   },
   footer: {
     title: "Larry Lo / InnovateXP",
-    role: "AI 商務顧問",
+    role: "AI 商業顧問",
     tagline: "先執順流程，再落地 AI",
     privacy: "Privacy Policy",
     copyright: "© 2026 InnovateXP Limited. All rights reserved.",

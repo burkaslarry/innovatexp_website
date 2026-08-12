@@ -38,7 +38,7 @@ export const PRICING = {
     /** Customised Website Starter — 一次性 Base Package */
     websiteStarter: 7_800,
   },
-  /** AI 商業升級陪跑 — aligned with pitch deck / AI 商務顧問 page */
+  /** AI 商業升級陪跑 — aligned with pitch deck / AI 商業顧問 page */
   consultancy: {
     discoverySprint30Day: 6_800,
     foundation3Month: 26_000,
