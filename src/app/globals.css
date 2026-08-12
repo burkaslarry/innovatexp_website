@@ -2,11 +2,6 @@
 @tailwind components;
 @tailwind utilities;
 
-@layer utilities {
-  .font-faq-title {
-    font-family: var(--font-faq-title);
-  }
-}
 @layer components {
   /* Style 3 (light) / Style B (dark) cards */
   .surface-card,
@@ -44,7 +39,7 @@
     color: var(--btn-primary-fg);
     border: 0;
     border-radius: var(--btn-radius);
-    font-weight: 670;
+    font-weight: 700 !important;
   }
   .btn-brand:hover {
     filter: brightness(1.04);
@@ -150,10 +145,6 @@
   --brand-ink: #0f2a47;
   --brand-muted: #43607c;
 
-  --font-handwriting: var(--font-main);
-  --font-main: var(--font-plus-jakarta-sans), var(--font-noto-sans-hk), system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-faq-title: var(--font-main);
-
   --motion-fluid: cubic-bezier(0.32, 0.72, 0, 1);
   --brand-gradient-teal: #00BFA5;
   --brand-gradient-blue: #009DF2;
@@ -229,7 +220,6 @@
 html, body {
   color: var(--text-primary);
   background: var(--bg-primary);
-  font-family: var(--font-main);
   font-size: 16px;
   line-height: 1.65;
   min-height: 100vh;
@@ -247,6 +237,10 @@ html {
 
 body {
   background: var(--bg-primary) !important;
+  /* The Noto Sans HK variable is injected by next/font on this element,
+     so --font-main must be defined here to resolve it. */
+  --font-main: var(--font-noto-sans-hk), system-ui, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  font-family: var(--font-main);
 }
 
 button,
@@ -270,13 +264,6 @@ h1, h2, h3 {
   font-weight: 700;
 }
 
-h1.handwriting,
-h2.handwriting,
-h3.handwriting {
-  font-family: var(--font-handwriting);
-  font-weight: 600;
-}
-
 p, span {
   color: var(--text-secondary);
   transition: color 0.3s ease;
@@ -284,11 +271,6 @@ p, span {
 
 .hint, .caption {
   color: var(--text-tertiary);
-}
-
-.tagline, .special-text {
-  font-family: var(--font-handwriting);
-  font-weight: 500;
 }
 
 /* ====================================

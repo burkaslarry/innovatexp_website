@@ -11,17 +11,17 @@ export interface ButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
 }
 
 const base =
-  "inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[var(--btn-radius)] px-6 py-3 text-center text-base font-semibold transition-all duration-normal ease-[cubic-bezier(0.25,0.1,0.25,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]";
+  "inline-flex min-h-[48px] items-center justify-center gap-2 rounded-[var(--btn-radius)] px-6 py-3 text-center text-base transition-all duration-normal ease-[cubic-bezier(0.25,0.1,0.25,1)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas disabled:pointer-events-none disabled:opacity-50 active:scale-[0.98]";
 
 const variants: Record<ButtonVariant, string> = {
   primary:
     "btn-brand shadow-card hover:-translate-y-px hover:shadow-card-hover [&_svg]:text-inherit",
   outline:
-    "border border-[color:var(--border-medium)] bg-[color:var(--card-bg)] text-[color:var(--text-primary)] shadow-sm hover:border-brand-primary/35 hover:bg-surface-secondary",
+    "font-semibold border border-[color:var(--border-medium)] bg-[color:var(--card-bg)] text-[color:var(--text-primary)] shadow-sm hover:border-brand-primary/35 hover:bg-surface-secondary",
   ghost:
-    "text-[color:var(--secondary-color)] hover:bg-primary/10 dark:text-[color:var(--secondary-color)] dark:hover:bg-white/5",
+    "font-semibold text-[color:var(--secondary-color)] hover:bg-primary/10 dark:text-[color:var(--secondary-color)] dark:hover:bg-white/5",
   ctaLight:
-    "border border-[color:var(--border-medium)] bg-[color:var(--card-bg)] text-[color:var(--text-primary)] shadow-card hover:-translate-y-px hover:border-brand-primary/35 hover:bg-surface-secondary",
+    "font-semibold border border-[color:var(--border-medium)] bg-[color:var(--card-bg)] text-[color:var(--text-primary)] shadow-card hover:-translate-y-px hover:border-brand-primary/35 hover:bg-surface-secondary",
 };
 
 export function Button({

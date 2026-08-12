@@ -64,6 +64,8 @@ export async function sendQuestionnaireResendEmail(
     .filter((line) => line !== null)
     .join("\n");
 
+  // Email clients cannot reliably load webfonts; system-ui is an intentional
+  // fallback that renders acceptably across mail apps and devices.
   const html = `
     <div style="font-family:system-ui,-apple-system,sans-serif;line-height:1.5;color:#1a1c1e">
       <h2 style="margin:0 0 12px">New ${escapeHtml(payload.questionnaireType)}</h2>
@@ -161,6 +163,8 @@ export async function sendInquiryCartResendEmail(
     )
     .join("");
 
+  // Email clients cannot reliably load webfonts; system-ui is an intentional
+  // fallback that renders acceptably across mail apps and devices.
   const html = `
     <div style="font-family:system-ui,-apple-system,sans-serif;line-height:1.5;color:#1a1c1e">
       <h2 style="margin:0 0 12px">Website inquiry cart</h2>

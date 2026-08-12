@@ -9,6 +9,8 @@ export const contentType = "image/png";
 
 const FONT_FAMILY = "Noto Sans HK";
 
+// OG image intentionally uses the same family as the site so social previews
+// match the live typography. 500 for body text, 700 for headings/buttons.
 async function loadGoogleFontWeights(weights: number[]) {
   const w = weights.join(";");
   const css = await fetch(
@@ -38,8 +40,8 @@ async function loadGoogleFontWeights(weights: number[]) {
 }
 
 export default async function Image() {
-  const loaded = await loadGoogleFontWeights([400, 700]);
-  const regular = loaded.find((f) => f.weight === 400);
+  const loaded = await loadGoogleFontWeights([500, 700]);
+  const regular = loaded.find((f) => f.weight === 500);
   const bold = loaded.find((f) => f.weight === 700);
   if (!regular?.data || !bold?.data) {
     throw new Error("Failed to load OG image fonts");
@@ -78,7 +80,7 @@ export default async function Image() {
         {
           name: FONT_FAMILY,
           data: regular.data,
-          weight: 400,
+          weight: 500,
           style: "normal" as const,
         },
         {

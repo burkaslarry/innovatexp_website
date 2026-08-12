@@ -1,9 +1,16 @@
-import { Geist_Mono, Noto_Sans_HK, Plus_Jakarta_Sans } from "next/font/google";
+import { Geist_Mono, Noto_Sans_HK } from "next/font/google";
 
-export const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
+/**
+ * Single bilingual variable font for the entire site.
+ * Noto Sans HK includes matching Latin and numeral glyphs, so mixed-script
+ * lines (Chinese + English + numbers like HK$499) render as one family.
+ * Variable wght 100–900 is available; no fake bolding/synthesis needed.
+ */
+export const notoSansHk = Noto_Sans_HK({
+  variable: "--font-noto-sans-hk",
   subsets: ["latin"],
   display: "swap",
+  preload: true,
 });
 
 export const geistMono = Geist_Mono({
@@ -12,25 +19,17 @@ export const geistMono = Geist_Mono({
   display: "swap",
 });
 
-/** Ship Chinese glyphs with the app so every browser uses the same CJK face. */
-export const notoSansHk = Noto_Sans_HK({
-  variable: "--font-noto-sans-hk",
-  subsets: ["latin"],
-  weight: ["400", "500", "600", "700"],
-  display: "swap",
-});
-
-/** Apply self-hosted Latin and CJK faces on the document root. */
+/** Apply the single bilingual font on the document root. */
 export const rootFontClassName = [
-  plusJakartaSans.variable,
-  geistMono.variable,
   notoSansHk.variable,
+  geistMono.variable,
   "antialiased",
 ].join(" ");
 
 /**
- * Self-hosted webfonts keep Chrome and Safari aligned. Native sans faces are
- * retained only as a non-serif safety fallback before the font files load.
+ * Single stack for CSS, MUI, and inline styles.
+ * Noto Sans HK is self-hosted by next/font, so Chrome/Safari/Edge/Opera all
+ * use the same woff2 file. Native faces are only a fallback while loading.
  */
 export const FONT_STACK =
-  'var(--font-plus-jakarta-sans), var(--font-noto-sans-hk), system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
+  'var(--font-noto-sans-hk), system-ui, "PingFang TC", "Microsoft JhengHei", sans-serif';

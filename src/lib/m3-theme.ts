@@ -49,8 +49,8 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
       fontFamily: FONT_STACK,
       h1: { fontWeight: 700, letterSpacing: "-0.02em" },
       h2: { fontWeight: 700, letterSpacing: "-0.01em" },
-      h3: { fontWeight: 650 },
-      button: { textTransform: "none", fontWeight: 670 },
+      h3: { fontWeight: 600 },
+      button: { textTransform: "none", fontWeight: 700 },
     },
     transitions: {
       duration: {
@@ -120,7 +120,7 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
           root: {
             borderRadius: 6,
             height: 40,
-            fontWeight: 650,
+            fontWeight: 600,
           },
           filled: {
             "&.MuiChip-colorPrimary": {

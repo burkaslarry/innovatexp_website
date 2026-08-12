@@ -142,7 +142,7 @@ export function InquiryCheckoutDrawer() {
       >
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Box>
-            <Typography variant="h6" fontWeight={800}>
+            <Typography variant="h6" fontWeight={700}>
               {zh ? "查詢購物車" : "Inquiry cart"}
             </Typography>
             <Typography variant="body2" color="text.secondary">
