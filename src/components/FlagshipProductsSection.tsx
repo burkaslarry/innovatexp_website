@@ -62,7 +62,7 @@ export function FlagshipProductsSection({
         {
           title: "AccountXP",
           subtitle: fp.account.videoSubtitles[0],
-          sources: [{ src: "/videos/accountxp.mov", type: "video/quicktime" }],
+          sources: [{ src: "/videos/accountxp.mp4", type: "video/mp4" }],
           caption: fp.account.videoCaptions[0],
         },
       ],
@@ -77,13 +77,13 @@ export function FlagshipProductsSection({
         {
           title: "FitnessXP",
           subtitle: fp.fitness.videoSubtitles[0],
-          sources: [{ src: "/videos/fitnessxp_01.mov", type: "video/quicktime" }],
+          sources: [{ src: "/videos/fitnessxp_01.mp4", type: "video/mp4" }],
           caption: fp.fitness.videoCaptions[0],
         },
         {
           title: "FitnessXP",
           subtitle: fp.fitness.videoSubtitles[1],
-          sources: [{ src: "/videos/fitnessxp_02.mov", type: "video/quicktime" }],
+          sources: [{ src: "/videos/fitnessxp_02.mp4", type: "video/mp4" }],
           caption: fp.fitness.videoCaptions[1],
         },
       ],
