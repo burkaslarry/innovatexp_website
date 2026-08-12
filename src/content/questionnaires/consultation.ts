@@ -215,7 +215,7 @@ function pricingCards(locale: AppLocale) {
     },
     {
       name: zh ? "AI 準備度評估" : locale === "ja" ? "AI Readiness Assessment" : locale === "de" ? "AI Readiness Assessment" : "AI readiness assessment",
-      price: formatHkd(PRICING.quickCash.aiReadinessAssessment, locale === "zh-hk" || locale === "zh-tw" ? "zh-hk" : "en"),
+      price: "",
       note: zh
         ? "快速診斷 + 優先排序清單"
         : locale === "ja"

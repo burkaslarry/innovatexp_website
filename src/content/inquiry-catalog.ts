@@ -21,6 +21,8 @@ export type InquiryCatalogItem = {
   blurbEn: string;
   blurbZh: string;
   layer: "quickCash" | "toolTrial" | "consultancy";
+  /** When true, public UI omits HKD amounts (quote on enquiry). */
+  hidePublicPrice?: boolean;
 };
 
 /** Public inquiry cart catalogue — external-facing offers visitors can shortlist. */
@@ -69,6 +71,7 @@ export const INQUIRY_CATALOG: InquiryCatalogItem[] = [
     blurbEn: "Quick diagnosis + prioritized action list.",
     blurbZh: "快速診斷 + 優先排序清單。",
     layer: "quickCash",
+    hidePublicPrice: true,
   },
   {
     id: "promptTrainingDay",
@@ -139,6 +142,7 @@ export function catalogBlurb(item: InquiryCatalogItem, zh: boolean): string {
 }
 
 export function formatCatalogPrice(item: InquiryCatalogItem, locale: PricingLocale): string {
+  if (item.hidePublicPrice) return "";
   return formatHkd(item.amountHkd, locale);
 }
 

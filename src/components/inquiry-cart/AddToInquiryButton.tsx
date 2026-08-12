@@ -39,7 +39,7 @@ export function AddToInquiryButton({
       onClick={() =>
         addItem(itemId, {
           title: catalogTitle(catalog, zh),
-          amountHkd: catalog.amountHkd,
+          amountHkd: catalog.hidePublicPrice ? 0 : catalog.amountHkd,
         })
       }
     >

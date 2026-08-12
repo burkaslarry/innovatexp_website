@@ -25,7 +25,9 @@ export function AIConsultingPackageCard({
         <Icon className="h-6 w-6" strokeWidth={2} aria-hidden />
       </div>
       <h3 className="mb-2 text-xl font-bold text-gray-900 dark:text-white">{title}</h3>
-      <p className="mb-3 font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">{price}</p>
+      {price?.trim() ? (
+        <p className="mb-3 font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">{price}</p>
+      ) : null}
       <p className="mb-4 text-sm leading-relaxed text-gray-700 dark:text-gray-300">{description}</p>
       <ul className="mb-5 space-y-2">
         {features.map((feature) => (

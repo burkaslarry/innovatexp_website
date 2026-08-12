@@ -264,9 +264,11 @@ export function M3QuestionnaireForm({
                           {card.note}
                         </Typography>
                       </Box>
-                      <Typography fontWeight={800} color="primary.main">
-                        {card.price}
-                      </Typography>
+                      {card.price?.trim() ? (
+                        <Typography fontWeight={800} color="primary.main">
+                          {card.price}
+                        </Typography>
+                      ) : null}
                     </Stack>
                   </Paper>
                 ))}

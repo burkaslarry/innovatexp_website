@@ -204,10 +204,12 @@ export function InquiryCheckoutDrawer() {
                             {catalogBlurb(catalog, zh)}
                           </Typography>
                         ) : null}
-                        <Typography variant="body2" fontWeight={700} sx={{ mt: 0.5 }}>
-                          {formatHkd(line.amountHkd, pl)}
-                          {line.qty > 1 ? ` × ${line.qty}` : ""}
-                        </Typography>
+                        {catalog?.hidePublicPrice ? null : (
+                          <Typography variant="body2" fontWeight={700} sx={{ mt: 0.5 }}>
+                            {formatHkd(line.amountHkd, pl)}
+                            {line.qty > 1 ? ` × ${line.qty}` : ""}
+                          </Typography>
+                        )}
                       </Box>
                       <IconButton
                         size="small"
