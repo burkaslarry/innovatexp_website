@@ -44,6 +44,7 @@ const fabSx = {
 export function PrimaryFabCluster() {
   const pathname = usePathname();
   const router = useRouter();
+  const isHomepageRoot = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)$/.test(pathname));
   const locale = getLocaleFromPathname(pathname);
   const zh = localeUsesChineseCopy(locale);
   const [open, setOpen] = useState(false);
@@ -83,6 +84,8 @@ export function PrimaryFabCluster() {
     router.push(href);
   };
 
+  if (isHomepageRoot) return null;
+
   return (
     <ThemeProvider theme={theme}>
       <div className="hidden md:block">
@@ -95,7 +98,7 @@ export function PrimaryFabCluster() {
               sx={fabSx}
             >
               <Badge badgeContent={itemCount} color="secondary" max={9} overlap="circular">
-                <ShoppingCartIcon sx={{ color: "#fff" }} />
+                <ShoppingCartIcon sx={{ color: "var(--btn-primary-fg)" }} />
               </Badge>
             </Fab>
           </Zoom>
@@ -116,7 +119,7 @@ export function PrimaryFabCluster() {
               open={open}
               FabProps={{
                 color: "primary",
-                sx: { width: 56, height: 56, color: "#fff", boxShadow: "var(--shadow-fab)" },
+                sx: { width: 56, height: 56, color: "var(--btn-primary-fg)", boxShadow: "var(--shadow-fab)" },
                 "aria-label": zh ? "開啟快捷選單" : "Open quick actions",
               }}
             >

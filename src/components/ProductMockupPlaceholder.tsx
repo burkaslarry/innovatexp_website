@@ -1,32 +1,26 @@
 "use client";
 
 import Image from "next/image";
-import { ImageIcon } from "lucide-react";
+import { BriefcaseBusiness, ImageIcon, Network } from "lucide-react";
 
-/** Placeholder frame or real product screenshot. */
 export function ProductMockupPlaceholder({
   label,
   className = "",
   imageSrc,
   imageAlt = "",
-  onClick,
+  variant = "generic",
 }: {
   label: string;
   className?: string;
-  /** e.g. /eventxp-admin.png — when set, shows image instead of dashed placeholder */
   imageSrc?: string;
   imageAlt?: string;
-  onClick?: () => void;
+  variant?: "generic" | "portrait" | "workflow";
 }) {
   if (imageSrc) {
     return (
       <figure className={`w-full ${className}`}>
-        <button
-          type="button"
-          onClick={onClick}
-          className={`relative aspect-[16/10] w-full overflow-hidden rounded-xl border-2 border-slate-200 bg-slate-100 shadow-md dark:border-slate-600 dark:bg-slate-800 ${
-            onClick ? "cursor-pointer focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary" : "cursor-default"
-          }`}
+        <div
+          className="relative aspect-[16/10] w-full overflow-hidden rounded-[var(--card-radius)] border border-[color:var(--border-light)] bg-[color:var(--bg-elevated)] shadow-card"
           aria-label={imageAlt || label}
         >
           <Image
@@ -36,32 +30,25 @@ export function ProductMockupPlaceholder({
             className="object-cover object-top"
             sizes="(max-width: 768px) 100vw, 672px"
           />
-        </button>
+        </div>
         {label ? (
-          <figcaption className="mt-2 text-center text-xs font-medium text-brand-primary/90 dark:text-[color:var(--primary-hover)]/90">
-            {onClick ? (
-              <button
-                type="button"
-                onClick={onClick}
-                className="underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary dark:hover:text-teal-300"
-              >
-                {label}
-              </button>
-            ) : (
-              label
-            )}
+          <figcaption className="mt-3 text-center text-sm font-medium text-[color:var(--text-secondary)]">
+            {label}
           </figcaption>
         ) : null}
       </figure>
     );
   }
 
+  const Icon = variant === "portrait" ? BriefcaseBusiness : variant === "workflow" ? Network : ImageIcon;
+  const aspectClass = variant === "portrait" ? "aspect-[4/5]" : "aspect-[16/10]";
+
   return (
     <div
-      className={`flex aspect-[16/10] w-full flex-col items-center justify-center gap-2 rounded-xl border-2 border-dashed border-slate-300 bg-gradient-to-br from-slate-50 to-slate-100/80 text-oxford-muted dark:border-slate-600 dark:from-slate-800/80 dark:to-slate-900/80 dark:text-slate-400 ${className}`}
+      className={`flex ${aspectClass} w-full flex-col items-center justify-center gap-3 rounded-[var(--card-radius)] border border-dashed border-[color:var(--border-medium)] bg-[color:var(--bg-elevated)] px-6 text-[color:var(--text-secondary)] ${className}`}
     >
-      <ImageIcon className="h-8 w-8 opacity-60" strokeWidth={1.5} aria-hidden />
-      <span className="max-w-[14rem] px-4 text-center text-xs font-medium leading-snug">{label}</span>
+      <Icon className="h-8 w-8 opacity-70" strokeWidth={1.5} aria-hidden />
+      <span className="max-w-[18rem] text-center text-sm font-medium leading-relaxed">{label}</span>
     </div>
   );
 }

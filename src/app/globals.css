@@ -74,145 +74,149 @@
 }
 
 /* ====================================
-   Light Mode — 冷調避土金（水木）
+   Light Mode — consultancy canvas
    ==================================== */
 :root {
   --header-offset: 180px;
 
-  /* Style 3 — light brand surfaces */
-  --bg-base: #f7f6f3;
-  --bg-primary: #f7f6f3;
-  --bg-secondary: #fafaf9;
-  --bg-tertiary: #eef0f1;
+  --bg-base: #f8f7f3;
+  --bg-primary: #f8f7f3;
+  --bg-secondary: #fdfcf8;
+  --bg-tertiary: #f2efe7;
   --bg-surface: #ffffff;
-  --bg-elevated: #ffffff;
+  --bg-elevated: #fffdfa;
 
-  --text-primary: #20201f;
-  --text-secondary: #74716d;
-  --text-tertiary: #74716d;
-  --heading-foreground: #20201f;
+  --text-primary: #0f2a47;
+  --text-secondary: #43607c;
+  --text-tertiary: #70839b;
+  --heading-foreground: #0f2a47;
 
-  --brand-green: #00e998;
-  --brand-cyan: #00c7c9;
-  --brand-blue: #009df2;
-  --brand-deep: #087fc1;
+  --brand-green: #1f5b4f;
+  --brand-cyan: #2f7a69;
+  --brand-blue: #0f2a47;
+  --brand-deep: #0f2a47;
+  --pain-accent: #e57b36;
+  --pain-accent-soft: rgba(229, 123, 54, 0.12);
 
-  --primary-color: #00bfa5;
-  --primary-hover: #009df2;
-  --primary-muted: rgba(0, 191, 165, 0.14);
-  --accent-primary: #00bfa5;
-  --brand-primary: #00bfa5;
-  --brand-primary-hover: #009df2;
+  --primary-color: #0f2a47;
+  --primary-hover: #17395d;
+  --primary-muted: rgba(15, 42, 71, 0.12);
+  --accent-primary: #1f5b4f;
+  --brand-primary: #0f2a47;
+  --brand-primary-hover: #17395d;
 
-  --secondary-color: #087fc1;
-  --secondary-hover: #009df2;
-  --accent-secondary: #009df2;
-  --accent-tertiary: #00c7c9;
-  --brand-accent-teal: #00c7c9;
-  --brand-accent-teal-hover: #00bfa5;
+  --secondary-color: #1f5b4f;
+  --secondary-hover: #2f7a69;
+  --accent-secondary: #1f5b4f;
+  --accent-tertiary: #2f7a69;
+  --brand-accent-teal: #1f5b4f;
+  --brand-accent-teal-hover: #2f7a69;
 
-  --success: #00bfa5;
-  --warning: #0ea5e9;
+  --success: #1f5b4f;
+  --warning: #e57b36;
   --error: #dc2626;
-  --info: #009df2;
+  --info: #1f5b4f;
 
-  --border-light: #e4e2de;
-  --border-medium: rgba(32, 32, 31, 0.22);
+  --border-light: rgba(15, 42, 71, 0.1);
+  --border-medium: rgba(15, 42, 71, 0.18);
 
-  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 20px rgba(0, 0, 0, 0.035);
-  --shadow-md: 0 4px 16px rgba(0, 0, 0, 0.06);
-  --shadow-fab: 0 6px 20px rgba(0, 157, 242, 0.28);
+  --shadow-sm: 0 1px 2px rgba(15, 42, 71, 0.06), 0 12px 30px rgba(15, 42, 71, 0.06);
+  --shadow-md: 0 16px 36px rgba(15, 42, 71, 0.09);
+  --shadow-fab: 0 12px 28px rgba(15, 42, 71, 0.18);
 
-  --btn-primary-bg: linear-gradient(90deg, #00bfa5, #009df2);
+  --btn-primary-bg: linear-gradient(180deg, #17395d 0%, #0f2a47 100%);
   --btn-primary-fg: #ffffff;
-  --btn-radius: 8px;
+  --btn-radius: 14px;
   --card-bg: #ffffff;
-  --card-border: #e4e2de;
-  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.04), 0 6px 20px rgba(0, 0, 0, 0.035);
-  --card-radius: 12px;
-  --card-accent: linear-gradient(90deg, #00e998, #00c7c9, #009df2);
-  --card-accent-display: block;
+  --card-border: rgba(15, 42, 71, 0.1);
+  --card-shadow: 0 1px 2px rgba(15, 42, 71, 0.04), 0 12px 28px rgba(15, 42, 71, 0.05);
+  --card-radius: 18px;
+  --card-accent: linear-gradient(90deg, rgba(15, 42, 71, 0.16), rgba(31, 91, 79, 0.12));
+  --card-accent-display: none;
 
-  --radius-sm: 8px;
-  --radius-md: 12px;
-  --radius-lg: 12px;
+  --radius-sm: 10px;
+  --radius-md: 14px;
+  --radius-lg: 18px;
   --radius-pill: 999px;
   --motion-fast: 150ms;
   --motion-normal: 220ms;
   --ease-standard: cubic-bezier(0.25, 0.1, 0.25, 1);
 
-  --background: #f7f6f3;
-  --foreground: #20201f;
-  --oxford-blue: #087fc1;
-  --brand-cream: #fafaf9;
-  --brand-cream-warm: #f7f6f3;
-  --brand-ink: #20201f;
-  --brand-muted: #74716d;
+  --background: #f8f7f3;
+  --foreground: #0f2a47;
+  --oxford-blue: #0f2a47;
+  --brand-cream: #fdfcf8;
+  --brand-cream-warm: #f8f7f3;
+  --brand-ink: #0f2a47;
+  --brand-muted: #43607c;
 
   --font-handwriting: var(--font-main);
-  --font-main: var(--font-geist-sans), var(--font-noto-cjk), "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", sans-serif;
+  --font-main: var(--font-inter-sans), var(--font-noto-cjk), "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", sans-serif;
   --font-faq-title: var(--font-main);
+
+  --motion-fluid: cubic-bezier(0.32, 0.72, 0, 1);
+  --brand-gradient-teal: #00BFA5;
+  --brand-gradient-blue: #009DF2;
 
   color-scheme: light;
 }
 
 /* ====================================
-   Dark Mode — 水木相生
+   Dark Mode — consultancy dark
    ==================================== */
 .dark {
-  /* Style B — brand dark */
-  --bg-base: #191919;
-  --bg-primary: #191919;
-  --bg-secondary: #222222;
-  --bg-tertiary: #2a2a2a;
-  --bg-surface: #222222;
-  --bg-elevated: #2a2a2a;
+  --bg-base: #091623;
+  --bg-primary: #091623;
+  --bg-secondary: #0e1f31;
+  --bg-tertiary: #14283d;
+  --bg-surface: #102131;
+  --bg-elevated: #152a40;
 
-  --text-primary: #ffffff;
-  --text-secondary: rgba(255, 255, 255, 0.64);
-  --text-tertiary: rgba(255, 255, 255, 0.5);
-  --heading-foreground: #ffffff;
+  --text-primary: #f5f7fb;
+  --text-secondary: #b4c4d6;
+  --text-tertiary: #8ea4bc;
+  --heading-foreground: #f5f7fb;
 
-  --primary-color: #00bfa5;
-  --primary-hover: #009df2;
-  --primary-muted: rgba(0, 199, 201, 0.13);
-  --accent-primary: #00c7c9;
-  --brand-primary: #00bfa5;
-  --brand-primary-hover: #009df2;
+  --primary-color: #f5f7fb;
+  --primary-hover: #dce6f0;
+  --primary-muted: rgba(245, 247, 251, 0.14);
+  --accent-primary: #75a18e;
+  --brand-primary: #f5f7fb;
+  --brand-primary-hover: #dce6f0;
 
-  --secondary-color: #42d8d7;
-  --secondary-hover: #009df2;
-  --accent-secondary: #42d8d7;
-  --accent-tertiary: #00e998;
-  --brand-accent-teal: #42d8d7;
-  --brand-accent-teal-hover: #00c7c9;
+  --secondary-color: #8eb8a6;
+  --secondary-hover: #a3cab9;
+  --accent-secondary: #8eb8a6;
+  --accent-tertiary: #a3cab9;
+  --brand-accent-teal: #8eb8a6;
+  --brand-accent-teal-hover: #a3cab9;
 
-  --success: #00e998;
-  --warning: #0ea5e9;
+  --success: #8eb8a6;
+  --warning: #f3a16c;
   --error: #f87171;
-  --info: #009df2;
+  --info: #8eb8a6;
 
-  --border-light: rgba(255, 255, 255, 0.17);
-  --border-medium: rgba(255, 255, 255, 0.28);
+  --border-light: rgba(245, 247, 251, 0.12);
+  --border-medium: rgba(245, 247, 251, 0.18);
 
-  --shadow-sm: none;
-  --shadow-md: none;
-  --shadow-fab: 0 6px 22px rgba(0, 157, 242, 0.28);
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.22);
+  --shadow-md: 0 18px 38px rgba(0, 0, 0, 0.28);
+  --shadow-fab: 0 12px 30px rgba(0, 0, 0, 0.35);
 
-  --btn-primary-bg: linear-gradient(90deg, #00bfa5, #009df2);
-  --btn-primary-fg: #000000;
-  --card-bg: #222222;
-  --card-border: rgba(255, 255, 255, 0.17);
-  --card-shadow: none;
+  --btn-primary-bg: linear-gradient(180deg, #f5f7fb 0%, #dce6f0 100%);
+  --btn-primary-fg: #0f2a47;
+  --card-bg: #102131;
+  --card-border: rgba(245, 247, 251, 0.12);
+  --card-shadow: 0 1px 2px rgba(0, 0, 0, 0.18), 0 14px 30px rgba(0, 0, 0, 0.24);
   --card-accent-display: none;
 
-  --background: #191919;
-  --foreground: #ffffff;
-  --oxford-blue: #009df2;
-  --brand-cream: #222222;
-  --brand-cream-warm: #191919;
-  --brand-ink: #ffffff;
-  --brand-muted: rgba(255, 255, 255, 0.64);
+  --background: #091623;
+  --foreground: #f5f7fb;
+  --oxford-blue: #f5f7fb;
+  --brand-cream: #102131;
+  --brand-cream-warm: #091623;
+  --brand-ink: #f5f7fb;
+  --brand-muted: #b4c4d6;
 
   --font-faq-title: var(--font-main);
 
@@ -303,20 +307,73 @@ p, span {
 }
 
 /* ====================================
+   Landing page design system (buttons & cards)
+   ==================================== */
+.btn {
+  color: #fff;
+  background: linear-gradient(90deg, #00BFA5, #009DF2);
+  border: none;
+}
+
+.dark .btn {
+  color: #fff;
+  background: linear-gradient(90deg, #00BFA5, #009DF2);
+}
+
+.dark a.btn,
+.dark a.btn:hover,
+.dark a.btn:focus-visible,
+.dark button.btn,
+.dark button.btn:hover {
+  color: #ffffff;
+}
+
+.gradient-card {
+  position: relative;
+  overflow: hidden;
+}
+
+.gradient-card::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #00E998, #00C7C9, #009DF2);
+  z-index: 1;
+}
+
+.hero-heading-gradient {
+  background: linear-gradient(90deg, #000000, #666666);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+.dark .hero-heading-gradient {
+  background: linear-gradient(90deg, #ffffff, #9b9b9b);
+  -webkit-background-clip: text;
+  background-clip: text;
+  color: transparent;
+}
+
+/* ====================================
    Button Styles
    ==================================== */
 .btn-primary {
-  background-color: var(--accent-primary);
-  color: #ffffff;
+  color: #fff;
+  background: linear-gradient(90deg, #00BFA5, #009DF2);
   border: none;
   border-radius: 24px;
-  padding: 12px 32px;
+  padding: 8px 12px;
   font-weight: 600;
-  transition: all 0.3s ease;
+  font-size: 1rem;
+  transition: all 700ms cubic-bezier(0.32, 0.72, 0, 1);
 }
 
 .btn-primary:hover {
-  background-color: var(--primary-hover);
+  filter: brightness(1.05);
   transform: translateY(-1px);
   box-shadow: var(--shadow-md);
 }
@@ -503,9 +560,9 @@ textarea,
 .surface-section,
 header,
 nav {
-  transition-property: background-color, color, border-color, transform, box-shadow;
-  transition-duration: var(--motion-normal);
-  transition-timing-function: var(--ease-standard);
+  transition-property: background-color, color, border-color, transform, box-shadow, opacity, filter;
+  transition-duration: 700ms;
+  transition-timing-function: var(--motion-fluid);
 }
 
 /* ====================================

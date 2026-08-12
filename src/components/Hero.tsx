@@ -1,11 +1,10 @@
-/* F15: Hero section - Animated hero with primary/secondary CTAs and optional trust badges. */
-import Image from "next/image";
-import type { MouseEvent } from "react";
+import type { MouseEvent, ReactNode } from "react";
 import { Button } from "@/components/ui/Button";
 
 export interface HeroProps {
+  eyebrow?: string;
   title: string;
-  tagline: string;
+  tagline?: string;
   description: string;
   primaryHref: string;
   primaryLabel: string;
@@ -17,12 +16,11 @@ export interface HeroProps {
   onSecondaryClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
   secondaryHref?: string;
   trustBadges?: string[];
-  bottomTagline?: string;
-  imageSrc?: string;
-  imageAlt?: string;
+  visual?: ReactNode;
 }
 
 export function Hero({
+  eyebrow,
   title,
   tagline,
   description,
@@ -31,90 +29,75 @@ export function Hero({
   onPrimaryClick,
   secondaryLabel,
   onSecondaryClick,
-  secondaryHref = "/bookme#quotation-wizard",
+  secondaryHref = "#workflow-diagnosis",
   trustBadges = [],
-  bottomTagline = "",
-  imageSrc = "/mypresent.jpg",
-  imageAlt = "",
+  visual,
 }: HeroProps) {
   return (
-    <section
-      role="banner"
-      className="ixp-card mb-16 p-8 md:p-12 lg:p-14"
-    >
-      <div className="mx-auto grid max-w-6xl items-center gap-10 lg:grid-cols-[1fr_minmax(0,420px)] lg:gap-14">
-        <div className="min-w-0 text-center lg:text-left">
-          <h1 className="font-sans text-3xl font-bold leading-tight tracking-tight text-oxford dark:text-white sm:text-4xl md:text-5xl">
+    <section role="banner" className="mb-12 pt-2 md:mb-16">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-14">
+        <div className="min-w-0">
+          {eyebrow ? (
+            <p className="mb-4 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">
+              {eyebrow}
+            </p>
+          ) : null}
+          <h1
+            className="max-w-[12ch] text-[clamp(2.15rem,7vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-[color:var(--heading-foreground)]"
+            style={{ textWrap: "balance" }}
+          >
             {title}
           </h1>
           {tagline?.trim() ? (
             <p
-              className="mt-4 line-clamp-2 text-base font-bold leading-snug text-brand-primary dark:text-[color:var(--primary-hover)] sm:line-clamp-none sm:text-2xl"
-              title={tagline}
+              className="mt-4 max-w-[36rem] text-lg font-semibold leading-snug text-[color:var(--secondary-color)]"
+              style={{ textWrap: "pretty" }}
             >
               {tagline}
             </p>
           ) : null}
           {description?.trim() ? (
             <p
-              className="mx-auto mt-6 line-clamp-3 max-w-xl text-base leading-[1.7] text-slate-600 dark:text-slate-300 sm:line-clamp-none lg:mx-0 lg:max-w-lg lg:text-lg"
-              title={description}
+              className="mt-6 max-w-[42rem] text-base leading-8 text-[color:var(--text-secondary)] md:text-lg"
+              style={{ textWrap: "pretty" }}
             >
               {description}
             </p>
           ) : null}
-          {trustBadges.length > 0 ? (
-            <ul className="mx-auto mt-6 flex max-w-xl flex-wrap justify-center gap-2 text-sm font-semibold text-slate-700 dark:text-slate-200 lg:mx-0 lg:justify-start">
-              {trustBadges.map((badge) => (
-                <li key={badge} className="rounded-full border border-slate-200 bg-white px-3 py-1.5 shadow-sm dark:border-slate-600 dark:bg-slate-800">
-                  {badge}
-                </li>
-              ))}
-            </ul>
-          ) : null}
-          {bottomTagline?.trim() ? (
-            <p className="mt-5 text-lg font-bold text-oxford dark:text-[color:var(--primary-hover)]">{bottomTagline}</p>
-          ) : null}
-          <div className="mt-10 flex flex-col items-stretch justify-center gap-3 sm:flex-row sm:items-center lg:justify-start">
+          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
             {onPrimaryClick && primaryHref.startsWith("#") ? (
               <a
                 href={primaryHref}
                 onClick={onPrimaryClick}
-                className="group inline-flex min-h-[52px] touch-manipulation items-center justify-center gap-2 rounded-full border-2 border-slate-900/20 bg-white px-10 text-base font-bold text-slate-900 shadow-md transition-all duration-300 hover:border-black hover:bg-black hover:text-white active:scale-[0.98] dark:border-slate-500 dark:bg-white dark:text-slate-950 dark:hover:border-black dark:hover:bg-black dark:hover:text-white sm:min-w-[200px]"
+                className="btn-brand inline-flex min-h-[48px] items-center justify-center px-6 py-3 text-base font-semibold shadow-card transition hover:-translate-y-px hover:shadow-card-hover"
               >
                 {primaryLabel}
               </a>
             ) : (
-              <Button
-                href={primaryHref}
-                variant="ctaLight"
-                className="min-h-[52px] touch-manipulation px-10 text-base sm:min-w-[200px]"
-              >
+              <Button href={primaryHref} variant="primary" className="px-6">
                 {primaryLabel}
               </Button>
             )}
             <a
               href={secondaryHref}
               onClick={onSecondaryClick}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-full border border-slate-300/90 bg-transparent px-8 py-3 text-base font-semibold text-slate-800 transition-all hover:border-brand-accent-teal/60 hover:bg-brand-accent-teal/5 active:scale-[0.98] dark:border-slate-500 dark:text-slate-100 dark:hover:border-brand-primary/50 dark:hover:bg-brand-accent-teal/10"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-[var(--btn-radius)] px-1 py-3 text-base font-semibold text-[color:var(--secondary-color)] underline decoration-[color:var(--border-medium)] decoration-2 underline-offset-[10px] transition hover:text-[color:var(--brand-primary)]"
             >
               {secondaryLabel}
             </a>
           </div>
+          {trustBadges.length > 0 ? (
+            <ul className="mt-6 grid gap-3 text-sm font-medium text-[color:var(--text-primary)] sm:grid-cols-3">
+              {trustBadges.map((badge) => (
+                <li key={badge} className="rounded-[var(--radius-md)] border border-[color:var(--border-light)] bg-[color:var(--bg-elevated)] px-4 py-3">
+                  {badge}
+                </li>
+              ))}
+            </ul>
+          ) : null}
         </div>
 
-        <div className="relative mx-auto w-full max-w-md lg:mx-0 lg:max-w-none">
-          <div className="relative aspect-[4/3] overflow-hidden rounded-2xl border border-slate-200/80 shadow-lg dark:border-slate-600">
-            <Image
-              src={imageSrc}
-              alt={imageAlt}
-              fill
-              className="object-cover"
-              sizes="(max-width: 1024px) 100vw, 420px"
-              priority
-            />
-          </div>
-        </div>
+        {visual ? <div className="w-full">{visual}</div> : null}
       </div>
     </section>
   );

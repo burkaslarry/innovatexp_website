@@ -5,31 +5,33 @@ type Mode = "light" | "dark";
 
 /**
  * Material 3 interaction + InnovateXP brand
- * Light: Style 3 gradient CTA / Dark: Style B gradient CTA (black label)
+ * Consultancy palette with restrained navy / teal surfaces.
  */
 export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
   const isDark = mode === "dark";
-  const primary = "#00BFA5";
-  const primaryHover = "#009DF2";
-  const secondary = isDark ? "#42D8D7" : "#087FC1";
-  const canvas = isDark ? "#191919" : "#F7F6F3";
-  const paper = isDark ? "#222222" : "#FFFFFF";
-  const btnFg = isDark ? "#000000" : "#FFFFFF";
-  const ctaGradient = "linear-gradient(90deg, #00BFA5, #009DF2)";
+  const primary = isDark ? "#F5F7FB" : "#0F2A47";
+  const primaryHover = isDark ? "#DCE6F0" : "#17395D";
+  const secondary = isDark ? "#8EB8A6" : "#1F5B4F";
+  const canvas = isDark ? "#091623" : "#F8F7F3";
+  const paper = isDark ? "#102131" : "#FFFFFF";
+  const btnFg = isDark ? "#0F2A47" : "#FFFFFF";
+  const ctaGradient = isDark
+    ? "linear-gradient(180deg, #F5F7FB 0%, #DCE6F0 100%)"
+    : "linear-gradient(180deg, #17395D 0%, #0F2A47 100%)";
 
   return createTheme({
     palette: {
       mode,
       primary: {
         main: primary,
-        light: isDark ? "#42D8D7" : "#00E998",
+        light: isDark ? "#FFFFFF" : "#24486F",
         dark: primaryHover,
         contrastText: btnFg,
       },
       secondary: {
         main: secondary,
-        light: isDark ? "#00E998" : "#009DF2",
-        dark: isDark ? "#00C7C9" : "#087FC1",
+        light: isDark ? "#A3CAB9" : "#2F7A69",
+        dark: isDark ? "#75A18E" : "#194A40",
         contrastText: "#ffffff",
       },
       background: {
@@ -37,10 +39,10 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
         paper,
       },
       text: {
-        primary: isDark ? "#FFFFFF" : "#20201F",
-        secondary: isDark ? "rgba(255,255,255,0.64)" : "#74716D",
+        primary: isDark ? "#F5F7FB" : "#0F2A47",
+        secondary: isDark ? "#B4C4D6" : "#43607C",
       },
-      divider: isDark ? "rgba(255,255,255,0.17)" : "#E4E2DE",
+      divider: isDark ? "rgba(245,247,251,0.12)" : "rgba(15,42,71,0.1)",
     },
     shape: { borderRadius: 12 },
     typography: {
@@ -122,24 +124,22 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
           },
           filled: {
             "&.MuiChip-colorPrimary": {
-              color: isDark ? "#42D8D7" : "#087FC1",
-              backgroundColor: isDark ? "rgba(0,199,201,0.13)" : "#E8F6FD",
-              "& .MuiChip-label": { color: isDark ? "#42D8D7" : "#087FC1" },
-              "& .MuiChip-icon": { color: isDark ? "#42D8D7" : "#087FC1" },
+              color: isDark ? "#8EB8A6" : "#1F5B4F",
+              backgroundColor: isDark ? "rgba(142,184,166,0.16)" : "rgba(31,91,79,0.08)",
+              "& .MuiChip-label": { color: isDark ? "#8EB8A6" : "#1F5B4F" },
+              "& .MuiChip-icon": { color: isDark ? "#8EB8A6" : "#1F5B4F" },
               "&:hover": {
-                backgroundColor: isDark ? "rgba(0,199,201,0.2)" : "#D8EFFA",
-                color: isDark ? "#42D8D7" : "#087FC1",
-                "& .MuiChip-label": { color: isDark ? "#42D8D7" : "#087FC1" },
+                backgroundColor: isDark ? "rgba(142,184,166,0.22)" : "rgba(31,91,79,0.12)",
+                color: isDark ? "#8EB8A6" : "#1F5B4F",
+                "& .MuiChip-label": { color: isDark ? "#8EB8A6" : "#1F5B4F" },
               },
             },
           },
           outlined: {
-            borderColor: isDark ? "rgba(255,255,255,0.17)" : "#E4E2DE",
-            color: isDark ? "#FFFFFF" : "#20201F",
+            borderColor: isDark ? "rgba(245,247,251,0.12)" : "rgba(15,42,71,0.1)",
+            color: isDark ? "#F5F7FB" : "#0F2A47",
             "&:hover": {
-              backgroundColor: isDark
-                ? "rgba(0,199,201,0.14)"
-                : "rgba(0,191,165,0.08)",
+              backgroundColor: isDark ? "rgba(245,247,251,0.08)" : "rgba(15,42,71,0.04)",
             },
           },
         },
@@ -149,15 +149,15 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
           root: {
             backgroundImage: "none",
             backgroundColor: paper,
-            borderColor: isDark ? "rgba(255,255,255,0.17)" : "#E4E2DE",
+            borderColor: isDark ? "rgba(245,247,251,0.12)" : "rgba(15,42,71,0.1)",
           },
           rounded: {
             borderRadius: 12,
           },
           elevation1: {
             boxShadow: isDark
-              ? "none"
-              : "0 1px 2px rgba(0,0,0,.04), 0 6px 20px rgba(0,0,0,.035)",
+              ? "0 1px 2px rgba(0,0,0,.22)"
+              : "0 1px 2px rgba(15,42,71,.04), 0 12px 28px rgba(15,42,71,.05)",
           },
         },
       },
@@ -176,7 +176,7 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
             color: btnFg,
             backgroundImage: ctaGradient,
             backgroundColor: "transparent",
-            boxShadow: "0 6px 20px rgba(0, 157, 242, 0.28)",
+            boxShadow: isDark ? "0 12px 30px rgba(0,0,0,0.35)" : "0 12px 28px rgba(15,42,71,0.18)",
             transition:
               "transform 180ms cubic-bezier(0.25, 0.1, 0.25, 1), box-shadow 180ms ease, filter 180ms ease",
             "&:active": { transform: "scale(0.96)" },
@@ -186,7 +186,7 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
               filter: "brightness(1.04)",
             },
             "&:focus-visible": {
-              outline: `3px solid ${isDark ? "rgba(66,216,215,0.45)" : "rgba(0,191,165,0.35)"}`,
+              outline: `3px solid ${isDark ? "rgba(245,247,251,0.35)" : "rgba(15,42,71,0.18)"}`,
               outlineOffset: 2,
             },
             "& .MuiSvgIcon-root, & .MuiFab-icon": { color: btnFg },
@@ -221,12 +221,12 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
             "& .MuiFilledInput-root": {
               borderRadius: 12,
               overflow: "hidden",
-              backgroundColor: isDark ? "rgba(255,255,255,0.06)" : "#EEF0F1",
+              backgroundColor: isDark ? "rgba(245,247,251,0.08)" : "#F2EFE7",
               "&:hover": {
-                backgroundColor: isDark ? "rgba(255,255,255,0.09)" : "#E4E2DE",
+                backgroundColor: isDark ? "rgba(245,247,251,0.1)" : "#ECE7DD",
               },
               "&.Mui-focused": {
-                backgroundColor: isDark ? "rgba(255,255,255,0.1)" : "#E4E2DE",
+                backgroundColor: isDark ? "rgba(245,247,251,0.12)" : "#ECE7DD",
               },
               "&:before, &:after": { display: "none" },
             },
@@ -237,8 +237,8 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
         styleOverrides: {
           root: {
             backgroundColor: isDark
-              ? "rgba(255,255,255,0.08)"
-              : "rgba(0,191,165,0.12)",
+              ? "rgba(245,247,251,0.12)"
+              : "rgba(15,42,71,0.1)",
           },
         },
       },

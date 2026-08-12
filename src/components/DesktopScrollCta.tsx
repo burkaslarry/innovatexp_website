@@ -9,6 +9,7 @@ import { uiStrings } from "@/content/ui-strings";
 
 export function DesktopScrollCta() {
   const pathname = usePathname();
+  const isHomepageRoot = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)$/.test(pathname));
   const locale = getLocaleFromPathname(pathname);
   const ui = uiStrings(locale);
   const [visible, setVisible] = useState(false);
@@ -20,7 +21,7 @@ export function DesktopScrollCta() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
-  if (!visible) return null;
+  if (!visible || isHomepageRoot) return null;
 
   return (
     <div

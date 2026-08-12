@@ -13,6 +13,8 @@ export interface HeaderProps {
   title: string;
   subtitle?: string;
   navItems?: NavItem[];
+  ctaLabel?: string;
+  ctaHref?: string;
 }
 
 export default function Header(props: HeaderProps) {

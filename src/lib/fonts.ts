@@ -1,8 +1,8 @@
-import { Geist, Geist_Mono, Noto_Sans_TC } from "next/font/google";
+import { Inter, Geist_Mono, Noto_Sans_HK } from "next/font/google";
 
-/** Latin UI face — loaded via next/font for consistent metrics across browsers. */
-export const geistSans = Geist({
-  variable: "--font-geist-sans",
+/** Latin UI face — loaded via next/font for stable metrics across browsers. */
+export const interSans = Inter({
+  variable: "--font-inter-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -14,7 +14,7 @@ export const geistMono = Geist_Mono({
 });
 
 /** CJK fallback shipped as webfont so Windows / Linux match macOS rendering. */
-export const notoSansCjk = Noto_Sans_TC({
+export const notoSansCjk = Noto_Sans_HK({
   variable: "--font-noto-cjk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
@@ -23,10 +23,10 @@ export const notoSansCjk = Noto_Sans_TC({
 
 /** Apply on `<body>`: CSS variables + default Latin family class. */
 export const rootFontClassName = [
-  geistSans.variable,
+  interSans.variable,
   geistMono.variable,
   notoSansCjk.variable,
-  geistSans.className,
+  interSans.className,
   "antialiased",
   "font-sans",
 ].join(" ");
@@ -36,4 +36,4 @@ export const rootFontClassName = [
  * Geist + Noto first; local system faces only as last resort.
  */
 export const FONT_STACK =
-  "var(--font-geist-sans), var(--font-noto-cjk), PingFang HK, PingFang TC, Hiragino Sans GB, Microsoft JhengHei, sans-serif";
+  'var(--font-inter-sans), var(--font-noto-cjk), "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", sans-serif';

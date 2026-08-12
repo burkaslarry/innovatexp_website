@@ -45,12 +45,13 @@ export default {
       },
       fontFamily: {
         sans: [
-          "var(--font-geist-sans)",
+          "var(--font-inter-sans)",
           "var(--font-noto-cjk)",
           "PingFang HK",
           "PingFang TC",
           "Hiragino Sans GB",
           "Microsoft JhengHei",
+          "Segoe UI",
           "sans-serif",
         ],
         mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],

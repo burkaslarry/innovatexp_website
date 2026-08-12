@@ -27,28 +27,30 @@ export function FaqAccordion({ title, id, faqs, defaultOpenIndex = 0 }: FaqAccor
   return (
     <section
       id={id}
-      className="mb-16 scroll-mt-[var(--header-offset)] rounded-3xl border border-slate-100 bg-white p-8 shadow-card dark:border-slate-700 dark:bg-slate-900/80"
+      className="mb-16 scroll-mt-[var(--header-offset)] rounded-[var(--card-radius)] border border-[color:var(--border-light)] bg-[color:var(--card-bg)] p-6 shadow-card md:p-8"
     >
-      <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white md:text-3xl">{title}</h2>
-      <ul className="divide-y divide-slate-200 dark:divide-slate-600">
+      <h2 className="mb-6 text-[clamp(1.75rem,4vw,2.75rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
+        {title}
+      </h2>
+      <ul className="divide-y divide-[color:var(--border-light)]">
         {faqs.map((faq, idx) => {
           const panelId = `${id ?? "faq"}-panel-${idx}`;
           const buttonId = `${id ?? "faq"}-button-${idx}`;
           const isOpen = openIndex === idx;
           return (
-            <li key={idx} className="border-t border-slate-200 first:border-t-0 dark:border-slate-600">
+            <li key={idx} className="border-t border-[color:var(--border-light)] first:border-t-0">
               <h3 className="py-0">
                 <button
                   type="button"
                   id={buttonId}
-                  className="flex w-full items-center justify-between gap-3 py-4 text-left text-base font-semibold text-brand-primary transition hover:text-brand-primary-hover dark:text-white dark:hover:text-[color:var(--primary-hover)]"
+                  className="flex min-h-[56px] w-full items-center justify-between gap-4 py-4 text-left text-base font-semibold text-[color:var(--text-primary)] transition hover:text-[color:var(--brand-primary)] focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-primary focus-visible:ring-offset-2 focus-visible:ring-offset-canvas"
                   aria-expanded={isOpen}
                   aria-controls={panelId}
                   onClick={() => toggle(idx)}
                 >
                   <span>{faq.question}</span>
                   <svg
-                    className={`h-5 w-5 shrink-0 text-slate-500 transition-transform duration-200 dark:text-slate-400 ${isOpen ? "rotate-180" : ""}`}
+                    className={`h-5 w-5 shrink-0 text-[color:var(--text-tertiary)] transition-transform duration-200 ${isOpen ? "rotate-180" : ""}`}
                     fill="none"
                     viewBox="0 0 24 24"
                     stroke="currentColor"
@@ -62,12 +64,11 @@ export function FaqAccordion({ title, id, faqs, defaultOpenIndex = 0 }: FaqAccor
                 id={panelId}
                 role="region"
                 aria-labelledby={buttonId}
-                className="grid transition-[grid-template-rows] duration-200 ease-out"
+                hidden={!isOpen}
+                className="pb-4"
                 style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
               >
-                <div className="overflow-hidden">
-                  <p className="pb-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{faq.answer}</p>
-                </div>
+                <p className="max-w-[75ch] text-base leading-8 text-[color:var(--text-secondary)]">{faq.answer}</p>
               </div>
             </li>
           );

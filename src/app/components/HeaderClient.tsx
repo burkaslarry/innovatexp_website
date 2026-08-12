@@ -1,9 +1,9 @@
 'use client';
 
-import React, { useState, useEffect, useMemo } from 'react';
+import React, { useEffect, useMemo, useRef, useState } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
-import { useRouter } from 'next/navigation';
+import { usePathname, useRouter } from 'next/navigation';
 import ThemeToggle from '../ThemeToggle';
 import LanguageSwitcher from '../LanguageSwitcher';
 import type { HeaderProps } from './Header';
@@ -12,13 +12,23 @@ import { HeaderCartButton } from '@/components/inquiry-cart/HeaderCartButton';
 
 const LOGO_ALT = 'InnovateXP Limited - AI CRM and Event Management Solutions Hong Kong';
 
-export default function HeaderClient({ variant, title, subtitle, navItems = [] }: HeaderProps) {
+export default function HeaderClient({
+  variant,
+  title,
+  subtitle,
+  navItems = [],
+  ctaLabel,
+  ctaHref,
+}: HeaderProps) {
   const router = useRouter();
+  const pathname = usePathname();
   const loc = useLocalizedHref();
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeHash, setActiveHash] = useState<string | null>(null);
+  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
   const isMain = variant === 'main';
+  const isHomepageRoot = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)$/.test(pathname));
   const showNav = isMain && navItems.length > 0;
 
   const anchorIds = useMemo(
@@ -44,6 +54,22 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
     ro.observe(header);
     return () => ro.disconnect();
   }, [showNav, mobileMenuOpen]);
+
+  useEffect(() => {
+    if (!mobileMenuOpen) return;
+    const onKeyDown = (event: KeyboardEvent) => {
+      if (event.key === 'Escape') setMobileMenuOpen(false);
+    };
+    const prevOverflow = document.body.style.overflow;
+    document.body.style.overflow = 'hidden';
+    window.addEventListener('keydown', onKeyDown);
+    const firstFocusable = mobileMenuRef.current?.querySelector<HTMLElement>('a,button');
+    firstFocusable?.focus();
+    return () => {
+      document.body.style.overflow = prevOverflow;
+      window.removeEventListener('keydown', onKeyDown);
+    };
+  }, [mobileMenuOpen]);
 
   useEffect(() => {
     if (!showNav || anchorIds.length === 0) return;
@@ -98,7 +124,7 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
 
   const navLinkClass = (href: string, base = '') => {
     const active = href.startsWith('#') && activeHash === href;
-    return `${base} ${active ? 'bg-surface text-brand-primary font-semibold dark:text-[color:var(--primary-hover)]' : ''}`.trim();
+    return `${base} ${active ? 'bg-surface text-brand-primary font-semibold' : ''}`.trim();
   };
 
   return (
@@ -109,7 +135,7 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
       id={isMain ? 'main-header' : undefined}
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
-      <div className="mx-auto flex max-w-7xl items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
+      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
         <div className="flex min-w-0 flex-1 items-center gap-3">
           {variant === 'booking' && (
             <button
@@ -145,32 +171,41 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
             {subtitle !== undefined ? (
               <>
                 <div className="hidden min-w-0 sm:block">
-                  <p className="truncate text-lg font-bold text-oxford dark:text-white">{title}</p>
-                  <p className="truncate text-sm text-slate-600 dark:text-slate-400">{subtitle}</p>
+                  <p className="truncate text-lg font-bold text-[color:var(--heading-foreground)]">{title}</p>
+                  <p className="truncate text-sm text-[color:var(--text-secondary)]">{subtitle}</p>
                 </div>
                 <div className="sm:hidden">
-                  <p className="text-lg font-bold text-oxford dark:text-white">{title}</p>
+                  <p className="text-lg font-bold text-[color:var(--heading-foreground)]">{title}</p>
                 </div>
               </>
             ) : (
               <div className="hidden sm:block">
-                <p className="text-lg font-bold text-oxford dark:text-white">{title}</p>
+                <p className="text-lg font-bold text-[color:var(--heading-foreground)]">{title}</p>
               </div>
             )}
           </div>
         </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          <HeaderCartButton />
+          {!isHomepageRoot ? <HeaderCartButton /> : null}
           <ThemeToggle />
           {variant === 'booking' && <LanguageSwitcher />}
           {isMain && (
             <>
+              {ctaLabel && ctaHref ? (
+                <a
+                  href={ctaHref}
+                  className="hidden min-h-[44px] items-center rounded-[var(--btn-radius)] bg-[color:var(--brand-primary)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[color:var(--brand-primary-hover)] md:inline-flex"
+                >
+                  {ctaLabel}
+                </a>
+              ) : null}
               <button
                 className="rounded-lg border border-[color:var(--border-light)] bg-surface-secondary p-2 transition-colors hover:bg-surface md:hidden"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle navigation menu"
                 aria-expanded={mobileMenuOpen}
+                aria-controls="mobile-site-nav"
               >
                 <span className="sr-only">Toggle menu</span>
                 <div className="space-y-1">
@@ -186,30 +221,51 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
       </div>
 
       {showNav && mobileMenuOpen && (
-        <nav className="animate-in slide-in-from-top-2 border-t border-[color:var(--border-light)] bg-surface-secondary md:hidden">
-          <div className="mx-auto max-w-7xl px-6 py-4">
-            <div className="flex flex-col items-center gap-4">
+        <>
+          <button
+            type="button"
+            className="fixed inset-0 z-40 bg-slate-950/20 md:hidden"
+            aria-label="Close navigation menu"
+            onClick={() => setMobileMenuOpen(false)}
+          />
+          <nav
+            id="mobile-site-nav"
+            ref={mobileMenuRef}
+            className="animate-in slide-in-from-top-2 relative z-50 border-t border-[color:var(--border-light)] bg-surface-secondary md:hidden"
+          >
+            <div className="mx-auto max-w-[1280px] px-6 py-4">
+              <div className="flex flex-col items-stretch gap-3">
               {navItems.map((item) => (
                 <a
                   key={item.href}
                   href={item.href}
                   className={navLinkClass(
                     item.href,
-                    'w-full rounded-lg px-4 py-3 text-center font-medium text-[color:var(--text-secondary)] transition-colors hover:bg-surface hover:text-brand-primary dark:hover:text-[color:var(--primary-hover)]',
+                    'w-full rounded-[var(--radius-md)] px-4 py-4 text-left text-base font-medium text-[color:var(--text-primary)] transition-colors hover:bg-surface hover:text-brand-primary',
                   )}
                   onClick={(e) => handleNavClick(e, item.href)}
                 >
                   {item.label}
                 </a>
               ))}
+              {ctaLabel && ctaHref ? (
+                <a
+                  href={ctaHref}
+                  className="btn-brand mt-2 inline-flex min-h-[48px] items-center justify-center px-4 py-3 text-base font-semibold"
+                  onClick={() => setMobileMenuOpen(false)}
+                >
+                  {ctaLabel}
+                </a>
+              ) : null}
+              </div>
             </div>
-          </div>
-        </nav>
+          </nav>
+        </>
       )}
 
       {showNav && (
         <nav className="hidden border-t border-[color:var(--border-light)] bg-surface-secondary md:block">
-          <div className="mx-auto max-w-7xl px-4 py-2 sm:px-6">
+          <div className="mx-auto max-w-[1280px] px-4 py-2 sm:px-6">
             <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
               {navItems.map((item) => (
                 <a
@@ -217,7 +273,7 @@ export default function HeaderClient({ variant, title, subtitle, navItems = [] }
                   href={item.href}
                   className={navLinkClass(
                     item.href,
-                    'rounded-lg px-3 py-2 text-sm font-medium text-[color:var(--text-secondary)] transition-colors hover:bg-surface hover:text-brand-primary dark:hover:text-[color:var(--primary-hover)] sm:px-4 sm:text-[15px]',
+                    'rounded-[var(--radius-md)] px-3 py-2 text-sm font-medium text-[color:var(--text-secondary)] transition-colors hover:bg-surface hover:text-brand-primary sm:px-4 sm:text-[15px]',
                   )}
                   onClick={(e) => handleNavClick(e, item.href)}
                 >
