@@ -1,28 +1,21 @@
-/* F09: Floating WhatsApp CTA - Fixed wa.me link from env or fallback to bookme anchor. */
+/* F09: Floating WhatsApp CTA - Fixed wa.me link (env or Larry's number). */
 "use client";
 
-import { usePathname } from "next/navigation";
-import { getLocaleFromPathname, withLocale } from "@/lib/i18n-routing";
+import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
 
 const defaultMessage =
   "你好！我喺 InnovateXP 網站睇到，想了解點樣將 WhatsApp inquiry / 活動 lead 變成可跟進 pipeline。";
 
 export function FloatingWhatsAppButton() {
-  const pathname = usePathname();
-  const locale = getLocaleFromPathname(pathname);
-  const localizedBookme = withLocale(locale, "/bookme#quotation-wizard");
-  const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
-  const href = rawNumber
-    ? `https://wa.me/${rawNumber}?text=${encodeURIComponent(defaultMessage)}`
-    : localizedBookme;
+  const href = buildWhatsAppHref(defaultMessage);
 
   return (
     <a
       href={href}
       aria-label="WhatsApp InnovateXP or book a free consultation"
       className="group fixed bottom-6 right-6 z-50 inline-flex h-14 w-14 items-center justify-center rounded-full bg-[#25D366] shadow-xl ring-4 ring-white/80 transition hover:scale-105 hover:bg-[#1ebe5d] focus:outline-none focus:ring-4 focus:ring-[#25D366]/40 dark:ring-slate-900/80"
-      target={rawNumber ? "_blank" : undefined}
-      rel={rawNumber ? "noopener noreferrer" : undefined}
+      target="_blank"
+      rel="noopener noreferrer"
     >
       <svg
         aria-hidden="true"

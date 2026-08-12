@@ -4,6 +4,7 @@ import { AiConsultationQuestionnaire } from "@/components/questionnaires/AiConsu
 import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { localeUsesChineseCopy } from "@/lib/i18n-routing";
+import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
 
 export async function generateMetadata({
   params,
@@ -32,12 +33,9 @@ export default async function AiConsultationQuestionnairePage({
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
   const loc = locale as AppLocale;
-  const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
-  const whatsappHref = rawNumber
-    ? `https://wa.me/${rawNumber}?text=${encodeURIComponent(
-        "你好，我填完 AI Consultation Questionnaire，想預約 30 分鐘流程診斷。",
-      )}`
-    : undefined;
+  const whatsappHref = buildWhatsAppHref(
+    "你好，我填完 AI Consultation Questionnaire，想預約 30 分鐘流程診斷。",
+  );
 
   return (
     <main className="min-h-screen bg-[#f7f9fc] py-16 text-slate-900 dark:bg-gray-950 dark:text-slate-100">

@@ -11,14 +11,11 @@ import {
 } from "@mui/material";
 import ChatIcon from "@mui/icons-material/Chat";
 import AssignmentIcon from "@mui/icons-material/Assignment";
-import LanguageIcon from "@mui/icons-material/Language";
-import ReceiptLongIcon from "@mui/icons-material/ReceiptLong";
-import HubIcon from "@mui/icons-material/Hub";
-import EventAvailableIcon from "@mui/icons-material/EventAvailable";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
-import RateReviewIcon from "@mui/icons-material/RateReview";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import { getLocaleFromPathname, localeUsesChineseCopy, withLocale } from "@/lib/i18n-routing";
 import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
+import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
 
 const defaultWhatsAppMessage =
   "你好！我喺 InnovateXP 網站睇到，想了解點樣將 WhatsApp inquiry / 活動 lead 變成可跟進 pipeline。";
@@ -31,22 +28,31 @@ export function FloatingActionMenu() {
   const [open, setOpen] = useState(false);
   const theme = useInnovateXpM3Theme();
 
-  const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
-  const whatsappHref = rawNumber
-    ? `https://wa.me/${rawNumber}?text=${encodeURIComponent(defaultWhatsAppMessage)}`
-    : withLocale(locale, "/bookme");
+  const whatsappHref = buildWhatsAppHref(defaultWhatsAppMessage);
 
-  const actions: { icon: React.ReactNode; name: string; href: string; external?: boolean }[] = [
+  const scrollToFaq = () => {
+    setOpen(false);
+    const homePath = withLocale(locale, "/");
+    if (pathname !== homePath && pathname !== `${homePath}/`) {
+      router.push(`${homePath}#faq`);
+      return;
+    }
+    const el = document.getElementById("faq");
+    if (!el) {
+      router.push(`${homePath}#faq`);
+      return;
+    }
+    const offset =
+      parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-offset"), 10) || 180;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
+  };
+
+  const actions: { icon: React.ReactNode; name: string; href?: string; external?: boolean; onClick?: () => void }[] = [
     {
       icon: <ChatIcon />,
       name: zh ? "WhatsApp 聯絡" : "WhatsApp contact",
       href: whatsappHref,
-      external: Boolean(rawNumber),
-    },
-    {
-      icon: <AssignmentIcon />,
-      name: zh ? "填諮詢問卷" : "Consultation questionnaire",
-      href: withLocale(locale, "/ai-consultation-questionnaire"),
+      external: true,
     },
     {
       icon: <CalendarMonthIcon />,
@@ -54,39 +60,29 @@ export function FloatingActionMenu() {
       href: withLocale(locale, "/bookme"),
     },
     {
-      icon: <EventAvailableIcon />,
-      name: "EventXP",
-      href: withLocale(locale, "/eventxp"),
+      icon: <HelpOutlineIcon />,
+      name: zh ? "常見問題" : "FAQ",
+      onClick: scrollToFaq,
     },
     {
-      icon: <HubIcon />,
-      name: "SmartSales CRM",
-      href: withLocale(locale, "/smartsales-crm"),
-    },
-    {
-      icon: <LanguageIcon />,
-      name: zh ? "客製網站" : "Custom website",
-      href: withLocale(locale, "/pitch-decks"),
-    },
-    {
-      icon: <ReceiptLongIcon />,
-      name: "AccountXP",
-      href: withLocale(locale, "/#accounting-tools-demo"),
-    },
-    {
-      icon: <RateReviewIcon />,
-      name: zh ? "服務後 Feedback" : "Service feedback",
-      href: withLocale(locale, "/ai-feedback-questionnaire"),
+      icon: <AssignmentIcon />,
+      name: zh ? "填諮詢問卷" : "Consultation questionnaire",
+      href: withLocale(locale, "/ai-consultation-questionnaire"),
     },
   ];
 
-  const go = (href: string, external?: boolean) => {
+  const go = (action: (typeof actions)[number]) => {
     setOpen(false);
-    if (external) {
-      window.open(href, "_blank", "noopener,noreferrer");
+    if (action.onClick) {
+      action.onClick();
       return;
     }
-    router.push(href);
+    if (!action.href) return;
+    if (action.external) {
+      window.open(action.href, "_blank", "noopener,noreferrer");
+      return;
+    }
+    router.push(action.href);
   };
 
   return (
@@ -115,7 +111,7 @@ export function FloatingActionMenu() {
             icon={action.icon}
             tooltipTitle={action.name}
             tooltipOpen
-            onClick={() => go(action.href, action.external)}
+            onClick={() => go(action)}
           />
         ))}
       </SpeedDial>

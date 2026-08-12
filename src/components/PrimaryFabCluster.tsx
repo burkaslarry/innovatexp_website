@@ -15,11 +15,13 @@ import {
 import ChatIcon from "@mui/icons-material/Chat";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
+import HelpOutlineIcon from "@mui/icons-material/HelpOutline";
 import ShoppingCartIcon from "@mui/icons-material/ShoppingCart";
 import { getLocaleFromPathname, localeUsesChineseCopy, withLocale } from "@/lib/i18n-routing";
 import { uiStrings } from "@/content/ui-strings";
 import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
 import { useInquiryCart } from "@/context/InquiryCartContext";
+import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
 
 function whatsappPrefillForLocale(locale: ReturnType<typeof getLocaleFromPathname>) {
   return uiStrings(locale).whatsappPrefill;
@@ -50,12 +52,26 @@ export function PrimaryFabCluster() {
   const theme = useInnovateXpM3Theme();
   const { itemCount, setDrawerOpen } = useInquiryCart();
 
-  const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
-  const whatsappHref = rawNumber
-    ? `https://wa.me/${rawNumber}?text=${encodeURIComponent(whatsappPrefillForLocale(locale))}`
-    : withLocale(locale, "/bookme");
+  const whatsappHref = buildWhatsAppHref(whatsappPrefillForLocale(locale));
 
-  const actions: { icon: React.ReactNode; name: string; href: string; external?: boolean }[] = [
+  const scrollToFaq = () => {
+    setOpen(false);
+    const homePath = withLocale(locale, "/");
+    if (pathname !== homePath && pathname !== `${homePath}/`) {
+      router.push(`${homePath}#faq`);
+      return;
+    }
+    const el = document.getElementById("faq");
+    if (!el) {
+      router.push(`${homePath}#faq`);
+      return;
+    }
+    const offset =
+      parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-offset"), 10) || 180;
+    window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
+  };
+
+  const actions: { icon: React.ReactNode; name: string; href?: string; external?: boolean; onClick?: () => void }[] = [
     {
       icon: <CalendarMonthIcon />,
       name: zh ? "預約診斷" : "Book diagnosis",
@@ -65,7 +81,12 @@ export function PrimaryFabCluster() {
       icon: <ChatIcon />,
       name: zh ? "WhatsApp 聯絡" : "WhatsApp contact",
       href: whatsappHref,
-      external: Boolean(rawNumber),
+      external: true,
+    },
+    {
+      icon: <HelpOutlineIcon />,
+      name: zh ? "常見問題" : "FAQ",
+      onClick: scrollToFaq,
     },
     {
       icon: <AssignmentIcon />,
@@ -74,13 +95,18 @@ export function PrimaryFabCluster() {
     },
   ];
 
-  const go = (href: string, external?: boolean) => {
+  const go = (action: (typeof actions)[number]) => {
     setOpen(false);
-    if (external) {
-      window.open(href, "_blank", "noopener,noreferrer");
+    if (action.onClick) {
+      action.onClick();
       return;
     }
-    router.push(href);
+    if (!action.href) return;
+    if (action.external) {
+      window.open(action.href, "_blank", "noopener,noreferrer");
+      return;
+    }
+    router.push(action.href);
   };
 
   return (
@@ -143,7 +169,7 @@ export function PrimaryFabCluster() {
                   },
                   "aria-label": action.name,
                 }}
-                onClick={() => go(action.href, action.external)}
+                onClick={() => go(action)}
               />
             ))}
           </SpeedDial>

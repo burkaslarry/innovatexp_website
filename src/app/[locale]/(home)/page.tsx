@@ -8,6 +8,7 @@ import { getHomepageContent, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
 import { uiStrings } from "@/content/ui-strings";
 import { useLanguage } from "../../LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
+import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
 
 function LandingPage() {
   const { locale } = useLanguage();
@@ -16,10 +17,7 @@ function LandingPage() {
   const ui = uiStrings(locale);
 
   const bookingHref = loc("/bookme");
-  const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
-  const whatsappHref = rawNumber
-    ? `https://wa.me/${rawNumber}?text=${encodeURIComponent(ui.whatsappPrefill)}`
-    : bookingHref;
+  const whatsappHref = buildWhatsAppHref(ui.whatsappPrefill);
 
   const scrollToAnchor = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith("#")) return;
@@ -39,7 +37,7 @@ function LandingPage() {
       { label: content.nav.home, href: "#top" },
       { label: content.nav.diagnosis, href: "#workflow-diagnosis" },
       { label: content.nav.services, href: "#service-approach" },
-      { label: content.nav.flagship, href: "#flagship-products" },
+      { label: content.nav.plans, href: "#service-plans" },
       { label: content.nav.cases, href: "#case-directions" },
       { label: content.nav.about, href: "#about-larry" },
       { label: content.nav.faq, href: "#faq" },
@@ -61,13 +59,14 @@ function LandingPage() {
         <Hero
           eyebrow={content.hero.eyebrow}
           title={content.hero.title}
-          tagline="先執順流程，再落地 AI"
+          tagline={content.footer.tagline}
           description={content.hero.description}
+          fitAudience={content.hero.fitAudience}
           primaryHref={bookingHref}
           primaryLabel={content.hero.primaryCta}
-          secondaryHref="#workflow-diagnosis"
+          secondaryHref="#service-plans"
           secondaryLabel={content.hero.secondaryCta}
-          onSecondaryClick={(e) => scrollToAnchor(e, "#workflow-diagnosis")}
+          onSecondaryClick={(e) => scrollToAnchor(e, "#service-plans")}
           trustBadges={content.hero.trustPoints}
           imageSrc="/mypresent.jpg"
           imageAlt={content.hero.imageAlt}

@@ -11,17 +11,32 @@ export interface FaqAccordionProps {
   title: string;
   id?: string;
   faqs: FaqItem[];
-  /** First item open by default */
+  /** First item open by default (ignored when defaultOpenAll) */
   defaultOpenIndex?: number;
+  /** Expand every FAQ answer by default */
+  defaultOpenAll?: boolean;
 }
 
-export function FaqAccordion({ title, id, faqs, defaultOpenIndex = 0 }: FaqAccordionProps) {
-  const [openIndex, setOpenIndex] = useState<number | null>(
-    defaultOpenIndex >= 0 && defaultOpenIndex < faqs.length ? defaultOpenIndex : null,
-  );
+export function FaqAccordion({
+  title,
+  id,
+  faqs,
+  defaultOpenIndex = 0,
+  defaultOpenAll = false,
+}: FaqAccordionProps) {
+  const [openSet, setOpenSet] = useState<Set<number>>(() => {
+    if (defaultOpenAll) return new Set(faqs.map((_, i) => i));
+    if (defaultOpenIndex >= 0 && defaultOpenIndex < faqs.length) return new Set([defaultOpenIndex]);
+    return new Set();
+  });
 
   const toggle = (idx: number) => {
-    setOpenIndex((prev) => (prev === idx ? null : idx));
+    setOpenSet((prev) => {
+      const next = new Set(prev);
+      if (next.has(idx)) next.delete(idx);
+      else next.add(idx);
+      return next;
+    });
   };
 
   return (
@@ -36,7 +51,7 @@ export function FaqAccordion({ title, id, faqs, defaultOpenIndex = 0 }: FaqAccor
         {faqs.map((faq, idx) => {
           const panelId = `${id ?? "faq"}-panel-${idx}`;
           const buttonId = `${id ?? "faq"}-button-${idx}`;
-          const isOpen = openIndex === idx;
+          const isOpen = openSet.has(idx);
           return (
             <li key={idx} className="border-t border-[color:var(--border-light)] first:border-t-0">
               <h3 className="py-0">
@@ -66,7 +81,6 @@ export function FaqAccordion({ title, id, faqs, defaultOpenIndex = 0 }: FaqAccor
                 aria-labelledby={buttonId}
                 hidden={!isOpen}
                 className="pb-4"
-                style={{ gridTemplateRows: isOpen ? "1fr" : "0fr" }}
               >
                 <p className="max-w-[75ch] text-base leading-8 text-[color:var(--text-secondary)]">{faq.answer}</p>
               </div>

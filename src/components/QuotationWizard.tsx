@@ -26,6 +26,7 @@ import { useLanguage } from "@/app/LanguageContext";
 import { getWizardProgress, type WizardStepId } from "@/lib/wizard-progress";
 import { uiStrings } from "@/content/ui-strings";
 import { withLocale } from "@/lib/i18n-routing";
+import { buildWhatsAppHref, getWhatsAppDigits } from "@/lib/whatsapp-contact";
 
 /*
  * InnovateXP Quotation Wizard — conversion flow
@@ -390,14 +391,16 @@ export default function QuotationWizard({
 
   const ui = uiStrings(locale);
   const progress = getWizardProgress(step as WizardStepId, path);
-  const rawWaNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
-  const escapeWhatsAppHref = rawWaNumber
-    ? `https://wa.me/${rawWaNumber}?text=${encodeURIComponent(
-        usesChineseUi
-          ? "你好！我想直接透過 WhatsApp 了解 InnovateXP 服務。"
-          : "Hi — I'd like to learn about InnovateXP via WhatsApp.",
-      )}`
-    : withLocale(locale, "/bookme");
+  const rawWaNumber = getWhatsAppDigits();
+  const escapeWhatsAppHref = buildWhatsAppHref(
+    usesChineseUi
+      ? "你好！我想直接透過 WhatsApp 了解 InnovateXP 服務。"
+      : "Hi — I'd like to learn about InnovateXP via WhatsApp.",
+  );
+  const resultWhatsAppHref =
+    result && summary
+      ? buildWhatsAppHref(`${t("wizard.whatsapp.dm_intro")}\n\n${summary}`)
+      : escapeWhatsAppHref;
 
   const wizardProgressBar =
     step !== "q0" ? (
@@ -429,8 +432,8 @@ export default function QuotationWizard({
         <div className="mt-3 flex flex-wrap items-center justify-center gap-3 text-xs">
           <a
             href={escapeWhatsAppHref}
-            target={rawWaNumber ? "_blank" : undefined}
-            rel={rawWaNumber ? "noopener noreferrer" : undefined}
+            target="_blank"
+            rel="noopener noreferrer"
             className="font-semibold text-brand-primary underline decoration-brand-primary/30 underline-offset-2 dark:text-[color:var(--primary-hover)]"
           >
             {ui.wizardProgress.escapeWhatsApp}
@@ -477,7 +480,7 @@ export default function QuotationWizard({
           <>
             <h3 className="text-base font-semibold leading-snug text-slate-900 dark:text-white">{t("wizard.q0")}</h3>
             <div className="mt-4 grid grid-cols-1 gap-3">
-              {(["eventxp", "smartsales", "accountxp", "website", "consulting", "bundle"] as const).map((p) => (
+              {(["consulting", "smartsales", "eventxp", "accountxp", "website", "bundle"] as const).map((p) => (
                 <button
                   key={p}
                   type="button"
@@ -917,6 +920,14 @@ export default function QuotationWizard({
             </div>
 
             <div className="mt-5 flex flex-col gap-3">
+              <a
+                href={resultWhatsAppHref}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex min-h-[48px] w-full items-center justify-center rounded-full border-2 border-emerald-600 bg-emerald-600 px-6 py-3 text-base font-bold text-white transition hover:bg-emerald-700"
+              >
+                {t("wizard.finale.whatsapp_answers")}
+              </a>
               <button
                 type="button"
                 onClick={downloadSummary}

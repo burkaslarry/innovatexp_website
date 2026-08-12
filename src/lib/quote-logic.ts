@@ -36,6 +36,10 @@ const PLAN = {
   consulting_agent: "wizard.plan.consulting_agent",
   consulting_full: "wizard.plan.consulting_full",
   consulting_audit: "wizard.plan.consulting_audit",
+  consulting_sprint: "wizard.plan.consulting_sprint",
+  consulting_foundation: "wizard.plan.consulting_foundation",
+  consulting_accelerator: "wizard.plan.consulting_accelerator",
+  consulting_partnership: "wizard.plan.consulting_partnership",
   website_starter: "wizard.plan.website_starter",
   accountxp_experience: "wizard.plan.accountxp_experience",
 } as const;
@@ -50,6 +54,10 @@ const RANGE = {
   from_6800: "wizard.range.from_6800",
   from_2500_day: "wizard.range.from_2500_day",
   from_80000: "wizard.range.from_80000",
+  hkd_6800: "wizard.range.hkd_6800",
+  hkd_26000: "wizard.range.hkd_26000",
+  hkd_50000: "wizard.range.hkd_50000",
+  hkd_98000: "wizard.range.hkd_98000",
   website_calculated: "wizard.range.website_calculated",
   accountxp_1880: "wizard.range.accountxp_1880",
 } as const;
@@ -208,46 +216,47 @@ export function computeQuote(path: QuotePath, answers: QuoteAnswers): QuoteCompu
     };
   }
 
-  // consulting
-  const stage = String(answers.consulting_stage || "");
-  const goal = String(answers.consulting_goal || "");
+  // consulting — main line maps to published Sprint / Foundation / Accelerator / Partnership
   const budget = String(answers.consulting_budget || "");
+  const c = PRICING.consultancy;
 
-  const stageImpl =
-    stage === "implement_idea" || stage === "has_idea" || stage === "has_prototype";
-
-  if (goal === "culture" || goal === "train_team") {
+  if (budget === "10_30k" || budget === "foundation") {
     return {
       path,
-      planKey: PLAN.consulting_bootcamp,
-      rangeKey: RANGE.from_2500_day,
-      rationaleKeys: [R.consulting_training_goal],
-    };
-  }
-
-  if (goal === "scale" || goal === "one_workflow" || stageImpl) {
-    return {
-      path,
-      planKey: PLAN.consulting_agent,
-      rangeKey: RANGE.from_6800,
+      planKey: PLAN.consulting_foundation,
+      rangeKey: RANGE.hkd_26000,
       rationaleKeys: [R.consulting_build_focus],
+      amountHkd: c.foundation3Month,
     };
   }
 
-  if (budget === "80k_plus") {
+  if (budget === "30_80k" || budget === "accelerator") {
     return {
       path,
-      planKey: PLAN.consulting_full,
-      rangeKey: RANGE.from_80000,
+      planKey: PLAN.consulting_accelerator,
+      rangeKey: RANGE.hkd_50000,
       rationaleKeys: [R.consulting_budget_scope],
+      amountHkd: c.accelerator6Month,
     };
   }
 
+  if (budget === "80k_plus" || budget === "partnership") {
+    return {
+      path,
+      planKey: PLAN.consulting_partnership,
+      rangeKey: RANGE.hkd_98000,
+      rationaleKeys: [R.consulting_budget_scope],
+      amountHkd: c.partnership12Month,
+    };
+  }
+
+  // under_10k / undecided / default → 30-day Discovery Sprint
   return {
     path,
-    planKey: PLAN.consulting_audit,
-    rangeKey: RANGE.from_6800,
+    planKey: PLAN.consulting_sprint,
+    rangeKey: RANGE.hkd_6800,
     rationaleKeys: [R.consulting_audit_entry],
+    amountHkd: c.discoverySprint30Day,
   };
 }
 

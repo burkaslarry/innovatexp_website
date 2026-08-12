@@ -10,6 +10,15 @@ type SectionItem = {
   body: string;
 };
 
+type CaseStudy = {
+  industry: string;
+  title: string;
+  before: string;
+  sprint: string;
+  after: string;
+  metric: string;
+};
+
 type HomepageContent = {
   brandTitle: string;
   brandSubtitle: string;
@@ -17,7 +26,7 @@ type HomepageContent = {
     home: string;
     diagnosis: string;
     services: string;
-    flagship: string;
+    plans: string;
     cases: string;
     about: string;
     faq: string;
@@ -27,6 +36,7 @@ type HomepageContent = {
     eyebrow: string;
     title: string;
     description: string;
+    fitAudience: string;
     primaryCta: string;
     secondaryCta: string;
     trustPoints: string[];
@@ -52,49 +62,42 @@ type HomepageContent = {
     title: string;
     items: SectionItem[];
   };
-  flagshipProducts: {
+  consultancy: {
     eyebrow: string;
     title: string;
     intro: string;
-    flowLabels: {
-      intro: string;
-      benefits: string;
-      features: string;
-    };
-    account: {
+    fitNote: string;
+    startingBadge: string;
+    plans: {
       name: string;
-      audience: string;
-      intro: string;
-      benefits: string[];
-      features: string[];
+      body: string;
+      deliverables: string[];
       cta: string;
-      videoSubtitles: [string, ...string[]];
-      videoCaptions: [string, ...string[]];
-    };
-    fitness: {
-      name: string;
-      audience: string;
-      intro: string;
-      benefits: string[];
-      features: string[];
-      cta: string;
-      videoSubtitles: [string, string];
-      videoCaptions: [string, string];
-    };
+    }[];
   };
-  beforeAfter: {
+  cases: {
     eyebrow: string;
     title: string;
-    beforeTitle: string;
-    afterTitle: string;
-    before: string[];
-    after: string[];
+    intro: string;
+    beforeLabel: string;
+    sprintLabel: string;
+    afterLabel: string;
+    metricLabel: string;
+    items: CaseStudy[];
+  };
+  whyUs: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    rows: { opponent: string; difference: string }[];
+    punchline: string;
   };
   about: {
     eyebrow: string;
     title: string;
     intro: string;
     body: string[];
+    identity: string;
     portraitAlt: string;
   };
   faq: {
@@ -123,19 +126,20 @@ const zhHk: HomepageContent = {
     home: "首頁",
     diagnosis: "流程診斷",
     services: "服務方式",
-    flagship: "皇牌產品",
-    cases: "案例方向",
+    plans: "服務方案",
+    cases: "行業實例",
     about: "關於 Larry",
     faq: "常見問題",
     cta: "預約 30 分鐘診斷",
   },
   hero: {
     eyebrow: "AI 商務顧問｜14+ 年 IT 交付及流程落地經驗",
-    title: "幫香港小團隊執順一條流程，\n先止血，再落 AI。",
+    title: "幫香港小團隊止住漏單、慢報價同交接混亂。",
     description:
-      "查詢散喺 WhatsApp、Excel 同不同同事手上？我會先同你找出最影響收入或營運嘅流程漏洞，再用合適嘅 SOP、KPI、CRM、AI 或自動化方法落地。",
+      "Larry 會先同你鎖定一條最影響收入或營運嘅流程，30 日內執清責任、SOP 同追蹤方式；需要時先接 CRM、AI 或自動化。",
+    fitAudience: "適合香港 3–30 人培訓、課程及專業服務團隊",
     primaryCta: "預約 30 分鐘流程診斷",
-    secondaryCta: "了解 Workflow Health Check",
+    secondaryCta: "睇服務方案同起價",
     trustPoints: ["14+ 年 IT 交付經驗", "專注香港 3–30 人小團隊", "由流程診斷到實際落地"],
     diagnosticInputs: ["WhatsApp 查詢", "Excel 跟進表", "網上表單", "同事交接"],
     diagnosticOutput: "一條睇得清、跟得到、有人負責嘅 workflow",
@@ -156,22 +160,22 @@ const zhHk: HomepageContent = {
   approach: {
     eyebrow: "服務方式",
     title: "唔係一開始叫你買系統。先睇清楚，邊條流程最值得執。",
-    intro: "Diagnose → Simplify → Implement。先止住漏單，再決定工具。",
+    intro: "聚焦一條流程，而唔係大規模數碼轉型。先止血，再視乎情況接工具。",
     steps: [
       {
         label: "Step 1",
         title: "30 分鐘流程診斷",
-        body: "找出最影響收入或營運的一個卡位。",
+        body: "鎖定最值得先處理的收入／營運卡位。",
       },
       {
         label: "Step 2",
-        title: "Workflow Health Check / 30 日 Sprint",
-        body: "整理現況、責任、SOP、KPI 和 quick wins。",
+        title: "30 日 Workflow Sprint",
+        body: "交付流程圖、責任人、SOP、追蹤節點同一個可執行 quick win。",
       },
       {
         label: "Step 3",
-        title: "落地與 Adoption",
-        body: "按需要才導入 CRM、AI、自動化、活動系統或會計工具，並協助團隊實際採用。",
+        title: "Adoption & KPI Review",
+        body: "協助團隊使用；Day 30／60／90 檢討漏跟進、報價時間、交接完成率。需要時先接 CRM、AI 或自動化。",
       },
     ],
   },
@@ -186,91 +190,96 @@ const zhHk: HomepageContent = {
       { title: "Team AI Enablement", body: "令團隊懂得在既有 SOP 裡安全、實際地使用 AI。" },
     ],
   },
-  flagshipProducts: {
-    eyebrow: "皇牌產品",
-    title: "流程執順之後，用月費 SaaS 真正幫你頂住日常營運。",
-    intro: "先講俾對象聽：Accounting / HR 同 Fitness Coach / Gym Studio 老闆，各自面對唔同痛點。下面係系統介紹、帶來好處，同附帶功能同使用體驗。",
-    flowLabels: {
-      intro: "系統介紹",
-      benefits: "帶來好處",
-      features: "功能與體驗",
-    },
-    account: {
-      name: "AccountXP",
-      audience: "Accounting · HR · 行政",
-      intro:
-        "AccountXP 係 Telegram／WhatsApp 收據助手：影相或上傳 PDF／JPG／PNG，bot 自動存入 batch；send `/export` 就生成財務報表 spreadsheet，含日期、分類、金額、幣種同原檔連結。",
-      benefits: [
-        "唔使再逐張 receipt 人手 key Excel，月尾對數快好多。",
-        "支援多幣種（HKD、USD、CNY 等），適合有跨境支出嘅公司。",
-        "收據集中一個 chat，HR／Accounting 同老闆都睇到同一版本。",
-        "由 upload → 分類 → export，一條 flow 頂住日常行政。",
-      ],
-      features: [
-        "Telegram bot 上傳收據（PDF／JPG／PNG／WEBP 等）",
-        "Batch 暫存 + `/export` 一鍵出財務報表",
-        "Payment Date · Category · Amount · Currency · Reference File",
-        "WhatsApp 收條 upload（按需要接入）",
-        "加密儲存 · 按 scope 做 OCR",
-      ],
-      cta: "了解 AccountXP 月費方案",
-      videoSubtitles: ["Telegram 上傳收據 → batch → /export 出報表"],
-      videoCaptions: ["示範：upload 收據 → 存入 batch → /export 生成 financial statement"],
-    },
-    fitness: {
-      name: "FitnessXP",
-      audience: "Fitness Coach · Gym Studio 老闆",
-      intro:
-        "FitnessXP 係 mobile-first 教練／studio 工作台：排程、學員、報課、付款、出勤一個 app 搞掂；Coach 用週／月曆睇堂，Admin 管帳號權限，系統自動提醒未付學員。",
-      benefits: [
-        "Coach 唔使再靠 WhatsApp + Excel 記堂同收款，一個畫面睇晒今日 schedule。",
-        "未付學員有 reminder，減少漏追、減少老闆親自催數。",
-        "出勤可 export Excel，方便對 coach 佣金同 studio payroll。",
-        "Admin／Coach／Clerk 分權，studio 大咗都唔亂。",
-      ],
-      features: [
-        "教練工作台：週曆／月曆排程（Google Calendar 式）",
-        "學員 CRM · 報課 · 已付／未付狀態",
-        "WhatsApp 付款 reminder",
-        "出勤記錄 · 一對一／小班／瑜珈等分類",
-        "系統帳號：Admin · Coach · Clerk · 重設密碼／停用",
-        "匯出 Excel 做 payroll / 對數",
-      ],
-      cta: "了解 FitnessXP 月費方案",
-      videoSubtitles: ["系統帳號 · 權限管理", "教練工作台 · 排程 · 出勤 · 匯出"],
-      videoCaptions: [
-        "示範：Admin 管理 Coach／Clerk 帳號同權限",
-        "示範：Coach 排程、學員跟進、出勤匯出 Excel",
-      ],
-    },
+  consultancy: {
+    eyebrow: "主線方案",
+    title: "陳生進來最先應該睇到嘅，只有呢條主線。",
+    intro: "由 30 日驗證一條流程開始；再按需要升級到 3／6／12 個月陪跑。工具試用收埋二級頁，唔同主線搶注意力。",
+    fitNote: "唔係賣你一套系統；係由流程診斷、落地、團隊採用到 KPI review，幫你將一條卡住收入嘅流程真正行順。",
+    startingBadge: "建議起步",
+    plans: [
+      {
+        name: "30 日 Discovery Sprint",
+        body: "先驗證一條最影響收入或營運嘅流程。",
+        deliverables: ["流程圖", "責任分工", "SOP／跟進節點", "簡單 KPI", "一個 quick win"],
+        cta: "由 Sprint 開始",
+      },
+      {
+        name: "3 個月 Foundation",
+        body: "1–2 條流程落地、SOP v1、每月 checkpoint、一次團隊培訓。",
+        deliverables: ["1–2 條流程", "SOP v1", "每月 checkpoint", "1 次團隊培訓"],
+        cta: "了解 Foundation",
+      },
+      {
+        name: "6 個月 Accelerator",
+        body: "一個部門／3–4 條流程、adoption 追蹤、最多兩次工作坊。",
+        deliverables: ["3–4 條流程", "Adoption 追蹤", "最多 2 次工作坊"],
+        cta: "了解 Accelerator",
+      },
+      {
+        name: "12 個月 Partnership",
+        body: "年度 roadmap、SOP governance、管理層 review。",
+        deliverables: ["年度 roadmap", "SOP governance", "管理層 review"],
+        cta: "了解 Partnership",
+      },
+    ],
   },
-  beforeAfter: {
-    eyebrow: "Before → After",
-    title: "由「日日追、日日問」，變成「睇到、跟到、交到」。",
-    beforeTitle: "Before",
-    afterTitle: "After",
-    before: [
-      "WhatsApp / Excel / 紙仔 / 不同同事各自記錄",
-      "狀態唔清楚",
-      "跟進容易漏",
-      "老闆日日追住每個人",
+  cases: {
+    eyebrow: "行業實例",
+    title: "同一套方法，喺唔同行業點樣落地。",
+    intro: "以下係匿名情境（Before → 30 日做法 → After → 可觀察指標）。未經驗證數字唔作 ROI 承諾。",
+    beforeLabel: "Before",
+    sprintLabel: "30 日做法",
+    afterLabel: "After",
+    metricLabel: "可觀察指標",
+    items: [
+      {
+        industry: "培訓／課程",
+        title: "報名查詢散喺 WhatsApp，跟進靠記性",
+        before: "查詢、試堂、報名、收款各自用唔同 chat 同 Excel；同事放假就唔知跟到邊。",
+        sprint: "鎖定「查詢 → 試堂 → 報名」一條線；寫清責任人、跟進節點同簡單狀態表。",
+        after: "每條查詢有 owner 同下一步；老闆唔使逐日追住問。",
+        metric: "漏跟進明顯減少；報名轉換可喺一頁睇到。",
+      },
+      {
+        industry: "專業服務",
+        title: "報價慢、版本多、交接靠口頭",
+        before: "報價資料要問完先出；同事各自有一份「最新版」；客人催完先發現漏跟。",
+        sprint: "執清報價資料來源、責任同審批節點；固定一個可追蹤清單。",
+        after: "報價有標準節奏；交接唔再靠口頭。",
+        metric: "平均報價時間縮短；重覆問資料次數下降。",
+      },
+      {
+        industry: "Studio 行業（方法實例）",
+        title: "排程／收款／出勤靠 WhatsApp + Excel",
+        before: "教練記堂、催未付、對佣金各用各方法；Admin 日日救火。",
+        sprint: "用同一套「先執流程再落工具」方法：責任、狀態、reminder、匯出對數。",
+        after: "排程、學員狀態、付款 reminder 集中一處；唔再靠記性頂住 studio。",
+        metric: "未付追蹤有提醒；出勤／佣金對數可匯出。",
+      },
     ],
-    after: [
-      "一條睇得見嘅 workflow",
-      "下一步清楚",
-      "有人負責",
-      "進度可量度",
-      "唔再靠記性頂住公司運作",
+  },
+  whyUs: {
+    eyebrow: "點解揀 Larry",
+    title: "大部分人賣工具，部分人賣建議。我先執順流程。",
+    intro: "對比式差異化——講客戶利益，唔講內部產品策略。",
+    rows: [
+      { opponent: "管理顧問（交報告就走）", difference: "我建到、接到、帶團隊用到" },
+      { opponent: "SaaS 供應商（賣 licence）", difference: "我可以告訴你唔需要買" },
+      { opponent: "自動化／AI freelancer（接 job）", difference: "我先問商業問題，先提工具" },
+      { opponent: "大型 IT 公司（六位數項目）", difference: "HK$6,800 先試一條流程，風險極低" },
     ],
+    punchline: "如果你唔需要系統，我會直接告訴你。",
   },
   about: {
     eyebrow: "關於 Larry",
-    title: "我唔係淨係建議你用 AI。我會幫你執到真係行到。",
-    intro: "我係 Larry Lo，做過十多年 IT 交付、產品及流程落地。",
+    title: "我係那個會叫你「先唔好買」嘅顧問。",
+    intro: "做了十多年 IT 交付，我見過最多嘅失敗，唔係系統建唔好，而係系統建好了、完美交付、然後唔好使。",
     body: [
-      "我見過太多中小企唔係冇客，而係查詢散喺 WhatsApp、Excel、表單同不同同事手上，最後漏咗跟進、慢咗報價，老闆日日救火。",
-      "所以 InnovateXP 的方法係：先幫你執順一條真正影響收入或營運的流程，再視乎情況用 CRM、會計工具、活動系統或自動化去落地。",
+      "同一班人照舊用 WhatsApp、照舊開 Excel，沒人肯講。",
+      "後來我睇回頭，發現問題從來唔係工具——係本來那條流程就沒人真正執清過。SOP 只存在老闆嘅腦裏，一個人放假就斷。",
+      "所以我轉了整個做法：先同你執順一條流程，真係有效、團隊真係用緊，才談要唔要加 AI 或系統。",
     ],
+    identity: "我係那個會叫你「先唔好買」嘅顧問。",
     portraitAlt: "Larry Lo 於研討會分享 AI 商業顧問與客戶管理流程",
   },
   faq: {
@@ -281,12 +290,13 @@ const zhHk: HomepageContent = {
       { question: "要幾耐先見到改善？", answer: "通常由一條流程開始，先見到可觀察嘅改善，再決定要唔要擴大。唔會一開始就做全公司 overhaul。" },
       { question: "同事唔慣用新系統點算？", answer: "Adoption 同 ownership 同工具一樣重要。做法會盡量貼近你團隊而家嘅工作方式，減少硬推。" },
       { question: "30 分鐘流程診斷會做咩？", answer: "會集中睇一條最卡嘅流程，找出漏位、責任不清位、同最值得先執嘅位置。" },
-      { question: "公司好細，值得做嗎？", answer: "如果一個人放假就會卡住，通常就值得做。小團隊更加需要先整理一條核心流程。" },
+      { question: "公司好細，值得做嗎？", answer: "如果一個人放假就會卡住，通常就值得做。小團隊更加需要先整理一條核心流程。主線由 HK$6,800 嘅 30 日 Sprint 起步，風險可控。" },
+      { question: "服務方案點樣起步？", answer: "主線：30 日 Discovery Sprint（HK$6,800）→ 3 個月 Foundation（HK$26,000）→ 6 個月 Accelerator（HK$50,000）→ 12 個月 Partnership（HK$98,000）。工具試用唔係首頁主打。" },
     ],
   },
   finalCta: {
     title: "想知道你公司邊條流程最值得先執？",
-    body: "預約 30 分鐘流程診斷，一齊睇下邊個位最容易漏單、卡住交接，或者令你日日救火。",
+    body: "預約 30 分鐘流程診斷，找出你公司最容易漏單、慢報價或卡交接的一條流程。",
     primary: "預約 30 分鐘流程診斷",
     secondary: "WhatsApp 聯絡 Larry",
   },
@@ -301,45 +311,22 @@ const zhHk: HomepageContent = {
 
 const zhTw: HomepageContent = {
   ...zhHk,
-  nav: {
-    ...zhHk.nav,
-    flagship: "皇牌產品",
-  },
   hero: {
     ...zhHk.hero,
-    title: "幫香港小團隊梳理一條流程，\n先止血，再落 AI。",
-  },
-  flagshipProducts: {
-    ...zhHk.flagshipProducts,
-    intro: "先講給對象聽：Accounting / HR 與 Fitness Coach / Gym Studio 老闆，各自面對不同痛點。下面是系統介紹、帶來好處，以及附帶功能與使用體驗。",
-    account: {
-      ...zhHk.flagshipProducts.account,
-      intro:
-        "AccountXP 是 Telegram／WhatsApp 收據助手：拍照或上傳 PDF／JPG／PNG，bot 自動存入 batch；send `/export` 就生成財務報表 spreadsheet，含日期、分類、金額、幣別與原檔連結。",
-      benefits: [
-        "不必再逐張 receipt 人工 key Excel，月底對帳快很多。",
-        "支援多幣別（HKD、USD、CNY 等），適合有跨境支出的公司。",
-        "收據集中一個 chat，HR／Accounting 與老闆都看到同一版本。",
-        "由 upload → 分類 → export，一條 flow 撐住日常行政。",
-      ],
-      cta: "了解 AccountXP 月費方案",
-    },
-    fitness: {
-      ...zhHk.flagshipProducts.fitness,
-      intro:
-        "FitnessXP 是 mobile-first 教練／studio 工作台：排程、學員、報課、付款、出勤一個 app 搞定；Coach 用週／月曆看堂，Admin 管帳號權限，系統自動提醒未付學員。",
-      benefits: [
-        "Coach 不必再靠 WhatsApp + Excel 記堂與收款，一個畫面看完整日 schedule。",
-        "未付學員有 reminder，減少漏追、減少老闆親自催款。",
-        "出勤可 export Excel，方便對 coach 佣金與 studio payroll。",
-        "Admin／Coach／Clerk 分權，studio 大了也不亂。",
-      ],
-      cta: "了解 FitnessXP 月費方案",
-    },
+    title: "幫香港小團隊止住漏單、慢報價與交接混亂。",
+    description:
+      "Larry 會先同你鎖定一條最影響收入或營運的流程，30 日內釐清責任、SOP 與追蹤方式；需要時才接 CRM、AI 或自動化。",
+    fitAudience: "適合香港 3–30 人培訓、課程及專業服務團隊",
   },
   about: {
     ...zhHk.about,
-    intro: "我是 Larry Lo，做過十多年 IT 交付、產品及流程落地。",
+    intro: "做了十多年 IT 交付，我見過最多的失敗，不是系統建不好，而是系統建好了、完美交付、然後不好用。",
+    body: [
+      "同一班人照舊用 WhatsApp、照舊開 Excel，沒人肯講。",
+      "後來我回頭看，發現問題從來不是工具——是本來那條流程就沒人真正釐清過。SOP 只存在老闆的腦裏，一個人請假就斷。",
+      "所以我轉了整個做法：先同你釐清一條流程，真的有效、團隊真的在用，才談要不要加 AI 或系統。",
+    ],
+    identity: "我是那個會叫你「先不要買」的顧問。",
   },
   faq: {
     ...zhHk.faq,
@@ -349,7 +336,8 @@ const zhTw: HomepageContent = {
       { question: "要多久才看得到改善？", answer: "通常由一條流程開始，先看到可觀察的改善，再決定要不要擴大。不會一開始就做全公司 overhaul。" },
       { question: "同事不習慣新系統怎麼辦？", answer: "Adoption 和 ownership 跟工具一樣重要。做法會盡量貼近團隊現在的工作方式，減少硬推。" },
       { question: "30 分鐘流程診斷會做什麼？", answer: "會集中看一條最卡的流程，找出漏點、責任不清處，以及最值得先整理的位置。" },
-      { question: "公司很小，值得做嗎？", answer: "如果一個人請假就會卡住，通常就值得做。小團隊更需要先整理一條核心流程。" },
+      { question: "公司很小，值得做嗎？", answer: "如果一個人請假就會卡住，通常就值得做。小團隊更需要先整理一條核心流程。主線由 HK$6,800 的 30 日 Sprint 起步，風險可控。" },
+      { question: "服務方案怎麼起步？", answer: "主線：30 日 Discovery Sprint（HK$6,800）→ 3 個月 Foundation（HK$26,000）→ 6 個月 Accelerator（HK$50,000）→ 12 個月 Partnership（HK$98,000）。工具試用不是首頁主打。" },
     ],
   },
 };
@@ -361,19 +349,20 @@ const en: HomepageContent = {
     home: "Home",
     diagnosis: "Diagnosis",
     services: "Approach",
-    flagship: "Flagship SaaS",
-    cases: "Use Cases",
+    plans: "Programs",
+    cases: "Industry examples",
     about: "About Larry",
     faq: "FAQ",
     cta: "Book a 30-min diagnosis",
   },
   hero: {
     eyebrow: "AI Business Consultant | 14+ years in IT delivery and workflow implementation",
-    title: "Fix one messy workflow first.\nThen make AI work.",
+    title: "Stop leaked leads, slow quotes, and messy handoffs for Hong Kong small teams.",
     description:
-      "Enquiries scattered across WhatsApp, Excel, forms, and different colleagues? Larry helps SMEs find the workflow leak first, then land the right SOP, KPI, CRM, AI, or automation change.",
+      "Larry locks onto the one workflow hurting revenue or operations most, then clarifies ownership, SOP, and tracking within 30 days — CRM, AI, or automation only when justified.",
+    fitAudience: "Built for Hong Kong training, course, and professional-service teams of 3–30 people",
     primaryCta: "Book a 30-minute workflow diagnosis",
-    secondaryCta: "See Workflow Health Check",
+    secondaryCta: "See programs and starting price",
     trustPoints: ["14+ years of delivery experience", "Focused on Hong Kong teams of 3–30", "From diagnosis to practical implementation"],
     diagnosticInputs: ["WhatsApp enquiries", "Spreadsheet tracker", "Web form", "Team handoff"],
     diagnosticOutput: "One visible workflow with clear ownership",
@@ -394,11 +383,11 @@ const en: HomepageContent = {
   approach: {
     eyebrow: "Approach",
     title: "No system pitch first. First see which workflow is worth fixing.",
-    intro: "Diagnose → Simplify → Implement.",
+    intro: "One workflow at a time — not a company-wide digital transformation.",
     steps: [
-      { label: "Step 1", title: "30-minute workflow diagnosis", body: "Find the one bottleneck hurting revenue or operations most." },
-      { label: "Step 2", title: "Workflow Health Check / 30-day Sprint", body: "Clarify the current state, ownership, SOP, KPI, and quick wins." },
-      { label: "Step 3", title: "Implementation and adoption", body: "Only then bring in CRM, AI, automation, event systems, or accounting tools when justified." },
+      { label: "Step 1", title: "30-minute workflow diagnosis", body: "Lock onto the revenue or operations bottleneck worth fixing first." },
+      { label: "Step 2", title: "30-day Workflow Sprint", body: "Deliver process map, owners, SOP, tracking points, and one executable quick win." },
+      { label: "Step 3", title: "Adoption & KPI review", body: "Help the team use it. Review missed follow-ups, quote time, and handoff completion on Day 30 / 60 / 90. Add CRM, AI, or automation only when needed." },
     ],
   },
   services: {
@@ -412,93 +401,97 @@ const en: HomepageContent = {
       { title: "Team AI Enablement", body: "Help the team use AI safely and practically inside existing SOPs." },
     ],
   },
-  flagshipProducts: {
-    eyebrow: "Flagship products",
-    title: "After the workflow is clear, monthly SaaS keeps daily operations running.",
-    intro:
-      "Pitch to the right audience first: accounting / HR teams and fitness coaches / gym studio owners face different bottlenecks. Below: system intro, benefits, and the features you get.",
-    flowLabels: {
-      intro: "System intro",
-      benefits: "Benefits",
-      features: "Features & experience",
-    },
-    account: {
-      name: "AccountXP",
-      audience: "Accounting · HR · Admin",
-      intro:
-        "AccountXP is a Telegram / WhatsApp receipt assistant. Snap or upload PDF / JPG / PNG receipts; the bot batches them; send `/export` to generate a financial spreadsheet with date, category, amount, currency, and file reference.",
-      benefits: [
-        "Stop re-keying receipts into Excel — month-end reconciliation gets much faster.",
-        "Multi-currency support (HKD, USD, CNY, etc.) for cross-border expenses.",
-        "One chat thread for receipts so accounting, HR, and the owner share one truth.",
-        "Upload → classify → export in one flow for daily admin.",
-      ],
-      features: [
-        "Telegram bot receipt upload (PDF / JPG / PNG / WEBP, etc.)",
-        "Batch queue + `/export` financial statement",
-        "Payment Date · Category · Amount · Currency · Reference File",
-        "WhatsApp receipt upload (when wired)",
-        "Encrypted storage · OCR per scope",
-      ],
-      cta: "See AccountXP monthly plan",
-      videoSubtitles: ["Telegram upload → batch → /export report"],
-      videoCaptions: ["Demo: upload receipts → batch → /export financial statement"],
-    },
-    fitness: {
-      name: "FitnessXP",
-      audience: "Fitness Coach · Gym Studio Owner",
-      intro:
-        "FitnessXP is a mobile-first coach / studio workbench: schedule, students, enrolment, payments, and attendance in one app. Coaches use week / month views; admins manage roles; the system nudges unpaid students.",
-      benefits: [
-        "Coaches stop juggling WhatsApp + Excel for classes and payments — one screen for today’s schedule.",
-        "Payment reminders for unpaid students — less chasing, less owner firefighting.",
-        "Export attendance to Excel for coach commissions and studio payroll.",
-        "Admin / Coach / Clerk roles so the studio stays organised as it grows.",
-      ],
-      features: [
-        "Coach workbench: week / month schedule (Google Calendar style)",
-        "Student CRM · enrolment · paid / unpaid status",
-        "WhatsApp payment reminders",
-        "Attendance · 1-on-1 / small group / yoga categories",
-        "System accounts: Admin · Coach · Clerk · reset / deactivate",
-        "Export Excel for payroll / reconciliation",
-      ],
-      cta: "See FitnessXP monthly plan",
-      videoSubtitles: ["System accounts · permissions", "Coach workbench · schedule · attendance export"],
-      videoCaptions: [
-        "Demo: admin manages coach / clerk accounts and permissions",
-        "Demo: coach schedule, student follow-up, attendance Excel export",
-      ],
-    },
+  consultancy: {
+    eyebrow: "Main programs",
+    title: "The only path a serious buyer should see first.",
+    intro: "Start by validating one workflow in 30 days, then expand to 3 / 6 / 12 months. Tool trials stay on secondary pages.",
+    fitNote: "Not selling you a system first — diagnosis, implementation, adoption, and KPI review until one revenue-blocking workflow actually runs.",
+    startingBadge: "Recommended start",
+    plans: [
+      {
+        name: "30-day Discovery Sprint",
+        body: "Validate one workflow that affects revenue or operations.",
+        deliverables: ["Process map", "Ownership", "SOP / follow-up nodes", "Simple KPI", "One quick win"],
+        cta: "Start with Sprint",
+      },
+      {
+        name: "3-month Foundation",
+        body: "Land 1–2 workflows, SOP v1, monthly checkpoints, one team training.",
+        deliverables: ["1–2 workflows", "SOP v1", "Monthly checkpoints", "1 team training"],
+        cta: "See Foundation",
+      },
+      {
+        name: "6-month Accelerator",
+        body: "One department / 3–4 workflows, adoption tracking, up to two workshops.",
+        deliverables: ["3–4 workflows", "Adoption tracking", "Up to 2 workshops"],
+        cta: "See Accelerator",
+      },
+      {
+        name: "12-month Partnership",
+        body: "Annual roadmap, SOP governance, management reviews.",
+        deliverables: ["Annual roadmap", "SOP governance", "Management reviews"],
+        cta: "See Partnership",
+      },
+    ],
   },
-  beforeAfter: {
-    eyebrow: "Before → After",
-    title: "From chasing and asking every day to seeing, following, and handing over clearly.",
-    beforeTitle: "Before",
-    afterTitle: "After",
-    before: [
-      "WhatsApp, Excel, paper notes, and disconnected staff",
-      "Unclear status",
-      "Missed follow-up",
-      "Owner chasing everyone",
+  cases: {
+    eyebrow: "Industry examples",
+    title: "The same method, applied in different industries.",
+    intro: "Anonymous scenarios (Before → 30-day approach → After → observable metric). No unverified ROI claims.",
+    beforeLabel: "Before",
+    sprintLabel: "30-day approach",
+    afterLabel: "After",
+    metricLabel: "Observable metric",
+    items: [
+      {
+        industry: "Training / courses",
+        title: "Enrolment enquiries scattered across WhatsApp",
+        before: "Enquiry, trial class, enrolment, and payment lived in different chats and sheets; leave days broke continuity.",
+        sprint: "Locked onto enquiry → trial → enrolment; clarified owners, follow-up nodes, and a simple status board.",
+        after: "Every enquiry has an owner and next step; the owner stops chasing daily updates.",
+        metric: "Fewer missed follow-ups; enrolment conversion visible on one page.",
+      },
+      {
+        industry: "Professional services",
+        title: "Slow quotes, many versions, verbal handoffs",
+        before: "Quotes waited on missing data; each colleague had a different “latest” version; reminders exposed missed follow-ups.",
+        sprint: "Clarified quote inputs, ownership, and approval nodes; one trackable checklist.",
+        after: "Quotes follow a standard rhythm; handoffs are no longer verbal-only.",
+        metric: "Shorter average quote time; fewer repeat data requests.",
+      },
+      {
+        industry: "Studio industry (method example)",
+        title: "Schedule / payments / attendance on WhatsApp + Excel",
+        before: "Coaches tracked classes, unpaid students, and commissions differently; admins firefought daily.",
+        sprint: "Applied the same “fix workflow, then tools” method: ownership, status, reminders, export reconciliation.",
+        after: "Schedule, student status, and payment reminders live in one place — memory no longer runs the studio.",
+        metric: "Unpaid follow-up has reminders; attendance / commission export is possible.",
+      },
     ],
-    after: [
-      "One visible workflow",
-      "Clear next action",
-      "Assigned owner",
-      "Measurable progress",
-      "Less dependence on memory",
+  },
+  whyUs: {
+    eyebrow: "Why Larry",
+    title: "Most people sell tools. Some sell advice. I fix the workflow first.",
+    intro: "Contrast for client benefit — not internal product strategy language.",
+    rows: [
+      { opponent: "Management consultants (report and leave)", difference: "I build, connect, and help the team adopt" },
+      { opponent: "SaaS vendors (sell licences)", difference: "I can tell you not to buy" },
+      { opponent: "Automation / AI freelancers (take jobs)", difference: "I ask the business question before naming tools" },
+      { opponent: "Large IT firms (six-figure projects)", difference: "HK$6,800 to try one workflow — low risk" },
     ],
+    punchline: "If you do not need a system, I will tell you directly.",
   },
   about: {
     eyebrow: "About Larry",
-    title: "I do not just suggest AI. I help the workflow run in real life.",
-    intro: "I am Larry Lo. I have spent more than a decade in IT delivery, product work, and workflow implementation.",
+    title: "I am the consultant who may tell you not to buy yet.",
+    intro: "After more than a decade in IT delivery, the failure I saw most was not bad builds — it was perfect delivery that nobody used.",
     body: [
-      "Many SMEs do not have a lead problem. Their enquiries are scattered across WhatsApp, spreadsheets, forms, and different colleagues, so follow-up gets missed and quotations slow down.",
-      "That is why InnovateXP starts by fixing one workflow that affects revenue or operations, then uses CRM, accounting tools, event systems, or automation only when the case is clear.",
+      "The same people kept using WhatsApp and Excel, and nobody said so out loud.",
+      "Looking back, the problem was rarely the tool — the workflow itself had never been clarified. The SOP lived only in the owner’s head, so one leave day broke everything.",
+      "So I changed the approach: fix one workflow first until it works and the team actually uses it — then talk about AI or systems.",
     ],
-    portraitAlt: "Larry Lo 於研討會分享 AI 商業顧問與客戶管理流程",
+    identity: "I am the consultant who may tell you not to buy yet.",
+    portraitAlt: "Larry Lo speaking about AI business consulting and client workflow design",
   },
   faq: {
     title: "FAQ",
@@ -508,12 +501,13 @@ const en: HomepageContent = {
       { question: "How quickly can we see improvement?", answer: "Usually by focusing on one workflow first. We do not start with a company-wide overhaul." },
       { question: "What if the team resists a new system?", answer: "Adoption matters as much as the tool. The workflow and handoff design must fit how the team actually works." },
       { question: "What happens in the 30-minute diagnosis?", answer: "We focus on one workflow, identify leakage and ownership gaps, and decide what is worth fixing first." },
-      { question: "We are a very small company. Is it still worth doing?", answer: "Yes, especially when one absence can stall the whole workflow." },
+      { question: "We are a very small company. Is it still worth doing?", answer: "Yes, especially when one absence can stall the whole workflow. The main path starts at HK$6,800 for a 30-day Sprint." },
+      { question: "How do the programs start?", answer: "Main path: 30-day Discovery Sprint (HK$6,800) → 3-month Foundation (HK$26,000) → 6-month Accelerator (HK$50,000) → 12-month Partnership (HK$98,000). Tool trials are not the homepage headline." },
     ],
   },
   finalCta: {
     title: "Want to know which workflow your company should fix first?",
-    body: "Book a 30-minute workflow diagnosis and review where leads leak, handoffs stall, or the owner ends up firefighting every day.",
+    body: "Book a 30-minute workflow diagnosis and find the one process most likely to leak leads, slow quotes, or stall handoffs.",
     primary: "Book a 30-minute workflow diagnosis",
     secondary: "WhatsApp Larry",
   },
@@ -526,133 +520,8 @@ const en: HomepageContent = {
   },
 };
 
-const ja: HomepageContent = {
-  ...en,
-  nav: { ...en.nav, flagship: "主力プロダクト" },
-  flagshipProducts: {
-    eyebrow: "主力プロダクト",
-    title: "ワークフローを整理した後、月額SaaSで日常業務を支えます。",
-    intro:
-      "まず対象者に語りかけます：経理／HRチームとフィットネスコーチ／ジムスタジオオーナーでは課題が異なります。以下はシステム紹介、メリット、機能と体験です。",
-    flowLabels: {
-      intro: "システム紹介",
-      benefits: "メリット",
-      features: "機能と体験",
-    },
-    account: {
-      name: "AccountXP",
-      audience: "経理 · HR · 管理",
-      intro:
-        "AccountXPはTelegram／WhatsAppの領収書アシスタントです。PDF／JPG／PNGをアップロードするとbotがバッチ保存し、`/export`で日付・カテゴリ・金額・通貨・参照ファイル付きの財務スプレッドシートを生成します。",
-      benefits: [
-        "領収書をExcelに手入力する手間を削減し、月末の照合を高速化。",
-        "HKD・USD・CNYなど多通貨に対応。",
-        "領収書を1つのチャットに集約し、経理・HR・オーナーが同じ情報を共有。",
-        "アップロード→分類→エクスポートの一連フローで日常管理を支援。",
-      ],
-      features: [
-        "Telegram botで領収書アップロード（PDF／JPG／PNG／WEBP等）",
-        "バッチキュー + `/export` 財務レポート",
-        "Payment Date · Category · Amount · Currency · Reference File",
-        "WhatsApp領収書アップロード（接続時）",
-        "暗号化保存 · スコープに応じたOCR",
-      ],
-      cta: "AccountXP月額プランを見る",
-      videoSubtitles: ["Telegramアップロード → バッチ → /export"],
-      videoCaptions: ["デモ：領収書アップロード → バッチ → 財務レポート生成"],
-    },
-    fitness: {
-      name: "FitnessXP",
-      audience: "フィットネスコーチ · ジムスタジオオーナー",
-      intro:
-        "FitnessXPはモバイルファーストのコーチ／スタジオワークベンチです。スケジュール、生徒、受講登録、支払い、出勤を1アプリで管理。コーチは週／月カレンダー、管理者は権限管理、未払い生徒へのリマインダー付き。",
-      benefits: [
-        "WhatsApp + Excelの二重管理から解放。1画面で今日のスケジュールを把握。",
-        "未払い生徒へのリマインダーで督促漏れを削減。",
-        "出勤データをExcel出力し、コーチ報酬や給与計算に活用。",
-        "Admin／Coach／Clerkの役割分担でスタジオ拡大時も整理。",
-      ],
-      features: [
-        "コーチワークベンチ：週／月スケジュール（Googleカレンダー風）",
-        "生徒CRM · 受講登録 · 支払い状況",
-        "WhatsApp支払いリマインダー",
-        "出勤記録 · マンツーマン／グループ／ヨガ等",
-        "システムアカウント：Admin · Coach · Clerk",
-        "Excelエクスポート（給与・照合用）",
-      ],
-      cta: "FitnessXP月額プランを見る",
-      videoSubtitles: ["システムアカウント · 権限管理", "コーチワークベンチ · スケジュール · 出勤"],
-      videoCaptions: [
-        "デモ：AdminがCoach／Clerkアカウントと権限を管理",
-        "デモ：コーチのスケジュール、生徒フォロー、出勤Excel出力",
-      ],
-    },
-  },
-};
-
-const de: HomepageContent = {
-  ...en,
-  nav: { ...en.nav, flagship: "Flagship-Produkte" },
-  flagshipProducts: {
-    eyebrow: "Flagship-Produkte",
-    title: "Nach dem Workflow-Fix hält monatliches SaaS den Alltag am Laufen.",
-    intro:
-      "Zuerst die richtige Zielgruppe: Buchhaltung / HR und Fitness-Coaches / Studio-Inhaber haben unterschiedliche Engpässe. Unten: System, Nutzen, Funktionen und Erlebnis.",
-    flowLabels: {
-      intro: "System",
-      benefits: "Nutzen",
-      features: "Funktionen & Erlebnis",
-    },
-    account: {
-      name: "AccountXP",
-      audience: "Buchhaltung · HR · Admin",
-      intro:
-        "AccountXP ist ein Telegram-/WhatsApp-Beleg-Assistent. PDF/JPG/PNG hochladen, der Bot sammelt sie im Batch; mit `/export` entsteht ein Finanz-Spreadsheet mit Datum, Kategorie, Betrag, Währung und Dateireferenz.",
-      benefits: [
-        "Kein manuelles Abtippen in Excel — Monatsabschluss wird deutlich schneller.",
-        "Mehrwährungsfähig (HKD, USD, CNY u. a.).",
-        "Alle Belege in einem Chat — Buchhaltung, HR und Inhaber sehen dieselbe Version.",
-        "Upload → Klassifizierung → Export in einem Flow.",
-      ],
-      features: [
-        "Telegram-Bot für Belege (PDF/JPG/PNG/WEBP usw.)",
-        "Batch-Warteschlange + `/export` Finanzbericht",
-        "Payment Date · Category · Amount · Currency · Reference File",
-        "WhatsApp-Beleg-Upload (wenn angebunden)",
-        "Verschlüsselte Speicherung · OCR nach Scope",
-      ],
-      cta: "AccountXP Monatsplan ansehen",
-      videoSubtitles: ["Telegram-Upload → Batch → /export"],
-      videoCaptions: ["Demo: Belege hochladen → Batch → Finanzbericht"],
-    },
-    fitness: {
-      name: "FitnessXP",
-      audience: "Fitness-Coach · Studio-Inhaber",
-      intro:
-        "FitnessXP ist eine mobile Coach-/Studio-Workbench: Terminplan, Schüler, Anmeldung, Zahlungen und Anwesenheit in einer App. Wochen-/Monatskalender für Coaches, Rollenverwaltung für Admins, Erinnerungen für unbezahlte Schüler.",
-      benefits: [
-        "Schluss mit WhatsApp + Excel — ein Bildschirm für den Tagesplan.",
-        "Zahlungserinnerungen reduzieren Nachfassen durch den Inhaber.",
-        "Anwesenheit als Excel für Coach-Provisionen und Lohn.",
-        "Admin/Coach/Clerk-Rollen halten wachsende Studios organisiert.",
-      ],
-      features: [
-        "Coach-Workbench: Wochen-/Monatsplan (Google-Kalender-Stil)",
-        "Schüler-CRM · Anmeldung · bezahlt/offen",
-        "WhatsApp-Zahlungserinnerungen",
-        "Anwesenheit · 1:1 / Gruppe / Yoga",
-        "Systemkonten: Admin · Coach · Clerk",
-        "Excel-Export für Lohn/Abstimmung",
-      ],
-      cta: "FitnessXP Monatsplan ansehen",
-      videoSubtitles: ["Systemkonten · Berechtigungen", "Coach-Workbench · Plan · Anwesenheit"],
-      videoCaptions: [
-        "Demo: Admin verwaltet Coach-/Clerk-Konten",
-        "Demo: Coach-Plan, Schüler-Follow-up, Excel-Export",
-      ],
-    },
-  },
-};
+const ja: HomepageContent = { ...en };
+const de: HomepageContent = { ...en };
 
 const byLocale: Record<AppLocale, HomepageContent> = {
   en,

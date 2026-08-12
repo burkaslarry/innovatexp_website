@@ -17,6 +17,7 @@ export interface HeroProps {
   onSecondaryClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
   secondaryHref?: string;
   trustBadges?: string[];
+  fitAudience?: string;
   imageSrc?: string;
   imageAlt?: string;
   visual?: ReactNode;
@@ -34,6 +35,7 @@ export function Hero({
   onSecondaryClick,
   secondaryHref = "#workflow-diagnosis",
   trustBadges = [],
+  fitAudience,
   imageSrc,
   imageAlt,
   visual,
@@ -67,6 +69,11 @@ export function Hero({
               style={{ textWrap: "pretty" }}
             >
               {description}
+            </p>
+          ) : null}
+          {fitAudience?.trim() ? (
+            <p className="mx-auto mt-4 max-w-[42rem] text-sm font-semibold leading-7 text-[color:var(--heading-foreground)] lg:mx-0">
+              {fitAudience}
             </p>
           ) : null}
           <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">

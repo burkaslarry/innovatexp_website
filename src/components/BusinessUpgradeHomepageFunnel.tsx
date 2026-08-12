@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { BriefcaseBusiness, CheckCircle2, ChevronRight, Clock3, HandCoins, MessagesSquare } from "lucide-react";
-import { FlagshipProductsSection } from "@/components/FlagshipProductsSection";
+import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare } from "lucide-react";
+import { ConsultancyMainlineSection } from "@/components/ConsultancyMainlineSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
@@ -81,6 +81,8 @@ export function BusinessUpgradeHomepageFunnel({
         </ol>
       </SectionShell>
 
+      <ConsultancyMainlineSection locale={locale} bookingHref={bookingHref} />
+
       <SectionShell id="service-modules">
         <SectionHeader
           title={c.services.title}
@@ -96,43 +98,61 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </SectionShell>
 
-      <FlagshipProductsSection locale={locale} bookingHref={bookingHref} />
-
       <SectionShell id="case-directions">
         <SectionHeader
-          title={c.beforeAfter.title}
-          eyebrow={<p className="mb-3 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">{c.beforeAfter.eyebrow}</p>}
+          title={c.cases.title}
+          subtitle={c.cases.intro}
+          eyebrow={<p className="mb-3 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">{c.cases.eyebrow}</p>}
         />
-        <div className="grid gap-5 lg:grid-cols-2">
-          <article className="ixp-card border-[color:var(--pain-accent)] bg-[color:var(--pain-accent-soft)] p-6">
-            <div className="flex items-center gap-3">
-              <HandCoins className="h-6 w-6 text-[color:var(--pain-accent)]" aria-hidden />
-              <h3 className="text-xl font-semibold text-[color:var(--heading-foreground)]">{c.beforeAfter.beforeTitle}</h3>
-            </div>
-            <ul className="mt-4 grid gap-3">
-              {c.beforeAfter.before.map((item) => (
-                <li key={item} className="flex gap-3 text-base leading-8 text-[color:var(--text-primary)]">
-                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[color:var(--pain-accent)]" aria-hidden />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
-          <article className="ixp-card p-6">
-            <div className="flex items-center gap-3">
-              <CheckCircle2 className="h-6 w-6 text-[color:var(--secondary-color)]" aria-hidden />
-              <h3 className="text-xl font-semibold text-[color:var(--heading-foreground)]">{c.beforeAfter.afterTitle}</h3>
-            </div>
-            <ul className="mt-4 grid gap-3">
-              {c.beforeAfter.after.map((item) => (
-                <li key={item} className="flex gap-3 text-base leading-8 text-[color:var(--text-secondary)]">
-                  <span className="mt-2 h-2.5 w-2.5 rounded-full bg-[color:var(--secondary-color)]" aria-hidden />
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ul>
-          </article>
+        <div className="grid gap-5">
+          {c.cases.items.map((item) => (
+            <article key={item.title} className="ixp-card p-5 md:p-6">
+              <p className="text-xs font-bold uppercase tracking-[0.12em] text-[color:var(--secondary-color)]">
+                {item.industry}
+              </p>
+              <h3 className="mt-2 text-xl font-semibold text-[color:var(--heading-foreground)]">{item.title}</h3>
+              <div className="mt-4 grid gap-4 md:grid-cols-2 xl:grid-cols-4">
+                <div>
+                  <p className="text-xs font-semibold text-[color:var(--pain-accent)]">{c.cases.beforeLabel}</p>
+                  <p className="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">{item.before}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[color:var(--brand-primary)]">{c.cases.sprintLabel}</p>
+                  <p className="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">{item.sprint}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[color:var(--secondary-color)]">{c.cases.afterLabel}</p>
+                  <p className="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">{item.after}</p>
+                </div>
+                <div>
+                  <p className="text-xs font-semibold text-[color:var(--heading-foreground)]">{c.cases.metricLabel}</p>
+                  <p className="mt-2 text-sm leading-7 text-[color:var(--text-primary)]">{item.metric}</p>
+                </div>
+              </div>
+            </article>
+          ))}
         </div>
+      </SectionShell>
+
+      <SectionShell id="why-larry">
+        <SectionHeader
+          title={c.whyUs.title}
+          subtitle={c.whyUs.intro}
+          eyebrow={<p className="mb-3 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">{c.whyUs.eyebrow}</p>}
+        />
+        <div className="overflow-hidden rounded-[var(--card-radius)] border border-[color:var(--border-light)]">
+          <table className="w-full text-left text-sm">
+            <tbody className="divide-y divide-[color:var(--border-light)]">
+              {c.whyUs.rows.map((row) => (
+                <tr key={row.opponent} className="bg-[color:var(--card-bg)]">
+                  <td className="p-4 align-top font-medium text-[color:var(--text-secondary)] md:w-[42%]">{row.opponent}</td>
+                  <td className="p-4 align-top font-semibold text-[color:var(--heading-foreground)]">{row.difference}</td>
+                </tr>
+              ))}
+            </tbody>
+          </table>
+        </div>
+        <p className="mt-4 text-base font-semibold leading-8 text-[color:var(--heading-foreground)]">{c.whyUs.punchline}</p>
       </SectionShell>
 
       <SectionShell id="about-larry">
@@ -161,11 +181,12 @@ export function BusinessUpgradeHomepageFunnel({
                 </p>
               ))}
             </div>
+            <p className="mt-5 text-base font-semibold text-[color:var(--brand-primary)]">{c.about.identity}</p>
           </div>
         </div>
       </SectionShell>
 
-      <FaqAccordion id="faq" title={c.faq.title} faqs={c.faq.items} defaultOpenIndex={0} />
+      <FaqAccordion id="faq" title={c.faq.title} faqs={c.faq.items} defaultOpenAll />
 
       <SectionShell id="final-cta" className="mb-12">
         <div className="ixp-card p-6 md:p-10">
