@@ -65,7 +65,7 @@ const zh: BniPowerTeamCopy = {
   title: "幫你搵上下游，組建有效轉介團隊",
   intro:
     "作為一位老闆，有效尋找上下游行業來組建團隊非常重要。填寫你的專業同產品／服務，即刻產生 Channel、Referral Partner、供應商例子，同埋 5 個 Power Team 建議。",
-  why: "作為一個 BNI 會員，有效尋找我的上下游行業來組建團隊是非常重要的。",
+  why: "作為一位老闆，有效尋找我的上下游行業來組建團隊是非常重要的。",
   professionLabel: "行業／專業領域",
   professionPlaceholder: "例如：AI 商業顧問、會計、室內設計",
   offeringLabel: "產品／服務",
@@ -103,7 +103,7 @@ const en: BniPowerTeamCopy = {
   eyebrow: "BNI Power Team tool",
   title: "Map upstream, parallel, and downstream partners",
   intro:
-    "As a BNI member, finding complementary industries is essential. Enter your profession and offerings to generate Channel, Referral Partner, and supplier examples — plus 5 Power Team suggestions.",
+    "As an entrepeneur, finding complementary industries is essential. Enter your profession and offerings to generate Channel, Referral Partner, and supplier examples — plus 5 Power Team suggestions.",
   why: "As an entrepeneur, finding upstream and downstream industries to build an effective team is very important.",
   professionLabel: "Industry / profession",
   professionPlaceholder: "e.g. AI business consultant, accountant, interior designer",

@@ -39,7 +39,12 @@ function CollaborateMark({
         size="small"
         label={badge}
         color="secondary"
-        sx={{ fontWeight: 700, mb: 0.75 }}
+        sx={{
+          fontWeight: 700,
+          mb: 0.75,
+          color: "#fff",
+          "& .MuiChip-label": { color: "#fff" },
+        }}
       />
       <Typography variant="body2" sx={{ color: "secondary.main", fontWeight: 600, lineHeight: 1.6 }}>
         {item.collaborateNote || fallbackNote}
