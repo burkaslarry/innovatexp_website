@@ -15,7 +15,7 @@ export interface PremiumPriceCardProps {
 }
 
 /**
- * Highlighted tier: gradient panel, gold border, badge, optional "why choose" callout.
+ * Highlighted tier with gradient top accent (landing page design system).
  */
 export function PremiumPriceCard({
   badge,
@@ -31,53 +31,43 @@ export function PremiumPriceCard({
 }: PremiumPriceCardProps) {
   return (
     <div className="h-full w-full">
-      <div
-        className="flex h-full flex-col rounded-2xl p-[2px] shadow-xl"
-        style={{
-          background: "linear-gradient(135deg, var(--brand-accent-teal), var(--oxford-blue), var(--brand-accent-teal-hover))",
-        }}
-      >
-        <div className="relative flex min-h-0 flex-1 flex-col rounded-[14px] bg-gradient-to-br from-cyan-50 via-white to-amber-50 px-6 pb-8 pt-10 text-slate-900 dark:from-slate-900 dark:via-slate-950 dark:to-slate-950 dark:text-white">
-          <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-sm font-bold text-slate-900 shadow-md">
-            {badge}
-          </div>
-          <h3 className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">{name}</h3>
-          <div className="mt-2">
-            <span className="text-3xl font-bold text-brand-primary dark:text-white">{price}</span>
-            <span className="text-slate-700 dark:text-white/90">{period}</span>
-          </div>
-          {subtitle ? (
-            <p className="mt-1 text-sm font-medium text-amber-800 dark:text-amber-200/90">{subtitle}</p>
-          ) : null}
-          {target ? <p className="mt-2 text-sm font-medium text-slate-700 dark:text-slate-300">{target}</p> : null}
+      <div className="gradient-card relative flex h-full flex-col rounded-2xl border border-[color:var(--border-light)] bg-surface-secondary px-6 pb-8 pt-10 text-slate-900 shadow-xl dark:text-white">
+        <div className="absolute -top-4 left-1/2 -translate-x-1/2 rounded-full bg-amber-400 px-4 py-1 text-sm font-bold text-slate-900 shadow-md">
+          {badge}
+        </div>
+        <h3 className="mt-2 text-2xl font-bold text-slate-950 dark:text-white">{name}</h3>
+        <div className="mt-2">
+          <span className="text-3xl font-bold text-brand-primary dark:text-white">{price}</span>
+          <span className="text-slate-700 dark:text-white/90">{period}</span>
+        </div>
+        {subtitle ? (
+          <p className="mt-1 text-sm font-medium text-amber-800 dark:text-amber-200/90">{subtitle}</p>
+        ) : null}
+        {target ? <p className="mt-2 text-sm font-medium text-slate-700 dark:text-slate-300">{target}</p> : null}
 
-          <ul className="mt-5 flex flex-1 flex-col gap-2">
-            {featureLines.map((line, i) => (
-              <li
-                key={i}
-                className="flex items-start gap-2 text-sm text-slate-700 dark:text-white/95"
-              >
-                <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-amber-500 dark:text-amber-300" aria-hidden />
-                <span>{line}</span>
-              </li>
-            ))}
-          </ul>
+        <ul className="mt-5 flex flex-1 flex-col gap-2">
+          {featureLines.map((line, i) => (
+            <li key={i} className="flex items-start gap-2 text-sm text-slate-700 dark:text-white/95">
+              <Sparkles className="mt-0.5 h-4 w-4 shrink-0 text-amber-500 dark:text-amber-300" aria-hidden />
+              <span>{line}</span>
+            </li>
+          ))}
+        </ul>
 
-          <div className="mt-auto shrink-0 space-y-5 pt-6">
-            {callout ? (
-              <div className="rounded-xl border border-brand-primary/50 bg-brand-cream-warm/95 p-3 dark:bg-amber-50/10">
-                <p className="flex gap-2 text-xs font-medium leading-relaxed text-amber-900 dark:text-amber-100">
-                  <Lightbulb className="h-4 w-4 shrink-0 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
-                  {callout}
-                </p>
-              </div>
-            ) : null}
-
-            <div className="flex w-full justify-center">
-              <Button href={ctaHref} variant="primary" className="w-full max-w-full touch-manipulation">
-                {ctaLabel}
-              </Button>
+        <div className="mt-auto shrink-0 space-y-5 pt-6">
+          {callout ? (
+            <div className="rounded-xl border border-brand-primary/50 bg-brand-cream-warm/95 p-3 dark:bg-amber-50/10">
+              <p className="flex gap-2 text-xs font-medium leading-relaxed text-amber-900 dark:text-amber-100">
+                <Lightbulb className="h-4 w-4 shrink-0 text-brand-primary dark:text-[color:var(--primary-hover)]" aria-hidden />
+                {callout}
+              </p>
             </div>
+          ) : null}
+
+          <div className="flex w-full justify-center">
+            <Button href={ctaHref} variant="primary" className="w-full max-w-full touch-manipulation">
+              {ctaLabel}
+            </Button>
           </div>
         </div>
       </div>

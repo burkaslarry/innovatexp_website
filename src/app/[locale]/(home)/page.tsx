@@ -1,11 +1,11 @@
 "use client";
 
 import React, { useMemo } from "react";
-import { ArrowRight, ClipboardCheck, FileSpreadsheet, MessageSquareText, UserRound } from "lucide-react";
 import Header from "../../components/Header";
 import { Hero } from "@/components/Hero";
 import { BusinessUpgradeHomepageFunnel } from "@/components/BusinessUpgradeHomepageFunnel";
 import { getHomepageContent, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
+import { uiStrings } from "@/content/ui-strings";
 import { useLanguage } from "../../LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
 
@@ -13,6 +13,13 @@ function LandingPage() {
   const { locale } = useLanguage();
   const loc = useLocalizedHref();
   const content = getHomepageContent(locale);
+  const ui = uiStrings(locale);
+
+  const bookingHref = loc("/bookme");
+  const rawNumber = process.env.NEXT_PUBLIC_WHATSAPP_NUMBER?.replace(/[^\d]/g, "");
+  const whatsappHref = rawNumber
+    ? `https://wa.me/${rawNumber}?text=${encodeURIComponent(ui.whatsappPrefill)}`
+    : bookingHref;
 
   const scrollToAnchor = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
     if (!href.startsWith("#")) return;
@@ -47,7 +54,7 @@ function LandingPage() {
         subtitle={content.brandSubtitle}
         navItems={navItems}
         ctaLabel={content.nav.cta}
-        ctaHref={HOMEPAGE_PLACEHOLDERS.bookingUrl}
+        ctaHref={bookingHref}
       />
 
       <main className="mx-auto max-w-[1280px] bg-bg px-4 py-8 pb-10 text-fg sm:px-6 md:py-12">
@@ -56,54 +63,17 @@ function LandingPage() {
           title={content.hero.title}
           tagline="先執順流程，再落地 AI"
           description={content.hero.description}
-          primaryHref={HOMEPAGE_PLACEHOLDERS.bookingUrl}
+          primaryHref={bookingHref}
           primaryLabel={content.hero.primaryCta}
           secondaryHref="#workflow-diagnosis"
           secondaryLabel={content.hero.secondaryCta}
           onSecondaryClick={(e) => scrollToAnchor(e, "#workflow-diagnosis")}
           trustBadges={content.hero.trustPoints}
-          visual={
-            <div className="ixp-card p-5 md:p-6">
-              <div className="grid gap-4 md:grid-cols-[1fr_auto_1fr] md:items-center">
-                <div className="grid gap-3">
-                  {[
-                    { Icon: MessageSquareText, label: content.hero.diagnosticInputs[0] },
-                    { Icon: FileSpreadsheet, label: content.hero.diagnosticInputs[1] },
-                    { Icon: ClipboardCheck, label: content.hero.diagnosticInputs[2] },
-                    { Icon: UserRound, label: content.hero.diagnosticInputs[3] },
-                  ].map(({ Icon, label }) => {
-                    const NodeIcon = Icon;
-                    return (
-                      <div
-                        key={label}
-                        className="flex items-center gap-3 rounded-[var(--radius-md)] border border-[color:var(--border-light)] bg-[color:var(--bg-elevated)] px-4 py-3"
-                      >
-                        <NodeIcon className="h-5 w-5 text-[color:var(--pain-accent)]" aria-hidden />
-                        <span className="text-sm font-medium text-[color:var(--text-primary)]">{label}</span>
-                      </div>
-                    );
-                  })}
-                </div>
-                <div className="flex justify-center">
-                  <div className="flex h-12 w-12 items-center justify-center rounded-full border border-[color:var(--border-light)] bg-[color:var(--bg-secondary)]">
-                    <ArrowRight className="h-5 w-5 rotate-90 text-[color:var(--secondary-color)] md:rotate-0" aria-hidden />
-                  </div>
-                </div>
-                <div className="rounded-[var(--card-radius)] border border-[color:var(--border-light)] bg-[color:var(--bg-secondary)] p-5">
-                  <p className="text-lg font-semibold text-[color:var(--heading-foreground)]">{content.hero.diagnosticOutput}</p>
-                  <p className="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">{content.hero.diagnosticCaption}</p>
-                </div>
-              </div>
-            </div>
-          }
+          imageSrc="/mypresent.jpg"
+          imageAlt={content.hero.imageAlt}
         />
 
-        <BusinessUpgradeHomepageFunnel
-          locale={locale}
-          bookingHref={HOMEPAGE_PLACEHOLDERS.bookingUrl}
-          whatsappHref={HOMEPAGE_PLACEHOLDERS.whatsappUrl}
-          emailAddress={HOMEPAGE_PLACEHOLDERS.emailAddress}
-        />
+        <BusinessUpgradeHomepageFunnel locale={locale} bookingHref={bookingHref} whatsappHref={whatsappHref} />
       </main>
 
       <footer className="border-t border-[color:var(--border-light)] bg-[color:var(--bg-secondary)] py-10">
@@ -114,10 +84,13 @@ function LandingPage() {
             <p className="mt-3 text-sm text-[color:var(--text-secondary)]">{content.footer.tagline}</p>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-[color:var(--text-secondary)]">
-            <a href={HOMEPAGE_PLACEHOLDERS.linkedinUrl}>LinkedIn</a>
-            <a href={HOMEPAGE_PLACEHOLDERS.facebookUrl}>Facebook</a>
-            <a href={HOMEPAGE_PLACEHOLDERS.instagramUrl}>Instagram</a>
-            <a href={HOMEPAGE_PLACEHOLDERS.whatsappUrl}>WhatsApp</a>
+            <a href={HOMEPAGE_PLACEHOLDERS.linkedinUrl} target="_blank" rel="noopener noreferrer">
+              LinkedIn
+            </a>
+            <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
+              WhatsApp
+            </a>
+            <a href={`mailto:${HOMEPAGE_PLACEHOLDERS.emailAddress}`}>{HOMEPAGE_PLACEHOLDERS.emailAddress}</a>
             <a href={loc("/privacy-policy")}>{content.footer.privacy}</a>
           </div>
         </div>

@@ -5,7 +5,6 @@ import { useState } from "react";
 import { MessageCircle, CalendarClock, ClipboardList, ShoppingCart, MoreHorizontal, X } from "lucide-react";
 import { usePathname } from "next/navigation";
 import { getLocaleFromPathname, withLocale } from "@/lib/i18n-routing";
-import { HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
 import { uiStrings } from "@/content/ui-strings";
 import { useInquiryCart } from "@/context/InquiryCartContext";
 
@@ -35,14 +34,14 @@ export function MobileConversionBar() {
       >
         <div className="mx-auto flex max-w-[1280px] gap-3 px-4 py-3">
           <a
-            href={HOMEPAGE_PLACEHOLDERS.whatsappUrl}
+            href={whatsappHref}
             className="flex min-h-[48px] flex-1 items-center justify-center gap-2 rounded-[var(--btn-radius)] border border-[color:var(--border-medium)] bg-[color:var(--card-bg)] px-4 py-3 text-sm font-semibold text-[color:var(--text-primary)]"
           >
             <MessageCircle className="h-4 w-4 shrink-0 text-[color:var(--secondary-color)]" aria-hidden />
             <span>{ui.mobileBar.whatsapp}</span>
           </a>
           <a
-            href={HOMEPAGE_PLACEHOLDERS.bookingUrl}
+            href={bookHref}
             className="btn-brand flex min-h-[48px] flex-1 items-center justify-center gap-2 px-4 py-3 text-sm font-semibold"
           >
             <CalendarClock className="h-4 w-4 shrink-0" aria-hidden />

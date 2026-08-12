@@ -1,7 +1,7 @@
+import Image from "next/image";
 import { BriefcaseBusiness, CheckCircle2, ChevronRight, Clock3, HandCoins, MessagesSquare } from "lucide-react";
 import { FlagshipProductsSection } from "@/components/FlagshipProductsSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { ProductMockupPlaceholder } from "@/components/ProductMockupPlaceholder";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getHomepageContent } from "@/content/homepage";
@@ -27,12 +27,10 @@ export function BusinessUpgradeHomepageFunnel({
   locale,
   bookingHref,
   whatsappHref,
-  emailAddress,
 }: {
   locale: AppLocale;
   bookingHref: string;
   whatsappHref: string;
-  emailAddress: string;
 }) {
   const c = getHomepageContent(locale);
   const problemIcons = [MessagesSquare, Clock3, ChevronRight, BriefcaseBusiness];
@@ -139,11 +137,17 @@ export function BusinessUpgradeHomepageFunnel({
 
       <SectionShell id="about-larry">
         <div className="grid gap-8 lg:grid-cols-[minmax(280px,0.8fr)_minmax(0,1.2fr)] lg:items-center">
-          <ProductMockupPlaceholder
-            label={c.about.portraitLabel}
-            variant="portrait"
-            className="min-h-[320px]"
-          />
+          <div className="ixp-card overflow-hidden p-2 md:p-3">
+            <div className="relative aspect-[4/3] min-h-[320px] w-full overflow-hidden rounded-[var(--radius-md)]">
+              <Image
+                src="/mypresent.jpg"
+                alt={c.about.portraitAlt}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 400px"
+              />
+            </div>
+          </div>
           <div>
             <p className="mb-3 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">{c.about.eyebrow}</p>
             <h2 className="max-w-[18ch] text-[clamp(1.75rem,4vw,2.75rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
@@ -165,38 +169,17 @@ export function BusinessUpgradeHomepageFunnel({
 
       <SectionShell id="final-cta" className="mb-12">
         <div className="ixp-card p-6 md:p-10">
-          <div className="grid gap-8 lg:grid-cols-[1.2fr_minmax(280px,0.8fr)] lg:items-end">
-            <div>
-              <h2 className="max-w-[18ch] text-[clamp(1.9rem,4.5vw,3rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
-                {c.finalCta.title}
-              </h2>
-              <p className="mt-4 max-w-[70ch] text-base leading-8 text-[color:var(--text-secondary)]">{c.finalCta.body}</p>
-              <div className="mt-6 flex flex-col gap-3 sm:flex-row">
-                <Button href={bookingHref} variant="primary">
-                  {c.finalCta.primary}
-                </Button>
-                <Button href={whatsappHref} variant="outline">
-                  {c.finalCta.secondary}
-                </Button>
-              </div>
-            </div>
-            <div className="rounded-[var(--card-radius)] border border-[color:var(--border-light)] bg-[color:var(--bg-elevated)] p-5">
-              <p className="text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">Placeholders</p>
-              <dl className="mt-4 grid gap-3 text-sm text-[color:var(--text-secondary)]">
-                <div>
-                  <dt className="font-semibold text-[color:var(--text-primary)]">BOOKING_URL</dt>
-                  <dd>{c.finalCta.bookingLabel}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-[color:var(--text-primary)]">WHATSAPP_URL</dt>
-                  <dd>{c.finalCta.whatsappLabel}</dd>
-                </div>
-                <div>
-                  <dt className="font-semibold text-[color:var(--text-primary)]">EMAIL_ADDRESS</dt>
-                  <dd>{emailAddress}</dd>
-                </div>
-              </dl>
-            </div>
+          <h2 className="max-w-[18ch] text-[clamp(1.9rem,4.5vw,3rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
+            {c.finalCta.title}
+          </h2>
+          <p className="mt-4 max-w-[70ch] text-base leading-8 text-[color:var(--text-secondary)]">{c.finalCta.body}</p>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <Button href={bookingHref} variant="primary">
+              {c.finalCta.primary}
+            </Button>
+            <Button href={whatsappHref} variant="outline">
+              {c.finalCta.secondary}
+            </Button>
           </div>
         </div>
       </SectionShell>

@@ -1,12 +1,8 @@
 import type { AppLocale } from "@/lib/i18n-routing";
 
 export const HOMEPAGE_PLACEHOLDERS = {
-  bookingUrl: "#BOOKING_URL",
-  whatsappUrl: "#WHATSAPP_URL",
-  emailAddress: "EMAIL_ADDRESS",
-  linkedinUrl: "#LINKEDIN_URL",
-  facebookUrl: "#FACEBOOK_URL",
-  instagramUrl: "#INSTAGRAM_URL",
+  emailAddress: "info@innovatexp.co",
+  linkedinUrl: "https://www.linkedin.com/in/innovatexp/",
 } as const;
 
 type SectionItem = {
@@ -37,6 +33,7 @@ type HomepageContent = {
     diagnosticInputs: string[];
     diagnosticOutput: string;
     diagnosticCaption: string;
+    imageAlt: string;
   };
   problem: {
     eyebrow: string;
@@ -98,7 +95,7 @@ type HomepageContent = {
     title: string;
     intro: string;
     body: string[];
-    portraitLabel: string;
+    portraitAlt: string;
   };
   faq: {
     title: string;
@@ -109,9 +106,6 @@ type HomepageContent = {
     body: string;
     primary: string;
     secondary: string;
-    bookingLabel: string;
-    whatsappLabel: string;
-    emailLabel: string;
   };
   footer: {
     title: string;
@@ -146,6 +140,7 @@ const zhHk: HomepageContent = {
     diagnosticInputs: ["WhatsApp 查詢", "Excel 跟進表", "網上表單", "同事交接"],
     diagnosticOutput: "一條睇得清、跟得到、有人負責嘅 workflow",
     diagnosticCaption: "先睇清漏位，再決定 AI、CRM 或 automation 幫唔幫到手。",
+    imageAlt: "InnovateXP 創辦人 Larry Lo 於演講分享 AI 商業升級與流程設計",
   },
   problem: {
     eyebrow: "流程卡位",
@@ -276,7 +271,7 @@ const zhHk: HomepageContent = {
       "我見過太多中小企唔係冇客，而係查詢散喺 WhatsApp、Excel、表單同不同同事手上，最後漏咗跟進、慢咗報價，老闆日日救火。",
       "所以 InnovateXP 的方法係：先幫你執順一條真正影響收入或營運的流程，再視乎情況用 CRM、會計工具、活動系統或自動化去落地。",
     ],
-    portraitLabel: "Add Larry professional portrait here",
+    portraitAlt: "Larry Lo 於研討會分享 AI 商業顧問與客戶管理流程",
   },
   faq: {
     title: "常見問題",
@@ -294,9 +289,6 @@ const zhHk: HomepageContent = {
     body: "預約 30 分鐘流程診斷，一齊睇下邊個位最容易漏單、卡住交接，或者令你日日救火。",
     primary: "預約 30 分鐘流程診斷",
     secondary: "WhatsApp 聯絡 Larry",
-    bookingLabel: "BOOKING_URL",
-    whatsappLabel: "WHATSAPP_URL",
-    emailLabel: "EMAIL_ADDRESS",
   },
   footer: {
     title: "Larry Lo / InnovateXP",
@@ -386,6 +378,7 @@ const en: HomepageContent = {
     diagnosticInputs: ["WhatsApp enquiries", "Spreadsheet tracker", "Web form", "Team handoff"],
     diagnosticOutput: "One visible workflow with clear ownership",
     diagnosticCaption: "Fix the leak first. Then decide whether AI, CRM, or automation is justified.",
+    imageAlt: "Founder-led presentation on AI business upgrade and workflow design",
   },
   problem: {
     eyebrow: "Pain points",
@@ -505,7 +498,7 @@ const en: HomepageContent = {
       "Many SMEs do not have a lead problem. Their enquiries are scattered across WhatsApp, spreadsheets, forms, and different colleagues, so follow-up gets missed and quotations slow down.",
       "That is why InnovateXP starts by fixing one workflow that affects revenue or operations, then uses CRM, accounting tools, event systems, or automation only when the case is clear.",
     ],
-    portraitLabel: "Add Larry professional portrait here",
+    portraitAlt: "Larry Lo 於研討會分享 AI 商業顧問與客戶管理流程",
   },
   faq: {
     title: "FAQ",
@@ -523,9 +516,6 @@ const en: HomepageContent = {
     body: "Book a 30-minute workflow diagnosis and review where leads leak, handoffs stall, or the owner ends up firefighting every day.",
     primary: "Book a 30-minute workflow diagnosis",
     secondary: "WhatsApp Larry",
-    bookingLabel: "BOOKING_URL",
-    whatsappLabel: "WHATSAPP_URL",
-    emailLabel: "EMAIL_ADDRESS",
   },
   footer: {
     title: "Larry Lo / InnovateXP",

@@ -1,4 +1,5 @@
 import type { MouseEvent, ReactNode } from "react";
+import Image from "next/image";
 import { Button } from "@/components/ui/Button";
 
 export interface HeroProps {
@@ -16,6 +17,8 @@ export interface HeroProps {
   onSecondaryClick?: (e: MouseEvent<HTMLAnchorElement>) => void;
   secondaryHref?: string;
   trustBadges?: string[];
+  imageSrc?: string;
+  imageAlt?: string;
   visual?: ReactNode;
 }
 
@@ -31,6 +34,8 @@ export function Hero({
   onSecondaryClick,
   secondaryHref = "#workflow-diagnosis",
   trustBadges = [],
+  imageSrc,
+  imageAlt,
   visual,
 }: HeroProps) {
   return (
@@ -97,7 +102,22 @@ export function Hero({
           ) : null}
         </div>
 
-        {visual ? <div className="w-full">{visual}</div> : null}
+        {imageSrc ? (
+          <div className="ixp-card overflow-hidden p-2 md:p-3">
+            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[var(--radius-md)]">
+              <Image
+                src={imageSrc}
+                alt={imageAlt ?? ""}
+                fill
+                className="object-cover object-center"
+                sizes="(max-width: 1024px) 100vw, 520px"
+                priority
+              />
+            </div>
+          </div>
+        ) : visual ? (
+          <div className="w-full">{visual}</div>
+        ) : null}
       </div>
     </section>
   );
