@@ -39,23 +39,23 @@ export function Hero({
   visual,
 }: HeroProps) {
   return (
-    <section role="banner" className="mb-12 pt-2 md:mb-16">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[minmax(0,1.05fr)_minmax(320px,0.95fr)] lg:gap-14">
-        <div className="min-w-0">
+    <section role="banner" className="ixp-card mb-12 p-6 sm:p-8 md:mb-16 md:p-10 lg:p-12">
+      <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:gap-14">
+        <div className="min-w-0 text-center lg:text-left">
           {eyebrow ? (
-            <p className="mb-4 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">
+            <p className="mb-4 text-sm font-semibold tracking-[0.06em] text-[color:var(--secondary-color)]">
               {eyebrow}
             </p>
           ) : null}
           <h1
-            className="max-w-[12ch] text-[clamp(2.15rem,7vw,4.5rem)] font-bold leading-[1.05] tracking-[-0.03em] text-[color:var(--heading-foreground)]"
+            className="mx-auto max-w-[14ch] text-[clamp(2rem,7vw,3.75rem)] font-bold leading-[1.12] tracking-[-0.025em] text-[color:var(--heading-foreground)] lg:mx-0"
             style={{ textWrap: "balance" }}
           >
             {title}
           </h1>
           {tagline?.trim() ? (
             <p
-              className="mt-4 max-w-[36rem] text-lg font-semibold leading-snug text-[color:var(--secondary-color)]"
+              className="mx-auto mt-4 max-w-[36rem] text-lg font-semibold leading-snug text-[color:var(--secondary-color)] lg:mx-0"
               style={{ textWrap: "pretty" }}
             >
               {tagline}
@@ -63,13 +63,13 @@ export function Hero({
           ) : null}
           {description?.trim() ? (
             <p
-              className="mt-6 max-w-[42rem] text-base leading-8 text-[color:var(--text-secondary)] md:text-lg"
+              className="mx-auto mt-6 max-w-[42rem] text-base leading-8 text-[color:var(--text-secondary)] md:text-lg lg:mx-0"
               style={{ textWrap: "pretty" }}
             >
               {description}
             </p>
           ) : null}
-          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center">
+          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
             {onPrimaryClick && primaryHref.startsWith("#") ? (
               <a
                 href={primaryHref}
@@ -92,7 +92,7 @@ export function Hero({
             </a>
           </div>
           {trustBadges.length > 0 ? (
-            <ul className="mt-6 grid gap-3 text-sm font-medium text-[color:var(--text-primary)] sm:grid-cols-3">
+            <ul className="mx-auto mt-6 grid max-w-[42rem] gap-3 text-sm font-medium text-[color:var(--text-primary)] sm:grid-cols-3 lg:mx-0">
               {trustBadges.map((badge) => (
                 <li key={badge} className="rounded-[var(--radius-md)] border border-[color:var(--border-light)] bg-[color:var(--bg-elevated)] px-4 py-3">
                   {badge}
@@ -103,14 +103,14 @@ export function Hero({
         </div>
 
         {imageSrc ? (
-          <div className="ixp-card overflow-hidden p-2 md:p-3">
-            <div className="relative aspect-[16/10] w-full overflow-hidden rounded-[var(--radius-md)]">
+          <div className="mx-auto w-full max-w-md overflow-hidden rounded-[var(--radius-md)] border border-[color:var(--border-light)] shadow-card lg:mx-0 lg:max-w-none">
+            <div className="relative aspect-[4/3] w-full overflow-hidden">
               <Image
                 src={imageSrc}
                 alt={imageAlt ?? ""}
                 fill
                 className="object-cover object-center"
-                sizes="(max-width: 1024px) 100vw, 520px"
+                sizes="(max-width: 1024px) 100vw, 420px"
                 priority
               />
             </div>

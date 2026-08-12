@@ -44,7 +44,6 @@ const fabSx = {
 export function PrimaryFabCluster() {
   const pathname = usePathname();
   const router = useRouter();
-  const isHomepageRoot = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)$/.test(pathname));
   const locale = getLocaleFromPathname(pathname);
   const zh = localeUsesChineseCopy(locale);
   const [open, setOpen] = useState(false);
@@ -84,62 +83,72 @@ export function PrimaryFabCluster() {
     router.push(href);
   };
 
-  if (isHomepageRoot) return null;
-
   return (
     <ThemeProvider theme={theme}>
-      <div className="hidden md:block">
-        {itemCount > 0 ? (
-          <Zoom in>
-            <Fab
-              color="primary"
-              aria-label={zh ? `開啟查詢購物車，${itemCount} 項` : `Open inquiry cart, ${itemCount} items`}
-              onClick={() => setDrawerOpen(true)}
-              sx={fabSx}
-            >
-              <Badge badgeContent={itemCount} color="secondary" max={9} overlap="circular">
-                <ShoppingCartIcon sx={{ color: "var(--btn-primary-fg)" }} />
-              </Badge>
-            </Fab>
-          </Zoom>
-        ) : (
-          <>
-            <Backdrop open={open} sx={{ zIndex: (t) => t.zIndex.speedDial - 1 }} />
-            <SpeedDial
-              ariaLabel={zh ? "快捷操作" : "Quick actions"}
-              sx={{
-                position: "fixed",
-                bottom: 28,
-                right: 24,
-                zIndex: (t) => t.zIndex.speedDial,
-              }}
-              icon={<SpeedDialIcon />}
-              onClose={() => setOpen(false)}
-              onOpen={() => setOpen(true)}
-              open={open}
-              FabProps={{
-                color: "primary",
-                sx: { width: 56, height: 56, color: "var(--btn-primary-fg)", boxShadow: "var(--shadow-fab)" },
-                "aria-label": zh ? "開啟快捷選單" : "Open quick actions",
-              }}
-            >
-              {actions.map((action) => (
-                <SpeedDialAction
-                  key={action.name}
-                  icon={action.icon}
-                  tooltipTitle={action.name}
-                  tooltipOpen
-                  FabProps={{
-                    sx: { minWidth: 44, minHeight: 44 },
-                    "aria-label": action.name,
-                  }}
-                  onClick={() => go(action.href, action.external)}
-                />
-              ))}
-            </SpeedDial>
-          </>
-        )}
-      </div>
+      {itemCount > 0 ? (
+        <Zoom in>
+          <Fab
+            color="primary"
+            aria-label={zh ? `開啟查詢購物車，${itemCount} 項` : `Open inquiry cart, ${itemCount} items`}
+            onClick={() => setDrawerOpen(true)}
+            sx={fabSx}
+          >
+            <Badge badgeContent={itemCount} color="secondary" max={9} overlap="circular">
+              <ShoppingCartIcon sx={{ color: "var(--btn-primary-fg)" }} />
+            </Badge>
+          </Fab>
+        </Zoom>
+      ) : (
+        <>
+          <Backdrop open={open} sx={{ zIndex: (t) => t.zIndex.speedDial - 1 }} />
+          <SpeedDial
+            ariaLabel={zh ? "快捷操作" : "Quick actions"}
+            sx={{
+              position: "fixed",
+              bottom: "calc(24px + env(safe-area-inset-bottom))",
+              right: 24,
+              zIndex: (t) => t.zIndex.speedDial,
+            }}
+            icon={<SpeedDialIcon />}
+            onClose={() => setOpen(false)}
+            onOpen={() => setOpen(true)}
+            open={open}
+            FabProps={{
+              color: "primary",
+              sx: { width: 56, height: 56, color: "var(--btn-primary-fg)", boxShadow: "var(--shadow-fab)" },
+              "aria-label": zh ? "開啟快捷選單" : "Open quick actions",
+            }}
+          >
+            {actions.map((action) => (
+              <SpeedDialAction
+                key={action.name}
+                icon={action.icon}
+                tooltipTitle={action.name}
+                tooltipOpen
+                FabProps={{
+                  sx: {
+                    minWidth: 48,
+                    minHeight: 48,
+                    color: "var(--btn-primary-fg)",
+                    backgroundImage: "var(--btn-primary-bg)",
+                    backgroundColor: "transparent",
+                    boxShadow: "var(--shadow-card)",
+                    "&:hover": {
+                      color: "var(--btn-primary-fg)",
+                      backgroundImage: "var(--btn-primary-bg)",
+                      backgroundColor: "transparent",
+                      filter: "brightness(1.04)",
+                    },
+                    "& .MuiSvgIcon-root": { color: "inherit" },
+                  },
+                  "aria-label": action.name,
+                }}
+                onClick={() => go(action.href, action.external)}
+              />
+            ))}
+          </SpeedDial>
+        </>
+      )}
     </ThemeProvider>
   );
 }

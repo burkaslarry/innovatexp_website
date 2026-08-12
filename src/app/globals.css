@@ -151,7 +151,7 @@
   --brand-muted: #43607c;
 
   --font-handwriting: var(--font-main);
-  --font-main: var(--font-inter-sans), var(--font-noto-cjk), "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", sans-serif;
+  --font-main: var(--font-plus-jakarta-sans), var(--font-noto-sans-hk), system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
   --font-faq-title: var(--font-main);
 
   --motion-fluid: cubic-bezier(0.32, 0.72, 0, 1);

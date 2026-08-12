@@ -1,8 +1,7 @@
-import { Inter, Geist_Mono, Noto_Sans_HK } from "next/font/google";
+import { Geist_Mono, Noto_Sans_HK, Plus_Jakarta_Sans } from "next/font/google";
 
-/** Latin UI face — loaded via next/font for stable metrics across browsers. */
-export const interSans = Inter({
-  variable: "--font-inter-sans",
+export const plusJakartaSans = Plus_Jakarta_Sans({
+  variable: "--font-plus-jakarta-sans",
   subsets: ["latin"],
   display: "swap",
 });
@@ -13,27 +12,25 @@ export const geistMono = Geist_Mono({
   display: "swap",
 });
 
-/** CJK fallback shipped as webfont so Windows / Linux match macOS rendering. */
-export const notoSansCjk = Noto_Sans_HK({
-  variable: "--font-noto-cjk",
+/** Ship Chinese glyphs with the app so every browser uses the same CJK face. */
+export const notoSansHk = Noto_Sans_HK({
+  variable: "--font-noto-sans-hk",
   subsets: ["latin"],
   weight: ["400", "500", "600", "700"],
   display: "swap",
 });
 
-/** Apply on `<body>`: CSS variables + default Latin family class. */
+/** Apply self-hosted Latin and CJK faces on the document root. */
 export const rootFontClassName = [
-  interSans.variable,
+  plusJakartaSans.variable,
   geistMono.variable,
-  notoSansCjk.variable,
-  interSans.className,
+  notoSansHk.variable,
   "antialiased",
-  "font-sans",
 ].join(" ");
 
 /**
- * Single stack for CSS, MUI, and inline styles.
- * Geist + Noto first; local system faces only as last resort.
+ * Self-hosted webfonts keep Chrome and Safari aligned. Native sans faces are
+ * retained only as a non-serif safety fallback before the font files load.
  */
 export const FONT_STACK =
-  'var(--font-inter-sans), var(--font-noto-cjk), "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", sans-serif';
+  'var(--font-plus-jakarta-sans), var(--font-noto-sans-hk), system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif';
