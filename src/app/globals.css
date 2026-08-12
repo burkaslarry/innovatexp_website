@@ -149,10 +149,9 @@
   --brand-ink: #20201f;
   --brand-muted: #74716d;
 
-  --font-handwriting: "Comic Sans MS", "Bradley Hand", "Segoe Print", cursive;
-  /* PingFang / Heiti before Latin-only faces so Safari CJK does not fall back to Songti */
-  --font-main: system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Noto Sans HK", "Noto Sans TC", "Microsoft JhengHei", "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-  --font-faq-title: "Songti TC", "Songti SC", "PMingLiU", "Microsoft JhengHei", serif;
+  --font-handwriting: var(--font-main);
+  --font-main: var(--font-geist-sans), var(--font-noto-cjk), "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Microsoft JhengHei", sans-serif;
+  --font-faq-title: var(--font-main);
 
   color-scheme: light;
 }
@@ -215,7 +214,7 @@
   --brand-ink: #ffffff;
   --brand-muted: rgba(255, 255, 255, 0.64);
 
-  --font-faq-title: "Songti TC", "Songti SC", "PMingLiU", "Microsoft JhengHei", serif;
+  --font-faq-title: var(--font-main);
 
   color-scheme: dark;
 }
@@ -230,6 +229,10 @@ html, body {
   font-size: 16px;
   line-height: 1.65;
   min-height: 100vh;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
   transition: background-color 0.3s ease, color 0.3s ease;
 }
 
@@ -240,6 +243,13 @@ html {
 
 body {
   background: var(--bg-primary) !important;
+}
+
+button,
+input,
+select,
+textarea {
+  font-family: inherit;
 }
 
 #__next {

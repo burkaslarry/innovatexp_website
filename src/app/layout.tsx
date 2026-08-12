@@ -1,8 +1,8 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 
 import { getSiteUrl } from "@/lib/site-url";
+import { rootFontClassName } from "@/lib/fonts";
 
 const siteUrl = getSiteUrl();
 const OG_IMAGE_REL = "/opengraph-image" as const;
@@ -23,18 +23,6 @@ export const metadata: Metadata = {
     images: [OG_IMAGE_REL],
   },
 };
-
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-  display: "swap",
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-  display: "swap",
-});
 
 export default function RootLayout({
   children,
@@ -59,7 +47,7 @@ export default function RootLayout({
         />
       </head>
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased bg-canvas dark:bg-[color:var(--bg-base)] transition-colors duration-200`}
+        className={`${rootFontClassName} bg-canvas dark:bg-[color:var(--bg-base)] transition-colors duration-200`}
         suppressHydrationWarning
       >
         {children}

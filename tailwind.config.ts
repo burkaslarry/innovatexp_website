@@ -45,19 +45,15 @@ export default {
       },
       fontFamily: {
         sans: [
-          "var(--font-main)",
-          "system-ui",
-          "-apple-system",
-          "BlinkMacSystemFont",
+          "var(--font-geist-sans)",
+          "var(--font-noto-cjk)",
           "PingFang HK",
           "PingFang TC",
           "Hiragino Sans GB",
-          "Noto Sans HK",
-          "Noto Sans TC",
           "Microsoft JhengHei",
-          "Segoe UI",
           "sans-serif",
         ],
+        mono: ["var(--font-geist-mono)", "ui-monospace", "monospace"],
       },
       borderRadius: {
         soft: "var(--radius-sm)",

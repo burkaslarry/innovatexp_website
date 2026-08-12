@@ -1,4 +1,5 @@
 import { createTheme, type Theme } from "@mui/material/styles";
+import { FONT_STACK } from "@/lib/fonts";
 
 type Mode = "light" | "dark";
 
@@ -43,8 +44,7 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
     },
     shape: { borderRadius: 12 },
     typography: {
-      fontFamily:
-        'system-ui, -apple-system, BlinkMacSystemFont, "PingFang HK", "PingFang TC", "Hiragino Sans GB", "Noto Sans HK", "Noto Sans TC", "Microsoft JhengHei", "Helvetica Neue", Arial, sans-serif',
+      fontFamily: FONT_STACK,
       h1: { fontWeight: 700, letterSpacing: "-0.02em" },
       h2: { fontWeight: 700, letterSpacing: "-0.01em" },
       h3: { fontWeight: 650 },
@@ -66,6 +66,7 @@ export function createInnovateXpM3Theme(mode: Mode = "light"): Theme {
         styleOverrides: {
           body: {
             backgroundColor: canvas,
+            fontFamily: FONT_STACK,
           },
         },
       },
