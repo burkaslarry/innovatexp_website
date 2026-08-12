@@ -64,7 +64,7 @@ const zh: BniPowerTeamCopy = {
   eyebrow: "BNI Power Team 工具",
   title: "幫你搵上下游，組建有效轉介團隊",
   intro:
-    "作為 BNI 會員，有效尋找上下游行業來組建團隊非常重要。填寫你的專業同產品／服務，即刻產生 Channel、Referral Partner、供應商例子，同埋 5 個 Power Team 建議。",
+    "作為一位老闆，有效尋找上下游行業來組建團隊非常重要。填寫你的專業同產品／服務，即刻產生 Channel、Referral Partner、供應商例子，同埋 5 個 Power Team 建議。",
   why: "作為一個 BNI 會員，有效尋找我的上下游行業來組建團隊是非常重要的。",
   professionLabel: "行業／專業領域",
   professionPlaceholder: "例如：AI 商業顧問、會計、室內設計",
@@ -93,7 +93,7 @@ const zh: BniPowerTeamCopy = {
   cardBody:
     "輸入你的行業同產品／服務，即刻產生上游 Channel、平行 Referral Partner、下游供應商各 10 個例子，再建議 5 個目標市場 Power Team。同 AI／流程相關嘅位會標示可合作。",
   cardCta: "開始填寫",
-  fabLabel: "BNI Power Team",
+  fabLabel: "Biz Match",
   metaTitle: "BNI Power Team｜上下游轉介閃卡｜InnovateXP",
   metaDescription:
     "BNI 會員工具：輸入行業與產品／服務，產生上游、平行、下游各 10 個例子與 5 個 Power Team 建議，並標示可與 InnovateXP 合作的方向。",
@@ -104,7 +104,7 @@ const en: BniPowerTeamCopy = {
   title: "Map upstream, parallel, and downstream partners",
   intro:
     "As a BNI member, finding complementary industries is essential. Enter your profession and offerings to generate Channel, Referral Partner, and supplier examples — plus 5 Power Team suggestions.",
-  why: "As a BNI member, finding upstream and downstream industries to build an effective team is very important.",
+  why: "As an entrepeneur, finding upstream and downstream industries to build an effective team is very important.",
   professionLabel: "Industry / profession",
   professionPlaceholder: "e.g. AI business consultant, accountant, interior designer",
   offeringLabel: "Products / services",
@@ -133,7 +133,7 @@ const en: BniPowerTeamCopy = {
   cardBody:
     "Enter your industry and offerings to get 10 upstream, 10 parallel, and 10 downstream examples plus 5 Power Team ideas. AI / workflow-related items are marked for InnovateXP collaboration.",
   cardCta: "Start now",
-  fabLabel: "BNI Power Team",
+  fabLabel: "Biz Match",
   metaTitle: "BNI Power Team | Referral flash card | InnovateXP",
   metaDescription:
     "BNI member tool: enter industry and offerings to generate upstream, parallel, and downstream examples plus 5 Power Team ideas, with InnovateXP collaboration highlights.",
