@@ -103,8 +103,8 @@ const en: BniPowerTeamCopy = {
   eyebrow: "BNI Power Team tool",
   title: "Map upstream, parallel, and downstream partners",
   intro:
-    "As an entrepeneur, finding complementary industries is essential. Enter your profession and offerings to generate Channel, Referral Partner, and supplier examples — plus 5 Power Team suggestions.",
-  why: "As an entrepeneur, finding upstream and downstream industries to build an effective team is very important.",
+    "As an entrepreneur, finding complementary industries is essential. Enter your profession and offerings to generate Channel, Referral Partner, and supplier examples — plus 5 Power Team suggestions.",
+  why: "As an entrepreneur, finding upstream and downstream industries to build an effective team is very important.",
   professionLabel: "Industry / profession",
   professionPlaceholder: "e.g. AI business consultant, accountant, interior designer",
   offeringLabel: "Products / services",
