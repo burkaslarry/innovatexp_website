@@ -1,6 +1,6 @@
 import { localeToHtmlLang, type AppLocale } from "@/lib/i18n-routing";
 import { getSiteUrl } from "@/lib/site-url";
-import type { CaseStudyContent, ServicePageContent } from "@/types/marketing";
+import type { CaseStudyContent, ServicePageContent, SpeakingRecord } from "@/types/marketing";
 
 function breadcrumbFor(locale: AppLocale, path: string, pageName: string) {
   const siteUrl = getSiteUrl();
@@ -117,9 +117,11 @@ export function buildServicePageJsonLd({
 export function buildCaseStudiesJsonLd({
   locale,
   cases,
+  speaking,
 }: {
   locale: AppLocale;
   cases: CaseStudyContent[];
+  speaking: SpeakingRecord[];
 }) {
   const siteUrl = getSiteUrl();
   const path = "/case-studies";
@@ -131,16 +133,33 @@ export function buildCaseStudiesJsonLd({
     "@id": `${pageUrl}#collection`,
     name: "InnovateXP relevant experience and delivery capability",
     description:
-      "Relevant experience and delivery capability for InnovateXP AI training, SME AI workflow consulting, AI coaching, dashboards, internal tools, and system delivery.",
+      "Enterprise system delivery and verified public speaking experience covering public transport maintenance, EMSD lift and escalator monitoring, HKMC Annuity IT asset monitoring, AI training, and workflow consulting.",
     inLanguage: localeToHtmlLang(locale),
     url: pageUrl,
-    about: ["AI training", "SME AI workflow consulting", "AI coaching", "WhatsApp CRM automation"],
+    about: [
+      "enterprise system delivery",
+      "public transport maintenance systems",
+      "lift and escalator monitoring",
+      "IT asset monitoring",
+      "AI training",
+      "SME AI workflow consulting",
+    ],
     mainEntity: cases.map((item) => ({
       "@type": "CreativeWork",
       name: item.title,
       description: item.summary,
       audience: item.audience,
       keywords: item.proofType,
+    })),
+    mentions: speaking.map((item) => ({
+      "@type": "Event",
+      name: item.event,
+      startDate: item.date,
+      description: `${item.role}: ${item.topic}`,
+      performer: {
+        "@type": "Person",
+        name: "Larry Lo",
+      },
     })),
   };
 

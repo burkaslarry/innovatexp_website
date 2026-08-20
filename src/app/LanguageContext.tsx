@@ -576,7 +576,7 @@ export const translations = {
     'founder.name': 'InnovateXP founder',
     'founder.credential1': 'SAFe Certified',
     'founder.credential2': 'Google Developer Group Speaker',
-    'founder.credential3': '200+ Developer Training Experience',
+    'founder.credential3': '7 dated public speaking / workshop records in 2025',
     'founder.credential4': 'HKSTP Incubation',
     'founder.credential5': 'JCI/BNI Leadership',
     
@@ -1537,7 +1537,7 @@ export const translations = {
     'founder.name': 'InnovateXP founder',
     'founder.credential1': 'SAFe認證',
     'founder.credential2': 'Google Developer Group 講者',
-    'founder.credential3': '200+開發者培訓經驗',
+    'founder.credential3': '2025 年 7 個有日期公開分享／workshop 紀錄',
     'founder.credential4': 'HKSTP孵化',
     'founder.credential5': 'JCI/BNI領導',
     

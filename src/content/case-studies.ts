@@ -1,5 +1,5 @@
 import type { AppLocale } from "@/lib/i18n-routing";
-import type { CaseStudyContent } from "@/types/marketing";
+import type { CaseStudyContent, SpeakingRecord } from "@/types/marketing";
 
 export const caseStudies: CaseStudyContent[] = [
   {
@@ -138,6 +138,163 @@ export const caseStudies: CaseStudyContent[] = [
       { label: "AI-era Quality", href: "/ai-era-quality" },
     ],
   },
+  {
+    slug: "public-transport-maintenance-platform",
+    title: "Public transport bus maintenance management platform",
+    summary:
+      "Enterprise delivery experience for a bus maintenance platform that gives operations teams a clearer shared view of maintenance work and vehicle records.",
+    context:
+      "A large public transport operation needs maintenance information to move reliably between frontline teams, supervisors, and management. This case is intentionally anonymized until written permission to publish client and contractor names is confirmed.",
+    proofType: "implementation",
+    audience: "Transport operators and asset-intensive organizations coordinating maintenance across multiple teams.",
+    challenge: [
+      "Maintenance work and vehicle history need to remain visible across handovers.",
+      "Different roles need one dependable operational record.",
+      "The platform must support day-to-day work without adding unnecessary administration.",
+    ],
+    approach: [
+      "Turn maintenance responsibilities and handovers into a shared system workflow.",
+      "Organize vehicle, maintenance, and issue records around the decisions teams make.",
+      "Design for clear ownership and practical use by operations staff.",
+    ],
+    deliverables: [
+      "Bus maintenance management workflow and platform.",
+      "Shared operational records for maintenance coordination.",
+      "Management visibility into work status and handovers.",
+    ],
+    outcomes: [
+      "Teams can find the current maintenance status without piecing together scattered updates.",
+      "Supervisors gain a clearer view of ownership, outstanding work, and handovers.",
+      "The organization has a stronger operational record for future process improvement.",
+    ],
+    relatedLinks: [
+      { label: "SME AI Workflow", href: "/sme-ai-workflow" },
+      { label: "Reliability", href: "/reliability" },
+    ],
+  },
+  {
+    slug: "emsd-lift-escalator-monitoring-eda",
+    title: "EMSD lift and escalator monitoring with failure-prediction analysis",
+    summary:
+      "Monitoring platform, mobile app, and exploratory maintenance-data analysis supporting earlier risk signals and better subcontractor performance decisions.",
+    context:
+      "For HKSAR Electrical and Mechanical Services Department work delivered during 2023–2024, monitoring information and maintenance records needed to support both daily visibility and longer-term policy decisions.",
+    proofType: "implementation",
+    audience: "Public-sector and facilities teams responsible for lift, escalator, contractor, and asset performance.",
+    challenge: [
+      "Operational teams need a clearer view of lift and escalator status.",
+      "Maintenance records must be useful for more than retrospective reporting.",
+      "Policy teams need evidence when reviewing subcontractor performance and early failure risk.",
+    ],
+    approach: [
+      "Connect monitoring workflows with mobile access for operational teams.",
+      "Examine maintenance records for patterns linked to contractor performance and failures.",
+      "Translate analysis into indicators that policy and operations teams can review.",
+    ],
+    deliverables: [
+      "Lift and escalator monitoring platform and mobile app delivery.",
+      "Exploratory analysis of maintenance records.",
+      "Evidence base for subcontractor policy design and early failure-prediction indicators.",
+    ],
+    outcomes: [
+      "Operational teams receive more useful visibility into monitored assets.",
+      "Maintenance data becomes decision support for performance review, not just an archive.",
+      "Teams gain a practical foundation for identifying early warning signals before failures.",
+    ],
+    relatedLinks: [
+      { label: "AI Consulting", href: "/ai-consulting" },
+      { label: "Reliability", href: "/reliability" },
+    ],
+  },
+  {
+    slug: "hkmc-annuity-it-asset-monitoring",
+    title: "HKMC Annuity network and IT asset log monitoring solution",
+    summary:
+      "Multi-stakeholder delivery that made network and IT asset records easier to review while building a junior team's delivery capability.",
+    context:
+      "HKMC Annuity Limited needed coordination across departments and vendors, not only software implementation. Delivery also included coaching two fresh graduates from no coding background toward contributing to real project work.",
+    proofType: "implementation",
+    audience: "Financial-services and enterprise teams coordinating IT assets across departments and suppliers.",
+    challenge: [
+      "Asset and network information needs to stay understandable across stakeholder groups.",
+      "Departments and vendors need a shared way to discuss status and follow-up.",
+      "New team members need enough technical and communication skill to contribute safely.",
+    ],
+    approach: [
+      "Lead delivery around shared records, monitoring needs, and stakeholder handovers.",
+      "Break work into reviewable tasks so departments and vendors can align on progress.",
+      "Coach two fresh graduates in coding, project coordination, and stakeholder communication through real delivery work.",
+    ],
+    deliverables: [
+      "Networking and IT asset log monitoring solution.",
+      "Cross-department and vendor delivery coordination.",
+      "Hands-on capability development for two fresh graduates.",
+    ],
+    outcomes: [
+      "Stakeholders gain a clearer shared record for IT asset and network monitoring work.",
+      "Project communication becomes easier to follow across departments and suppliers.",
+      "Two junior team members build practical coding, project, and stakeholder communication capability.",
+    ],
+    relatedLinks: [
+      { label: "AI Coaching", href: "/ai-coaching" },
+      { label: "Reliability", href: "/reliability" },
+    ],
+  },
+];
+
+export const speakingRecords: SpeakingRecord[] = [
+  {
+    date: "2025-04-26",
+    event: "GDG Hong Kong 2025 Flutter Study Group #1",
+    role: "Host with Lydia So",
+    topic: "Flutter Fundamentals & UI Building",
+  },
+  {
+    date: "2025-05-24",
+    event: "GDG Hong Kong 2025 Flutter Study Group #2",
+    role: "Speaker with Keith Chong",
+    topic: "State Management Basics",
+  },
+  {
+    date: "2025-06-21",
+    event: "GDG Hong Kong 2025 Flutter Study Group #3",
+    role: "Speaker",
+    topic: "State management with Gemini / Vertex AI",
+  },
+  {
+    date: "2025-06-21",
+    event: "PISM Sharing — ISC2 HK Chapter × PISA",
+    role: "Speaker",
+    topic: "Hands-on with Gemini 2.5 Pro",
+  },
+  {
+    date: "2025-06-24",
+    event: "GDG Hong Kong Gen AI Study Jam #2",
+    role: "Project showcase",
+    topic: "Flutter and AI image-generation project (not the main talk)",
+  },
+  {
+    date: "2025-10-11",
+    event: "GDG Hong Kong",
+    role: "Speaker",
+    topic: "Accelerating Development and Teamwork with Vibe Coding",
+  },
+  {
+    date: "2025-11-15",
+    event: "DevFest Hong Kong 2025",
+    role: "Speaker",
+    topic: "The AI Blueprint: Making Software Faster with SDD, RUP, and Vibe Coding",
+  },
+];
+
+const speakingRecordsZh: SpeakingRecord[] = [
+  { ...speakingRecords[0], role: "主持（與 Lydia So）", topic: "Flutter 基礎與介面建構" },
+  { ...speakingRecords[1], role: "講者（與 Keith Chong）", topic: "狀態管理基礎" },
+  { ...speakingRecords[2], role: "講者", topic: "結合 Gemini / Vertex AI 的狀態管理" },
+  { ...speakingRecords[3], role: "講者", topic: "Gemini 2.5 Pro 實作" },
+  { ...speakingRecords[4], role: "項目展示（非主講）", topic: "Flutter + AI 圖像生成個人項目" },
+  { ...speakingRecords[5], role: "講者", topic: "用 Vibe Coding 加快開發與團隊協作" },
+  { ...speakingRecords[6], role: "講者", topic: "AI Blueprint：用 SDD、RUP 與 Vibe Coding 加快軟件交付" },
 ];
 
 export function getCaseStudy(slug: string): CaseStudyContent | undefined {
@@ -189,6 +346,39 @@ const caseStudiesZhTw: CaseStudyContent[] = [
     deliverables: ["Technical audit notes 與 risk map。", "Content/domain/UI/route separation refactor plan。", "依需要進行 targeted implementation 或 rescue sprint。"],
     outcomes: ["未來 AI 與 automation work 有更清晰的 system boundary。", "降低維護風險，讓 future developers 更易接手。", "SEO、GEO、analytics 與 reliable user flows 有更好基礎。"],
   },
+  {
+    ...caseStudies[4],
+    title: "大型公共交通巴士維修管理平台",
+    summary: "為巴士維修團隊建立共同工作平台，令前線、主管同管理層更容易掌握維修進度、車輛紀錄同交接情況。",
+    context: "大型公共交通營運需要維修資料可靠地流轉。由於尚未確認客戶及承辦商名稱的公開授權，本案例暫時匿名，亦不使用任何品牌 logo。",
+    audience: "需要跨團隊協調維修、車隊或大型資產的交通及企業機構。",
+    challenge: ["維修進度同車輛歷史要跨交接保持清晰。", "不同角色需要同一份可信營運紀錄。", "系統要幫到日常工作，而唔係增加行政負擔。"],
+    approach: ["將維修責任同交接變成清晰系統流程。", "按團隊實際決策整理車輛、維修同故障紀錄。", "用清楚 ownership 支援前線實際使用。"],
+    deliverables: ["巴士維修管理流程及平台。", "維修協調所需的共同營運紀錄。", "工作狀態及交接的管理視圖。"],
+    outcomes: ["團隊毋須拼湊零散更新，都可以找到現時維修狀態。", "主管更容易掌握負責人、待辦工作同交接。", "機構建立可持續改善流程的營運紀錄基礎。"],
+  },
+  {
+    ...caseStudies[5],
+    title: "EMSD 升降機／扶手電梯監控與故障預測分析",
+    summary: "交付監控平台、mobile app 同維修數據分析，協助團隊發現較早風險訊號，並用證據改善分包商表現管理。",
+    context: "2023–2024 年為香港特別行政區政府機電工程署相關工作交付。監控及維修紀錄除咗支援日常操作，亦需要成為政策同表現管理的決策依據。",
+    audience: "負責升降機、扶手電梯、承辦商及大型資產表現的公共機構與設施團隊。",
+    challenge: ["營運團隊需要更清楚掌握設備狀態。", "維修紀錄唔應該只用作事後報告。", "政策團隊需要證據檢視分包商表現同早期故障風險。"],
+    approach: ["用 mobile access 連接監控工作流程。", "分析維修紀錄，尋找同承辦商表現及故障有關的模式。", "將分析轉成政策同營運團隊可以檢視的指標。"],
+    deliverables: ["升降機／扶手電梯監控平台及 mobile app。", "維修紀錄 exploratory data analysis。", "支援分包商政策設計及早期故障預警的證據基礎。"],
+    outcomes: ["營運團隊更容易掌握受監控設備狀況。", "維修資料由紀錄變成表現檢視的決策支援。", "團隊建立在故障前識別早期訊號的實際基礎。"],
+  },
+  {
+    ...caseStudies[6],
+    title: "HKMC Annuity 網絡及 IT 資產紀錄監控方案",
+    summary: "帶領跨部門、跨供應商交付，令網絡及 IT 資產紀錄更容易檢視，同時培養 junior team 的實戰能力。",
+    context: "香港年金有限公司（HKMC Annuity Limited）項目唔只係做軟件，亦需要協調部門及供應商。交付期間同時帶領兩位零 coding 背景的 fresh graduates 參與真實項目。",
+    audience: "需要跨部門及供應商協調 IT 資產的金融服務與企業團隊。",
+    challenge: ["IT 資產同網絡資料要讓不同 stakeholders 都睇得明。", "部門同供應商需要共同方式跟進狀態。", "新人需要足夠技術同溝通能力，先可以安全參與交付。"],
+    approach: ["圍繞共同紀錄、監控需要同 stakeholder 交接帶領項目。", "拆成可 review 的工作，讓部門同供應商對齊進度。", "透過真實交付訓練兩位 fresh graduates 的 coding、項目協調同 stakeholder communication。"],
+    deliverables: ["網絡及 IT 資產紀錄監控方案。", "跨部門及供應商的交付協調。", "兩位 fresh graduates 的實戰能力培育。"],
+    outcomes: ["Stakeholders 有更清晰的 IT 資產及網絡監控共同紀錄。", "跨部門及供應商的項目溝通更容易跟進。", "兩位新人建立實用 coding、project 同 stakeholder communication 能力。"],
+  },
 ];
 
 const caseStudiesJa: CaseStudyContent[] = [
@@ -236,6 +426,7 @@ const caseStudiesJa: CaseStudyContent[] = [
     deliverables: ["Technical audit notes と risk map。", "Content/domain/UI/route separation の refactor plan。", "必要に応じた targeted implementation または rescue sprint。"],
     outcomes: ["今後の AI/automation work の system boundary が明確になる。", "保守リスクが下がり future developers が入りやすい。", "SEO、GEO、analytics、reliable user flows の基盤が整う。"],
   },
+  ...caseStudies.slice(4),
 ];
 
 const caseStudiesDe: CaseStudyContent[] = [
@@ -283,6 +474,7 @@ const caseStudiesDe: CaseStudyContent[] = [
     deliverables: ["Technical audit notes und risk map.", "Refactor plan für content/domain/UI/route separation.", "Targeted implementation oder rescue sprint, wo sinnvoll."],
     outcomes: ["Klarere system boundary für künftige AI- und Automation-Arbeit.", "Weniger Wartungsrisiko und leichteres Onboarding zukünftiger Entwickler.", "Bessere Grundlage für SEO, GEO, analytics und zuverlässige User Flows."],
   },
+  ...caseStudies.slice(4),
 ];
 
 export function getCaseStudies(locale: AppLocale): CaseStudyContent[] {
@@ -297,4 +489,8 @@ export function getCaseStudies(locale: AppLocale): CaseStudyContent[] {
     default:
       return caseStudies;
   }
+}
+
+export function getSpeakingRecords(locale: AppLocale): SpeakingRecord[] {
+  return locale === "zh-hk" || locale === "zh-tw" ? speakingRecordsZh : speakingRecords;
 }

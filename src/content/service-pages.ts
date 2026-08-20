@@ -63,7 +63,8 @@ const aiTraining: ServicePageContent = {
     "The organization can identify one or two practical AI 工作流 candidates for follow-up implementation.",
   ],
   proofPoints: [
-    "Founder-led delivery includes ex-Organizer experience with Google Developer Group Hong Kong and community learning formats such as Flutter Study Group, Build with AI, Google I/O Extended, and DevFest Hong Kong.",
+    "Seven dated 2025 public records cover host, speaker, and project-showcase roles across GDG Hong Kong Flutter Study Group, Gen AI Study Jam, PISM Sharing, and DevFest Hong Kong.",
+    "Verified topics include state management, Gemini / Vertex AI integration, Gemini 2.5 Pro, Specification-Driven Development, RUP, and Vibe Coding.",
     "InnovateXP has delivered AI workshop/demo sessions for JCI Peninsula.",
     "Founder experience combines 13+ years of IT delivery, mobile apps, cloud architecture, agile delivery, and AI-powered business systems.",
   ],
