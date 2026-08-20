@@ -25,8 +25,7 @@ import { submitToWeb3FormsContact } from "@/lib/web3forms-submit";
 import { useLanguage } from "@/app/LanguageContext";
 import { getWizardProgress, type WizardStepId } from "@/lib/wizard-progress";
 import { uiStrings } from "@/content/ui-strings";
-import { withLocale } from "@/lib/i18n-routing";
-import { buildWhatsAppHref, getWhatsAppDigits } from "@/lib/whatsapp-contact";
+import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
 
 /*
  * InnovateXP Quotation Wizard — conversion flow
@@ -391,7 +390,6 @@ export default function QuotationWizard({
 
   const ui = uiStrings(locale);
   const progress = getWizardProgress(step as WizardStepId, path);
-  const rawWaNumber = getWhatsAppDigits();
   const escapeWhatsAppHref = buildWhatsAppHref(
     usesChineseUi
       ? "你好！我想直接透過 WhatsApp 了解 InnovateXP 服務。"
