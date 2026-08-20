@@ -18,7 +18,7 @@ Primary offerings:
 
 Founder:
 - Larry Lo — AI Solutions Trainer, SME AI Workflow Consultant, Founder of InnovateXP Limited.
-- Background includes 13+ years IT delivery, mobile apps, cloud architecture, agile delivery, AI-powered business systems, and ex-Organizer of Google Developer Group Hong Kong.
+- Background includes 13+ years of IT delivery across mobile apps, cloud architecture, agile delivery, and AI-powered business systems.
 - Enterprise experience includes an anonymized public-transport bus maintenance platform, HKSAR EMSD lift/escalator monitoring and maintenance-record analysis, and HKMC Annuity network/IT asset log monitoring.
 - Seven dated public records in 2025 cover host, speaker, and project-showcase roles at GDG Hong Kong Flutter Study Group, Gen AI Study Jam, PISM Sharing, and DevFest Hong Kong. No unverified event or attendance-volume claims are included.
 
