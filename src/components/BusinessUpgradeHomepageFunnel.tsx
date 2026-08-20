@@ -178,7 +178,7 @@ export function BusinessUpgradeHomepageFunnel({
           ))}
         </div>
         <div className="mt-6">
-          <Button href={caseStudiesHref} variant="secondary">
+          <Button href={caseStudiesHref} variant="outline">
             {caseStudiesLabel}
           </Button>
         </div>
