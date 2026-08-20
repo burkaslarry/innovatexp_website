@@ -150,6 +150,9 @@ export function buildCaseStudiesJsonLd({
       description: item.summary,
       audience: item.audience,
       keywords: item.proofType,
+      citation: item.proofLinks.map((link) =>
+        link.href.startsWith("http") ? link.href : `${siteUrl}/${locale}${link.href}`,
+      ),
     })),
     mentions: speaking.map((item) => ({
       "@type": "Event",

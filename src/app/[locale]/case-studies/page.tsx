@@ -15,12 +15,12 @@ const CASE_STUDY_META: Record<AppLocale, { title: string; description: string }>
   en: {
     title: "Enterprise Systems & Verified Speaking Record | InnovateXP",
     description:
-      "Larry Lo and InnovateXP enterprise delivery cases: public transport maintenance, EMSD lift and escalator monitoring, HKMC Annuity IT asset monitoring, plus verified 2025 speaking records.",
+      "Larry Lo delivery cases: Real Messenger iOS and Android apps, public transport maintenance, EMSD lift and escalator monitoring, HKMC Annuity IT assets, and verified speaking records.",
   },
   "zh-hk": {
     title: "企業系統案例及已核實公開分享紀錄｜InnovateXP",
     description:
-      "Larry Lo 與 InnovateXP 企業交付案例：公共交通維修、EMSD 升降機／扶手電梯監控、HKMC Annuity IT 資產監控，以及 2025 年已核實公開分享紀錄。",
+      "Larry Lo 企業交付案例：Real Messenger iOS／Android apps、公共交通維修、EMSD 升降機／扶手電梯監控、HKMC Annuity IT 資產，以及已核實公開分享紀錄。",
   },
   "zh-tw": {
     title: "相關經驗與交付能力｜InnovateXP",

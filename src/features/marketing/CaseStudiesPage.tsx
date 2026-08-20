@@ -16,6 +16,7 @@ const PAGE_COPY: Record<
     approach: string;
     deliverables: string;
     outcomes: string;
+    evidence: string;
     speakingEyebrow: string;
     speakingTitle: string;
     speakingIntro: string;
@@ -29,13 +30,14 @@ const PAGE_COPY: Record<
     eyebrow: "Relevant experience and delivery capability",
     title: "Relevant Experience & Delivery Capability",
     intro:
-      "See how Larry Lo and InnovateXP turn operational problems into systems teams can use: transport maintenance, lift and escalator monitoring, IT asset visibility, AI workflows, and practical team capability. No unverified percentages or guaranteed outcomes are claimed.",
+      "See how Larry Lo and InnovateXP turn operational problems into systems teams can use: iOS and Android products, transport maintenance, lift and escalator monitoring, IT asset visibility, AI workflows, and practical team capability. Each case now separates public evidence from first-party delivery claims.",
     vision: "Founder Vision",
     targetAudience: "Target audience",
     challenge: "Challenge",
     approach: "Approach",
     deliverables: "Deliverables",
     outcomes: "Outcomes",
+    evidence: "Evidence and public sources",
     speakingEyebrow: "Public speaking record",
     speakingTitle: "Verified 2025 talks, workshops, and project showcases",
     speakingIntro:
@@ -49,13 +51,14 @@ const PAGE_COPY: Record<
     eyebrow: "相關經驗與交付能力",
     title: "相關經驗與交付能力",
     intro:
-      "以下案例講清楚 Larry Lo 同 InnovateXP 可以帶來咩效果：令維修、資產、跨部門交接同 AI 工作流程更清晰，亦幫團隊建立真正用得到的能力。所有內容都唔會加未核實百分比或保證成果。",
+      "以下案例講清楚 Larry Lo 同 InnovateXP 可以帶來咩效果：由 iOS／Android products，到維修、資產、跨部門交接同 AI 工作流程。每個案例會清楚分開公開證據同第一方交付陳述，唔加未核實百分比或保證成果。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",
     approach: "做法",
     deliverables: "交付內容",
     outcomes: "成果方向",
+    evidence: "Social proof 與公開來源",
     speakingEyebrow: "公開分享紀錄",
     speakingTitle: "2025 年已核實講座、workshop 與項目展示",
     speakingIntro: "按日期列出 7 個 GDG Hong Kong、Flutter Study Group、PISM 同 DevFest 公開紀錄，並清楚分開講者、主持及項目展示角色。",
@@ -75,6 +78,7 @@ const PAGE_COPY: Record<
     approach: "做法",
     deliverables: "交付內容",
     outcomes: "成果方向",
+    evidence: "Social proof 與公開來源",
     speakingEyebrow: "公開分享紀錄",
     speakingTitle: "2025 年已核實講座、workshop 與項目展示",
     speakingIntro: "按日期列出 7 個 GDG Hong Kong、Flutter Study Group、PISM 同 DevFest 公開紀錄，並清楚分開講者、主持及項目展示角色。",
@@ -94,6 +98,7 @@ const PAGE_COPY: Record<
     approach: "アプローチ",
     deliverables: "提供内容",
     outcomes: "成果の方向性",
+    evidence: "公開情報と根拠",
     speakingEyebrow: "登壇実績",
     speakingTitle: "2025年の講演・ワークショップ・プロジェクト紹介",
     speakingIntro: "役割とテーマを明記した公開記録です。",
@@ -113,6 +118,7 @@ const PAGE_COPY: Record<
     approach: "Ansatz",
     deliverables: "Leistungen",
     outcomes: "Ergebnisse",
+    evidence: "Nachweise und öffentliche Quellen",
     speakingEyebrow: "Öffentliche Vorträge",
     speakingTitle: "Verifizierte Vorträge, Workshops und Projektvorstellungen 2025",
     speakingIntro: "Öffentliche Einträge mit klar benannter Rolle und Thema.",
@@ -239,6 +245,29 @@ export function CaseStudiesPage({
                 <CaseList title={copy.deliverables} items={item.deliverables} />
                 <CaseList title={copy.outcomes} items={item.outcomes} />
               </div>
+
+              <section className="mt-6 rounded-2xl border border-emerald-200 bg-emerald-50 p-5 dark:border-emerald-500/30 dark:bg-emerald-950/20">
+                <h3 className="text-lg font-bold text-gray-900 dark:text-white">{copy.evidence}</h3>
+                <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">{item.proofNote}</p>
+                {item.proofLinks.length > 0 ? (
+                  <div className="mt-4 flex flex-wrap gap-3">
+                    {item.proofLinks.map((link) => {
+                      const external = link.href.startsWith("http");
+                      return (
+                        <Link
+                          key={link.href}
+                          href={localizedHref(locale, link.href)}
+                          target={external ? "_blank" : undefined}
+                          rel={external ? "noopener noreferrer" : undefined}
+                          className="rounded-full border border-emerald-300 bg-white px-4 py-2 text-sm font-semibold text-emerald-900 transition-colors hover:border-emerald-600 dark:border-emerald-700 dark:bg-gray-900 dark:text-emerald-200"
+                        >
+                          {link.label}
+                        </Link>
+                      );
+                    })}
+                  </div>
+                ) : null}
+              </section>
 
               <div className="mt-6 flex flex-wrap gap-3">
                 {item.relatedLinks.map((link) => (

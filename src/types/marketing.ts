@@ -65,6 +65,8 @@ export type CaseStudyContent = {
   approach: string[];
   deliverables: string[];
   outcomes: string[];
+  proofLinks: MarketingLink[];
+  proofNote: string;
   relatedLinks: MarketingLink[];
 };
 

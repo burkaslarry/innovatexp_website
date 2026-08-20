@@ -31,6 +31,8 @@ export const caseStudies: CaseStudyContent[] = [
       "A practical base for follow-up prioritization and planning.",
       "Better continuity between event attendance, sales follow-up, and community engagement.",
     ],
+    proofLinks: [{ label: "EventXP product page", href: "/eventxp" }],
+    proofNote: "First-party product evidence from the live InnovateXP product page.",
     relatedLinks: [
       { label: "EventXP", href: "/eventxp" },
       { label: "SME AI Workflow", href: "/sme-ai-workflow" },
@@ -65,6 +67,8 @@ export const caseStudies: CaseStudyContent[] = [
       "Less dependence on memory and scattered spreadsheets.",
       "Better visibility for owners and managers reviewing weekly pipeline progress.",
     ],
+    proofLinks: [{ label: "SmartSales CRM product page", href: "/smartsales-crm" }],
+    proofNote: "First-party product evidence from the live InnovateXP product page.",
     relatedLinks: [
       { label: "SmartSales CRM", href: "/smartsales-crm" },
       { label: "Proposal-to-Cash AI", href: "/proposal-to-cash-ai" },
@@ -99,6 +103,13 @@ export const caseStudies: CaseStudyContent[] = [
       "Business teams can identify realistic AI workflow candidates.",
       "AI learning becomes a bridge to adoption rather than a one-off seminar.",
     ],
+    proofLinks: [
+      {
+        label: "Public JCI Peninsula workshop record",
+        href: "https://www.linkedin.com/posts/frankie-wu-ai-tech_generativeai-dify-promptengineering-activity-7488080896126763008-9Dp9",
+      },
+    ],
+    proofNote: "Public LinkedIn event record naming the JCI Peninsula workshop.",
     relatedLinks: [
       { label: "AI Training", href: "/ai-training" },
       { label: "AI Coaching", href: "/ai-coaching" },
@@ -133,6 +144,11 @@ export const caseStudies: CaseStudyContent[] = [
       "Reduced maintenance risk and easier onboarding for future developers.",
       "Better foundation for SEO, GEO, analytics, and reliable user flows.",
     ],
+    proofLinks: [
+      { label: "Quality engineering method", href: "/ai-era-quality" },
+      { label: "Reliability principles", href: "/reliability" },
+    ],
+    proofNote: "First-party delivery-method evidence; named client references remain subject to confidentiality.",
     relatedLinks: [
       { label: "SME AI Workflow", href: "/sme-ai-workflow" },
       { label: "AI-era Quality", href: "/ai-era-quality" },
@@ -167,6 +183,8 @@ export const caseStudies: CaseStudyContent[] = [
       "Supervisors gain a clearer view of ownership, outstanding work, and handovers.",
       "The organization has a stronger operational record for future process improvement.",
     ],
+    proofLinks: [],
+    proofNote: "Client reference and brand identity are withheld until written publication permission is confirmed.",
     relatedLinks: [
       { label: "SME AI Workflow", href: "/sme-ai-workflow" },
       { label: "Reliability", href: "/reliability" },
@@ -201,6 +219,22 @@ export const caseStudies: CaseStudyContent[] = [
       "Maintenance data becomes decision support for performance review, not just an archive.",
       "Teams gain a practical foundation for identifying early warning signals before failures.",
     ],
+    proofLinks: [
+      {
+        label: "EMSD Digital Log-books System",
+        href: "https://www.emsd.gov.hk/en/lifts_and_escalators_safety/digital_log_books_system/index.html",
+      },
+      {
+        label: "HKSAR Digital Policy Office success story",
+        href: "https://www.digitalpolicy.gov.hk/en/our_work/success_stories/digital_log_books_system_for_lifts_and_escalators/",
+      },
+      {
+        label: "Official Android app",
+        href: "https://play.google.com/store/apps/details?id=hk.gov.emsd.digitallogbooks&hl=en",
+      },
+    ],
+    proofNote:
+      "Official government sources verify the public system, mobile app, and policy-analysis purpose; they do not independently attribute an individual contributor.",
     relatedLinks: [
       { label: "AI Consulting", href: "/ai-consulting" },
       { label: "Reliability", href: "/reliability" },
@@ -235,8 +269,64 @@ export const caseStudies: CaseStudyContent[] = [
       "Project communication becomes easier to follow across departments and suppliers.",
       "Two junior team members build practical coding, project, and stakeholder communication capability.",
     ],
+    proofLinks: [
+      {
+        label: "HKMC Annuity corporate information",
+        href: "https://www.hkmca.hk/eng/about_us/corporate_information.html",
+      },
+    ],
+    proofNote:
+      "The official corporate page verifies the organization; project scope and individual contribution are presented from delivery experience.",
     relatedLinks: [
       { label: "AI Coaching", href: "/ai-coaching" },
+      { label: "Reliability", href: "/reliability" },
+    ],
+  },
+  {
+    slug: "real-messenger-mobile-apps",
+    title: "Real Messenger iOS and Android apps for a Nasdaq-listed proptech platform",
+    summary:
+      "Cross-functional mobile delivery under tight deadlines kept the real-estate platform ready for US investor presentations and property-technology event demonstrations.",
+    context:
+      "Larry Lo worked as Senior Application Developer at Real Messenger from November 2019 to September 2023, collaborating with designers, backend engineers, and other departments on its iOS and Android apps. The product work supported investor and event demonstrations during listing preparation; Real Messenger separately completed its Nasdaq business combination in November 2024.",
+    proofType: "implementation",
+    audience: "Proptech, marketplace, and growth-stage teams that need mobile products ready for high-stakes demonstrations.",
+    challenge: [
+      "Product releases had to move quickly without losing coordination across design, engineering, and business teams.",
+      "The mobile experience needed to present real-estate content and communication clearly on both iOS and Android.",
+      "Leadership needed a stable, demonstration-ready product for US investor and industry events.",
+    ],
+    approach: [
+      "Work directly with designers and multiple departments to turn product priorities into mobile releases.",
+      "Coordinate app, backend, and interface changes through short delivery cycles.",
+      "Prioritize the user journeys needed for product demonstrations while protecting release quality.",
+    ],
+    deliverables: [
+      "iOS and Android application development for the Real Messenger platform.",
+      "Cross-functional implementation with UI/UX, backend, and business stakeholders.",
+      "Demo-ready mobile releases for investor and real-estate technology presentations.",
+    ],
+    outcomes: [
+      "Leadership had working mobile apps to demonstrate in the United States and at industry events.",
+      "Design and business priorities moved into both mobile platforms under compressed schedules.",
+      "The apps remained publicly available as the company progressed toward and later completed its Nasdaq listing.",
+    ],
+    proofLinks: [
+      { label: "Larry Lo employment record", href: "https://hk.linkedin.com/in/larry-lo-804a50165" },
+      { label: "Real Messenger on the App Store", href: "https://apps.apple.com/us/app/real-messenger/id994823956" },
+      {
+        label: "Real Messenger on Google Play",
+        href: "https://play.google.com/store/apps/details?id=co.real.productionreal2&hl=en",
+      },
+      {
+        label: "Nasdaq business-combination record",
+        href: "https://www.nasdaq.com/press-release/real-messenger-and-nova-vision-acquisition-corp-announce-closing-business-combination",
+      },
+    ],
+    proofNote:
+      "Public sources independently verify the employment period, live mobile apps, and Nasdaq listing. The listing is not presented as the result of one contributor's work.",
+    relatedLinks: [
+      { label: "AI Consulting", href: "/ai-consulting" },
       { label: "Reliability", href: "/reliability" },
     ],
   },
@@ -312,6 +402,7 @@ const caseStudiesZhTw: CaseStudyContent[] = [
     approach: ["設計結構化 check-in 與 attendance model。", "準備支援 follow-up prioritization 的 reporting views。", "把活動營運連接到 sales 或 membership next actions。"],
     deliverables: ["活動 profile 與 attendee data structure。", "QR/check-in flow 與 attendance visibility。", "活動後 reporting 與 follow-up segmentation concept。"],
     outcomes: ["活動營運更清晰，減少手動整理。", "建立跟進優先次序與 follow-up planning 的基礎。", "活動出席、銷售跟進與社群經營之間更有延續性。"],
+    proofNote: "第一方證據：InnovateXP 公開產品頁。",
   },
   {
     ...caseStudies[1],
@@ -323,6 +414,7 @@ const caseStudiesZhTw: CaseStudyContent[] = [
     approach: ["圍繞 chat-led work 設計 lead pipeline。", "定義 ownership、stages、reminders 與 next actions。", "使用 AI 支援草稿與 prioritization，但保留 human approval。"],
     deliverables: ["WhatsApp-friendly CRM workflow model。", "Lead stages、contact context、task reminders 與 reporting views。", "適合時加入 AI-assisted draft 與 follow-up patterns。"],
     outcomes: ["忙碌 SME 團隊有更清晰的 sales operating rhythm。", "降低對記憶與零散試算表的依賴。", "老闆與 managers 每週 review pipeline 時更有可視性。"],
+    proofNote: "第一方證據：InnovateXP 公開產品頁。",
   },
   {
     ...caseStudies[2],
@@ -334,6 +426,7 @@ const caseStudiesZhTw: CaseStudyContent[] = [
     approach: ["使用 practical demonstrations 與 local business scenarios。", "說明 AI strengths、limitations 與 review habits。", "把工具使用連接到下一步 AI coaching 或 workflow implementation。"],
     deliverables: ["AI tools 與 workflow thinking 的 workshop/demo content。", "給 business teams 的 practical examples。", "後續 AI coaching 或 workflow implementation 路徑。"],
     outcomes: ["參加者更清楚 AI 能做什麼與不能做什麼。", "Business teams 可辨識實際 AI workflow candidates。", "AI learning 成為 adoption 的起點，而非一次性 seminar。"],
+    proofNote: "LinkedIn 公開活動紀錄有列明 JCI Peninsula workshop。",
   },
   {
     ...caseStudies[3],
@@ -345,6 +438,7 @@ const caseStudiesZhTw: CaseStudyContent[] = [
     approach: ["檢查 architecture、data flow、dependencies 與 failure points。", "分離 framework-specific code、content、domain 與 reusable UI。", "優先處理最能降低 delivery risk 的小步改動。"],
     deliverables: ["Technical audit notes 與 risk map。", "Content/domain/UI/route separation refactor plan。", "依需要進行 targeted implementation 或 rescue sprint。"],
     outcomes: ["未來 AI 與 automation work 有更清晰的 system boundary。", "降低維護風險，讓 future developers 更易接手。", "SEO、GEO、analytics 與 reliable user flows 有更好基礎。"],
+    proofNote: "公開方法及可靠性原則屬第一方交付證據；客戶名稱受保密安排限制。",
   },
   {
     ...caseStudies[4],
@@ -356,6 +450,7 @@ const caseStudiesZhTw: CaseStudyContent[] = [
     approach: ["將維修責任同交接變成清晰系統流程。", "按團隊實際決策整理車輛、維修同故障紀錄。", "用清楚 ownership 支援前線實際使用。"],
     deliverables: ["巴士維修管理流程及平台。", "維修協調所需的共同營運紀錄。", "工作狀態及交接的管理視圖。"],
     outcomes: ["團隊毋須拼湊零散更新，都可以找到現時維修狀態。", "主管更容易掌握負責人、待辦工作同交接。", "機構建立可持續改善流程的營運紀錄基礎。"],
+    proofNote: "未取得書面公開許可前，客戶 reference 同品牌身份維持保密。",
   },
   {
     ...caseStudies[5],
@@ -367,6 +462,7 @@ const caseStudiesZhTw: CaseStudyContent[] = [
     approach: ["用 mobile access 連接監控工作流程。", "分析維修紀錄，尋找同承辦商表現及故障有關的模式。", "將分析轉成政策同營運團隊可以檢視的指標。"],
     deliverables: ["升降機／扶手電梯監控平台及 mobile app。", "維修紀錄 exploratory data analysis。", "支援分包商政策設計及早期故障預警的證據基礎。"],
     outcomes: ["營運團隊更容易掌握受監控設備狀況。", "維修資料由紀錄變成表現檢視的決策支援。", "團隊建立在故障前識別早期訊號的實際基礎。"],
+    proofNote: "政府官方來源證實公開系統、mobile app 同政策分析用途，但唔會獨立列出個別貢獻者。",
   },
   {
     ...caseStudies[6],
@@ -378,6 +474,19 @@ const caseStudiesZhTw: CaseStudyContent[] = [
     approach: ["圍繞共同紀錄、監控需要同 stakeholder 交接帶領項目。", "拆成可 review 的工作，讓部門同供應商對齊進度。", "透過真實交付訓練兩位 fresh graduates 的 coding、項目協調同 stakeholder communication。"],
     deliverables: ["網絡及 IT 資產紀錄監控方案。", "跨部門及供應商的交付協調。", "兩位 fresh graduates 的實戰能力培育。"],
     outcomes: ["Stakeholders 有更清晰的 IT 資產及網絡監控共同紀錄。", "跨部門及供應商的項目溝通更容易跟進。", "兩位新人建立實用 coding、project 同 stakeholder communication 能力。"],
+    proofNote: "官方企業資料證實機構身份；項目範圍同個人貢獻按交付經驗陳述。",
+  },
+  {
+    ...caseStudies[7],
+    title: "Real Messenger iOS／Android Apps：支援美國投資者及 PropTech 活動示範",
+    summary: "跨部門在短時間內完成 mobile delivery，令房地產科技平台有可運作產品，支援美國投資者簡報同多個業界活動示範。",
+    context: "Larry Lo 於 2019 年 11 月至 2023 年 9 月擔任 Real Messenger Senior Application Developer，與 designers、backend engineers 同其他部門合作開發 iOS 及 Android apps。產品工作支援上市籌備期間的投資者及活動示範；Real Messenger 其後於 2024 年 11 月獨立完成 Nasdaq business combination。",
+    audience: "需要在高壓示範或融資場合前完成 mobile product 的 PropTech、marketplace 及 growth-stage teams。",
+    challenge: ["趕工同時要維持 design、engineering 同 business teams 的協調。", "iOS 同 Android 都要清楚呈現房地產內容及溝通體驗。", "老闆需要穩定、可示範的產品到美國見投資者及參與業界活動。"],
+    approach: ["直接同 designers 及不同部門將優先事項變成 mobile releases。", "用短 delivery cycles 協調 app、backend 同 interface 改動。", "先確保示範所需 user journeys，同時守住 release quality。"],
+    deliverables: ["Real Messenger iOS 及 Android application development。", "與 UI/UX、backend 及 business stakeholders 跨部門實作。", "供投資者及 real-estate technology 活動使用的 demo-ready mobile releases。"],
+    outcomes: ["管理層有可運作 mobile apps 到美國及業界活動示範。", "在壓縮時間內將 design 同 business priorities 落到兩個 mobile platforms。", "Apps 持續公開上架，公司其後完成 Nasdaq listing。"],
+    proofNote: "公開來源分別證實任職紀錄、兩個 app stores 同 Nasdaq 上市；網站唔會將上市成果歸因於單一貢獻者。",
   },
 ];
 
