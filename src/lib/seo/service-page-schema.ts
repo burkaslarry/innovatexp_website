@@ -164,6 +164,16 @@ export function buildCaseStudiesJsonLd({
         name: "Larry Lo",
       },
     })),
+    mentions: speaking.map((item) => ({
+      "@type": "Event",
+      name: item.event,
+      startDate: item.date,
+      description: `${item.role}: ${item.topic}`,
+      performer: {
+        "@type": "Person",
+        name: "Larry Lo",
+      },
+    })),
   };
 
   return [collection, breadcrumbFor(locale, path, "Relevant Experience & Delivery Capability")];
