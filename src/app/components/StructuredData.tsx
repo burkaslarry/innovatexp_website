@@ -26,12 +26,12 @@ const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
-  en: "InnovateXP Limited is founder-led as an AI Business Consultancy for Hong Kong SMEs, with 13+ years of IT delivery, product, cloud, agile delivery, and AI-powered business systems experience, plus former Google Developer Group Hong Kong organizer experience.",
-  "zh-hk": "InnovateXP Limited 以 founder-led 方式提供 AI 商業顧問服務，具備 13+ 年 IT delivery、product、cloud、agile delivery 同 AI-powered business systems 經驗，亦有前 Google Developer Group Hong Kong organizer 背景。",
+  en: "Larry Lo leads InnovateXP Limited, an AI Business Consultancy for Hong Kong SMEs. He has 13+ years of IT delivery experience and seven dated 2025 public records as host, speaker, or project demonstrator across GDG Hong Kong, PISM Sharing, and DevFest Hong Kong.",
+  "zh-hk": "Larry Lo 帶領 InnovateXP Limited 為香港中小企提供 AI 商業顧問服務，具備 13+ 年 IT delivery 經驗，並有 7 個 2025 年公開紀錄，分別以主持、講者或項目展示角色參與 GDG Hong Kong、PISM Sharing 及 DevFest Hong Kong。",
   "zh-tw":
-    "InnovateXP Limited 以 founder-led 方式交付，具備 14 年以上系統架構與落地實作經驗，包含香港政府與公共交通相關的高可用度專案；曾任 Google Developer Group Hong Kong Organizer、香港科技園孵化校友，並曾支援 2,000 名以上並行使用者的系統等級。",
-  ja: "現場の実装者として、InnovateXP はシステムアーキテクチャにおよそ 14 年の実務経験があります（香港の行政・公共交通向け高可用性案件を含む）。彼自身が構築・保守に入る体制で、請け負いだけの PM ではありません。元 Google Developer Group HK Organizer、HKSTP インキュベーション卒業・2,000 人以上同時アクティブ規模のシステム経験。",
-  de: "InnovateXP ist seit über 14 Jahren praktisch in der Systemarchitektur tätig — inklusive Hochverfügbarkeitsprojekten für öffentliche Auftraggeber und Verkehr in Hongkong. Er baut und betreut die Systeme selbst, statt nur zu delegieren. Ehem. Google Developer Group HK Organizer · HKSTP Incubation Alumni · Systeme mit 2.000+ gleichzeitig aktiven Nutzern.",
+    "Larry Lo 帶領 InnovateXP Limited 為香港中小企業提供 AI 商業顧問服務，具備 13 年以上 IT 交付經驗，並有 7 場 2025 年公開紀錄，分別以主持人、講者或專案展示者身分參與 GDG Hong Kong、PISM Sharing 與 DevFest Hong Kong。",
+  ja: "Larry Lo は香港の中小企業向け AI ビジネスコンサルティング InnovateXP Limited を率いています。13年以上の IT デリバリー経験に加え、2025年には GDG Hong Kong、PISM Sharing、DevFest Hong Kong で司会・登壇・プロジェクト紹介を行った7件の公開記録があります。",
+  de: "Larry Lo leitet InnovateXP Limited, eine AI Business Consultancy für KMU in Hongkong. Er verfügt über mehr als 13 Jahre IT-Delivery-Erfahrung und sieben datierte öffentliche Auftritte im Jahr 2025 als Gastgeber, Sprecher oder Projektpräsentator bei GDG Hong Kong, PISM Sharing und DevFest Hong Kong.",
 };
 
 const SCHEMA_SMARTSALES_DESCRIPTION: Record<AppLocale, string> = {

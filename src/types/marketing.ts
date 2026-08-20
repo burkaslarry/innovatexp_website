@@ -68,6 +68,13 @@ export type CaseStudyContent = {
   relatedLinks: MarketingLink[];
 };
 
+export type SpeakingRecord = {
+  date: string;
+  event: string;
+  role: string;
+  topic: string;
+};
+
 export type VisionCopy = {
   statement: string;
   reason: string;

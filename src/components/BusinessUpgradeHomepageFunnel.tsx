@@ -38,6 +38,17 @@ export function BusinessUpgradeHomepageFunnel({
   const bni = getBniPowerTeamCopy(locale);
   const problemIcons = [MessagesSquare, Clock3, ChevronRight, BriefcaseBusiness];
   const bniHref = withLocale(locale, "/bni-power-team");
+  const caseStudiesHref = withLocale(locale, "/case-studies");
+  const caseStudiesLabel =
+    locale === "zh-hk"
+      ? "睇企業系統案例及已核實公開分享"
+      : locale === "zh-tw"
+        ? "查看企業系統案例及已核實公開分享"
+        : locale === "ja"
+          ? "企業システム事例と登壇実績を見る"
+          : locale === "de"
+            ? "Enterprise-Systeme und Vorträge ansehen"
+            : "See enterprise systems and verified speaking records";
 
   return (
     <>
@@ -165,6 +176,11 @@ export function BusinessUpgradeHomepageFunnel({
               </div>
             </article>
           ))}
+        </div>
+        <div className="mt-6">
+          <Button href={caseStudiesHref} variant="outline">
+            {caseStudiesLabel}
+          </Button>
         </div>
       </SectionShell>
 

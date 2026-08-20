@@ -1,6 +1,6 @@
 import Link from "next/link";
 import type { AppLocale } from "@/lib/i18n-routing";
-import type { CaseStudyContent, VisionCopy } from "@/types/marketing";
+import type { CaseStudyContent, SpeakingRecord, VisionCopy } from "@/types/marketing";
 
 const PAGE_COPY: Record<
   AppLocale,
@@ -16,6 +16,9 @@ const PAGE_COPY: Record<
     approach: string;
     deliverables: string;
     outcomes: string;
+    speakingEyebrow: string;
+    speakingTitle: string;
+    speakingIntro: string;
     referrals: string;
     cta: string;
   }
@@ -26,13 +29,17 @@ const PAGE_COPY: Record<
     eyebrow: "Relevant experience and delivery capability",
     title: "Relevant Experience & Delivery Capability",
     intro:
-      "These examples show the kinds of work InnovateXP can deliver: AI training / AI 教班, AI 陪跑課程, workflow mapping, dashboards, booking flows, internal tools, and system delivery. They are phrased as experience and capability, not formal client outcome stories or guaranteed outcomes.",
+      "See how Larry Lo and InnovateXP turn operational problems into systems teams can use: transport maintenance, lift and escalator monitoring, IT asset visibility, AI workflows, and practical team capability. No unverified percentages or guaranteed outcomes are claimed.",
     vision: "Founder Vision",
     targetAudience: "Target audience",
     challenge: "Challenge",
     approach: "Approach",
     deliverables: "Deliverables",
     outcomes: "Outcomes",
+    speakingEyebrow: "Public speaking record",
+    speakingTitle: "Verified 2025 talks, workshops, and project showcases",
+    speakingIntro:
+      "Seven public GDG Hong Kong, Flutter Study Group, PISM, and DevFest records are listed with the exact role and topic. A project showcase is labelled separately from a speaking role.",
     referrals: "Referral Sentences",
     cta: "Book a consultation",
   },
@@ -42,13 +49,16 @@ const PAGE_COPY: Record<
     eyebrow: "相關經驗與交付能力",
     title: "相關經驗與交付能力",
     intro:
-      "以下例子展示 InnovateXP 可交付的工作：AI training / AI 教班、AI 陪跑課程、workflow mapping、dashboards、booking flows、internal tools 與系統交付。現階段以相關經驗與能力描述，不包裝成正式 client outcome stories 或保證成果。",
+      "以下案例講清楚 Larry Lo 同 InnovateXP 可以帶來咩效果：令維修、資產、跨部門交接同 AI 工作流程更清晰，亦幫團隊建立真正用得到的能力。所有內容都唔會加未核實百分比或保證成果。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",
     approach: "做法",
     deliverables: "交付內容",
     outcomes: "成果方向",
+    speakingEyebrow: "公開分享紀錄",
+    speakingTitle: "2025 年已核實講座、workshop 與項目展示",
+    speakingIntro: "按日期列出 7 個 GDG Hong Kong、Flutter Study Group、PISM 同 DevFest 公開紀錄，並清楚分開講者、主持及項目展示角色。",
     referrals: "Referral 句子",
     cta: "預約諮詢",
   },
@@ -65,6 +75,9 @@ const PAGE_COPY: Record<
     approach: "做法",
     deliverables: "交付內容",
     outcomes: "成果方向",
+    speakingEyebrow: "公開分享紀錄",
+    speakingTitle: "2025 年已核實講座、workshop 與項目展示",
+    speakingIntro: "按日期列出 7 個 GDG Hong Kong、Flutter Study Group、PISM 同 DevFest 公開紀錄，並清楚分開講者、主持及項目展示角色。",
     referrals: "Referral 句子",
     cta: "預約諮詢",
   },
@@ -81,6 +94,9 @@ const PAGE_COPY: Record<
     approach: "アプローチ",
     deliverables: "提供内容",
     outcomes: "成果の方向性",
+    speakingEyebrow: "登壇実績",
+    speakingTitle: "2025年の講演・ワークショップ・プロジェクト紹介",
+    speakingIntro: "役割とテーマを明記した公開記録です。",
     referrals: "紹介文",
     cta: "相談を予約",
   },
@@ -97,6 +113,9 @@ const PAGE_COPY: Record<
     approach: "Ansatz",
     deliverables: "Leistungen",
     outcomes: "Ergebnisse",
+    speakingEyebrow: "Öffentliche Vorträge",
+    speakingTitle: "Verifizierte Vorträge, Workshops und Projektvorstellungen 2025",
+    speakingIntro: "Öffentliche Einträge mit klar benannter Rolle und Thema.",
     referrals: "Referral-Sätze",
     cta: "Beratung buchen",
   },
@@ -126,10 +145,12 @@ function CaseList({ title, items }: { title: string; items: string[] }) {
 export function CaseStudiesPage({
   locale,
   cases,
+  speaking,
   vision,
 }: {
   locale: AppLocale;
   cases: CaseStudyContent[];
+  speaking: SpeakingRecord[];
   vision: VisionCopy;
 }) {
   const copy = PAGE_COPY[locale];
@@ -171,6 +192,29 @@ export function CaseStudiesPage({
               </li>
             ))}
           </ul>
+        </section>
+
+        <section className="mb-10 rounded-3xl border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-900 md:p-8">
+          <p className="mb-2 text-sm font-semibold uppercase tracking-[0.16em] text-brand-primary dark:text-[color:var(--primary-hover)]">
+            {copy.speakingEyebrow}
+          </p>
+          <h2 className="text-3xl font-bold text-gray-900 dark:text-white">{copy.speakingTitle}</h2>
+          <p className="mt-3 max-w-4xl leading-relaxed text-gray-600 dark:text-gray-300">{copy.speakingIntro}</p>
+          <ol className="mt-6 grid gap-4 md:grid-cols-2">
+            {speaking.map((item) => (
+              <li
+                key={`${item.date}-${item.event}-${item.topic}`}
+                className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-gray-700 dark:bg-gray-800"
+              >
+                <time dateTime={item.date} className="text-sm font-bold text-brand-primary dark:text-teal-300">
+                  {item.date}
+                </time>
+                <h3 className="mt-2 text-lg font-bold text-gray-900 dark:text-white">{item.event}</h3>
+                <p className="mt-1 text-sm font-semibold text-slate-600 dark:text-slate-300">{item.role}</p>
+                <p className="mt-2 leading-relaxed text-gray-700 dark:text-gray-300">{item.topic}</p>
+              </li>
+            ))}
+          </ol>
         </section>
 
         <div className="space-y-8">

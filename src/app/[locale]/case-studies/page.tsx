@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { getCaseStudies } from "@/content/case-studies";
+import { getCaseStudies, getSpeakingRecords } from "@/content/case-studies";
 import { getInnovatexpVision } from "@/content/service-pages";
 import { CaseStudiesPage } from "@/features/marketing/CaseStudiesPage";
 import { localeAlternates } from "@/lib/alternate-metadata";
@@ -13,14 +13,14 @@ const OG_IMAGE = "/opengraph-image" as const;
 
 const CASE_STUDY_META: Record<AppLocale, { title: string; description: string }> = {
   en: {
-    title: "Relevant Experience & Delivery Capability | InnovateXP",
+    title: "Enterprise Systems & Verified Speaking Record | InnovateXP",
     description:
-      "Relevant experience and delivery capability for InnovateXP: AI training, AI coaching, SME workflow design, dashboards, booking flows, internal tools, and system delivery.",
+      "Larry Lo and InnovateXP enterprise delivery cases: public transport maintenance, EMSD lift and escalator monitoring, HKMC Annuity IT asset monitoring, plus verified 2025 speaking records.",
   },
   "zh-hk": {
-    title: "相關經驗與交付能力｜InnovateXP",
+    title: "企業系統案例及已核實公開分享紀錄｜InnovateXP",
     description:
-      "InnovateXP 相關經驗與交付能力：AI 教班、AI 陪跑課程、SME workflow design、dashboard、booking flows、internal tools 與系統交付。",
+      "Larry Lo 與 InnovateXP 企業交付案例：公共交通維修、EMSD 升降機／扶手電梯監控、HKMC Annuity IT 資產監控，以及 2025 年已核實公開分享紀錄。",
   },
   "zh-tw": {
     title: "相關經驗與交付能力｜InnovateXP",
@@ -80,8 +80,9 @@ export default async function CaseStudiesRoute({
   if (!isValidLocale(locale)) notFound();
   const loc = locale as AppLocale;
   const localizedCases = getCaseStudies(loc);
+  const localizedSpeaking = getSpeakingRecords(loc);
   const localizedVision = getInnovatexpVision(loc);
-  const jsonLd = buildCaseStudiesJsonLd({ locale: loc, cases: localizedCases });
+  const jsonLd = buildCaseStudiesJsonLd({ locale: loc, cases: localizedCases, speaking: localizedSpeaking });
 
   return (
     <>
@@ -89,7 +90,7 @@ export default async function CaseStudiesRoute({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
-      <CaseStudiesPage locale={loc} cases={localizedCases} vision={localizedVision} />
+      <CaseStudiesPage locale={loc} cases={localizedCases} speaking={localizedSpeaking} vision={localizedVision} />
     </>
   );
 }
