@@ -1,4 +1,4 @@
-/* F09: Floating WhatsApp CTA - Fixed wa.me link (env or Larry's number). */
+/* F09: Floating WhatsApp CTA — routes via /api/whatsapp (number stays server-side). */
 "use client";
 
 import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
