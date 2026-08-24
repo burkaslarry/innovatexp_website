@@ -32,6 +32,7 @@ export type HomepageContent = {
     diagnosis: string;
     services: string;
     plans: string;
+    products: string;
     cases: string;
     about: string;
     faq: string;
@@ -80,6 +81,24 @@ export type HomepageContent = {
       body: string;
       deliverables: string[];
       cta: string;
+    }[];
+  };
+  products: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    navLabel: string;
+    securityTitle: string;
+    securityNote: string;
+    items: {
+      id: string;
+      poster: string;
+      eyebrow: string;
+      name: string;
+      tagline: string;
+      price: string;
+      body: string;
+      points: string[];
     }[];
   };
   cases: {

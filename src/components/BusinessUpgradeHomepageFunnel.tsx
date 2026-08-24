@@ -2,6 +2,7 @@ import Image from "next/image";
 import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare, UsersRound } from "lucide-react";
 import { ConsultancyMainlineSection } from "@/components/ConsultancyMainlineSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { ProductPackagesSection } from "@/components/ProductPackagesSection";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getBniPowerTeamCopy } from "@/content/bni-power-team";
@@ -127,6 +128,8 @@ export function BusinessUpgradeHomepageFunnel({
       </SectionShell>
 
       <ConsultancyMainlineSection locale={locale} bookingHref={bookingHref} />
+
+      <ProductPackagesSection locale={locale} content={c.products} />
 
       <SectionShell id="service-modules">
         <SectionHeader

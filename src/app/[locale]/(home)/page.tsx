@@ -38,6 +38,7 @@ function LandingPage() {
       { label: content.nav.diagnosis, href: "#workflow-diagnosis" },
       { label: content.nav.services, href: "#service-approach" },
       { label: content.nav.plans, href: "#service-plans" },
+      { label: content.nav.products, href: "#product-packages" },
       { label: content.nav.cases, href: "#case-directions" },
       { label: content.nav.about, href: "#about-larry" },
       { label: content.nav.faq, href: "#faq" },

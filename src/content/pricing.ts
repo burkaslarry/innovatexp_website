@@ -37,8 +37,10 @@ export const PRICING = {
     accountingChatbotTrialMonth: 3_000,
     /** AI Discovery Sprint — custom workflow entry (1–2 weeks) */
     aiDiscoverySprint: 6_800,
-    /** Customised Website Starter — 一次性 Base Package */
-    websiteStarter: 7_800,
+    /** Customised Website Starter — basic company site (poster Online Presence) */
+    websiteStarter: 3_000,
+    /** Basic e-shop package (or sales commission model) */
+    websiteEshop: 12_000,
   },
   /** AI 商業升級陪跑 — aligned with pitch deck / AI 商業顧問 page */
   consultancy: {
@@ -66,18 +68,21 @@ export const PRICING = {
     },
     accountXp: {
       experience: 3_000,
-      /** 皇牌月費 — AccountingXP receipt workflow */
+      /** @deprecated Poster pack uses experience + Starter/Growth/Enterprise monthly */
       flagshipMonthly: 99,
       maintenanceStarterMonthly: 880,
       maintenanceGrowthMonthly: 1_280,
       maintenanceEnterpriseMonthly: 1_480,
     },
     fitnessXp: {
-      /** 皇牌月費 — coach / gym studio workbench */
+      /** Studio operations monthly — from poster pack */
       flagshipMonthly: 499,
     },
     website: {
-      starter: 7_800,
+      starter: 3_000,
+      eshop: 12_000,
+      contentAutomationMonthlyFrom: 800,
+      seoGeoAutoPostsMonthlyFrom: 1_800,
       deliveryWorkingDays: 10,
       maintenanceStarterMonthly: 880,
       maintenanceGrowthMonthly: 1_280,

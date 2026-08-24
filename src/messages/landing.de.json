@@ -9,7 +9,8 @@
     "cases": "Branchenbeispiele",
     "about": "Über Larry",
     "faq": "FAQ",
-    "cta": "30-Min-Diagnose buchen"
+    "cta": "30-Min-Diagnose buchen",
+    "products": "Produkte"
   },
   "hero": {
     "eyebrow": "AI-Business-Berater | 14+ Jahre IT-Lieferung und Prozessumsetzung",
@@ -276,5 +277,102 @@
     "tagline": "Zuerst den Prozess reparieren. Dann AI wirksam machen.",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
+  },
+  "products": {
+    "eyebrow": "Produktpakete",
+    "title": "Pakete und Tools, nachdem der Workflow klar ist",
+    "intro": "Entspricht unseren Produkt-Postern: Studio-Betrieb, Belege, Website, CRM, Events und AI-Beratung.",
+    "navLabel": "Produkte",
+    "securityTitle": "ISO-Zertifizierungsvorbereitung und Cybersecurity-Services verfügbar",
+    "securityNote": "Umfang und Preis werden separat bewertet",
+    "items": [
+      {
+        "id": "fitnessxp",
+        "poster": "product-01-fitnessxp-monthly.png",
+        "eyebrow": "Studio-Betrieb",
+        "name": "FitnessXP",
+        "tagline": "Studio-Betrieb an einem Ort",
+        "price": "Ab HK$499 / Monat",
+        "body": "Terminplanung, Anwesenheit, Zahlungserinnerungen und Provisionen.",
+        "points": [
+          "Mitglieder & Coaches",
+          "Planung & Anwesenheit",
+          "Zahlungserinnerungen",
+          "Abstimmung & Export"
+        ]
+      },
+      {
+        "id": "accountxp",
+        "poster": "product-02-accountxp-monthly.png",
+        "eyebrow": "Beleg-Workflow",
+        "name": "AccountXP",
+        "tagline": "Von Belegen zu Berichten",
+        "price": "HK$3,000 einmalig · danach HK$880 / HK$1,280 / HK$1,480 / Monat",
+        "body": "Belege per WhatsApp hochladen, mit AI klassifizieren, Wochenberichte erhalten.",
+        "points": [
+          "Experience inkl. Pilot + erster Monat",
+          "Starter / Growth / Enterprise",
+          "Upload → AI-Klassifizierung → Bericht"
+        ]
+      },
+      {
+        "id": "website",
+        "poster": "product-03-website-menu.png",
+        "eyebrow": "Online-Präsenz",
+        "name": "Online Presence Package",
+        "tagline": "Customized Website",
+        "price": "Basis-Website HK$3,000 · Basis-Shop HK$12,000",
+        "body": "Mit Website oder Shop starten, dann Content und Sichtbarkeit ergänzen.",
+        "points": [
+          "Basis-Website HK$3,000",
+          "Basis-Eshop HK$12,000 (oder Provisionsmodell)",
+          "Content + Automation ab HK$800 / Monat",
+          "SEO + GEO + Auto-Posts ab HK$1,800 / Monat"
+        ]
+      },
+      {
+        "id": "smartsales",
+        "poster": "product-04-smartsales-monthly.png",
+        "eyebrow": "WhatsApp-first CRM",
+        "name": "SmartSales CRM",
+        "tagline": "Jede Anfrage hat einen nächsten Schritt",
+        "price": "Ab HK$880 / Monat · Trial HK$5,000",
+        "body": "Verstreute WhatsApp-Chats in einen nachverfolgbaren Sales-Workflow verwandeln.",
+        "points": [
+          "Zentrale Anfragen",
+          "Ownership & Pipeline",
+          "AI Draft-first"
+        ]
+      },
+      {
+        "id": "eventxp",
+        "poster": "product-05-eventxp-monthly.png",
+        "eyebrow": "Event zu Umsatz",
+        "name": "EventXP",
+        "tagline": "Follow-up beginnt nach dem Event",
+        "price": "HK$880 / HK$1,280 / HK$1,480 / Monat · Trial HK$4,000",
+        "body": "QR-Check-in, Lead-Scoring, Live-Reporting und Follow-up.",
+        "points": [
+          "Starter / Growth / Enterprise",
+          "Einzel-Event-Trial HK$4,000",
+          "Check-in → Lead scoring → Follow-up"
+        ]
+      },
+      {
+        "id": "consultancy",
+        "poster": "product-06-ai-consultancy-plans.png",
+        "eyebrow": "AI Business Consultancy",
+        "name": "AI Consultancy",
+        "tagline": "Zuerst einen Workflow reparieren",
+        "price": "30-Tage Sprint · HK$6,800",
+        "body": "Von Diagnose und Umsetzung bis Adoption und KPI-Review. Längere Programme je nach SOP-Komplexität.",
+        "points": [
+          "3-Monats Foundation",
+          "6-Monats Accelerator",
+          "12-Monats Partnership",
+          "Deliverables: Prozesskarte, Ownership, SOP, KPI, Quick Win"
+        ]
+      }
+    ]
   }
 }

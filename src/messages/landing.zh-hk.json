@@ -9,7 +9,8 @@
     "cases": "行業實例",
     "about": "關於 Larry",
     "faq": "常見問題",
-    "cta": "預約 30 分鐘診斷"
+    "cta": "預約 30 分鐘診斷",
+    "products": "產品方案"
   },
   "hero": {
     "eyebrow": "AI 商業顧問｜14+ 年 IT 交付及流程落地經驗",
@@ -276,5 +277,102 @@
     "tagline": "先執順流程，再落地 AI",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
+  },
+  "products": {
+    "eyebrow": "產品方案",
+    "title": "流程執順之後，用產品同方案頂住日常",
+    "intro": "同產品海報一致：Studio 營運、收據、網站、CRM、活動同 AI 顧問方案。",
+    "navLabel": "產品方案",
+    "securityTitle": "需要 ISO 認證準備或網絡安全服務？",
+    "securityNote": "可按實際範圍另行評估及報價",
+    "items": [
+      {
+        "id": "fitnessxp",
+        "poster": "product-01-fitnessxp-monthly.png",
+        "eyebrow": "Studio 營運",
+        "name": "FitnessXP",
+        "tagline": "Studio 營運集中管理",
+        "price": "HK$499 / 月起",
+        "body": "排堂、出勤、付款提醒同佣金對數，一個平台處理。",
+        "points": [
+          "會員與教練帳戶",
+          "排堂與出勤",
+          "付款提醒",
+          "對數與匯出"
+        ]
+      },
+      {
+        "id": "accountxp",
+        "poster": "product-02-accountxp-monthly.png",
+        "eyebrow": "收據流程",
+        "name": "AccountXP",
+        "tagline": "收據到報告自動整理",
+        "price": "體驗 HK$3,000（一次）· 其後 HK$880 / HK$1,280 / HK$1,480 / 月",
+        "body": "WhatsApp 上載收條，AI 分類，再生成每週報告。",
+        "points": [
+          "體驗包括 pilot 設定及首月正式使用",
+          "Starter / Growth / Enterprise 維護",
+          "收條上載 → AI 分類 → 定期報告"
+        ]
+      },
+      {
+        "id": "website",
+        "poster": "product-03-website-menu.png",
+        "eyebrow": "網上形象",
+        "name": "Online Presence Package",
+        "tagline": "Customized Website",
+        "price": "基本網站 HK$3,000 · 基本網店 HK$12,000",
+        "body": "由基本網站、網店到每月內容及搜尋曝光支援。",
+        "points": [
+          "基本 Website HK$3,000",
+          "基本 Eshop HK$12,000（或銷售佣金模式）",
+          "每月內容更新 + 自動化 HK$800 起 / 月",
+          "SEO + GEO + 自動出 Post HK$1,800 起 / 月"
+        ]
+      },
+      {
+        "id": "smartsales",
+        "poster": "product-04-smartsales-monthly.png",
+        "eyebrow": "WhatsApp-first CRM",
+        "name": "SmartSales CRM",
+        "tagline": "每條查詢都有下一步",
+        "price": "HK$880 / 月起 · 試用 HK$5,000",
+        "body": "將分散 WhatsApp 查詢變成可追蹤嘅銷售流程。",
+        "points": [
+          "查詢集中",
+          "責任及 pipeline",
+          "AI Draft-first"
+        ]
+      },
+      {
+        "id": "eventxp",
+        "poster": "product-05-eventxp-monthly.png",
+        "eyebrow": "活動轉化",
+        "name": "EventXP",
+        "tagline": "活動完咗，跟進先開始",
+        "price": "HK$880 / HK$1,280 / HK$1,480 / 月 · 單場試用 HK$4,000",
+        "body": "QR 簽到、名單評分、即時報告及 follow-up。",
+        "points": [
+          "Starter / Growth / Enterprise 維護",
+          "單場試用 HK$4,000",
+          "Check-in → Lead scoring → Follow-up"
+        ]
+      },
+      {
+        "id": "consultancy",
+        "poster": "product-06-ai-consultancy-plans.png",
+        "eyebrow": "AI 商業顧問",
+        "name": "AI Consultancy",
+        "tagline": "先執順一條流程",
+        "price": "30 日 Sprint · HK$6,800",
+        "body": "由診斷、落地、團隊採用到 KPI review。較長方案視 SOP 複雜程度決定。",
+        "points": [
+          "3 個月 Foundation",
+          "6 個月 Accelerator",
+          "12 個月 Partnership",
+          "交付：流程圖、責任分工、SOP、KPI、Quick Win"
+        ]
+      }
+    ]
   }
 }

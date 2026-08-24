@@ -9,7 +9,8 @@
     "cases": "Industry examples",
     "about": "About Larry",
     "faq": "FAQ",
-    "cta": "Book a 30-min diagnosis"
+    "cta": "Book a 30-min diagnosis",
+    "products": "Products"
   },
   "hero": {
     "eyebrow": "AI Business Consultant | 14+ years in IT delivery and workflow implementation",
@@ -276,5 +277,102 @@
     "tagline": "Fix the workflow first. Then make AI work.",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
+  },
+  "products": {
+    "eyebrow": "Product packages",
+    "title": "Tools and packages after the workflow is clear",
+    "intro": "Same offers as our product posters: studio ops, receipts, website, CRM, events, and AI consultancy.",
+    "navLabel": "Products",
+    "securityTitle": "ISO certification readiness and cybersecurity services available",
+    "securityNote": "Scope and pricing assessed separately",
+    "items": [
+      {
+        "id": "fitnessxp",
+        "poster": "product-01-fitnessxp-monthly.png",
+        "eyebrow": "Studio operations",
+        "name": "FitnessXP",
+        "tagline": "Studio operations in one place",
+        "price": "From HK$499 / month",
+        "body": "Scheduling, attendance, payment reminders and commission records.",
+        "points": [
+          "Members & coaches in one place",
+          "Scheduling & attendance",
+          "Payment reminders",
+          "Reconciliation & export"
+        ]
+      },
+      {
+        "id": "accountxp",
+        "poster": "product-02-accountxp-monthly.png",
+        "eyebrow": "Receipt workflow",
+        "name": "AccountXP",
+        "tagline": "Receipts to reports, organized",
+        "price": "HK$3,000 one-off · then HK$880 / HK$1,280 / HK$1,480 / month",
+        "body": "Upload receipts in WhatsApp, classify with AI, receive weekly reports.",
+        "points": [
+          "Experience plan includes pilot setup + first month",
+          "Starter / Growth / Enterprise maintenance",
+          "Receipt upload → AI classification → regular report"
+        ]
+      },
+      {
+        "id": "website",
+        "poster": "product-03-website-menu.png",
+        "eyebrow": "Online presence",
+        "name": "Online Presence Package",
+        "tagline": "Customized Website",
+        "price": "Basic website HK$3,000 · Basic e-shop HK$12,000",
+        "body": "Start with a website or shop, then add content and visibility support.",
+        "points": [
+          "Basic website HK$3,000",
+          "Basic e-shop HK$12,000 (or sales commission model)",
+          "Content + automation from HK$800 / month",
+          "SEO + GEO + auto posts from HK$1,800 / month"
+        ]
+      },
+      {
+        "id": "smartsales",
+        "poster": "product-04-smartsales-monthly.png",
+        "eyebrow": "WhatsApp-first CRM",
+        "name": "SmartSales CRM",
+        "tagline": "Every enquiry has a next step",
+        "price": "From HK$880 / month · Trial HK$5,000",
+        "body": "Turn scattered WhatsApp chats into a trackable sales workflow.",
+        "points": [
+          "Centralized enquiries",
+          "Ownership & pipeline",
+          "AI draft-first replies"
+        ]
+      },
+      {
+        "id": "eventxp",
+        "poster": "product-05-eventxp-monthly.png",
+        "eyebrow": "Event to revenue",
+        "name": "EventXP",
+        "tagline": "Follow-up starts after the event",
+        "price": "HK$880 / HK$1,280 / HK$1,480 / month · Trial HK$4,000",
+        "body": "QR check-in, lead scoring, live reporting and follow-up.",
+        "points": [
+          "Starter / Growth / Enterprise maintenance",
+          "Single-event trial HK$4,000",
+          "Check-in → Lead scoring → Follow-up"
+        ]
+      },
+      {
+        "id": "consultancy",
+        "poster": "product-06-ai-consultancy-plans.png",
+        "eyebrow": "AI business consultancy",
+        "name": "AI Consultancy",
+        "tagline": "Fix one workflow first",
+        "price": "30-Day Sprint · HK$6,800",
+        "body": "From diagnosis and implementation to team adoption and KPI review. Longer programs quoted based on SOP complexity.",
+        "points": [
+          "3-month Foundation",
+          "6-month Accelerator",
+          "12-month Partnership",
+          "Deliverables: process map, ownership, SOP, KPI, quick win"
+        ]
+      }
+    ]
   }
 }
