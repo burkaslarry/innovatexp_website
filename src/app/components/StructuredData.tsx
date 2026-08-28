@@ -3,6 +3,7 @@
 import { usePathname } from "next/navigation";
 import type { AppLocale } from "@/lib/i18n-routing";
 import { getLocaleFromPathname, stripLocaleFromPathname } from "@/lib/i18n-routing";
+import { PRICING } from "@/content/pricing";
 
 /** Pick JSON-LD copy per URL locale — explicit `AppLocale` rows (no zh/en boolean). */
 function pickSchema(locale: AppLocale, row: Record<AppLocale, string>): string {
@@ -824,27 +825,30 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "30-day AI Upgrade Discovery Sprint",
+            name: "AI Readiness Snapshot",
+            description: "Downsell only: 60–90 minute interview, one-page scorecard, 3 blockers, go/no-go for Discovery. No SOP, prototype, or implementation.",
           },
-          price: "8000",
+          price: String(PRICING.quickCash.aiReadinessAssessment),
           priceCurrency: "HKD",
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "AI Upgrade Foundation",
+            name: "30-day AI Upgrade Discovery Sprint (up to 10 people)",
+            description: "HK$6,800 for up to 10 people. Venue cost is extra.",
           },
-          price: "25000",
+          price: String(PRICING.consultancy.discoverySprint30Day),
           priceCurrency: "HKD",
         },
         {
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
-            name: "AI Upgrade Accelerator",
+            name: "Discovery workshop (11–30 people)",
+            description: "HK$13,600 for 11–30 people. 31+ quoted separately. Venue cost is extra.",
           },
-          price: "12000",
+          price: String(PRICING.consultancy.discoveryWorkshop11To30),
           priceCurrency: "HKD",
         },
       ],
@@ -852,8 +856,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "HKD",
-      lowPrice: "8000",
-      highPrice: "25000",
+      lowPrice: String(PRICING.quickCash.aiReadinessAssessment),
+      highPrice: String(PRICING.consultancy.discoveryWorkshop11To30),
       offerCount: 3,
     },
   };

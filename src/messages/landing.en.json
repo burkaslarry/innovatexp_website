@@ -114,8 +114,8 @@
     "plans": [
       {
         "name": "30-day Discovery Sprint",
-        "priceLabel": "HK$6,800",
-        "body": "Validate one workflow that affects revenue or operations.",
+        "priceLabel": "HK$6,800 (up to 10 people)",
+        "body": "Validate one workflow that affects revenue or operations. HK$6,800 for up to 10 people. 11–30 people: HK$13,600. 31+ quoted separately. Venue cost is extra.",
         "deliverables": [
           "Process map",
           "Ownership",
@@ -257,11 +257,11 @@
       },
       {
         "question": "We are a very small company. Is it still worth doing?",
-        "answer": "Yes, especially when one absence can stall the whole workflow. The main path starts at HK$6,800 for a 30-day Sprint."
+        "answer": "Yes, especially when one absence can stall the whole workflow. The main path starts at HK$6,800 for a 30-day Sprint with up to 10 people."
       },
       {
         "question": "How do the programs start?",
-        "answer": "Step by step:\n30-day Discovery Sprint (HK$6,800)\n3-month Foundation (scoped by SOP complexity)\n6-month Accelerator (scoped by SOP complexity)\n12-month Partnership (scoped by SOP complexity)\n(Note: we focus on real operating problems. Tool trials are not the homepage headline.)"
+        "answer": "Step by step:\n30-day Discovery Sprint — HK$6,800 for up to 10 people; HK$13,600 for 11–30 people; 31+ quoted separately (venue extra)\n3-month Foundation (scoped by SOP complexity)\n6-month Accelerator (scoped by SOP complexity)\n12-month Partnership (scoped by SOP complexity)\n(Note: we focus on real operating problems. Tool trials are not the homepage headline.)"
       }
     ]
   },
@@ -364,15 +364,54 @@
         "eyebrow": "AI business consultancy",
         "name": "AI Consultancy",
         "tagline": "Fix one workflow first",
-        "price": "30-Day Sprint · HK$6,800",
-        "body": "From diagnosis and implementation to team adoption and KPI review. Longer programs quoted based on SOP complexity.",
+        "price": "30-Day Sprint · HK$6,800 (up to 10 people)",
+        "body": "From diagnosis and implementation to team adoption and KPI review. Discovery is HK$6,800 for up to 10 people, HK$13,600 for 11–30, and quoted separately for 31+. Venue cost is extra. Longer programs are scoped by SOP complexity.",
         "points": [
           "3-month Foundation",
           "6-month Accelerator",
           "12-month Partnership",
-          "Deliverables: process map, ownership, SOP, KPI, quick win"
+          "Deliverables: process map, ownership, SOP, KPI, quick win",
+          "≤10 people HK$6,800 · 11–30 HK$13,600 · 31+ quoted · venue extra"
         ]
       }
-    ]
+    ],
+    "systemCare": {
+      "eyebrow": "Already-live systems",
+      "title": "System Care & Maintenance",
+      "intro": "For systems already in production. One-off maintenance is HK$4,000–HK$12,000 by scope; ongoing care is billed monthly. Response time means acknowledgement and triage, not guaranteed resolution.",
+      "tiers": [
+        {
+          "name": "Essential",
+          "price": "HK$4,000 / month",
+          "response": "Response within 2 business days",
+          "points": ["Monthly health review", "One planned small-fix batch per month", "Monthly status summary"]
+        },
+        {
+          "name": "Growth",
+          "price": "HK$8,000 / month",
+          "response": "Response within 1 business day",
+          "points": ["Twice-monthly health checks", "Up to 2 planned small-fix batches per month", "Monthly improvement review"]
+        },
+        {
+          "name": "Priority",
+          "price": "HK$12,000 / month",
+          "response": "Response within 4 business hours",
+          "points": ["Weekly health check", "Priority incident triage", "Up to 3 planned small-fix batches per month"]
+        }
+      ],
+      "boundary": "No unlimited changes. Support hours are Monday–Friday, 09:00–18:00 HKT excluding public holidays. Major features, migrations, third-party fees, after-hours incidents and work outside the agreed system are quoted separately."
+    },
+    "readiness": {
+      "eyebrow": "Downsell only",
+      "title": "AI Readiness Snapshot",
+      "price": "HK$3,000",
+      "intro": "For a team that is not yet ready to commit HK$6,800 to Discovery and needs a smaller evidence-based decision first.",
+      "points": ["60–90 minute interview", "One-page readiness scorecard", "The 3 biggest adoption blockers", "Clear recommendation: not ready yet or proceed to Discovery"],
+      "excludes": "Does not include an SOP, prototype, implementation scope or custom build.",
+      "upgrade": "Upgrade within 14 calendar days: pay HK$3,800 more to enter the HK$6,800 Discovery.",
+      "educationTitle": "Optional 1-month education track — scoped separately",
+      "educationIntro": "Four 60-minute sessions, one per week, for the same client organization. This is not included in the HK$3,000 Snapshot.",
+      "educationPoints": ["No per-head teaching fee; attendance is limited by the agreed room or online-platform capacity", "Content is agreed before the first session; extra preparation or sessions are separate", "External venue cost is shared only under a written, pre-approved arrangement"]
+    }
   }
 }

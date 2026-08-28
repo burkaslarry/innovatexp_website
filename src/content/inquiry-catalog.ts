@@ -11,7 +11,11 @@ export type InquiryCatalogItemId =
   | "discoverySprint30Day"
   | "foundation3Month"
   | "accelerator6Month"
-  | "partnership12Month";
+  | "partnership12Month"
+  | "systemCareEssential"
+  | "systemCareGrowth"
+  | "systemCarePriority"
+  | "educationTrack";
 
 export type InquiryCatalogItem = {
   id: InquiryCatalogItemId;
@@ -66,12 +70,13 @@ export const INQUIRY_CATALOG: InquiryCatalogItem[] = [
   {
     id: "aiReadinessAssessment",
     amountHkd: PRICING.quickCash.aiReadinessAssessment,
-    titleEn: "AI Readiness Assessment",
-    titleZh: "AI 準備度評估",
-    blurbEn: "Quick diagnosis + prioritized action list.",
-    blurbZh: "快速診斷 + 優先排序清單。",
+    titleEn: "AI Readiness Snapshot",
+    titleZh: "AI Readiness Snapshot",
+    blurbEn:
+      "Downsell only: 60–90 min interview, one-page scorecard, 3 blockers, go/no-go for Discovery. No SOP, prototype, or implementation. Upgrade within 14 days: pay HK$3,800 more.",
+    blurbZh:
+      "只作 downsell：60–90 分鐘訪談、一頁 scorecard、3 個阻力、決定是否進入 Discovery。不包括 SOP／prototype／實施。14 日內升級只需補 HK$3,800。",
     layer: "quickCash",
-    hidePublicPrice: true,
   },
   {
     id: "promptTrainingDay",
@@ -87,8 +92,10 @@ export const INQUIRY_CATALOG: InquiryCatalogItem[] = [
     amountHkd: PRICING.quickCash.aiDiscoverySprint,
     titleEn: "AI Discovery Sprint",
     titleZh: "AI Discovery Sprint",
-    blurbEn: "1–2 weeks: map + priority list + fixed implementation quote.",
-    blurbZh: "1–2 週：流程圖 + 優先序 + 固定實施報價。",
+    blurbEn:
+      "HK$6,800 for up to 10 people. 11–30 people: HK$13,600. 31+ quoted separately. Venue extra. Map + priority list + fixed implementation quote.",
+    blurbZh:
+      "10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價。場地另計。流程圖 + 優先序 + 固定實施報價。",
     layer: "consultancy",
   },
   {
@@ -96,8 +103,10 @@ export const INQUIRY_CATALOG: InquiryCatalogItem[] = [
     amountHkd: PRICING.consultancy.discoverySprint30Day,
     titleEn: "30-day Discovery Sprint",
     titleZh: "30 日 Discovery Sprint",
-    blurbEn: "Paid filter: one core workflow, SOP draft, KPI baseline, roadmap.",
-    blurbZh: "付費過濾器：1 個核心流程、SOP 初稿、KPI baseline、路線圖。",
+    blurbEn:
+      "Paid filter for one core workflow. HK$6,800 for up to 10 people; HK$13,600 for 11–30; 31+ quoted separately. Venue extra.",
+    blurbZh:
+      "付費過濾器：1 個核心流程。10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價。場地另計。",
     layer: "consultancy",
   },
   {
@@ -128,6 +137,45 @@ export const INQUIRY_CATALOG: InquiryCatalogItem[] = [
     blurbEn: "Annual roadmap, SOP governance, management reviews. Price quoted based on SOP complexity.",
     blurbZh: "年度 roadmap、SOP governance、管理層 review。價格視 SOP 複雜程度決定。",
     layer: "consultancy",
+    hidePublicPrice: true,
+  },
+  {
+    id: "systemCareEssential",
+    amountHkd: PRICING.systemCare.essentialMonthly,
+    titleEn: "System Care Essential",
+    titleZh: "System Care Essential",
+    blurbEn: "HK$4,000 / month. Response within 2 business days. No unlimited changes.",
+    blurbZh: "每月 HK$4,000。2 個工作日內回應。不設 unlimited changes。",
+    layer: "consultancy",
+  },
+  {
+    id: "systemCareGrowth",
+    amountHkd: PRICING.systemCare.growthMonthly,
+    titleEn: "System Care Growth",
+    titleZh: "System Care Growth",
+    blurbEn: "HK$8,000 / month. Response within 1 business day. No unlimited changes.",
+    blurbZh: "每月 HK$8,000。1 個工作日內回應。不設 unlimited changes。",
+    layer: "consultancy",
+  },
+  {
+    id: "systemCarePriority",
+    amountHkd: PRICING.systemCare.priorityMonthly,
+    titleEn: "System Care Priority",
+    titleZh: "System Care Priority",
+    blurbEn: "HK$12,000 / month. Response within 4 business hours. No unlimited changes.",
+    blurbZh: "每月 HK$12,000。4 個工作小時內回應。不設 unlimited changes。",
+    layer: "consultancy",
+  },
+  {
+    id: "educationTrack",
+    amountHkd: 0,
+    titleEn: "1-month education track (quote)",
+    titleZh: "1 個月教育 track（另行報價）",
+    blurbEn:
+      "Four weekly 60-minute sessions for the same organization. Not included in the HK$3,000 Snapshot. Attendance limited by agreed room/platform capacity.",
+    blurbZh:
+      "同一機構每星期 1 堂、共 4 堂、每堂 60 分鐘。不包括在 HK$3,000 Snapshot 之內。人數以已協議場地或平台容量為限。",
+    layer: "quickCash",
     hidePublicPrice: true,
   },
 ];
