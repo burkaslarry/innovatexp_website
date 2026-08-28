@@ -22,6 +22,8 @@ export const PRICING = {
     promptTrainingDay: 2_500,
     /** AI 準備度評估 */
     aiReadinessAssessment: 3_000,
+    /** Top-up when AI Readiness Snapshot upgrades to HK$6,800 Discovery within 14 days. */
+    aiReadinessDiscoveryTopUp: 3_800,
     /** EventXP 試用 — 1 場活動 */
     eventXpTrial: 4_000,
     /** SmartSales CRM 試用 */
@@ -45,9 +47,18 @@ export const PRICING = {
   /** AI 商業升級陪跑 — aligned with pitch deck / AI 商業顧問 page */
   consultancy: {
     discoverySprint30Day: 6_800,
+    discoveryWorkshop11To30: 13_600,
     foundation3Month: 26_000,
     accelerator6Month: 50_000,
     partnership12Month: 98_000,
+  },
+  /** Care for already-live custom systems. Product subscriptions are priced separately. */
+  systemCare: {
+    essentialMonthly: 4_000,
+    growthMonthly: 8_000,
+    priorityMonthly: 12_000,
+    oneOffFrom: 4_000,
+    oneOffTo: 12_000,
   },
   /** Full product tiers (after trial / validated workflow) */
   tools: {
@@ -172,7 +183,7 @@ export function getQuickCashOffers(locale: PricingLocale) {
     { id: "smartSalesTrial", price: formatHkd(q.smartSalesTrial, locale), order: 2 },
     { id: "accountXpExperience", price: `${formatHkd(q.accountXpExperience, locale)}${once}`, order: 3 },
     { id: "websiteStarter", price: `${formatHkd(q.websiteStarter, locale)}${once}`, order: 4 },
-    { id: "aiReadinessAssessment", price: formatHkdFrom(locale)(q.aiReadinessAssessment), order: 5 },
+    { id: "aiReadinessAssessment", price: formatHkd(q.aiReadinessAssessment, locale), order: 5 },
     { id: "promptTrainingDay", price: `${formatHkd(q.promptTrainingDay, locale)}${day}`, order: 6 },
     { id: "aiDiscoverySprint", price: formatHkd(q.aiDiscoverySprint, locale), order: 7 },
   ].sort((a, b) => a.order - b.order);

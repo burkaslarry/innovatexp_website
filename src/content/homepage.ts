@@ -100,6 +100,30 @@ export type HomepageContent = {
       body: string;
       points: string[];
     }[];
+    systemCare: {
+      eyebrow: string;
+      title: string;
+      intro: string;
+      tiers: {
+        name: string;
+        price: string;
+        response: string;
+        points: string[];
+      }[];
+      boundary: string;
+    };
+    readiness: {
+      eyebrow: string;
+      title: string;
+      price: string;
+      intro: string;
+      points: string[];
+      excludes: string;
+      upgrade: string;
+      educationTitle: string;
+      educationIntro: string;
+      educationPoints: string[];
+    };
   };
   cases: {
     eyebrow: string;

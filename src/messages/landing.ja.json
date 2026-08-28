@@ -114,8 +114,8 @@
     "plans": [
       {
         "name": "30日 Discovery Sprint",
-        "priceLabel": "HK$6,800",
-        "body": "収益や運営に影響する1本の業務を先に検証します。",
+        "priceLabel": "HK$6,800（10名まで）",
+        "body": "収益や運営に影響する1本の業務を先に検証します。10名まで HK$6,800、11–30名は HK$13,600、31名以上は個別見積。会場費は別途。",
         "deliverables": [
           "業務図",
           "責任分担",
@@ -257,11 +257,11 @@
       },
       {
         "question": "会社が小さいですが価値はありますか？",
-        "answer": "一人の休暇で全体が止まるなら、十分価値があります。小規模ほどコア業務の整理が必要です。主線はHK$6,800の30日Sprintから、低リスクで始められます。"
+        "answer": "一人の休暇で全体が止まるなら、十分価値があります。小規模ほどコア業務の整理が必要です。主線はHK$6,800の30日Sprint（10名まで）から、低リスクで始められます。"
       },
       {
         "question": "プログラムはどう始めますか？",
-        "answer": "段階的に進めます：\n30日 Discovery Sprint（HK$6,800）\n3か月 Foundation（SOPの複雑さに応じて見積）\n6か月 Accelerator（SOPの複雑さに応じて見積）\n12か月 Partnership（SOPの複雑さに応じて見積）\n（注：実際の課題解決が中心です。ツール試用がトップの売りではありません。）"
+        "answer": "段階的に進めます：\n30日 Discovery Sprint — 10名まで HK$6,800；11–30名 HK$13,600；31名以上は個別見積（会場費別途）\n3か月 Foundation（SOPの複雑さに応じて見積）\n6か月 Accelerator（SOPの複雑さに応じて見積）\n12か月 Partnership（SOPの複雑さに応じて見積）\n（注：実際の課題解決が中心です。ツール試用がトップの売りではありません。）"
       }
     ]
   },
@@ -364,15 +364,54 @@
         "eyebrow": "AIビジネスコンサルティング",
         "name": "AI Consultancy",
         "tagline": "まず一つの業務フローを改善",
-        "price": "30日 Sprint · HK$6,800",
-        "body": "診断、導入、定着支援、KPIレビューまで伴走。長期プランはSOPの複雑さに応じて見積。",
+        "price": "30日 Sprint · HK$6,800（10名まで）",
+        "body": "診断、導入、定着支援、KPIレビューまで伴走。Discoveryは10名まで HK$6,800、11–30名 HK$13,600、31名以上は個別見積。会場費別途。長期プランはSOPの複雑さに応じて見積。",
         "points": [
           "3か月 Foundation",
           "6か月 Accelerator",
           "12か月 Partnership",
-          "成果物：業務フロー、担当、SOP、KPI、Quick Win"
+          "成果物：業務フロー、担当、SOP、KPI、Quick Win",
+          "10名まで HK$6,800 · 11–30名 HK$13,600 · 31名以上は個別見積 · 会場費別途"
         ]
       }
-    ]
+    ],
+    "systemCare": {
+      "eyebrow": "本番稼働中のシステム",
+      "title": "System Care（運用保守）",
+      "intro": "すでに本番稼働している system / app / CRM / automation 向け。単発保守は範囲に応じて HK$4,000–HK$12,000、継続保守は月額。Response time は受付と一次切り分けであり、修復完了の保証ではありません。",
+      "tiers": [
+        {
+          "name": "Essential",
+          "price": "HK$4,000 / 月",
+          "response": "2営業日以内に応答",
+          "points": ["月1回の health review", "月1バッチの計画済み小修正", "月次ステータス要約"]
+        },
+        {
+          "name": "Growth",
+          "price": "HK$8,000 / 月",
+          "response": "1営業日以内に応答",
+          "points": ["月2回の health check", "月最大2バッチの計画済み小修正", "月次改善レビュー"]
+        },
+        {
+          "name": "Priority",
+          "price": "HK$12,000 / 月",
+          "response": "4営業時間以内に応答",
+          "points": ["週1回の health check", "インシデント優先 triage", "月最大3バッチの計画済み小修正"]
+        }
+      ],
+      "boundary": "無制限の改修はありません。サポート時間は月–金 09:00–18:00（香港時間、祝日除く）。大型新機能、data migration、第三者費用、時間外インシデント、契約対象外の作業はすべて別見積です。"
+    },
+    "readiness": {
+      "eyebrow": "Downsell のみ",
+      "title": "AI Readiness Snapshot",
+      "price": "HK$3,000",
+      "intro": "まだ HK$6,800 の Discovery に踏み切れないチーム向け。小さいコストで根拠ある判断を先に取る。",
+      "points": ["60–90分インタビュー", "1ページの readiness scorecard", "最大の adoption 阻害要因 3 点", "未準備か Discovery へ進むかの明確な推奨"],
+      "excludes": "SOP、prototype、implementation scope、custom build は含みません。",
+      "upgrade": "14暦日以内のアップグレードは追加 HK$3,800 で、合計 HK$6,800 の Discovery に入れます。",
+      "educationTitle": "任意の 1か月 education track — 別見積",
+      "educationIntro": "同一顧客組織向け。週1回×4回、各60分。HK$3,000 Snapshot には含まれません。",
+      "educationPoints": ["人数課金なし。参加人数は合意した会場またはオンライン基盤の安全定員まで", "第1回前に内容を確定。追加準備や追加セッションは別料金", "外部会場費は書面で事前合意した場合のみ分担"]
+    }
   }
 }

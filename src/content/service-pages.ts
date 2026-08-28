@@ -9,6 +9,7 @@ function consultancyDisplayPrices(locale: "en" | "zh-hk") {
   const scoped = SCOPED_SOP_PRICE_LABEL[pl];
   return {
     discovery: formatHkd(c.discoverySprint30Day, pl),
+    discovery11To30: formatHkd(c.discoveryWorkshop11To30, pl),
     foundation: scoped,
     accelerator: scoped,
     partnership: scoped,
@@ -154,12 +155,12 @@ const aiCoaching: ServicePageContent = {
   pricing: {
     title: "AI Upgrade Program Pricing",
     intro:
-      `Pricing is scoped around advisory programs first. Quick-cash offers and tool trials (EventXP ${enPrices.eventTrial}, SmartSales ${enPrices.salesTrial}) are separate entry points. Each package assumes one company and 3-5 core participants / stakeholders. Custom SaaS, CRM, AI agent development, large data migration, API integration, 20-person focus groups, larger workshops, third-party software, AI API, hosting, and subscriptions are separate after the workflow and business case are validated.`,
+      `Pricing is scoped around advisory programs first. Quick-cash offers and tool trials (EventXP ${enPrices.eventTrial}, SmartSales ${enPrices.salesTrial}) are separate entry points. Each package assumes one company and 3–5 core working participants. Discovery workshop attendance is ${enPrices.discovery} for up to 10 people, ${enPrices.discovery11To30} for 11–30 people, and quoted separately for 31+. Venue cost is extra. Custom SaaS, CRM, AI agent development, large data migration, API integration, third-party software, AI API, hosting, and subscriptions are separate after the workflow and business case are validated.`,
     plans: [
       {
         name: "30-day AI Upgrade Discovery Sprint",
-        price: enPrices.discovery,
-        fit: "Best for a 2-4 person focus group / 3-5 core participants that want to validate one workflow before committing to a larger program.",
+        price: `${enPrices.discovery} (up to 10 people)`,
+        fit: "Best for a team that wants to validate one workflow before a larger program. Standard price covers up to 10 people. 11–30 people: " + enPrices.discovery11To30 + ". 31+ quoted separately. Venue cost is extra.",
         features: [
           "3-minute workflow health check and detailed questionnaire",
           "60-minute kickoff and up to two stakeholder interviews",
@@ -202,7 +203,7 @@ const aiCoaching: ServicePageContent = {
       },
     ],
     note:
-      "Not included: 20-person focus groups or large workshops, custom SaaS / CRM / AI agent development, large data migration, API integration, daily operations outsourcing, legal/accounting/tax/HR/audit/compliance advice, third-party software, AI API, hosting costs, and guaranteed ROI or revenue outcomes. Extra participants, departments, workshops, or training sessions are scoped separately by headcount, session count, and preparation work.",
+      "Not included: workshops of 31+ people (quoted separately), custom SaaS / CRM / AI agent development, large data migration, API integration, daily operations outsourcing, legal/accounting/tax/HR/audit/compliance advice, third-party software, AI API, hosting costs, and guaranteed ROI or revenue outcomes. Extra departments, extra workshops, or extra training sessions are scoped separately by headcount, session count, and preparation work. Venue cost is extra.",
   },
   relatedLinks: commonRelatedLinks,
   cta: {
@@ -499,13 +500,12 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
     ],
     pricing: {
       title: "AI 陪跑定價",
-      intro:
-        "定價以陪跑計劃 / advisory 為主，不是軟件套裝。每個 package 以 1 間公司、3-5 位核心參與者 / stakeholders 為基準；客製化 SaaS、CRM、AI agent、大型 data migration、API integration、20 人 focus group、大班 workshop、第三方軟件、AI API、hosting 和雲端成本，會在 workflow 和 business case 驗證後另行 scope。",
+      intro: `定價以陪跑計劃 / advisory 為主，不是軟件套裝。每個 package 以 1 間公司、3–5 位核心工作參與者為基準。Discovery workshop：10 人或以下 ${zhPrices.discovery}；11–30 人 ${zhPrices.discovery11To30}；31 人或以上另行報價。場地費用另計。客製化 SaaS、CRM、AI agent、大型 data migration、API integration、第三方軟件、AI API、hosting 和雲端成本，會在 workflow 和 business case 驗證後另行 scope。`,
       plans: [
         {
           name: "30 日 AI Upgrade Discovery Sprint",
-          price: zhPrices.discovery,
-          fit: "適合 2-4 人 focus group／3-5 位核心參與者先試一個 workflow，再決定是否擴展的 SME。",
+          price: `${zhPrices.discovery}（10 人或以下）`,
+          fit: `適合想先驗證一條 workflow 再決定是否擴展的 SME。標準價覆蓋 10 人或以下。11–30 人：${zhPrices.discovery11To30}。31 人或以上另行報價。場地費用另計。`,
           features: [
             "3 分鐘流程健康檢查與詳細 active questionnaire",
             "60 分鐘 kickoff 與最多 2 次持份者訪談",
@@ -548,7 +548,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
         },
       ],
       note:
-        "不包括：20 人 focus group 或大型 workshop、客製化 SaaS / CRM / AI agent 開發、大型 data migration、API integration、代替日常營運、法律 / 會計 / 稅務 / HR / 審計 / 合規意見、第三方軟件、AI API、hosting 費用，以及保證 ROI 或收入成果。額外參與者、部門、workshop 或培訓場次會按人數、場次和準備工作另行報價。",
+        "不包括：31 人或以上的 workshop（另行報價）、客製化 SaaS / CRM / AI agent 開發、大型 data migration、API integration、代替日常營運、法律 / 會計 / 稅務 / HR / 審計 / 合規意見、第三方軟件、AI API、hosting 費用，以及保證 ROI 或收入成果。額外部門、workshop 或培訓場次會按人數、場次和準備工作另行報價。場地費用另計。",
     },
     cta: {
       ...aiCoaching.cta,
