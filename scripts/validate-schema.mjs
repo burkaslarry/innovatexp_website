@@ -14,6 +14,8 @@ const requiredTokens = [
   "On-Premise",
   "AI Training",
   "AggregateOffer",
+  "VisionXP",
+  '"@type": "SoftwareApplication"',
 ];
 
 const missing = requiredTokens.filter((token) => !source.includes(token));

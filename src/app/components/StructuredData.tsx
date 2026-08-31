@@ -792,6 +792,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "Private AI on-premise",
       "AI CRM",
       "SME AI Automation",
+      "AI-augmented Workflow",
       "Business Process Automation",
       "Prompt Engineering",
       "Event Check-in Intelligence",
