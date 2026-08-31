@@ -10,7 +10,8 @@
     "about": "About Larry",
     "faq": "FAQ",
     "cta": "Book a 30-min diagnosis",
-    "products": "Products"
+    "products": "Products",
+    "visionXp": "VisionXP"
   },
   "hero": {
     "eyebrow": "AI Business Consultant | 14+ years in IT delivery and workflow implementation",
@@ -442,5 +443,32 @@
         "External venue cost is shared only under a written, pre-approved arrangement"
       ]
     }
+  },
+  "visionXp": {
+    "eyebrow": "Vertical product",
+    "title": "VisionXP",
+    "tagline": "Paediatric strabismus and amblyopia training",
+    "intro": "A bilingual training platform for children aged 3–12: gamified daily sessions, parent progress tracking, and an optometrist portal for prescriptions and compliance. The live site is a frontend demo — no login, no patient data stored.",
+    "price": "Live demo first · then Discovery",
+    "points": [
+      "Daily 15–20 minute training with rest reminders",
+      "Progress, streaks, and achievement tracking for parents",
+      "Optometrist view: patients, prescriptions, compliance, reports",
+      "Adaptive difficulty and gamified exercises",
+      "Cantonese / English UI"
+    ],
+    "portals": [
+      {
+        "name": "Parent portal",
+        "body": "Today’s tasks, weekly minutes, child profiles, and start-training shortcuts."
+      },
+      {
+        "name": "Optometrist portal",
+        "body": "Anonymised patient list, diagnosis, last review, compliance rate, and reports."
+      }
+    ],
+    "demoCta": "Open live VisionXP demo",
+    "pageCta": "VisionXP details",
+    "note": "Demo only. Implementation is scoped after Discovery. Not a medical device claim and not a substitute for clinical care."
   }
 }

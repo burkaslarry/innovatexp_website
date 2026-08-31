@@ -39,6 +39,7 @@ function LandingPage() {
       { label: content.nav.services, href: "#service-approach" },
       { label: content.nav.plans, href: "#service-plans" },
       { label: content.nav.products, href: "#product-packages" },
+      { label: content.nav.visionXp, href: "#visionxp" },
       { label: content.nav.cases, href: "#case-directions" },
       { label: content.nav.about, href: "#about-larry" },
       { label: content.nav.faq, href: "#faq" },
@@ -91,6 +92,7 @@ function LandingPage() {
               WhatsApp
             </a>
             <a href={`mailto:${HOMEPAGE_PLACEHOLDERS.emailAddress}`}>{HOMEPAGE_PLACEHOLDERS.emailAddress}</a>
+            <a href={loc("/visionxp")}>{content.nav.visionXp}</a>
             <a href={loc("/privacy-policy")}>{content.footer.privacy}</a>
           </div>
         </div>

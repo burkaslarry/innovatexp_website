@@ -15,6 +15,19 @@ type SectionItem = {
   body: string;
 };
 
+export type VisionXpCopy = {
+  eyebrow: string;
+  title: string;
+  tagline: string;
+  intro: string;
+  price: string;
+  points: string[];
+  portals: { name: string; body: string }[];
+  demoCta: string;
+  pageCta: string;
+  note: string;
+};
+
 type CaseStudy = {
   industry: string;
   title: string;
@@ -33,6 +46,7 @@ export type HomepageContent = {
     services: string;
     plans: string;
     products: string;
+    visionXp: string;
     cases: string;
     about: string;
     faq: string;
@@ -125,6 +139,7 @@ export type HomepageContent = {
       educationPoints: string[];
     };
   };
+  visionXp: VisionXpCopy;
   cases: {
     eyebrow: string;
     title: string;

@@ -62,6 +62,19 @@ const SMARTSALES: LocalePair = {
   },
 };
 
+const VISIONXP: LocalePair = {
+  zh: {
+    title: "VisionXP香港｜兒童斜視弱視訓練示範｜InnovateXP",
+    description:
+      "VisionXP：3–12 歲斜視／弱視訓練示範。家長進度、視光師處方與依從率。純前端 demo，無須登入。先睇示範，再預約 Discovery。",
+  },
+  en: {
+    title: "VisionXP Hong Kong | Paediatric Eye Training Demo | InnovateXP",
+    description:
+      "VisionXP: bilingual demo for paediatric strabismus and amblyopia training. Parent progress and optometrist compliance views. Frontend-only, no login. Demo first, then Discovery.",
+  },
+};
+
 const EVENTXP: LocalePair = {
   zh: {
     title: "EventXP香港｜活動簽到名單評分Follow-up｜InnovateXP",
@@ -182,6 +195,9 @@ export function smartSalesSeo(locale: AppLocale): PageSeo {
 }
 export function eventXpSeo(locale: AppLocale): PageSeo {
   return pick(locale, EVENTXP);
+}
+export function visionXpSeo(locale: AppLocale): PageSeo {
+  return pick(locale, VISIONXP);
 }
 export function aiConsultingSeo(locale: AppLocale): PageSeo {
   return pick(locale, AI_CONSULTING);
