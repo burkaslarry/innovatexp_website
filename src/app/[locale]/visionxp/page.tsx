@@ -79,7 +79,11 @@ export default async function VisionXpPage({
   ];
 
   const related = [
-    { href: "/ai-consulting", label: content.nav.services },
+    {
+      href: "/ai-consulting",
+      label:
+        loc.startsWith("zh") ? "AI 顧問" : loc === "ja" ? "AI コンサル" : loc === "de" ? "KI-Beratung" : "AI Consulting",
+    },
     { href: "/eventxp", label: "EventXP" },
     { href: "/sme-ai-workflow", label: "SME AI Workflow" },
     { href: "/bookme", label: content.nav.cta },
