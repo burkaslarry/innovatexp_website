@@ -278,11 +278,11 @@
       },
       {
         "question": "Was ist VisionXP?",
-        "answer": "VisionXP ist InnovateXPs zweisprachiges Demo für Training bei pädiatrischem Schielen und Amblyopie (3–12 Jahre): Fortschritt für Eltern, Compliance für Optometristen. Die Live-Seite ist nur Frontend — kein Login, keine Patientendaten. Kommerzieller Weg: Demo → Discovery → Implementation Sprint."
+        "answer": "VisionXP ist InnovateXPs Technologie-Prototyp / KI-Visual-Tracking-Demo für pädiatrische Trainings-Workflows (3–12). Die Live-Seite ist nur Frontend — kein Login, keine Patientendaten. Kommerzieller Weg: Demo → Discovery → Implementation Sprint."
       },
       {
         "question": "Ist VisionXP ein Medizinprodukt?",
-        "answer": "Nein. VisionXP ist eine Demonstration eines Trainings-Workflows. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung. Umsetzung wird erst nach Discovery scoped."
+        "answer": "Nein. VisionXP ist ein Technologie-Prototyp / eine KI-Visual-Tracking-Demo — kein medizinisches Diagnosetool, kein zugelassenes Medizinprodukt und kein Ersatz für eine professionelle optometrische oder ophthalmologische Untersuchung."
       }
     ]
   },
@@ -459,32 +459,32 @@
   "visionXp": {
     "eyebrow": "Vertikales Produkt",
     "title": "VisionXP",
-    "tagline": "Training bei pädiatrischem Schielen und Amblyopie",
-    "intro": "Eine zweisprachige Trainingsplattform für Kinder von 3–12: spielerische tägliche Einheiten, Fortschritt für Eltern, Optometristen-Portal für Verordnungen und Compliance. Die Live-Seite ist ein Frontend-Demo — kein Login, keine Patientendaten.",
+    "tagline": "KI-Visual-Tracking-Tech-Demo für pädiatrische Trainings-Workflows",
+    "intro": "Zweisprachiger Technologie-Prototyp für Kinder von 3–12: spielerische tägliche Trainingseinheiten, Fortschrittsansicht für Eltern und ein optometristenartiges Portal für Verordnungen und Compliance-Tracking. Die Live-Seite ist eine Frontend-Tech-Demo — kein Login, keine Patientendaten. Kein medizinisches Diagnosetool.",
     "price": "Zuerst Live-Demo · dann Discovery",
     "points": [
-      "Täglich 15–20 Minuten Training mit Pausen-Erinnerung",
-      "Fortschritt, Serien und Erfolge für Eltern",
-      "Optometristen-Ansicht: Patienten, Verordnungen, Compliance, Berichte",
+      "Tägliches 15–20-Minuten-Training mit Pausen-Erinnerung (Demo)",
+      "Fortschritt, Serien und Erfolge für Eltern (Demo)",
+      "Optometristenartige Ansicht: Verordnungen, Compliance, Berichte (Demo-UI)",
       "Adaptive Schwierigkeit und spielerische Übungen",
       "Kantonesisch / Englisch UI"
     ],
     "portals": [
       {
-        "name": "Elternportal",
-        "body": "Aufgaben des Tages, Wochenminuten, Kinderprofile und Trainingsstart."
+        "name": "Elternportal (Demo)",
+        "body": "Heutige Aufgaben, Wochenminuten, Kinderprofile und Start-Shortcuts — nur zur Demonstration."
       },
       {
-        "name": "Optometristenportal",
-        "body": "Anonymisierte Patientenliste, Diagnose, letzte Kontrolle, Compliance, Berichte."
+        "name": "Optometristenportal (Demo)",
+        "body": "Anonymisierte Liste, Verordnungsfelder, letzte Prüfung, Compliance und Berichte — nur Demo-UI, keine klinische Diagnose."
       }
     ],
     "demoCta": "Live-Demo von VisionXP öffnen",
     "pageCta": "VisionXP-Details",
-    "note": "Nur Demo. Umsetzung wird nach Discovery scoped. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung.",
+    "note": "Nur Technologie-Prototyp / KI-Visual-Tracking-Demo. Kein medizinisches Diagnosetool, kein zugelassenes Medizinprodukt und kein Ersatz für professionelle optometrische oder ophthalmologische Untersuchung.",
     "page": {
       "whatTitle": "Was es ist",
-      "whatBody": "VisionXP ist ein zweisprachiges (Kantonesisch / Englisch) Trainings-Workflow-Demo für pädiatrisches Schielen und Amblyopie. Kinder von 3–12 absolvieren spielerische tägliche Einheiten von etwa 15–20 Minuten mit Pausen-Erinnerung. Eltern sehen Fortschritt, Serien und Erfolge. Optometristen sehen eine anonymisierte Patientenliste, Verordnungen, Compliance und Berichte. Die öffentliche Seite visionquest-web.vercel.app ist nur Frontend: kein Login, keine gespeicherten Patientendaten.",
+      "whatBody": "Dies ist ein Technologie-Prototyp / eine Demo für KI-basiertes Visual Tracking. Kein medizinisches Diagnosetool, kein zugelassenes Medizinprodukt und kein Ersatz für eine professionelle optometrische oder ophthalmologische Untersuchung. VisionXP ist ein zweisprachiges (Kantonesisch / Englisch) Trainings-Workflow-Demo für pädiatrisches Schielen und Amblyopie. Kinder von 3–12 absolvieren spielerische tägliche Einheiten von etwa 15–20 Minuten mit Pausen-Erinnerung. Eltern sehen Fortschritt, Serien und Erfolge. Optometristen sehen eine anonymisierte Patientenliste, Verordnungen, Compliance und Berichte. Die öffentliche Seite visionquest-web.vercel.app ist nur Frontend: kein Login, keine gespeicherten Patientendaten.",
       "whoTitle": "Für wen",
       "whoItems": [
         "Optometrie- und pädiatrische Seh-Praktiken in Hongkong, die einen Eltern- plus Kliniker-Trainingsworkflow sehen wollen.",
@@ -494,6 +494,7 @@
       ],
       "notTitle": "Was es nicht ist",
       "notItems": [
+        "Kein Diagnose-, Screening- oder Behandlungswirkungs-Claim unter den hongkonger Regeln für medizinische Werbung.",
         "Kein Medizinprodukt und kein therapeutischer Wirksamkeits-Claim.",
         "Kein Ersatz für klinische Untersuchung oder klinische Versorgung.",
         "Kein eingeloggtes Produktionssystem, das Patientenakten speichert.",
@@ -518,11 +519,15 @@
       "faqs": [
         {
           "question": "Was ist VisionXP?",
-          "answer": "VisionXP ist InnovateXPs zweisprachiges Demo für Training bei pädiatrischem Schielen und Amblyopie (3–12 Jahre). Elternportal für Fortschritt und tägliche Einheiten, Optometristenportal für Verordnungen und Compliance. Die Live-Seite ist nur Frontend: kein Login, keine Patientendaten."
+          "answer": "VisionXP ist InnovateXPs Technologie-Prototyp / KI-Visual-Tracking-Demo für pädiatrische Trainings-Workflows (3–12). Die Live-Seite ist nur Frontend — kein Login, keine Patientendaten. Kommerzieller Weg: Demo → Discovery → Implementation Sprint."
+        },
+        {
+          "question": "Kann VisionXP meine Augen / die meines Kindes prüfen oder diagnostizieren?",
+          "answer": "Nein. VisionXP ist ein Technologie-Prototyp / eine KI-Visual-Tracking-Demo — kein medizinisches Diagnosetool, kein zugelassenes Medizinprodukt und kein Ersatz für eine professionelle optometrische oder ophthalmologische Untersuchung."
         },
         {
           "question": "Ist VisionXP ein Medizinprodukt?",
-          "answer": "Nein. VisionXP ist eine Demonstration eines Trainings-Workflows. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung."
+          "answer": "Nein. VisionXP ist ein Technologie-Prototyp / eine KI-Visual-Tracking-Demo — kein medizinisches Diagnosetool, kein zugelassenes Medizinprodukt und kein Ersatz für eine professionelle optometrische oder ophthalmologische Untersuchung."
         },
         {
           "question": "Speichert die Live-Demo Patientendaten?",
@@ -540,6 +545,28 @@
       "relatedTitle": "Verwandte Seiten",
       "ctaTitle": "Demo mit Ihrem Workflow ablaufen?",
       "ctaBody": "Live-Demo öffnen, dann Discovery buchen und einen Klinik- oder Eltern-Workflow festlegen, bevor es ein Umsetzungsangebot gibt."
+    },
+    "compliance": {
+      "title": "Rechtlicher & Compliance-Hinweis",
+      "lead": "Dies ist ein Technologie-Prototyp / eine Demo für KI-basiertes Visual Tracking. Kein medizinisches Diagnosetool, kein zugelassenes Medizinprodukt und kein Ersatz für eine professionelle optometrische oder ophthalmologische Untersuchung.",
+      "items": [
+        {
+          "title": "Keine medizinische Diagnose und keine Werbeclaims",
+          "body": "UI-Begriffe wie „Assessment“, „Screening“ o. Ä. in der Demo sind nur technische Labels — keine Diagnose und keine Behandlungswirkung. Die hongkonger Undesirable Medical Advertisements Ordinance reguliert öffentliche Aussagen zu medizinischer Diagnose/Therapie. VisionXP wird nur als Tech-Demo für Trainings-Workflows und Tracking gezeigt."
+        },
+        {
+          "title": "Datenschutz (PDPO)",
+          "body": "Die öffentliche Demo ist nur Frontend: kein Login, keine Patientendaten. Bei Aufnahmen/Veröffentlichungen mit Gesichtern Dritter oder biometrischem Tracking ist vorab eine schriftliche Einwilligung erforderlich. Gesichts-/Iris-Tracking-Daten sind sensible personenbezogene Daten."
+        },
+        {
+          "title": "Partnerschaft, IP und öffentliche Vermarktung",
+          "body": "VisionXP ist ein gemeinsam entwickelter Prototyp. Vor Marketing mit Demo-Material bitte mit Co-Entwicklern IP, Veröffentlichungsrechte und etwaige Innovationsfonds-Auflagen klären, die vor Förderzusage öffentliche Kommerzialisierung einschränken können."
+        },
+        {
+          "title": "Einheitliche Positionierung als Nicht-Medizinprodukt",
+          "body": "Auf die Frage „Kann das meine Augen prüfen?“ lautet die Antwort in allen Sprachen: Tech-Demo/Prototyp, kein zugelassenes Medizinprodukt — und darf nicht als ungenehmigtes Medizinprodukt beworben werden."
+        }
+      ]
     }
   }
 }

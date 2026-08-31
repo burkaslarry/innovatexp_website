@@ -7,9 +7,30 @@ import type { AppLocale } from "@/lib/i18n-routing";
 import { withLocale } from "@/lib/i18n-routing";
 
 /*
- * VisionXP homepage block — one vertical product, two portals, one demo.
- * Details and SEO live on /visionxp. This section only sells the next click.
+ * VisionXP homepage block — tech demo only.
+ * Legal/compliance disclaimer must stay visible on every surface.
  */
+export function VisionXpComplianceNotice({ copy }: { copy: VisionXpCopy["compliance"] }) {
+  return (
+    <aside
+      className="rounded-[var(--card-radius)] border border-[color:var(--pain-accent)] bg-[color:var(--pain-accent-soft)] px-5 py-4"
+      role="note"
+      aria-label={copy.title}
+    >
+      <p className="text-sm font-bold tracking-[0.04em] text-[color:var(--heading-foreground)]">{copy.title}</p>
+      <p className="mt-2 text-sm font-semibold leading-7 text-[color:var(--heading-foreground)]">{copy.lead}</p>
+      <ul className="mt-4 space-y-3">
+        {copy.items.map((item) => (
+          <li key={item.title}>
+            <p className="text-sm font-semibold text-[color:var(--heading-foreground)]">{item.title}</p>
+            <p className="mt-1 text-sm leading-7 text-[color:var(--text-secondary)]">{item.body}</p>
+          </li>
+        ))}
+      </ul>
+    </aside>
+  );
+}
+
 export function VisionXpSection({
   locale,
   copy,
@@ -79,6 +100,9 @@ export function VisionXpSection({
           </div>
         </div>
       </article>
+      <div className="mt-6">
+        <VisionXpComplianceNotice copy={copy.compliance} />
+      </div>
     </section>
   );
 }

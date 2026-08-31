@@ -31,12 +31,13 @@ export async function generateMetadata({
     description: seo.description,
     keywords: [
       "VisionXP",
-      "paediatric strabismus training",
-      "amblyopia training demo",
-      "Hong Kong optometrist portal",
-      "兒童斜視訓練",
-      "弱視訓練",
+      "AI visual tracking demo",
+      "paediatric training workflow tech demo",
+      "Hong Kong tech prototype",
+      "兒童訓練技術示範",
+      "AI 視覺追蹤 Demo",
       "InnovateXP",
+      "not a medical device",
     ],
     alternates,
     openGraph: {

@@ -278,11 +278,11 @@
       },
       {
         "question": "What is VisionXP?",
-        "answer": "VisionXP is InnovateXP’s bilingual demo for paediatric strabismus and amblyopia training (ages 3–12): parent progress and optometrist compliance views. The live site is frontend-only — no login, no patient data. Commercial path is demo → Discovery → Implementation Sprint."
+        "answer": "VisionXP is InnovateXP’s technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12). The live site is frontend-only — no login, no patient data. Commercial path is demo → Discovery → Implementation Sprint."
       },
       {
         "question": "Is VisionXP a medical device?",
-        "answer": "No. VisionXP is a training-workflow demonstration. It is not a medical-device claim and is not a substitute for clinical care. Implementation is scoped only after Discovery."
+        "answer": "No. VisionXP is a technology prototype / AI visual-tracking demo. It is not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination."
       }
     ]
   },
@@ -459,32 +459,32 @@
   "visionXp": {
     "eyebrow": "Vertical product",
     "title": "VisionXP",
-    "tagline": "Paediatric strabismus and amblyopia training",
-    "intro": "A bilingual training platform for children aged 3–12: gamified daily sessions, parent progress tracking, and an optometrist portal for prescriptions and compliance. The live site is a frontend demo — no login, no patient data stored.",
+    "tagline": "AI visual-tracking tech demo for paediatric training workflows",
+    "intro": "A bilingual technology prototype for children aged 3–12: gamified daily training sessions, parent progress views, and an optometrist-style portal for prescriptions and compliance tracking. The live site is a frontend tech demo — no login, no patient data stored. Not a medical diagnostic tool.",
     "price": "Live demo first · then Discovery",
     "points": [
-      "Daily 15–20 minute training with rest reminders",
-      "Progress, streaks, and achievement tracking for parents",
-      "Optometrist view: patients, prescriptions, compliance, reports",
+      "Daily 15–20 minute training with rest reminders (demo)",
+      "Progress, streaks, and achievement tracking for parents (demo)",
+      "Optometrist-style view: prescriptions, compliance, reports (demo UI)",
       "Adaptive difficulty and gamified exercises",
       "Cantonese / English UI"
     ],
     "portals": [
       {
-        "name": "Parent portal",
-        "body": "Today’s tasks, weekly minutes, child profiles, and start-training shortcuts."
+        "name": "Parent portal (demo)",
+        "body": "Today’s tasks, weekly minutes, child profiles, and start-training shortcuts — for demonstration only."
       },
       {
-        "name": "Optometrist portal",
-        "body": "Anonymised patient list, diagnosis, last review, compliance rate, and reports."
+        "name": "Optometrist portal (demo)",
+        "body": "Anonymised list, prescription fields, last review, compliance rate, and reports — demo UI only, not clinical diagnosis."
       }
     ],
     "demoCta": "Open live VisionXP demo",
     "pageCta": "VisionXP details",
-    "note": "Demo only. Implementation is scoped after Discovery. Not a medical device claim and not a substitute for clinical care.",
+    "note": "Technology prototype / AI visual-tracking demo only. Not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination.",
     "page": {
       "whatTitle": "What it is",
-      "whatBody": "VisionXP is a bilingual (Cantonese / English) training-workflow demo for paediatric strabismus and amblyopia. Children aged 3–12 complete gamified daily sessions of about 15–20 minutes with rest reminders. Parents see progress, streaks, and achievements. Optometrists see an anonymised patient list, prescriptions, compliance, and reports. The public site at visionquest-web.vercel.app is frontend-only: no login and no patient data stored.",
+      "whatBody": "This is a technology prototype / AI visual-tracking demonstration. It is not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination. VisionXP is a bilingual (Cantonese / English) training-workflow demo for paediatric strabismus and amblyopia. Children aged 3–12 complete gamified daily sessions of about 15–20 minutes with rest reminders. Parents see progress, streaks, and achievements. Optometrists see an anonymised patient list, prescriptions, compliance, and reports. The public site at visionquest-web.vercel.app is frontend-only: no login and no patient data stored.",
       "whoTitle": "Who it is for",
       "whoItems": [
         "Hong Kong optometry and paediatric vision practices that want a parent + clinician training workflow.",
@@ -494,6 +494,7 @@
       ],
       "notTitle": "What it is not",
       "notItems": [
+        "Not a medical diagnostic, screening, or treatment-efficacy claim under Hong Kong medical advertising rules.",
         "Not a medical device and not a therapeutic efficacy claim.",
         "Not a substitute for clinical examination or clinical care.",
         "Not a logged-in production system that stores patient records.",
@@ -518,11 +519,15 @@
       "faqs": [
         {
           "question": "What is VisionXP?",
-          "answer": "VisionXP is InnovateXP’s bilingual demo for paediatric strabismus and amblyopia training (ages 3–12). It shows a parent portal for progress and daily sessions, and an optometrist portal for prescriptions and compliance. The live site is frontend-only: no login and no patient data stored."
+          "answer": "VisionXP is InnovateXP’s technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12). The live site is frontend-only — no login, no patient data. Commercial path is demo → Discovery → Implementation Sprint."
+        },
+        {
+          "question": "Can VisionXP diagnose or check my eyes / my child’s eyes?",
+          "answer": "No. VisionXP is a technology prototype / AI visual-tracking demo. It is not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination."
         },
         {
           "question": "Is VisionXP a medical device?",
-          "answer": "No. VisionXP is a training-workflow demonstration. It is not a medical-device claim and is not a substitute for clinical care."
+          "answer": "No. VisionXP is a technology prototype / AI visual-tracking demo. It is not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination."
         },
         {
           "question": "Does the live demo store patient data?",
@@ -540,6 +545,28 @@
       "relatedTitle": "Related pages",
       "ctaTitle": "Ready to walk the demo with your workflow?",
       "ctaBody": "Open the live demo, then book Discovery to lock one clinic or parent workflow before any implementation quote."
+    },
+    "compliance": {
+      "title": "Legal & compliance notice",
+      "lead": "This is a technology prototype / AI visual-tracking demonstration. It is not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination.",
+      "items": [
+        {
+          "title": "No medical diagnosis or advertising claims",
+          "body": "Do not treat any on-screen labels such as “assessment”, “screening”, or similar demo UI text as diagnosis or treatment efficacy. Under Hong Kong’s Undesirable Medical Advertisements Ordinance, public claims implying medical diagnosis or treatment are regulated. VisionXP is shown only as a technical demo of training workflows and tracking technology."
+        },
+        {
+          "title": "Privacy (PDPO)",
+          "body": "The public demo is frontend-only: no login and no patient records stored. If you film or publish demos that include third-party faces or biometric tracking, obtain written consent before public release. Facial/iris tracking data is sensitive personal data."
+        },
+        {
+          "title": "Partnership & IP before public marketing",
+          "body": "VisionXP is a collaborative prototype. Before using demo footage for marketing, align with co-developers on IP ownership, public-release rights, and any innovation-fund application constraints that may restrict pre-award commercial publicity."
+        },
+        {
+          "title": "Consistent non-medical-device positioning",
+          "body": "If anyone asks whether VisionXP can “check their eyes”, the answer is the same in every language: it is a tech demo / prototype, not a registered medical device, and must not be promoted as an unapproved medical product."
+        }
+      ]
     }
   }
 }

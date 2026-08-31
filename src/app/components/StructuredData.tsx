@@ -55,13 +55,13 @@ const SCHEMA_EVENTXP_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_VISIONXP_DESCRIPTION: Record<AppLocale, string> = {
-  en: "VisionXP is a bilingual paediatric strabismus and amblyopia training demo for children aged 3–12. Parent progress and optometrist compliance views. Frontend-only, no login, no patient data. Not a medical-device claim. Path: demo → Discovery → Implementation Sprint.",
+  en: "VisionXP is InnovateXP’s technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12). Frontend-only public demo — no login, no patient data. Not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination. Path: demo → Discovery → Implementation Sprint.",
   "zh-hk":
-    "VisionXP 係 3–12 歲兒童斜視／弱視訓練示範：家長進度同視光師依從率。純前端、無須登入、唔存病人資料。唔係醫療器材聲稱。路徑：demo → Discovery → Implementation Sprint。",
+    "VisionXP 係 InnovateXP 嘅技術原型／AI 視覺追蹤示範（3–12 歲訓練流程）。純前端、無須登入、唔存病人資料。並非醫療診斷工具，亦唔係註冊醫療器械，不能代替專業視光或眼科檢查。路徑：demo → Discovery → Implementation Sprint。",
   "zh-tw":
-    "VisionXP 是 3–12 歲兒童斜視／弱視訓練示範：家長進度與視光師依從率。純前端、無須登入、不存病人資料。不是醫療器材聲稱。路徑：demo → Discovery → Implementation Sprint。",
-  ja: "VisionXP は 3–12歳向けの小児斜視・弱視トレーニングデモ。保護者の進捗と専門職の遵守率。フロントエンドのみ、ログイン不要、患者データ非保存。医療機器の効能表示ではありません。経路：demo → Discovery → Implementation Sprint。",
-  de: "VisionXP ist ein zweisprachiges Demo für Training bei pädiatrischem Schielen und Amblyopie (3–12). Elternfortschritt und Optometristen-Compliance. Nur Frontend, kein Login, keine Patientendaten. Kein Medizinprodukte-Claim. Weg: Demo → Discovery → Implementation Sprint.",
+    "VisionXP 是 InnovateXP 的技術原型／AI 視覺追蹤示範（3–12 歲訓練流程）。純前端、無須登入、不存病人資料。並非醫療診斷工具，也不是註冊醫療器材，不能取代專業視光或眼科檢查。路徑：demo → Discovery → Implementation Sprint。",
+  ja: "VisionXP は InnovateXP の技術プロトタイプ／AI視覚トラッキングデモ（3–12歳向けトレーニング業務）。フロントエンドのみ、ログイン不要、患者データ非保存。医療診断ツールではなく、登録医療機器でもなく、専門の視能・眼科検査の代替にもなりません。経路：demo → Discovery → Implementation Sprint。",
+  de: "VisionXP ist InnovateXPs Technologie-Prototyp / KI-Visual-Tracking-Demo für pädiatrische Trainings-Workflows (3–12). Nur Frontend, kein Login, keine Patientendaten. Kein medizinisches Diagnosetool, kein zugelassenes Medizinprodukt und kein Ersatz für professionelle optometrische oder ophthalmologische Untersuchung. Weg: Demo → Discovery → Implementation Sprint.",
 };
 
 const SCHEMA_AI_SEO_NAME: Record<AppLocale, string> = {
@@ -313,15 +313,15 @@ const HOME_FAQ_EN: FaqMainEntity = [
     name: "What is VisionXP?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "VisionXP is InnovateXP’s bilingual demo for paediatric strabismus and amblyopia training (ages 3–12): parent progress and optometrist compliance views. The live site is frontend-only — no login, no patient data. Commercial path is demo → Discovery → Implementation Sprint.",
+      text: "VisionXP is InnovateXP’s technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12). The live site is frontend-only — no login, no patient data. Commercial path is demo → Discovery → Implementation Sprint.",
     },
   },
   {
     "@type": "Question",
-    name: "Is VisionXP a medical device?",
+    name: "Is VisionXP a medical device or diagnostic tool?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "No. VisionXP is a training-workflow demonstration. It is not a medical-device claim and is not a substitute for clinical care. Implementation is scoped only after Discovery.",
+      text: "No. VisionXP is a technology prototype / AI visual-tracking demo. It is not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination.",
     },
   },
 ];
@@ -388,15 +388,15 @@ const HOME_FAQ_ZH_HK: FaqMainEntity = [
     name: "VisionXP 係咩？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "VisionXP 係 InnovateXP 嘅兒童斜視／弱視訓練示範（3–12 歲）：家長睇進度，視光師睇處方同依從率。公開站係純前端——無須登入、唔存病人資料。商業路徑係 demo → Discovery → Implementation Sprint。",
+      text: "VisionXP 係 InnovateXP 嘅技術原型／AI 視覺追蹤示範（3–12 歲訓練流程）。公開站係純前端——無須登入、唔存病人資料。商業路徑係 demo → Discovery → Implementation Sprint。",
     },
   },
   {
     "@type": "Question",
-    name: "VisionXP 係咪醫療器材？",
+    name: "VisionXP 係咪醫療診斷工具或醫療器材？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "唔係。VisionXP 只係訓練流程示範，唔係醫療器材聲稱，亦唔可以取代臨床護理。落地範圍喺 Discovery 之後先定。",
+      text: "唔係。VisionXP 只係技術原型／AI 視覺追蹤示範，並非醫療診斷工具，亦唔係註冊醫療器械，不能代替專業視光或眼科檢查。",
     },
   },
 ];
@@ -463,15 +463,15 @@ const HOME_FAQ_ZH_TW: FaqMainEntity = [
     name: "VisionXP 是什麼？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "VisionXP 是 InnovateXP 的兒童斜視／弱視訓練示範（3–12 歲）：家長看進度，視光師看處方與依從率。公開站是純前端——無須登入、不存病人資料。商業路徑是 demo → Discovery → Implementation Sprint。",
+      text: "VisionXP 是 InnovateXP 的技術原型／AI 視覺追蹤示範（3–12 歲訓練流程）。公開站是純前端——無須登入、不存病人資料。商業路徑是 demo → Discovery → Implementation Sprint。",
     },
   },
   {
     "@type": "Question",
-    name: "VisionXP 是醫療器材嗎？",
+    name: "VisionXP 是醫療診斷工具或醫療器材嗎？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "不是。VisionXP 只是訓練流程示範，不是醫療器材聲稱，也不能取代臨床護理。落地範圍在 Discovery 之後才確定。",
+      text: "不是。VisionXP 只是技術原型／AI 視覺追蹤示範，並非醫療診斷工具，也不是註冊醫療器材，不能取代專業視光或眼科檢查。",
     },
   },
 ];
@@ -538,15 +538,15 @@ const HOME_FAQ_JA: FaqMainEntity = [
     name: "VisionXP とは何ですか？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "VisionXP は InnovateXP の小児斜視・弱視トレーニングデモ（3–12歳）です。保護者は進捗、専門職は処方と遵守率を確認します。公開サイトはフロントエンドのみで、ログイン不要・患者データ非保存。商用経路は demo → Discovery → Implementation Sprint です。",
+      text: "VisionXP は InnovateXP の技術プロトタイプ／AI視覚トラッキングデモ（3–12歳向けトレーニング業務）です。公開サイトはフロントエンドのみで、ログイン不要・患者データ非保存。商用経路は demo → Discovery → Implementation Sprint です。",
     },
   },
   {
     "@type": "Question",
-    name: "VisionXP は医療機器ですか？",
+    name: "VisionXP は医療診断ツールまたは医療機器ですか？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "いいえ。VisionXP はトレーニング業務のデモンストレーションであり、医療機器の効能表示ではなく、臨床ケアの代替でもありません。実装範囲は Discovery 後に確定します。",
+      text: "いいえ。VisionXP は技術プロトタイプ／AI視覚トラッキングデモであり、医療診断ツールでも登録医療機器でもなく、専門の視能・眼科検査の代替にもなりません。",
     },
   },
 ];
@@ -613,15 +613,15 @@ const HOME_FAQ_DE: FaqMainEntity = [
     name: "Was ist VisionXP?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "VisionXP ist InnovateXPs zweisprachiges Demo für Training bei pädiatrischem Schielen und Amblyopie (3–12 Jahre): Fortschritt für Eltern, Compliance für Optometristen. Die Live-Seite ist nur Frontend — kein Login, keine Patientendaten. Kommerzieller Weg: Demo → Discovery → Implementation Sprint.",
+      text: "VisionXP ist InnovateXPs Technologie-Prototyp / KI-Visual-Tracking-Demo für pädiatrische Trainings-Workflows (3–12). Die Live-Seite ist nur Frontend — kein Login, keine Patientendaten. Kommerzieller Weg: Demo → Discovery → Implementation Sprint.",
     },
   },
   {
     "@type": "Question",
-    name: "Ist VisionXP ein Medizinprodukt?",
+    name: "Ist VisionXP ein medizinisches Diagnosetool oder Medizinprodukt?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Nein. VisionXP ist eine Demonstration eines Trainings-Workflows. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung. Umsetzung wird erst nach Discovery scoped.",
+      text: "Nein. VisionXP ist ein Technologie-Prototyp / eine KI-Visual-Tracking-Demo — kein medizinisches Diagnosetool, kein zugelassenes Medizinprodukt und kein Ersatz für eine professionelle optometrische oder ophthalmologische Untersuchung.",
     },
   },
 ];
@@ -824,7 +824,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "SmartSales CRM",
       "EventXP",
       "VisionXP",
-      "paediatric strabismus training demo",
+      "AI visual-tracking tech demo",
+      "paediatric training workflow prototype",
       "Discovery Sprint",
       "SOP optimization",
       "Generative Engine Optimization",

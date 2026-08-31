@@ -26,6 +26,12 @@ export type VisionXpCopy = {
   demoCta: string;
   pageCta: string;
   note: string;
+  /** Legal / compliance block — required on every VisionXP surface */
+  compliance: {
+    title: string;
+    lead: string;
+    items: { title: string; body: string }[];
+  };
   page: {
     whatTitle: string;
     whatBody: string;

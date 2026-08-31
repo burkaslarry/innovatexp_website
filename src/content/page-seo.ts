@@ -64,14 +64,14 @@ const SMARTSALES: LocalePair = {
 
 const VISIONXP: LocalePair = {
   zh: {
-    title: "VisionXP香港｜兒童斜視弱視訓練示範｜InnovateXP",
+    title: "VisionXP香港｜AI視覺追蹤技術Demo｜InnovateXP",
     description:
-      "VisionXP：3–12 歲斜視／弱視訓練示範。家長進度、視光師處方與依從率。純前端 demo，無須登入。先睇示範，再預約 Discovery。",
+      "VisionXP 係技術原型／AI 視覺追蹤示範（3–12 歲訓練流程）。純前端、無須登入、唔存病人資料。並非醫療診斷工具或註冊醫療器械，不能代替專業視光／眼科檢查。",
   },
   en: {
-    title: "VisionXP Hong Kong | Paediatric Eye Training Demo | InnovateXP",
+    title: "VisionXP Hong Kong | AI Visual-Tracking Tech Demo | InnovateXP",
     description:
-      "VisionXP: bilingual demo for paediatric strabismus and amblyopia training. Parent progress and optometrist compliance views. Frontend-only, no login. Demo first, then Discovery.",
+      "VisionXP is a technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12). Frontend-only, no login, no patient data. Not a medical diagnostic tool or registered medical device.",
   },
 };
 

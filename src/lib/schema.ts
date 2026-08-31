@@ -70,7 +70,7 @@ export function getVisionXPProductSchema() {
     inLanguage: ["zh-HK", "en"],
     isAccessibleForFree: true,
     description:
-      "VisionXP is InnovateXP’s bilingual paediatric strabismus and amblyopia training demo for children aged 3–12. Parent progress and optometrist compliance views. Frontend-only public demo — no login, no patient data. Not a medical-device claim.",
+      "VisionXP is InnovateXP’s technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12). Frontend-only public demo — no login, no patient data. Not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination.",
     featureList: [
       "Parent portal: daily tasks, progress, streaks",
       "Optometrist portal: prescriptions, compliance, reports",
