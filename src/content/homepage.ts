@@ -165,53 +165,8 @@ export type HomepageContent = {
       cta: string;
     }[];
   };
-<<<<<<< HEAD
-  products: {
-    eyebrow: string;
-    title: string;
-    intro: string;
-    navLabel: string;
-    securityTitle: string;
-    securityNote: string;
-    items: {
-      id: string;
-      poster: string;
-      eyebrow: string;
-      name: string;
-      tagline: string;
-      price: string;
-      body: string;
-      points: string[];
-    }[];
-    systemCare: {
-      eyebrow: string;
-      title: string;
-      intro: string;
-      tiers: {
-        name: string;
-        price: string;
-        response: string;
-        points: string[];
-      }[];
-      boundary: string;
-    };
-    readiness: {
-      eyebrow: string;
-      title: string;
-      price: string;
-      intro: string;
-      points: string[];
-      excludes: string;
-      upgrade: string;
-      educationTitle: string;
-      educationIntro: string;
-      educationPoints: string[];
-    };
-  };
-  visionXp: VisionXpCopy;
-=======
   products: ProductPackagesCopy;
->>>>>>> 464c56bc813818ec461dc604d08c210928f9cf38
+  visionXp: VisionXpCopy;
   cases: {
     eyebrow: string;
     title: string;

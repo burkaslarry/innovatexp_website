@@ -16,7 +16,7 @@
   "hero": {
     "eyebrow": "AIビジネスコンサルタント｜14年以上のIT納品・業務実装経験",
     "title": "香港の小規模チームの取りこぼし・遅い見積・引き継ぎ混乱を止めます。",
-    "description": "Larryはまず収益や運営に最も影響する1本の業務を特定し、30日以内に責任・SOP・追跡方法を整理します。CRM・AI・自動化は必要と確認できた場合のみ導入します。",
+    "description": "まず売上・業務に効く1本のフローを特定し、30日で担当・SOP・追跡を整えます。効果が確認できてから CRM／AI／自動化を接続します。",
     "fitAudience": "香港の3〜30名規模の研修・講座・専門サービスチーム向け",
     "primaryCta": "30分の業務診断を予約",
     "secondaryCta": "プログラムと開始価格を見る",
@@ -295,7 +295,7 @@
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AIビジネスコンサルタント",
-    "tagline": "先に業務を直し、その後にAIを活かす。",
+    "tagline": "最新AIツールを追うのではなく、チームが実際に使える業務成果を一つ完成させる。",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
   },

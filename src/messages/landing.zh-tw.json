@@ -16,7 +16,7 @@
   "hero": {
     "eyebrow": "AI 商業顧問｜14+ 年 IT 交付與流程落地經驗",
     "title": "協助香港小團隊止住漏單、慢報價與交接混亂。",
-    "description": "Larry 會先與您鎖定一條最影響收入或營運的流程，在 30 日內釐清責任、SOP 與追蹤方式；有需要時才接入 CRM、AI 或自動化。",
+    "description": "Larry 會先與你鎖定一條最影響收入或營運的流程，30 日內釐清責任、SOP 與追蹤方式；確認有效後才接 CRM、AI 或自動化。",
     "fitAudience": "適合香港 3–30 人培訓、課程及專業服務團隊",
     "primaryCta": "預約 30 分鐘流程診斷",
     "secondaryCta": "查看服務方案與起步價格",
@@ -295,7 +295,7 @@
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AI 商業顧問",
-    "tagline": "先整理流程，再落地 AI",
+    "tagline": "不是追最新 AI 工具，而是完成一個團隊真正用得上的流程成果。",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
   },
