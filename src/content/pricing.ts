@@ -1,7 +1,14 @@
-/**
- * Single source of truth for InnovateXP public pricing (HKD).
+/*
+ * Public HKD amounts — one table, four buyer jobs.
+ *
+ *   A  System Care     already-live systems (monthly or one-off)
+ *   B  Discovery       paid filter; list price is ≤10 people
+ *   C  Implementation  quoted after Discovery (Starter / Pro)
+ *   D  Vertical product  demo → Discovery → Sprint
+ *
+ * Snapshot (HK$3,000) is a downsell into B, not a fifth line.
  * Aligned with Notion「定價政策 — Quick Cash Funnel（2026-07）」.
- * All pages should reference these values — do not hard-code prices elsewhere.
+ * Pages must read these values. Do not hard-code amounts elsewhere.
  */
 import { SCOPED_SOP_PRICE_LABEL } from "@/content/pricing-labels";
 
@@ -17,6 +24,7 @@ export const REFERRAL_DISCOUNT_PERCENT = 10;
 export const RUSH_SURCHARGE_PERCENT = 30;
 
 export const PRICING = {
+  /* Downsell + training + trial entry amounts. */
   quickCash: {
     /** Prompt 實戰訓練營 — 1 day（新手體驗／限時價） */
     promptTrainingDay: 2_500,
@@ -44,7 +52,7 @@ export const PRICING = {
     /** Basic e-shop package (or sales commission model) */
     websiteEshop: 12_000,
   },
-  /** AI 商業升級陪跑 — aligned with pitch deck / AI 商業顧問 page */
+  /* Line B — Discovery list price plus scoped longer programs. */
   consultancy: {
     discoverySprint30Day: 6_800,
     discoveryWorkshop11To30: 13_600,
@@ -52,7 +60,7 @@ export const PRICING = {
     accelerator6Month: 50_000,
     partnership12Month: 98_000,
   },
-  /** Care for already-live custom systems. Product subscriptions are priced separately. */
+  /* Line A — retainers. Response time is triage, not a fix SLA. */
   systemCare: {
     essentialMonthly: 4_000,
     growthMonthly: 8_000,
@@ -60,7 +68,7 @@ export const PRICING = {
     oneOffFrom: 4_000,
     oneOffTo: 12_000,
   },
-  /** Full product tiers (after trial / validated workflow) */
+  /* Product subscriptions after a trial. Not System Care. */
   tools: {
     eventXp: {
       trial: 4_000,
@@ -254,27 +262,43 @@ export const WEBSITE_ADDON_LABELS_ZH: Record<WebsiteAddonId, string> = {
   geoSeoSetupPlus3Months: "SEO 進階優化包",
 };
 
-/**
- * Quote calculator for Customised Website Starter + 點心紙 add-ons.
- * Base package is always included; guests pick items → base + add-ons = quote.
+/*
+ * Website quote — one job per helper.
+ * Policy: base is always in; pages/locales are qty; other add-ons are flags;
+ * rush is a surcharge on the subtotal; maintenance is reported, not added.
  */
 export function computeWebsiteQuote(input: WebsiteQuoteInput = {}): WebsiteQuoteResult {
+  const lines = [
+    websiteBaseLine(),
+    ...websitePerUnitLines(input),
+    ...websiteFlaggedAddonLines(input),
+  ];
+  const subtotal = lines.reduce((sum, line) => sum + line.lineTotal, 0);
+  const rush = websiteRush(subtotal, Boolean(input.rush));
+
+  return {
+    lines,
+    subtotal,
+    ...rush,
+    totalOneTime: subtotal + rush.rushAmount,
+    maintenanceMonthly: websiteMaintenance(),
+  };
+}
+
+function websiteBaseLine(): WebsiteQuoteLine {
+  return {
+    id: "base",
+    labelKey: "pricing.website.base",
+    qty: 1,
+    unitPrice: PRICING.tools.website.starter,
+    lineTotal: PRICING.tools.website.starter,
+  };
+}
+
+function websitePerUnitLines(input: WebsiteQuoteInput): WebsiteQuoteLine[] {
   const extraPages = Math.max(0, Math.floor(input.extraPages ?? 0));
   const extraLocales = Math.max(0, Math.floor(input.extraLocales ?? 0));
-  const selected = new Set(input.addons ?? []);
-  // Per-unit items are driven by qty, not the flat addon set
-  selected.delete("extraPage");
-  selected.delete("extraLocale");
-
-  const lines: WebsiteQuoteLine[] = [
-    {
-      id: "base",
-      labelKey: "pricing.website.base",
-      qty: 1,
-      unitPrice: PRICING.tools.website.starter,
-      lineTotal: PRICING.tools.website.starter,
-    },
-  ];
+  const lines: WebsiteQuoteLine[] = [];
 
   if (extraPages > 0) {
     lines.push({
@@ -294,36 +318,38 @@ export function computeWebsiteQuote(input: WebsiteQuoteInput = {}): WebsiteQuote
       lineTotal: extraLocales * PRICING.websiteAddons.extraLocale,
     });
   }
+  return lines;
+}
 
-  for (const id of WEBSITE_ADDON_IDS) {
-    if (id === "extraPage" || id === "extraLocale") continue;
-    if (!selected.has(id)) continue;
-    const unitPrice = PRICING.websiteAddons[id];
-    lines.push({
+function websiteFlaggedAddonLines(input: WebsiteQuoteInput): WebsiteQuoteLine[] {
+  const selected = new Set(input.addons ?? []);
+  selected.delete("extraPage");
+  selected.delete("extraLocale");
+
+  return WEBSITE_ADDON_IDS.filter((id) => id !== "extraPage" && id !== "extraLocale" && selected.has(id)).map(
+    (id) => ({
       id,
       labelKey: ADDON_LABEL_KEYS[id],
       qty: 1,
-      unitPrice,
-      lineTotal: unitPrice,
-    });
-  }
+      unitPrice: PRICING.websiteAddons[id],
+      lineTotal: PRICING.websiteAddons[id],
+    }),
+  );
+}
 
-  const subtotal = lines.reduce((sum, line) => sum + line.lineTotal, 0);
-  const rushPercent = input.rush ? RUSH_SURCHARGE_PERCENT : 0;
-  const rushAmount = Math.round((subtotal * rushPercent) / 100);
-  const totalOneTime = subtotal + rushAmount;
-
+function websiteRush(subtotal: number, rush: boolean): { rushPercent: number; rushAmount: number } {
+  const rushPercent = rush ? RUSH_SURCHARGE_PERCENT : 0;
   return {
-    lines,
-    subtotal,
     rushPercent,
-    rushAmount,
-    totalOneTime,
-    maintenanceMonthly: {
-      starter: PRICING.tools.website.maintenanceStarterMonthly,
-      growth: PRICING.tools.website.maintenanceGrowthMonthly,
-      enterprise: PRICING.tools.website.maintenanceEnterpriseMonthly,
-    },
+    rushAmount: Math.round((subtotal * rushPercent) / 100),
+  };
+}
+
+function websiteMaintenance(): WebsiteQuoteResult["maintenanceMonthly"] {
+  return {
+    starter: PRICING.tools.website.maintenanceStarterMonthly,
+    growth: PRICING.tools.website.maintenanceGrowthMonthly,
+    enterprise: PRICING.tools.website.maintenanceEnterpriseMonthly,
   };
 }
 

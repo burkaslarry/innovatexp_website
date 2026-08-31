@@ -24,6 +24,59 @@ type CaseStudy = {
   metric: string;
 };
 
+/*
+ * Product merchandising copy is one type per job so UI components
+ * depend on a single shape, not the whole homepage dictionary.
+ */
+export type ProductPosterItem = {
+  id: string;
+  poster: string;
+  eyebrow: string;
+  name: string;
+  tagline: string;
+  price: string;
+  body: string;
+  points: string[];
+};
+
+export type SystemCareCopy = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  tiers: {
+    name: string;
+    price: string;
+    response: string;
+    points: string[];
+  }[];
+  boundary: string;
+};
+
+export type ReadinessCopy = {
+  eyebrow: string;
+  title: string;
+  price: string;
+  intro: string;
+  points: string[];
+  excludes: string;
+  upgrade: string;
+  educationTitle: string;
+  educationIntro: string;
+  educationPoints: string[];
+};
+
+export type ProductPackagesCopy = {
+  eyebrow: string;
+  title: string;
+  intro: string;
+  navLabel: string;
+  securityTitle: string;
+  securityNote: string;
+  items: ProductPosterItem[];
+  systemCare: SystemCareCopy;
+  readiness: ReadinessCopy;
+};
+
 export type HomepageContent = {
   brandTitle: string;
   brandSubtitle: string;
@@ -83,48 +136,7 @@ export type HomepageContent = {
       cta: string;
     }[];
   };
-  products: {
-    eyebrow: string;
-    title: string;
-    intro: string;
-    navLabel: string;
-    securityTitle: string;
-    securityNote: string;
-    items: {
-      id: string;
-      poster: string;
-      eyebrow: string;
-      name: string;
-      tagline: string;
-      price: string;
-      body: string;
-      points: string[];
-    }[];
-    systemCare: {
-      eyebrow: string;
-      title: string;
-      intro: string;
-      tiers: {
-        name: string;
-        price: string;
-        response: string;
-        points: string[];
-      }[];
-      boundary: string;
-    };
-    readiness: {
-      eyebrow: string;
-      title: string;
-      price: string;
-      intro: string;
-      points: string[];
-      excludes: string;
-      upgrade: string;
-      educationTitle: string;
-      educationIntro: string;
-      educationPoints: string[];
-    };
-  };
+  products: ProductPackagesCopy;
   cases: {
     eyebrow: string;
     title: string;
