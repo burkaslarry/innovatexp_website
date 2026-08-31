@@ -60,6 +60,51 @@ export function getEventXPProductSchema() {
   };
 }
 
+export function getVisionXPProductSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "VisionXP",
+    applicationCategory: "HealthApplication",
+    operatingSystem: "Web",
+    description:
+      "VisionXP is InnovateXP’s bilingual paediatric strabismus and amblyopia training demo for children aged 3–12. Parent progress and optometrist compliance views. Frontend-only public demo — no login, no patient data. Not a medical-device claim.",
+    offers: {
+      "@type": "Offer",
+      price: "0",
+      priceCurrency: "HKD",
+      description: "Frontend-only public demo. Implementation scoped after Discovery.",
+    },
+    url: `${siteUrl}/visionxp`,
+  };
+}
+
+export function getHowToSchema({
+  name,
+  description,
+  url,
+  steps,
+}: {
+  name: string;
+  description: string;
+  url: string;
+  steps: { name: string; text: string }[];
+}) {
+  return {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    name,
+    description,
+    url,
+    step: steps.map((item, index) => ({
+      "@type": "HowToStep",
+      position: index + 1,
+      name: item.name,
+      text: item.text,
+    })),
+  };
+}
+
 export function getAIConsultingServiceSchema() {
   return {
     "@context": "https://schema.org",

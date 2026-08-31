@@ -53,6 +53,16 @@ const SCHEMA_EVENTXP_DESCRIPTION: Record<AppLocale, string> = {
   de: "Intelligentes Event-Check-in: verwandelt Anwesenheitsdaten in Business-Insights mit QR-Scanning, Echtzeit-Reporting und KI-gestützter Teilnehmeranalyse.",
 };
 
+const SCHEMA_VISIONXP_DESCRIPTION: Record<AppLocale, string> = {
+  en: "VisionXP is a bilingual paediatric strabismus and amblyopia training demo for children aged 3–12. Parent progress and optometrist compliance views. Frontend-only, no login, no patient data. Not a medical-device claim. Path: demo → Discovery → Implementation Sprint.",
+  "zh-hk":
+    "VisionXP 係 3–12 歲兒童斜視／弱視訓練示範：家長進度同視光師依從率。純前端、無須登入、唔存病人資料。唔係醫療器材聲稱。路徑：demo → Discovery → Implementation Sprint。",
+  "zh-tw":
+    "VisionXP 是 3–12 歲兒童斜視／弱視訓練示範：家長進度與視光師依從率。純前端、無須登入、不存病人資料。不是醫療器材聲稱。路徑：demo → Discovery → Implementation Sprint。",
+  ja: "VisionXP は 3–12歳向けの小児斜視・弱視トレーニングデモ。保護者の進捗と専門職の遵守率。フロントエンドのみ、ログイン不要、患者データ非保存。医療機器の効能表示ではありません。経路：demo → Discovery → Implementation Sprint。",
+  de: "VisionXP ist ein zweisprachiges Demo für Training bei pädiatrischem Schielen und Amblyopie (3–12). Elternfortschritt und Optometristen-Compliance. Nur Frontend, kein Login, keine Patientendaten. Kein Medizinprodukte-Claim. Weg: Demo → Discovery → Implementation Sprint.",
+};
+
 const SCHEMA_AI_SEO_NAME: Record<AppLocale, string> = {
   en: "AI SEO Update Package",
   "zh-hk": "AI SEO 更新套餐",
@@ -70,11 +80,11 @@ const SCHEMA_AI_SEO_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Hong Kong AI business consultancy: workflow diagnosis, Discovery Sprint from HK$6,800, WhatsApp CRM (SmartSales), EventXP, and optional private AI for SMEs.",
-  "zh-hk": "香港 AI 商業顧問：流程診斷、Discovery Sprint 由 HK$6,800 起、WhatsApp CRM（SmartSales）、EventXP，以及按需私有 AI。",
-  "zh-tw": "香港 AI 商業顧問：流程診斷、Discovery Sprint 由 HK$6,800 起、WhatsApp CRM（SmartSales）、EventXP，以及按需私有 AI。",
-  ja: "香港の AI ビジネスコンサル：業務診断、Discovery Sprint（HK$6,800〜）、WhatsApp CRM（SmartSales）、EventXP、必要に応じてプライベート AI。",
-  de: "AI-Business-Beratung Hongkong: Workflow-Diagnose, Discovery Sprint ab HK$6,800, WhatsApp-CRM (SmartSales), EventXP und optionale Private AI für KMUs.",
+  en: "Hong Kong AI business consultancy: workflow diagnosis, Discovery Sprint from HK$6,800, WhatsApp CRM (SmartSales), EventXP, VisionXP demo, and optional private AI for SMEs.",
+  "zh-hk": "香港 AI 商業顧問：流程診斷、Discovery Sprint 由 HK$6,800 起、WhatsApp CRM（SmartSales）、EventXP、VisionXP 示範，以及按需私有 AI。",
+  "zh-tw": "香港 AI 商業顧問：流程診斷、Discovery Sprint 由 HK$6,800 起、WhatsApp CRM（SmartSales）、EventXP、VisionXP 示範，以及按需私有 AI。",
+  ja: "香港の AI ビジネスコンサル：業務診断、Discovery Sprint（HK$6,800〜）、WhatsApp CRM（SmartSales）、EventXP、VisionXP デモ、必要に応じてプライベート AI。",
+  de: "AI-Business-Beratung Hongkong: Workflow-Diagnose, Discovery Sprint ab HK$6,800, WhatsApp-CRM (SmartSales), EventXP, VisionXP-Demo und optionale Private AI für KMUs.",
 };
 
 const SCHEMA_CONSULTING_SERVICE_DESCRIPTION: Record<AppLocale, string> = {
@@ -160,6 +170,13 @@ const BREADCRUMB_SEGMENTS: Record<string, Record<AppLocale, string>> = {
     "zh-tw": "EventXP",
     ja: "EventXP",
     de: "EventXP",
+  },
+  visionxp: {
+    en: "VisionXP",
+    "zh-hk": "VisionXP",
+    "zh-tw": "VisionXP",
+    ja: "VisionXP",
+    de: "VisionXP",
   },
   "ai-consulting": {
     en: "AI Consulting",
@@ -282,6 +299,22 @@ const HOME_FAQ_EN: FaqMainEntity = [
       text: "SmartSales CRM is InnovateXP’s WhatsApp-led sales pipeline for Hong Kong SMEs: centralize enquiries, assign ownership, track stages, and use AI draft-first replies. Trial is HK$5,000; maintenance starts from about HK$880 per month.",
     },
   },
+  {
+    "@type": "Question",
+    name: "What is VisionXP?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "VisionXP is InnovateXP’s bilingual demo for paediatric strabismus and amblyopia training (ages 3–12): parent progress and optometrist compliance views. The live site is frontend-only — no login, no patient data. Commercial path is demo → Discovery → Implementation Sprint.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Is VisionXP a medical device?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "No. VisionXP is a training-workflow demonstration. It is not a medical-device claim and is not a substitute for clinical care. Implementation is scoped only after Discovery.",
+    },
+  },
 ];
 
 const HOME_FAQ_ZH_HK: FaqMainEntity = [
@@ -331,6 +364,22 @@ const HOME_FAQ_ZH_HK: FaqMainEntity = [
     acceptedAnswer: {
       "@type": "Answer",
       text: "SmartSales CRM 係 InnovateXP 為香港 WhatsApp 銷售團隊而設嘅 pipeline：查詢集中、責任人、階段追蹤同 AI draft-first。試用 HK$5,000；維護月費約由 HK$880 起。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "VisionXP 係咩？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "VisionXP 係 InnovateXP 嘅兒童斜視／弱視訓練示範（3–12 歲）：家長睇進度，視光師睇處方同依從率。公開站係純前端——無須登入、唔存病人資料。商業路徑係 demo → Discovery → Implementation Sprint。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "VisionXP 係咪醫療器材？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "唔係。VisionXP 只係訓練流程示範，唔係醫療器材聲稱，亦唔可以取代臨床護理。落地範圍喺 Discovery 之後先定。",
     },
   },
 ];
@@ -384,6 +433,22 @@ const HOME_FAQ_ZH_TW: FaqMainEntity = [
       text: "SmartSales CRM 是 InnovateXP 為香港 WhatsApp 銷售團隊設計的 pipeline：集中詢問、責任歸屬、階段追蹤與 AI draft-first。試用 HK$5,000；維護月費約由 HK$880 起。",
     },
   },
+  {
+    "@type": "Question",
+    name: "VisionXP 是什麼？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "VisionXP 是 InnovateXP 的兒童斜視／弱視訓練示範（3–12 歲）：家長看進度，視光師看處方與依從率。公開站是純前端——無須登入、不存病人資料。商業路徑是 demo → Discovery → Implementation Sprint。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "VisionXP 是醫療器材嗎？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "不是。VisionXP 只是訓練流程示範，不是醫療器材聲稱，也不能取代臨床護理。落地範圍在 Discovery 之後才確定。",
+    },
+  },
 ];
 
 const HOME_FAQ_JA: FaqMainEntity = [
@@ -435,6 +500,22 @@ const HOME_FAQ_JA: FaqMainEntity = [
       text: "SmartSales CRM は WhatsApp 主導の営業向けパイプラインです。問い合わせ集約、担当、ステージ管理、AI Draft-first に対応。トライアル HK$5,000、保守は月額約 HK$880〜。",
     },
   },
+  {
+    "@type": "Question",
+    name: "VisionXP とは何ですか？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "VisionXP は InnovateXP の小児斜視・弱視トレーニングデモ（3–12歳）です。保護者は進捗、専門職は処方と遵守率を確認します。公開サイトはフロントエンドのみで、ログイン不要・患者データ非保存。商用経路は demo → Discovery → Implementation Sprint です。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "VisionXP は医療機器ですか？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "いいえ。VisionXP はトレーニング業務のデモンストレーションであり、医療機器の効能表示ではなく、臨床ケアの代替でもありません。実装範囲は Discovery 後に確定します。",
+    },
+  },
 ];
 
 const HOME_FAQ_DE: FaqMainEntity = [
@@ -484,6 +565,22 @@ const HOME_FAQ_DE: FaqMainEntity = [
     acceptedAnswer: {
       "@type": "Answer",
       text: "SmartSales CRM ist die WhatsApp-first Sales-Pipeline von InnovateXP für KMUs in Hongkong: Anfragen zentralisieren, Ownership, Pipeline-Stufen und AI Draft-first. Trial HK$5,000; Wartung ab ca. HK$880/Monat.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Was ist VisionXP?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "VisionXP ist InnovateXPs zweisprachiges Demo für Training bei pädiatrischem Schielen und Amblyopie (3–12 Jahre): Fortschritt für Eltern, Compliance für Optometristen. Die Live-Seite ist nur Frontend — kein Login, keine Patientendaten. Kommerzieller Weg: Demo → Discovery → Implementation Sprint.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Ist VisionXP ein Medizinprodukt?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Nein. VisionXP ist eine Demonstration eines Trainings-Workflows. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung. Umsetzung wird erst nach Discovery scoped.",
     },
   },
 ];
@@ -617,6 +714,7 @@ type StructuredDataScope =
   | "home"
   | "smartsales"
   | "eventxp"
+  | "visionxp"
   | "ai-consulting"
   | "ai-seo-package"
   /** Org + WebSite only; no product/FAQ (bookme, blog, reliability, etc.) */
@@ -638,7 +736,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           ? "smartsales"
           : pathWithoutLocale.startsWith("/eventxp")
             ? "eventxp"
-            : pathWithoutLocale.startsWith("/ai-consulting")
+            : pathWithoutLocale.startsWith("/visionxp")
+              ? "visionxp"
+              : pathWithoutLocale.startsWith("/ai-consulting")
               ? "ai-consulting"
               : pathWithoutLocale.startsWith("/ai-seo-update-package")
                 ? "ai-seo-package"
@@ -682,6 +782,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "WhatsApp CRM",
       "SmartSales CRM",
       "EventXP",
+      "VisionXP",
+      "paediatric strabismus training demo",
       "Discovery Sprint",
       "SOP optimization",
       "Generative Engine Optimization",
@@ -925,6 +1027,28 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     },
   };
 
+  const visionXPService = {
+    "@context": "https://schema.org",
+    "@type": ["SoftwareApplication", "Product"],
+    "@id": `${baseUrl}/#visionxp`,
+    name: "VisionXP",
+    applicationCategory: "HealthApplication",
+    operatingSystem: "Web",
+    description: pickSchema(routeLocale, SCHEMA_VISIONXP_DESCRIPTION),
+    provider: {
+      "@type": "Organization",
+      "@id": `${baseUrl}/#organization`,
+    },
+    url: `${baseUrl}/visionxp`,
+    offers: {
+      "@type": "Offer",
+      url: "https://visionquest-web.vercel.app",
+      price: "0",
+      priceCurrency: "HKD",
+      description: "Frontend-only public demo. Implementation scoped after Discovery.",
+    },
+  };
+
   const aiConsultingService = {
     "@context": "https://schema.org",
     "@type": "Service",
@@ -1072,22 +1196,25 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Consulting" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "SmartSales CRM" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "EventXP" } },
+        { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "VisionXP" } },
       ],
     },
   };
 
   const scopedServiceSchemas =
     resolvedScope === "home"
-      ? [smartSalesCRMService, eventXPService, aiConsultingService]
+      ? [smartSalesCRMService, eventXPService, visionXPService, aiConsultingService]
       : resolvedScope === "smartsales"
         ? [smartSalesCRMService]
         : resolvedScope === "eventxp"
           ? [eventXPService]
-          : resolvedScope === "ai-consulting"
-            ? [aiConsultingService]
-            : resolvedScope === "ai-seo-package"
-              ? [aiSeoUpdateService]
-              : [];
+          : resolvedScope === "visionxp"
+            ? [visionXPService]
+            : resolvedScope === "ai-consulting"
+              ? [aiConsultingService]
+              : resolvedScope === "ai-seo-package"
+                ? [aiSeoUpdateService]
+                : [];
 
   /** Product/detail pages expose richer FAQPage JSON-LD locally — avoid duplicate/conflicting FAQ here. */
   const scopedFaqSchemas =

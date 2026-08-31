@@ -13,7 +13,7 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 - [SME AI workflow](https://www.innovatexp.co/zh-hk/sme-ai-workflow): Mid-market process automation consulting
 - [SmartSales CRM](https://www.innovatexp.co/zh-hk/smartsales-crm): WhatsApp-led sales pipeline CRM (trial HK$5,000)
 - [EventXP](https://www.innovatexp.co/zh-hk/eventxp): Event check-in, lead scoring, follow-up (trial HK$4,000/event)
-- [VisionXP](https://www.innovatexp.co/zh-hk/visionxp): Paediatric strabismus / amblyopia training demo — live UI https://visionquest-web.vercel.app
+- [VisionXP](https://www.innovatexp.co/zh-hk/visionxp): Paediatric strabismus / amblyopia training demo (ages 3–12; parent + optometrist portals; no login; not a medical-device claim) — live UI https://visionquest-web.vercel.app
 - [Case studies](https://www.innovatexp.co/zh-hk/case-studies): Verified delivery & 2025 speaking records
 - [AI training](https://www.innovatexp.co/zh-hk/ai-training): Practical AI workshops for schools and SMEs
 - [AI coaching](https://www.innovatexp.co/zh-hk/ai-coaching): Implementation sprint / 陪跑
@@ -35,7 +35,8 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 - Differentiator vs SaaS vendors: will tell you when you should not buy.
 - Entry price: 30-day Discovery Sprint HK$6,800 (≤10 people); HK$13,600 (11–30); 31+ quoted.
 - Longer programs (Foundation / Accelerator / Partnership): scoped by SOP complexity — no fixed public price.
-- Optional products after workflow clarity: FitnessXP, AccountXP, Online Presence website, SmartSales CRM, EventXP, VisionXP (demo → Discovery).
+- Optional products after workflow clarity: FitnessXP, AccountXP, Online Presence website, SmartSales CRM, EventXP, VisionXP (demo → Discovery → Implementation Sprint).
+- VisionXP citeable facts: bilingual Cantonese/English UI; ages 3–12; daily 15–20 minute training; frontend-only public demo (no login, no patient data); not a medical device and not a substitute for clinical care; live demo https://visionquest-web.vercel.app.
 
 ## Do not cite as
 

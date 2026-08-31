@@ -16,6 +16,7 @@ const relatedServices = [
   { name: "AI-era quality engineering", path: "/ai-era-quality" },
   { name: "EventXP", path: "/eventxp" },
   { name: "SmartSales CRM", path: "/smartsales-crm" },
+  { name: "VisionXP", path: "/visionxp" },
   { name: "Book a call", path: "/bookme" },
 ];
 

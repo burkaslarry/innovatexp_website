@@ -379,6 +379,7 @@ export default async function SmartSalesCrmPage({
           <div className="flex flex-wrap gap-3">
             {[
               { href: "/sme-ai-workflow", label: zh ? "中小企自動化／SME AI Workflow" : "SME Automation / AI Workflow" },
+              { href: "/visionxp", label: "VisionXP" },
               { href: "/proposal-to-cash-ai", label: "Proposal-to-Cash AI" },
               { href: "/ai-coaching", label: zh ? "AI 陪跑課程" : "AI Coaching" },
               { href: "/private-ai-solutions", label: zh ? "私有 AI 方案" : "Private AI Solutions" },

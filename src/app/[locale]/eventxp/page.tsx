@@ -202,6 +202,7 @@ export default async function EventXpPage({
           <div className="flex flex-wrap gap-3">
             {[
               { href: "/sme-ai-workflow", label: "SME AI Workflow" },
+              { href: "/visionxp", label: "VisionXP" },
               { href: "/ai-training", label: "AI Training / AI 教班" },
               { href: "/ai-coaching", label: "AI Coaching / AI 陪跑課程" },
               { href: "/case-studies", label: "Delivery Capability" },

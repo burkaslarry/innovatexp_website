@@ -271,6 +271,14 @@
       {
         "question": "服務方案點樣起步？",
         "answer": "由淺入深，按部就班：\n30 日 Discovery Sprint — 10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價（場地另計）\n3 個月 Foundation（視 SOP 複雜程度決定）\n6 個月 Accelerator（視 SOP 複雜程度決定）\n12 個月 Partnership（視 SOP 複雜程度決定）\n（註：我哋著重幫你解決實際問題，盲目試用新工具絕對唔係首頁主打。）"
+      },
+      {
+        "question": "VisionXP 係咩？",
+        "answer": "VisionXP 係 InnovateXP 嘅兒童斜視／弱視訓練示範（3–12 歲）：家長睇進度，視光師睇處方同依從率。公開站係純前端——無須登入、唔存病人資料。商業路徑係 demo → Discovery → Implementation Sprint。"
+      },
+      {
+        "question": "VisionXP 係咪醫療器材？",
+        "answer": "唔係。VisionXP 只係訓練流程示範，唔係醫療器材聲稱，亦唔可以取代臨床護理。落地範圍喺 Discovery 之後先定。"
       }
     ]
   },
@@ -469,6 +477,65 @@
     ],
     "demoCta": "打開 VisionXP 示範",
     "pageCta": "VisionXP 詳情",
-    "note": "只係示範。落地範圍喺 Discovery 之後先定。唔係醫療器材聲稱，亦唔可以取代臨床護理。"
+    "note": "只係示範。落地範圍喺 Discovery 之後先定。唔係醫療器材聲稱，亦唔可以取代臨床護理。",
+    "page": {
+      "whatTitle": "係咩",
+      "whatBody": "VisionXP 係中英對照嘅兒童斜視／弱視訓練流程示範。3–12 歲小朋友每日約 15–20 分鐘遊戲化訓練，並有休息提醒。家長睇進度、連續日數同成就；視光師睇匿名化病人列表、處方、依從率同報告。公開站 visionquest-web.vercel.app 係純前端：無須登入，亦唔會存病人資料。",
+      "whoTitle": "邊個啱用",
+      "whoItems": [
+        "想睇家長＋視光師兩端訓練流程嘅香港視光／兒童視力團隊。",
+        "3–12 歲小朋友嘅家長，想了解每日結構化訓練點樣行。",
+        "未決定自建系統前，想先睇兩個入口點樣配合嘅診所。",
+        "傾向 demo → Discovery → Implementation Sprint，而唔係直接買黑盒 SaaS 嘅團隊。"
+      ],
+      "notTitle": "唔係咩",
+      "notItems": [
+        "唔係醫療器材，亦唔係治療功效聲稱。",
+        "唔可以取代臨床檢查或臨床護理。",
+        "唔係已登入、會存病人紀錄嘅正式生產系統。",
+        "冇公開固定月費——商業範圍喺 Discovery 之後先報。"
+      ],
+      "howTitle": "點樣開始",
+      "howItems": [
+        {
+          "name": "打開 live demo",
+          "text": "喺 visionquest-web.vercel.app 行家長同視光師入口，無須登入。"
+        },
+        {
+          "name": "預約 Discovery",
+          "text": "喺 Discovery Sprint 鎖定一條診所或家長流程，先再談落地。"
+        },
+        {
+          "name": "報 Implementation Sprint",
+          "text": "流程清楚之後先報 Implementation Sprint。"
+        }
+      ],
+      "faqTitle": "常見問題",
+      "faqs": [
+        {
+          "question": "VisionXP 係咩？",
+          "answer": "VisionXP 係 InnovateXP 嘅兒童斜視／弱視訓練示範（3–12 歲）。家長入口睇進度同每日訓練，視光師入口睇處方同依從率。公開站係純前端：無須登入，亦唔存病人資料。"
+        },
+        {
+          "question": "VisionXP 係咪醫療器材？",
+          "answer": "唔係。VisionXP 只係訓練流程示範，唔係醫療器材聲稱，亦唔可以取代臨床護理。"
+        },
+        {
+          "question": "Live demo 會唔會存病人資料？",
+          "answer": "唔會。公開示範係純前端、無須登入，亦唔會存病人資料。"
+        },
+        {
+          "question": "商業上點樣開始用 VisionXP？",
+          "answer": "先打開 live demo，再預約 Discovery 鎖定一條診所或家長流程。落地只會喺範圍清楚之後以 Implementation Sprint 報價。"
+        },
+        {
+          "question": "VisionXP 適合幾多歲？",
+          "answer": "示範為 3–12 歲小朋友設計，每日約 15–20 分鐘訓練，並有休息提醒。"
+        }
+      ],
+      "relatedTitle": "相關頁面",
+      "ctaTitle": "想對住你嘅流程行一次 demo？",
+      "ctaBody": "先打開 live demo，再預約 Discovery，鎖定一條診所或家長流程先報落地。"
+    }
   }
 }
