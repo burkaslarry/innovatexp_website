@@ -1,0 +1,9 @@
+# AI crawler hints for InnovateXP Limited
+# Canonical citation files for answer engines (GEO)
+
+llms-txt: https://www.innovatexp.co/llms.txt
+llms-full: https://www.innovatexp.co/llms-full.txt
+llms-zh-hk: https://www.innovatexp.co/llms.zh-hk.txt
+sitemap: https://www.innovatexp.co/sitemap.xml
+canonical: https://www.innovatexp.co/
+contact: info@innovatexp.co

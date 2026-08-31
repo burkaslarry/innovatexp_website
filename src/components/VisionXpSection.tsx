@@ -13,9 +13,11 @@ import { withLocale } from "@/lib/i18n-routing";
 export function VisionXpSection({
   locale,
   copy,
+  showPageCta = true,
 }: {
   locale: AppLocale;
   copy: VisionXpCopy;
+  showPageCta?: boolean;
 }) {
   const pageHref = withLocale(locale, VISIONXP_PAGE_PATH);
 
@@ -57,9 +59,11 @@ export function VisionXpSection({
               >
                 {copy.demoCta}
               </a>
-              <Button href={pageHref} variant="outline">
-                {copy.pageCta}
-              </Button>
+              {showPageCta ? (
+                <Button href={pageHref} variant="outline">
+                  {copy.pageCta}
+                </Button>
+              ) : null}
             </div>
             <p className="mt-4 text-xs leading-6 text-[color:var(--text-tertiary)]">{copy.note}</p>
           </div>

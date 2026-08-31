@@ -271,6 +271,18 @@
       {
         "question": "Wie starten die Programme?",
         "answer": "Schritt für Schritt:\n30-Tage Discovery Sprint — HK$6,800 bis 10 Personen; HK$13,600 für 11–30 Personen; 31+ auf Anfrage (Venue extra)\n3-Monats Foundation (je nach SOP-Komplexität)\n6-Monats Accelerator (je nach SOP-Komplexität)\n12-Monats Partnership (je nach SOP-Komplexität)\n(Hinweis: Wir lösen echte Betriebsprobleme. Tool-Trials sind nicht die Homepage-Hauptaussage.)"
+      },
+      {
+        "question": "Was ist EventXP?",
+        "answer": "EventXP ist das Event-Operations-Tool von InnovateXP für Teams in Hongkong: QR-Check-in, Lead-Scoring, Live-Reporting und Follow-up nach dem Event. Trial HK$4,000 pro Event; Wartung ab ca. HK$880/Monat."
+      },
+      {
+        "question": "Was ist VisionXP?",
+        "answer": "VisionXP ist InnovateXPs zweisprachiges Demo für Training bei pädiatrischem Schielen und Amblyopie (3–12 Jahre): Fortschritt für Eltern, Compliance für Optometristen. Die Live-Seite ist nur Frontend — kein Login, keine Patientendaten. Kommerzieller Weg: Demo → Discovery → Implementation Sprint."
+      },
+      {
+        "question": "Ist VisionXP ein Medizinprodukt?",
+        "answer": "Nein. VisionXP ist eine Demonstration eines Trainings-Workflows. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung. Umsetzung wird erst nach Discovery scoped."
       }
     ]
   },
@@ -290,7 +302,7 @@
   "products": {
     "eyebrow": "Produktpakete",
     "title": "Pakete und Tools, nachdem der Workflow klar ist",
-    "intro": "Entspricht unseren Produkt-Postern: Studio-Betrieb, Belege, Website, CRM, Events und AI-Beratung.",
+    "intro": "Entspricht unseren Produkt-Postern: Studio-Betrieb, Belege, Website, CRM, Events, VisionXP-Demo und AI-Beratung.",
     "navLabel": "Produkte",
     "securityTitle": "ISO-Zertifizierungsvorbereitung und Cybersecurity-Services verfügbar",
     "securityNote": "Umfang und Preis werden separat bewertet",
@@ -469,6 +481,65 @@
     ],
     "demoCta": "Live-Demo von VisionXP öffnen",
     "pageCta": "VisionXP-Details",
-    "note": "Nur Demo. Umsetzung wird nach Discovery scoped. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung."
+    "note": "Nur Demo. Umsetzung wird nach Discovery scoped. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung.",
+    "page": {
+      "whatTitle": "Was es ist",
+      "whatBody": "VisionXP ist ein zweisprachiges (Kantonesisch / Englisch) Trainings-Workflow-Demo für pädiatrisches Schielen und Amblyopie. Kinder von 3–12 absolvieren spielerische tägliche Einheiten von etwa 15–20 Minuten mit Pausen-Erinnerung. Eltern sehen Fortschritt, Serien und Erfolge. Optometristen sehen eine anonymisierte Patientenliste, Verordnungen, Compliance und Berichte. Die öffentliche Seite visionquest-web.vercel.app ist nur Frontend: kein Login, keine gespeicherten Patientendaten.",
+      "whoTitle": "Für wen",
+      "whoItems": [
+        "Optometrie- und pädiatrische Seh-Praktiken in Hongkong, die einen Eltern- plus Kliniker-Trainingsworkflow sehen wollen.",
+        "Eltern von Kindern im Alter von 3–12, die strukturierte tägliche Trainingseinheiten prüfen.",
+        "Kliniken, die den Zwei-Portal-Ablauf sehen wollen, bevor sie einen Custom-Build beauftragen.",
+        "Teams, die Demo → Discovery → Implementation Sprint einem Black-Box-SaaS vorziehen."
+      ],
+      "notTitle": "Was es nicht ist",
+      "notItems": [
+        "Kein Medizinprodukt und kein therapeutischer Wirksamkeits-Claim.",
+        "Kein Ersatz für klinische Untersuchung oder klinische Versorgung.",
+        "Kein eingeloggtes Produktionssystem, das Patientenakten speichert.",
+        "Kein fester öffentlicher Monatspreis — kommerzielle Arbeit wird nach Discovery scoped."
+      ],
+      "howTitle": "So starten",
+      "howItems": [
+        {
+          "name": "Live-Demo öffnen",
+          "text": "Eltern- und Optometristenportal auf visionquest-web.vercel.app durchgehen. Kein Login nötig."
+        },
+        {
+          "name": "Discovery buchen",
+          "text": "Im Discovery Sprint einen Klinik- oder Eltern-Workflow festlegen, bevor es ein Build-Angebot gibt."
+        },
+        {
+          "name": "Implementation Sprint anbieten",
+          "text": "Umsetzung wird erst angeboten, wenn der Workflow klar ist."
+        }
+      ],
+      "faqTitle": "FAQ",
+      "faqs": [
+        {
+          "question": "Was ist VisionXP?",
+          "answer": "VisionXP ist InnovateXPs zweisprachiges Demo für Training bei pädiatrischem Schielen und Amblyopie (3–12 Jahre). Elternportal für Fortschritt und tägliche Einheiten, Optometristenportal für Verordnungen und Compliance. Die Live-Seite ist nur Frontend: kein Login, keine Patientendaten."
+        },
+        {
+          "question": "Ist VisionXP ein Medizinprodukt?",
+          "answer": "Nein. VisionXP ist eine Demonstration eines Trainings-Workflows. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung."
+        },
+        {
+          "question": "Speichert die Live-Demo Patientendaten?",
+          "answer": "Nein. Das öffentliche Demo ist nur Frontend, erfordert kein Login und speichert keine Patientendaten."
+        },
+        {
+          "question": "Wie starten wir VisionXP kommerziell?",
+          "answer": "Zuerst die Live-Demo öffnen, dann Discovery buchen und einen Klinik- oder Eltern-Workflow festlegen. Umsetzung wird erst danach als Implementation Sprint angeboten."
+        },
+        {
+          "question": "Für welches Alter ist VisionXP gedacht?",
+          "answer": "Das Demo ist für Kinder von 3–12 ausgelegt, mit täglichen 15–20-Minuten-Einheiten und Pausen-Erinnerung."
+        }
+      ],
+      "relatedTitle": "Verwandte Seiten",
+      "ctaTitle": "Demo mit Ihrem Workflow ablaufen?",
+      "ctaBody": "Live-Demo öffnen, dann Discovery buchen und einen Klinik- oder Eltern-Workflow festlegen, bevor es ein Umsetzungsangebot gibt."
+    }
   }
 }

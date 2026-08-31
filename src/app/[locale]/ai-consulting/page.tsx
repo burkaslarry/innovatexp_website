@@ -213,6 +213,27 @@ export default async function AiConsultingPage({
           </dl>
         </section>
 
+        <section className="mb-10 rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-gray-700 dark:bg-gray-800">
+          <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Related pages</h2>
+          <div className="flex flex-wrap gap-3">
+            {[
+              { href: "/visionxp", label: "VisionXP" },
+              { href: "/eventxp", label: "EventXP" },
+              { href: "/smartsales-crm", label: "SmartSales CRM" },
+              { href: "/sme-ai-workflow", label: "SME AI Workflow" },
+              { href: "/case-studies", label: "Delivery Capability" },
+            ].map((item) => (
+              <Link
+                key={item.href}
+                href={`/${locale}${item.href}`}
+                className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-600 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+
         <section className="rounded-xl border border-slate-200 bg-slate-50 p-6 dark:border-gray-700 dark:bg-gray-800">
           <h2 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
             Ready to implement AI in Hong Kong with less trial and error?

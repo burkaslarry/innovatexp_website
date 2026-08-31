@@ -16,7 +16,7 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
   { path: "/ai-feedback-questionnaire", priority: 0.4, changeFrequency: "yearly" },
   { path: "/smartsales-crm", priority: 0.82, changeFrequency: "monthly" },
   { path: "/eventxp", priority: 0.82, changeFrequency: "monthly" },
-  { path: "/visionxp", priority: 0.8, changeFrequency: "monthly" },
+  { path: "/visionxp", priority: 0.82, changeFrequency: "monthly" },
   { path: "/ai-consulting", priority: 0.82, changeFrequency: "monthly" },
   { path: "/private-ai-solutions", priority: 0.8, changeFrequency: "monthly" },
   { path: "/customer-experience-consulting", priority: 0.78, changeFrequency: "monthly" },
@@ -63,6 +63,33 @@ export function buildLocalizedSitemap(): MetadataRoute.Sitemap {
       });
     }
   }
+
+  entries.push(
+    {
+      url: `${siteUrl}/llms.txt`,
+      lastModified: modified,
+      priority: 0.4,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${siteUrl}/llms-full.txt`,
+      lastModified: modified,
+      priority: 0.35,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${siteUrl}/llms.zh-hk.txt`,
+      lastModified: modified,
+      priority: 0.4,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${siteUrl}/ai.txt`,
+      lastModified: modified,
+      priority: 0.3,
+      changeFrequency: "monthly",
+    },
+  );
 
   return entries;
 }

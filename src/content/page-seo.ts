@@ -22,12 +22,12 @@ const HOME: LocalePair = {
   zh: {
     title: "香港AI商業顧問｜中小企SOP與WhatsApp流程｜InnovateXP",
     description:
-      "Larry Lo／InnovateXP：香港中小企 AI 商業顧問。先執順一條收入或營運流程，30 日 Discovery Sprint 由 HK$6,800 起，再決定 CRM、AI 或自動化。立即預約 30 分鐘診斷。",
+      "Larry Lo／InnovateXP：香港中小企 AI 顧問。Discovery Sprint 由 HK$6,800 起。WhatsApp CRM、EventXP、VisionXP 示範。立即預約 30 分鐘診斷。",
   },
   en: {
     title: "Hong Kong AI Consultant for SMEs | Workflow-First | InnovateXP",
     description:
-      "Larry Lo / InnovateXP helps Hong Kong SMEs fix one sales or ops workflow first, then adopt AI. 30-day Discovery Sprint from HK$6,800. Book a free 30-min diagnosis.",
+      "Larry Lo / InnovateXP: Hong Kong SME AI consultancy. Discovery Sprint from HK$6,800. WhatsApp CRM, EventXP, VisionXP demo. Book a 30-min diagnosis.",
   },
 };
 

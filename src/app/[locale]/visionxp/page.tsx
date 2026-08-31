@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Link from "next/link";
 import { notFound } from "next/navigation";
 import Header from "../../components/Header";
 import { VisionXpSection } from "@/components/VisionXpSection";
@@ -6,6 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { getHomepageContent } from "@/content/homepage";
 import { visionXpSeo } from "@/content/page-seo";
 import { VISIONXP_DEMO_URL } from "@/content/visionxp";
+import { getFAQPageSchema, getHowToSchema } from "@/lib/schema";
 import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { withLocale } from "@/lib/i18n-routing";
@@ -27,18 +29,28 @@ export async function generateMetadata({
   return {
     title: seo.title,
     description: seo.description,
+    keywords: [
+      "VisionXP",
+      "paediatric strabismus training",
+      "amblyopia training demo",
+      "Hong Kong optometrist portal",
+      "兒童斜視訓練",
+      "弱視訓練",
+      "InnovateXP",
+    ],
     alternates,
     openGraph: {
       title: seo.title,
       description: seo.description,
       url: ogUrl,
       siteName: "InnovateXP Limited",
-      images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP VisionXP" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "InnovateXP VisionXP" }],
     },
     twitter: {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
+      images: ["/opengraph-image"],
     },
   };
 }
@@ -53,31 +65,31 @@ export default async function VisionXpPage({
   const loc = locale as AppLocale;
   const content = getHomepageContent(loc);
   const copy = content.visionXp;
+  const page = copy.page;
   const homeHref = withLocale(loc, "/");
   const bookHref = withLocale(loc, "/bookme");
   const pageUrl = `${siteUrlMeta}/${loc}/visionxp`;
 
-  const jsonLd = {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "VisionXP",
-    applicationCategory: "HealthApplication",
-    operatingSystem: "Web",
-    url: pageUrl,
-    description: copy.intro,
-    offers: {
-      "@type": "Offer",
-      url: VISIONXP_DEMO_URL,
-      price: "0",
-      priceCurrency: "HKD",
-      description: "Frontend-only public demo. Implementation scoped after Discovery.",
+  const jsonLd = [
+    getFAQPageSchema({ url: pageUrl, questions: page.faqs }),
+    getHowToSchema({
+      name: page.howTitle,
+      description: page.ctaBody,
+      url: pageUrl,
+      steps: page.howItems,
+    }),
+  ];
+
+  const related = [
+    {
+      href: "/ai-consulting",
+      label:
+        loc.startsWith("zh") ? "AI 顧問" : loc === "ja" ? "AI コンサル" : loc === "de" ? "KI-Beratung" : "AI Consulting",
     },
-    publisher: {
-      "@type": "Organization",
-      name: "InnovateXP Limited",
-      url: siteUrlMeta,
-    },
-  };
+    { href: "/eventxp", label: "EventXP" },
+    { href: "/sme-ai-workflow", label: "SME AI Workflow" },
+    { href: "/bookme", label: content.nav.cta },
+  ];
 
   return (
     <div className="min-h-screen bg-bg text-fg">
@@ -98,43 +110,92 @@ export default async function VisionXpPage({
         ctaHref={bookHref}
       />
       <main className="mx-auto max-w-[1280px] px-4 py-10 sm:px-6">
-        <VisionXpSection locale={loc} copy={copy} />
-        <section className="ixp-card mb-16 p-6 md:p-8">
-          <h2 className="text-2xl font-bold text-[color:var(--heading-foreground)]">
-            {loc.startsWith("zh") ? "點樣開始" : loc === "ja" ? "始め方" : loc === "de" ? "So starten" : "How it starts"}
-          </h2>
+        <VisionXpSection locale={loc} copy={copy} showPageCta={false} />
+
+        <section className="ixp-card mb-10 p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-[color:var(--heading-foreground)]">{page.whatTitle}</h2>
+          <p className="mt-4 text-base leading-8 text-[color:var(--text-secondary)]" data-geo-answer>
+            {page.whatBody}
+          </p>
+        </section>
+
+        <section className="ixp-card mb-10 p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-[color:var(--heading-foreground)]">{page.whoTitle}</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-8 text-[color:var(--text-secondary)]">
+            {page.whoItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="ixp-card mb-10 p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-[color:var(--heading-foreground)]">{page.notTitle}</h2>
+          <ul className="mt-4 list-disc space-y-2 pl-5 text-base leading-8 text-[color:var(--text-secondary)]">
+            {page.notItems.map((item) => (
+              <li key={item}>{item}</li>
+            ))}
+          </ul>
+        </section>
+
+        <section className="ixp-card mb-10 p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-[color:var(--heading-foreground)]">{page.howTitle}</h2>
           <ol className="mt-4 grid gap-3 text-base leading-8 text-[color:var(--text-secondary)] md:grid-cols-3">
-            <li>
-              <span className="font-semibold text-[color:var(--heading-foreground)]">1. </span>
-              {loc.startsWith("zh")
-                ? "打開 live demo，行家長同視光師入口。"
-                : loc === "ja"
-                  ? "ライブデモで保護者と専門職の入口を確認する。"
-                  : loc === "de"
-                    ? "Live-Demo öffnen und beide Portale durchgehen."
-                    : "Open the live demo and walk the parent and optometrist portals."}
-            </li>
-            <li>
-              <span className="font-semibold text-[color:var(--heading-foreground)]">2. </span>
-              {loc.startsWith("zh")
-                ? "預約 Discovery，鎖定一條診所或家長流程。"
-                : loc === "ja"
-                  ? "Discovery でクリニックまたは保護者の1本のフローを確定する。"
-                  : loc === "de"
-                    ? "Discovery buchen und einen Klinik- oder Eltern-Workflow festlegen."
-                    : "Book Discovery and lock one clinic or parent workflow."}
-            </li>
-            <li>
-              <span className="font-semibold text-[color:var(--heading-foreground)]">3. </span>
-              {loc.startsWith("zh")
-                ? "需要落地先報 Implementation Sprint。"
-                : loc === "ja"
-                  ? "実装が必要なら Implementation Sprint を見積する。"
-                  : loc === "de"
-                    ? "Umsetzung nur als Implementation Sprint nach Scope."
-                    : "Quote an Implementation Sprint only after the workflow is clear."}
-            </li>
+            {page.howItems.map((step, index) => (
+              <li key={step.name}>
+                <span className="font-semibold text-[color:var(--heading-foreground)]">
+                  {index + 1}. {step.name}
+                </span>
+                <p className="mt-1">{step.text}</p>
+              </li>
+            ))}
           </ol>
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
+            <a
+              href={VISIONXP_DEMO_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="inline-flex min-h-[48px] items-center justify-center rounded-[var(--btn-radius)] px-6 py-3 text-center text-base btn-brand"
+            >
+              {copy.demoCta}
+            </a>
+            <Button href={bookHref} variant="primary">
+              {content.nav.cta}
+            </Button>
+          </div>
+        </section>
+
+        <section className="ixp-card mb-10 p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-[color:var(--heading-foreground)]">{page.faqTitle}</h2>
+          <dl className="mt-4 space-y-6">
+            {page.faqs.map((item) => (
+              <div key={item.question}>
+                <dt className="text-lg font-semibold text-[color:var(--heading-foreground)]">{item.question}</dt>
+                <dd className="mt-2 text-base leading-8 text-[color:var(--text-secondary)]" data-geo-answer>
+                  {item.answer}
+                </dd>
+              </div>
+            ))}
+          </dl>
+        </section>
+
+        <section className="ixp-card mb-10 p-6 md:p-8">
+          <h2 className="mb-4 text-2xl font-bold text-[color:var(--heading-foreground)]">{page.relatedTitle}</h2>
+          <div className="flex flex-wrap gap-3">
+            {related.map((item) => (
+              <Link
+                key={item.href}
+                href={withLocale(loc, item.href)}
+                className="rounded-full border border-[color:var(--border-light)] px-4 py-2 text-sm font-semibold text-[color:var(--text-secondary)] transition-colors hover:border-[color:var(--brand-primary)] hover:text-[color:var(--brand-primary)]"
+              >
+                {item.label}
+              </Link>
+            ))}
+          </div>
+        </section>
+
+        <section className="ixp-card mb-16 p-6 md:p-8">
+          <h2 className="text-2xl font-bold text-[color:var(--heading-foreground)]">{page.ctaTitle}</h2>
+          <p className="mt-3 text-base leading-8 text-[color:var(--text-secondary)]">{page.ctaBody}</p>
           <div className="mt-6">
             <Button href={bookHref} variant="primary">
               {content.nav.cta}

@@ -26,6 +26,21 @@ export type VisionXpCopy = {
   demoCta: string;
   pageCta: string;
   note: string;
+  page: {
+    whatTitle: string;
+    whatBody: string;
+    whoTitle: string;
+    whoItems: string[];
+    notTitle: string;
+    notItems: string[];
+    howTitle: string;
+    howItems: { name: string; text: string }[];
+    faqTitle: string;
+    faqs: { question: string; answer: string }[];
+    relatedTitle: string;
+    ctaTitle: string;
+    ctaBody: string;
+  };
 };
 
 type CaseStudy = {
