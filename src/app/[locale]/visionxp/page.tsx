@@ -7,7 +7,7 @@ import { Button } from "@/components/ui/Button";
 import { getHomepageContent } from "@/content/homepage";
 import { visionXpSeo } from "@/content/page-seo";
 import { VISIONXP_DEMO_URL } from "@/content/visionxp";
-import { getFAQPageSchema, getHowToSchema, getVisionXPProductSchema } from "@/lib/schema";
+import { getFAQPageSchema, getHowToSchema } from "@/lib/schema";
 import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { withLocale } from "@/lib/i18n-routing";
@@ -34,6 +34,8 @@ export async function generateMetadata({
       "paediatric strabismus training",
       "amblyopia training demo",
       "Hong Kong optometrist portal",
+      "兒童斜視訓練",
+      "弱視訓練",
       "InnovateXP",
     ],
     alternates,
@@ -42,12 +44,13 @@ export async function generateMetadata({
       description: seo.description,
       url: ogUrl,
       siteName: "InnovateXP Limited",
-      images: [{ url: "/innovatexp_color_no_bg.svg", width: 1200, height: 630, alt: "InnovateXP VisionXP" }],
+      images: [{ url: "/opengraph-image", width: 1200, height: 630, alt: "InnovateXP VisionXP" }],
     },
     twitter: {
       card: "summary_large_image",
       title: seo.title,
       description: seo.description,
+      images: ["/opengraph-image"],
     },
   };
 }
@@ -68,7 +71,6 @@ export default async function VisionXpPage({
   const pageUrl = `${siteUrlMeta}/${loc}/visionxp`;
 
   const jsonLd = [
-    { ...getVisionXPProductSchema(), url: pageUrl, description: copy.intro },
     getFAQPageSchema({ url: pageUrl, questions: page.faqs }),
     getHowToSchema({
       name: page.howTitle,
@@ -112,7 +114,9 @@ export default async function VisionXpPage({
 
         <section className="ixp-card mb-10 p-6 md:p-8">
           <h2 className="text-2xl font-bold text-[color:var(--heading-foreground)]">{page.whatTitle}</h2>
-          <p className="mt-4 text-base leading-8 text-[color:var(--text-secondary)]">{page.whatBody}</p>
+          <p className="mt-4 text-base leading-8 text-[color:var(--text-secondary)]" data-geo-answer>
+            {page.whatBody}
+          </p>
         </section>
 
         <section className="ixp-card mb-10 p-6 md:p-8">
@@ -166,7 +170,9 @@ export default async function VisionXpPage({
             {page.faqs.map((item) => (
               <div key={item.question}>
                 <dt className="text-lg font-semibold text-[color:var(--heading-foreground)]">{item.question}</dt>
-                <dd className="mt-2 text-base leading-8 text-[color:var(--text-secondary)]">{item.answer}</dd>
+                <dd className="mt-2 text-base leading-8 text-[color:var(--text-secondary)]" data-geo-answer>
+                  {item.answer}
+                </dd>
               </div>
             ))}
           </dl>

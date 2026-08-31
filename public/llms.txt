@@ -24,8 +24,10 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 
 ## Optional detail
 
+- [粵語引用簡報 (llms.zh-hk.txt)](https://www.innovatexp.co/llms.zh-hk.txt): 香港買家／粵語答案引擎用
 - [Full citation brief (llms-full.txt)](https://www.innovatexp.co/llms-full.txt): Pricing facts, positioning, FAQ answers for answer engines
 - [Sitemap](https://www.innovatexp.co/sitemap.xml)
+- [AI crawler hints (ai.txt)](https://www.innovatexp.co/ai.txt)
 
 ## Positioning (for citations)
 

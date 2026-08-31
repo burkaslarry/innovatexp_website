@@ -273,6 +273,10 @@
         "answer": "由淺入深，按部就班：\n30 日 Discovery Sprint — 10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價（場地另計）\n3 個月 Foundation（視 SOP 複雜程度決定）\n6 個月 Accelerator（視 SOP 複雜程度決定）\n12 個月 Partnership（視 SOP 複雜程度決定）\n（註：我們著重協助您解決實際問題，盲目試用新工具絕對不是首頁主打。）"
       },
       {
+        "question": "EventXP 是什麼？",
+        "answer": "EventXP 是 InnovateXP 為香港活動團隊設計的報到與跟進工具：QR 報到、名單評分、即時報表、活動後 follow-up。試用 HK$4,000／場；維護月費約由 HK$880 起。"
+      },
+      {
         "question": "VisionXP 是什麼？",
         "answer": "VisionXP 是 InnovateXP 的兒童斜視／弱視訓練示範（3–12 歲）：家長看進度，視光師看處方與依從率。公開站是純前端——無須登入、不存病人資料。商業路徑是 demo → Discovery → Implementation Sprint。"
       },
@@ -298,7 +302,7 @@
   "products": {
     "eyebrow": "產品方案",
     "title": "流程理順之後，以產品與方案支撐日常營運",
-    "intro": "與產品海報一致：場館營運、收據、網站、CRM、活動與 AI 顧問方案。",
+    "intro": "與產品海報一致：場館營運、收據、網站、CRM、活動、VisionXP 示範與 AI 顧問方案。",
     "navLabel": "產品方案",
     "securityTitle": "如需 ISO 認證準備或資安服務，可另行洽談",
     "securityNote": "依實際範圍評估與報價",

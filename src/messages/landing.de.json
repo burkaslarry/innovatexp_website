@@ -273,6 +273,10 @@
         "answer": "Schritt für Schritt:\n30-Tage Discovery Sprint — HK$6,800 bis 10 Personen; HK$13,600 für 11–30 Personen; 31+ auf Anfrage (Venue extra)\n3-Monats Foundation (je nach SOP-Komplexität)\n6-Monats Accelerator (je nach SOP-Komplexität)\n12-Monats Partnership (je nach SOP-Komplexität)\n(Hinweis: Wir lösen echte Betriebsprobleme. Tool-Trials sind nicht die Homepage-Hauptaussage.)"
       },
       {
+        "question": "Was ist EventXP?",
+        "answer": "EventXP ist das Event-Operations-Tool von InnovateXP für Teams in Hongkong: QR-Check-in, Lead-Scoring, Live-Reporting und Follow-up nach dem Event. Trial HK$4,000 pro Event; Wartung ab ca. HK$880/Monat."
+      },
+      {
         "question": "Was ist VisionXP?",
         "answer": "VisionXP ist InnovateXPs zweisprachiges Demo für Training bei pädiatrischem Schielen und Amblyopie (3–12 Jahre): Fortschritt für Eltern, Compliance für Optometristen. Die Live-Seite ist nur Frontend — kein Login, keine Patientendaten. Kommerzieller Weg: Demo → Discovery → Implementation Sprint."
       },
@@ -298,7 +302,7 @@
   "products": {
     "eyebrow": "Produktpakete",
     "title": "Pakete und Tools, nachdem der Workflow klar ist",
-    "intro": "Entspricht unseren Produkt-Postern: Studio-Betrieb, Belege, Website, CRM, Events und AI-Beratung.",
+    "intro": "Entspricht unseren Produkt-Postern: Studio-Betrieb, Belege, Website, CRM, Events, VisionXP-Demo und AI-Beratung.",
     "navLabel": "Produkte",
     "securityTitle": "ISO-Zertifizierungsvorbereitung und Cybersecurity-Services verfügbar",
     "securityNote": "Umfang und Preis werden separat bewertet",

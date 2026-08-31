@@ -77,6 +77,18 @@ export function buildLocalizedSitemap(): MetadataRoute.Sitemap {
       priority: 0.35,
       changeFrequency: "monthly",
     },
+    {
+      url: `${siteUrl}/llms.zh-hk.txt`,
+      lastModified: modified,
+      priority: 0.4,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${siteUrl}/ai.txt`,
+      lastModified: modified,
+      priority: 0.3,
+      changeFrequency: "monthly",
+    },
   );
 
   return entries;

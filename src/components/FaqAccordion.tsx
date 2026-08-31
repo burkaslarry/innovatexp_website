@@ -82,7 +82,10 @@ export function FaqAccordion({
                 hidden={!isOpen}
                 className="pb-4"
               >
-                <p className="max-w-[75ch] whitespace-pre-line text-base leading-8 text-[color:var(--text-secondary)]">
+                <p
+                  className="max-w-[75ch] whitespace-pre-line text-base leading-8 text-[color:var(--text-secondary)]"
+                  data-geo-answer
+                >
                   {faq.answer}
                 </p>
               </div>

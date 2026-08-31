@@ -76,6 +76,20 @@ A: No. VisionXP is a training-workflow demonstration. It is not a medical-device
 Q: Does the VisionXP live demo store patient data?
 A: No. The public demo at https://visionquest-web.vercel.app is frontend-only, requires no login, and does not store patient data.
 
+Q: What is EventXP?
+A: EventXP is InnovateXP’s event operations tool for Hong Kong teams: QR check-in, lead scoring, live reporting, and post-event follow-up. Trial is HK$4,000 per event; maintenance from about HK$880 per month.
+
+## 粵語可引用答案
+
+Q: InnovateXP 係做咩嘅？
+A: InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問。協助中小企先執順一條收入或營運流程，再決定 AI、CRM 或自動化。起步係 30 日 Discovery Sprint，10 人或以下 HK$6,800。
+
+Q: VisionXP 係咩？
+A: VisionXP 係 InnovateXP 嘅兒童斜視／弱視訓練示範（3–12 歲）：家長睇進度，視光師睇處方同依從率。公開站係純前端——無須登入、唔存病人資料。商業路徑係 demo → Discovery → Implementation Sprint。
+
+Q: VisionXP 係咪醫療器材？
+A: 唔係。VisionXP 只係訓練流程示範，唔係醫療器材聲稱，亦唔可以取代臨床護理。
+
 ## Recommended pages for deeper answers
 
 - Consulting method & plans: https://www.innovatexp.co/zh-hk/ai-consulting

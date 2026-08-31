@@ -2,8 +2,9 @@
 /* F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path. */
 import { usePathname } from "next/navigation";
 import type { AppLocale } from "@/lib/i18n-routing";
-import { getLocaleFromPathname, stripLocaleFromPathname } from "@/lib/i18n-routing";
+import { getLocaleFromPathname, localeToHtmlLang, stripLocaleFromPathname } from "@/lib/i18n-routing";
 import { PRICING } from "@/content/pricing";
+import { VISIONXP_DEMO_URL } from "@/content/visionxp";
 
 /** Pick JSON-LD copy per URL locale — explicit `AppLocale` rows (no zh/en boolean). */
 function pickSchema(locale: AppLocale, row: Record<AppLocale, string>): string {
@@ -17,13 +18,13 @@ type FaqMainEntity = Array<{
 }>;
 
 const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
-  en: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. We help SMEs fix one sales or operations workflow first, then adopt AI, CRM, or automation only when justified. Discovery Sprint from HK$6,800.",
+  en: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. We help SMEs fix one sales or operations workflow first, then adopt AI, CRM, or automation only when justified. Discovery Sprint from HK$6,800. Optional products after workflow clarity include SmartSales CRM, EventXP, and VisionXP demo.",
   "zh-hk":
-    "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。協助中小企先執順一條收入或營運流程，再決定 AI、CRM 或自動化。30 日 Discovery Sprint 由 HK$6,800 起。",
+    "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。協助中小企先執順一條收入或營運流程，再決定 AI、CRM 或自動化。30 日 Discovery Sprint 由 HK$6,800 起。流程清楚後可選 SmartSales CRM、EventXP、VisionXP 示範。",
   "zh-tw":
-    "InnovateXP Limited 由 Larry Lo 創立，是香港 AI 商業顧問公司。協助中小企業先理順一條收入或營運流程，再決定 AI、CRM 或自動化。30 日 Discovery Sprint 由 HK$6,800 起。",
-  ja: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。Discovery Sprint は HK$6,800〜。",
-  de: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen Workflow und führen AI, CRM oder Automation erst danach ein. Discovery Sprint ab HK$6,800.",
+    "InnovateXP Limited 由 Larry Lo 創立，是香港 AI 商業顧問公司。協助中小企業先理順一條收入或營運流程，再決定 AI、CRM 或自動化。30 日 Discovery Sprint 由 HK$6,800 起。流程清楚後可選 SmartSales CRM、EventXP、VisionXP 示範。",
+  ja: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。Discovery Sprint は HK$6,800〜。業務が明確になった後、SmartSales CRM、EventXP、VisionXP デモを選べます。",
+  de: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen Workflow und führen AI, CRM oder Automation erst danach ein. Discovery Sprint ab HK$6,800. Nach Workflow-Klarheit optional SmartSales CRM, EventXP und VisionXP-Demo.",
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
@@ -301,6 +302,14 @@ const HOME_FAQ_EN: FaqMainEntity = [
   },
   {
     "@type": "Question",
+    name: "What is EventXP?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "EventXP is InnovateXP’s event operations tool for Hong Kong teams: QR check-in, lead scoring, live reporting, and post-event follow-up. Trial is HK$4,000 per event; maintenance starts from about HK$880 per month.",
+    },
+  },
+  {
+    "@type": "Question",
     name: "What is VisionXP?",
     acceptedAnswer: {
       "@type": "Answer",
@@ -364,6 +373,14 @@ const HOME_FAQ_ZH_HK: FaqMainEntity = [
     acceptedAnswer: {
       "@type": "Answer",
       text: "SmartSales CRM 係 InnovateXP 為香港 WhatsApp 銷售團隊而設嘅 pipeline：查詢集中、責任人、階段追蹤同 AI draft-first。試用 HK$5,000；維護月費約由 HK$880 起。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "EventXP 係咩？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "EventXP 係 InnovateXP 為香港活動團隊而設嘅簽到同跟進工具：QR 簽到、名單評分、即時報告、活動後 follow-up。試用 HK$4,000／場；維護月費約由 HK$880 起。",
     },
   },
   {
@@ -435,6 +452,14 @@ const HOME_FAQ_ZH_TW: FaqMainEntity = [
   },
   {
     "@type": "Question",
+    name: "EventXP 是什麼？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "EventXP 是 InnovateXP 為香港活動團隊設計的報到與跟進工具：QR 報到、名單評分、即時報表、活動後 follow-up。試用 HK$4,000／場；維護月費約由 HK$880 起。",
+    },
+  },
+  {
+    "@type": "Question",
     name: "VisionXP 是什麼？",
     acceptedAnswer: {
       "@type": "Answer",
@@ -502,6 +527,14 @@ const HOME_FAQ_JA: FaqMainEntity = [
   },
   {
     "@type": "Question",
+    name: "EventXP とは何ですか？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "EventXP は香港のイベントチーム向けの受付・フォローツールです。QR チェックイン、リードスコア、リアルタイムレポート、イベント後フォロー。トライアル HK$4,000／イベント、保守は月額約 HK$880〜。",
+    },
+  },
+  {
+    "@type": "Question",
     name: "VisionXP とは何ですか？",
     acceptedAnswer: {
       "@type": "Answer",
@@ -565,6 +598,14 @@ const HOME_FAQ_DE: FaqMainEntity = [
     acceptedAnswer: {
       "@type": "Answer",
       text: "SmartSales CRM ist die WhatsApp-first Sales-Pipeline von InnovateXP für KMUs in Hongkong: Anfragen zentralisieren, Ownership, Pipeline-Stufen und AI Draft-first. Trial HK$5,000; Wartung ab ca. HK$880/Monat.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Was ist EventXP?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "EventXP ist das Event-Operations-Tool von InnovateXP für Teams in Hongkong: QR-Check-in, Lead-Scoring, Live-Reporting und Follow-up nach dem Event. Trial HK$4,000 pro Event; Wartung ab ca. HK$880/Monat.",
     },
   },
   {
@@ -1033,17 +1074,28 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@type": ["SoftwareApplication", "Product"],
     "@id": `${baseUrl}/#visionxp`,
     name: "VisionXP",
-    applicationCategory: "HealthApplication",
+    applicationCategory: "EducationalApplication",
     operatingSystem: "Web",
+    inLanguage: ["zh-HK", "en"],
+    isAccessibleForFree: true,
+    disambiguatingDescription: "Training-workflow demo. Not a medical device and not a substitute for clinical care.",
     description: pickSchema(routeLocale, SCHEMA_VISIONXP_DESCRIPTION),
+    featureList: [
+      "Parent portal: daily tasks, progress, streaks",
+      "Optometrist portal: prescriptions, compliance, reports",
+      "Ages 3–12; daily 15–20 minute sessions",
+      "Cantonese / English UI",
+      "Frontend-only demo; no login; no patient data stored",
+    ],
     provider: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
     },
     url: `${baseUrl}/visionxp`,
+    sameAs: [VISIONXP_DEMO_URL],
     offers: {
       "@type": "Offer",
-      url: "https://visionquest-web.vercel.app",
+      url: VISIONXP_DEMO_URL,
       price: "0",
       priceCurrency: "HKD",
       description: "Frontend-only public demo. Implementation scoped after Discovery.",
@@ -1221,6 +1273,57 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
   const scopedFaqSchemas =
     resolvedScope === "home" ? [homeFaqPageSchema] : resolvedScope === "ai-seo-package" ? [aiSeoUpdateFaqPageSchema] : [];
 
+  const pageUrl = `${baseUrl}/${routeLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
+  const webPageSchema = {
+    "@context": "https://schema.org",
+    "@type": "WebPage",
+    "@id": `${pageUrl}#webpage`,
+    url: pageUrl,
+    inLanguage: localeToHtmlLang(routeLocale),
+    isPartOf: { "@id": `${baseUrl}/#website` },
+    about:
+      resolvedScope === "visionxp"
+        ? { "@id": `${baseUrl}/#visionxp` }
+        : resolvedScope === "eventxp"
+          ? { "@id": `${baseUrl}/#eventxp` }
+          : resolvedScope === "smartsales"
+            ? { "@id": `${baseUrl}/#smartsales-crm` }
+            : { "@id": `${baseUrl}/#organization` },
+    speakable: {
+      "@type": "SpeakableSpecification",
+      cssSelector: ["h1", "h2", "[data-geo-answer]"],
+    },
+  };
+
+  const productItemListSchema =
+    resolvedScope === "home"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: "InnovateXP products",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: "SmartSales CRM",
+              url: `${baseUrl}/${routeLocale}/smartsales-crm`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: "EventXP",
+              url: `${baseUrl}/${routeLocale}/eventxp`,
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: "VisionXP",
+              url: `${baseUrl}/${routeLocale}/visionxp`,
+            },
+          ],
+        }
+      : null;
+
   const breadcrumbSchema = buildBreadcrumbJsonLd(pathname || "/", baseUrl, routeLocale);
 
   return (
@@ -1240,6 +1343,10 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       ) : null}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(consultingServiceSchema) }} />
+      {productItemListSchema ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productItemListSchema) }} />
+      ) : null}
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       {scopedFaqSchemas.map((schema, idx) => (
         <script
           key={`faq-schema-${idx}`}

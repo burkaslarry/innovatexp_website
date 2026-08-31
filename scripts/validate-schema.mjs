@@ -16,6 +16,9 @@ const requiredTokens = [
   "AggregateOffer",
   "VisionXP",
   '"@type": "SoftwareApplication"',
+  '"@type": "ItemList"',
+  '"@type": "WebPage"',
+  "EducationalApplication",
 ];
 
 const missing = requiredTokens.filter((token) => !source.includes(token));

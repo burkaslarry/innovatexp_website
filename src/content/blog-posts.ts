@@ -9,7 +9,7 @@ export const blogPosts: Record<
     date: "2026-03-01",
     excerpt:
       "How to scope your first AI consulting engagement and get from slides to shipped workflows.",
-    body: "AI consulting for SMEs works best when it starts with one clear use case: a process you repeat often, data you already have, and a decision that would be better with less manual work. We help Hong Kong and global teams define that first win, then build a roadmap that scales. This post outlines how we scope engagements and what to expect in your first 30 days.",
+    body: "AI consulting for SMEs works best when it starts with one clear use case: a process you repeat often, data you already have, and a decision that would be better with less manual work. We help Hong Kong and global teams define that first win, then build a roadmap that scales. Vertical product demos such as VisionXP follow the same path: see the live demo, then Discovery, then an Implementation Sprint only if the workflow is clear. This post outlines how we scope engagements and what to expect in your first 30 days.",
   },
   "event-check-in-best-practices": {
     title: "Event Check-In Best Practices for Higher Conversion",
