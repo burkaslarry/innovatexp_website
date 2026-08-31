@@ -3,6 +3,7 @@ import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare, UsersRound } f
 import { ConsultancyMainlineSection } from "@/components/ConsultancyMainlineSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { ProductPackagesSection } from "@/components/ProductPackagesSection";
+import { VisionXpSection } from "@/components/VisionXpSection";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getBniPowerTeamCopy } from "@/content/bni-power-team";
@@ -130,6 +131,8 @@ export function BusinessUpgradeHomepageFunnel({
       <ConsultancyMainlineSection locale={locale} bookingHref={bookingHref} />
 
       <ProductPackagesSection locale={locale} content={c.products} />
+
+      <VisionXpSection locale={locale} copy={c.visionXp} />
 
       <SectionShell id="service-modules">
         <SectionHeader

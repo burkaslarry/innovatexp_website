@@ -10,7 +10,8 @@
     "about": "Über Larry",
     "faq": "FAQ",
     "cta": "30-Min-Diagnose buchen",
-    "products": "Produkte"
+    "products": "Produkte",
+    "visionXp": "VisionXP"
   },
   "hero": {
     "eyebrow": "AI-Business-Berater | 14+ Jahre IT-Lieferung und Prozessumsetzung",
@@ -442,5 +443,32 @@
         "Externe Venue-Kosten nur nach schriftlicher Vorabvereinbarung"
       ]
     }
+  },
+  "visionXp": {
+    "eyebrow": "Vertikales Produkt",
+    "title": "VisionXP",
+    "tagline": "Training bei pädiatrischem Schielen und Amblyopie",
+    "intro": "Eine zweisprachige Trainingsplattform für Kinder von 3–12: spielerische tägliche Einheiten, Fortschritt für Eltern, Optometristen-Portal für Verordnungen und Compliance. Die Live-Seite ist ein Frontend-Demo — kein Login, keine Patientendaten.",
+    "price": "Zuerst Live-Demo · dann Discovery",
+    "points": [
+      "Täglich 15–20 Minuten Training mit Pausen-Erinnerung",
+      "Fortschritt, Serien und Erfolge für Eltern",
+      "Optometristen-Ansicht: Patienten, Verordnungen, Compliance, Berichte",
+      "Adaptive Schwierigkeit und spielerische Übungen",
+      "Kantonesisch / Englisch UI"
+    ],
+    "portals": [
+      {
+        "name": "Elternportal",
+        "body": "Aufgaben des Tages, Wochenminuten, Kinderprofile und Trainingsstart."
+      },
+      {
+        "name": "Optometristenportal",
+        "body": "Anonymisierte Patientenliste, Diagnose, letzte Kontrolle, Compliance, Berichte."
+      }
+    ],
+    "demoCta": "Live-Demo von VisionXP öffnen",
+    "pageCta": "VisionXP-Details",
+    "note": "Nur Demo. Umsetzung wird nach Discovery scoped. Kein Medizinprodukte-Claim und kein Ersatz für klinische Versorgung."
   }
 }
