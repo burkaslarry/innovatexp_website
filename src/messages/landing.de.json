@@ -236,6 +236,14 @@
     "title": "FAQ",
     "items": [
       {
+        "question": "Was macht InnovateXP?",
+        "answer": "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen umsatz- oder betriebsrelevanten Workflow und führen AI, CRM oder Automation erst danach ein — wenn gerechtfertigt. Einstieg: 30-Tage Discovery Sprint ab HK$6,800."
+      },
+      {
+        "question": "Wer ist Larry Lo?",
+        "answer": "Larry Lo ist Gründer von InnovateXP Limited und AI Business Consultant in Hongkong, mit über 13 Jahren IT-Delivery-Erfahrung und sieben datierten öffentlichen Auftritten 2025 bei GDG Hong Kong, PISM Sharing und DevFest Hong Kong."
+      },
+      {
         "question": "Sind wir jetzt bereit für AI?",
         "answer": "Nicht jedes Team sollte sofort mit AI starten. Beginnen Sie mit einem Prozess und entscheiden Sie anhand des operativen Nutzens."
       },
@@ -384,19 +392,31 @@
           "name": "Essential",
           "price": "HK$4,000 / Monat",
           "response": "Antwort innerhalb von 2 Werktagen",
-          "points": ["Monatlicher Health Review", "Ein geplanter Small-Fix-Batch pro Monat", "Monatliche Statuszusammenfassung"]
+          "points": [
+            "Monatlicher Health Review",
+            "Ein geplanter Small-Fix-Batch pro Monat",
+            "Monatliche Statuszusammenfassung"
+          ]
         },
         {
           "name": "Growth",
           "price": "HK$8,000 / Monat",
           "response": "Antwort innerhalb von 1 Werktag",
-          "points": ["Zweimal monatliche Health Checks", "Bis zu 2 geplante Small-Fix-Batches pro Monat", "Monatlicher Verbesserungsreview"]
+          "points": [
+            "Zweimal monatliche Health Checks",
+            "Bis zu 2 geplante Small-Fix-Batches pro Monat",
+            "Monatlicher Verbesserungsreview"
+          ]
         },
         {
           "name": "Priority",
           "price": "HK$12,000 / Monat",
           "response": "Antwort innerhalb von 4 Geschäftsstunden",
-          "points": ["Wöchentlicher Health Check", "Priorisierte Incident-Triage", "Bis zu 3 geplante Small-Fix-Batches pro Monat"]
+          "points": [
+            "Wöchentlicher Health Check",
+            "Priorisierte Incident-Triage",
+            "Bis zu 3 geplante Small-Fix-Batches pro Monat"
+          ]
         }
       ],
       "boundary": "Keine unlimited changes. Supportzeiten: Mo–Fr 09:00–18:00 HKT, ohne Feiertage. Große Features, Migrationen, Drittkosten, Einsätze außerhalb der Bürozeiten und Arbeit außerhalb des vereinbarten Systems werden separat angeboten."
@@ -406,12 +426,21 @@
       "title": "AI Readiness Snapshot",
       "price": "HK$3,000",
       "intro": "Für Teams, die HK$6,800 Discovery noch nicht buchen wollen und zuerst eine kleinere, belegte Entscheidung brauchen.",
-      "points": ["60–90 Minuten Interview", "Einseitige Readiness-Scorecard", "Die 3 größten Adoption-Blocker", "Klare Empfehlung: noch nicht bereit oder weiter zu Discovery"],
+      "points": [
+        "60–90 Minuten Interview",
+        "Einseitige Readiness-Scorecard",
+        "Die 3 größten Adoption-Blocker",
+        "Klare Empfehlung: noch nicht bereit oder weiter zu Discovery"
+      ],
       "excludes": "Kein SOP, kein Prototype, kein Implementation-Scope, kein Custom Build.",
       "upgrade": "Upgrade innerhalb von 14 Kalendertagen: zusätzlich HK$3,800 zahlen und in das HK$6,800 Discovery einsteigen.",
       "educationTitle": "Optionaler 1-Monats-Education-Track — separat anbieten",
       "educationIntro": "Vier 60-Minuten-Sessions, eine pro Woche, für dieselbe Kundenorganisation. Nicht im HK$3,000 Snapshot enthalten.",
-      "educationPoints": ["Keine Kopfpauschale; Teilnehmerzahl begrenzt durch den vereinbarten Raum oder die Online-Plattform", "Inhalt vor der ersten Session vereinbart; Extra-Vorbereitung oder Extra-Sessions separat", "Externe Venue-Kosten nur nach schriftlicher Vorabvereinbarung"]
+      "educationPoints": [
+        "Keine Kopfpauschale; Teilnehmerzahl begrenzt durch den vereinbarten Raum oder die Online-Plattform",
+        "Inhalt vor der ersten Session vereinbart; Extra-Vorbereitung oder Extra-Sessions separat",
+        "Externe Venue-Kosten nur nach schriftlicher Vorabvereinbarung"
+      ]
     }
   }
 }

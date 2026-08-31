@@ -20,89 +20,89 @@ function pick(locale: AppLocale, pair: LocalePair): PageSeo {
 
 const HOME: LocalePair = {
   zh: {
-    title: "AI商業顧問｜先執順流程再落地AI｜InnovateXP",
+    title: "香港AI商業顧問｜中小企SOP與WhatsApp流程｜InnovateXP",
     description:
-      "InnovateXP 陪中小企先梳理 SOP、KPI，再試行 AI 與自動化。30 日 Discovery Sprint、陪跑計劃、EventXP／SmartSales／Accounting Chatbot 按需落地。立即預約診斷。",
+      "Larry Lo／InnovateXP：香港中小企 AI 商業顧問。先執順一條收入或營運流程，30 日 Discovery Sprint 由 HK$6,800 起，再決定 CRM、AI 或自動化。立即預約 30 分鐘診斷。",
   },
   en: {
-    title: "AI Business Consultancy | Fix Workflows, Then AI | InnovateXP",
+    title: "Hong Kong AI Consultant for SMEs | Workflow-First | InnovateXP",
     description:
-      "InnovateXP helps SMEs clarify SOPs and KPIs first, then adopt AI through Discovery Sprints, advisory programs, and optional CRM or automation. Book a 30-min workflow review.",
+      "Larry Lo / InnovateXP helps Hong Kong SMEs fix one sales or ops workflow first, then adopt AI. 30-day Discovery Sprint from HK$6,800. Book a free 30-min diagnosis.",
   },
 };
 
 const BOOKME: LocalePair = {
   zh: {
-    title: "預約 AI 顧問諮詢｜30 分鐘流程診斷｜InnovateXP",
+    title: "預約香港AI顧問｜免費30分鐘流程診斷｜InnovateXP",
     description:
-      "免費預約 30 分鐘策略會議：檢視銷售、CRM、活動或 AI 工作流瓶頸，釐清下一步。InnovateXP 陪你先診斷、再落地——立即選時段。",
+      "預約 Larry Lo 30 分鐘流程診斷：找出漏單、慢報價或交接卡位。香港中小企 AI 商業顧問 InnovateXP——先診斷、再落地。立即選時段。",
   },
   en: {
-    title: "Book a Free AI Consultation — InnovateXP",
+    title: "Book Hong Kong AI Consultant | Free 30-Min Diagnosis | InnovateXP",
     description:
-      "Get a 30-min strategy session with our AI consulting team. We help businesses automate sales, CRM, and customer workflows. Book your slot now.",
+      "Book a free 30-minute workflow diagnosis with Larry Lo / InnovateXP. Find enquiry leakage, slow quotes, or handoff gaps—then decide on AI or CRM. Pick a slot now.",
   },
 };
 
 const SMARTSALES: LocalePair = {
   zh: {
-    title: "SmartSales CRM｜WhatsApp 銷售管道與跟進｜InnovateXP",
+    title: "SmartSales CRM香港｜WhatsApp銷售跟進系統｜InnovateXP",
     description:
-      "SmartSales CRM：名單、WhatsApp 情境、跟進提醒同一 pipeline。試用 HKD 5,000。適合搜尋 smart sales CRM、想減少試算表失聯嘅 B2B／中小企團隊。",
-    ogTitle: "SmartSales CRM — WhatsApp 銷售管道",
-    ogDescription: "smart sales／WhatsApp 查詢變成可跟進客戶紀錄。試用 HKD 5,000，立即了解。",
+      "SmartSales CRM 專為香港 WhatsApp 銷售團隊：查詢集中、責任人、pipeline、AI draft-first。試用 HK$5,000；月費由 HK$880 起。減少 Excel／inbox 漏跟。",
+    ogTitle: "SmartSales CRM — 香港 WhatsApp 銷售 CRM",
+    ogDescription: "把 WhatsApp 查詢變成可跟進 pipeline。試用 HK$5,000。",
   },
   en: {
-    title: "SmartSales CRM | WhatsApp Pipeline & Follow-Up | InnovateXP",
+    title: "SmartSales CRM Hong Kong | WhatsApp Sales Pipeline | InnovateXP",
     description:
-      "SmartSales CRM centralizes leads, WhatsApp context, and reminders in one smart sales pipeline. Trial from HKD 5,000. Built for SMEs tired of spreadsheet and inbox chaos.",
-    ogTitle: "SmartSales CRM — WhatsApp sales pipeline",
+      "SmartSales CRM for Hong Kong WhatsApp-led sales: centralize enquiries, ownership, pipeline, and AI draft-first replies. Trial HK$5,000; maintenance from HK$880/mo.",
+    ogTitle: "SmartSales CRM — WhatsApp sales for HK SMEs",
     ogDescription:
-      "One place for leads, chat context, and next actions. Practical CRM for B2B follow-up—without enterprise overhead.",
+      "One pipeline for leads, chat context, and next actions. Trial HK$5,000—without enterprise CRM overhead.",
   },
 };
 
 const EVENTXP: LocalePair = {
   zh: {
-    title: "EventXP｜活動簽到、名單評分與 Follow-up｜InnovateXP",
+    title: "EventXP香港｜活動簽到名單評分Follow-up｜InnovateXP",
     description:
-      "EventXP 唔只係 QR check-in：簽到、名單評分、跟進自動化。試用 HKD 4,000／場。適合活動團隊想提升轉化同跟進效率。",
+      "EventXP：QR 簽到、名單評分、即時報告、活動後 follow-up。香港活動／培訓團隊試用 HK$4,000／場；月費由 HK$880 起。把出席變成可跟進商機。",
   },
   en: {
-    title: "EventXP | Event Check-In, Scoring & Follow-Up | InnovateXP",
+    title: "EventXP Hong Kong | Check-In, Scoring & Follow-Up | InnovateXP",
     description:
-      "EventXP goes beyond QR check-in: attendance, lead scoring, and follow-up automation. Trial HKD 4,000 per event. Turn attendees into actionable sales pipelines.",
+      "EventXP for Hong Kong event teams: QR check-in, lead scoring, live reporting, and post-event follow-up. Trial HK$4,000 per event; maintenance from HK$880/mo.",
   },
 };
 
 const AI_CONSULTING: LocalePair = {
   zh: {
-    title: "AI 商業顧問香港｜私有 AI 與落地實施｜InnovateXP",
+    title: "AI商業顧問香港｜Discovery Sprint HK$6,800｜InnovateXP",
     description:
-      "香港 AI 商業顧問：Premium 落地、私有雲／On-Premise、流程診斷到實施。先驗證 workflow，再部署 AI——預約 Discovery Sprint。",
-    ogTitle: "AI 商業顧問｜香港私有 AI 落地",
-    ogDescription: "私有雲、On-Premise 與顧問陪跑。適合需要資料安全與實務落地嘅中小企。",
+      "香港 AI 商業顧問 Larry Lo：30 日 Discovery Sprint 由 HK$6,800 起，先驗證 workflow 再部署 AI／私有雲／On-Premise。預約診斷。",
+    ogTitle: "香港 AI 商業顧問｜先流程後 AI",
+    ogDescription: "Discovery Sprint、陪跑計劃與私有 AI 選項。適合要資料安全同實務落地嘅中小企。",
   },
   en: {
-    title: "AI Business Consultant | Private AI & Implementation | InnovateXP",
+    title: "AI Business Consultant Hong Kong | Sprint HK$6,800 | InnovateXP",
     description:
-      "AI business consultancy for SMEs: workflow diagnosis, private / on-prem AI options, and premium implementation. Validate first—then deploy. Book a Discovery Sprint.",
-    ogTitle: "AI Business Consultant — Private AI advisory",
+      "Hong Kong AI business consultancy by Larry Lo: 30-day Discovery Sprint from HK$6,800, private/on-prem options after workflow validation. Book a diagnosis.",
+    ogTitle: "AI Business Consultant HK — workflow first",
     ogDescription:
-      "Premium AI consulting with private-cloud and on-premise options. Practical adoption for teams that need control and clarity.",
+      "Discovery Sprint, advisory programmes, and private AI options for SMEs that need control and clarity.",
   },
 };
 
 const AI_SEO: LocalePair = {
   zh: {
-    title: "AI SEO 更新套餐｜快速改版與跟進｜InnovateXP",
+    title: "AI SEO／GEO更新套餐｜標題Schema可見度｜InnovateXP",
     description:
-      "AI SEO 更新套餐：Starter HKD 2,000（3 次改動）或 Growth HKD 6,000（10 次改動）。改善標題、描述與可見度——立即了解方案。",
+      "AI SEO + GEO 更新套餐：Starter HK$2,000（3 次）或 Growth HK$6,000（10 次）。優化標題、描述、結構化資料與 AI 答案可見度。",
   },
   en: {
-    title: "AI SEO Update Package | Fast Meta & Content Fixes | InnovateXP",
+    title: "AI SEO & GEO Update Package | Meta + Schema | InnovateXP",
     description:
-      "AI SEO update package: Starter HKD 2,000 (3 changes) or Growth HKD 6,000 (10 changes). Improve titles, descriptions, and click-through—book a package today.",
+      "AI SEO/GEO update package: Starter HK$2,000 (3 changes) or Growth HK$6,000 (10). Improve titles, descriptions, schema, and answer-engine visibility.",
   },
 };
 
@@ -160,14 +160,14 @@ const CX_CONSULTING: LocalePair = {
 
 const SME_AUTOMATION: LocalePair = {
   zh: {
-    title: "中小企自動化顧問｜SME AI Workflow｜InnovateXP",
+    title: "中小企AI工作流顧問香港｜流程自動化｜InnovateXP",
     description:
-      "SME automation consultant：先畫清流程，再自動化報價、跟進、行政同報表。中小企 AI 升級唔由工具開始——由 workflow 開始。",
+      "香港中小企 AI 工作流顧問：先畫清報價、跟進、行政流程，再自動化。InnovateXP 由 workflow 開始，唔由亂買工具開始。預約診斷。",
   },
   en: {
-    title: "SME Automation Consultant | AI Workflow Upgrade | InnovateXP",
+    title: "SME AI Workflow Consultant Hong Kong | Automation | InnovateXP",
     description:
-      "SME automation consulting: map workflows first, then automate quotes, follow-ups, admin, and reporting. AI upgrade starts with process clarity—not random tools.",
+      "Hong Kong SME AI workflow consulting: map quotes, follow-ups, and admin first, then automate. InnovateXP starts with process clarity—not random tools. Book a diagnosis.",
   },
 };
 

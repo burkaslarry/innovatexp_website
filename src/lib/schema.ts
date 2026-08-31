@@ -11,9 +11,12 @@ export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "InnovateXP",
+    name: "InnovateXP Limited",
+    alternateName: "InnovateXP",
     url: siteUrl,
     logo: `${siteUrl}/innovatexp_color_no_bg.svg`,
+    description:
+      "Hong Kong AI business consultancy founded by Larry Lo. Fix one SME workflow first, then adopt AI, CRM, or automation when justified. Discovery Sprint from HK$6,800.",
     sameAs: [
       "https://www.linkedin.com/company/innovatexp",
       "https://www.linkedin.com/in/innovatexp/",
@@ -29,7 +32,7 @@ export function getSmartSalesProductSchema() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "SmartSales CRM is a practical CRM for WhatsApp-led sales teams: centralize leads, chat context, reminders, and pipeline stages without enterprise overhead.",
+      "SmartSales CRM is a WhatsApp-led sales CRM for Hong Kong SMEs: centralize leads, chat context, reminders, and pipeline stages. Trial HK$5,000.",
     offers: {
       "@type": "Offer",
       price: "5000",
@@ -47,10 +50,10 @@ export function getEventXPProductSchema() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "EventXP is an event management platform for Hong Kong teams to manage check-in flow, attendance tracking, and post-event follow-up actions.",
+      "EventXP helps Hong Kong event teams run QR check-in, attendance tracking, lead scoring, and post-event follow-up. Trial HK$4,000 per event.",
     offers: {
       "@type": "Offer",
-      price: "880",
+      price: "4000",
       priceCurrency: "HKD",
     },
     url: `${siteUrl}/eventxp`,
@@ -61,12 +64,12 @@ export function getAIConsultingServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "AI Consulting Services",
+    name: "AI Business Consultancy — Discovery Sprint",
     description:
-      "Every AI project that fails does so in the first 3 weeks. InnovateXP helps SMEs start with one workflow, prove ROI in 30 days, then expand — controlled risk, measurable outcomes.",
+      "InnovateXP helps Hong Kong SMEs start with one workflow, prove a measurable quick win in 30 days (Discovery Sprint from HK$6,800), then expand AI or automation with controlled risk.",
     provider: {
       "@type": "Organization",
-      name: "InnovateXP",
+      name: "InnovateXP Limited",
       url: siteUrl,
     },
     areaServed: {

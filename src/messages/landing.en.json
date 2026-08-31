@@ -236,6 +236,14 @@
     "title": "FAQ",
     "items": [
       {
+        "question": "What does InnovateXP do?",
+        "answer": "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. We help SMEs fix one revenue or operations workflow first—ownership, SOP, and follow-up—then adopt AI, CRM, or automation only when it is justified. Entry offer: 30-day Discovery Sprint from HK$6,800."
+      },
+      {
+        "question": "Who is Larry Lo?",
+        "answer": "Larry Lo is the founder of InnovateXP Limited and an AI Business Consultant in Hong Kong, with 13+ years of IT delivery experience and seven dated 2025 public host/speaker/showcase records at GDG Hong Kong, PISM Sharing, and DevFest Hong Kong."
+      },
+      {
         "question": "Are we ready for AI now?",
         "answer": "Not every team should start with AI immediately. Start with one workflow and decide based on real operational value."
       },
@@ -384,19 +392,31 @@
           "name": "Essential",
           "price": "HK$4,000 / month",
           "response": "Response within 2 business days",
-          "points": ["Monthly health review", "One planned small-fix batch per month", "Monthly status summary"]
+          "points": [
+            "Monthly health review",
+            "One planned small-fix batch per month",
+            "Monthly status summary"
+          ]
         },
         {
           "name": "Growth",
           "price": "HK$8,000 / month",
           "response": "Response within 1 business day",
-          "points": ["Twice-monthly health checks", "Up to 2 planned small-fix batches per month", "Monthly improvement review"]
+          "points": [
+            "Twice-monthly health checks",
+            "Up to 2 planned small-fix batches per month",
+            "Monthly improvement review"
+          ]
         },
         {
           "name": "Priority",
           "price": "HK$12,000 / month",
           "response": "Response within 4 business hours",
-          "points": ["Weekly health check", "Priority incident triage", "Up to 3 planned small-fix batches per month"]
+          "points": [
+            "Weekly health check",
+            "Priority incident triage",
+            "Up to 3 planned small-fix batches per month"
+          ]
         }
       ],
       "boundary": "No unlimited changes. Support hours are Monday–Friday, 09:00–18:00 HKT excluding public holidays. Major features, migrations, third-party fees, after-hours incidents and work outside the agreed system are quoted separately."
@@ -406,12 +426,21 @@
       "title": "AI Readiness Snapshot",
       "price": "HK$3,000",
       "intro": "For a team that is not yet ready to commit HK$6,800 to Discovery and needs a smaller evidence-based decision first.",
-      "points": ["60–90 minute interview", "One-page readiness scorecard", "The 3 biggest adoption blockers", "Clear recommendation: not ready yet or proceed to Discovery"],
+      "points": [
+        "60–90 minute interview",
+        "One-page readiness scorecard",
+        "The 3 biggest adoption blockers",
+        "Clear recommendation: not ready yet or proceed to Discovery"
+      ],
       "excludes": "Does not include an SOP, prototype, implementation scope or custom build.",
       "upgrade": "Upgrade within 14 calendar days: pay HK$3,800 more to enter the HK$6,800 Discovery.",
       "educationTitle": "Optional 1-month education track — scoped separately",
       "educationIntro": "Four 60-minute sessions, one per week, for the same client organization. This is not included in the HK$3,000 Snapshot.",
-      "educationPoints": ["No per-head teaching fee; attendance is limited by the agreed room or online-platform capacity", "Content is agreed before the first session; extra preparation or sessions are separate", "External venue cost is shared only under a written, pre-approved arrangement"]
+      "educationPoints": [
+        "No per-head teaching fee; attendance is limited by the agreed room or online-platform capacity",
+        "Content is agreed before the first session; extra preparation or sessions are separate",
+        "External venue cost is shared only under a written, pre-approved arrangement"
+      ]
     }
   }
 }

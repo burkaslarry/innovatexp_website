@@ -236,6 +236,14 @@
     "title": "よくある質問",
     "items": [
       {
+        "question": "InnovateXP は何をする会社ですか？",
+        "answer": "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。入口は 30 日 Discovery Sprint（HK$6,800〜）です。"
+      },
+      {
+        "question": "Larry Lo とは誰ですか？",
+        "answer": "Larry Lo は InnovateXP Limited の創業者で AI ビジネスコンサルタントです。13年以上の IT デリバリー経験があり、2025年には GDG Hong Kong、PISM Sharing、DevFest Hong Kong で司会・登壇・プロジェクト紹介を行った7件の公開記録があります。"
+      },
+      {
         "question": "今すぐAIを導入すべきですか？",
         "answer": "最初からAIが必要とは限りません。まず収益や運営に影響する1本の業務を見て、価値があるか判断します。"
       },
@@ -384,19 +392,31 @@
           "name": "Essential",
           "price": "HK$4,000 / 月",
           "response": "2営業日以内に応答",
-          "points": ["月1回の health review", "月1バッチの計画済み小修正", "月次ステータス要約"]
+          "points": [
+            "月1回の health review",
+            "月1バッチの計画済み小修正",
+            "月次ステータス要約"
+          ]
         },
         {
           "name": "Growth",
           "price": "HK$8,000 / 月",
           "response": "1営業日以内に応答",
-          "points": ["月2回の health check", "月最大2バッチの計画済み小修正", "月次改善レビュー"]
+          "points": [
+            "月2回の health check",
+            "月最大2バッチの計画済み小修正",
+            "月次改善レビュー"
+          ]
         },
         {
           "name": "Priority",
           "price": "HK$12,000 / 月",
           "response": "4営業時間以内に応答",
-          "points": ["週1回の health check", "インシデント優先 triage", "月最大3バッチの計画済み小修正"]
+          "points": [
+            "週1回の health check",
+            "インシデント優先 triage",
+            "月最大3バッチの計画済み小修正"
+          ]
         }
       ],
       "boundary": "無制限の改修はありません。サポート時間は月–金 09:00–18:00（香港時間、祝日除く）。大型新機能、data migration、第三者費用、時間外インシデント、契約対象外の作業はすべて別見積です。"
@@ -406,12 +426,21 @@
       "title": "AI Readiness Snapshot",
       "price": "HK$3,000",
       "intro": "まだ HK$6,800 の Discovery に踏み切れないチーム向け。小さいコストで根拠ある判断を先に取る。",
-      "points": ["60–90分インタビュー", "1ページの readiness scorecard", "最大の adoption 阻害要因 3 点", "未準備か Discovery へ進むかの明確な推奨"],
+      "points": [
+        "60–90分インタビュー",
+        "1ページの readiness scorecard",
+        "最大の adoption 阻害要因 3 点",
+        "未準備か Discovery へ進むかの明確な推奨"
+      ],
       "excludes": "SOP、prototype、implementation scope、custom build は含みません。",
       "upgrade": "14暦日以内のアップグレードは追加 HK$3,800 で、合計 HK$6,800 の Discovery に入れます。",
       "educationTitle": "任意の 1か月 education track — 別見積",
       "educationIntro": "同一顧客組織向け。週1回×4回、各60分。HK$3,000 Snapshot には含まれません。",
-      "educationPoints": ["人数課金なし。参加人数は合意した会場またはオンライン基盤の安全定員まで", "第1回前に内容を確定。追加準備や追加セッションは別料金", "外部会場費は書面で事前合意した場合のみ分担"]
+      "educationPoints": [
+        "人数課金なし。参加人数は合意した会場またはオンライン基盤の安全定員まで",
+        "第1回前に内容を確定。追加準備や追加セッションは別料金",
+        "外部会場費は書面で事前合意した場合のみ分担"
+      ]
     }
   }
 }

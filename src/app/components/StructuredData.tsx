@@ -17,13 +17,13 @@ type FaqMainEntity = Array<{
 }>;
 
 const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
-  en: "InnovateXP Limited helps Hong Kong SMEs fix workflows first, then adopt AI through structured advisory, SOP optimization, KPI review, practical trials, and optional automation or SaaS implementation.",
+  en: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. We help SMEs fix one sales or operations workflow first, then adopt AI, CRM, or automation only when justified. Discovery Sprint from HK$6,800.",
   "zh-hk":
-    "InnovateXP Limited 以 AI 商業顧問定位，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
+    "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。協助中小企先執順一條收入或營運流程，再決定 AI、CRM 或自動化。30 日 Discovery Sprint 由 HK$6,800 起。",
   "zh-tw":
-    "InnovateXP Limited 以 AI 商業顧問定位，陪香港中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。",
-  ja: "InnovateXP は香港の中小企業向けに、イベントからの見込み客や WhatsApp の問い合わせを AI ワークフローで構造化されたセールスパイプラインへ変える支援を行います。Azure OpenAI、Alibaba Cloud、GCP、AWS、オンプレミスへの展開と実践的な AI 研修に対応します。",
-  de: "InnovateXP Limited hilft KMUs in Hongkong dabei, Event-Leads und WhatsApp-Anfragen mit KI-gestützten Workflows in strukturierte Vertriebspipelines zu verwandeln. Bereitstellung auf Azure OpenAI, Alibaba Cloud, GCP, AWS oder On-Premise sowie praktisches AI-Training.",
+    "InnovateXP Limited 由 Larry Lo 創立，是香港 AI 商業顧問公司。協助中小企業先理順一條收入或營運流程，再決定 AI、CRM 或自動化。30 日 Discovery Sprint 由 HK$6,800 起。",
+  ja: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。Discovery Sprint は HK$6,800〜。",
+  de: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen Workflow und führen AI, CRM oder Automation erst danach ein. Discovery Sprint ab HK$6,800.",
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
@@ -70,11 +70,11 @@ const SCHEMA_AI_SEO_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
-  en: "AI Business Consultancy, Discovery Sprint, SOP optimization, KPI review, and optional workflow automation for Hong Kong SMEs",
-  "zh-hk": "為香港中小企提供 AI 商業升級陪跑、30 日 Discovery Sprint、SOP 流程優化、KPI review 及按需 workflow automation",
-  "zh-tw": "為香港中小企提供 AI 商業升級陪跑、30 日 Discovery Sprint、SOP 流程優化、KPI review 及按需 workflow automation",
-  ja: "香港の中小企業向けに WhatsApp CRM、EventXP、AI 研修、クラウド／オンプレミス支援を提供",
-  de: "WhatsApp-CRM, EventXP, AI-Schulungen sowie Cloud- und On-Premise-Deployments für KMUs in Hongkong",
+  en: "Hong Kong AI business consultancy: workflow diagnosis, Discovery Sprint from HK$6,800, WhatsApp CRM (SmartSales), EventXP, and optional private AI for SMEs.",
+  "zh-hk": "香港 AI 商業顧問：流程診斷、Discovery Sprint 由 HK$6,800 起、WhatsApp CRM（SmartSales）、EventXP，以及按需私有 AI。",
+  "zh-tw": "香港 AI 商業顧問：流程診斷、Discovery Sprint 由 HK$6,800 起、WhatsApp CRM（SmartSales）、EventXP，以及按需私有 AI。",
+  ja: "香港の AI ビジネスコンサル：業務診断、Discovery Sprint（HK$6,800〜）、WhatsApp CRM（SmartSales）、EventXP、必要に応じてプライベート AI。",
+  de: "AI-Business-Beratung Hongkong: Workflow-Diagnose, Discovery Sprint ab HK$6,800, WhatsApp-CRM (SmartSales), EventXP und optionale Private AI für KMUs.",
 };
 
 const SCHEMA_CONSULTING_SERVICE_DESCRIPTION: Record<AppLocale, string> = {
@@ -236,26 +236,50 @@ const BREADCRUMB_SEGMENTS: Record<string, Record<AppLocale, string>> = {
 const HOME_FAQ_EN: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "What is AI CRM and how is it different from traditional CRM?",
+    name: "What does InnovateXP do?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "AI CRM combines customer records with AI-generated drafts, workflow automation, and priority scoring. Unlike traditional CRM that mainly stores data, it helps teams respond faster and reduce repetitive follow-up work.",
+      text: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. It helps SMEs fix one revenue or operations workflow first—ownership, SOP, and follow-up—then adopt AI, CRM, or automation only when justified. The entry offer is a 30-day Discovery Sprint from HK$6,800.",
     },
   },
   {
     "@type": "Question",
-    name: "How does EventXP QR check-in work?",
+    name: "Who is Larry Lo / InnovateXP?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Guests receive a unique QR code by email or WhatsApp. Staff scan codes on-site, attendance is recorded in real time, and EventXP can trigger post-event follow-up workflows based on participation signals.",
+      text: "Larry Lo is the founder of InnovateXP Limited and an AI Business Consultant based in Hong Kong. He has 13+ years of IT delivery experience and seven dated 2025 public records as host, speaker, or project demonstrator at GDG Hong Kong, PISM Sharing, and DevFest Hong Kong.",
     },
   },
   {
     "@type": "Question",
-    name: "Where can InnovateXP deploy AI-assisted workflows?",
+    name: "Are we ready for AI now?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "InnovateXP supports deployment on major cloud platforms (including Azure OpenAI, Alibaba Cloud, GCP, and AWS) and self-hosted or on-premise environments when your risk or compliance posture requires it, with practical AI training for your team.",
+      text: "Not every team should start with AI immediately. InnovateXP usually recommends fixing one revenue- or operations-critical workflow first, then deciding whether AI adds real operational value.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Do we need a CRM first?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Not always. Ownership, handoff clarity, and follow-up rhythm usually come before buying a new CRM. If current tools already work once ownership is clear, InnovateXP may advise against buying.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "How much does the Discovery Sprint cost?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "The 30-day Discovery Sprint starts at HK$6,800 for teams of up to 10 people, HK$13,600 for 11–30 people, and is quoted separately for 31+ people. Longer Foundation, Accelerator, and Partnership programmes are priced after SOP complexity assessment.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "What is SmartSales CRM?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "SmartSales CRM is InnovateXP’s WhatsApp-led sales pipeline for Hong Kong SMEs: centralize enquiries, assign ownership, track stages, and use AI draft-first replies. Trial is HK$5,000; maintenance starts from about HK$880 per month.",
     },
   },
 ];
@@ -263,26 +287,50 @@ const HOME_FAQ_EN: FaqMainEntity = [
 const HOME_FAQ_ZH_HK: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "什麼是 AI CRM？它與傳統 CRM 有何不同？",
+    name: "InnovateXP 係做咩嘅？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "AI CRM 把客戶資料管理結合 AI 草稿、自動化流程與優先排序。相比只儲存資料的傳統 CRM，AI CRM 可協助團隊更快回覆並減少重複跟進工作。",
+      text: "InnovateXP Limited 係由 Larry Lo 創立嘅香港 AI 商業顧問公司。協助中小企先執順一條收入或營運流程（責任、SOP、跟進），確認有效後先考慮 AI、CRM 或自動化。起步方案係 30 日 Discovery Sprint，由 HK$6,800 起。",
     },
   },
   {
     "@type": "Question",
-    name: "QR 碼簽到如何運作？",
+    name: "Larry Lo／InnovateXP 係邊個？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "賓客透過電郵或 WhatsApp 收到獨特 QR 碼，工作人員現場掃描後系統即時記錄出席，並可根據活動行為訊號自動觸發後續跟進流程。",
+      text: "Larry Lo 係 InnovateXP Limited 創辦人同 AI 商業顧問，駐香港，具備 13+ 年 IT 交付經驗，並有 7 個 2025 年公開紀錄，分別以主持、講者或項目展示角色參與 GDG Hong Kong、PISM Sharing 及 DevFest Hong Kong。",
     },
   },
   {
     "@type": "Question",
-    name: "InnovateXP 可將 AI 輔助流程部署喺邊？",
+    name: "我哋而家係咪適合用 AI？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "我們可配合主要 Cloud Platform（Azure OpenAI、Alibaba Cloud、GCP、AWS）上架，亦可在需要時採用自家主機／On-Premise 部署以符合風險或合規要求，並提供實戰 AI training。",
+      text: "未必一開始就要。通常建議先揀一條最影響收入或營運嘅核心流程嚟睇清楚，評估過效益，先決定係咪值得加 AI。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "一定要先買 CRM 嗎？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "唔一定。最緊要先理順團隊嘅責任、交接同跟進節奏。如果現有工具已經夠用，就未必需要即刻洗錢換系統。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Discovery Sprint 幾錢？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "30 日 Discovery Sprint：10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價。較長嘅 Foundation／Accelerator／Partnership 視 SOP 複雜程度決定。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "SmartSales CRM 係咩？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "SmartSales CRM 係 InnovateXP 為香港 WhatsApp 銷售團隊而設嘅 pipeline：查詢集中、責任人、階段追蹤同 AI draft-first。試用 HK$5,000；維護月費約由 HK$880 起。",
     },
   },
 ];
@@ -290,26 +338,50 @@ const HOME_FAQ_ZH_HK: FaqMainEntity = [
 const HOME_FAQ_ZH_TW: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "什麼是 AI CRM？與傳統 CRM 有什麼不同？",
+    name: "InnovateXP 是做什麼的？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "AI CRM 將客戶資料結合 AI 草稿、自動化流程與優先排序。相較於主要用來儲存資料的傳統 CRM，AI CRM 可協助團隊更快回應並降低重複跟進成本。",
+      text: "InnovateXP Limited 是由 Larry Lo 創立的香港 AI 商業顧問公司，協助中小企業先理順一條收入或營運流程（責任、SOP、跟進），確認有效後再考慮 AI、CRM 或自動化。起步方案為 30 日 Discovery Sprint，由 HK$6,800 起。",
     },
   },
   {
     "@type": "Question",
-    name: "EventXP 的 QRCode 報到如何運作？",
+    name: "Larry Lo／InnovateXP 是誰？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "來賓可透過電子郵件或 WhatsApp 取得專屬 QRCode；現場掃描後即時紀錄出席，並可依參與訊號觸發活動後的跟進流程。",
+      text: "Larry Lo 是 InnovateXP Limited 創辦人與 AI 商業顧問，駐香港，具備 13 年以上 IT 交付經驗，並有 7 場 2025 年公開紀錄，分別以主持人、講者或專案展示者身分參與 GDG Hong Kong、PISM Sharing 與 DevFest Hong Kong。",
     },
   },
   {
     "@type": "Question",
-    name: "InnovateXP 可以把 AI 輔助流程部署在哪裡？",
+    name: "我們現在適合導入 AI 嗎？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "我們可配合主要雲端平台（Azure OpenAI、阿里雲、GCP、AWS）上架；若有合規或風控需求，亦可採用自建／地端部署，並提供實務 AI 培訓。",
+      text: "不一定要立刻導入。通常建議先鎖定一條最影響收入或營運的核心流程，評估效益後再決定是否值得加入 AI。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "一定要先買 CRM 嗎？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "不一定。關鍵是先理順責任、交接與跟進節奏。若現有工具在責任清楚後已夠用，未必需要立刻換系統。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Discovery Sprint 多少錢？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "30 日 Discovery Sprint：10 人以下 HK$6,800；11–30 人 HK$13,600；31 人以上另行報價。較長的 Foundation／Accelerator／Partnership 視 SOP 複雜程度決定。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "SmartSales CRM 是什麼？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "SmartSales CRM 是 InnovateXP 為香港 WhatsApp 銷售團隊設計的 pipeline：集中詢問、責任歸屬、階段追蹤與 AI draft-first。試用 HK$5,000；維護月費約由 HK$880 起。",
     },
   },
 ];
@@ -317,26 +389,50 @@ const HOME_FAQ_ZH_TW: FaqMainEntity = [
 const HOME_FAQ_JA: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "AI CRM とは何ですか？従来の CRM とどう違いますか？",
+    name: "InnovateXP は何をする会社ですか？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "AI CRM は顧客情報に AI 草案、ワークフロー自動化、優先度スコアリングを組み合わせます。データ保管が中心の従来 CRM と異なり、返信を速め、繰り返しのフォロー業務を減らします。",
+      text: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入する支援をします。入口は 30 日 Discovery Sprint（HK$6,800〜）です。",
     },
   },
   {
     "@type": "Question",
-    name: "EventXP の QR チェックインはどう動きますか？",
+    name: "Larry Lo / InnovateXP とは誰ですか？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "ゲストはメールまたは WhatsApp で固有の QR を受け取ります。スタッフが現場で読み取ると出席がリアルタイム記録され、参加シグナルに応じてイベント後フォローのワークフローを起動できます。",
+      text: "Larry Lo は InnovateXP Limited の創業者で AI ビジネスコンサルタントです。13年以上の IT デリバリー経験があり、2025年には GDG Hong Kong、PISM Sharing、DevFest Hong Kong で司会・登壇・プロジェクト紹介を行った7件の公開記録があります。",
     },
   },
   {
     "@type": "Question",
-    name: "InnovateXP は AI 支援ワークフローをどこに展開できますか？",
+    name: "今すぐ AI を入れるべきですか？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "主要クラウド（Azure OpenAI、Alibaba Cloud、GCP、AWS）への展開に加え、リスク／コンプライアンス要件に応じてセルフホスト／オンプレミスにも対応し、実務に沿った AI 研修も提供します。",
+      text: "必ずしもすぐではありません。まず売上や業務に効く1本のフローを整え、効果が確認できてから AI の必要性を判断するのが InnovateXP の方針です。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "先に CRM を買う必要がありますか？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "必ずしも不要です。担当・引き継ぎ・フォローのリズムを先に明確にします。既存ツールで足りる場合は、購入しない提案もします。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Discovery Sprint の料金は？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "30日 Discovery Sprint は10人以下 HK$6,800、11–30人 HK$13,600、31人以上は個別見積です。Foundation／Accelerator／Partnership は SOP の複雑さに応じて見積ります。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "SmartSales CRM とは何ですか？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "SmartSales CRM は WhatsApp 主導の営業向けパイプラインです。問い合わせ集約、担当、ステージ管理、AI Draft-first に対応。トライアル HK$5,000、保守は月額約 HK$880〜。",
     },
   },
 ];
@@ -344,26 +440,50 @@ const HOME_FAQ_JA: FaqMainEntity = [
 const HOME_FAQ_DE: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "Was ist AI-CRM — und wie unterscheidet es sich von klassischem CRM?",
+    name: "Was macht InnovateXP?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "AI-CRM verbindet Kundendaten mit KI-generierten Entwürfen, Workflow-Automatisierung und Priorisierung. Anders als klassisches CRM, das vor allem speichert, hilft es Teams, schneller zu antworten und wiederkehrende Follow-up-Arbeit zu reduzieren.",
+      text: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen umsatz- oder betriebsrelevanten Workflow (Ownership, SOP, Follow-up) und führen AI, CRM oder Automation erst danach ein — wenn es gerechtfertigt ist. Einstieg: 30-Tage Discovery Sprint ab HK$6,800.",
     },
   },
   {
     "@type": "Question",
-    name: "Wie funktioniert der EventXP QR-Check-in?",
+    name: "Wer ist Larry Lo / InnovateXP?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Gäste erhalten einen individuellen QR-Code per E-Mail oder WhatsApp. Vor Ort wird gescannt, die Anwesenheit wird in Echtzeit erfasst und EventXP kann nachgelagerte Follow-up-Workflows anhand von Teilnahmesignalen auslösen.",
+      text: "Larry Lo ist Gründer von InnovateXP Limited und AI Business Consultant in Hongkong. Er hat über 13 Jahre IT-Delivery-Erfahrung und sieben datierte öffentliche Auftritte 2025 als Gastgeber, Sprecher oder Projektpräsentator bei GDG Hong Kong, PISM Sharing und DevFest Hong Kong.",
     },
   },
   {
     "@type": "Question",
-    name: "Wo kann InnovateXP KI-unterstützte Workflows bereitstellen?",
+    name: "Sind wir jetzt bereit für KI?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "InnovateXP unterstützt Bereitstellung auf großen Cloud-Plattformen (z. B. Azure OpenAI, Alibaba Cloud, GCP, AWS) sowie Self-Hosted/On-Premise, wenn Risiko- oder Compliance-Anforderungen es erfordern — inklusive praktischem AI-Training für Ihr Team.",
+      text: "Nicht jedes Team sollte sofort mit KI starten. InnovateXP empfiehlt meist, zuerst einen umsatz- oder betriebsrelevanten Workflow zu klären und erst dann zu entscheiden, ob KI echten Nutzen bringt.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Brauchen wir zuerst ein CRM?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Nicht immer. Ownership, Übergaben und Follow-up-Rhythmus kommen meist vor dem Kauf eines neuen CRM. Wenn bestehende Tools nach Klärung der Verantwortung reichen, rät InnovateXP ggf. vom Kauf ab.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Was kostet der Discovery Sprint?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Der 30-Tage Discovery Sprint kostet HK$6,800 bis 10 Personen, HK$13,600 für 11–30 Personen und wird ab 31 Personen individuell angeboten. Foundation/Accelerator/Partnership werden nach SOP-Komplexität bewertet.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "Was ist SmartSales CRM?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "SmartSales CRM ist die WhatsApp-first Sales-Pipeline von InnovateXP für KMUs in Hongkong: Anfragen zentralisieren, Ownership, Pipeline-Stufen und AI Draft-first. Trial HK$5,000; Wartung ab ca. HK$880/Monat.",
     },
   },
 ];
@@ -549,34 +669,37 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     founder: {
       "@type": "Person",
       "@id": `${baseUrl}/#founder`,
-      name: "InnovateXP founder",
+      name: "Larry Lo",
       jobTitle: "AI Business Consultant",
       url: baseUrl,
-      sameAs: ["https://www.linkedin.com/company/innovatexp"],
+      sameAs: ["https://www.linkedin.com/in/innovatexp/", "https://www.linkedin.com/company/innovatexp"],
     },
-    sameAs: ["https://www.linkedin.com/company/innovatexp"],
+    sameAs: ["https://www.linkedin.com/company/innovatexp", "https://www.linkedin.com/in/innovatexp/"],
     knowsAbout: [
+      "AI Business Consultancy Hong Kong",
+      "Hong Kong AI consultant",
+      "SME AI workflow",
+      "WhatsApp CRM",
+      "SmartSales CRM",
+      "EventXP",
+      "Discovery Sprint",
+      "SOP optimization",
+      "Generative Engine Optimization",
+      "AI SEO",
+      "GEO",
+      "Private AI on-premise",
       "AI CRM",
       "SME AI Automation",
       "Business Process Automation",
-      "AI Implementation Consulting",
-      "Next.js",
-      "Ollama",
       "Prompt Engineering",
       "Event Check-in Intelligence",
-      "Business Intelligence Dashboards",
       "Lead Qualification Automation",
       "Azure OpenAI Implementation",
       "Alibaba Cloud AI Deployment",
       "GCP AI Deployment",
       "AWS AI Deployment",
-      "AI-augmented Workflow Deployment",
       "On-Premise AI Deployment",
-      "AI Business Consultancy",
-      "AI Business Upgrade Accelerator",
-      "AI consultant Hong Kong",
       "AI adoption for SMEs",
-      "business process automation",
       "SOP 流程優化",
       "AI 商業升級",
       "AI 商業顧問",
@@ -584,7 +707,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "中小企 AI 升級",
       "AI 工作流",
       "香港中小企 AI 顧問",
-      "30-day Discovery Sprint",
+      "Larry Lo",
     ],
   };
 
@@ -592,12 +715,12 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@context": "https://schema.org",
     "@type": "Person",
     "@id": `${baseUrl}/#founder`,
-    name: "InnovateXP founder",
+    name: "Larry Lo",
     jobTitle: "AI Business Consultant",
     description: pickSchema(routeLocale, SCHEMA_PERSON_DESCRIPTION),
     url: baseUrl,
     image: `${baseUrl}/mypresent.jpg`,
-    sameAs: ["https://www.linkedin.com/company/innovatexp"],
+    sameAs: ["https://www.linkedin.com/in/innovatexp/", "https://www.linkedin.com/company/innovatexp"],
     worksFor: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,

@@ -11,11 +11,11 @@ import { LocaleHtmlLang } from "../components/LocaleHtmlLang";
 import {
   isValidLocale,
   localeToOgLocale,
-  localeUsesChineseCopy,
   ogAlternateLocales,
   LOCALES,
   type AppLocale,
 } from "@/lib/i18n-routing";
+import { homeSeo } from "@/content/page-seo";
 
 const OG_IMAGE_DEFAULT = {
   url: "/opengraph-image" as const,
@@ -36,16 +36,28 @@ export async function generateMetadata({
     process.env.SITE_URL ||
     (process.env.NODE_ENV === "development" ? "http://localhost:3000" : "https://www.innovatexp.co");
   const canonical = `${siteUrl}/${loc}`;
+  const seo = homeSeo(loc as AppLocale);
+  const ogTitle = seo.ogTitle ?? seo.title;
+  const ogDescription = seo.ogDescription ?? seo.description;
 
   return {
-    title: localeUsesChineseCopy(loc)
-      ? "AI商業顧問｜先執順流程再落地AI｜InnovateXP"
-      : "AI Business Consultancy | Fix Workflows, Then AI | InnovateXP",
-    description: localeUsesChineseCopy(loc)
-      ? "InnovateXP 陪中小企先執順 SOP、設定 KPI、試行 AI，再按需要落地 automation、CRM 或 SaaS。預約 30 分鐘流程診斷。"
-      : "InnovateXP helps SMEs fix workflows first, then adopt AI through advisory, SOP optimization, KPI review, practical trials, and optional automation or SaaS. Book a 30-min review.",
-    keywords:
-      "AI business consultant, SmartSales CRM, smart sales CRM, private AI solutions, SME automation consultant, customer experience consulting, AI 商業顧問, 香港中小企 AI, SOP 流程優化, WhatsApp CRM",
+    title: seo.title,
+    description: seo.description,
+    keywords: [
+      "Hong Kong AI consultant",
+      "AI business consultant Hong Kong",
+      "中小企 AI 顧問",
+      "香港 AI 商業顧問",
+      "WhatsApp CRM Hong Kong",
+      "SmartSales CRM",
+      "EventXP",
+      "SME AI workflow",
+      "Discovery Sprint",
+      "SOP 流程優化",
+      "generative engine optimization",
+      "AI SEO GEO Hong Kong",
+      "Larry Lo InnovateXP",
+    ].join(", "),
     authors: [{ name: "InnovateXP Limited", url: "https://www.innovatexp.co" }],
     creator: "InnovateXP Limited",
     publisher: "InnovateXP Limited",
@@ -56,27 +68,19 @@ export async function generateMetadata({
       alternateLocale: ogAlternateLocales(loc),
       url: canonical,
       siteName: "InnovateXP Limited",
-      title: localeUsesChineseCopy(loc)
-        ? "AI商業顧問｜先執順流程再落地AI｜InnovateXP"
-        : "AI Business Consultancy | Fix Workflows, Then AI | InnovateXP",
-      description: localeUsesChineseCopy(loc)
-        ? "先執順流程，再落地 AI。30 日 Discovery Sprint、陪跑計劃與按需系統落地。"
-        : "Fix the workflow first. Then put AI to work through Discovery Sprints, advisory programs, and optional systems.",
+      title: ogTitle,
+      description: ogDescription,
       images: [
         {
           ...OG_IMAGE_DEFAULT,
-          alt: "InnovateXP – AI Consulting & Global AI Solutions",
+          alt: "InnovateXP – Hong Kong AI Business Consultancy",
         },
       ],
     },
     twitter: {
       card: "summary_large_image",
-      title: localeUsesChineseCopy(loc)
-        ? "AI商業顧問｜先執順流程再落地AI｜InnovateXP"
-        : "AI Business Consultancy | Fix Workflows, Then AI | InnovateXP",
-      description: localeUsesChineseCopy(loc)
-        ? "AI 商業顧問：先梳理 SOP 和 KPI，再試行 AI，最後按需要落地 automation、CRM 或 SaaS。"
-        : "Clarify SOPs and KPIs first, trial AI, then implement automation, CRM, or SaaS only when needed.",
+      title: ogTitle,
+      description: ogDescription,
       images: [OG_IMAGE_DEFAULT.url],
       creator: "@innovatexp",
     },

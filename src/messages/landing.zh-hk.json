@@ -236,6 +236,14 @@
     "title": "常見問題",
     "items": [
       {
+        "question": "InnovateXP 係做咩嘅？",
+        "answer": "InnovateXP Limited 係由 Larry Lo 創立嘅香港 AI 商業顧問公司。協助中小企先執順一條收入或營運流程（責任、SOP、跟進），確認有效後先考慮 AI、CRM 或自動化。起步方案係 30 日 Discovery Sprint，由 HK$6,800 起。"
+      },
+      {
+        "question": "Larry Lo 係邊個？",
+        "answer": "Larry Lo 係 InnovateXP Limited 創辦人同 AI 商業顧問，駐香港，具備 13+ 年 IT 交付經驗，並有 7 個 2025 年公開紀錄，分別以主持、講者或項目展示角色參與 GDG Hong Kong、PISM Sharing 及 DevFest Hong Kong。"
+      },
+      {
         "question": "我哋而家係咪適合用 AI？",
         "answer": "未必一開始就要。通常建議先揀一條最影響收入或營運嘅核心流程嚟睇清楚，評估過效益，先決定係咪值得加 AI。"
       },
@@ -384,19 +392,31 @@
           "name": "Essential",
           "price": "HK$4,000 / 月",
           "response": "2 個工作日內回應",
-          "points": ["每月一次 system health review", "每月 1 批已計劃小修正", "每月狀態摘要"]
+          "points": [
+            "每月一次 system health review",
+            "每月 1 批已計劃小修正",
+            "每月狀態摘要"
+          ]
         },
         {
           "name": "Growth",
           "price": "HK$8,000 / 月",
           "response": "1 個工作日內回應",
-          "points": ["每月兩次 health check", "每月最多 2 批已計劃小修正", "每月改善 review"]
+          "points": [
+            "每月兩次 health check",
+            "每月最多 2 批已計劃小修正",
+            "每月改善 review"
+          ]
         },
         {
           "name": "Priority",
           "price": "HK$12,000 / 月",
           "response": "4 個工作小時內回應",
-          "points": ["每星期一次 health check", "事故優先 triage", "每月最多 3 批已計劃小修正"]
+          "points": [
+            "每星期一次 health check",
+            "事故優先 triage",
+            "每月最多 3 批已計劃小修正"
+          ]
         }
       ],
       "boundary": "不設 unlimited changes。支援時間為星期一至五 09:00–18:00（香港時間，公眾假期除外）。大型新功能、data migration、第三方費用、非辦公時間事故及合約系統以外工作，全部另行報價。"
@@ -406,12 +426,21 @@
       "title": "AI Readiness Snapshot",
       "price": "HK$3,000",
       "intro": "俾未信、或者未 ready 投入 HK$6,800 Discovery 嘅團隊，先用較細成本取得一個有根據嘅決定。",
-      "points": ["60–90 分鐘訪談", "一頁 readiness scorecard", "指出 3 個最大 adoption 阻力", "清楚建議：暫時未適合，或者進入 Discovery"],
+      "points": [
+        "60–90 分鐘訪談",
+        "一頁 readiness scorecard",
+        "指出 3 個最大 adoption 阻力",
+        "清楚建議：暫時未適合，或者進入 Discovery"
+      ],
       "excludes": "不包括 SOP、prototype、implementation scope 或任何 custom build。",
       "upgrade": "14 個曆日內升級，只需補 HK$3,800，即可進入總值 HK$6,800 嘅 Discovery。",
       "educationTitle": "可選 1 個月教育 track — 另行報價",
       "educationIntro": "同一間客戶機構，每星期 1 堂，共 4 堂，每堂 60 分鐘；唔包括喺 HK$3,000 Snapshot 之內。",
-      "educationPoints": ["不按人頭收教學費；人數以已協議場地或網上平台安全容量為限", "第一堂前確認內容；額外備課或加堂另行收費", "外部場地成本只會按雙方預先書面同意嘅方式分擔"]
+      "educationPoints": [
+        "不按人頭收教學費；人數以已協議場地或網上平台安全容量為限",
+        "第一堂前確認內容；額外備課或加堂另行收費",
+        "外部場地成本只會按雙方預先書面同意嘅方式分擔"
+      ]
     }
   }
 }
