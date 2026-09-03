@@ -14,9 +14,9 @@ export async function generateMetadata({
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   return {
-    title: "Why InnovateXP doesn't build AI autopilot hype | Reliable AI workflows",
+    title: "Reliable AI Workflows | No Autopilot Hype | InnovateXP",
     description:
-      "InnovateXP builds deterministic AI-augmented workflows for Hong Kong SMEs: cloud platform support, on-premise options, human checkpoints, and practical AI training.",
+      "InnovateXP builds deterministic AI-augmented workflows for Hong Kong SMEs: cloud support, on-prem options, human checkpoints, and practical AI training.",
     alternates: localeAlternates(locale, "/reliability"),
   };
 }

@@ -146,8 +146,8 @@ export default async function SmartSalesCrmPage({
         </h1>
         <p className="mb-10 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
           {zh
-            ? "SmartSales CRM 係實務向嘅客戶管理與銷售跟進平台：將名單、對話紀錄、下一步任務放喺同一視圖，減少 WhatsApp、試算表同 inbox 之間失聯。適合搜尋 smart sales CRM、想提升回覆節奏同 pipeline 可見度嘅 B2B／中小企團隊。"
-            : "SmartSales CRM is a practical CRM for teams running a WhatsApp-led smart sales motion. It combines lead tracking, conversation context, and task reminders so you stop losing deals across chat apps, spreadsheets, and inboxes—with pipeline visibility founders and managers can actually use."}
+            ? "SmartSales CRM 係實務向嘅客戶管理與銷售跟進平台：將名單、對話紀錄、下一步任務放喺同一視圖，減少 WhatsApp、試算表同 inbox 之間失聯。適合搜尋 SmartSales、想提升回覆節奏同 pipeline 可見度嘅 B2B／中小企團隊。亦適合需要獨立 CRM consulting（唔係硬推企業級 Salesforce）嘅香港老闆。"
+            : "SmartSales CRM is a practical CRM for teams running a WhatsApp-led smart sales motion. It combines lead tracking, conversation context, and task reminders so you stop losing deals across chat apps, spreadsheets, and inboxes—with pipeline visibility founders and managers can actually use. It also fits teams seeking independent CRM consulting in Hong Kong rather than an enterprise Salesforce programme."}
         </p>
         <ChineseOverlay section="smartsales-crm-hero" />
 

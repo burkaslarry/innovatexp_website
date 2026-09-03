@@ -20,9 +20,9 @@ export async function generateMetadata({
   const alternates = localeAlternates(locale, path);
   const ogUrl =
     typeof alternates?.canonical === "string" ? alternates.canonical : `${siteUrlMeta}/${locale}${path}`;
-  const title = "EventXP vs Eventbrite — 香港活動主辦點揀？";
+  const title = "EventXP vs Eventbrite｜香港活動主辦點揀｜InnovateXP";
   const description =
-    "香港主辦方選 EventXP 定 Eventbrite？比較 setup、價錢模式、現場 check-in、語言支援同邊種活動最合適。";
+    "香港主辦方選 EventXP 定 Eventbrite？比較 setup、價錢模式、現場 check-in、語言支援、活動後 follow-up，同邊種活動最合適。由 InnovateXP 整理。";
   return {
     title,
     description,

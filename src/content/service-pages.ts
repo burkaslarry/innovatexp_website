@@ -33,9 +33,9 @@ const aiTraining: ServicePageContent = {
   slug: "ai-training",
   schemaKind: "Course",
   title: "AI Training / AI 教班 for Schools, SMEs, and Business Teams",
-  metaTitle: "AI Training Hong Kong | AI 教班 for Schools & SMEs | InnovateXP",
+  metaTitle: "AI Training Hong Kong | Schools & SMEs | InnovateXP",
   metaDescription:
-    "Practical AI training by InnovateXP for schools, SMEs, and business teams in Hong Kong: prompt engineering, AI tools, AI-assisted coding, chatbot prototyping, and workflow automation.",
+    "Practical AI training by InnovateXP for Hong Kong schools, SMEs, and business teams: prompts, tools, AI-assisted coding, chatbots, and workflow automation.",
   eyebrow: "Founder-led AI training",
   intro:
     "InnovateXP runs practical AI training for Hong Kong schools, SMEs, and business teams that need more than a tool demo. InnovateXP teaches teams how to use AI in real work: research, writing, customer follow-up, coding support, chatbot prototyping, and workflow automation. Cantonese/English delivery is available, with Traditional Chinese phrases and examples for local teams searching for AI 教班 and 中小企 AI 升級.",
@@ -111,9 +111,9 @@ const aiCoaching: ServicePageContent = {
   slug: "ai-coaching",
   schemaKind: "ProfessionalService",
   title: "AI Business Upgrade Programs / AI 陪跑課程 for Hong Kong SMEs",
-  metaTitle: "AI 陪跑課程 Hong Kong | AI Business Consultancy | InnovateXP",
+  metaTitle: "AI 陪跑課程 Hong Kong | Consultancy | InnovateXP",
   metaDescription:
-    "AI Business Upgrade programs for Hong Kong SMEs: 30-day Discovery Sprint, 3-month Foundation, 6-month Accelerator, and advisory for SOPs, KPIs, workflow trials, and AI adoption.",
+    "AI Business Upgrade for Hong Kong SMEs: Discovery Sprint, Foundation, Accelerator—SOPs, KPIs, workflow trials, and AI adoption with InnovateXP.",
   eyebrow: "AI Business Upgrade programs",
   intro:
     "AI 陪跑課程 is for SMEs that want structured business upgrade support, not another one-off AI class and not a software-first project. InnovateXP helps your team clarify SOPs, define KPIs, run practical AI trials, and decide whether automation, CRM, or SaaS is actually needed after the workflow is validated.",
@@ -240,9 +240,9 @@ const smeWorkflow: ServicePageContent = {
   slug: "sme-ai-workflow",
   schemaKind: "ProfessionalService",
   title: "SME AI Workflow Consulting for Hong Kong Businesses",
-  metaTitle: "SME Automation Consultant | AI Workflow Upgrade | InnovateXP",
+  metaTitle: "SME AI Workflow Consultant | Automation | InnovateXP",
   metaDescription:
-    "SME automation consulting: map workflows first, then automate sales follow-up, admin, CRM, WhatsApp, and reporting. Practical AI upgrade for SMEs—not tool hype.",
+    "SME automation consulting: map workflows first, then automate sales follow-up, admin, CRM, and WhatsApp ops. Practical AI upgrade for Hong Kong SMEs.",
   eyebrow: "Hong Kong SME AI workflow automation",
   intro:
     "InnovateXP helps Hong Kong SMEs turn scattered manual work into practical AI-assisted workflows. We focus on real operating processes: WhatsApp follow-up, quotation follow-up, admin portals, dashboards, customer service drafts, SOP handover, and internal AI tools. The work is founder-led by InnovateXP, an AI Business Consultancy with 13+ years of IT delivery and architecture experience.",
@@ -316,9 +316,9 @@ const proposalToCash: ServicePageContent = {
   slug: "proposal-to-cash-ai",
   schemaKind: "ProfessionalService",
   title: "Proposal-to-Cash AI Workflow for B2B Teams",
-  metaTitle: "Proposal-to-Cash AI | B2B Quotation Follow-Up Automation | InnovateXP",
+  metaTitle: "Proposal-to-Cash AI | B2B Quote Follow-Up | InnovateXP",
   metaDescription:
-    "A practical AI-assisted workflow for B2B quotation, proposal follow-up, invoice/payment tracking, and management visibility for Hong Kong SMEs.",
+    "AI-assisted B2B quotation, proposal follow-up, invoice/payment tracking, and management visibility for Hong Kong SMEs—without enterprise CRM bloat.",
   eyebrow: "B2B quotation to payment workflow",
   intro:
     "Proposal-to-Cash AI helps B2B teams connect quotation, proposal follow-up, invoice status, and payment tracking into one clearer workflow. Instead of losing deals between WhatsApp, email, spreadsheets, and accounting reminders, your team gets structured next actions, draft follow-ups, and visibility from first proposal to collected cash.",
@@ -712,7 +712,7 @@ const servicePagesJa: Record<ServicePageSlug, ServicePageContent> = {
     title: "中小企業向け AI 実装コーチング",
     metaTitle: "AI伴走プログラム | SME向けAI導入スプリント | InnovateXP",
     metaDescription:
-      "1つの業務フローを選び、初版を作り、チームで試し、改善するための実践型 AI 実装コーチング。",
+      "1つの業務フローを選び、初版を作り、チームで試し、改善するための実践型 AI 実装コーチング。香港の中小企業向け伴走支援。",
     eyebrow: "伴走型 AI 実装コーチング",
     intro:
       "AI コーチングは、講座を聞くだけでなく実装まで進めたいチーム向けです。InnovateXP は SME が1つの業務フローを選び、初版を設計し、チームでテストし、毎週のコーチングで改善できるよう支援します。",
@@ -758,7 +758,7 @@ const servicePagesJa: Record<ServicePageSlug, ServicePageContent> = {
     title: "香港中小企業向け SME AI ワークフローコンサルティング",
     metaTitle: "SME AI ワークフローコンサルティング香港 | InnovateXP",
     metaDescription:
-      "営業フォロー、業務、管理、CRM、WhatsApp 自動化、ダッシュボード、社内ツールのための実践的 AI ワークフロー設計。",
+      "営業フォロー、業務、管理、CRM、WhatsApp 自動化、ダッシュボード、社内ツールのための実践的 AI ワークフロー設計。香港の中小企業向け。",
     eyebrow: "香港 SME 向け AI ワークフロー自動化",
     intro:
       "InnovateXP は香港の SME が散らばった手作業を実用的な AI 支援ワークフローへ変える支援をします。WhatsApp CRM 自動化、営業フォロー、見積もりフォロー、管理ポータル、ダッシュボード、CS 草案、社内 AI ツールなど、実際の業務に焦点を当てます。",
@@ -777,9 +777,9 @@ const servicePagesJa: Record<ServicePageSlug, ServicePageContent> = {
   "proposal-to-cash-ai": {
     ...proposalToCash,
     title: "Proposal-to-Cash AI：B2B 見積もりから回収までのワークフロー",
-    metaTitle: "Proposal-to-Cash AI | B2B 見積もりフォロー自動化 | InnovateXP",
+    metaTitle: "Proposal-to-Cash AI | B2B見積フォロー | InnovateXP",
     metaDescription:
-      "B2B 見積もり、提案フォロー、請求／入金状況、管理可視性をつなぐ AI 支援ワークフロー。",
+      "B2B 見積もり、提案フォロー、請求／入金状況、管理可視性をつなぐ AI 支援ワークフロー。香港の中小企業向けに設計。",
     eyebrow: "B2B quotation to payment workflow",
     intro:
       "Proposal-to-Cash AI は、見積もり、提案フォロー、請求状況、入金確認を1つの見える業務フローにつなげます。WhatsApp、メール、スプレッドシート、会計リマインダーの間で案件を失わないよう、次アクション、AI 下書き、回収までの可視性を整えます。",
@@ -795,7 +795,7 @@ const servicePagesDe: Record<ServicePageSlug, ServicePageContent> = {
   "ai-training": {
     ...aiTraining,
     title: "AI-Training für Schulen, KMUs und Business-Teams",
-    metaTitle: "AI-Training Hongkong | Praktische KI-Schulung für Schulen & KMUs | InnovateXP",
+    metaTitle: "AI-Training Hongkong | Schulen & KMUs | InnovateXP",
     metaDescription:
       "Praktisches AI-Training mit InnovateXP: Prompt Engineering, AI-Tools, AI-assisted Coding, Chatbot-Prototyping und Workflow-Automatisierung.",
     eyebrow: "Founder-led AI-Training",
@@ -835,7 +835,7 @@ const servicePagesDe: Record<ServicePageSlug, ServicePageContent> = {
   "ai-coaching": {
     ...aiCoaching,
     title: "AI-Coaching für KMU-Implementierung",
-    metaTitle: "AI-Coaching Hongkong | KI-Implementierungssprint für KMUs | InnovateXP",
+    metaTitle: "AI-Coaching Hongkong | KI-Sprint für KMUs | InnovateXP",
     metaDescription:
       "Begleitetes AI-Coaching für KMUs: einen Workflow wählen, erste Version bauen, Team trainieren und Adoption Schritt für Schritt verbessern.",
     eyebrow: "Done-with-you Implementation Coaching",
@@ -890,7 +890,7 @@ const servicePagesDe: Record<ServicePageSlug, ServicePageContent> = {
   "proposal-to-cash-ai": {
     ...proposalToCash,
     title: "Proposal-to-Cash AI Workflow für B2B-Teams",
-    metaTitle: "Proposal-to-Cash AI | B2B-Angebots-Follow-up Automation | InnovateXP",
+    metaTitle: "Proposal-to-Cash AI | B2B Follow-up | InnovateXP",
     metaDescription:
       "AI-gestützter Workflow für B2B-Angebote, Proposal Follow-up, Rechnung/Zahlungsstatus und Management-Transparenz.",
     eyebrow: "B2B-Angebot bis Zahlung",

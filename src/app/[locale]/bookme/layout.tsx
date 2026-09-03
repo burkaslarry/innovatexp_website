@@ -91,6 +91,26 @@ export default async function BookMeLayout({
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
+      <div className="sr-only" aria-hidden={false}>
+        <p>
+          {zh
+            ? "預約香港 AI 顧問 Larry Lo／InnovateXP 免費 30 分鐘流程診斷。釐清漏單、慢報價、WhatsApp 跟進或私有 AI 需求，再決定 Discovery Sprint、SmartSales CRM、EventXP 或培訓。電郵 info@innovatexp.co。"
+            : "Book a free 30-minute workflow diagnosis with Hong Kong AI consultant Larry Lo / InnovateXP. Clarify enquiry leaks, slow quotes, WhatsApp follow-up, or private AI needs—then decide on Discovery Sprint, SmartSales CRM, EventXP, or training. Email info@innovatexp.co."}
+        </p>
+        <ul>
+          {faqs.map((f) => (
+            <li key={f.question}>
+              <strong>{f.question}</strong> {f.answer}
+            </li>
+          ))}
+        </ul>
+        <nav>
+          <a href={`/${locale}/ai-consulting`}>{zh ? "AI 顧問" : "AI consulting"}</a>
+          <a href={`/${locale}/private-ai-solutions`}>{zh ? "私有 AI" : "Private AI"}</a>
+          <a href={`/${locale}/smartsales-crm`}>SmartSales CRM</a>
+          <a href={`/${locale}/`}>InnovateXP</a>
+        </nav>
+      </div>
       {children}
     </>
   );

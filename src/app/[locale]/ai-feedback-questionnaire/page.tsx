@@ -32,10 +32,18 @@ export default async function AiFeedbackQuestionnairePage({
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
 
+  const loc = locale as AppLocale;
+  const zh = localeUsesChineseCopy(loc);
+
   return (
     <main className="min-h-screen bg-[#f7f9fc] py-16 text-slate-900 dark:bg-gray-950 dark:text-slate-100">
       <div className="container mx-auto max-w-3xl px-4">
-        <AiFeedbackQuestionnaire locale={locale as AppLocale} />
+        <p className="mb-6 text-base leading-8 text-slate-700 dark:text-slate-300">
+          {zh
+            ? "呢份服務後 feedback 問卷用嚟收集滿意度同前後差異，幫助 InnovateXP 改善交付。頁面設為 noindex，唔會作為公開 SEO 入口。"
+            : "This post-service feedback form collects satisfaction and before/after change to improve InnovateXP delivery. The page is noindex and is not a public SEO entry point."}
+        </p>
+        <AiFeedbackQuestionnaire locale={loc} />
       </div>
     </main>
   );

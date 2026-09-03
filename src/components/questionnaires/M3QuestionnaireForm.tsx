@@ -286,7 +286,7 @@ export function M3QuestionnaireForm({
         <Typography variant="overline" color="primary" fontWeight={800}>
           {eyebrow}
         </Typography>
-        <Typography variant="h4" sx={{ mb: 1.5 }}>
+        <Typography component="h1" variant="h4" sx={{ mb: 1.5 }}>
           {title}
         </Typography>
         <Typography color="text.secondary" sx={{ mb: 2, lineHeight: 1.7 }}>

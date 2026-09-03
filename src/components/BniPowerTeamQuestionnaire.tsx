@@ -232,7 +232,11 @@ export function BniPowerTeamQuestionnaire({
           >
             {c.eyebrow}
           </Typography>
-          <Typography variant="h4" sx={{ mt: 1, fontWeight: 800, lineHeight: 1.25 }}>
+          <Typography
+            component="h1"
+            variant="h4"
+            sx={{ mt: 1, fontWeight: 800, lineHeight: 1.25 }}
+          >
             {c.title}
           </Typography>
           <Typography color="text.secondary" sx={{ mt: 1.5, lineHeight: 1.8 }}>

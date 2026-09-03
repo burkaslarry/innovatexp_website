@@ -94,9 +94,9 @@ const zh: BniPowerTeamCopy = {
     "輸入你的行業同產品／服務，即刻產生上游 Channel、平行 Referral Partner、下游供應商各 10 個例子，再建議 5 個目標市場 Power Team。同 AI／流程相關嘅位會標示可合作。",
   cardCta: "開始填寫",
   fabLabel: "Biz Match",
-  metaTitle: "BNI Power Team｜上下游轉介閃卡｜InnovateXP",
+  metaTitle: "BNI Power Team｜轉介閃卡｜InnovateXP",
   metaDescription:
-    "BNI 會員工具：輸入行業與產品／服務，產生上游、平行、下游各 10 個例子與 5 個 Power Team 建議，並標示可與 InnovateXP 合作的方向。",
+    "BNI Power Team 工具：輸入行業與產品／服務，產生上下游與平行轉介例子加 5 個 Power Team 建議，並標示可與 Larry Lo／InnovateXP 合作。",
 };
 
 const en: BniPowerTeamCopy = {
@@ -134,9 +134,9 @@ const en: BniPowerTeamCopy = {
     "Enter your industry and offerings to get 10 upstream, 10 parallel, and 10 downstream examples plus 5 Power Team ideas. AI / workflow-related items are marked for InnovateXP collaboration.",
   cardCta: "Start now",
   fabLabel: "Biz Match",
-  metaTitle: "BNI Power Team | Referral flash card | InnovateXP",
+  metaTitle: "BNI Power Team | Referral Map | InnovateXP",
   metaDescription:
-    "BNI member tool: enter industry and offerings to generate upstream, parallel, and downstream examples plus 5 Power Team ideas, with InnovateXP collaboration highlights.",
+    "BNI Power Team: enter industry and offerings for upstream, parallel, and downstream referral ideas plus 5 Power Team suggestions—with InnovateXP collab flags.",
 };
 
 export function getBniPowerTeamCopy(locale: AppLocale): BniPowerTeamCopy {

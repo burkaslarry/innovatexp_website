@@ -13,29 +13,29 @@ const OG_IMAGE = "/opengraph-image" as const;
 
 const CASE_STUDY_META: Record<AppLocale, { title: string; description: string }> = {
   en: {
-    title: "Enterprise Systems & Verified Speaking Record | InnovateXP",
+    title: "Case Studies & Speaking Record | InnovateXP",
     description:
-      "Larry Lo delivery cases: Real Messenger iOS and Android apps, public transport maintenance, EMSD lift and escalator monitoring, HKMC Annuity IT assets, and verified speaking records.",
+      "Larry Lo delivery cases: Real Messenger apps, transport maintenance, EMSD monitoring, HKMC Annuity IT assets, plus verified 2025 speaking records.",
   },
   "zh-hk": {
-    title: "企業系統案例及已核實公開分享紀錄｜InnovateXP",
+    title: "企業案例及公開分享紀錄｜InnovateXP",
     description:
-      "Larry Lo 企業交付案例：Real Messenger iOS／Android apps、公共交通維修、EMSD 升降機／扶手電梯監控、HKMC Annuity IT 資產，以及已核實公開分享紀錄。",
+      "Larry Lo 企業交付案例：Real Messenger apps、公共交通維修、EMSD 升降機監控、HKMC Annuity IT 資產，以及已核實 2025 公開分享紀錄。",
   },
   "zh-tw": {
     title: "相關經驗與交付能力｜InnovateXP",
     description:
-      "InnovateXP 相關經驗與交付能力：AI 培訓、AI 陪跑課程、中小企業 workflow design、dashboard、booking flows、internal tools 與系統交付。",
+      "InnovateXP 相關經驗：AI 培訓、陪跑課程、中小企業 workflow、dashboard、booking flows、internal tools 與系統交付能力說明。",
   },
   ja: {
-    title: "InnovateXP ケーススタディ | AI研修・SME AIワークフロー・CRM",
+    title: "ケーススタディ｜AI研修・CRM｜InnovateXP",
     description:
-      "InnovateXP のプロジェクト事例：EventXP、SmartSales CRM、AI トレーニング、AI コーチング、Proposal-to-Cash AI、ダッシュボード、社内ツール、システム改善。",
+      "InnovateXP の事例：EventXP、SmartSales CRM、AI トレーニング、AI コーチング、Proposal-to-Cash AI、ダッシュボード、社内ツール。",
   },
   de: {
-    title: "InnovateXP Fallstudien | AI-Training, SME AI-Workflow & CRM",
+    title: "Fallstudien | AI-Training & CRM | InnovateXP",
     description:
-      "Projektbeispiele und Proof Points für InnovateXP: EventXP, SmartSales CRM, AI-Training, AI-Coaching, Proposal-to-Cash AI, Dashboards, interne Tools und Clean-Architecture-Rettung.",
+      "Projektbeispiele für InnovateXP: EventXP, SmartSales CRM, AI-Training, AI-Coaching, Proposal-to-Cash AI, Dashboards und interne Tools.",
   },
 };
 

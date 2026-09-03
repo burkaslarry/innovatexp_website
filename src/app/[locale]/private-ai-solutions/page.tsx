@@ -48,14 +48,19 @@ export default async function PrivateAiSolutionsPage({
             "私有 AI 強調資料可控：入庫加密、存取權限、部署環境（私有雲／On-Premise）按你公司 data policy 設計，而唔係把敏感單據直接丟去公用模型。",
         },
         {
-          question: "邊類公司最需要 private AI solutions？",
+          question: "邊類公司最需要 private AI solutions／企業 private AI？",
           answer:
-            "會計、金融、專業服務、有客戶機密或銀行單據／收據流程嘅團隊——任何對資料外洩零容忍嘅場景。",
+            "會計、金融、專業服務、有客戶機密或銀行單據／收據流程嘅團隊——任何對資料外洩零容忍嘅香港企業場景。",
         },
         {
           question: "會唔會一開始就建完整私有堆疊？",
           answer:
             "唔會。InnovateXP 先驗證 workflow 同 KPI，再決定雲、私有雲定 On-Premise。工具係引流；顧問陪跑先係落地實體。",
+        },
+        {
+          question: "香港企業 private AI 通常由邊度起步？",
+          answer:
+            "多數由一條可量度流程起步——例如收據分類、月結單摘要、或內部知識庫問答——並設定人工覆核關卡，再擴展到更多部門。",
         },
       ]
     : [
@@ -67,12 +72,17 @@ export default async function PrivateAiSolutionsPage({
         {
           question: "Who needs private AI solutions?",
           answer:
-            "Accounting, finance, professional services, and any team handling confidential receipts, bank statements, or client data with zero tolerance for leakage.",
+            "Accounting, finance, professional services, and any Hong Kong team handling confidential receipts, bank statements, or client data with zero tolerance for leakage.",
         },
         {
           question: "Do you build a full private stack on day one?",
           answer:
             "No. InnovateXP validates workflow and KPIs first, then chooses cloud, private cloud, or on-prem. Tools lead acquisition; advisory programs deliver the real service.",
+        },
+        {
+          question: "Where do Hong Kong enterprise private AI projects usually start?",
+          answer:
+            "Most start with one measurable workflow—receipt classification, statement summarisation, or internal knowledge Q&A—with human review gates before expanding to more teams.",
         },
       ];
 
@@ -90,14 +100,42 @@ export default async function PrivateAiSolutionsPage({
         </p>
         <h1 className="mb-6 text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
           {zh
-            ? "私有 AI 方案：資料可控，再談自動化"
-            : "Private AI solutions: control the data, then automate"}
+            ? "企業 Private AI 方案：資料可控，再談自動化"
+            : "Private AI solutions for Hong Kong enterprises"}
         </h1>
-        <p className="mb-8 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+        <p className="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
           {zh
-            ? "搜尋「private AI solutions」嘅團隊通常唔係想再買一個 chatbot——而係要喺嚴格 data policy 下，用 AI 處理收據、銀行月結單、客戶文件。InnovateXP 以 AI 商業顧問定位：先畫清流程同風險邊界，再設計私有雲／On-Premise／加密入庫方案。"
-            : "Teams searching for private AI solutions rarely need another public chatbot—they need AI that can touch receipts, bank statements, and client files under a strict data policy. InnovateXP leads with consultancy: map the workflow and risk boundary first, then design private-cloud, on-prem, or encrypted-storage options."}
+            ? "搜尋「private AI solutions」或「企業 private AI」嘅團隊通常唔係想再買一個 chatbot——而係要喺嚴格 data policy 下，用 AI 處理收據、銀行月結單、客戶文件。香港 AI 顧問 Larry Lo／InnovateXP 以流程診斷定位：先畫清風險邊界，再設計私有雲／On-Premise／加密入庫方案。"
+            : "Teams searching for private AI solutions or enterprise private AI rarely need another public chatbot—they need AI that can touch receipts, bank statements, and client files under a strict data policy. Hong Kong AI consultant Larry Lo / InnovateXP maps the risk boundary first, then designs private-cloud, on-prem, or encrypted-storage options."}
         </p>
+        <p className="mb-8 leading-relaxed text-gray-700 dark:text-gray-300">
+          {zh
+            ? "私有 AI 唔等於一開始就買齊伺服器。多數香港中小企同專業服務團隊，會先喺可控雲端（例如 Azure OpenAI 私有端點）驗證一個可量度試點，確認人工覆核同權限模型可行，先至考慮更嚴格嘅 On-Premise。InnovateXP 會同你對齊：邊啲資料永遠唔入模型、邊啲可以入庫加密、邊個角色可以覆核輸出。"
+            : "Private AI does not mean buying servers on day one. Most Hong Kong SMEs and professional-services teams validate one measurable pilot on a controlled cloud endpoint (for example Azure OpenAI private endpoints), prove human review and access models, then decide whether stricter on-prem is required. InnovateXP aligns what never enters a model, what may be encrypted at rest, and who may approve outputs."}
+        </p>
+
+        <section className="mb-10">
+          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
+            {zh ? "香港企業點樣用 private AI" : "How Hong Kong enterprises use private AI"}
+          </h2>
+          <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
+            <li>
+              {zh
+                ? "會計／財務：收據 OCR、費用分類、月結摘要——敏感欄位留喺可控環境。"
+                : "Accounting/finance: receipt OCR, expense classification, statement summaries—sensitive fields stay controlled."}
+            </li>
+            <li>
+              {zh
+                ? "專業服務：客戶合約／會議紀錄摘要，配合權限同審計軌跡。"
+                : "Professional services: client contract and meeting summaries with permissions and audit trails."}
+            </li>
+            <li>
+              {zh
+                ? "內部知識庫：只服務員工嘅問答，唔對公眾開放模型。"
+                : "Internal knowledge bases: employee-only Q&A—not a public-facing model."}
+            </li>
+          </ul>
+        </section>
 
         <section className="mb-10">
           <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">

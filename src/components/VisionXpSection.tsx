@@ -45,6 +45,7 @@ export function VisionXpSection({
   return (
     <section id="visionxp" className="mb-16 scroll-mt-[var(--header-offset)]">
       <SectionHeader
+        as={showPageCta ? "h2" : "h1"}
         title={copy.title}
         subtitle={copy.intro}
         eyebrow={

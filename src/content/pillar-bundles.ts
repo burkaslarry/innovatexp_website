@@ -253,9 +253,9 @@ export function getAiEraQualityBundle(locale: AppLocale): PillarPageBundle {
 /* ——— Premium consulting pillar ——— */
 
 const PREM_EN: PillarPageBundle = {
-  metaTitle: "Premium AI & CRM Implementation Consulting | InnovateXP Hong Kong",
+  metaTitle: "Premium AI & CRM Consulting | InnovateXP Hong Kong",
   metaDescription:
-    "Founder-led, done-with-you engagements for Hong Kong SMEs: scoping premium AI workflow and CRM programmes, fixed review cadence, and clear next steps after the first call.",
+    "Founder-led AI and CRM programmes for Hong Kong SMEs: scoped workflows, fixed review cadence, and clear next steps after the first call with Larry Lo.",
   headline: "Premium, done-with-you AI and CRM programmes for serious operators",
   intro: [
     "InnovateXP works with founder-led teams that need outcomes, not slide packs. Premium engagements bundle discovery, architecture choices, implementation support, and adoption coaching around one or two workflows that materially move pipeline, follow-up quality, or operational load.",
