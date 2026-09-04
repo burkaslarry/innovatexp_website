@@ -1,29 +1,29 @@
 {
   "brandTitle": "InnovateXP Limited",
-  "brandSubtitle": "AI 商業顧問 Larry Lo",
+  "brandSubtitle": "AI 商業顧問｜業務聽診師",
   "nav": {
     "home": "首頁",
-    "diagnosis": "流程診斷",
+    "diagnosis": "業務聽診",
     "services": "服務方式",
     "plans": "服務方案",
-    "cases": "行業實例",
-    "about": "關於 Larry",
+    "cases": "可量度結果",
+    "about": "我是誰",
     "faq": "常見問題",
-    "cta": "預約 30 分鐘診斷",
+    "cta": "預約業務聽診",
     "products": "產品方案",
     "visionXp": "VisionXP"
   },
   "hero": {
-    "eyebrow": "AI 商業顧問｜14+ 年 IT 交付及流程落地經驗",
-    "title": "幫香港小團隊止住漏單、慢報價同交接混亂。",
-    "description": "Larry 會先同你鎖定一條最影響收入或營運嘅流程，30 日內執清責任、SOP 同追蹤方式；確認有效後先接 CRM、AI 或自動化。",
-    "fitAudience": "適合香港 3–30 人培訓、課程及專業服務團隊",
-    "primaryCta": "預約 30 分鐘流程診斷",
-    "secondaryCta": "睇服務方案同起價",
+    "eyebrow": "AI 商業顧問｜業務聽診師",
+    "title": "WhatsApp + Excel 亂晒？先做業務聽診，再落地 AI。",
+    "description": "專幫香港 3–30 人培訓機構、補習社、Fitness／Yoga studio 同專業服務團隊：止住漏單、慢報價同交接混亂。方法叫業務聽診——先執清一條流程嘅責任、SOP 同追蹤，確認有用先談 CRM 或 AI。",
+    "fitAudience": "適合仍然主要用 WhatsApp 同 Excel 頂住營運嘅香港中小企",
+    "primaryCta": "預約業務聽診（30 分鐘）",
+    "secondaryCta": "",
     "trustPoints": [
-      "14+ 年 IT 交付經驗",
-      "專注香港 3–30 人小團隊",
-      "由流程診斷到實際落地"
+      "對象：香港 3–30 人小團隊",
+      "方法：業務聽診 → Discovery Sprint",
+      "結果：一條有人負責、跟得到嘅流程"
     ],
     "diagnosticInputs": [
       "WhatsApp 查詢",
@@ -33,7 +33,7 @@
     ],
     "diagnosticOutput": "一條睇得清、跟得到、有人負責嘅 workflow",
     "diagnosticCaption": "先睇清漏位，再決定 AI、CRM 或 automation 幫唔幫到手。",
-    "imageAlt": "InnovateXP 創辦人 Larry Lo 於演講分享 AI 商業升級與流程設計"
+    "imageAlt": "Larry Lo｜InnovateXP 業務聽診師於香港分享業務流程診斷方法"
   },
   "problem": {
     "eyebrow": "流程卡位",
@@ -59,23 +59,23 @@
     "quote": "一個人放假就停嘅流程，唔叫流程，叫人質。"
   },
   "approach": {
-    "eyebrow": "服務方式",
-    "title": "唔係一開始叫你買系統。先睇清楚，邊條流程最值得執。",
-    "intro": "聚焦一條流程，而唔係大規模數碼轉型。先止血，再視乎情況接工具。",
+    "eyebrow": "服務方式｜業務聽診",
+    "title": "唔係一開始叫你買系統。先聽清，邊條流程最值得執。",
+    "intro": "簽名方法叫業務聽診（Business Workflow Diagnosis）：聚焦一條流程，而唔係大規模數碼轉型。先止血，再視乎情況接工具。",
     "steps": [
       {
         "label": "Step 1",
-        "title": "30 分鐘流程診斷",
-        "body": "鎖定最值得先處理的收入／營運卡位。"
+        "title": "業務聽診（30 分鐘）",
+        "body": "鎖定最值得先處理的收入／營運卡位，講清邊度漏、邊個負責。"
       },
       {
         "label": "Step 2",
-        "title": "30 日 Workflow Sprint",
+        "title": "AI Discovery／30 日落地 Sprint",
         "body": "交付流程圖、責任人、SOP、追蹤節點同一個可執行 quick win。"
       },
       {
         "label": "Step 3",
-        "title": "Adoption & KPI Review",
+        "title": "顧問陪跑 & KPI Review",
         "body": "協助團隊使用；Day 30／60／90 檢討漏跟進、報價時間、交接完成率。需要時先接 CRM、AI 或自動化。"
       }
     ]
@@ -163,9 +163,9 @@
     ]
   },
   "cases": {
-    "eyebrow": "行業實例",
-    "title": "同一套方法，喺唔同行業點樣落地。",
-    "intro": "以下係匿名情境（Before → 30 日做法 → After → 可觀察指標）。未經驗證數字唔作 ROI 承諾。",
+    "eyebrow": "可量度結果",
+    "title": "業務聽診之後，用數字睇改善（未確認數字會標明）。",
+    "intro": "以下係匿名情境（Before → 30 日做法 → After → 可觀察指標）。標明【待確認】嘅數字尚未經客戶核准，唔作對外 ROI 承諾。",
     "beforeLabel": "Before",
     "sprintLabel": "30 日做法",
     "afterLabel": "After",
@@ -175,25 +175,25 @@
         "industry": "培訓／課程",
         "title": "報名查詢散喺 WhatsApp，跟進靠記性",
         "before": "查詢、試堂、報名、收款各自用唔同 chat 同 Excel；同事放假就唔知跟到邊。",
-        "sprint": "鎖定「查詢 → 試堂 → 報名」一條線；寫清責任人、跟進節點同簡單狀態表。",
+        "sprint": "業務聽診鎖定「查詢 → 試堂 → 報名」一條線；寫清責任人、跟進節點同簡單狀態表。",
         "after": "每條查詢有 owner 同下一步；老闆唔使逐日追住問。",
-        "metric": "漏跟進明顯減少；報名轉換可喺一頁睇到。"
+        "metric": "【待確認】跟進工時由約 10 日／月壓至約 3 小時／週；漏跟進明顯減少。"
       },
       {
         "industry": "專業服務",
         "title": "報價慢、版本多、交接靠口頭",
         "before": "報價資料要問完先出；同事各自有一份「最新版」；客人催完先發現漏跟。",
-        "sprint": "執清報價資料來源、責任同審批節點；固定一個可追蹤清單。",
+        "sprint": "業務聽診執清報價資料來源、責任同審批節點；固定一個可追蹤清單。",
         "after": "報價有標準節奏；交接唔再靠口頭。",
-        "metric": "平均報價時間縮短；重覆問資料次數下降。"
+        "metric": "【待確認】平均報價時間縮短；重覆問資料次數下降；粗估行政成本約 HK$25,000／月可釋放（待確認）。"
       },
       {
-        "industry": "Studio 行業（方法實例）",
+        "industry": "Studio／Fitness／補習",
         "title": "排程／收款／出勤靠 WhatsApp + Excel",
         "before": "教練記堂、催未付、對佣金各用各方法；Admin 日日救火。",
-        "sprint": "用同一套「先執流程再落工具」方法：責任、狀態、reminder、匯出對數。",
+        "sprint": "業務聽診先釐清責任、狀態、reminder、匯出對數，再視需要落地課堂管理工具。",
         "after": "排程、學員狀態、付款 reminder 集中一處；唔再靠記性頂住 studio。",
-        "metric": "未付追蹤有提醒；出勤／佣金對數可匯出。"
+        "metric": "【待確認】未付追蹤有提醒；出勤／佣金對數可匯出；Admin 救火時間下降。"
       }
     ]
   },
@@ -222,80 +222,80 @@
     "punchline": "如果你唔需要系統，我會直接告訴你。"
   },
   "about": {
-    "eyebrow": "關於 Larry",
-    "title": "我係那個會叫你「先唔好買」嘅顧問。",
-    "intro": "做了十多年 IT 交付，我見過最多嘅失敗，唔係系統建唔好，而係系統建好了、完美交付、然後唔好使。",
+    "eyebrow": "我是誰",
+    "title": "Larry Lo｜InnovateXP Limited｜香港業務聽診師",
+    "intro": "我叫 Larry Lo，係 InnovateXP Limited 創辦人，駐香港。我係 AI 商業顧問｜業務聽診師，有 14 年 IT 交付經驗。",
     "body": [
-      "同一班人照舊用 WhatsApp、照舊開 Excel，沒人肯講。",
-      "後來我睇回頭，發現問題從來唔係工具——係本來那條流程就沒人真正執清過。SOP 只存在老闆嘅腦裏，一個人放假就斷。",
-      "所以我轉了整個做法：先同你執順一條流程，真係有效、團隊真係用緊，才談要唔要加 AI 或系統。"
+      "我服務香港 3–30 人嘅中小企：培訓機構、補習社、Fitness／Yoga studio，同埋仍然主要用 WhatsApp 同 Excel 嘅專業服務團隊。",
+      "我嘅方法叫業務聽診（Business Workflow Diagnosis）：先聽清一條收入或營運流程嘅漏位、責任同 SOP，再決定係咪要 AI Discovery Sprint、30 日落地 Sprint，或者顧問陪跑。",
+      "定位係「先執順流程，再落地 AI」。如果你暫時唔需要買系統，我會直接講。結果係團隊真係用到、跟得到嘅流程，而唔係一堆未採用嘅工具。"
     ],
-    "identity": "我係那個會叫你「先唔好買」嘅顧問。",
-    "portraitAlt": "Larry Lo 於研討會分享 AI 商業顧問與客戶管理流程"
+    "identity": "Larry Lo｜AI 商業顧問｜業務聽診師｜InnovateXP Limited｜Hong Kong",
+    "portraitAlt": "Larry Lo｜InnovateXP 業務聽診師於香港分享業務流程診斷與 AI 落地方法"
   },
   "faq": {
     "title": "常見問題",
     "items": [
       {
-        "question": "InnovateXP 係做咩嘅？",
-        "answer": "InnovateXP Limited 係由 Larry Lo 創立嘅香港 AI 商業顧問公司。協助中小企先執順一條收入或營運流程（責任、SOP、跟進），確認有效後先考慮 AI、CRM 或自動化。起步方案係 30 日 Discovery Sprint，由 HK$6,800 起。"
+        "question": "咩係業務聽診？同一般顧問有咩分別？",
+        "answer": "業務聽診（Business Workflow Diagnosis）係 InnovateXP 嘅簽名方法：用大約 30 分鐘鎖定一條最影響收入或營運嘅流程，講清漏位、責任同下一步。同交報告就走嘅顧問唔同，聽診之後會進入 AI Discovery Sprint 或 30 日落地，確保團隊真係用到。"
       },
       {
-        "question": "Larry Lo 係邊個？",
-        "answer": "Larry Lo 係 InnovateXP Limited 創辦人同 AI 商業顧問，駐香港，具備 13+ 年 IT 交付經驗，並有 7 個 2025 年公開紀錄，分別以主持、講者或項目展示角色參與 GDG Hong Kong、PISM Sharing 及 DevFest Hong Kong。"
+        "question": "業務聽診師同 AI 商業顧問係同一個人嗎？",
+        "answer": "係。Larry Lo 係 InnovateXP Limited 創辦人，對外職稱為 AI 商業顧問｜業務聽診師。先用業務聽診釐清流程，再按需要做 AI 導入前準備、Discovery Sprint 或陪跑，而唔會一開始就推 SaaS。"
       },
       {
-        "question": "我哋而家係咪適合用 AI？",
-        "answer": "未必一開始就要。通常建議先揀一條最影響收入或營運嘅核心流程嚟睇清楚，評估過效益，先決定係咪值得加 AI。"
+        "question": "中小企業務流程診斷喺香港點做？",
+        "answer": "預約一節業務聽診，帶你最亂嘅一條線（例如 WhatsApp 報名或報價）。會一齊畫出責任、交接同追蹤節點，再建議係咪要 Discovery Sprint。適合香港 3–30 人、仍然靠人手跟進嘅團隊。"
       },
       {
-        "question": "一定要先買 CRM 嗎？",
-        "answer": "唔一定。最緊要先理順團隊嘅責任、交接同跟進節奏。如果現有工具已經夠用，就未必需要即刻洗錢換系統。"
+        "question": "WhatsApp、Excel 管理太亂，一定要先買 CRM 嗎？",
+        "answer": "唔一定。多數問題係責任同跟進節奏未定，而唔係缺一個系統。業務聽診會先睇現有 WhatsApp／Excel／表單點樣漏客；如果流程執順已經夠用，可以暫時唔買 CRM，避免成為便宜工具供應商式硬推。"
       },
       {
-        "question": "要幾耐先見到改善？",
-        "answer": "唔會一開始就做全公司大翻新（Overhaul）。通常由一條流程開始，好快就會見到可觀察嘅改善，然後先再決定要唔要擴大。"
+        "question": "培訓機構課堂管理系統，InnovateXP 點幫？",
+        "answer": "先業務聽診課堂、教練、出席同續堂流程，搵出邊度靠 WhatsApp／Excel 頂住。確認流程後，先考慮 FitnessXP 或自訂流程落地。目標係課堂用得清、續堂跟得到，而唔係一開始換一套大系統。"
       },
       {
-        "question": "同事唔慣用新系統點算？",
-        "answer": "使用習慣（Adoption）同歸屬感（Ownership）同工具本身一樣重要。我哋嘅做法係盡量貼近團隊現有嘅工作習慣，減少「硬推」引起嘅抗拒。"
+        "question": "補習社學生管理可以由邊度開始？",
+        "answer": "由查詢 → 試堂 → 報名 → 收款呢條線做業務聽診。常見問題係學生狀態散落、跟進靠記性。聽診後會交付責任同狀態表；需要時再接 30 日落地 Sprint 或課堂管理工具。"
       },
       {
-        "question": "30 分鐘流程診斷會做咩？",
-        "answer": "集中幫你睇一條最卡手嘅流程，精準搵出漏位、責任不清嘅地方，同埋最值得優先執靚嘅位置。"
+        "question": "Fitness center 課堂教練管理，適唔適合業務聽診？",
+        "answer": "適合。Fitness／Yoga／Pilates studio 常見痛點係排程、教練佣金、未付同出席各自為政。業務聽診會先釐清狀態同責任，再決定係咪落地 FitnessXP。適合仍然主要用 WhatsApp + Excel 嘅 studio。"
       },
       {
-        "question": "公司好細，值得做嗎？",
-        "answer": "如果公司「一個人放假，成個運作就會卡住」，就非常值得做！小團隊更需要先整理好核心流程。主線由 HK$6,800 嘅 30 日 Sprint 起步（10 人或以下），風險好受控。"
+        "question": "SOP 自動化顧問會唔會一開始就推 AI？",
+        "answer": "唔會。定位係「先執順流程，再落地 AI」。如果 SOP 未寫清、責任未定，自動化只會放大混亂。先聽診同執 SOP，確認有穩定節點，先談 chatbot、提醒或 AI 草稿。"
       },
       {
-        "question": "服務方案點樣起步？",
-        "answer": "由淺入深，按部就班：\n30 日 Discovery Sprint — 10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價（場地另計）\n3 個月 Foundation（視 SOP 複雜程度決定）\n6 個月 Accelerator（視 SOP 複雜程度決定）\n12 個月 Partnership（視 SOP 複雜程度決定）\n（註：我哋著重幫你解決實際問題，盲目試用新工具絕對唔係首頁主打。）"
+        "question": "AI 導入前準備要做啲咩？",
+        "answer": "AI Readiness 評估會睇資料位置、權限、重複工序同可量度結果。通常跟住業務聽診：先有一條清晰 workflow，再決定 AI Discovery Sprint 範圍，避免未準備好就買模型或工具。"
       },
       {
-        "question": "EventXP 係咩？",
-        "answer": "EventXP 係 InnovateXP 為香港活動團隊而設嘅簽到同跟進工具：QR 簽到、名單評分、即時報告、活動後 follow-up。試用 HK$4,000／場；維護月費約由 HK$880 起。"
+        "question": "香港 AI 工作坊有冇交付成果？",
+        "answer": "有。工作坊／陪跑唔係淨係演示工具，會對應你公司一條真實流程，交付可用草稿、SOP 節點或可跟進清單。如果只想聽概念、唔想落地，會事先講清範圍，唔會當便宜 SaaS 推銷場。"
       },
       {
-        "question": "VisionXP 係咩？",
-        "answer": "VisionXP 係 InnovateXP 嘅技術原型／AI 視覺追蹤示範（3–12 歲訓練流程）。公開站係純前端——無須登入、唔存病人資料。商業路徑係 demo → Discovery → Implementation Sprint。"
+        "question": "AI Discovery Sprint 同 30 日落地 Sprint 有咩分別？",
+        "answer": "AI Discovery Sprint 用短週期驗證一條流程值唔值得加 AI／CRM。30 日落地 Sprint 則交付流程圖、責任、SOP、追蹤同一個 quick win。兩者都由業務聽診起步；之後可進入顧問陪跑。"
       },
       {
-        "question": "VisionXP 係咪醫療器材？",
-        "answer": "唔係。VisionXP 只係技術原型／AI 視覺追蹤示範，並非醫療診斷工具，亦唔係註冊醫療器械，不能代替專業視光或眼科檢查。"
+        "question": "點樣預約 Larry Lo／InnovateXP？",
+        "answer": "喺 innovatexp.co 預約業務聽診（約 30 分鐘），或 WhatsApp／電郵聯絡。會確認你嘅行業、最亂嘅一條流程，同預期結果。主線係聽診 → Discovery／30 日落地 → 陪跑，而唔係即買工具。"
       }
     ]
   },
   "finalCta": {
-    "title": "想知道你公司邊條流程最值得先執？",
-    "body": "預約 30 分鐘流程診斷，找出你公司最容易漏單、慢報價或卡交接的一條流程。",
-    "primary": "預約 30 分鐘流程診斷",
+    "title": "想知道你公司邊條流程最值得先聽診？",
+    "body": "預約 30 分鐘業務聽診，找出你公司最容易漏單、慢報價或卡交接的一條流程。",
+    "primary": "預約業務聽診（30 分鐘）",
     "secondary": "WhatsApp 聯絡 Larry"
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
-    "role": "AI 商業顧問",
-    "tagline": "唔係追最新 AI 工具，而係完成一個團隊真係用到嘅流程成果。",
+    "role": "AI 商業顧問｜業務聽診師",
+    "tagline": "先執順流程，再落地 AI",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
   },

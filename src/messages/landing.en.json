@@ -1,29 +1,29 @@
 {
   "brandTitle": "InnovateXP Limited",
-  "brandSubtitle": "AI Business Consultant Larry Lo",
+  "brandSubtitle": "AI Business Consultant",
   "nav": {
     "home": "Home",
-    "diagnosis": "Diagnosis",
+    "diagnosis": "Workflow diagnosis",
     "services": "Approach",
     "plans": "Programs",
-    "cases": "Industry examples",
+    "cases": "Results",
     "about": "About Larry",
     "faq": "FAQ",
-    "cta": "Book a 30-min diagnosis",
+    "cta": "Book a diagnosis",
     "products": "Products",
     "visionXp": "VisionXP"
   },
   "hero": {
-    "eyebrow": "AI Business Consultant | 14+ years in IT delivery and workflow implementation",
-    "title": "Stop leaked leads, slow quotes, and messy handoffs for Hong Kong small teams.",
-    "description": "Larry locks one revenue or ops workflow first: ownership, SOP, and tracking in 30 days. Only then connect CRM, AI, or automation if it earns its keep.",
-    "fitAudience": "Built for Hong Kong training, course, and professional-service teams of 3–30 people",
-    "primaryCta": "Book a 30-minute workflow diagnosis",
-    "secondaryCta": "See programs and starting price",
+    "eyebrow": "AI Business Consultant | Business Workflow Diagnosis",
+    "title": "WhatsApp + Excel chaos? Diagnose the workflow before you buy AI.",
+    "description": "I help Hong Kong SMEs of 3–30 people — training centres, tutorial schools, fitness/yoga studios, and professional services — stop leaked leads, slow quotes, and messy handoffs. The method is Business Workflow Diagnosis: fix ownership and SOP first, then decide on CRM or AI.",
+    "fitAudience": "For Hong Kong teams still running operations on WhatsApp and spreadsheets",
+    "primaryCta": "Book a Business Workflow Diagnosis (30 min)",
+    "secondaryCta": "",
     "trustPoints": [
-      "14+ years of delivery experience",
-      "Focused on Hong Kong teams of 3–30",
-      "From diagnosis to practical implementation"
+      "ICP: Hong Kong teams of 3–30",
+      "Method: Business Workflow Diagnosis",
+      "Outcome: one owned, trackable workflow"
     ],
     "diagnosticInputs": [
       "WhatsApp enquiries",
@@ -33,7 +33,7 @@
     ],
     "diagnosticOutput": "One visible workflow with clear ownership",
     "diagnosticCaption": "Fix the leak first. Then decide whether AI, CRM, or automation is justified.",
-    "imageAlt": "Founder-led presentation on AI business upgrade and workflow design"
+    "imageAlt": "Larry Lo, InnovateXP AI Business Consultant, presenting Business Workflow Diagnosis in Hong Kong"
   },
   "problem": {
     "eyebrow": "Pain points",
@@ -59,23 +59,23 @@
     "quote": "If one person takes leave and the process stops, that is not a process. That is a hostage situation."
   },
   "approach": {
-    "eyebrow": "Approach",
-    "title": "No system pitch first. First see which workflow is worth fixing.",
-    "intro": "One workflow at a time — not a company-wide digital transformation.",
+    "eyebrow": "Approach | Business Workflow Diagnosis",
+    "title": "No system pitch first. Diagnose which workflow is worth fixing.",
+    "intro": "Signature method: Business Workflow Diagnosis — one workflow at a time, not a company-wide digital transformation. Stop the leak first; tools only when justified.",
     "steps": [
       {
         "label": "Step 1",
-        "title": "30-minute workflow diagnosis",
-        "body": "Lock onto the revenue or operations bottleneck worth fixing first."
+        "title": "Business Workflow Diagnosis (30 min)",
+        "body": "Lock onto the revenue or operations bottleneck, ownership gaps, and next step."
       },
       {
         "label": "Step 2",
-        "title": "30-day Workflow Sprint",
+        "title": "AI Discovery / 30-day Sprint",
         "body": "Deliver process map, owners, SOP, tracking points, and one executable quick win."
       },
       {
         "label": "Step 3",
-        "title": "Adoption & KPI review",
+        "title": "Advisory & KPI review",
         "body": "Help the team use it. Review missed follow-ups, quote time, and handoff completion on Day 30 / 60 / 90. Add CRM, AI, or automation only when needed."
       }
     ]
@@ -163,9 +163,9 @@
     ]
   },
   "cases": {
-    "eyebrow": "Industry examples",
-    "title": "The same method, applied in different industries.",
-    "intro": "Anonymous scenarios (Before → 30-day approach → After → observable metric). No unverified ROI claims.",
+    "eyebrow": "Measurable results",
+    "title": "After diagnosis, track improvement with numbers (unapproved figures marked).",
+    "intro": "Anonymous scenarios (Before → 30-day approach → After → metric). Figures marked [PLACEHOLDER] are not client-approved and are not ROI claims.",
     "beforeLabel": "Before",
     "sprintLabel": "30-day approach",
     "afterLabel": "After",
@@ -175,25 +175,25 @@
         "industry": "Training / courses",
         "title": "Enrolment enquiries scattered across WhatsApp",
         "before": "Enquiry, trial class, enrolment, and payment lived in different chats and sheets; leave days broke continuity.",
-        "sprint": "Locked onto enquiry → trial → enrolment; clarified owners, follow-up nodes, and a simple status board.",
+        "sprint": "Business Workflow Diagnosis locked onto enquiry → trial → enrolment; clarified owners, follow-up nodes, and a simple status board.",
         "after": "Every enquiry has an owner and next step; the owner stops chasing daily updates.",
-        "metric": "Fewer missed follow-ups; enrolment conversion visible on one page."
+        "metric": "[PLACEHOLDER] Follow-up effort from ~10 days/month to ~3 hours/week; fewer missed follow-ups."
       },
       {
         "industry": "Professional services",
         "title": "Slow quotes, many versions, verbal handoffs",
         "before": "Quotes waited on missing data; each colleague had a different “latest” version; reminders exposed missed follow-ups.",
-        "sprint": "Clarified quote inputs, ownership, and approval nodes; one trackable checklist.",
+        "sprint": "Diagnosis clarified quote inputs, ownership, and approval nodes; one trackable checklist.",
         "after": "Quotes follow a standard rhythm; handoffs are no longer verbal-only.",
-        "metric": "Shorter average quote time; fewer repeat data requests."
+        "metric": "[PLACEHOLDER] Shorter quote cycle; fewer repeat data requests; ~HK$25,000/month admin capacity released (pending confirmation)."
       },
       {
-        "industry": "Studio industry (method example)",
+        "industry": "Studio / fitness / tutoring",
         "title": "Schedule / payments / attendance on WhatsApp + Excel",
         "before": "Coaches tracked classes, unpaid students, and commissions differently; admins firefought daily.",
-        "sprint": "Applied the same “fix workflow, then tools” method: ownership, status, reminders, export reconciliation.",
+        "sprint": "Diagnosis clarified ownership, status, reminders, and export reconciliation before any class-ops tool.",
         "after": "Schedule, student status, and payment reminders live in one place — memory no longer runs the studio.",
-        "metric": "Unpaid follow-up has reminders; attendance / commission export is possible."
+        "metric": "[PLACEHOLDER] Unpaid follow-up has reminders; attendance/commission export possible; less admin firefighting."
       }
     ]
   },
@@ -222,80 +222,80 @@
     "punchline": "If you do not need a system, I will tell you directly."
   },
   "about": {
-    "eyebrow": "About Larry",
-    "title": "I am the consultant who may tell you not to buy yet.",
-    "intro": "After more than a decade in IT delivery, the failure I saw most was not bad builds — it was perfect delivery that nobody used.",
+    "eyebrow": "Who I am",
+    "title": "Larry Lo | InnovateXP Limited | Hong Kong",
+    "intro": "I am Larry Lo, founder of InnovateXP Limited in Hong Kong. I work as an AI Business Consultant focused on Business Workflow Diagnosis, with 14 years of IT delivery experience.",
     "body": [
-      "The same people kept using WhatsApp and Excel, and nobody said so out loud.",
-      "Looking back, the problem was rarely the tool — the workflow itself had never been clarified. The SOP lived only in the owner’s head, so one leave day broke everything.",
-      "So I changed the approach: fix one workflow first until it works and the team actually uses it — then talk about AI or systems."
+      "I serve Hong Kong SMEs with 3–30 staff: training centres, tutorial schools, fitness/yoga studios, and professional-service teams still running on WhatsApp and Excel.",
+      "My method is Business Workflow Diagnosis: identify one revenue or operations leak, clarify ownership and SOP, then decide whether an AI Discovery Sprint, 30-day implementation Sprint, or advisory retainer is needed.",
+      "Positioning: process first, AI second. If you do not need to buy a system yet, I will say so. The outcome is a workflow the team actually uses — not unused tools."
     ],
-    "identity": "I am the consultant who may tell you not to buy yet.",
-    "portraitAlt": "Larry Lo speaking about AI business consulting and client workflow design"
+    "identity": "Larry Lo | AI Business Consultant | Business Workflow Diagnosis | InnovateXP Limited | Hong Kong",
+    "portraitAlt": "Larry Lo, InnovateXP AI Business Consultant, presenting Business Workflow Diagnosis in Hong Kong"
   },
   "faq": {
     "title": "FAQ",
     "items": [
       {
-        "question": "What does InnovateXP do?",
-        "answer": "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. We help SMEs fix one revenue or operations workflow first—ownership, SOP, and follow-up—then adopt AI, CRM, or automation only when it is justified. Entry offer: 30-day Discovery Sprint from HK$6,800."
+        "question": "What is Business Workflow Diagnosis?",
+        "answer": "Business Workflow Diagnosis is InnovateXP’s signature 30-minute method to lock onto one revenue or operations workflow, clarify leaks and ownership, and decide the next step. Unlike report-and-leave consulting, diagnosis feeds into an AI Discovery Sprint or 30-day implementation so the team actually adopts the change."
       },
       {
-        "question": "Who is Larry Lo?",
-        "answer": "Larry Lo is the founder of InnovateXP Limited and an AI Business Consultant in Hong Kong, with 13+ years of IT delivery experience and seven dated 2025 public host/speaker/showcase records at GDG Hong Kong, PISM Sharing, and DevFest Hong Kong."
+        "question": "Is “AI Business Consultant” the same person as the diagnostician?",
+        "answer": "Yes. Larry Lo is founder of InnovateXP Limited. The public title is AI Business Consultant; the signature method is Business Workflow Diagnosis. Process comes first; AI tools only when justified — not a cheap SaaS pitch."
       },
       {
-        "question": "Are we ready for AI now?",
-        "answer": "Not every team should start with AI immediately. Start with one workflow and decide based on real operational value."
+        "question": "How does SME workflow diagnosis work in Hong Kong?",
+        "answer": "Book a diagnosis session and bring your messiest line (WhatsApp enrolment or quoting). Together we map owners, handoffs, and tracking, then recommend Discovery Sprint if needed. Built for Hong Kong teams of 3–30 still running on manual follow-up."
       },
       {
-        "question": "Do we need a CRM first?",
-        "answer": "Not always. Ownership, handoff clarity, and follow-up rhythm usually come before buying a new system."
+        "question": "WhatsApp and Excel are chaos — must we buy a CRM first?",
+        "answer": "Not always. Most leakage is unclear ownership and follow-up rhythm, not missing software. Diagnosis reviews how WhatsApp, Excel, and forms drop leads. If a clearer process is enough, you can delay CRM and avoid vendor-style tool pushing."
       },
       {
-        "question": "How quickly can we see improvement?",
-        "answer": "Usually by focusing on one workflow first. We do not start with a company-wide overhaul."
+        "question": "How do you help training centres with class operations?",
+        "answer": "Start with diagnosis of class schedules, coaches, attendance, and renewals — especially WhatsApp/Excel bottlenecks. Only after the workflow is clear do we consider FitnessXP or a custom landing Sprint. Goal: visible classes and renewals, not a big-system swap first."
       },
       {
-        "question": "What if the team resists a new system?",
-        "answer": "Adoption matters as much as the tool. The workflow and handoff design must fit how the team actually works."
+        "question": "Where should a tutorial school start with student management?",
+        "answer": "Diagnose enquiry → trial → enrolment → payment. Typical pain is scattered student status and memory-based follow-up. After diagnosis you get owners and a status board; then a 30-day Sprint or class tool if needed."
       },
       {
-        "question": "What happens in the 30-minute diagnosis?",
-        "answer": "We focus on one workflow, identify leakage and ownership gaps, and decide what is worth fixing first."
+        "question": "Is Business Workflow Diagnosis useful for fitness coach management?",
+        "answer": "Yes. Studios often split scheduling, commissions, unpaid fees, and attendance. Diagnosis clarifies states and owners before FitnessXP. Designed for studios still running mainly on WhatsApp and Excel."
       },
       {
-        "question": "We are a very small company. Is it still worth doing?",
-        "answer": "Yes, especially when one absence can stall the whole workflow. The main path starts at HK$6,800 for a 30-day Sprint with up to 10 people."
+        "question": "Do SOP automation advisors push AI immediately?",
+        "answer": "No. Positioning is process first, AI second. If SOPs and ownership are unclear, automation amplifies chaos. We diagnose and stabilise SOP nodes before chatbots, reminders, or AI drafts."
       },
       {
-        "question": "How do the programs start?",
-        "answer": "Step by step:\n30-day Discovery Sprint — HK$6,800 for up to 10 people; HK$13,600 for 11–30 people; 31+ quoted separately (venue extra)\n3-month Foundation (scoped by SOP complexity)\n6-month Accelerator (scoped by SOP complexity)\n12-month Partnership (scoped by SOP complexity)\n(Note: we focus on real operating problems. Tool trials are not the homepage headline.)"
+        "question": "What is AI readiness preparation?",
+        "answer": "An AI Readiness review checks data location, permissions, repetitive work, and measurable outcomes. It usually follows diagnosis: one clear workflow first, then an AI Discovery Sprint scope — so you do not buy models or tools unprepared."
       },
       {
-        "question": "What is EventXP?",
-        "answer": "EventXP is InnovateXP’s event operations tool for Hong Kong teams: QR check-in, lead scoring, live reporting, and post-event follow-up. Trial is HK$4,000 per event; maintenance starts from about HK$880 per month."
+        "question": "Do Hong Kong AI workshops include deliverables?",
+        "answer": "Yes. Workshops and coaching map to one real company workflow and deliver usable drafts, SOP nodes, or follow-up lists — not tool demos only. If you only want concepts with no landing, scope is stated upfront."
       },
       {
-        "question": "What is VisionXP?",
-        "answer": "VisionXP is InnovateXP’s technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12). The live site is frontend-only — no login, no patient data. Commercial path is demo → Discovery → Implementation Sprint."
+        "question": "AI Discovery Sprint vs 30-day Sprint?",
+        "answer": "Discovery validates whether a workflow deserves AI/CRM in a short cycle. The 30-day Sprint delivers process map, ownership, SOP, tracking, and one quick win. Both start from Business Workflow Diagnosis; advisory retainers come later."
       },
       {
-        "question": "Is VisionXP a medical device?",
-        "answer": "No. VisionXP is a technology prototype / AI visual-tracking demo. It is not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination."
+        "question": "How do I book Larry Lo / InnovateXP?",
+        "answer": "Book a Business Workflow Diagnosis on innovatexp.co, or contact via WhatsApp/email. We confirm industry, messiest workflow, and expected outcome. Path: diagnosis → Discovery/30-day Sprint → advisory — not instant tool purchase."
       }
     ]
   },
   "finalCta": {
-    "title": "Want to know which workflow your company should fix first?",
-    "body": "Book a 30-minute workflow diagnosis and find the one process most likely to leak leads, slow quotes, or stall handoffs.",
-    "primary": "Book a 30-minute workflow diagnosis",
+    "title": "Want to know which workflow to diagnose first?",
+    "body": "Book a 30-minute Business Workflow Diagnosis and find the process most likely to leak leads, slow quotes, or stall handoffs.",
+    "primary": "Book a Business Workflow Diagnosis (30 min)",
     "secondary": "WhatsApp Larry"
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AI Business Consultant",
-    "tagline": "Not chasing the newest AI tools — deliver one workflow result your team can actually use.",
+    "tagline": "Process first, AI second",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
   },
