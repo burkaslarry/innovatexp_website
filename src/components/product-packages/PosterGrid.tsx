@@ -20,7 +20,7 @@ export function PosterGrid({ locale, items }: { locale: AppLocale; items: Produc
   return (
     <div className="grid gap-6 lg:grid-cols-2">
       {items.map((item) => (
-        <PosterCard key={item.id} item={item} posterDir={posterDir} />
+        <PosterCard key={item.id} item={item} posterDir={posterDir} locale={locale} />
       ))}
     </div>
   );

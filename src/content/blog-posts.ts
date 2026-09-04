@@ -24,6 +24,13 @@ export const blogPosts: Record<
       "Practical CRM automation for sales teams: WhatsApp, pipelines, and one source of truth.",
     body: "CRM automation doesn’t have to mean complex integrations or months of setup. For many Hong Kong SMEs, the biggest win is one place for leads, one place for follow-up, and a simple link to the tools your team already uses—like WhatsApp. Enterprise CRM often fails not because features are missing, but because ownership and stage definitions were never clear.\n\nSmartSales CRM focuses on WhatsApp-led sales: centralise enquiries, assign owners, keep pipeline visible, and use AI draft-first replies with human send. Independent CRM consulting in Hong Kong should tell you when not to buy—and when a light pipeline beats a heavy platform.\n\nWhat moves the needle: pipeline visibility for founders, timely reminders, less copy-paste between chat and spreadsheets, and a written follow-up SLA. Start with your top enquiry sources, define stages in plain language, then automate only the reminders and drafts that staff will actually use.",
   },
+  "fitnessxp-class-management-for-studios": {
+    title: "FitnessXP: Class Management After a Business Diagnosis",
+    date: "2026-09-04",
+    excerpt:
+      "How training centres, tutoring schools, and fitness studios move from WhatsApp/Excel chaos to timetable, coaches, attendance, and renewals.",
+    body: "Many Hong Kong training institutions, tutoring centres, and Fitness / Yoga / Pilates studios still run classes on WhatsApp and Excel. The pain is familiar: nobody sees every class, coach, and student status in one place; attendance and renewals depend on memory; one person on leave and follow-up stalls.\n\nLarry Lo / InnovateXP approaches this as a business diagnostician (業務聽診師)—listen to the class workflow first, then design a fit-for-purpose training / class-management solution. For Fitness Centers that usually means timetable, coach scheduling, student attendance, and package renewals—without a big-bang system rewrite.\n\nFitnessXP is the product path after diagnosis: start simple, aim for measurable attendance, renewal, and utilisation within 30–60 days, and improve operations, sales, and customer experience together. Pricing starts from HK$499 per month. Ideal referrals include training, tutoring, fitness, yoga, pilates, and hobby-class centre owners still living in spreadsheets. Read more: https://www.innovatexp.co/zh-hk/fitnessxp",
+  },
 };
 
 export const BLOG_POST_SLUGS = Object.freeze(Object.keys(blogPosts));

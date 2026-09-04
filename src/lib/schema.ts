@@ -60,6 +60,36 @@ export function getEventXPProductSchema() {
   };
 }
 
+export function getFitnessXPProductSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "SoftwareApplication",
+    name: "FitnessXP",
+    applicationCategory: "BusinessApplication",
+    operatingSystem: "Web",
+    description:
+      "FitnessXP helps Hong Kong training centres, tutoring schools, and fitness / yoga / pilates studios manage class timetables, coaches, attendance, and renewals—starting simple after a business diagnosis. From HK$499 / month.",
+    featureList: [
+      "Class timetable management",
+      "Coach / instructor scheduling",
+      "Student attendance and package renewal",
+      "Reduce WhatsApp and Excel chase-ups",
+    ],
+    offers: {
+      "@type": "Offer",
+      price: "499",
+      priceCurrency: "HKD",
+      priceSpecification: {
+        "@type": "UnitPriceSpecification",
+        price: "499",
+        priceCurrency: "HKD",
+        unitText: "per month",
+      },
+    },
+    url: `${siteUrl}/fitnessxp`,
+  };
+}
+
 export function getVisionXPProductSchema() {
   return {
     "@context": "https://schema.org",

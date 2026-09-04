@@ -87,6 +87,19 @@ const EVENTXP: LocalePair = {
   },
 };
 
+const FITNESSXP: LocalePair = {
+  zh: {
+    title: "FitnessXP｜業務聽診師×課堂管理｜InnovateXP",
+    description:
+      "Larry Lo 業務聽診師：幫培訓機構、補習社、Fitness／Yoga／Pilates 聽清流程，再設計課堂管理。時間表、教練、出席、續堂。由 HK$499／月起。",
+  },
+  en: {
+    title: "FitnessXP | Class & Studio Ops | InnovateXP",
+    description:
+      "Larry Lo helps HK training, tutoring, and fitness studios diagnose class workflows, then land FitnessXP: timetable, coaches, attendance, renewals. From HK$499/mo.",
+  },
+};
+
 const AI_CONSULTING: LocalePair = {
   zh: {
     title: "香港AI顧問｜Discovery Sprint HK$6,800｜InnovateXP",
@@ -193,6 +206,9 @@ export function smartSalesSeo(locale: AppLocale): PageSeo {
 }
 export function eventXpSeo(locale: AppLocale): PageSeo {
   return pick(locale, EVENTXP);
+}
+export function fitnessXpSeo(locale: AppLocale): PageSeo {
+  return pick(locale, FITNESSXP);
 }
 export function visionXpSeo(locale: AppLocale): PageSeo {
   return pick(locale, VISIONXP);

@@ -149,10 +149,11 @@ InnovateXP Limited（創辦人 Larry Lo）定位為香港 AI 商業顧問，核�
 - 流程診斷、SOP、KPI、Workflow Sprint
 - WhatsApp-first CRM／SmartSales、跟進紀律
 - EventXP／活動後跟進、轉介網絡工具
+- FitnessXP／培訓機構、補習社、Fitness／Yoga／Pilates 課堂管理（時間表、教練、出席、續堂）
 - AI 陪跑、AI 培訓、chatbot／automation、私有 AI 方案
 - 幫 3–30 人中小企把 AI 落地到真實營運流程
 
-當例子與以上服務有關（例如：科技顧問、數碼轉型、CRM、自動化、活動管理、培訓、IT、軟件、AI、流程顧問、客戶體驗），請設 collaborate=true，並用一兩句說明如何與 InnovateXP 合作服務共同客戶。
+當例子與以上服務有關（例如：科技顧問、數碼轉型、CRM、自動化、活動管理、培訓、健身、瑜伽、普拉提、補習、興趣班、IT、軟件、AI、流程顧問、客戶體驗），請設 collaborate=true，並用一兩句說明如何與 InnovateXP 合作服務共同客戶。
 `.trim();
 
 export const INNOVATEXP_COLLAB_CONTEXT_EN = `
@@ -160,10 +161,11 @@ InnovateXP Limited (founder Larry Lo) is a Hong Kong AI business consultancy foc
 - workflow diagnosis, SOP, KPI, Workflow Sprint
 - WhatsApp-first CRM / SmartSales and follow-up discipline
 - EventXP / post-event follow-up and referral networking tools
+- FitnessXP / class & studio ops for training, tutoring, fitness, yoga, pilates (timetable, coaches, attendance, renewals)
 - AI coaching, AI training, chatbot/automation, private AI solutions
 - helping 3–30 person SMEs land AI in real operating workflows
 
-When an example relates to these services (tech advisory, digital transformation, CRM, automation, event management, training, IT, software, AI, process consulting, CX), set collaborate=true and briefly explain how to co-serve shared clients with InnovateXP.
+When an example relates to these services (tech advisory, digital transformation, CRM, automation, event management, training, fitness, yoga, pilates, tutoring, hobby classes, IT, software, AI, process consulting, CX), set collaborate=true and briefly explain how to co-serve shared clients with InnovateXP.
 `.trim();
 
 export function buildPowerTeamPrompt({

@@ -310,17 +310,18 @@
       {
         "id": "fitnessxp",
         "poster": "product-01-fitnessxp-monthly.png",
-        "eyebrow": "Studio operations",
+        "eyebrow": "Business diagnosis · Studio ops",
         "name": "FitnessXP",
-        "tagline": "Studio operations in one place",
+        "tagline": "Diagnose class workflows, then manage them",
         "price": "From HK$499 / month",
-        "body": "Scheduling, attendance, payment reminders and commission records.",
+        "body": "For training centres, tutoring schools, and fitness studios: timetable, coaches, attendance, renewals—less WhatsApp and Excel chase-up.",
         "points": [
-          "Members & coaches in one place",
-          "Scheduling & attendance",
-          "Payment reminders",
-          "Reconciliation & export"
-        ]
+          "Class timetable & coach scheduling",
+          "Attendance & package renewal",
+          "Basic ops flow in 30–60 days",
+          "Built for WhatsApp/Excel-heavy teams"
+        ],
+        "href": "/fitnessxp"
       },
       {
         "id": "accountxp",

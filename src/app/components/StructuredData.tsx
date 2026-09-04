@@ -1306,18 +1306,24 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
             {
               "@type": "ListItem",
               position: 1,
+              name: "FitnessXP",
+              url: `${baseUrl}/${routeLocale}/fitnessxp`,
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
               name: "SmartSales CRM",
               url: `${baseUrl}/${routeLocale}/smartsales-crm`,
             },
             {
               "@type": "ListItem",
-              position: 2,
+              position: 3,
               name: "EventXP",
               url: `${baseUrl}/${routeLocale}/eventxp`,
             },
             {
               "@type": "ListItem",
-              position: 3,
+              position: 4,
               name: "VisionXP",
               url: `${baseUrl}/${routeLocale}/visionxp`,
             },

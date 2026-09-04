@@ -310,17 +310,18 @@
       {
         "id": "fitnessxp",
         "poster": "product-01-fitnessxp-monthly.png",
-        "eyebrow": "スタジオ運営",
+        "eyebrow": "業務診断 · スタジオ運営",
         "name": "FitnessXP",
-        "tagline": "スタジオ運営を一元管理",
+        "tagline": "教室フローを診断し、運営を整える",
         "price": "月額 HK$499〜",
-        "body": "予約、出席、支払リマインド、報酬集計を一つの画面で。",
+        "body": "研修機関・塾・フィットネス向け：スケジュール、コーチ、出席、継続を整理し、WhatsApp／Excel の手作業を減らします。",
         "points": [
-          "会員・コーチ管理",
-          "予約・出席管理",
-          "支払リマインド",
-          "照合・エクスポート"
-        ]
+          "授業スケジュールとコーチ配置",
+          "出席と継続管理",
+          "30–60日で基本運営フロー",
+          "WhatsApp／Excel 依存チーム向け"
+        ],
+        "href": "/fitnessxp"
       },
       {
         "id": "accountxp",

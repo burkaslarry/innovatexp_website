@@ -310,17 +310,18 @@
       {
         "id": "fitnessxp",
         "poster": "product-01-fitnessxp-monthly.png",
-        "eyebrow": "Studio 營運",
+        "eyebrow": "業務聽診 · Studio 營運",
         "name": "FitnessXP",
-        "tagline": "Studio 營運集中管理",
+        "tagline": "聽清楚課堂流程，再設計管理 solution",
         "price": "HK$499 / 月起",
-        "body": "排堂、出勤、付款提醒同佣金對數，一個平台處理。",
+        "body": "幫培訓機構、補習社、Fitness Center 管理時間表、教練、出席同續堂，減少 WhatsApp／Excel 人手跟進。",
         "points": [
-          "會員與教練帳戶",
-          "排堂與出勤",
-          "付款提醒",
-          "對數與匯出"
-        ]
+          "課堂時間表與教練安排",
+          "學生出席與續堂",
+          "30–60 日建立基本管理流程",
+          "適合仍用 WhatsApp／Excel 的團隊"
+        ],
+        "href": "/fitnessxp"
       },
       {
         "id": "accountxp",

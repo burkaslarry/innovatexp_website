@@ -310,17 +310,18 @@
       {
         "id": "fitnessxp",
         "poster": "product-01-fitnessxp-monthly.png",
-        "eyebrow": "場館營運",
+        "eyebrow": "業務診斷 · 場館營運",
         "name": "FitnessXP",
-        "tagline": "健身場館營運集中管理",
+        "tagline": "先聽清課堂流程，再設計管理方案",
         "price": "每月 HK$499 起",
-        "body": "排課、出勤、付款提醒與佣金核對，一個平台完成。",
+        "body": "協助培訓機構、補習社、健身場館管理課表、教練、出席與續課，減少 WhatsApp／Excel 人工追蹤。",
         "points": [
-          "會員與教練帳戶",
-          "排課與出勤",
-          "付款提醒",
-          "核對與匯出"
-        ]
+          "課堂時間表與教練安排",
+          "學員出席與續課",
+          "30–60 日建立基本管理流程",
+          "適合仍用 WhatsApp／Excel 的團隊"
+        ],
+        "href": "/fitnessxp"
       },
       {
         "id": "accountxp",

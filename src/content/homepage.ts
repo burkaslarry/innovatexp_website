@@ -71,6 +71,8 @@ export type ProductPosterItem = {
   price: string;
   body: string;
   points: string[];
+  /** Optional deep link to product landing page (e.g. /fitnessxp). */
+  href?: string;
 };
 
 export type SystemCareCopy = {

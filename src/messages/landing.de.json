@@ -310,17 +310,18 @@
       {
         "id": "fitnessxp",
         "poster": "product-01-fitnessxp-monthly.png",
-        "eyebrow": "Studio-Betrieb",
+        "eyebrow": "Business-Diagnose · Studio",
         "name": "FitnessXP",
-        "tagline": "Studio-Betrieb an einem Ort",
+        "tagline": "Kursabläufe verstehen, dann steuern",
         "price": "Ab HK$499 / Monat",
-        "body": "Terminplanung, Anwesenheit, Zahlungserinnerungen und Provisionen.",
+        "body": "Für Trainingszentren, Nachhilfe und Fitness-Studios: Stundenplan, Coaches, Anwesenheit, Verlängerungen — weniger WhatsApp/Excel-Nachlauf.",
         "points": [
-          "Mitglieder & Coaches",
-          "Planung & Anwesenheit",
-          "Zahlungserinnerungen",
-          "Abstimmung & Export"
-        ]
+          "Stundenplan & Coach-Planung",
+          "Anwesenheit & Paketverlängerung",
+          "Basis-Ops in 30–60 Tagen",
+          "Für WhatsApp/Excel-Teams"
+        ],
+        "href": "/fitnessxp"
       },
       {
         "id": "accountxp",

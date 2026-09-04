@@ -1,5 +1,8 @@
 import Image from "next/image";
+import Link from "next/link";
 import type { ProductPosterItem } from "@/content/homepage";
+import type { AppLocale } from "@/lib/i18n-routing";
+import { withLocale } from "@/lib/i18n-routing";
 
 /*
  * One poster, one offer. The card does not decide locale paths —
@@ -8,10 +11,14 @@ import type { ProductPosterItem } from "@/content/homepage";
 export function PosterCard({
   item,
   posterDir,
+  locale,
 }: {
   item: ProductPosterItem;
   posterDir: string;
+  locale: AppLocale;
 }) {
+  const detailHref = item.href ? withLocale(locale, item.href) : null;
+
   return (
     <article className="ixp-card overflow-hidden">
       <div className="relative aspect-[3/4] w-full bg-[color:var(--bg-secondary)] sm:aspect-[4/5]">
@@ -27,7 +34,15 @@ export function PosterCard({
         <p className="text-xs font-bold uppercase tracking-[0.12em] text-[color:var(--secondary-color)]">
           {item.eyebrow}
         </p>
-        <h3 className="text-xl font-semibold text-[color:var(--heading-foreground)]">{item.name}</h3>
+        <h3 className="text-xl font-semibold text-[color:var(--heading-foreground)]">
+          {detailHref ? (
+            <Link href={detailHref} className="hover:text-[color:var(--brand-primary)]">
+              {item.name}
+            </Link>
+          ) : (
+            item.name
+          )}
+        </h3>
         <p className="text-base font-medium text-[color:var(--heading-foreground)]">{item.tagline}</p>
         <p className="text-sm font-semibold text-[color:var(--brand-primary)]">{item.price}</p>
         <p className="text-base leading-8 text-[color:var(--text-secondary)]">{item.body}</p>
@@ -39,6 +54,14 @@ export function PosterCard({
             </li>
           ))}
         </ul>
+        {detailHref ? (
+          <Link
+            href={detailHref}
+            className="inline-flex text-sm font-semibold text-[color:var(--brand-primary)] underline-offset-2 hover:underline"
+          >
+            {locale.startsWith("zh") ? "了解更多" : locale === "ja" ? "詳しく見る" : locale === "de" ? "Mehr erfahren" : "Learn more"}
+          </Link>
+        ) : null}
       </div>
     </article>
   );
