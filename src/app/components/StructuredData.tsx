@@ -18,20 +18,20 @@ type FaqMainEntity = Array<{
 }>;
 
 const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
-  en: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. We help SMEs fix one sales or operations workflow first, then adopt AI, CRM, or automation only when justified. Discovery Sprint from HK$6,800. Optional products after workflow clarity include SmartSales CRM, EventXP, and VisionXP demo.",
+  en: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. Signature method: Business Workflow Diagnosis — process first, AI second. We help SMEs of 3–30 fix one sales or operations workflow before CRM or AI. Optional products after clarity include SmartSales CRM, EventXP, FitnessXP, and VisionXP demo.",
   "zh-hk":
-    "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。協助中小企先執順一條收入或營運流程，再決定 AI、CRM 或自動化。30 日 Discovery Sprint 由 HK$6,800 起。流程清楚後可選 SmartSales CRM、EventXP、VisionXP 示範。",
+    "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。定位「先執順流程，再落地 AI」。幫 3–30 人中小企先聽清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
   "zh-tw":
-    "InnovateXP Limited 由 Larry Lo 創立，是香港 AI 商業顧問公司。協助中小企業先理順一條收入或營運流程，再決定 AI、CRM 或自動化。30 日 Discovery Sprint 由 HK$6,800 起。流程清楚後可選 SmartSales CRM、EventXP、VisionXP 示範。",
+    "InnovateXP Limited 由 Larry Lo 創立，是香港 AI 商業顧問公司。定位「先執順流程，再落地 AI」。協助 3–30 人中小企業先釐清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
   ja: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。Discovery Sprint は HK$6,800〜。業務が明確になった後、SmartSales CRM、EventXP、VisionXP デモを選べます。",
   de: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen Workflow und führen AI, CRM oder Automation erst danach ein. Discovery Sprint ab HK$6,800. Nach Workflow-Klarheit optional SmartSales CRM, EventXP und VisionXP-Demo.",
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Larry Lo leads InnovateXP Limited, an AI Business Consultancy for Hong Kong SMEs. He has 13+ years of IT delivery experience and seven dated 2025 public records as host, speaker, or project demonstrator across GDG Hong Kong, PISM Sharing, and DevFest Hong Kong.",
-  "zh-hk": "Larry Lo 帶領 InnovateXP Limited 為香港中小企提供 AI 商業顧問服務，具備 13+ 年 IT delivery 經驗，並有 7 個 2025 年公開紀錄，分別以主持、講者或項目展示角色參與 GDG Hong Kong、PISM Sharing 及 DevFest Hong Kong。",
+  en: "I am AI Business Consultant Larry Lo / InnovateXP. Founder of InnovateXP Limited in Hong Kong with 14 years of IT delivery experience. Helps SMEs of 3–30 fix WhatsApp/Excel-heavy operations via Business Workflow Diagnosis before adopting AI.",
+  "zh-hk": "我係 AI 商業顧問 Larry Lo／InnovateXP。InnovateXP Limited 創辦人，駐香港，14 年 IT 交付經驗。專幫 3–30 人中小企先執順 WhatsApp／Excel 流程，再落地 AI。",
   "zh-tw":
-    "Larry Lo 帶領 InnovateXP Limited 為香港中小企業提供 AI 商業顧問服務，具備 13 年以上 IT 交付經驗，並有 7 場 2025 年公開紀錄，分別以主持人、講者或專案展示者身分參與 GDG Hong Kong、PISM Sharing 與 DevFest Hong Kong。",
+    "Larry Lo 是 InnovateXP Limited 創辦人，香港 AI 商業顧問，具備 14 年 IT 交付經驗。專協助 3–30 人中小企業先理順 WhatsApp／Excel 流程，再落地 AI。",
   ja: "Larry Lo は香港の中小企業向け AI ビジネスコンサルティング InnovateXP Limited を率いています。13年以上の IT デリバリー経験に加え、2025年には GDG Hong Kong、PISM Sharing、DevFest Hong Kong で司会・登壇・プロジェクト紹介を行った7件の公開記録があります。",
   de: "Larry Lo leitet InnovateXP Limited, eine AI Business Consultancy für KMU in Hongkong. Er verfügt über mehr als 13 Jahre IT-Delivery-Erfahrung und sieben datierte öffentliche Auftritte im Jahr 2025 als Gastgeber, Sprecher oder Projektpräsentator bei GDG Hong Kong, PISM Sharing und DevFest Hong Kong.",
 };
@@ -254,226 +254,298 @@ const BREADCRUMB_SEGMENTS: Record<string, Record<AppLocale, string>> = {
 const HOME_FAQ_EN: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "What does InnovateXP do?",
+    name: "What is Business Workflow Diagnosis?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. It helps SMEs fix one revenue or operations workflow first—ownership, SOP, and follow-up—then adopt AI, CRM, or automation only when justified. The entry offer is a 30-day Discovery Sprint from HK$6,800.",
+      text: "Business Workflow Diagnosis is InnovateXP’s signature 30-minute method to lock onto one revenue or operations workflow, clarify leaks and ownership, and decide the next step. Unlike report-and-leave consulting, diagnosis feeds into an AI Discovery Sprint or 30-day implementation so the team actually adopts the change.",
     },
   },
   {
     "@type": "Question",
-    name: "Who is Larry Lo / InnovateXP?",
+    name: "Is Business Workflow Diagnosis part of your AI consulting?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Larry Lo is the founder of InnovateXP Limited and an AI Business Consultant based in Hong Kong. He has 13+ years of IT delivery experience and seven dated 2025 public records as host, speaker, or project demonstrator at GDG Hong Kong, PISM Sharing, and DevFest Hong Kong.",
+      text: "Yes — one path. I am AI Business Consultant Larry Lo / InnovateXP. Business Workflow Diagnosis is the signature method to clarify process first, then AI readiness, Discovery Sprint, or advisory — not a business-coach pitch or a SaaS hard sell.",
     },
   },
   {
     "@type": "Question",
-    name: "Are we ready for AI now?",
+    name: "How does SME workflow diagnosis work in Hong Kong?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Not every team should start with AI immediately. InnovateXP usually recommends fixing one revenue- or operations-critical workflow first, then deciding whether AI adds real operational value.",
+      text: "Book a diagnosis session and bring your messiest line (WhatsApp enrolment or quoting). Together we map owners, handoffs, and tracking, then recommend Discovery Sprint if needed. Built for Hong Kong teams of 3–30 still running on manual follow-up.",
     },
   },
   {
     "@type": "Question",
-    name: "Do we need a CRM first?",
+    name: "WhatsApp and Excel are chaos — must we buy a CRM first?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Not always. Ownership, handoff clarity, and follow-up rhythm usually come before buying a new CRM. If current tools already work once ownership is clear, InnovateXP may advise against buying.",
+      text: "Not always. Most leakage is unclear ownership and follow-up rhythm, not missing software. Diagnosis reviews how WhatsApp, Excel, and forms drop leads. If a clearer process is enough, you can delay CRM and avoid vendor-style tool pushing.",
     },
   },
   {
     "@type": "Question",
-    name: "How much does the Discovery Sprint cost?",
+    name: "How do you help training centres with class operations?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "The 30-day Discovery Sprint starts at HK$6,800 for teams of up to 10 people, HK$13,600 for 11–30 people, and is quoted separately for 31+ people. Longer Foundation, Accelerator, and Partnership programmes are priced after SOP complexity assessment.",
+      text: "Start with diagnosis of class schedules, coaches, attendance, and renewals — especially WhatsApp/Excel bottlenecks. Only after the workflow is clear do we consider FitnessXP or a custom landing Sprint. Goal: visible classes and renewals, not a big-system swap first.",
     },
   },
   {
     "@type": "Question",
-    name: "What is SmartSales CRM?",
+    name: "Where should a tutorial school start with student management?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "SmartSales CRM is InnovateXP’s WhatsApp-led sales pipeline for Hong Kong SMEs: centralize enquiries, assign ownership, track stages, and use AI draft-first replies. Trial is HK$5,000; maintenance starts from about HK$880 per month.",
+      text: "Diagnose enquiry → trial → enrolment → payment. Typical pain is scattered student status and memory-based follow-up. After diagnosis you get owners and a status board; then a 30-day Sprint or class tool if needed.",
     },
   },
   {
     "@type": "Question",
-    name: "What is EventXP?",
+    name: "Is Business Workflow Diagnosis useful for fitness coach management?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "EventXP is InnovateXP’s event operations tool for Hong Kong teams: QR check-in, lead scoring, live reporting, and post-event follow-up. Trial is HK$4,000 per event; maintenance starts from about HK$880 per month.",
+      text: "Yes. Studios often split scheduling, commissions, unpaid fees, and attendance. Diagnosis clarifies states and owners before FitnessXP. Designed for studios still running mainly on WhatsApp and Excel.",
     },
   },
   {
     "@type": "Question",
-    name: "What is VisionXP?",
+    name: "Do SOP automation advisors push AI immediately?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "VisionXP is InnovateXP’s technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12). The live site is frontend-only — no login, no patient data. Commercial path is demo → Discovery → Implementation Sprint.",
+      text: "No. Positioning is process first, AI second. If SOPs and ownership are unclear, automation amplifies chaos. We diagnose and stabilise SOP nodes before chatbots, reminders, or AI drafts.",
     },
   },
   {
     "@type": "Question",
-    name: "Is VisionXP a medical device or diagnostic tool?",
+    name: "What is AI readiness preparation?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "No. VisionXP is a technology prototype / AI visual-tracking demo. It is not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination.",
+      text: "An AI Readiness review checks data location, permissions, repetitive work, and measurable outcomes. It usually follows diagnosis: one clear workflow first, then an AI Discovery Sprint scope — so you do not buy models or tools unprepared.",
     },
   },
+  {
+    "@type": "Question",
+    name: "Do Hong Kong AI workshops include deliverables?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Yes. Workshops and coaching map to one real company workflow and deliver usable drafts, SOP nodes, or follow-up lists — not tool demos only. If you only want concepts with no landing, scope is stated upfront.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "AI Discovery Sprint vs 30-day Sprint?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Discovery validates whether a workflow deserves AI/CRM in a short cycle. The 30-day Sprint delivers process map, ownership, SOP, tracking, and one quick win. Both start from Business Workflow Diagnosis; advisory retainers come later.",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "How do I book Larry Lo / InnovateXP?",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "Book a Business Workflow Diagnosis on innovatexp.co, or contact via WhatsApp/email. We confirm industry, messiest workflow, and expected outcome. Path: diagnosis → Discovery/30-day Sprint → advisory — not instant tool purchase.",
+    },
+  }
 ];
 
 const HOME_FAQ_ZH_HK: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "InnovateXP 係做咩嘅？",
+    name: "咩係業務聽診？同一般顧問有咩分別？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "InnovateXP Limited 係由 Larry Lo 創立嘅香港 AI 商業顧問公司。協助中小企先執順一條收入或營運流程（責任、SOP、跟進），確認有效後先考慮 AI、CRM 或自動化。起步方案係 30 日 Discovery Sprint，由 HK$6,800 起。",
+      text: "業務聽診（Business Workflow Diagnosis）係 InnovateXP 嘅簽名方法：用大約 30 分鐘鎖定一條最影響收入或營運嘅流程，講清漏位、責任同下一步。同交報告就走嘅顧問唔同，聽診之後會進入 AI Discovery Sprint 或 30 日落地，確保團隊真係用到。",
     },
   },
   {
     "@type": "Question",
-    name: "Larry Lo／InnovateXP 係邊個？",
+    name: "業務聽診同 AI 商業顧問服務係咪同一套？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Larry Lo 係 InnovateXP Limited 創辦人同 AI 商業顧問，駐香港，具備 13+ 年 IT 交付經驗，並有 7 個 2025 年公開紀錄，分別以主持、講者或項目展示角色參與 GDG Hong Kong、PISM Sharing 及 DevFest Hong Kong。",
+      text: "係同一條主線。我係 AI 商業顧問 Larry Lo／InnovateXP；業務聽診係簽名方法，用嚟先釐清流程，再按需要做 AI 導入前準備、Discovery Sprint 或陪跑，而唔會一開始就推 SaaS 或當 business coach。",
     },
   },
   {
     "@type": "Question",
-    name: "我哋而家係咪適合用 AI？",
+    name: "中小企業務流程診斷喺香港點做？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "未必一開始就要。通常建議先揀一條最影響收入或營運嘅核心流程嚟睇清楚，評估過效益，先決定係咪值得加 AI。",
+      text: "預約一節業務聽診，帶你最亂嘅一條線（例如 WhatsApp 報名或報價）。會一齊畫出責任、交接同追蹤節點，再建議係咪要 Discovery Sprint。適合香港 3–30 人、仍然靠人手跟進嘅團隊。",
     },
   },
   {
     "@type": "Question",
-    name: "一定要先買 CRM 嗎？",
+    name: "WhatsApp、Excel 管理太亂，一定要先買 CRM 嗎？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "唔一定。最緊要先理順團隊嘅責任、交接同跟進節奏。如果現有工具已經夠用，就未必需要即刻洗錢換系統。",
+      text: "唔一定。多數問題係責任同跟進節奏未定，而唔係缺一個系統。業務聽診會先睇現有 WhatsApp／Excel／表單點樣漏客；如果流程執順已經夠用，可以暫時唔買 CRM，避免成為便宜工具供應商式硬推。",
     },
   },
   {
     "@type": "Question",
-    name: "Discovery Sprint 幾錢？",
+    name: "培訓機構課堂管理系統，InnovateXP 點幫？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "30 日 Discovery Sprint：10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價。較長嘅 Foundation／Accelerator／Partnership 視 SOP 複雜程度決定。",
+      text: "先業務聽診課堂、教練、出席同續堂流程，搵出邊度靠 WhatsApp／Excel 頂住。確認流程後，先考慮 FitnessXP 或自訂流程落地。目標係課堂用得清、續堂跟得到，而唔係一開始換一套大系統。",
     },
   },
   {
     "@type": "Question",
-    name: "SmartSales CRM 係咩？",
+    name: "補習社學生管理可以由邊度開始？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "SmartSales CRM 係 InnovateXP 為香港 WhatsApp 銷售團隊而設嘅 pipeline：查詢集中、責任人、階段追蹤同 AI draft-first。試用 HK$5,000；維護月費約由 HK$880 起。",
+      text: "由查詢 → 試堂 → 報名 → 收款呢條線做業務聽診。常見問題係學生狀態散落、跟進靠記性。聽診後會交付責任同狀態表；需要時再接 30 日落地 Sprint 或課堂管理工具。",
     },
   },
   {
     "@type": "Question",
-    name: "EventXP 係咩？",
+    name: "Fitness center 課堂教練管理，適唔適合業務聽診？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "EventXP 係 InnovateXP 為香港活動團隊而設嘅簽到同跟進工具：QR 簽到、名單評分、即時報告、活動後 follow-up。試用 HK$4,000／場；維護月費約由 HK$880 起。",
+      text: "適合。Fitness／Yoga／Pilates studio 常見痛點係排程、教練佣金、未付同出席各自為政。業務聽診會先釐清狀態同責任，再決定係咪落地 FitnessXP。適合仍然主要用 WhatsApp + Excel 嘅 studio。",
     },
   },
   {
     "@type": "Question",
-    name: "VisionXP 係咩？",
+    name: "SOP 自動化顧問會唔會一開始就推 AI？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "VisionXP 係 InnovateXP 嘅技術原型／AI 視覺追蹤示範（3–12 歲訓練流程）。公開站係純前端——無須登入、唔存病人資料。商業路徑係 demo → Discovery → Implementation Sprint。",
+      text: "唔會。定位係「先執順流程，再落地 AI」。如果 SOP 未寫清、責任未定，自動化只會放大混亂。先聽診同執 SOP，確認有穩定節點，先談 chatbot、提醒或 AI 草稿。",
     },
   },
   {
     "@type": "Question",
-    name: "VisionXP 係咪醫療診斷工具或醫療器材？",
+    name: "AI 導入前準備要做啲咩？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "唔係。VisionXP 只係技術原型／AI 視覺追蹤示範，並非醫療診斷工具，亦唔係註冊醫療器械，不能代替專業視光或眼科檢查。",
+      text: "AI Readiness 評估會睇資料位置、權限、重複工序同可量度結果。通常跟住業務聽診：先有一條清晰 workflow，再決定 AI Discovery Sprint 範圍，避免未準備好就買模型或工具。",
     },
   },
+  {
+    "@type": "Question",
+    name: "香港 AI 工作坊有冇交付成果？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "有。工作坊／陪跑唔係淨係演示工具，會對應你公司一條真實流程，交付可用草稿、SOP 節點或可跟進清單。如果只想聽概念、唔想落地，會事先講清範圍，唔會當便宜 SaaS 推銷場。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "AI Discovery Sprint 同 30 日落地 Sprint 有咩分別？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "AI Discovery Sprint 用短週期驗證一條流程值唔值得加 AI／CRM。30 日落地 Sprint 則交付流程圖、責任、SOP、追蹤同一個 quick win。兩者都由業務聽診起步；之後可進入顧問陪跑。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "點樣預約 Larry Lo／InnovateXP？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "喺 innovatexp.co 預約業務聽診（約 30 分鐘），或 WhatsApp／電郵聯絡。會確認你嘅行業、最亂嘅一條流程，同預期結果。主線係聽診 → Discovery／30 日落地 → 陪跑，而唔係即買工具。",
+    },
+  }
 ];
 
 const HOME_FAQ_ZH_TW: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "InnovateXP 是做什麼的？",
+    name: "咩係業務聽診？同一般顧問有咩分別？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "InnovateXP Limited 是由 Larry Lo 創立的香港 AI 商業顧問公司，協助中小企業先理順一條收入或營運流程（責任、SOP、跟進），確認有效後再考慮 AI、CRM 或自動化。起步方案為 30 日 Discovery Sprint，由 HK$6,800 起。",
+      text: "業務聽診（Business Workflow Diagnosis）係 InnovateXP 嘅簽名方法：用大約 30 分鐘鎖定一條最影響收入或營運嘅流程，講清漏位、責任同下一步。同交報告就走嘅顧問唔同，聽診之後會進入 AI Discovery Sprint 或 30 日落地，確保團隊真係用到。",
     },
   },
   {
     "@type": "Question",
-    name: "Larry Lo／InnovateXP 是誰？",
+    name: "業務聽診同 AI 商業顧問服務係咪同一套？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Larry Lo 是 InnovateXP Limited 創辦人與 AI 商業顧問，駐香港，具備 13 年以上 IT 交付經驗，並有 7 場 2025 年公開紀錄，分別以主持人、講者或專案展示者身分參與 GDG Hong Kong、PISM Sharing 與 DevFest Hong Kong。",
+      text: "係同一條主線。我係 AI 商業顧問 Larry Lo／InnovateXP；業務聽診係簽名方法，用嚟先釐清流程，再按需要做 AI 導入前準備、Discovery Sprint 或陪跑，而唔會一開始就推 SaaS 或當 business coach。",
     },
   },
   {
     "@type": "Question",
-    name: "我們現在適合導入 AI 嗎？",
+    name: "中小企業務流程診斷喺香港點做？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "不一定要立刻導入。通常建議先鎖定一條最影響收入或營運的核心流程，評估效益後再決定是否值得加入 AI。",
+      text: "預約一節業務聽診，帶你最亂嘅一條線（例如 WhatsApp 報名或報價）。會一齊畫出責任、交接同追蹤節點，再建議係咪要 Discovery Sprint。適合香港 3–30 人、仍然靠人手跟進嘅團隊。",
     },
   },
   {
     "@type": "Question",
-    name: "一定要先買 CRM 嗎？",
+    name: "WhatsApp、Excel 管理太亂，一定要先買 CRM 嗎？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "不一定。關鍵是先理順責任、交接與跟進節奏。若現有工具在責任清楚後已夠用，未必需要立刻換系統。",
+      text: "唔一定。多數問題係責任同跟進節奏未定，而唔係缺一個系統。業務聽診會先睇現有 WhatsApp／Excel／表單點樣漏客；如果流程執順已經夠用，可以暫時唔買 CRM，避免成為便宜工具供應商式硬推。",
     },
   },
   {
     "@type": "Question",
-    name: "Discovery Sprint 多少錢？",
+    name: "培訓機構課堂管理系統，InnovateXP 點幫？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "30 日 Discovery Sprint：10 人以下 HK$6,800；11–30 人 HK$13,600；31 人以上另行報價。較長的 Foundation／Accelerator／Partnership 視 SOP 複雜程度決定。",
+      text: "先業務聽診課堂、教練、出席同續堂流程，搵出邊度靠 WhatsApp／Excel 頂住。確認流程後，先考慮 FitnessXP 或自訂流程落地。目標係課堂用得清、續堂跟得到，而唔係一開始換一套大系統。",
     },
   },
   {
     "@type": "Question",
-    name: "SmartSales CRM 是什麼？",
+    name: "補習社學生管理可以由邊度開始？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "SmartSales CRM 是 InnovateXP 為香港 WhatsApp 銷售團隊設計的 pipeline：集中詢問、責任歸屬、階段追蹤與 AI draft-first。試用 HK$5,000；維護月費約由 HK$880 起。",
+      text: "由查詢 → 試堂 → 報名 → 收款呢條線做業務聽診。常見問題係學生狀態散落、跟進靠記性。聽診後會交付責任同狀態表；需要時再接 30 日落地 Sprint 或課堂管理工具。",
     },
   },
   {
     "@type": "Question",
-    name: "EventXP 是什麼？",
+    name: "Fitness center 課堂教練管理，適唔適合業務聽診？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "EventXP 是 InnovateXP 為香港活動團隊設計的報到與跟進工具：QR 報到、名單評分、即時報表、活動後 follow-up。試用 HK$4,000／場；維護月費約由 HK$880 起。",
+      text: "適合。Fitness／Yoga／Pilates studio 常見痛點係排程、教練佣金、未付同出席各自為政。業務聽診會先釐清狀態同責任，再決定係咪落地 FitnessXP。適合仍然主要用 WhatsApp + Excel 嘅 studio。",
     },
   },
   {
     "@type": "Question",
-    name: "VisionXP 是什麼？",
+    name: "SOP 自動化顧問會唔會一開始就推 AI？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "VisionXP 是 InnovateXP 的技術原型／AI 視覺追蹤示範（3–12 歲訓練流程）。公開站是純前端——無須登入、不存病人資料。商業路徑是 demo → Discovery → Implementation Sprint。",
+      text: "唔會。定位係「先執順流程，再落地 AI」。如果 SOP 未寫清、責任未定，自動化只會放大混亂。先聽診同執 SOP，確認有穩定節點，先談 chatbot、提醒或 AI 草稿。",
     },
   },
   {
     "@type": "Question",
-    name: "VisionXP 是醫療診斷工具或醫療器材嗎？",
+    name: "AI 導入前準備要做啲咩？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "不是。VisionXP 只是技術原型／AI 視覺追蹤示範，並非醫療診斷工具，也不是註冊醫療器材，不能取代專業視光或眼科檢查。",
+      text: "AI Readiness 評估會睇資料位置、權限、重複工序同可量度結果。通常跟住業務聽診：先有一條清晰 workflow，再決定 AI Discovery Sprint 範圍，避免未準備好就買模型或工具。",
     },
   },
+  {
+    "@type": "Question",
+    name: "香港 AI 工作坊有冇交付成果？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "有。工作坊／陪跑唔係淨係演示工具，會對應你公司一條真實流程，交付可用草稿、SOP 節點或可跟進清單。如果只想聽概念、唔想落地，會事先講清範圍，唔會當便宜 SaaS 推銷場。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "AI Discovery Sprint 同 30 日落地 Sprint 有咩分別？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "AI Discovery Sprint 用短週期驗證一條流程值唔值得加 AI／CRM。30 日落地 Sprint 則交付流程圖、責任、SOP、追蹤同一個 quick win。兩者都由業務聽診起步；之後可進入顧問陪跑。",
+    },
+  },
+  {
+    "@type": "Question",
+    name: "點樣預約 Larry Lo／InnovateXP？",
+    acceptedAnswer: {
+      "@type": "Answer",
+      text: "喺 innovatexp.co 預約業務聽診（約 30 分鐘），或 WhatsApp／電郵聯絡。會確認你嘅行業、最亂嘅一條流程，同預期結果。主線係聽診 → Discovery／30 日落地 → 陪跑，而唔係即買工具。",
+    },
+  }
 ];
 
 const HOME_FAQ_JA: FaqMainEntity = [
@@ -848,6 +920,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "SOP 流程優化",
       "AI 商業升級",
       "AI 商業顧問",
+      "業務聽診",
+      "Business Workflow Diagnosis",
+      "先執順流程再落地 AI",
       "AI 陪跑課程",
       "中小企 AI 升級",
       "AI 工作流",

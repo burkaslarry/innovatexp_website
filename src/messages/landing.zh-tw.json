@@ -1,6 +1,6 @@
 {
   "brandTitle": "InnovateXP Limited",
-  "brandSubtitle": "AI 商業顧問｜業務聽診師",
+  "brandSubtitle": "AI 商業顧問 Larry Lo／InnovateXP",
   "nav": {
     "home": "首頁",
     "diagnosis": "流程診斷",
@@ -14,7 +14,7 @@
     "visionXp": "VisionXP"
   },
   "hero": {
-    "eyebrow": "AI 商業顧問｜業務聽診師",
+    "eyebrow": "AI 商業顧問 Larry Lo／InnovateXP",
     "title": "協助香港小團隊止住漏單、慢報價與交接混亂。",
     "description": "Larry 會先與你鎖定一條最影響收入或營運的流程，30 日內釐清責任、SOP 與追蹤方式；確認有效後才接 CRM、AI 或自動化。",
     "fitAudience": "適合香港 3–30 人培訓、課程及專業服務團隊",
@@ -33,7 +33,7 @@
     ],
     "diagnosticOutput": "一條看得見、跟得上、有人負責的 workflow",
     "diagnosticCaption": "先看清漏點，再決定 AI、CRM 或 automation 是否真正有幫助。",
-    "imageAlt": "Larry Lo｜InnovateXP 業務聽診師於香港分享業務流程診斷方法"
+    "imageAlt": "Larry Lo｜InnovateXP AI 商業顧問於香港分享業務流程診斷方法"
   },
   "problem": {
     "eyebrow": "流程卡點",
@@ -294,7 +294,7 @@
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
-    "role": "AI 商業顧問｜業務聽診師",
+    "role": "AI 商業顧問 Larry Lo／InnovateXP",
     "tagline": "先執順流程，再落地 AI",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."

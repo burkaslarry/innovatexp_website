@@ -1,6 +1,6 @@
 {
   "brandTitle": "InnovateXP Limited",
-  "brandSubtitle": "AI 商業顧問｜業務聽診師",
+  "brandSubtitle": "AI 商業顧問 Larry Lo／InnovateXP",
   "nav": {
     "home": "首頁",
     "diagnosis": "業務聽診",
@@ -14,7 +14,7 @@
     "visionXp": "VisionXP"
   },
   "hero": {
-    "eyebrow": "AI 商業顧問｜業務聽診師",
+    "eyebrow": "AI 商業顧問 Larry Lo／InnovateXP",
     "title": "WhatsApp + Excel 亂晒？先做業務聽診，再落地 AI。",
     "description": "專幫香港 3–30 人培訓機構、補習社、Fitness／Yoga studio 同專業服務團隊：止住漏單、慢報價同交接混亂。方法叫業務聽診——先執清一條流程嘅責任、SOP 同追蹤，確認有用先談 CRM 或 AI。",
     "fitAudience": "適合仍然主要用 WhatsApp 同 Excel 頂住營運嘅香港中小企",
@@ -33,7 +33,7 @@
     ],
     "diagnosticOutput": "一條睇得清、跟得到、有人負責嘅 workflow",
     "diagnosticCaption": "先睇清漏位，再決定 AI、CRM 或 automation 幫唔幫到手。",
-    "imageAlt": "Larry Lo｜InnovateXP 業務聽診師於香港分享業務流程診斷方法"
+    "imageAlt": "Larry Lo｜InnovateXP AI 商業顧問於香港分享業務聽診與流程落地方法"
   },
   "problem": {
     "eyebrow": "流程卡位",
@@ -223,15 +223,15 @@
   },
   "about": {
     "eyebrow": "我是誰",
-    "title": "Larry Lo｜InnovateXP Limited｜香港業務聽診師",
-    "intro": "我叫 Larry Lo，係 InnovateXP Limited 創辦人，駐香港。我係 AI 商業顧問｜業務聽診師，有 14 年 IT 交付經驗。",
+    "title": "Larry Lo｜InnovateXP Limited｜香港",
+    "intro": "我係 AI 商業顧問 Larry Lo／InnovateXP。",
     "body": [
-      "我服務香港 3–30 人嘅中小企：培訓機構、補習社、Fitness／Yoga studio，同埋仍然主要用 WhatsApp 同 Excel 嘅專業服務團隊。",
+      "InnovateXP Limited 由我喺香港創立。我有 14 年 IT 交付經驗，服務 3–30 人嘅中小企：培訓機構、補習社、Fitness／Yoga studio，同埋仍然主要用 WhatsApp 同 Excel 嘅專業服務團隊。",
       "我嘅方法叫業務聽診（Business Workflow Diagnosis）：先聽清一條收入或營運流程嘅漏位、責任同 SOP，再決定係咪要 AI Discovery Sprint、30 日落地 Sprint，或者顧問陪跑。",
       "定位係「先執順流程，再落地 AI」。如果你暫時唔需要買系統，我會直接講。結果係團隊真係用到、跟得到嘅流程，而唔係一堆未採用嘅工具。"
     ],
-    "identity": "Larry Lo｜AI 商業顧問｜業務聽診師｜InnovateXP Limited｜Hong Kong",
-    "portraitAlt": "Larry Lo｜InnovateXP 業務聽診師於香港分享業務流程診斷與 AI 落地方法"
+    "identity": "我係 AI 商業顧問 Larry Lo／InnovateXP。",
+    "portraitAlt": "Larry Lo｜InnovateXP AI 商業顧問於香港分享業務聽診與 AI 落地方法"
   },
   "faq": {
     "title": "常見問題",
@@ -241,8 +241,8 @@
         "answer": "業務聽診（Business Workflow Diagnosis）係 InnovateXP 嘅簽名方法：用大約 30 分鐘鎖定一條最影響收入或營運嘅流程，講清漏位、責任同下一步。同交報告就走嘅顧問唔同，聽診之後會進入 AI Discovery Sprint 或 30 日落地，確保團隊真係用到。"
       },
       {
-        "question": "業務聽診師同 AI 商業顧問係同一個人嗎？",
-        "answer": "係。Larry Lo 係 InnovateXP Limited 創辦人，對外職稱為 AI 商業顧問｜業務聽診師。先用業務聽診釐清流程，再按需要做 AI 導入前準備、Discovery Sprint 或陪跑，而唔會一開始就推 SaaS。"
+        "question": "業務聽診同 AI 商業顧問服務係咪同一套？",
+        "answer": "係同一條主線。我係 AI 商業顧問 Larry Lo／InnovateXP；業務聽診係簽名方法，用嚟先釐清流程，再按需要做 AI 導入前準備、Discovery Sprint 或陪跑，而唔會一開始就推 SaaS 或當 business coach。"
       },
       {
         "question": "中小企業務流程診斷喺香港點做？",
@@ -294,7 +294,7 @@
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
-    "role": "AI 商業顧問｜業務聽診師",
+    "role": "AI 商業顧問 Larry Lo／InnovateXP",
     "tagline": "先執順流程，再落地 AI",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."

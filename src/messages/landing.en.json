@@ -1,6 +1,6 @@
 {
   "brandTitle": "InnovateXP Limited",
-  "brandSubtitle": "AI Business Consultant",
+  "brandSubtitle": "AI Business Consultant Larry Lo / InnovateXP",
   "nav": {
     "home": "Home",
     "diagnosis": "Workflow diagnosis",
@@ -14,7 +14,7 @@
     "visionXp": "VisionXP"
   },
   "hero": {
-    "eyebrow": "AI Business Consultant | Business Workflow Diagnosis",
+    "eyebrow": "AI Business Consultant Larry Lo / InnovateXP",
     "title": "WhatsApp + Excel chaos? Diagnose the workflow before you buy AI.",
     "description": "I help Hong Kong SMEs of 3–30 people — training centres, tutorial schools, fitness/yoga studios, and professional services — stop leaked leads, slow quotes, and messy handoffs. The method is Business Workflow Diagnosis: fix ownership and SOP first, then decide on CRM or AI.",
     "fitAudience": "For Hong Kong teams still running operations on WhatsApp and spreadsheets",
@@ -224,13 +224,13 @@
   "about": {
     "eyebrow": "Who I am",
     "title": "Larry Lo | InnovateXP Limited | Hong Kong",
-    "intro": "I am Larry Lo, founder of InnovateXP Limited in Hong Kong. I work as an AI Business Consultant focused on Business Workflow Diagnosis, with 14 years of IT delivery experience.",
+    "intro": "I am AI Business Consultant Larry Lo / InnovateXP.",
     "body": [
       "I serve Hong Kong SMEs with 3–30 staff: training centres, tutorial schools, fitness/yoga studios, and professional-service teams still running on WhatsApp and Excel.",
       "My method is Business Workflow Diagnosis: identify one revenue or operations leak, clarify ownership and SOP, then decide whether an AI Discovery Sprint, 30-day implementation Sprint, or advisory retainer is needed.",
       "Positioning: process first, AI second. If you do not need to buy a system yet, I will say so. The outcome is a workflow the team actually uses — not unused tools."
     ],
-    "identity": "Larry Lo | AI Business Consultant | Business Workflow Diagnosis | InnovateXP Limited | Hong Kong",
+    "identity": "I am AI Business Consultant Larry Lo / InnovateXP.",
     "portraitAlt": "Larry Lo, InnovateXP AI Business Consultant, presenting Business Workflow Diagnosis in Hong Kong"
   },
   "faq": {
@@ -241,8 +241,8 @@
         "answer": "Business Workflow Diagnosis is InnovateXP’s signature 30-minute method to lock onto one revenue or operations workflow, clarify leaks and ownership, and decide the next step. Unlike report-and-leave consulting, diagnosis feeds into an AI Discovery Sprint or 30-day implementation so the team actually adopts the change."
       },
       {
-        "question": "Is “AI Business Consultant” the same person as the diagnostician?",
-        "answer": "Yes. Larry Lo is founder of InnovateXP Limited. The public title is AI Business Consultant; the signature method is Business Workflow Diagnosis. Process comes first; AI tools only when justified — not a cheap SaaS pitch."
+        "question": "Is Business Workflow Diagnosis part of your AI consulting?",
+        "answer": "Yes — one path. I am AI Business Consultant Larry Lo / InnovateXP. Business Workflow Diagnosis is the signature method to clarify process first, then AI readiness, Discovery Sprint, or advisory — not a business-coach pitch or a SaaS hard sell."
       },
       {
         "question": "How does SME workflow diagnosis work in Hong Kong?",
@@ -294,7 +294,7 @@
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
-    "role": "AI Business Consultant",
+    "role": "AI Business Consultant Larry Lo / InnovateXP",
     "tagline": "Process first, AI second",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
