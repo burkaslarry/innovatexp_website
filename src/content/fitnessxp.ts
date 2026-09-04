@@ -29,10 +29,10 @@ export type FitnessXpPageCopy = {
 
 const zh: FitnessXpPageCopy = {
   eyebrow: "FitnessXP · 培訓／課堂管理",
-  h1: "FitnessXP：業務聽診師 × 培訓／課堂管理 solution",
+  h1: "FitnessXP：業務聽診 × 培訓／課堂管理 solution",
   lead:
-    "Larry Lo／InnovateXP 定位為業務聽診師——專幫培訓機構、補習社、Fitness Center 聽清楚業務流程問題，再配合適當工具，設計合適嘅培訓／課堂管理 solution。唔係一開始硬塞系統，而係先搞清楚排堂、教練、出席同續堂邊度漏。",
-  roleTitle: "我係業務聽診師",
+    "我係 AI 商業顧問 Larry Lo／InnovateXP。用業務聽診幫培訓機構、補習社、Fitness Center 聽清楚業務流程問題，再配合適當工具，設計合適嘅培訓／課堂管理 solution。唔係一開始硬塞系統，而係先搞清楚排堂、教練、出席同續堂邊度漏。",
+  roleTitle: "我係 AI 商業顧問 Larry Lo／InnovateXP",
   roleBody:
     "專幫培訓機構、補習社、Fitness Center 聽清楚業務流程問題，再配合適當工具（例如 FitnessXP），設計合適嘅培訓／課堂管理 solution。目標係減少 WhatsApp、Excel、人手跟進，令課堂營運、銷售同客戶體驗一齊改善。",
   exampleTitle: "例如 Fitness Center",
@@ -93,7 +93,7 @@ const zh: FitnessXpPageCopy = {
     {
       question: "FitnessXP 係咪一定要一次過換晒系統？",
       answer:
-        "唔係。業務聽診師方法係用簡單工具開始，先執一條最痛流程（例如出席同續堂），30–60 日內建立基本管理，唔需要一次過大改。",
+        "唔係。業務聽診方法係用簡單工具開始，先執一條最痛流程（例如出席同續堂），30–60 日內建立基本管理，唔需要一次過大改。",
     },
     {
       question: "邊類中心最啱？",
@@ -120,10 +120,10 @@ const zh: FitnessXpPageCopy = {
 
 const en: FitnessXpPageCopy = {
   eyebrow: "FitnessXP · Training & class operations",
-  h1: "FitnessXP: business diagnostician for training & studio ops",
+  h1: "FitnessXP: AI consulting × training & studio ops",
   lead:
-    "Larry Lo / InnovateXP works as a business diagnostician—listening first to how training centres, tutoring schools, and fitness studios run classes, then matching the right tools to design a fit-for-purpose training / class-management solution. No forced system swap on day one.",
-  roleTitle: "Business diagnostician, not tool-first sales",
+    "I am AI Business Consultant Larry Lo / InnovateXP. I use Business Workflow Diagnosis to listen first to how training centres, tutoring schools, and fitness studios run classes, then match the right tools for a fit-for-purpose training / class-management solution. No forced system swap on day one.",
+  roleTitle: "AI Business Consultant Larry Lo / InnovateXP",
   roleBody:
     "We help training institutions, tutoring centres, and fitness studios hear the real workflow problems—then design a suitable class-management solution (often with FitnessXP) so teams rely less on WhatsApp, Excel, and manual chase-ups.",
   exampleTitle: "For a Fitness Center, that usually means",
@@ -184,7 +184,7 @@ const en: FitnessXpPageCopy = {
     {
       question: "Do we have to replace our whole system at once?",
       answer:
-        "No. The diagnostician approach starts with a simple tool and one painful workflow (often attendance and renewals), aiming for a basic management flow in 30–60 days.",
+        "No. The Business Workflow Diagnosis approach starts with a simple tool and one painful workflow (often attendance and renewals), aiming for a basic management flow in 30–60 days.",
     },
     {
       question: "Who is FitnessXP for?",

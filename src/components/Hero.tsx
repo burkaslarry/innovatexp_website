@@ -90,13 +90,15 @@ export function Hero({
                 {primaryLabel}
               </Button>
             )}
-            <a
-              href={secondaryHref}
-              onClick={onSecondaryClick}
-              className="inline-flex min-h-[48px] items-center justify-center rounded-[var(--btn-radius)] px-1 py-3 text-base font-semibold text-[color:var(--secondary-color)] underline decoration-[color:var(--border-medium)] decoration-2 underline-offset-[10px] transition hover:text-[color:var(--brand-primary)]"
-            >
-              {secondaryLabel}
-            </a>
+            {secondaryLabel?.trim() ? (
+              <a
+                href={secondaryHref}
+                onClick={onSecondaryClick}
+                className="inline-flex min-h-[48px] items-center justify-center rounded-[var(--btn-radius)] px-1 py-3 text-base font-semibold text-[color:var(--secondary-color)] underline decoration-[color:var(--border-medium)] decoration-2 underline-offset-[10px] transition hover:text-[color:var(--brand-primary)]"
+              >
+                {secondaryLabel}
+              </a>
+            ) : null}
           </div>
           {trustBadges.length > 0 ? (
             <ul className="mx-auto mt-6 grid max-w-[42rem] gap-3 text-sm font-medium text-[color:var(--text-primary)] sm:grid-cols-3 lg:mx-0">

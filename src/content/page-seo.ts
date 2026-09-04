@@ -20,27 +20,27 @@ function pick(locale: AppLocale, pair: LocalePair): PageSeo {
 
 const HOME: LocalePair = {
   zh: {
-    title: "Larry Lo｜香港AI顧問｜中小企流程落地｜InnovateXP",
+    title: "業務聽診｜AI商業顧問Larry Lo｜InnovateXP",
     description:
-      "香港 AI 顧問 Larry Lo／InnovateXP：先執順 SOP 再落地 AI。Discovery Sprint 由 HK$6,800 起。私有 AI、SmartSales CRM、EventXP。預約 30 分鐘診斷。",
+      "我係 AI 商業顧問 Larry Lo／InnovateXP。先執順流程，再落地 AI。幫香港 3–30 人中小企止住 WhatsApp／Excel 漏單。預約 30 分鐘業務聽診。",
   },
   en: {
-    title: "Larry Lo | Hong Kong AI Consultant | InnovateXP",
+    title: "Business Workflow Diagnosis | Larry Lo | InnovateXP",
     description:
-      "Larry Lo / InnovateXP: Hong Kong AI consultant for SMEs. Workflow-first Discovery Sprint from HK$6,800. Private AI, SmartSales CRM, EventXP. Book 30 minutes.",
+      "I am AI Business Consultant Larry Lo / InnovateXP. Process first, AI second. Diagnose WhatsApp/Excel leaks for SMEs of 3–30. Book a 30-min diagnosis.",
   },
 };
 
 const BOOKME: LocalePair = {
   zh: {
-    title: "預約Larry Lo｜免費30分鐘AI診斷｜InnovateXP",
+    title: "預約業務聽診｜Larry Lo｜InnovateXP",
     description:
-      "預約香港 AI 顧問 Larry Lo 免費 30 分鐘流程診斷：找出漏單、慢報價或交接卡位，再決定 CRM、私有 AI 或陪跑。立即選時段。",
+      "預約 AI 商業顧問 Larry Lo／InnovateXP：30 分鐘業務聽診，鎖定漏單、慢報價或交接卡位，再決定 Discovery Sprint、CRM 或陪跑。立即選時段。",
   },
   en: {
-    title: "Book Larry Lo | Free 30-Min AI Diagnosis",
+    title: "Book Business Workflow Diagnosis | Larry Lo",
     description:
-      "Book a free 30-minute workflow diagnosis with Hong Kong AI consultant Larry Lo. Find enquiry leaks and follow-up gaps before buying AI or CRM.",
+      "Book a 30-minute Business Workflow Diagnosis with AI Business Consultant Larry Lo / InnovateXP. Find enquiry leaks before buying AI or CRM.",
   },
 };
 
@@ -89,31 +89,31 @@ const EVENTXP: LocalePair = {
 
 const FITNESSXP: LocalePair = {
   zh: {
-    title: "FitnessXP｜業務聽診師×課堂管理｜InnovateXP",
+    title: "FitnessXP｜課堂管理｜AI商業顧問｜InnovateXP",
     description:
-      "Larry Lo 業務聽診師：幫培訓機構、補習社、Fitness／Yoga／Pilates 聽清流程，再設計課堂管理。時間表、教練、出席、續堂。由 HK$499／月起。",
+      "AI 商業顧問 Larry Lo／InnovateXP：幫培訓機構、補習社、Fitness／Yoga／Pilates 先做業務聽診，再設計課堂管理。時間表、教練、出席、續堂。由 HK$499／月起。",
   },
   en: {
     title: "FitnessXP | Class & Studio Ops | InnovateXP",
     description:
-      "Larry Lo helps HK training, tutoring, and fitness studios diagnose class workflows, then land FitnessXP: timetable, coaches, attendance, renewals. From HK$499/mo.",
+      "AI Business Consultant Larry Lo / InnovateXP helps HK training, tutoring, and fitness studios diagnose class workflows, then land FitnessXP: timetable, coaches, attendance, renewals. From HK$499/mo.",
   },
 };
 
 const AI_CONSULTING: LocalePair = {
   zh: {
-    title: "香港AI顧問｜Discovery Sprint HK$6,800｜InnovateXP",
+    title: "AI商業顧問｜業務聽診｜Discovery Sprint",
     description:
-      "香港 AI 顧問 Larry Lo：30 日 Discovery Sprint 由 HK$6,800 起。先驗證 workflow，再部署 CRM／私有雲／On-Premise。預約診斷。",
-    ogTitle: "香港 AI 商業顧問｜先流程後 AI",
-    ogDescription: "Discovery Sprint、陪跑與私有 AI 選項。適合要資料安全同實務落地嘅中小企。",
+      "我係 AI 商業顧問 Larry Lo／InnovateXP：先執順流程再落地 AI。業務聽診、AI Discovery Sprint 與 30 日落地。預約診斷。",
+    ogTitle: "AI 商業顧問｜先執順流程再落地 AI",
+    ogDescription: "業務聽診、Discovery Sprint、陪跑。適合要實務落地嘅香港中小企。",
   },
   en: {
-    title: "Hong Kong AI Consultant | Sprint from HK$6,800",
+    title: "AI Business Consultant | Workflow Diagnosis HK",
     description:
-      "Hong Kong AI consultant Larry Lo: Discovery Sprint from HK$6,800. Validate workflow first, then CRM or private AI. Independent consulting—book a diagnosis.",
-    ogTitle: "AI Business Consultant HK — workflow first",
-    ogDescription: "Discovery Sprint, advisory programmes, and private AI options for SMEs.",
+      "I am AI Business Consultant Larry Lo / InnovateXP: Business Workflow Diagnosis first, then AI Discovery Sprint. Book a diagnosis — not a tool pitch.",
+    ogTitle: "AI Business Consultant HK — process first",
+    ogDescription: "Business Workflow Diagnosis, Discovery Sprint, and advisory for SMEs.",
   },
 };
 

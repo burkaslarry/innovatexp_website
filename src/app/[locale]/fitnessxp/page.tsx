@@ -26,7 +26,6 @@ export async function generateMetadata({
     description: seo.description,
     keywords: [
       "FitnessXP",
-      "業務聽診師",
       "培訓機構",
       "補習社",
       "Fitness Center",

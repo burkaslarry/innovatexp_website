@@ -78,7 +78,7 @@ const en: UiStrings = {
     home: "Home",
     contact: "Contact us",
     book: "Book a call",
-    aiConsulting: "AI Consulting",
+    aiConsulting: "AI Business Consultant",
     blog: "Blog",
     reportPrefix: "If you followed a broken link, you can",
     reportLink: "report it to us",
