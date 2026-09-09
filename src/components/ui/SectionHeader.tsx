@@ -25,7 +25,7 @@ export function SectionHeader({
   return (
     <div className={`mb-10 ${alignCls} ${className}`}>
       {eyebrow}
-      <Heading className="font-sans text-[clamp(1.75rem,4vw,2.75rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
+      <Heading className="text-[clamp(1.75rem,4vw,2.75rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
         {title}
       </Heading>
       {subtitle ? (

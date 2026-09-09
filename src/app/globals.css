@@ -209,7 +209,7 @@
   --brand-ink: #f5f7fb;
   --brand-muted: #b4c4d6;
 
-  --font-faq-title: var(--font-main);
+  --font-faq-title: var(--font-heading);
 
   color-scheme: dark;
 }
@@ -237,10 +237,37 @@ html {
 
 body {
   background: var(--bg-primary) !important;
-  /* The Noto Sans HK variable is injected by next/font on this element,
-     so --font-main must be defined here to resolve it. */
+  /* Default fallback; locale-specific stacks set via [data-locale] below. */
   --font-main: var(--font-noto-sans-hk), system-ui, "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-heading: var(--font-main);
   font-family: var(--font-main);
+}
+
+/* ====================================
+   Locale-specific font pairing
+   EN  : Bodoni Moda (headings) + Inter (body)
+   ZH  : Noto Serif TC (headings) + Noto Sans TC (body)
+   JA  : Shippori Mincho (headings) + Noto Sans TC (body)
+   ==================================== */
+[data-locale="en"] {
+  --font-heading: var(--font-bodoni-moda), Georgia, "Times New Roman", serif;
+  --font-main: var(--font-inter), system-ui, -apple-system, sans-serif;
+}
+
+[data-locale="zh-hk"],
+[data-locale="zh-tw"] {
+  --font-heading: var(--font-noto-serif-tc), var(--font-noto-sans-hk), "PingFang TC", serif;
+  --font-main: var(--font-noto-sans-tc), var(--font-noto-sans-hk), "PingFang TC", "Microsoft JhengHei", sans-serif;
+}
+
+[data-locale="ja"] {
+  --font-heading: var(--font-shippori-mincho), var(--font-noto-sans-hk), "Hiragino Mincho ProN", serif;
+  --font-main: var(--font-noto-sans-tc), var(--font-noto-sans-hk), "Hiragino Sans", sans-serif;
+}
+
+[data-locale="de"] {
+  --font-heading: var(--font-bodoni-moda), Georgia, "Times New Roman", serif;
+  --font-main: var(--font-inter), system-ui, -apple-system, sans-serif;
 }
 
 button,
@@ -260,7 +287,7 @@ textarea {
 h1, h2, h3 {
   color: var(--text-primary);
   line-height: 1.2;
-  font-family: var(--font-main);
+  font-family: var(--font-heading);
   font-weight: 700;
 }
 

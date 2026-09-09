@@ -147,7 +147,7 @@ export default async function LocaleLayout({
         <LanguageProvider locale={locale as AppLocale}>
           <InquiryCartProvider>
             <StructuredData />
-            <div>{children}</div>
+            <div data-locale={locale}>{children}</div>
             <InquiryCheckoutDrawer />
             <PrimaryFabCluster />
             <DesktopScrollCta />
