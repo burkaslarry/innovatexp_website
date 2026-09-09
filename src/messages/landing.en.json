@@ -15,10 +15,10 @@
   },
   "hero": {
     "eyebrow": "AI Business Consultant Larry Lo / InnovateXP",
-    "title": "WhatsApp + Excel chaos? Diagnose the workflow before you buy AI.",
-    "description": "I help Hong Kong SMEs of 3–30 people — training centres, tutorial schools, fitness/yoga studios, and professional services — stop leaked leads, slow quotes, and messy handoffs. The method is Business Workflow Diagnosis: fix ownership and SOP first, then decide on CRM or AI.",
+    "title": "How many hours a month do you spend chasing leads, reconciling shifts, and following up manually?",
+    "description": "I help Hong Kong SMEs of 3–30 people — training centres, tutorial schools, fitness studios, and professional services — find where money is leaking, then fix it. I don't sell you a system. I help you leave work at 6pm. Last month I helped Agilizing cut training material production from 10 days to 3 hours, saving HK$25,000/month.",
     "fitAudience": "For Hong Kong teams still running operations on WhatsApp and spreadsheets",
-    "primaryCta": "Book a Business Workflow Diagnosis (30 min)",
+    "primaryCta": "Book a Business Workflow Diagnosis (30 min, free)",
     "secondaryCta": "",
     "trustPoints": [
       "ICP: Hong Kong teams of 3–30",
@@ -36,73 +36,73 @@
     "imageAlt": "Larry Lo, InnovateXP AI Business Consultant, presenting Business Workflow Diagnosis in Hong Kong"
   },
   "problem": {
-    "eyebrow": "Pain points",
-    "title": "The issue is rarely a lack of leads. It is the workflow leaking them.",
+    "eyebrow": "Sound familiar?",
+    "title": "It's not that you have no customers. It's that you're still chasing people and numbers after work.",
     "items": [
       {
         "title": "Scattered enquiries",
-        "body": "WhatsApp, spreadsheets, and forms all run separately."
+        "body": "WhatsApp, spreadsheets, and forms all run separately. A lead asks, no one follows up, two days later they're gone."
       },
       {
         "title": "Slow quotations",
-        "body": "People need to search, ask, and wait."
+        "body": "You have to search, ask, and wait. The client chases you, and you realise it slipped through."
       },
       {
         "title": "Messy handoffs",
-        "body": "No one knows clearly who owns the next step."
+        "body": "No one knows who owns the next step. Same client, three people, three versions."
       },
       {
         "title": "Owner firefighting",
-        "body": "One person on leave and the workflow stalls."
+        "body": "One person takes leave and the whole workflow stalls. Is that a process, or a hostage?"
       }
     ],
     "quote": "If one person takes leave and the process stops, that is not a process. That is a hostage situation."
   },
   "approach": {
-    "eyebrow": "Approach | Business Workflow Diagnosis",
-    "title": "No system pitch first. Diagnose which workflow is worth fixing.",
-    "intro": "Signature method: Business Workflow Diagnosis — one workflow at a time, not a company-wide digital transformation. Stop the leak first; tools only when justified.",
+    "eyebrow": "How I work",
+    "title": "I won't pitch you a system on day one. I'll listen first, and find where the money is leaking.",
+    "intro": "My method is Business Workflow Diagnosis: 30 minutes to find your most painful workflow, clarify where it leaks, who owns it, and what to do next. Only then do we talk about tools — if you even need them.",
     "steps": [
       {
         "label": "Step 1",
         "title": "Business Workflow Diagnosis (30 min)",
-        "body": "Lock onto the revenue or operations bottleneck, ownership gaps, and next step."
+        "body": "Bring your messiest workflow. I'll map where leads leak, where things slow down, and who should own what."
       },
       {
         "label": "Step 2",
-        "title": "AI Discovery / 30-day Sprint",
-        "body": "Deliver process map, owners, SOP, tracking points, and one executable quick win."
+        "title": "30-day Sprint",
+        "body": "You get a process map, ownership, SOP, tracking points, and one quick win your team actually uses."
       },
       {
         "label": "Step 3",
-        "title": "Advisory & KPI review",
-        "body": "Help the team use it. Review missed follow-ups, quote time, and handoff completion on Day 30 / 60 / 90. Add CRM, AI, or automation only when needed."
+        "title": "Advisory & review",
+        "body": "I help your team adopt it. Day 30 / 60 / 90 reviews. We add CRM, AI, or automation only when needed — if not, I'll tell you straight."
       }
     ]
   },
   "services": {
-    "eyebrow": "Service areas",
-    "title": "Use the least tool needed to solve the real business problem.",
+    "eyebrow": "What I fix",
+    "title": "The least tool needed to solve your real problem. Nothing more.",
     "items": [
       {
-        "title": "Workflow Health Check",
-        "body": "Find leakage in follow-up, slow quotations, and unclear handoffs."
+        "title": "Workflow Diagnosis",
+        "body": "Find where you leak leads, slow quotes, and lose handoffs. 30 minutes and you know where the money goes."
       },
       {
-        "title": "WhatsApp-first CRM",
-        "body": "Turn scattered enquiries into a traceable follow-up workflow."
+        "title": "WhatsApp CRM",
+        "body": "Turn scattered chats into a follow-up workflow with clear owners. No more relying on memory."
       },
       {
-        "title": "AI Chatbot & Automation",
-        "body": "Handle repetitive enquiries, data sorting, and admin work."
+        "title": "AI Automation",
+        "body": "Handle repetitive enquiries, data sorting, and admin. Let your people do work that actually matters."
       },
       {
-        "title": "Event & Lead Follow-up",
-        "body": "Turn event attendees into visible sales opportunities."
+        "title": "Event Follow-up",
+        "body": "An event isn't over when it ends. Turn attendees into follow-up opportunities, not dust on a spreadsheet."
       },
       {
-        "title": "Team AI Enablement",
-        "body": "Help the team use AI safely and practically inside existing SOPs."
+        "title": "Team AI Training",
+        "body": "Help your team use AI safely in their daily work. Not a seminar they forget — something they actually use."
       }
     ]
   },
@@ -163,14 +163,22 @@
     ]
   },
   "cases": {
-    "eyebrow": "Measurable results",
-    "title": "After diagnosis, track improvement with numbers (unapproved figures marked).",
-    "intro": "Anonymous scenarios (Before → 30-day approach → After → metric). Figures marked [PLACEHOLDER] are not client-approved and are not ROI claims.",
+    "eyebrow": "Real cases",
+    "title": "After diagnosis, see the improvement in numbers.",
+    "intro": "Real cases: Before → approach → After → measurable result. Agilizing's numbers are real, not estimates. Others marked [PLACEHOLDER] are pending client confirmation.",
     "beforeLabel": "Before",
     "sprintLabel": "30-day approach",
     "afterLabel": "After",
-    "metricLabel": "Observable metric",
+    "metricLabel": "Measurable result",
     "items": [
+      {
+        "industry": "Corporate training | Agilizing Limited",
+        "title": "Training material production: 10 days → 3 hours, saving HK$25,000/month",
+        "before": "Each corporate training package (slides + digital-human explainer videos) was made by hand by one assistant. 10 days per set. High cost, slow output, no room to scale.",
+        "sprint": "A one-month AI Consultant Sprint built an automated production pipeline. Slide and digital-human material creation dropped from 10 days to 3 hours.",
+        "after": "Saved roughly HK$25,000/month in full-time assistant cost. Enabled fast expansion into new clients, including social welfare organisations and Cathay Pacific.",
+        "metric": "Production time: 10 days → 3 hours. Saved ~HK$25,000/month assistant cost. New clients: social welfare sector, Cathay Pacific."
+      },
       {
         "industry": "Training / courses",
         "title": "Enrolment enquiries scattered across WhatsApp",
@@ -198,20 +206,20 @@
     ]
   },
   "whyUs": {
-    "eyebrow": "Why Larry",
-    "title": "Most people sell tools. Some sell advice. I fix the workflow first.",
-    "intro": "Contrast for client benefit — not internal product strategy language.",
+    "eyebrow": "Why me",
+    "title": "Most people sell tools. Some sell advice. I fix the problem.",
+    "intro": "I'm not the consultant who hands you a report and leaves. I'm not the SaaS that sells you a licence and disappears. I'm the person who diagnoses, builds, and gets your team using it.",
     "rows": [
       {
         "opponent": "Management consultants (report and leave)",
-        "difference": "I build, connect, and help the team adopt"
+        "difference": "I build, connect, and help your team adopt it"
       },
       {
         "opponent": "SaaS vendors (sell licences)",
         "difference": "I can tell you not to buy"
       },
       {
-        "opponent": "Automation / AI freelancers (take jobs)",
+        "opponent": "Freelancers (take the job and go)",
         "difference": "I ask the business question before naming tools"
       },
       {
@@ -219,18 +227,18 @@
         "difference": "HK$6,800 to try one workflow — low risk"
       }
     ],
-    "punchline": "If you do not need a system, I will tell you directly."
+    "punchline": "If you do not need a system, I will tell you straight."
   },
   "about": {
     "eyebrow": "Who I am",
     "title": "Larry Lo | InnovateXP Limited | Hong Kong",
-    "intro": "I am AI Business Consultant Larry Lo / InnovateXP.",
+    "intro": "I'm Larry, founder of InnovateXP. What I do is simple: I help you find where money leaks, then I help you fix it.",
     "body": [
-      "I serve Hong Kong SMEs with 3–30 staff: training centres, tutorial schools, fitness/yoga studios, and professional-service teams still running on WhatsApp and Excel.",
-      "My method is Business Workflow Diagnosis: identify one revenue or operations leak, clarify ownership and SOP, then decide whether an AI Discovery Sprint, 30-day implementation Sprint, or advisory retainer is needed.",
-      "Positioning: process first, AI second. If you do not need to buy a system yet, I will say so. The outcome is a workflow the team actually uses — not unused tools."
+      "After 14 years in IT delivery, the most common failure I've seen isn't bad systems. It's a system built, delivered perfectly, then never used. The same people keep using WhatsApp and Excel because no one ever clarified the workflow.",
+      "So I changed my approach: I diagnose one workflow first. If it works and the team uses it, then we talk about AI or systems. Last month I helped Agilizing cut training material production from 10 days to 3 hours, saving HK$25,000/month. That's what I do.",
+      "If you don't need a system yet, I'll tell you. I don't sell tools. I fix problems."
     ],
-    "identity": "I am AI Business Consultant Larry Lo / InnovateXP.",
+    "identity": "I'm your business diagnostician.",
     "portraitAlt": "Larry Lo, InnovateXP AI Business Consultant, presenting Business Workflow Diagnosis in Hong Kong"
   },
   "faq": {
@@ -287,10 +295,42 @@
     ]
   },
   "finalCta": {
-    "title": "Want to know which workflow to diagnose first?",
-    "body": "Book a 30-minute Business Workflow Diagnosis and find the process most likely to leak leads, slow quotes, or stall handoffs.",
-    "primary": "Book a Business Workflow Diagnosis (30 min)",
+    "title": "Want to know which workflow is leaking the most money?",
+    "body": "Book a 30-minute Business Workflow Diagnosis, free. I'll find the workflow most likely to leak leads, slow quotes, or stall handoffs, and tell you the next step. If it's not a fit, I'll say so — no hard tool pitch.",
+    "primary": "Book a Business Workflow Diagnosis (30 min, free)",
     "secondary": "WhatsApp Larry"
+  },
+  "partnership": {
+    "eyebrow": "Partners",
+    "title": "Partners I've actually worked with",
+    "intro": "Not just logos on a wall. These are partners I've delivered with and exchanged real referrals.",
+    "items": [
+      {
+        "name": "Zomate Fitness Limited",
+        "desc": "Fitness class management system partner",
+        "logo": ""
+      },
+      {
+        "name": "Agilizing Education Center",
+        "desc": "Corporate training material automation case",
+        "logo": "/agilizing-logo-transparent.png"
+      },
+      {
+        "name": "BNI Anchor",
+        "desc": "Referral network & leadership",
+        "logo": ""
+      },
+      {
+        "name": "LinkedInLocal Asia",
+        "desc": "APAC professional meetups",
+        "logo": ""
+      },
+      {
+        "name": "OL International Services Limited",
+        "desc": "Corporate & international business services partner",
+        "logo": ""
+      }
+    ]
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",

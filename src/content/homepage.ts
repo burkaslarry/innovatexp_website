@@ -210,6 +210,12 @@ export type HomepageContent = {
     primary: string;
     secondary: string;
   };
+  partnership: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    items: { name: string; desc: string; logo: string }[];
+  };
   footer: {
     title: string;
     role: string;

@@ -292,6 +292,18 @@
     "primary": "預約 30 分鐘流程診斷",
     "secondary": "WhatsApp 聯絡 Larry"
   },
+  "partnership": {
+    "eyebrow": "合作夥伴",
+    "title": "真正一起做過事的夥伴",
+    "intro": "不是掛 logo 而已。這些是一起交付過、互相轉介過客戶的夥伴。",
+    "items": [
+      { "name": "Zomate Fitness Limited", "desc": "Fitness 課堂管理系統合作夥伴", "logo": "" },
+      { "name": "善敏教育中心 Agilizing", "desc": "企業培訓教材自動化案例", "logo": "/agilizing-logo-transparent.png" },
+      { "name": "BNI Anchor", "desc": "引薦網絡與領導力", "logo": "" },
+      { "name": "LinkedInLocal Asia", "desc": "亞太專業社群聚會", "logo": "" },
+      { "name": "OL International Services Limited", "desc": "企業及國際業務服務夥伴", "logo": "" }
+    ]
+  },
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AI 商業顧問 Larry Lo／InnovateXP",

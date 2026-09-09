@@ -292,6 +292,18 @@
     "primary": "30-Minuten-Prozessdiagnose buchen",
     "secondary": "Larry per WhatsApp kontaktieren"
   },
+  "partnership": {
+    "eyebrow": "Partner",
+    "title": "Partner, mit denen ich wirklich gearbeitet habe",
+    "intro": "Nicht nur Logos an der Wand. Das sind Partner, mit denen ich gemeinsam geliefert und echte Empfehlungen ausgetauscht habe.",
+    "items": [
+      { "name": "Zomate Fitness Limited", "desc": "Partner für Fitness-Kursverwaltungssysteme", "logo": "" },
+      { "name": "Agilizing Education Center", "desc": "Fallbeispiel zur Automatisierung von Schulungsmaterial", "logo": "/agilizing-logo-transparent.png" },
+      { "name": "BNI Anchor", "desc": "Empfehlungsnetzwerk und Führung", "logo": "" },
+      { "name": "LinkedInLocal Asia", "desc": "APAC professionelle Treffen", "logo": "" },
+      { "name": "OL International Services Limited", "desc": "Partner für Unternehmens- und internationalen Geschäftsservice", "logo": "" }
+    ]
+  },
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AI Business Consultant",

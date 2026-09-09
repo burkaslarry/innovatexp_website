@@ -2,6 +2,7 @@ import Image from "next/image";
 import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare, UsersRound } from "lucide-react";
 import { ConsultancyMainlineSection } from "@/components/ConsultancyMainlineSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
+import { PartnershipSection } from "@/components/PartnershipSection";
 import { ProductPackagesSection } from "@/components/ProductPackagesSection";
 import { VisionXpSection } from "@/components/VisionXpSection";
 import { Button } from "@/components/ui/Button";
@@ -243,6 +244,8 @@ export function BusinessUpgradeHomepageFunnel({
       </SectionShell>
 
       <FaqAccordion id="faq" title={c.faq.title} faqs={c.faq.items} defaultOpenAll />
+
+      <PartnershipSection copy={c.partnership} />
 
       <SectionShell id="final-cta" className="mb-12">
         <div className="ixp-card p-6 md:p-10">

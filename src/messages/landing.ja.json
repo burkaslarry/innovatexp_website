@@ -292,6 +292,18 @@
     "primary": "30分の業務診断を予約",
     "secondary": "WhatsAppでLarryに連絡"
   },
+  "partnership": {
+    "eyebrow": "パートナー",
+    "title": "実際に一緒に仕事をしたパートナー",
+    "intro": "ロゴを掲げるだけではありません。一緒に納品し、紹介し合ったパートナーです。",
+    "items": [
+      { "name": "Zomate Fitness Limited", "desc": "フィットネスクラス管理システムパートナー", "logo": "" },
+      { "name": "Agilizing Education Center", "desc": "企業研修教材の自動化事例", "logo": "/agilizing-logo-transparent.png" },
+      { "name": "BNI Anchor", "desc": "紹介ネットワークとリーダーシップ", "logo": "" },
+      { "name": "LinkedInLocal Asia", "desc": "APACのプロフェッショナル交流会", "logo": "" },
+      { "name": "OL International Services Limited", "desc": "企業・国際ビジネスサービスパートナー", "logo": "" }
+    ]
+  },
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AIビジネスコンサルタント",

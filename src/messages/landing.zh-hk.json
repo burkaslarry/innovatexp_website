@@ -15,10 +15,10 @@
   },
   "hero": {
     "eyebrow": "AI 商業顧問 Larry Lo／InnovateXP",
-    "title": "WhatsApp + Excel 亂晒？先做業務聽診，再落地 AI。",
-    "description": "專幫香港 3–30 人培訓機構、補習社、Fitness／Yoga studio 同專業服務團隊：止住漏單、慢報價同交接混亂。方法叫業務聽診——先執清一條流程嘅責任、SOP 同追蹤，確認有用先談 CRM 或 AI。",
+    "title": "你每個月花幾多個鐘人手對數、夾更、追客？",
+    "description": "我幫香港 3–30 人嘅培訓機構、補習社、Fitness studio 同專業服務團隊，搵出邊條流程漏緊錢，再幫你搞掂佢。唔係叫你買系統，係幫你每日準時 6 點收工。上個月幫 Agilizing 將教材製作由 10 日壓到 3 個鐘，慳咗 HK$25,000／月。",
     "fitAudience": "適合仍然主要用 WhatsApp 同 Excel 頂住營運嘅香港中小企",
-    "primaryCta": "預約業務聽診（30 分鐘）",
+    "primaryCta": "預約業務聽診（30 分鐘，免費）",
     "secondaryCta": "",
     "trustPoints": [
       "對象：香港 3–30 人小團隊",
@@ -36,73 +36,73 @@
     "imageAlt": "Larry Lo｜InnovateXP AI 商業顧問於香港分享業務聽診與流程落地方法"
   },
   "problem": {
-    "eyebrow": "流程卡位",
-    "title": "唔係你公司冇客，而係流程令你漏咗客。",
+    "eyebrow": "你係咪都有呢個問題",
+    "title": "唔係你公司冇客，而係你每日放工都仲要追人追數。",
     "items": [
       {
-        "title": "查詢散落",
-        "body": "WhatsApp、Excel、表單各自為政。"
+        "title": "查詢散晒",
+        "body": "WhatsApp、Excel、表單各做各。客問完冇人跟，過兩日佢就走咗去第二間。"
       },
       {
         "title": "報價慢",
-        "body": "資料要搵、要問、要等。"
+        "body": "資料要搵、要問、要等。客人催完先發現原來漏咗。"
       },
       {
         "title": "交接亂",
-        "body": "無人清楚下一步由邊個跟。"
+        "body": "無人清楚下一步由邊個跟。同一個客，三個人三個版本。"
       },
       {
         "title": "老闆救火",
-        "body": "一個人放假，條流程就停。"
+        "body": "一個人放假，成條流程就停。你話呢個叫流程定係叫人質？"
       }
     ],
     "quote": "一個人放假就停嘅流程，唔叫流程，叫人質。"
   },
   "approach": {
-    "eyebrow": "服務方式｜業務聽診",
-    "title": "唔係一開始叫你買系統。先聽清，邊條流程最值得執。",
-    "intro": "簽名方法叫業務聽診（Business Workflow Diagnosis）：聚焦一條流程，而唔係大規模數碼轉型。先止血，再視乎情況接工具。",
+    "eyebrow": "我嘅做法",
+    "title": "我唔會一開始就叫你買系統。我會先聽清楚你邊度漏緊錢。",
+    "intro": "我嘅方法叫業務聽診：用 30 分鐘，搵出你公司最痛嗰條流程，講清邊度漏、邊個負責、下一步做咩。確認有用先再傾使唔使落地工具。",
     "steps": [
       {
         "label": "Step 1",
         "title": "業務聽診（30 分鐘）",
-        "body": "鎖定最值得先處理的收入／營運卡位，講清邊度漏、邊個負責。"
+        "body": "你帶你最亂嗰條線嚟，我幫你畫清楚邊度漏客、邊度慢、邊個應該負責。"
       },
       {
         "label": "Step 2",
-        "title": "AI Discovery／30 日落地 Sprint",
-        "body": "交付流程圖、責任人、SOP、追蹤節點同一個可執行 quick win。"
+        "title": "30 日落地",
+        "body": "交付流程圖、責任分工、SOP、追蹤節點，同一個你團隊真係用到嘅 quick win。"
       },
       {
         "label": "Step 3",
-        "title": "顧問陪跑 & KPI Review",
-        "body": "協助團隊使用；Day 30／60／90 檢討漏跟進、報價時間、交接完成率。需要時先接 CRM、AI 或自動化。"
+        "title": "陪跑 & 檢討",
+        "body": "幫團隊用順、Day 30／60／90 檢討。需要時先接 CRM、AI 或自動化——唔需要就直講。"
       }
     ]
   },
   "services": {
-    "eyebrow": "服務範圍",
-    "title": "按你公司真正嘅問題，落最少但最有效嘅工具。",
+    "eyebrow": "我幫你搞咩",
+    "title": "按你公司真正嘅問題，用最少但最有效嘅方法搞掂。",
     "items": [
       {
-        "title": "Workflow Health Check",
-        "body": "找出漏單、慢報價、交接不清的流程漏洞。"
+        "title": "流程聽診",
+        "body": "搵出你漏單、慢報價、交接不清嘅位。30 分鐘就知邊度漏緊錢。"
       },
       {
-        "title": "WhatsApp-first CRM",
-        "body": "將分散查詢變成可追蹤、有責任的跟進流程。"
+        "title": "WhatsApp CRM",
+        "body": "將分散嘅查詢變成可跟進、有責任人嘅銷售流程。唔再靠記性。"
       },
       {
-        "title": "AI Chatbot & Automation",
-        "body": "處理重複查詢、資料整理與日常行政。"
+        "title": "AI 自動化",
+        "body": "處理重複查詢、資料整理同日常行政。等你嘅人做返有意義嘅嘢。"
       },
       {
-        "title": "Event & Lead Follow-up",
-        "body": "將活動參加者變成可跟進的銷售機會。"
+        "title": "活動跟進",
+        "body": "活動完咗唔係完。將出席者變成可跟進嘅商機，唔係擺喺 Excel 入面封塵。"
       },
       {
-        "title": "Team AI Enablement",
-        "body": "令團隊懂得在既有 SOP 裡安全、實際地使用 AI。"
+        "title": "團隊 AI 培訓",
+        "body": "令你嘅人識得喺日常工作入面安全咁用 AI。唔係聽完就算，係真係用得到。"
       }
     ]
   },
@@ -163,14 +163,22 @@
     ]
   },
   "cases": {
-    "eyebrow": "可量度結果",
-    "title": "業務聽診之後，用數字睇改善（未確認數字會標明）。",
-    "intro": "以下係匿名情境（Before → 30 日做法 → After → 可觀察指標）。標明【待確認】嘅數字尚未經客戶核准，唔作對外 ROI 承諾。",
+    "eyebrow": "真實案例",
+    "title": "聽完診之後，用數字睇改善。",
+    "intro": "以下係真實個案嘅 Before → 做法 → After → 可量度結果。Agilizing 嘅數字係真嘅，唔係估。其他標明【待確認】嘅數字尚未經客戶核准。",
     "beforeLabel": "Before",
     "sprintLabel": "30 日做法",
     "afterLabel": "After",
-    "metricLabel": "可觀察指標",
+    "metricLabel": "可量度結果",
     "items": [
+      {
+        "industry": "企業培訓｜Agilizing Limited",
+        "title": "教材製作由 10 日壓到 3 個鐘，慳 HK$25,000／月",
+        "before": "每套企業培訓教材（PPT + 數字人講解影片）靠一位助手全人手做，10 日先出一套。成本高、產量慢，冇法快速拓展新客源。",
+        "sprint": "用一個月 AI Consultant Sprint，幫佢哋建立自動化製作流程。將 PPT 同數字人教材嘅製作時間由 10 日壓縮到 3 小時。",
+        "after": "直接慳咗約 HK$25,000／月嘅全職助理聘請開支。令佢哋有能力短時間內拓展新客源，成功將服務伸展到社福界同國泰等機構型客戶。",
+        "metric": "製作時間：10 日 → 3 小時。慳約 HK$25,000／月助理開支。新客源：社福界、國泰。"
+      },
       {
         "industry": "培訓／課程",
         "title": "報名查詢散喺 WhatsApp，跟進靠記性",
@@ -198,20 +206,20 @@
     ]
   },
   "whyUs": {
-    "eyebrow": "點解揀 Larry",
-    "title": "大部分人賣工具，部分人賣建議。我先執順流程。",
-    "intro": "對比式差異化——講客戶利益，唔講內部產品策略。",
+    "eyebrow": "點解揀我",
+    "title": "大部分人賣工具，部分人賣建議。我幫你搞掂個問題。",
+    "intro": "我唔係交完報告就走嘅顧問，亦唔係賣完 licence 就唔理你嘅 SaaS。我係幫你由聽診到落地到團隊用到嘅嗰個人。",
     "rows": [
       {
         "opponent": "管理顧問（交報告就走）",
-        "difference": "我建到、接到、帶團隊用到"
+        "difference": "我會建到、接到、帶你團隊用到"
       },
       {
         "opponent": "SaaS 供應商（賣 licence）",
-        "difference": "我可以告訴你唔需要買"
+        "difference": "我可以話你知你唔需要買"
       },
       {
-        "opponent": "自動化／AI freelancer（接 job）",
+        "opponent": "freelancer（接完 job 走）",
         "difference": "我先問商業問題，先提工具"
       },
       {
@@ -219,18 +227,18 @@
         "difference": "HK$6,800 先試一條流程，風險極低"
       }
     ],
-    "punchline": "如果你唔需要系統，我會直接告訴你。"
+    "punchline": "如果你唔需要系統，我會直接話你知。"
   },
   "about": {
     "eyebrow": "我是誰",
     "title": "Larry Lo｜InnovateXP Limited｜香港",
-    "intro": "我係 AI 商業顧問 Larry Lo／InnovateXP。",
+    "intro": "我係 Larry，InnovateXP 創辦人。我做嘅嘢好簡單：幫你聽清邊度漏錢，再幫你搞掂佢。",
     "body": [
-      "InnovateXP Limited 由我喺香港創立。我有 14 年 IT 交付經驗，服務 3–30 人嘅中小企：培訓機構、補習社、Fitness／Yoga studio，同埋仍然主要用 WhatsApp 同 Excel 嘅專業服務團隊。",
-      "我嘅方法叫業務聽診（Business Workflow Diagnosis）：先聽清一條收入或營運流程嘅漏位、責任同 SOP，再決定係咪要 AI Discovery Sprint、30 日落地 Sprint，或者顧問陪跑。",
-      "定位係「先執順流程，再落地 AI」。如果你暫時唔需要買系統，我會直接講。結果係團隊真係用到、跟得到嘅流程，而唔係一堆未採用嘅工具。"
+      "做咗 14 年 IT 交付，我見過最多嘅失敗唔係系統做得唔好，而係系統建好咗、完美交付咗、然後冇人用。同一班人照舊用 WhatsApp、照舊開 Excel，因為根本冇人釐清過條流程。",
+      "所以我轉咗做法：先幫你聽清一條流程，真係有效、團隊真係用緊，先再傾使唔使加 AI 或系統。上個月幫 Agilizing 將教材製作由 10 日壓到 3 個鐘，慳咗 HK$25,000／月——呢個就係我做嘅嘢。",
+      "如果你暫時唔需要買系統，我會直接講。我唔係賣工具嘅，我係幫你搞掂問題嘅。"
     ],
-    "identity": "我係 AI 商業顧問 Larry Lo／InnovateXP。",
+    "identity": "我係你嘅業務聽診師。",
     "portraitAlt": "Larry Lo｜InnovateXP AI 商業顧問於香港分享業務聽診與 AI 落地方法"
   },
   "faq": {
@@ -287,10 +295,42 @@
     ]
   },
   "finalCta": {
-    "title": "想知道你公司邊條流程最值得先聽診？",
-    "body": "預約 30 分鐘業務聽診，找出你公司最容易漏單、慢報價或卡交接的一條流程。",
-    "primary": "預約業務聽診（30 分鐘）",
+    "title": "想知你公司邊條流程漏緊最多錢？",
+    "body": "預約 30 分鐘業務聽診，免費。我幫你搵出最容易漏單、慢報價或卡交接嗰條流程，講清下一步點搞。唔啱就直講，唔會硬推工具。",
+    "primary": "預約業務聽診（30 分鐘，免費）",
     "secondary": "WhatsApp 聯絡 Larry"
+  },
+  "partnership": {
+    "eyebrow": "合作夥伴",
+    "title": "同我並肩落過場嘅夥伴",
+    "intro": "唔係掛個 logo 喺度。呢啲係真係一齊做過嘢、互相轉介過客嘅夥伴。",
+    "items": [
+      {
+        "name": "Zomate Fitness Limited",
+        "desc": "Fitness 課堂管理系統合作夥伴",
+        "logo": ""
+      },
+      {
+        "name": "善敏教育中心 Agilizing",
+        "desc": "企業培訓教材自動化案例",
+        "logo": "/agilizing-logo-transparent.png"
+      },
+      {
+        "name": "BNI Anchor",
+        "desc": "引薦網絡與領導力",
+        "logo": ""
+      },
+      {
+        "name": "LinkedInLocal Asia",
+        "desc": "亞太專業社群聚會",
+        "logo": ""
+      },
+      {
+        "name": "OL International Services Limited",
+        "desc": "企業及國際業務服務夥伴",
+        "logo": ""
+      }
+    ]
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
