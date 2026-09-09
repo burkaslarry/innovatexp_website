@@ -14,16 +14,16 @@
     "visionXp": "VisionXP"
   },
   "hero": {
-    "eyebrow": "AI Business Consultant Larry Lo / InnovateXP",
-    "title": "How many hours a month do you spend chasing leads, reconciling shifts, and following up manually?",
-    "description": "I help Hong Kong SMEs of 3–30 people — training centres, tutorial schools, fitness studios, and professional services — find where money is leaking, then fix it. I don't sell you a system. I help you leave work at 6pm. Last month I helped Agilizing cut training material production from 10 days to 3 hours, saving HK$25,000/month.",
-    "fitAudience": "For Hong Kong teams still running operations on WhatsApp and spreadsheets",
+    "eyebrow": "AI Consultant Larry Lo | InnovateXP",
+    "title": "You're leaking more than HK$25,000 a month. You just don't know where.",
+    "description": "Scattered admin, manual reconciliation, WhatsApp chaos — these aren't small things. They're silent leaks blocking your growth. I bring system design and development experience, use AI agents to find the leaks, and walk with you from 0 to 1. AI handles efficiency. I preserve the human warmth and organisational connection.",
+    "fitAudience": "For Hong Kong teams of 3–30 still running operations on WhatsApp and spreadsheets",
     "primaryCta": "Book a Business Workflow Diagnosis (30 min)",
     "secondaryCta": "",
     "trustPoints": [
       "ICP: Hong Kong teams of 3–30",
-      "Method: Business Workflow Diagnosis",
-      "Outcome: one owned, trackable workflow"
+      "Method: Diagnosis → AI agents → 0-to-1 walk-with",
+      "Outcome: AI handles efficiency, I keep the human warmth"
     ],
     "diagnosticInputs": [
       "WhatsApp enquiries",
@@ -37,7 +37,7 @@
   },
   "problem": {
     "eyebrow": "Sound familiar?",
-    "title": "It's not that you have no customers. It's that you're still chasing people and numbers after work.",
+    "title": "It's not that you have no customers. It's that scattered admin is blocking your growth.",
     "items": [
       {
         "title": "Scattered enquiries",
@@ -56,12 +56,12 @@
         "body": "One person takes leave and the whole workflow stalls. Is that a process, or a hostage?"
       }
     ],
-    "quote": "If one person takes leave and the process stops, that is not a process. That is a hostage situation."
+    "quote": "You're leaking more than HK$25,000 a month. You just don't know where."
   },
   "approach": {
     "eyebrow": "How I work",
-    "title": "I won't pitch you a system on day one. I'll listen first, and find where the money is leaking.",
-    "intro": "My method is Business Workflow Diagnosis: 30 minutes to find your most painful workflow, clarify where it leaks, who owns it, and what to do next. Only then do we talk about tools — if you even need them.",
+    "title": "I won't teach you a few tools. I'll walk with you from survive to thrive in the AI wave.",
+    "intro": "My method is Business Workflow Diagnosis: 30 minutes to find your most painful workflow, clarify where it leaks, who owns it, and what's next. Then I use AI agents to build the fix, and walk with you from 0 to 1.",
     "steps": [
       {
         "label": "Step 1",
@@ -70,39 +70,39 @@
       },
       {
         "label": "Step 2",
-        "title": "30-day Sprint",
-        "body": "You get a process map, ownership, SOP, tracking points, and one quick win your team actually uses."
+        "title": "AI agents implementation",
+        "body": "I bring system design and development experience, use AI agents to find the solution. You get a process map, ownership, SOP, and one quick win your team actually uses."
       },
       {
         "label": "Step 3",
-        "title": "Advisory & review",
-        "body": "I help your team adopt it. Day 30 / 60 / 90 reviews. We add CRM, AI, or automation only when needed — if not, I'll tell you straight."
+        "title": "0-to-1 walk-with",
+        "body": "I help your team adopt it. Day 30 / 60 / 90 reviews. First find how to survive, then build your unique edge. If you don't need a system, I'll say so."
       }
     ]
   },
   "services": {
     "eyebrow": "What I fix",
-    "title": "The least tool needed to solve your real problem. Nothing more.",
+    "title": "AI handles efficiency. I make sure your team actually uses it, and uses it well.",
     "items": [
       {
-        "title": "Workflow Diagnosis",
-        "body": "Find where you leak leads, slow quotes, and lose handoffs. 30 minutes and you know where the money goes."
+        "title": "Human-centric AI workflow",
+        "body": "AI isn't cold automation. I help your brand build a warmer, more human customer experience and community connection — not turn people into canned content."
       },
       {
-        "title": "WhatsApp CRM",
-        "body": "Turn scattered chats into a follow-up workflow with clear owners. No more relying on memory."
+        "title": "AI change management & buy-in",
+        "body": "The hardest part of AI adoption isn't technology — it's people and organisational politics. I help management and staff reach consensus and overcome the fear of AI."
       },
       {
-        "title": "AI Automation",
-        "body": "Handle repetitive enquiries, data sorting, and admin. Let your people do work that actually matters."
+        "title": "AI personal & corporate branding",
+        "body": "Use AI to assist output while preserving the founder's unique voice and warmth — not getting homogenised into generic AI content."
       },
       {
-        "title": "Event Follow-up",
-        "body": "An event isn't over when it ends. Turn attendees into follow-up opportunities, not dust on a spreadsheet."
+        "title": "Workflow diagnosis",
+        "body": "30 minutes to find where you leak leads, slow quotes, and lose handoffs. Where the money goes, you'll know."
       },
       {
-        "title": "Team AI Training",
-        "body": "Help your team use AI safely in their daily work. Not a seminar they forget — something they actually use."
+        "title": "WhatsApp CRM + event follow-up",
+        "body": "Turn scattered enquiries into a trackable sales process; turn event attendees into opportunities, not dust on a spreadsheet."
       }
     ]
   },
@@ -207,39 +207,39 @@
   },
   "whyUs": {
     "eyebrow": "Why me",
-    "title": "Most people sell tools. Some sell advice. I fix the problem.",
-    "intro": "I'm not the consultant who hands you a report and leaves. I'm not the SaaS that sells you a licence and disappears. I'm the person who diagnoses, builds, and gets your team using it.",
+    "title": "The market is full of consultants selling technical jargon. I sell AI adoption that understands people.",
+    "intro": "Enterprise architecture vision, organisational rule fluency, plus strong human warmth and community connection — this combination is extremely hard to copy.",
     "rows": [
       {
+        "opponent": "Hardcore tech consultants (selling Prompting, Agent, Automation)",
+        "difference": "I know the real pain isn't missing tech — it's not knowing how to combine AI with people"
+      },
+      {
         "opponent": "Management consultants (report and leave)",
-        "difference": "I build, connect, and help your team adopt it"
+        "difference": "I build, connect, and walk your team from 0 to 1"
       },
       {
         "opponent": "SaaS vendors (sell licences)",
         "difference": "I can tell you not to buy"
       },
       {
-        "opponent": "Freelancers (take the job and go)",
-        "difference": "I ask the business question before naming tools"
-      },
-      {
         "opponent": "Large IT firms (six-figure projects)",
         "difference": "HK$6,800 to try one workflow — low risk"
       }
     ],
-    "punchline": "If you do not need a system, I will tell you straight."
+    "punchline": "AI handles efficiency. I preserve the human warmth and organisational connection."
   },
   "about": {
     "eyebrow": "Who I am",
     "title": "Larry Lo | InnovateXP Limited | Hong Kong",
-    "intro": "I'm Larry, founder of InnovateXP. What I do is simple: I help you find where money leaks, then I help you fix it.",
+    "intro": "I'm Larry, founder of InnovateXP. My positioning is clear: an AI consultant with enterprise architecture vision, organisational rule fluency, and strong human warmth and community connection.",
     "body": [
-      "After 14 years in IT delivery, the most common failure I've seen isn't bad systems. It's a system built, delivered perfectly, then never used. The same people keep using WhatsApp and Excel because no one ever clarified the workflow.",
-      "So I changed my approach: I diagnose one workflow first. If it works and the team uses it, then we talk about AI or systems. Last month I helped Agilizing cut training material production from 10 days to 3 hours, saving HK$25,000/month. That's what I do.",
-      "If you don't need a system yet, I'll tell you. I don't sell tools. I fix problems."
+      "I spent 14 years in large enterprises and international organisations, learning how KPIs and systems really work. I know how large institutions operate, and I understand how traditional processes drain a person's passion. This experience makes me understand what consultants miss: the real pain isn't missing technology — it's not knowing how to combine AI with human communication, process, and warmth.",
+      "After a major life and career rebuild, I chose to redefine myself. While the world debates how AI will replace people, I know this: technology will keep changing, but genuine human warmth and community connection cannot be replaced by algorithms.",
+      "So I don't just teach you tools. I bring system design and development experience, use AI agents to find solutions, and walk with you from 0 to 1. AI handles efficiency. I preserve the human warmth and organisational connection. First we find how to survive, then we build your unique edge."
     ],
-    "identity": "I'm your business diagnostician.",
-    "portraitAlt": "Larry Lo, InnovateXP AI Business Consultant, presenting Business Workflow Diagnosis in Hong Kong"
+    "identity": "AI handles efficiency. I preserve the human warmth and organisational connection.",
+    "portraitAlt": "Larry Lo, InnovateXP AI Consultant, presenting Business Workflow Diagnosis in Hong Kong"
   },
   "faq": {
     "title": "FAQ",
@@ -295,8 +295,8 @@
     ]
   },
   "finalCta": {
-    "title": "Want to know which workflow is leaking the most money?",
-    "body": "Book a 30-minute Business Workflow Diagnosis. I'll find the workflow most likely to leak leads, slow quotes, or stall handoffs, and tell you the next step.",
+    "title": "Want to know how much you're leaking, and where?",
+    "body": "Book a 30-minute Business Workflow Diagnosis. I bring system design experience, use AI agents to find the leaks, and walk with you from 0 to 1.",
     "primary": "Book a Business Workflow Diagnosis (30 min)",
     "secondary": "WhatsApp Larry"
   },
