@@ -18,7 +18,7 @@
     "title": "How many hours a month do you spend chasing leads, reconciling shifts, and following up manually?",
     "description": "I help Hong Kong SMEs of 3–30 people — training centres, tutorial schools, fitness studios, and professional services — find where money is leaking, then fix it. I don't sell you a system. I help you leave work at 6pm. Last month I helped Agilizing cut training material production from 10 days to 3 hours, saving HK$25,000/month.",
     "fitAudience": "For Hong Kong teams still running operations on WhatsApp and spreadsheets",
-    "primaryCta": "Book a Business Workflow Diagnosis (30 min, free)",
+    "primaryCta": "Book a Business Workflow Diagnosis (30 min)",
     "secondaryCta": "",
     "trustPoints": [
       "ICP: Hong Kong teams of 3–30",
@@ -296,8 +296,8 @@
   },
   "finalCta": {
     "title": "Want to know which workflow is leaking the most money?",
-    "body": "Book a 30-minute Business Workflow Diagnosis, free. I'll find the workflow most likely to leak leads, slow quotes, or stall handoffs, and tell you the next step. If it's not a fit, I'll say so — no hard tool pitch.",
-    "primary": "Book a Business Workflow Diagnosis (30 min, free)",
+    "body": "Book a 30-minute Business Workflow Diagnosis. I'll find the workflow most likely to leak leads, slow quotes, or stall handoffs, and tell you the next step.",
+    "primary": "Book a Business Workflow Diagnosis (30 min)",
     "secondary": "WhatsApp Larry"
   },
   "partnership": {
