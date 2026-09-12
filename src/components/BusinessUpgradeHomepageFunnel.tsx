@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare, UsersRound } from "lucide-react";
+import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare, UsersRound, Workflow } from "lucide-react";
 import { ConsultancyMainlineSection } from "@/components/ConsultancyMainlineSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { PartnershipSection } from "@/components/PartnershipSection";
@@ -10,7 +10,7 @@ import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getBniPowerTeamCopy } from "@/content/bni-power-team";
 import { getHomepageContent } from "@/content/homepage";
 import type { AppLocale } from "@/lib/i18n-routing";
-import { withLocale } from "@/lib/i18n-routing";
+import { localeUsesChineseCopy, withLocale } from "@/lib/i18n-routing";
 
 function SectionShell({
   id,
@@ -39,8 +39,10 @@ export function BusinessUpgradeHomepageFunnel({
 }) {
   const c = getHomepageContent(locale);
   const bni = getBniPowerTeamCopy(locale);
+  const zh = localeUsesChineseCopy(locale);
   const problemIcons = [MessagesSquare, Clock3, ChevronRight, BriefcaseBusiness];
   const bniHref = withLocale(locale, "/bni-power-team");
+  const automationHref = withLocale(locale, "/automation-packages");
   const caseStudiesHref = withLocale(locale, "/case-studies");
   const caseStudiesLabel =
     locale === "zh-hk"
@@ -130,6 +132,36 @@ export function BusinessUpgradeHomepageFunnel({
       </SectionShell>
 
       <ConsultancyMainlineSection locale={locale} bookingHref={bookingHref} />
+
+      <SectionShell id="automation-packages">
+        <article className="ixp-card p-6 md:p-8">
+          <div className="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_auto] lg:items-center">
+            <div>
+              <p className="mb-3 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">
+                {zh ? "服務先行 · 產品其後" : "Service first · products second"}
+              </p>
+              <div className="flex items-start gap-3">
+                <Workflow className="mt-1 h-7 w-7 shrink-0 text-[color:var(--brand-primary)]" aria-hidden />
+                <h2 className="max-w-[24ch] text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
+                  {zh
+                    ? "n8n＋自選 ERP ± AI：聽診後先報，唔綁 Notion"
+                    : "n8n + ERP of choice ± AI — quote after diagnosis"}
+                </h2>
+              </div>
+              <p className="mt-4 max-w-[68ch] text-base leading-8 text-[color:var(--text-secondary)]">
+                {zh
+                  ? "Hermes／本地大模型只喺有 GPU＋私隱＋高用量先值得。多數 SME 用 Lite／Starter／Cloud API 已經夠。10 題分級問卷幫你快速判斷 Tier。"
+                  : "Hermes / local models only when GPU + privacy + volume align. Most SMEs fit Lite / Starter / Cloud API. Use the 10-question qualifier to pick a tier."}
+              </p>
+            </div>
+            <div className="flex lg:justify-end">
+              <Button href={automationHref} variant="primary">
+                {zh ? "睇階梯＋分級問卷" : "See ladder + qualifier"}
+              </Button>
+            </div>
+          </div>
+        </article>
+      </SectionShell>
 
       <ProductPackagesSection locale={locale} content={c.products} />
 

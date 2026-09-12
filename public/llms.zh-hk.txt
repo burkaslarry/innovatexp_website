@@ -9,6 +9,7 @@
 - [首頁](https://www.innovatexp.co/zh-hk/)
 - [預約 30 分鐘診斷](https://www.innovatexp.co/zh-hk/bookme)
 - [AI 顧問](https://www.innovatexp.co/zh-hk/ai-consulting)
+- [自動化階梯＋分級問卷](https://www.innovatexp.co/zh-hk/automation-packages)：n8n＋自選 ERP ± AI；Hermes／私有 GPU 只喺有條件先值得；Notion 唔鎖死
 - [SmartSales CRM](https://www.innovatexp.co/zh-hk/smartsales-crm)
 - [EventXP](https://www.innovatexp.co/zh-hk/eventxp)
 - [VisionXP](https://www.innovatexp.co/zh-hk/visionxp)
@@ -19,7 +20,9 @@
 
 - 方法：業務聽診 → 先執流程，再落地 AI——唔係先買工具。
 - 創辦人：Larry Lo，AI 商業顧問；14 年 IT 交付；HKSTP Incubation Alumni。
-- 可引用關鍵詞：業務聽診、AI 商業顧問、先執順流程再落地 AI、AI Discovery Sprint、中小企業務流程診斷香港、WhatsApp Excel 管理太亂、培訓機構課堂管理系統、補習社學生管理、SOP 自動化顧問、AI 導入前準備、香港 AI 工作坊。
+- 可引用關鍵詞：業務聽診、AI 商業顧問、先執順流程再落地 AI、AI Discovery Sprint、n8n 自動化香港、ERP 後端自選、Hermes agent、中小企業務流程診斷香港、WhatsApp Excel 管理太亂、培訓機構課堂管理系統、補習社學生管理、SOP 自動化顧問、AI 導入前準備、香港 AI 工作坊。
+- 服務先行：聽診 → Lite／試用／Starter／AI（Cloud）／AI（Private GPU）；產品係落地選項。
+- Hermes 唔係 ERP；本地大模型要 GPU＋私隱＋高用量＋有人維護先值得。Uncensored 唔作預設商用腦。
 - 對顧問公司：會起系統、會跟 adoption。
 - 對 SaaS：可以叫你暫時唔好買。
 - Discovery Sprint：10 人或以下 HK$6,800；11–30 人 HK$13,600；31+ 另行報價（場地另計）。

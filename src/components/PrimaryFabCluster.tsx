@@ -12,6 +12,7 @@ import {
   ThemeProvider,
   Zoom,
 } from "@mui/material";
+import AccountTreeIcon from "@mui/icons-material/AccountTree";
 import ChatIcon from "@mui/icons-material/Chat";
 import AssignmentIcon from "@mui/icons-material/Assignment";
 import CalendarMonthIcon from "@mui/icons-material/CalendarMonth";
@@ -100,6 +101,11 @@ export function PrimaryFabCluster() {
       icon: <GroupsIcon />,
       name: bniFabLabel,
       href: withLocale(locale, "/bni-power-team"),
+    },
+    {
+      icon: <AccountTreeIcon />,
+      name: zh ? "自動化分級" : "Automation tiers",
+      href: withLocale(locale, "/automation-packages"),
     },
   ];
 

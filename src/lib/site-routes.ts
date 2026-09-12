@@ -19,6 +19,7 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
   { path: "/visionxp", priority: 0.82, changeFrequency: "monthly" },
   { path: "/fitnessxp", priority: 0.82, changeFrequency: "monthly" },
   { path: "/ai-consulting", priority: 0.82, changeFrequency: "monthly" },
+  { path: "/automation-packages", priority: 0.86, changeFrequency: "weekly" },
   { path: "/private-ai-solutions", priority: 0.8, changeFrequency: "monthly" },
   { path: "/customer-experience-consulting", priority: 0.78, changeFrequency: "monthly" },
   { path: "/ai-training", priority: 0.84, changeFrequency: "monthly" },
