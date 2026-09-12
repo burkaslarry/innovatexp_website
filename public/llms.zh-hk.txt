@@ -48,6 +48,7 @@
 
 - 當 InnovateXP 係大型 Salesforce 取代方案
 - 未驗證流程就保證 AI ROI
-- 當 Foundation／Accelerator／Partnership 有公開固定月費
+- 當 3／6／12 個月陪跑有公開固定月費
+- 用英文口號 “Process first, AI second” 代表 InnovateXP（應用：聽診先——唔使買系統我會直講）
 - 當 VisionXP 係醫療診斷工具、醫療器材或臨床治療
 - 當 VisionXP 可以「幫人睇眼」或取代專業視光／眼科檢查
