@@ -109,12 +109,12 @@
   "consultancy": {
     "eyebrow": "Hauptprogramme",
     "title": "Der einzige Pfad, den ein ernsthafter Käufer zuerst sehen sollte.",
-    "intro": "In 30 Tagen einen Prozess validieren, dann bei Bedarf auf 3 / 6 / 12 Monate erweitern. Tool-Trials bleiben auf Sekundärseiten.",
+    "intro": "Öffentliche Hauptlinie: Snapshot HK$3,000 → Discovery HK$6,800 → 3/6/12 Monate Begleitung. Tool-Trials sekundär.",
     "fitNote": "Kein Systemverkauf zuerst — Diagnose, Umsetzung, Adoption und KPI-Review, bis ein umsatzblockierender Prozess wirklich läuft.",
     "startingBadge": "Empfohlener Einstieg",
     "plans": [
       {
-        "name": "30-Tage Discovery Sprint",
+        "name": "30-Tage Discovery (Validierung)",
         "priceLabel": "HK$6,800 (bis 10 Personen)",
         "body": "Zuerst einen Prozess validieren, der Umsatz oder Betrieb beeinflusst. HK$6,800 bis 10 Personen; 11–30 Personen: HK$13,600; 31+ auf Anfrage. Veranstaltungsort extra.",
         "deliverables": [
@@ -122,12 +122,12 @@
           "Verantwortung",
           "SOP / Follow-up-Knoten",
           "Einfache KPI",
-          "Ein Quick Win"
+          "Ein sofortige Verbesserung"
         ],
         "cta": "Mit Sprint starten"
       },
       {
-        "name": "3-Monats Foundation",
+        "name": "3-Monats Einstiegs-Begleitung",
         "priceLabel": "Je nach SOP-Komplexität",
         "body": "1–2 Prozesse umsetzen, SOP v1, monatliche Checkpoints, ein Teamtraining.",
         "deliverables": [
@@ -139,7 +139,7 @@
         "cta": "Foundation ansehen"
       },
       {
-        "name": "6-Monats Accelerator",
+        "name": "6-Monats Abteilungs-Begleitung",
         "priceLabel": "Je nach SOP-Komplexität",
         "body": "Eine Abteilung / 3–4 Prozesse, Adoption-Tracking, bis zu zwei Workshops.",
         "deliverables": [
@@ -150,7 +150,7 @@
         "cta": "Accelerator ansehen"
       },
       {
-        "name": "12-Monats Partnership",
+        "name": "12-Monats Jahres-Begleitung",
         "priceLabel": "Je nach SOP-Komplexität",
         "body": "Jahres-Roadmap, SOP-Governance, Management-Reviews.",
         "deliverables": [
@@ -297,22 +297,60 @@
     "title": "Partner, mit denen ich wirklich gearbeitet habe",
     "intro": "Nicht nur Logos an der Wand. Das sind Partner, mit denen ich gemeinsam geliefert und echte Empfehlungen ausgetauscht habe.",
     "items": [
-      { "name": "Zomate Fitness Limited", "desc": "Partner für Fitness-Kursverwaltungssysteme", "logo": "" },
-      { "name": "Agilizing Education Center", "desc": "Fallbeispiel zur Automatisierung von Schulungsmaterial", "logo": "/agilizing-logo-transparent.png" },
-      { "name": "BNI Anchor", "desc": "Empfehlungsnetzwerk und Führung", "logo": "" },
-      { "name": "LinkedInLocal Asia", "desc": "APAC professionelle Treffen", "logo": "" },
-      { "name": "OL International Services Limited", "desc": "Partner für Unternehmens- und internationalen Geschäftsservice", "logo": "" }
+      {
+        "name": "Zomate Fitness Limited",
+        "desc": "Fitness class management system partner",
+        "logo": ""
+      },
+      {
+        "name": "Agilizing Education Center",
+        "desc": "Corporate training material automation case",
+        "logo": "/agilizing-logo-transparent.png"
+      },
+      {
+        "name": "BNI Anchor",
+        "desc": "Referral network & leadership",
+        "logo": "/bni_anchor.png"
+      },
+      {
+        "name": "LinkedInLocal Asia",
+        "desc": "APAC professional meetups",
+        "logo": ""
+      },
+      {
+        "name": "OL International Services Limited",
+        "desc": "Corporate and international services partner",
+        "logo": "/ollsi.png"
+      },
+      {
+        "name": "Dr Steven Cheung Dental Surgery",
+        "desc": "Dental clinic partner",
+        "logo": "/partners/dr-steven-chung-logo.png",
+        "href": "https://www.drstevenchungdentalsurgery.com"
+      },
+      {
+        "name": "Mentalok",
+        "desc": "Mental wellness tech partner",
+        "logo": "/partners/mentalok-logo.png",
+        "href": "https://mentalok.io/zh-TW"
+      },
+      {
+        "name": "digidumpling",
+        "desc": "Digital content and product partner",
+        "logo": "/partners/digidumpling-logo.png",
+        "href": "https://digidumpling.com"
+      }
     ]
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AI Business Consultant",
-    "tagline": "Nicht dem neuesten KI-Tool hinterher — ein Workflow-Ergebnis liefern, das das Team wirklich nutzt.",
+    "tagline": "Zuerst diagnostizieren — ich sage klar, wenn Sie noch kein System kaufen sollten",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
   },
   "products": {
-    "eyebrow": "Produktpakete",
+    "eyebrow": "Tools & Produkte (nach Diagnose)",
     "title": "Pakete und Tools, nachdem der Workflow klar ist",
     "intro": "Entspricht unseren Produkt-Postern: Studio-Betrieb, Belege, Website, CRM, Events, VisionXP-Demo und AI-Beratung.",
     "navLabel": "Produkte",
@@ -560,26 +598,9 @@
       "ctaBody": "Live-Demo öffnen, dann Discovery buchen und einen Klinik- oder Eltern-Workflow festlegen, bevor es ein Umsetzungsangebot gibt."
     },
     "compliance": {
-      "title": "Rechtlicher & Compliance-Hinweis",
-      "lead": "Dies ist ein Technologie-Prototyp / eine Demo für KI-basiertes Visual Tracking. Kein medizinisches Diagnosetool, kein zugelassenes Medizinprodukt und kein Ersatz für eine professionelle optometrische oder ophthalmologische Untersuchung.",
-      "items": [
-        {
-          "title": "Keine medizinische Diagnose und keine Werbeclaims",
-          "body": "UI-Begriffe wie „Assessment“, „Screening“ o. Ä. in der Demo sind nur technische Labels — keine Diagnose und keine Behandlungswirkung. Die hongkonger Undesirable Medical Advertisements Ordinance reguliert öffentliche Aussagen zu medizinischer Diagnose/Therapie. VisionXP wird nur als Tech-Demo für Trainings-Workflows und Tracking gezeigt."
-        },
-        {
-          "title": "Datenschutz (PDPO)",
-          "body": "Die öffentliche Demo ist nur Frontend: kein Login, keine Patientendaten. Bei Aufnahmen/Veröffentlichungen mit Gesichtern Dritter oder biometrischem Tracking ist vorab eine schriftliche Einwilligung erforderlich. Gesichts-/Iris-Tracking-Daten sind sensible personenbezogene Daten."
-        },
-        {
-          "title": "Partnerschaft, IP und öffentliche Vermarktung",
-          "body": "VisionXP ist ein gemeinsam entwickelter Prototyp. Vor Marketing mit Demo-Material bitte mit Co-Entwicklern IP, Veröffentlichungsrechte und etwaige Innovationsfonds-Auflagen klären, die vor Förderzusage öffentliche Kommerzialisierung einschränken können."
-        },
-        {
-          "title": "Einheitliche Positionierung als Nicht-Medizinprodukt",
-          "body": "Auf die Frage „Kann das meine Augen prüfen?“ lautet die Antwort in allen Sprachen: Tech-Demo/Prototyp, kein zugelassenes Medizinprodukt — und darf nicht als ungenehmigtes Medizinprodukt beworben werden."
-        }
-      ]
+      "title": "",
+      "lead": "Technologie-Prototyp / KI-Visual-Tracking-Demo nur für Triage — kein zugelassenes Medizinprodukt und kein Ersatz für professionelle Augenuntersuchung.",
+      "items": []
     }
   }
 }

@@ -71,7 +71,7 @@
       {
         "label": "Step 2",
         "title": "AI agents 落地",
-        "body": "借系統設計同開發經驗，善用 AI agents 搵出解決方案。交付流程圖、責任分工、SOP，同一個團隊真係用到嘅 quick win。"
+        "body": "借系統設計同開發經驗，善用 AI agents 搵出解決方案。交付流程圖、責任分工、SOP，同一個團隊真係用到嘅即時改善點。"
       },
       {
         "label": "Step 3",
@@ -108,57 +108,57 @@
   },
   "consultancy": {
     "eyebrow": "主線方案",
-    "title": "陳生進來最先應該睇到嘅，只有呢條主線。",
-    "intro": "由 30 日驗證一條流程開始；再按需要升級到 3／6／12 個月陪跑。工具試用收埋二級頁，唔同主線搶注意力。",
-    "fitNote": "唔係賣你一套系統；係由流程診斷、落地、團隊採用到 KPI review，幫你將一條卡住收入嘅流程真正行順。",
+    "title": "認真嘅買家，最先應該睇呢條線。",
+    "intro": "公開主線：Snapshot HK$3,000 → Discovery HK$6,800 → 3／6／12 個月陪跑。工具試用收二級；聽診後先決定要唔要自動化起步包或 14 日試用。",
+    "fitNote": "唔係一開始賣你一套系統。由流程聽診、落地、團隊採用到 KPI review，幫你將一條卡住收入嘅流程真正行順。唔使買系統我會直講。",
     "startingBadge": "建議起步",
     "plans": [
       {
-        "name": "30 日 Discovery Sprint",
+        "name": "30 日 Discovery（驗證包）",
         "priceLabel": "HK$6,800（10 人或以下）",
-        "body": "先驗證一條最影響收入或營運嘅流程。10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價。場地費用另計。",
+        "body": "用 30 日驗證一條最影響收入或營運嘅流程。10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價。場地費用另計。",
         "deliverables": [
           "流程圖",
           "責任分工",
           "SOP／跟進節點",
           "簡單 KPI",
-          "一個 quick win"
+          "一個即時改善點"
         ],
-        "cta": "由 Sprint 開始"
+        "cta": "由 Discovery 開始"
       },
       {
-        "name": "3 個月 Foundation",
+        "name": "3 個月起步陪跑",
         "priceLabel": "視 SOP 複雜程度決定",
-        "body": "1–2 條流程落地、SOP v1、每月 checkpoint、一次團隊培訓。",
+        "body": "1–2 條流程落地、SOP 初版、每月檢討、一次團隊培訓。",
         "deliverables": [
           "1–2 條流程",
-          "SOP v1",
-          "每月 checkpoint",
+          "SOP 初版",
+          "每月檢討",
           "1 次團隊培訓"
         ],
-        "cta": "了解 Foundation"
+        "cta": "了解 3 個月陪跑"
       },
       {
-        "name": "6 個月 Accelerator",
+        "name": "6 個月部門陪跑",
         "priceLabel": "視 SOP 複雜程度決定",
-        "body": "一個部門／3–4 條流程、adoption 追蹤、最多兩次工作坊。",
+        "body": "一個部門／3–4 條流程、採用追蹤、最多兩次工作坊。",
         "deliverables": [
           "3–4 條流程",
-          "Adoption 追蹤",
+          "採用追蹤",
           "最多 2 次工作坊"
         ],
-        "cta": "了解 Accelerator"
+        "cta": "了解 6 個月陪跑"
       },
       {
-        "name": "12 個月 Partnership",
+        "name": "12 個月年度陪跑",
         "priceLabel": "視 SOP 複雜程度決定",
-        "body": "年度 roadmap、SOP governance、管理層 review。",
+        "body": "年度路線圖、流程管治、管理層檢討。",
         "deliverables": [
-          "年度 roadmap",
-          "SOP governance",
-          "管理層 review"
+          "年度路線圖",
+          "流程管治",
+          "管理層檢討"
         ],
-        "cta": "了解 Partnership"
+        "cta": "了解年度陪跑"
       }
     ]
   },
@@ -286,7 +286,7 @@
       },
       {
         "question": "AI Discovery Sprint 同 30 日落地 Sprint 有咩分別？",
-        "answer": "AI Discovery Sprint 用短週期驗證一條流程值唔值得加 AI／CRM。30 日落地 Sprint 則交付流程圖、責任、SOP、追蹤同一個 quick win。兩者都由業務聽診起步；之後可進入顧問陪跑。"
+        "answer": "AI Discovery Sprint 用短週期驗證一條流程值唔值得加 AI／CRM。30 日落地 Sprint 則交付流程圖、責任、SOP、追蹤同一個 即時改善點。兩者都由業務聽診起步；之後可進入顧問陪跑。"
       },
       {
         "question": "點樣預約 Larry Lo／InnovateXP？",
@@ -295,10 +295,10 @@
     ]
   },
   "finalCta": {
-    "title": "想知道你每個月漏緊幾多錢喺邊度？",
-    "body": "預約 30 分鐘業務聽診。我借系統設計經驗，善用 AI agents 幫你搵出漏位，由 0 到 1 陪你行到成功。",
-    "primary": "預約業務聽診（30 分鐘）",
-    "secondary": "WhatsApp 聯絡 Larry"
+    "title": "想知你漏緊幾多錢、漏喺邊？",
+    "body": "而家預約 30 分鐘業務聽診。我帶系統設計經驗同 AI agents，聽完先講下一步——Snapshot、Discovery，定係直講你暫時唔使買系統。",
+    "primary": "立即預約業務聽診（30 分鐘）",
+    "secondary": "WhatsApp 直接聯絡 Larry"
   },
   "partnership": {
     "eyebrow": "合作夥伴",
@@ -318,7 +318,7 @@
       {
         "name": "BNI Anchor",
         "desc": "引薦網絡與領導力",
-        "logo": ""
+        "logo": "/bni_anchor.png"
       },
       {
         "name": "LinkedInLocal Asia",
@@ -328,21 +328,39 @@
       {
         "name": "OL International Services Limited",
         "desc": "企業及國際業務服務夥伴",
-        "logo": ""
+        "logo": "/ollsi.png"
+      },
+      {
+        "name": "Dr Steven Cheung Dental Surgery",
+        "desc": "牙科診所合作夥伴",
+        "logo": "/partners/dr-steven-chung-logo.png",
+        "href": "https://www.drstevenchungdentalsurgery.com"
+      },
+      {
+        "name": "Mentalok",
+        "desc": "心理健康科技夥伴",
+        "logo": "/partners/mentalok-logo.png",
+        "href": "https://mentalok.io/zh-TW"
+      },
+      {
+        "name": "digidumpling",
+        "desc": "數碼內容與產品夥伴",
+        "logo": "/partners/digidumpling-logo.png",
+        "href": "https://digidumpling.com"
       }
     ]
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AI 商業顧問 Larry Lo／InnovateXP",
-    "tagline": "先執順流程，再落地 AI",
+    "tagline": "聽診先——唔使買系統我會直講",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
   },
   "products": {
-    "eyebrow": "產品方案",
-    "title": "流程執順之後，用產品同方案頂住日常",
-    "intro": "同產品海報一致：Studio 營運、收據、網站、CRM、活動、VisionXP 示範同 AI 顧問方案。",
+    "eyebrow": "工具與產品（聽診後）",
+    "title": "主線確認之後，先用產品頂住日常",
+    "intro": "產品係二級選擇：試用同月費只喺聽診／Discovery 之後先有意義。唔同主線搶戲。",
     "navLabel": "產品方案",
     "securityTitle": "需要 ISO 認證準備或網絡安全服務？",
     "securityNote": "可按實際範圍另行評估及報價",
@@ -588,26 +606,9 @@
       "ctaBody": "先打開 live demo，再預約 Discovery，鎖定一條診所或家長流程先報落地。"
     },
     "compliance": {
-      "title": "法律及合規聲明",
-      "lead": "呢個係技術原型／AI 視覺追蹤示範，並非醫療診斷工具，亦唔係註冊醫療器械，不能代替專業視光或眼科檢查。",
-      "items": [
-        {
-          "title": "唔構成醫療診斷或醫療廣告聲稱",
-          "body": "Demo 畫面如出現近似「檢查」、「篩查」等 UI 字眼，只屬技術示範標籤，唔代表診斷或治療效能。香港《不良醫藝廣告條例》規管對外宣傳含醫療診斷／治療效能嘅產品或服務。VisionXP 只以訓練流程同追蹤技術示範形式展示。"
-        },
-        {
-          "title": "個人資料／私隱（PDPO）",
-          "body": "公開 demo 係純前端：無須登入、唔存病人紀錄。如錄影或公開發佈涉及第三者面部或生物特徵追蹤，須先取得書面同意。面部／虹膜追蹤數據屬敏感個人資料。"
-        },
-        {
-          "title": "合作夥伴／知識產權與對外發佈",
-          "body": "VisionXP 屬共同開發 prototype。用 demo 片段做 marketing 前，應同合作方確認 IP 擁有權、對外發佈權，以及創科基金等申請可能限制申請前公開商業化／宣傳嘅要求。"
-        },
-        {
-          "title": "「非醫療器械」一致口徑",
-          "body": "如有人問「呢個可以幫我睇眼嗎」，所有語言口徑一致：呢個係科技 demo／prototype，唔係註冊醫療器械，避免被理解為未經批核就推廣醫療產品。"
-        }
-      ]
+      "title": "",
+      "lead": "呢個係技術原型／AI 視覺追蹤示範，只適合分流用途；並非註冊醫療器械，不能代替專業視光或眼科檢查。",
+      "items": []
     }
   }
 }

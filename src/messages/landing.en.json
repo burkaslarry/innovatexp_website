@@ -71,7 +71,7 @@
       {
         "label": "Step 2",
         "title": "AI agents implementation",
-        "body": "I bring system design and development experience, use AI agents to find the solution. You get a process map, ownership, SOP, and one quick win your team actually uses."
+        "body": "I bring system design and development experience, use AI agents to find the solution. You get a process map, ownership, SOP, and one immediate improvement your team actually uses."
       },
       {
         "label": "Step 3",
@@ -109,25 +109,25 @@
   "consultancy": {
     "eyebrow": "Main programs",
     "title": "The only path a serious buyer should see first.",
-    "intro": "Start by validating one workflow in 30 days, then expand to 3 / 6 / 12 months. Tool trials stay on secondary pages.",
-    "fitNote": "Not selling you a system first — diagnosis, implementation, adoption, and KPI review until one revenue-blocking workflow actually runs.",
+    "intro": "Public mainline: Snapshot HK$3,000 → Discovery HK$6,800 → 3 / 6 / 12-month co-run. Tool trials stay secondary; after diagnosis we decide on a 14-day trial or automation starter pack.",
+    "fitNote": "Not selling you a system first — diagnosis, implementation, adoption, and KPI review until one revenue-blocking workflow actually runs. If you should not buy a system yet, I will say so.",
     "startingBadge": "Recommended start",
     "plans": [
       {
-        "name": "30-day Discovery Sprint",
+        "name": "30-day Discovery (validation pack)",
         "priceLabel": "HK$6,800 (up to 10 people)",
-        "body": "Validate one workflow that affects revenue or operations. HK$6,800 for up to 10 people. 11–30 people: HK$13,600. 31+ quoted separately. Venue cost is extra.",
+        "body": "Validate one workflow that affects revenue or operations in 30 days. HK$6,800 for up to 10 people. 11–30 people: HK$13,600. 31+ quoted separately. Venue cost is extra.",
         "deliverables": [
           "Process map",
           "Ownership",
           "SOP / follow-up nodes",
           "Simple KPI",
-          "One quick win"
+          "One immediate improvement"
         ],
-        "cta": "Start with Sprint"
+        "cta": "Start with Discovery"
       },
       {
-        "name": "3-month Foundation",
+        "name": "3-month starter co-run",
         "priceLabel": "Scoped by SOP complexity",
         "body": "Land 1–2 workflows, SOP v1, monthly checkpoints, one team training.",
         "deliverables": [
@@ -136,10 +136,10 @@
           "Monthly checkpoints",
           "1 team training"
         ],
-        "cta": "See Foundation"
+        "cta": "See 3-month co-run"
       },
       {
-        "name": "6-month Accelerator",
+        "name": "6-month department co-run",
         "priceLabel": "Scoped by SOP complexity",
         "body": "One department / 3–4 workflows, adoption tracking, up to two workshops.",
         "deliverables": [
@@ -147,18 +147,18 @@
           "Adoption tracking",
           "Up to 2 workshops"
         ],
-        "cta": "See Accelerator"
+        "cta": "See 6-month co-run"
       },
       {
-        "name": "12-month Partnership",
+        "name": "12-month annual co-run",
         "priceLabel": "Scoped by SOP complexity",
-        "body": "Annual roadmap, SOP governance, management reviews.",
+        "body": "Annual roadmap, SOP governance, leadership reviews.",
         "deliverables": [
           "Annual roadmap",
           "SOP governance",
-          "Management reviews"
+          "Leadership reviews"
         ],
-        "cta": "See Partnership"
+        "cta": "See annual co-run"
       }
     ]
   },
@@ -250,7 +250,7 @@
       },
       {
         "question": "Is Business Workflow Diagnosis part of your AI consulting?",
-        "answer": "Yes — one path. I am AI Business Consultant Larry Lo / InnovateXP. Business Workflow Diagnosis is the signature method to clarify process first, then AI readiness, Discovery Sprint, or advisory — not a business-coach pitch or a SaaS hard sell."
+        "answer": "Yes — one path. I am AI Business Consultant Larry Lo / InnovateXP. Business Workflow Diagnosis is the signature method: diagnose → AI agents → co-run — not a business-coach pitch or a SaaS hard sell."
       },
       {
         "question": "How does SME workflow diagnosis work in Hong Kong?",
@@ -274,7 +274,7 @@
       },
       {
         "question": "Do SOP automation advisors push AI immediately?",
-        "answer": "No. Positioning is process first, AI second. If SOPs and ownership are unclear, automation amplifies chaos. We diagnose and stabilise SOP nodes before chatbots, reminders, or AI drafts."
+        "answer": "No. Positioning is diagnose first — I'll say so if you shouldn't buy a system yet. If SOPs and ownership are unclear, automation amplifies chaos. We diagnose and stabilise SOP nodes before chatbots, reminders, or AI drafts."
       },
       {
         "question": "What is AI readiness preparation?",
@@ -286,7 +286,7 @@
       },
       {
         "question": "AI Discovery Sprint vs 30-day Sprint?",
-        "answer": "Discovery validates whether a workflow deserves AI/CRM in a short cycle. The 30-day Sprint delivers process map, ownership, SOP, tracking, and one quick win. Both start from Business Workflow Diagnosis; advisory retainers come later."
+        "answer": "Discovery validates whether a workflow deserves AI/CRM in a short cycle. The 30-day Sprint delivers process map, ownership, SOP, tracking, and one immediate improvement. Both start from Business Workflow Diagnosis; advisory retainers come later."
       },
       {
         "question": "How do I book Larry Lo / InnovateXP?",
@@ -295,10 +295,10 @@
     ]
   },
   "finalCta": {
-    "title": "Want to know how much you're leaking, and where?",
-    "body": "Book a 30-minute Business Workflow Diagnosis. I bring system design experience, use AI agents to find the leaks, and walk with you from 0 to 1.",
-    "primary": "Book a Business Workflow Diagnosis (30 min)",
-    "secondary": "WhatsApp Larry"
+    "title": "Want to know how much you're leaking — and where?",
+    "body": "Book a 30-minute Business Workflow Diagnosis now. I bring system design experience and AI agents. After the call we choose Snapshot, Discovery, or I tell you plainly you should not buy a system yet.",
+    "primary": "Book diagnosis now (30 min)",
+    "secondary": "WhatsApp Larry directly"
   },
   "partnership": {
     "eyebrow": "Partners",
@@ -318,7 +318,7 @@
       {
         "name": "BNI Anchor",
         "desc": "Referral network & leadership",
-        "logo": ""
+        "logo": "/bni_anchor.png"
       },
       {
         "name": "LinkedInLocal Asia",
@@ -327,22 +327,40 @@
       },
       {
         "name": "OL International Services Limited",
-        "desc": "Corporate & international business services partner",
-        "logo": ""
+        "desc": "Corporate and international services partner",
+        "logo": "/ollsi.png"
+      },
+      {
+        "name": "Dr Steven Cheung Dental Surgery",
+        "desc": "Dental clinic partner",
+        "logo": "/partners/dr-steven-chung-logo.png",
+        "href": "https://www.drstevenchungdentalsurgery.com"
+      },
+      {
+        "name": "Mentalok",
+        "desc": "Mental wellness tech partner",
+        "logo": "/partners/mentalok-logo.png",
+        "href": "https://mentalok.io/zh-TW"
+      },
+      {
+        "name": "digidumpling",
+        "desc": "Digital content and product partner",
+        "logo": "/partners/digidumpling-logo.png",
+        "href": "https://digidumpling.com"
       }
     ]
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AI Business Consultant Larry Lo / InnovateXP",
-    "tagline": "Process first, AI second",
+    "tagline": "Diagnose first — I'll say so if you shouldn't buy a system",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
   },
   "products": {
-    "eyebrow": "Product packages",
-    "title": "Tools and packages after the workflow is clear",
-    "intro": "Same offers as our product posters: studio ops, receipts, website, CRM, events, VisionXP demo, and AI consultancy.",
+    "eyebrow": "Tools & products (after diagnosis)",
+    "title": "Only after the mainline is clear do products support day-to-day work",
+    "intro": "Products are secondary: trials and monthly plans matter after diagnosis / Discovery — not as the homepage lead.",
     "navLabel": "Products",
     "securityTitle": "ISO certification readiness and cybersecurity services available",
     "securityNote": "Scope and pricing assessed separately",
@@ -588,26 +606,9 @@
       "ctaBody": "Open the live demo, then book Discovery to lock one clinic or parent workflow before any implementation quote."
     },
     "compliance": {
-      "title": "Legal & compliance notice",
-      "lead": "This is a technology prototype / AI visual-tracking demonstration. It is not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination.",
-      "items": [
-        {
-          "title": "No medical diagnosis or advertising claims",
-          "body": "Do not treat any on-screen labels such as “assessment”, “screening”, or similar demo UI text as diagnosis or treatment efficacy. Under Hong Kong’s Undesirable Medical Advertisements Ordinance, public claims implying medical diagnosis or treatment are regulated. VisionXP is shown only as a technical demo of training workflows and tracking technology."
-        },
-        {
-          "title": "Privacy (PDPO)",
-          "body": "The public demo is frontend-only: no login and no patient records stored. If you film or publish demos that include third-party faces or biometric tracking, obtain written consent before public release. Facial/iris tracking data is sensitive personal data."
-        },
-        {
-          "title": "Partnership & IP before public marketing",
-          "body": "VisionXP is a collaborative prototype. Before using demo footage for marketing, align with co-developers on IP ownership, public-release rights, and any innovation-fund application constraints that may restrict pre-award commercial publicity."
-        },
-        {
-          "title": "Consistent non-medical-device positioning",
-          "body": "If anyone asks whether VisionXP can “check their eyes”, the answer is the same in every language: it is a tech demo / prototype, not a registered medical device, and must not be promoted as an unapproved medical product."
-        }
-      ]
+      "title": "",
+      "lead": "This is a technology prototype / AI visual-tracking demo, suitable for triage only. It is not a registered medical device and cannot replace professional optometry or ophthalmology examination.",
+      "items": []
     }
   }
 }

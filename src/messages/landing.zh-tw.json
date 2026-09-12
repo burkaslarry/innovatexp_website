@@ -71,7 +71,7 @@
       {
         "label": "Step 2",
         "title": "30 日 Workflow Sprint",
-        "body": "交付流程圖、責任人、SOP、追蹤節點與一個可執行的 quick win。"
+        "body": "交付流程圖、責任人、SOP、追蹤節點與一個可執行的 即時改善點。"
       },
       {
         "label": "Step 3",
@@ -108,13 +108,13 @@
   },
   "consultancy": {
     "eyebrow": "主線方案",
-    "title": "潛在客戶進來，最先應該看到的只有這條主線。",
-    "intro": "由 30 日驗證一條流程開始；再依需要升級到 3／6／12 個月陪跑。工具試用放在次級頁面，不與主線搶注意力。",
+    "title": "認真的買家，最先應該看這條主線。",
+    "intro": "公開主線：Snapshot HK$3,000 → Discovery HK$6,800 → 3／6／12 個月陪跑。工具試用收二級。",
     "fitNote": "不是先賣您一套系統；而是從流程診斷、落地、團隊採用到 KPI review，協助您把卡住收入的流程真正跑順。",
     "startingBadge": "建議起步",
     "plans": [
       {
-        "name": "30 日 Discovery Sprint",
+        "name": "30 日 Discovery（驗證包）",
         "priceLabel": "HK$6,800（10 人或以下）",
         "body": "先驗證一條最影響收入或營運的流程。10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價。場地費用另計。",
         "deliverables": [
@@ -122,12 +122,12 @@
           "責任分工",
           "SOP／跟進節點",
           "簡單 KPI",
-          "一個 quick win"
+          "一個即時改善點"
         ],
         "cta": "由 Sprint 開始"
       },
       {
-        "name": "3 個月 Foundation",
+        "name": "3 個月起步陪跑",
         "priceLabel": "視 SOP 複雜程度決定",
         "body": "1–2 條流程落地、SOP v1、每月 checkpoint、一次團隊培訓。",
         "deliverables": [
@@ -139,7 +139,7 @@
         "cta": "了解 Foundation"
       },
       {
-        "name": "6 個月 Accelerator",
+        "name": "6 個月部門陪跑",
         "priceLabel": "視 SOP 複雜程度決定",
         "body": "一個部門／3–4 條流程、adoption 追蹤、最多兩次工作坊。",
         "deliverables": [
@@ -150,7 +150,7 @@
         "cta": "了解 Accelerator"
       },
       {
-        "name": "12 個月 Partnership",
+        "name": "12 個月年度陪跑",
         "priceLabel": "視 SOP 複雜程度決定",
         "body": "年度 roadmap、SOP governance、管理層 review。",
         "deliverables": [
@@ -287,9 +287,9 @@
     ]
   },
   "finalCta": {
-    "title": "想知道您公司哪一條流程最值得先整理？",
-    "body": "預約 30 分鐘流程診斷，找出公司最容易漏單、慢報價或卡交接的一條流程。",
-    "primary": "預約 30 分鐘流程診斷",
+    "title": "想知道你漏了多少錢、漏在哪？",
+    "body": "現在預約 30 分鐘業務聽診。聽完再決定 Snapshot、Discovery，或直接告訴你暫時不必買系統。",
+    "primary": "立即預約業務聽診（30 分鐘）",
     "secondary": "WhatsApp 聯絡 Larry"
   },
   "partnership": {
@@ -297,22 +297,60 @@
     "title": "真正一起做過事的夥伴",
     "intro": "不是掛 logo 而已。這些是一起交付過、互相轉介過客戶的夥伴。",
     "items": [
-      { "name": "Zomate Fitness Limited", "desc": "Fitness 課堂管理系統合作夥伴", "logo": "" },
-      { "name": "善敏教育中心 Agilizing", "desc": "企業培訓教材自動化案例", "logo": "/agilizing-logo-transparent.png" },
-      { "name": "BNI Anchor", "desc": "引薦網絡與領導力", "logo": "" },
-      { "name": "LinkedInLocal Asia", "desc": "亞太專業社群聚會", "logo": "" },
-      { "name": "OL International Services Limited", "desc": "企業及國際業務服務夥伴", "logo": "" }
+      {
+        "name": "Zomate Fitness Limited",
+        "desc": "Fitness 課堂管理系統合作夥伴",
+        "logo": ""
+      },
+      {
+        "name": "善敏教育中心 Agilizing",
+        "desc": "企業培訓教材自動化案例",
+        "logo": "/agilizing-logo-transparent.png"
+      },
+      {
+        "name": "BNI Anchor",
+        "desc": "引薦網絡與領導力",
+        "logo": "/bni_anchor.png"
+      },
+      {
+        "name": "LinkedInLocal Asia",
+        "desc": "亞太專業社群聚會",
+        "logo": ""
+      },
+      {
+        "name": "OL International Services Limited",
+        "desc": "企業及國際業務服務夥伴",
+        "logo": "/ollsi.png"
+      },
+      {
+        "name": "Dr Steven Cheung Dental Surgery",
+        "desc": "牙科診所合作夥伴",
+        "logo": "/partners/dr-steven-chung-logo.png",
+        "href": "https://www.drstevenchungdentalsurgery.com"
+      },
+      {
+        "name": "Mentalok",
+        "desc": "心理健康科技夥伴",
+        "logo": "/partners/mentalok-logo.png",
+        "href": "https://mentalok.io/zh-TW"
+      },
+      {
+        "name": "digidumpling",
+        "desc": "數碼內容與產品夥伴",
+        "logo": "/partners/digidumpling-logo.png",
+        "href": "https://digidumpling.com"
+      }
     ]
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AI 商業顧問 Larry Lo／InnovateXP",
-    "tagline": "先執順流程，再落地 AI",
+    "tagline": "聽診先——不必買系統我會直說",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
   },
   "products": {
-    "eyebrow": "產品方案",
+    "eyebrow": "工具與產品（聽診後）",
     "title": "流程理順之後，以產品與方案支撐日常營運",
     "intro": "與產品海報一致：場館營運、收據、網站、CRM、活動、VisionXP 示範與 AI 顧問方案。",
     "navLabel": "產品方案",
@@ -560,26 +598,9 @@
       "ctaBody": "先打開 live demo，再預約 Discovery，鎖定一條診所或家長流程後再報落地。"
     },
     "compliance": {
-      "title": "法律與合規聲明",
-      "lead": "這是技術原型／AI 視覺追蹤示範，並非醫療診斷工具，也不是註冊醫療器材，不能取代專業視光或眼科檢查。",
-      "items": [
-        {
-          "title": "不構成醫療診斷或醫療廣告聲稱",
-          "body": "Demo 畫面若出現近似「檢查」、「篩查」等 UI 用語，僅屬技術示範標籤，不代表診斷或治療效能。香港《不良醫藥廣告條例》規管對外宣傳含醫療診斷／治療效能的產品或服務。VisionXP 僅以訓練流程與追蹤技術示範形式呈現。"
-        },
-        {
-          "title": "個人資料／隱私（PDPO）",
-          "body": "公開 demo 為純前端：無須登入、不存病人紀錄。若錄影或公開發布涉及第三人臉部或生物特徵追蹤，須先取得書面同意。臉部／虹膜追蹤資料屬敏感個人資料。"
-        },
-        {
-          "title": "合作夥伴／智慧財產與對外發布",
-          "body": "VisionXP 屬共同開發的 prototype。以 demo 片段作為 marketing 前，應與合作方確認 IP 擁有權、對外發布權，以及創科基金等申請可能限制申請前公開商業化／宣傳的要求。"
-        },
-        {
-          "title": "「非醫療器材」一致說明",
-          "body": "若有人詢問「這個可以幫我檢查眼睛嗎」，各語言口徑一致：這是科技 demo／prototype，不是註冊醫療器材，避免被理解為未經核准即推廣醫療產品。"
-        }
-      ]
+      "title": "",
+      "lead": "這是技術原型／AI 視覺追蹤示範，只適合分流用途；並非註冊醫療器械，不能代替專業視光或眼科檢查。",
+      "items": []
     }
   }
 }

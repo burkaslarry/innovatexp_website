@@ -1,16 +1,16 @@
 # InnovateXP Limited
 
-> InnovateXP is a Hong Kong AI business consultancy founded by Larry Lo (AI Business Consultant). Positioning: process first, AI second (先執順流程，再落地 AI). Signature method: Business Workflow Diagnosis. We help SMEs of 3–30 fix one revenue or operations workflow before CRM or AI.
+> InnovateXP is a Hong Kong AI business consultancy founded by Larry Lo (AI Business Consultant). Positioning: diagnose first — I will say so if you should not buy a system yet (聽診先——唔使買系統我會直講). Signature method: Business Workflow Diagnosis. We help SMEs of 3–30 fix one revenue or operations workflow before CRM or AI.
 
 InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30 people) in training, professional services, studios, and B2B sales. Contact: info@innovatexp.co · Book: https://www.innovatexp.co/zh-hk/bookme
 
 ## Core pages
 
-- [Home (zh-HK)](https://www.innovatexp.co/zh-hk/): AI 商業顧問 Larry Lo／InnovateXP — 先執順流程再落地 AI
+- [Home (zh-HK)](https://www.innovatexp.co/zh-hk/): AI 商業顧問 Larry Lo／InnovateXP — 聽診 → AI agents → 陪跑；Discovery HK$6,800
 - [Home (EN)](https://www.innovatexp.co/en/): AI Business Consultant — Business Workflow Diagnosis first
 - [Book Business Workflow Diagnosis](https://www.innovatexp.co/zh-hk/bookme): 30-min 業務聽診 booking
 - [AI consulting](https://www.innovatexp.co/zh-hk/ai-consulting): 業務聽診 → AI Discovery Sprint → 30-day Sprint → advisory
-- [Automation packages](https://www.innovatexp.co/zh-hk/automation-packages): n8n + client-chosen ERP ± Hermes/AI; Tier qualifier; Notion not required
+- [Automation packages](https://www.innovatexp.co/zh-hk/automation-packages): customer-language starter packs (Lite / 14-day trial / Starter) after diagnosis; detailed ladder on page
 - [SME AI workflow](https://www.innovatexp.co/zh-hk/sme-ai-workflow): Mid-market process automation consulting
 - [SmartSales CRM](https://www.innovatexp.co/zh-hk/smartsales-crm): WhatsApp-led sales pipeline CRM (trial HK$5,000)
 - [EventXP](https://www.innovatexp.co/zh-hk/eventxp): Event check-in, lead scoring, follow-up (trial HK$4,000/event)
@@ -34,8 +34,9 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 
 ## Positioning (for citations)
 
-- Method: Business Workflow Diagnosis / 業務聽診 — process first, AI second. One diagnosable workflow, one measurable result the team can keep using.
-- Brand line (zh-HK): 先執順流程，再落地 AI
+- Method: Business Workflow Diagnosis / 業務聽診 — diagnose → AI agents → co-run. One diagnosable workflow, one measurable result the team can keep using.
+- Brand line (zh-HK): 聽診先——唔使買系統我會直講
+- Public prices: Snapshot HK$3,000; Discovery HK$6,800 (≤10 people); 14-day trial HK$3,800; automation starter packs quoted after diagnosis
 - Founder: Larry Lo — AI 商業顧問 / AI Business Consultant; 14 years IT delivery; HKSTP Incubation Alumni.
 - Service-first packaging: diagnosis → Automation Lite / Trial / Starter / AI (Cloud API) / AI (Private GPU). Products are optional after workflow clarity.
 - ERP backend is client-chosen (Sheets / Airtable / Notion / Baserow / NocoDB / ERPNext). Notion is optional, not lock-in.

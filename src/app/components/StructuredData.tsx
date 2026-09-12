@@ -18,11 +18,11 @@ type FaqMainEntity = Array<{
 }>;
 
 const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
-  en: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. Signature method: Business Workflow Diagnosis — process first, AI second. We help SMEs of 3–30 fix one sales or operations workflow before CRM or AI. Optional products after clarity include SmartSales CRM, EventXP, FitnessXP, and VisionXP demo.",
+  en: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. Signature method: Business Workflow Diagnosis — diagnose first; I will say so if you should not buy a system yet. We help SMEs of 3–30 fix one sales or operations workflow before CRM or AI. Optional products after clarity include SmartSales CRM, EventXP, FitnessXP, and VisionXP demo.",
   "zh-hk":
-    "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。定位「先執順流程，再落地 AI」。幫 3–30 人中小企先聽清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
+    "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。定位「聽診先——唔使買系統我會直講」。幫 3–30 人中小企先聽清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
   "zh-tw":
-    "InnovateXP Limited 由 Larry Lo 創立，是香港 AI 商業顧問公司。定位「先執順流程，再落地 AI」。協助 3–30 人中小企業先釐清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
+    "InnovateXP Limited 由 Larry Lo 創立，是香港 AI 商業顧問公司。定位「聽診先——唔使買系統我會直講」。協助 3–30 人中小企業先釐清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
   ja: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。Discovery Sprint は HK$6,800〜。業務が明確になった後、SmartSales CRM、EventXP、VisionXP デモを選べます。",
   de: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen Workflow und führen AI, CRM oder Automation erst danach ein. Discovery Sprint ab HK$6,800. Nach Workflow-Klarheit optional SmartSales CRM, EventXP und VisionXP-Demo.",
 };
@@ -265,7 +265,7 @@ const HOME_FAQ_EN: FaqMainEntity = [
     name: "Is Business Workflow Diagnosis part of your AI consulting?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Yes — one path. I am AI Business Consultant Larry Lo / InnovateXP. Business Workflow Diagnosis is the signature method to clarify process first, then AI readiness, Discovery Sprint, or advisory — not a business-coach pitch or a SaaS hard sell.",
+      text: "Yes — one path. I am AI Business Consultant Larry Lo / InnovateXP. Business Workflow Diagnosis is the signature method: diagnose → AI agents → co-run — not a business-coach pitch or a SaaS hard sell.",
     },
   },
   {
@@ -313,7 +313,7 @@ const HOME_FAQ_EN: FaqMainEntity = [
     name: "Do SOP automation advisors push AI immediately?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "No. Positioning is process first, AI second. If SOPs and ownership are unclear, automation amplifies chaos. We diagnose and stabilise SOP nodes before chatbots, reminders, or AI drafts.",
+      text: "No. We diagnose first — and I'll say so if you shouldn't buy a system yet. If SOPs and ownership are unclear, automation amplifies chaos. We stabilise SOP nodes before chatbots, reminders, or AI drafts.",
     },
   },
   {
@@ -337,7 +337,7 @@ const HOME_FAQ_EN: FaqMainEntity = [
     name: "AI Discovery Sprint vs 30-day Sprint?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Discovery validates whether a workflow deserves AI/CRM in a short cycle. The 30-day Sprint delivers process map, ownership, SOP, tracking, and one quick win. Both start from Business Workflow Diagnosis; advisory retainers come later.",
+      text: "Discovery validates whether a workflow deserves AI/CRM in a short cycle. The 30-day validation pack delivers process map, ownership, SOP, tracking, and one immediate improvement. Both start from Business Workflow Diagnosis; co-run advisory comes later.",
     },
   },
   {
@@ -412,7 +412,7 @@ const HOME_FAQ_ZH_HK: FaqMainEntity = [
     name: "SOP 自動化顧問會唔會一開始就推 AI？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "唔會。定位係「先執順流程，再落地 AI」。如果 SOP 未寫清、責任未定，自動化只會放大混亂。先聽診同執 SOP，確認有穩定節點，先談 chatbot、提醒或 AI 草稿。",
+      text: "唔會。定位係「聽診先——唔使買系統我會直講」。如果 SOP 未寫清、責任未定，自動化只會放大混亂。先聽診同執 SOP，確認有穩定節點，先談 chatbot、提醒或 AI 草稿。",
     },
   },
   {
@@ -436,7 +436,7 @@ const HOME_FAQ_ZH_HK: FaqMainEntity = [
     name: "AI Discovery Sprint 同 30 日落地 Sprint 有咩分別？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "AI Discovery Sprint 用短週期驗證一條流程值唔值得加 AI／CRM。30 日落地 Sprint 則交付流程圖、責任、SOP、追蹤同一個 quick win。兩者都由業務聽診起步；之後可進入顧問陪跑。",
+      text: "Discovery 用短週期驗證一條流程值唔值得加 AI／CRM。30 日驗證包則交付流程圖、責任、SOP、追蹤同一個即時改善點。兩者都由業務聽診起步；之後可進入陪跑。",
     },
   },
   {
@@ -511,7 +511,7 @@ const HOME_FAQ_ZH_TW: FaqMainEntity = [
     name: "SOP 自動化顧問會唔會一開始就推 AI？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "唔會。定位係「先執順流程，再落地 AI」。如果 SOP 未寫清、責任未定，自動化只會放大混亂。先聽診同執 SOP，確認有穩定節點，先談 chatbot、提醒或 AI 草稿。",
+      text: "唔會。定位係「聽診先——唔使買系統我會直講」。如果 SOP 未寫清、責任未定，自動化只會放大混亂。先聽診同執 SOP，確認有穩定節點，先談 chatbot、提醒或 AI 草稿。",
     },
   },
   {
@@ -535,7 +535,7 @@ const HOME_FAQ_ZH_TW: FaqMainEntity = [
     name: "AI Discovery Sprint 同 30 日落地 Sprint 有咩分別？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "AI Discovery Sprint 用短週期驗證一條流程值唔值得加 AI／CRM。30 日落地 Sprint 則交付流程圖、責任、SOP、追蹤同一個 quick win。兩者都由業務聽診起步；之後可進入顧問陪跑。",
+      text: "Discovery 用短週期驗證一條流程值唔值得加 AI／CRM。30 日驗證包則交付流程圖、責任、SOP、追蹤同一個即時改善點。兩者都由業務聽診起步；之後可進入陪跑。",
     },
   },
   {

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare, UsersRound, Workflow } from "lucide-react";
+import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare, Workflow } from "lucide-react";
 import { ConsultancyMainlineSection } from "@/components/ConsultancyMainlineSection";
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { PartnershipSection } from "@/components/PartnershipSection";
@@ -7,7 +7,6 @@ import { ProductPackagesSection } from "@/components/ProductPackagesSection";
 import { VisionXpSection } from "@/components/VisionXpSection";
 import { Button } from "@/components/ui/Button";
 import { SectionHeader } from "@/components/ui/SectionHeader";
-import { getBniPowerTeamCopy } from "@/content/bni-power-team";
 import { getHomepageContent } from "@/content/homepage";
 import type { AppLocale } from "@/lib/i18n-routing";
 import { localeUsesChineseCopy, withLocale } from "@/lib/i18n-routing";
@@ -38,10 +37,8 @@ export function BusinessUpgradeHomepageFunnel({
   whatsappHref: string;
 }) {
   const c = getHomepageContent(locale);
-  const bni = getBniPowerTeamCopy(locale);
   const zh = localeUsesChineseCopy(locale);
   const problemIcons = [MessagesSquare, Clock3, ChevronRight, BriefcaseBusiness];
-  const bniHref = withLocale(locale, "/bni-power-team");
   const automationHref = withLocale(locale, "/automation-packages");
   const caseStudiesHref = withLocale(locale, "/case-studies");
   const caseStudiesLabel =
@@ -101,36 +98,6 @@ export function BusinessUpgradeHomepageFunnel({
         </ol>
       </SectionShell>
 
-      <SectionShell id="bni-power-team">
-        <article className="ixp-card relative overflow-hidden p-6 md:p-8">
-          <div
-            aria-hidden
-            className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top_right,rgba(14,165,233,0.14),transparent_55%),radial-gradient(circle_at_bottom_left,rgba(16,185,129,0.12),transparent_50%)]"
-          />
-          <div className="relative grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_auto] lg:items-center">
-            <div>
-              <p className="mb-3 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">
-                {bni.cardEyebrow}
-              </p>
-              <div className="flex items-start gap-3">
-                <UsersRound className="mt-1 h-7 w-7 shrink-0 text-[color:var(--brand-primary)]" aria-hidden />
-                <h2 className="max-w-[22ch] text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
-                  {bni.cardTitle}
-                </h2>
-              </div>
-              <p className="mt-4 max-w-[68ch] text-base leading-8 text-[color:var(--text-secondary)]">
-                {bni.cardBody}
-              </p>
-            </div>
-            <div className="flex lg:justify-end">
-              <Button href={bniHref} variant="primary">
-                {bni.cardCta}
-              </Button>
-            </div>
-          </div>
-        </article>
-      </SectionShell>
-
       <ConsultancyMainlineSection locale={locale} bookingHref={bookingHref} />
 
       <SectionShell id="automation-packages">
@@ -138,34 +105,30 @@ export function BusinessUpgradeHomepageFunnel({
           <div className="grid gap-6 lg:grid-cols-[minmax(0,1.4fr)_auto] lg:items-center">
             <div>
               <p className="mb-3 text-sm font-semibold tracking-[0.08em] text-[color:var(--secondary-color)]">
-                {zh ? "服務先行 · 產品其後" : "Service first · products second"}
+                {zh ? "聽診後交付包 · 客人語言" : "After diagnosis · plain-language packs"}
               </p>
               <div className="flex items-start gap-3">
                 <Workflow className="mt-1 h-7 w-7 shrink-0 text-[color:var(--brand-primary)]" aria-hidden />
-                <h2 className="max-w-[24ch] text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
+                <h2 className="max-w-[28ch] text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
                   {zh
-                    ? "n8n＋自選 ERP ± AI：聽診後先報，唔綁 Notion"
-                    : "n8n + ERP of choice ± AI — quote after diagnosis"}
+                    ? "自動化＋簡易訂單／客戶表 ± AI 幫手，聽診後先報價"
+                    : "Automation + simple order/CRM tables ± AI help — quoted after diagnosis"}
                 </h2>
               </div>
               <p className="mt-4 max-w-[68ch] text-base leading-8 text-[color:var(--text-secondary)]">
                 {zh
-                  ? "Hermes／本地大模型只喺有 GPU＋私隱＋高用量先值得。多數 SME 用 Lite／Starter／Cloud API 已經夠。10 題分級問卷幫你快速判斷 Tier。"
-                  : "Hermes / local models only when GPU + privacy + volume align. Most SMEs fit Lite / Starter / Cloud API. Use the 10-question qualifier to pick a tier."}
+                  ? "公開起步：Snapshot HK$3,000、Discovery HK$6,800、14 日流程試用 HK$3,800、自動化起步包。唔使一開始買大系統；聽診後先決定邊個交付包啱你。"
+                  : "Public start: Snapshot HK$3,000, Discovery HK$6,800, 14-day workflow trial HK$3,800, and an automation starter pack. No big-system pitch first — we quote the right pack after diagnosis."}
               </p>
             </div>
             <div className="flex lg:justify-end">
               <Button href={automationHref} variant="primary">
-                {zh ? "睇階梯＋分級問卷" : "See ladder + qualifier"}
+                {zh ? "睇起步包同公開價" : "See starter packs & public prices"}
               </Button>
             </div>
           </div>
         </article>
       </SectionShell>
-
-      <ProductPackagesSection locale={locale} content={c.products} />
-
-      <VisionXpSection locale={locale} copy={c.visionXp} />
 
       <SectionShell id="service-modules">
         <SectionHeader
@@ -277,11 +240,15 @@ export function BusinessUpgradeHomepageFunnel({
 
       <FaqAccordion id="faq" title={c.faq.title} faqs={c.faq.items} defaultOpenAll />
 
+      {/* Tools demoted below proof/about — mainline stays diagnosis → agents → co-run */}
+      <ProductPackagesSection locale={locale} content={c.products} />
+      <VisionXpSection locale={locale} copy={c.visionXp} />
+
       <PartnershipSection copy={c.partnership} />
 
       <SectionShell id="final-cta" className="mb-12">
-        <div className="ixp-card p-6 md:p-10">
-          <h2 className="max-w-[18ch] text-[clamp(1.9rem,4.5vw,3rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
+        <div className="ixp-card border-[color:var(--brand-primary)] p-6 ring-1 ring-[color:var(--brand-primary)]/25 md:p-10">
+          <h2 className="max-w-[22ch] text-[clamp(1.9rem,4.5vw,3rem)] font-bold tracking-[-0.02em] text-[color:var(--heading-foreground)]">
             {c.finalCta.title}
           </h2>
           <p className="mt-4 max-w-[70ch] text-base leading-8 text-[color:var(--text-secondary)]">{c.finalCta.body}</p>

@@ -71,7 +71,7 @@
       {
         "label": "Step 2",
         "title": "30日 Workflow Sprint",
-        "body": "業務図、責任者、SOP、追跡ポイント、実行可能なquick winを納品します。"
+        "body": "業務図、責任者、SOP、追跡ポイント、実行可能なすぐ使える改善点を納品します。"
       },
       {
         "label": "Step 3",
@@ -109,12 +109,12 @@
   "consultancy": {
     "eyebrow": "主力プログラム",
     "title": "本気の見込み客が最初に見るべき道筋はこれだけです。",
-    "intro": "30日で1本の業務を検証し、必要に応じて3／6／12か月へ拡張。ツール試用は二次ページに置きます。",
+    "intro": "公開メインライン：Snapshot HK$3,000 → Discovery HK$6,800 → 3／6／12か月伴走。ツール試用は二次。",
     "fitNote": "最初にシステムを売るのではなく、診断・実装・定着・KPIレビューまで伴走し、収益を止める業務を通します。",
     "startingBadge": "推奨スタート",
     "plans": [
       {
-        "name": "30日 Discovery Sprint",
+        "name": "30日 Discovery（検証パック）",
         "priceLabel": "HK$6,800（10名まで）",
         "body": "収益や運営に影響する1本の業務を先に検証します。10名まで HK$6,800、11–30名は HK$13,600、31名以上は個別見積。会場費は別途。",
         "deliverables": [
@@ -122,12 +122,12 @@
           "責任分担",
           "SOP／フォロー節点",
           "簡易KPI",
-          "1つのquick win"
+          "1つのすぐ使える改善点"
         ],
         "cta": "Sprintから始める"
       },
       {
-        "name": "3か月 Foundation",
+        "name": "3か月伴走スタート",
         "priceLabel": "SOPの複雑さに応じて見積",
         "body": "1〜2本の業務定着、SOP v1、毎月のcheckpoint、チーム研修1回。",
         "deliverables": [
@@ -139,7 +139,7 @@
         "cta": "Foundationを見る"
       },
       {
-        "name": "6か月 Accelerator",
+        "name": "6か月部門伴走",
         "priceLabel": "SOPの複雑さに応じて見積",
         "body": "1部門／3〜4本の業務、adoption追跡、最大2回のワークショップ。",
         "deliverables": [
@@ -150,7 +150,7 @@
         "cta": "Acceleratorを見る"
       },
       {
-        "name": "12か月 Partnership",
+        "name": "12か月年間伴走",
         "priceLabel": "SOPの複雑さに応じて見積",
         "body": "年間roadmap、SOPガバナンス、経営レビュー。",
         "deliverables": [
@@ -297,22 +297,60 @@
     "title": "実際に一緒に仕事をしたパートナー",
     "intro": "ロゴを掲げるだけではありません。一緒に納品し、紹介し合ったパートナーです。",
     "items": [
-      { "name": "Zomate Fitness Limited", "desc": "フィットネスクラス管理システムパートナー", "logo": "" },
-      { "name": "Agilizing Education Center", "desc": "企業研修教材の自動化事例", "logo": "/agilizing-logo-transparent.png" },
-      { "name": "BNI Anchor", "desc": "紹介ネットワークとリーダーシップ", "logo": "" },
-      { "name": "LinkedInLocal Asia", "desc": "APACのプロフェッショナル交流会", "logo": "" },
-      { "name": "OL International Services Limited", "desc": "企業・国際ビジネスサービスパートナー", "logo": "" }
+      {
+        "name": "Zomate Fitness Limited",
+        "desc": "Fitness class management system partner",
+        "logo": ""
+      },
+      {
+        "name": "Agilizing Education Center",
+        "desc": "Corporate training material automation case",
+        "logo": "/agilizing-logo-transparent.png"
+      },
+      {
+        "name": "BNI Anchor",
+        "desc": "Referral network & leadership",
+        "logo": "/bni_anchor.png"
+      },
+      {
+        "name": "LinkedInLocal Asia",
+        "desc": "APAC professional meetups",
+        "logo": ""
+      },
+      {
+        "name": "OL International Services Limited",
+        "desc": "Corporate and international services partner",
+        "logo": "/ollsi.png"
+      },
+      {
+        "name": "Dr Steven Cheung Dental Surgery",
+        "desc": "Dental clinic partner",
+        "logo": "/partners/dr-steven-chung-logo.png",
+        "href": "https://www.drstevenchungdentalsurgery.com"
+      },
+      {
+        "name": "Mentalok",
+        "desc": "Mental wellness tech partner",
+        "logo": "/partners/mentalok-logo.png",
+        "href": "https://mentalok.io/zh-TW"
+      },
+      {
+        "name": "digidumpling",
+        "desc": "Digital content and product partner",
+        "logo": "/partners/digidumpling-logo.png",
+        "href": "https://digidumpling.com"
+      }
     ]
   },
   "footer": {
     "title": "Larry Lo / InnovateXP",
     "role": "AIビジネスコンサルタント",
-    "tagline": "最新AIツールを追うのではなく、チームが実際に使える業務成果を一つ完成させる。",
+    "tagline": "まず診断。買う必要がなければはっきり言います。",
     "privacy": "Privacy Policy",
     "copyright": "© 2026 InnovateXP Limited. All rights reserved."
   },
   "products": {
-    "eyebrow": "プロダクトパッケージ",
+    "eyebrow": "ツールと製品（診断後）",
     "title": "業務を整えた後に、日常運用を支えるパッケージ",
     "intro": "ポスターと同じ内容：スタジオ運営、領収書、Web、CRM、イベント、VisionXP デモ、AIコンサル。",
     "navLabel": "プロダクト",
@@ -560,26 +598,9 @@
       "ctaBody": "ライブデモを開き、Discovery でクリニックまたは保護者の1本のフローを確定してから実装見積へ進みます。"
     },
     "compliance": {
-      "title": "法令・コンプライアンスに関する注意",
-      "lead": "これは技術プロトタイプ／AI視覚トラッキングのデモンストレーションです。医療診断ツールではなく、登録医療機器でもなく、専門の視能・眼科検査の代替にもなりません。",
-      "items": [
-        {
-          "title": "医療診断・医療広告上の効能表示ではありません",
-          "body": "デモ画面に「検査」「スクリーニング」等に近い UI 文言があっても、技術デモのラベルに過ぎず、診断や治療効果を意味しません。香港の Undesirable Medical Advertisements Ordinance は、医療診断・治療効能を含む対外宣伝を規制します。VisionXP は訓練フローとトラッキング技術のデモとしてのみ提示します。"
-        },
-        {
-          "title": "個人データ／プライバシー（PDPO）",
-          "body": "公開デモはフロントエンドのみで、ログイン不要・患者記録非保存です。第三者の顔や生体トラッキングを含む撮影・公開には、事前の書面同意が必要です。顔／虹彩トラッキングデータは機微な個人データです。"
-        },
-        {
-          "title": "共同開発・知的財産と対外公開",
-          "body": "VisionXP は共同開発のプロトタイプです。デモ映像をマーケティングに使う前に、共同開発者との IP 帰属、対外公開権、申請前の商業広報を制限し得るイノベーション基金等の条件を確認してください。"
-        },
-        {
-          "title": "「非医療機器」としての一貫した説明",
-          "body": "「これで目を診てもらえるか」と聞かれた場合の回答は全言語で同じです。技術デモ／プロトタイプであり、登録医療機器ではありません。未承認の医療製品として宣伝されないようご注意ください。"
-        }
-      ]
+      "title": "",
+      "lead": "技術プロトタイプ／AI視覚トラッキングデモです。トリアージ用途のみ。登録医療機器ではなく、専門的な眼科・視能検査の代替にはなりません。",
+      "items": []
     }
   }
 }

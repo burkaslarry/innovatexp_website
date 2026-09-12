@@ -16,7 +16,7 @@ export function getOrganizationSchema() {
     url: siteUrl,
     logo: `${siteUrl}/innovatexp_color_no_bg.svg`,
     description:
-      "Hong Kong AI business consultancy founded by Larry Lo. Fix one SME workflow first, then adopt AI, CRM, or automation when justified. Discovery Sprint from HK$6,800.",
+      "Hong Kong AI business consultancy founded by Larry Lo. Diagnose first, then AI agents and co-run. Public prices: Snapshot HK$3,000, Discovery from HK$6,800.",
     sameAs: [
       "https://www.linkedin.com/company/innovatexp",
       "https://www.linkedin.com/in/innovatexp/",
@@ -150,9 +150,9 @@ export function getAIConsultingServiceSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Service",
-    name: "AI Business Consultancy — Discovery Sprint",
+    name: "AI Business Consultancy — Discovery",
     description:
-      "InnovateXP helps Hong Kong SMEs start with one workflow, prove a measurable quick win in 30 days (Discovery Sprint from HK$6,800), then expand AI or automation with controlled risk.",
+      "InnovateXP helps Hong Kong SMEs diagnose one revenue-blocking workflow, validate it in 30 days (Discovery from HK$6,800), then expand with AI agents or co-run advisory when justified.",
     provider: {
       "@type": "Organization",
       name: "InnovateXP Limited",

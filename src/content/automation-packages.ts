@@ -76,7 +76,7 @@ type Copy = {
 const zh: Copy = {
   metaTitle: "n8n自動化＋ERP｜業務聽診先｜InnovateXP",
   metaDescription:
-    "AI 商業顧問 Larry Lo／InnovateXP：先業務聽診，再 n8n＋自選 ERP（Sheet／Notion／Baserow／ERPNext）。Hermes／私有 GPU 只喺有 GPU＋私隱＋高用量先值得。",
+    "AI 商業顧問 Larry Lo／InnovateXP：業務聽診後先報自動化起步包。公開試用 HK$3,800、Lite／Starter；Snapshot HK$3,000、Discovery HK$6,800。唔使買系統會直講。",
   eyebrow: "服務先行 · 產品其後",
   h1: "先聽診卡住收入嘅線，再決定自動化定 AI agent",
   lead:
@@ -351,12 +351,12 @@ const zh: Copy = {
 const en: Copy = {
   metaTitle: "n8n Automation + ERP | Diagnose First | InnovateXP",
   metaDescription:
-    "AI Business Consultant Larry Lo / InnovateXP: Business Workflow Diagnosis first, then n8n + your ERP (Sheets/Notion/Baserow/ERPNext). Hermes/private GPU only when GPU + privacy + volume justify it.",
+    "AI Business Consultant Larry Lo / InnovateXP: after diagnosis we quote automation starter packs. Public: 14-day trial HK$3,800, Lite/Starter; Snapshot HK$3,000, Discovery HK$6,800.",
   eyebrow: "Service first · products second",
   h1: "Diagnose the revenue-blocking line before you buy automation or an AI agent",
   lead:
     "I am AI Business Consultant Larry Lo / InnovateXP. We sell the service path first: diagnosis → delivery package. Products are optional after the workflow is clear. ERP backend is yours to choose — Notion is not mandatory.",
-  brandPromise: "Process first, AI second. If you should not buy a system yet, I will say so.",
+  brandPromise: "Diagnose first. If you should not buy a system yet, I will say so.",
   serviceFirstTitle: "Why not lead with Hermes / a local 35B model?",
   serviceFirstBody:
     "Hermes is an AI agent (brain), not an ERP. Most Hong Kong SMEs are fine with n8n + chosen ERP + a cloud LLM API. Local 35B-class models need ~24GB+ VRAM, a privacy need, and enough volume. Uncensored models are not the default commercial brain.",

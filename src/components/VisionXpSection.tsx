@@ -17,16 +17,22 @@ export function VisionXpComplianceNotice({ copy }: { copy: VisionXpCopy["complia
       role="note"
       aria-label={copy.title}
     >
-      <p className="text-sm font-bold tracking-[0.04em] text-[color:var(--heading-foreground)]">{copy.title}</p>
-      <p className="mt-2 text-sm font-semibold leading-7 text-[color:var(--heading-foreground)]">{copy.lead}</p>
-      <ul className="mt-4 space-y-3">
-        {copy.items.map((item) => (
-          <li key={item.title}>
-            <p className="text-sm font-semibold text-[color:var(--heading-foreground)]">{item.title}</p>
-            <p className="mt-1 text-sm leading-7 text-[color:var(--text-secondary)]">{item.body}</p>
-          </li>
-        ))}
-      </ul>
+      {copy.title ? (
+        <p className="text-sm font-bold tracking-[0.04em] text-[color:var(--heading-foreground)]">{copy.title}</p>
+      ) : null}
+      <p className={`${copy.title ? "mt-2" : ""} text-sm font-semibold leading-7 text-[color:var(--heading-foreground)]`}>
+        {copy.lead}
+      </p>
+      {copy.items.length > 0 ? (
+        <ul className="mt-4 space-y-3">
+          {copy.items.map((item) => (
+            <li key={item.title}>
+              <p className="text-sm font-semibold text-[color:var(--heading-foreground)]">{item.title}</p>
+              <p className="mt-1 text-sm leading-7 text-[color:var(--text-secondary)]">{item.body}</p>
+            </li>
+          ))}
+        </ul>
+      ) : null}
     </aside>
   );
 }

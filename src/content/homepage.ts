@@ -214,7 +214,7 @@ export type HomepageContent = {
     eyebrow: string;
     title: string;
     intro: string;
-    items: { name: string; desc: string; logo: string }[];
+    items: { name: string; desc: string; logo: string; href?: string }[];
   };
   footer: {
     title: string;
