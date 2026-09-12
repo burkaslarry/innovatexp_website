@@ -32,6 +32,8 @@ export const PRICING = {
     aiReadinessAssessment: 3_000,
     /** Top-up when AI Readiness Snapshot upgrades to HK$6,800 Discovery within 14 days. */
     aiReadinessDiscoveryTopUp: 3_800,
+    /** 14-day automation / workflow trial (customer-language starter path). */
+    automationTrial14Day: 3_800,
     /** EventXP 試用 — 1 場活動 */
     eventXpTrial: 4_000,
     /** SmartSales CRM 試用 */

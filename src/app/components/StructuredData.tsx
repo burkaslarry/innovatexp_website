@@ -2,7 +2,7 @@
 /* F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path. */
 import { usePathname } from "next/navigation";
 import type { AppLocale } from "@/lib/i18n-routing";
-import { getLocaleFromPathname, localeToHtmlLang, stripLocaleFromPathname } from "@/lib/i18n-routing";
+import { getLocaleFromPathname, localeToHtmlLang, localeUsesChineseCopy, stripLocaleFromPathname } from "@/lib/i18n-routing";
 import { PRICING } from "@/content/pricing";
 import { VISIONXP_DEMO_URL } from "@/content/visionxp";
 
@@ -1184,9 +1184,12 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${baseUrl}/#ai-consulting`,
-    serviceType: "AI Business Upgrade Advisory",
-    name: "AI Business Upgrade Accelerator",
+    serviceType: "AI Business Consultancy",
+    name: localeUsesChineseCopy(routeLocale)
+      ? "業務聽診 → Discovery → 陪跑（InnovateXP）"
+      : "Business Workflow Diagnosis → Discovery → co-run (InnovateXP)",
     description: pickSchema(routeLocale, SCHEMA_CONSULTING_SERVICE_DESCRIPTION),
+    url: `${baseUrl}/${routeLocale}/ai-consulting`,
     provider: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
@@ -1197,36 +1200,72 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     },
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "AI Business Upgrade Programs",
+      name: localeUsesChineseCopy(routeLocale)
+        ? "公開主線價（Snapshot／Discovery／試用）"
+        : "Public mainline prices (Snapshot / Discovery / trial)",
       itemListElement: [
         {
           "@type": "Offer",
+          "@id": `${baseUrl}/#offer-snapshot`,
+          name: "AI Readiness Snapshot",
+          url: `${baseUrl}/${routeLocale}/#service-plans`,
+          availability: "https://schema.org/InStock",
           itemOffered: {
             "@type": "Service",
             name: "AI Readiness Snapshot",
-            description: "Downsell only: 60–90 minute interview, one-page scorecard, 3 blockers, go/no-go for Discovery. No SOP, prototype, or implementation.",
+            description: localeUsesChineseCopy(routeLocale)
+              ? "較細成本先做證據型決定；可升級 Discovery。"
+              : "Smaller evidence-based decision before Discovery.",
           },
           price: String(PRICING.quickCash.aiReadinessAssessment),
           priceCurrency: "HKD",
         },
         {
           "@type": "Offer",
+          "@id": `${baseUrl}/#offer-discovery-10`,
+          name: "30-day Discovery (up to 10 people)",
+          url: `${baseUrl}/${routeLocale}/bookme`,
+          availability: "https://schema.org/InStock",
           itemOffered: {
             "@type": "Service",
-            name: "30-day AI Upgrade Discovery Sprint (up to 10 people)",
-            description: "HK$6,800 for up to 10 people. Venue cost is extra.",
+            name: "30-day Discovery validation pack",
+            description: localeUsesChineseCopy(routeLocale)
+              ? "30 日驗證一條卡住收入／營運嘅流程。10 人或以下 HK$6,800；場地另計。"
+              : "Validate one revenue- or operations-blocking workflow in 30 days. HK$6,800 for up to 10 people. Venue extra.",
           },
           price: String(PRICING.consultancy.discoverySprint30Day),
           priceCurrency: "HKD",
         },
         {
           "@type": "Offer",
+          "@id": `${baseUrl}/#offer-discovery-30`,
+          name: "Discovery workshop (11–30 people)",
+          url: `${baseUrl}/${routeLocale}/bookme`,
+          availability: "https://schema.org/InStock",
           itemOffered: {
             "@type": "Service",
             name: "Discovery workshop (11–30 people)",
-            description: "HK$13,600 for 11–30 people. 31+ quoted separately. Venue cost is extra.",
+            description: localeUsesChineseCopy(routeLocale)
+              ? "11–30 人 HK$13,600；31+ 另行報價；場地另計。"
+              : "HK$13,600 for 11–30 people. 31+ quoted separately. Venue extra.",
           },
           price: String(PRICING.consultancy.discoveryWorkshop11To30),
+          priceCurrency: "HKD",
+        },
+        {
+          "@type": "Offer",
+          "@id": `${baseUrl}/#offer-automation-trial`,
+          name: "14-day automation / workflow trial",
+          url: `${baseUrl}/${routeLocale}/automation-packages`,
+          availability: "https://schema.org/InStock",
+          itemOffered: {
+            "@type": "Service",
+            name: "14-day automation starter trial",
+            description: localeUsesChineseCopy(routeLocale)
+              ? "聽診後 14 日流程試用；轉正式可扣部分費用。"
+              : "14-day workflow trial after diagnosis; credit toward a formal starter pack.",
+          },
+          price: String(PRICING.quickCash.automationTrial14Day),
           priceCurrency: "HKD",
         },
       ],
@@ -1236,7 +1275,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       priceCurrency: "HKD",
       lowPrice: String(PRICING.quickCash.aiReadinessAssessment),
       highPrice: String(PRICING.consultancy.discoveryWorkshop11To30),
-      offerCount: 3,
+      offerCount: 4,
     },
   };
 
@@ -1322,9 +1361,29 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "AI Business Consultancy, Advisory, and Optional Solutions",
+      name: "Public mainline — Snapshot, Discovery, trial",
       itemListElement: [
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "AI Consulting" } },
+        {
+          "@type": "Offer",
+          name: "AI Readiness Snapshot",
+          price: String(PRICING.quickCash.aiReadinessAssessment),
+          priceCurrency: "HKD",
+          itemOffered: { "@type": "Service", name: "AI Readiness Snapshot" },
+        },
+        {
+          "@type": "Offer",
+          name: "30-day Discovery (≤10 people)",
+          price: String(PRICING.consultancy.discoverySprint30Day),
+          priceCurrency: "HKD",
+          itemOffered: { "@type": "Service", name: "30-day Discovery" },
+        },
+        {
+          "@type": "Offer",
+          name: "14-day automation trial",
+          price: String(PRICING.quickCash.automationTrial14Day),
+          priceCurrency: "HKD",
+          itemOffered: { "@type": "Service", name: "14-day automation trial" },
+        },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "SmartSales CRM" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "EventXP" } },
         { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "VisionXP" } },
@@ -1334,7 +1393,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
 
   const scopedServiceSchemas =
     resolvedScope === "home"
-      ? [smartSalesCRMService, eventXPService, visionXPService, aiConsultingService]
+      ? [aiConsultingService, smartSalesCRMService, eventXPService, visionXPService]
       : resolvedScope === "smartsales"
         ? [smartSalesCRMService]
         : resolvedScope === "eventxp"

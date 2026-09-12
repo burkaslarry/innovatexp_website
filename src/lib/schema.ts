@@ -162,7 +162,40 @@ export function getAIConsultingServiceSchema() {
       "@type": "AdministrativeArea",
       name: "Hong Kong",
     },
-    url: `${siteUrl}/ai-consulting`,
+    url: `${siteUrl}/zh-hk/ai-consulting`,
+    offers: {
+      "@type": "AggregateOffer",
+      priceCurrency: "HKD",
+      lowPrice: "3000",
+      highPrice: "13600",
+      offerCount: 4,
+      offers: [
+        {
+          "@type": "Offer",
+          name: "AI Readiness Snapshot",
+          price: "3000",
+          priceCurrency: "HKD",
+        },
+        {
+          "@type": "Offer",
+          name: "30-day Discovery (up to 10 people)",
+          price: "6800",
+          priceCurrency: "HKD",
+        },
+        {
+          "@type": "Offer",
+          name: "Discovery workshop (11–30 people)",
+          price: "13600",
+          priceCurrency: "HKD",
+        },
+        {
+          "@type": "Offer",
+          name: "14-day automation trial",
+          price: "3800",
+          priceCurrency: "HKD",
+        },
+      ],
+    },
   };
 }
 
