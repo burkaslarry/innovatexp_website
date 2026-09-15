@@ -3,28 +3,28 @@
   "brandSubtitle": "AI Business Consultant Larry Lo / InnovateXP",
   "nav": {
     "home": "Home",
-    "diagnosis": "Workflow diagnosis",
-    "services": "Approach",
-    "plans": "Programs",
-    "cases": "Results",
-    "about": "About Larry",
+    "diagnosis": "Pain points",
+    "services": "Method",
+    "plans": "Services",
+    "cases": "Case",
+    "about": "Why me",
     "faq": "FAQ",
-    "cta": "Book a diagnosis",
+    "cta": "Book a 30-min diagnosis",
     "products": "Products",
     "visionXp": "VisionXP",
     "partnership": "Partners"
   },
   "hero": {
-    "eyebrow": "AI Consultant Larry Lo | InnovateXP",
-    "title": "You're leaking more than HK$25,000 a month. You just don't know where.",
-    "description": "Scattered admin, manual reconciliation, WhatsApp chaos — these aren't small things. They're silent leaks blocking your growth. I bring system design and development experience, use AI agents to find the leaks, and walk with you from 0 to 1. AI handles efficiency. I preserve the human warmth and organisational connection.",
-    "fitAudience": "For Hong Kong teams of 3–30 still running operations on WhatsApp and spreadsheets",
-    "primaryCta": "Book a Business Workflow Diagnosis (30 min)",
-    "secondaryCta": "",
+    "eyebrow": "AI Business Consultant Larry Lo | InnovateXP",
+    "title": "AI business consultant for Hong Kong teams of 3–30",
+    "description": "Fix the workflow first, then land AI. In a 30-minute diagnosis, we find the process that leaks leads, runs slowest, or depends on one person. I'll say so if you shouldn't buy a system.",
+    "fitAudience": "",
+    "primaryCta": "Book a 30-min diagnosis",
+    "secondaryCta": "Ask on WhatsApp",
     "trustPoints": [
-      "ICP: Hong Kong teams of 3–30",
-      "Method: Diagnosis → AI agents → 0-to-1 walk-with",
-      "Outcome: AI handles efficiency, I keep the human warmth"
+      "14 years in large enterprises",
+      "Served training centres, clinics, fitness & professional services",
+      "Decide what to build only after diagnosis"
     ],
     "diagnosticInputs": [
       "WhatsApp enquiries",
@@ -34,50 +34,50 @@
     ],
     "diagnosticOutput": "One visible workflow with clear ownership",
     "diagnosticCaption": "Fix the leak first. Then decide whether AI, CRM, or automation is justified.",
-    "imageAlt": "Larry Lo, InnovateXP AI Business Consultant, presenting Business Workflow Diagnosis in Hong Kong"
+    "imageAlt": "Larry Lo | InnovateXP AI Business Consultant"
   },
   "problem": {
     "eyebrow": "Sound familiar?",
-    "title": "It's not that you have no customers. It's that scattered admin is blocking your growth.",
+    "title": "It's not that you have no customers — scattered admin is blocking growth.",
     "items": [
       {
-        "title": "Scattered enquiries",
-        "body": "WhatsApp, spreadsheets, and forms all run separately. A lead asks, no one follows up, two days later they're gone."
+        "title": "Enquiries everywhere",
+        "body": "WhatsApp, Excel, and forms each live alone. Nobody follows up — the lead leaves."
       },
       {
-        "title": "Slow quotations",
-        "body": "You have to search, ask, and wait. The client chases you, and you realise it slipped through."
+        "title": "Slow quotes",
+        "body": "You hunt for data, ask around, wait. The client chases you before you notice the miss."
       },
       {
         "title": "Messy handoffs",
-        "body": "No one knows who owns the next step. Same client, three people, three versions."
+        "body": "No one owns the next step. Same client, three people, three versions."
       },
       {
-        "title": "Owner firefighting",
-        "body": "One person takes leave and the whole workflow stalls. Is that a process, or a hostage?"
+        "title": "Founder as firefighter",
+        "body": "One person on leave and the whole process stops. Is that a workflow — or a hostage situation?"
       }
-    ],
-    "quote": "You're leaking more than HK$25,000 a month. You just don't know where."
+    ]
   },
   "approach": {
-    "eyebrow": "How I work",
-    "title": "I won't teach you a few tools. I'll walk with you from survive to thrive in the AI wave.",
-    "intro": "My method is Business Workflow Diagnosis: 30 minutes to find your most painful workflow, clarify where it leaks, who owns it, and what's next. Then I use AI agents to build the fix, and walk with you from 0 to 1.",
+    "eyebrow": "The method",
+    "title": "Diagnose → land AI agents → co-run from 0 to 1",
+    "intro": "In 30 minutes we find your most painful workflow, clarify leaks, ownership, and next steps. We only implement when it helps.",
     "steps": [
       {
         "label": "Step 1",
-        "title": "Business Workflow Diagnosis (30 min)",
-        "body": "Bring your messiest workflow. I'll map where leads leak, where things slow down, and who should own what."
+        "title": "Business diagnosis (30 min)",
+        "body": "Bring your messiest line. We map where leads leak, where it stalls, and who should own it.",
+        "note": "The diagnosis itself is not a product pitch. If you don't need a system, I'll say so."
       },
       {
         "label": "Step 2",
-        "title": "AI agents implementation",
-        "body": "I bring system design and development experience, use AI agents to find the solution. You get a process map, ownership, SOP, and one immediate improvement your team actually uses."
+        "title": "Land AI agents",
+        "body": "Using system design experience, we deliver a process map, ownership, SOPs, and one improvement the team can actually use."
       },
       {
         "label": "Step 3",
-        "title": "0-to-1 walk-with",
-        "body": "I help your team adopt it. Day 30 / 60 / 90 reviews. First find how to survive, then build your unique edge. If you don't need a system, I'll say so."
+        "title": "Co-run from 0 to 1",
+        "body": "Help the team adopt it, review regularly. Survive first — then build an edge."
       }
     ]
   },
@@ -108,127 +108,130 @@
     ]
   },
   "consultancy": {
-    "eyebrow": "Main programs",
-    "title": "The only path a serious buyer should see first.",
-    "intro": "Public mainline: Snapshot HK$3,000 → Discovery HK$6,800 → 3 / 6 / 12-month co-run. Tool trials stay secondary; after diagnosis we decide on a 14-day trial or automation starter pack.",
-    "fitNote": "Not selling you a system first — diagnosis, implementation, adoption, and KPI review until one revenue-blocking workflow actually runs. If you should not buy a system yet, I will say so.",
-    "startingBadge": "Recommended start",
+    "eyebrow": "Mainline",
+    "title": "Quote after diagnosis — then decide the co-run scope",
+    "intro": "Mainline: diagnosis → land → co-run. Tool trials are secondary; we decide after diagnosis.",
+    "fitNote": "We don't sell a system first. Diagnose, land, adopt, review — I'll say so if you shouldn't buy.",
+    "startingBadge": "Suggested start",
     "plans": [
       {
-        "name": "30-day Discovery (validation pack)",
-        "priceLabel": "HK$6,800 (up to 10 people)",
-        "body": "Validate one workflow that affects revenue or operations in 30 days. HK$6,800 for up to 10 people. 11–30 people: HK$13,600. 31+ quoted separately. Venue cost is extra.",
+        "name": "Post-diagnosis validation",
+        "priceLabel": "Quoted after diagnosis",
+        "body": "用一段短週期驗證一條最影響收入或營運嘅流程。範圍同報價按流程複雜程度，聽診後提供。",
         "deliverables": [
-          "Process map",
-          "Ownership",
-          "SOP / follow-up nodes",
-          "Simple KPI",
-          "One immediate improvement"
+          "流程圖",
+          "責任分工",
+          "SOP／跟進節點",
+          "簡單 KPI",
+          "一個即時改善點"
         ],
-        "cta": "Start with Discovery"
+        "cta": "Book a diagnosis"
       },
       {
-        "name": "3-month starter co-run",
-        "priceLabel": "Scoped by SOP complexity",
-        "body": "Land 1–2 workflows, SOP v1, monthly checkpoints, one team training.",
+        "name": "3-month co-run",
+        "priceLabel": "Quoted by workflow complexity",
+        "body": "1–2 條流程落地、SOP 初版、每月檢討、一次團隊培訓。",
         "deliverables": [
-          "1–2 workflows",
-          "SOP v1",
-          "Monthly checkpoints",
-          "1 team training"
+          "1–2 條流程",
+          "SOP 初版",
+          "每月檢討",
+          "1 次團隊培訓"
         ],
-        "cta": "See 3-month co-run"
+        "cta": "Book a diagnosis"
       },
       {
-        "name": "6-month department co-run",
-        "priceLabel": "Scoped by SOP complexity",
-        "body": "One department / 3–4 workflows, adoption tracking, up to two workshops.",
+        "name": "6-month co-run",
+        "priceLabel": "Quoted by workflow complexity",
+        "body": "一個部門／3–4 條流程、採用追蹤、最多兩次工作坊。",
         "deliverables": [
-          "3–4 workflows",
-          "Adoption tracking",
-          "Up to 2 workshops"
+          "3–4 條流程",
+          "採用追蹤",
+          "最多 2 次工作坊"
         ],
-        "cta": "See 6-month co-run"
+        "cta": "Book a diagnosis"
       },
       {
-        "name": "12-month annual co-run",
-        "priceLabel": "Scoped by SOP complexity",
-        "body": "Annual roadmap, SOP governance, leadership reviews.",
+        "name": "12-month co-run",
+        "priceLabel": "Quoted by workflow complexity",
+        "body": "年度路線圖、流程管治、管理層檢討。",
         "deliverables": [
-          "Annual roadmap",
-          "SOP governance",
-          "Leadership reviews"
+          "年度路線圖",
+          "流程管治",
+          "管理層檢討"
         ],
-        "cta": "See annual co-run"
+        "cta": "Book a diagnosis"
       }
     ]
   },
   "cases": {
-    "eyebrow": "Real cases",
-    "title": "After diagnosis, see the improvement in numbers.",
-    "intro": "Real cases: Before → approach → After → measurable result. Agilizing's numbers are real, not estimates. Others marked [PLACEHOLDER] are pending client confirmation.",
+    "eyebrow": "Verified case",
+    "title": "One real case: Agilizing Education Center",
+    "intro": "Numbers below are client-verified. Other industries are scenario references only.",
     "beforeLabel": "Before",
-    "sprintLabel": "30-day approach",
+    "sprintLabel": "What we did",
     "afterLabel": "After",
-    "metricLabel": "Measurable result",
+    "metricLabel": "Measured results",
+    "scenarioLabel": "Scenario references (not verified cases)",
     "items": [
       {
         "industry": "Corporate training | Agilizing Limited",
-        "title": "Training material production: 10 days → 3 hours, saving HK$25,000/month",
-        "before": "Each corporate training package (slides + digital-human explainer videos) was made by hand by one assistant. 10 days per set. High cost, slow output, no room to scale.",
-        "sprint": "A one-month AI Consultant Sprint built an automated production pipeline. Slide and digital-human material creation dropped from 10 days to 3 hours.",
-        "after": "Saved roughly HK$25,000/month in full-time assistant cost. Enabled fast expansion into new clients, including social welfare organisations and Cathay Pacific.",
-        "metric": "Production time: 10 days → 3 hours. Saved ~HK$25,000/month assistant cost. New clients: social welfare sector, Cathay Pacific."
+        "title": "Courseware from 10 days to 3 hours — ~HK$25,000/mo saved",
+        "before": "Each corporate training pack (PPT + digital-human video) took one assistant ~10 days. Costly, slow, hard to scale.",
+        "sprint": "In one month we built an automated production flow, cutting PPT + digital-human courseware from 10 days to 3 hours.",
+        "after": "About HK$25,000/mo in full-time assistant cost saved. Capacity to expand into social welfare and Cathay-type institutional clients.",
+        "metric": "Production: 10 days → 3 hours. ~HK$25,000/mo assistant cost saved. New segments: social welfare, Cathay."
       },
       {
-        "industry": "Training / courses",
-        "title": "Enrolment enquiries scattered across WhatsApp",
-        "before": "Enquiry, trial class, enrolment, and payment lived in different chats and sheets; leave days broke continuity.",
-        "sprint": "Business Workflow Diagnosis locked onto enquiry → trial → enrolment; clarified owners, follow-up nodes, and a simple status board.",
-        "after": "Every enquiry has an owner and next step; the owner stops chasing daily updates.",
-        "metric": "[PLACEHOLDER] Follow-up effort from ~10 days/month to ~3 hours/week; fewer missed follow-ups."
+        "industry": "Training / courses | Scenario",
+        "title": "Enrolment enquiries stuck in WhatsApp",
+        "before": "Trial class, signup, and payment live in different chats and sheets. Diagnosis locks the enquiry → trial → signup line.",
+        "sprint": "",
+        "after": "",
+        "metric": ""
       },
       {
-        "industry": "Professional services",
+        "industry": "Professional services | Scenario",
         "title": "Slow quotes, many versions, verbal handoffs",
-        "before": "Quotes waited on missing data; each colleague had a different “latest” version; reminders exposed missed follow-ups.",
-        "sprint": "Diagnosis clarified quote inputs, ownership, and approval nodes; one trackable checklist.",
-        "after": "Quotes follow a standard rhythm; handoffs are no longer verbal-only.",
-        "metric": "[PLACEHOLDER] Shorter quote cycle; fewer repeat data requests; ~HK$25,000/month admin capacity released (pending confirmation)."
+        "before": "Quote data needs chasing; everyone has a 'latest' file. Diagnosis clarifies sources, ownership, and approval nodes.",
+        "sprint": "",
+        "after": "",
+        "metric": ""
       },
       {
-        "industry": "Studio / fitness / tutoring",
-        "title": "Schedule / payments / attendance on WhatsApp + Excel",
-        "before": "Coaches tracked classes, unpaid students, and commissions differently; admins firefought daily.",
-        "sprint": "Diagnosis clarified ownership, status, reminders, and export reconciliation before any class-ops tool.",
-        "after": "Schedule, student status, and payment reminders live in one place — memory no longer runs the studio.",
-        "metric": "[PLACEHOLDER] Unpaid follow-up has reminders; attendance/commission export possible; less admin firefighting."
+        "industry": "Studio / fitness / tutoring | Scenario",
+        "title": "Schedule, payment, attendance on WhatsApp + Excel",
+        "before": "Coaches and admin firefight daily. Diagnosis clarifies ownership and status before any tool.",
+        "sprint": "",
+        "after": "",
+        "metric": ""
       }
     ]
   },
   "whyUs": {
     "eyebrow": "Why me",
-    "title": "Tech is everywhere. AI adoption that understands people is the scarce part.",
-    "intro": "Enterprise architecture vision, organisational rule fluency, plus strong human warmth and community connection — this combination is extremely hard to copy.",
+    "title": "Tech is everywhere. Human AI adoption is scarce.",
+    "intro": "Enterprise architecture plus organisational reality plus human warmth — a hard combination to copy.",
     "rows": [
       {
-        "opponent": "Hardcore tech consultants (selling Prompting, Agent, Automation)",
-        "difference": "I know the real pain isn't missing tech — it's not knowing how to combine AI with people"
+        "opponent": "Hardcore tech consultants (prompts, agents, automation)",
+        "difference": "I know the pain usually isn't missing tech — it's combining AI with people"
       },
       {
         "opponent": "Management consultants (report and leave)",
-        "difference": "I build, connect, and walk your team from 0 to 1"
+        "difference": "I build, connect, and co-run adoption from 0 to 1"
       },
       {
         "opponent": "SaaS vendors (sell licences)",
         "difference": "I can tell you not to buy"
       },
       {
-        "opponent": "Large IT firms (six-figure projects)",
-        "difference": "HK$6,800 to try one workflow — low risk"
+        "opponent": "Large IT firms (big programmes)",
+        "difference": "Start with one workflow — no forced mega-project commitment"
       }
     ],
-    "punchline": "AI handles efficiency. I preserve the human warmth and organisational connection."
+    "punchline": "AI handles efficiency. I preserve human warmth and organisational connection.",
+    "aboutBlurb": "Fourteen years in large enterprises and international organisations taught me how metrics, politics, and people actually work. AI raises efficiency; I keep the human temperature — diagnose first, then decide what to land.",
+    "aboutLinkLabel": "More about Larry →"
   },
   "about": {
     "eyebrow": "Who I am",
@@ -246,64 +249,32 @@
     "title": "FAQ",
     "items": [
       {
-        "question": "What is Business Workflow Diagnosis?",
-        "answer": "Business Workflow Diagnosis is InnovateXP’s signature 30-minute method to lock onto one revenue or operations workflow, clarify leaks and ownership, and decide the next step. Unlike report-and-leave consulting, diagnosis feeds into an AI Discovery Sprint or 30-day implementation so the team actually adopts the change."
+        "question": "What is a Business Workflow Diagnosis — and how is it different?",
+        "answer": "About 30 minutes to lock one revenue- or ops-critical workflow, clarify leaks, ownership, and next steps. Unlike report-only consultants, we can land and co-run so the team actually uses it."
       },
       {
-        "question": "Is Business Workflow Diagnosis part of your AI consulting?",
-        "answer": "Yes — one path. I am AI Business Consultant Larry Lo / InnovateXP. Business Workflow Diagnosis is the signature method: diagnose → AI agents → co-run — not a business-coach pitch or a SaaS hard sell."
+        "question": "How much time do I need — and what should I prepare?",
+        "answer": "About 30 minutes. Bring your messiest line (e.g. WhatsApp sign-ups or quotes) and a concrete pain example. No polished deck required."
       },
       {
-        "question": "How does SME workflow diagnosis work in Hong Kong?",
-        "answer": "Book a diagnosis session and bring your messiest line (WhatsApp enrolment or quoting). Together we map owners, handoffs, and tracking, then recommend Discovery Sprint if needed. Built for Hong Kong teams of 3–30 still running on manual follow-up."
+        "question": "How are consulting fees calculated?",
+        "answer": "By workflow complexity and scope — quoted after diagnosis. We don't push a system at the start."
       },
       {
-        "question": "WhatsApp and Excel are chaos — must we buy a CRM first?",
-        "answer": "Not always. Most leakage is unclear ownership and follow-up rhythm, not missing software. Diagnosis reviews how WhatsApp, Excel, and forms drop leads. If a clearer process is enough, you can delay CRM and avoid vendor-style tool pushing."
+        "question": "What if we don't actually need AI or a CRM?",
+        "answer": "I'll say so. Often the issue is unclear ownership and follow-up rhythm, not missing tools. Fixing the process may be enough."
       },
       {
-        "question": "How do you help training centres with class operations?",
-        "answer": "Start with diagnosis of class schedules, coaches, attendance, and renewals — especially WhatsApp/Excel bottlenecks. Only after the workflow is clear do we consider FitnessXP or a custom landing Sprint. Goal: visible classes and renewals, not a big-system swap first."
-      },
-      {
-        "question": "Where should a tutorial school start with student management?",
-        "answer": "Diagnose enquiry → trial → enrolment → payment. Typical pain is scattered student status and memory-based follow-up. After diagnosis you get owners and a status board; then a 30-day Sprint or class tool if needed."
-      },
-      {
-        "question": "Is Business Workflow Diagnosis useful for fitness coach management?",
-        "answer": "Yes. Studios often split scheduling, commissions, unpaid fees, and attendance. Diagnosis clarifies states and owners before FitnessXP. Designed for studios still running mainly on WhatsApp and Excel."
-      },
-      {
-        "question": "Do SOP automation advisors push AI immediately?",
-        "answer": "No. Positioning is diagnose first — I'll say so if you shouldn't buy a system yet. If SOPs and ownership are unclear, automation amplifies chaos. We diagnose and stabilise SOP nodes before chatbots, reminders, or AI drafts."
-      },
-      {
-        "question": "What is AI readiness preparation?",
-        "answer": "An AI Readiness review checks data location, permissions, repetitive work, and measurable outcomes. It usually follows diagnosis: one clear workflow first, then an AI Discovery Sprint scope — so you do not buy models or tools unprepared."
-      },
-      {
-        "question": "Do Hong Kong AI workshops include deliverables?",
-        "answer": "Yes. Workshops and coaching map to one real company workflow and deliver usable drafts, SOP nodes, or follow-up lists — not tool demos only. If you only want concepts with no landing, scope is stated upfront."
-      },
-      {
-        "question": "AI Discovery Sprint vs 30-day Sprint?",
-        "answer": "Discovery validates whether a workflow deserves AI/CRM in a short cycle. The 30-day Sprint delivers process map, ownership, SOP, tracking, and one immediate improvement. Both start from Business Workflow Diagnosis; advisory retainers come later."
-      },
-      {
-        "question": "How do I book Larry Lo / InnovateXP?",
-        "answer": "Book a Business Workflow Diagnosis on innovatexp.co, or contact via WhatsApp/email. We confirm industry, messiest workflow, and expected outcome. Path: diagnosis → Discovery/30-day Sprint → advisory — not instant tool purchase."
-      },
-      {
-        "question": "Who does InnovateXP partner with?",
-        "answer": "The homepage Partners section lists organisations Larry has delivered with or exchanged referrals with — including Flower Nice Day (flowerniceday.com), Agilizing Education Center, BNI Anchor, Dr Steven Cheung Dental Surgery, Mentalok, digidumpling, Zomate Fitness, OL International, and LinkedInLocal Asia."
+        "question": "Will our data and processes stay confidential?",
+        "answer": "Yes. Operational details, customer data, and internal workflows shared in diagnosis or delivery are only used to serve you — never disclosed or published as a case without written consent."
       }
     ]
   },
   "finalCta": {
-    "title": "Want to know how much you're leaking — and where?",
-    "body": "Book a 30-minute Business Workflow Diagnosis now. I bring system design experience and AI agents. After the call we choose Snapshot, Discovery, or I tell you plainly you should not buy a system yet.",
-    "primary": "Book diagnosis now (30 min)",
-    "secondary": "WhatsApp Larry directly"
+    "title": "Book a 30-minute diagnosis now",
+    "body": "Bring your messiest workflow. After the session we'll say what to land, what to co-run — or that you shouldn't buy a system yet.",
+    "primary": "Book a 30-min diagnosis",
+    "secondary": ""
   },
   "partnership": {
     "eyebrow": "Partners",
@@ -412,7 +383,7 @@
         "eyebrow": "Online presence",
         "name": "Online Presence Package",
         "tagline": "Customized Website",
-        "price": "Basic website HK$3,000 · Basic e-shop HK$12,000",
+        "price": "Basic website HK$3,000 · basic e-shop HK$12,000",
         "body": "Start with a website or shop, then add content and visibility support.",
         "points": [
           "Basic website HK$3,000",
@@ -455,14 +426,14 @@
         "eyebrow": "AI business consultancy",
         "name": "AI Consultancy",
         "tagline": "Fix one workflow first",
-        "price": "30-Day Sprint · HK$6,800 (up to 10 people)",
-        "body": "From diagnosis and implementation to team adoption and KPI review. Discovery is HK$6,800 for up to 10 people, HK$13,600 for 11–30, and quoted separately for 31+. Venue cost is extra. Longer programs are scoped by SOP complexity.",
+        "price": "Quoted after diagnosis",
+        "body": "From diagnosis and implementation to team adoption and KPI review. Scope and fee are quoted after diagnosis by workflow complexity.",
         "points": [
           "3-month Foundation",
           "6-month Accelerator",
           "12-month Partnership",
           "Deliverables: process map, ownership, SOP, KPI, quick win",
-          "≤10 people HK$6,800 · 11–30 HK$13,600 · 31+ quoted · venue extra"
+          "Quoted after diagnosis"
         ]
       }
     ],
@@ -507,8 +478,8 @@
     "readiness": {
       "eyebrow": "Downsell only",
       "title": "AI Readiness Snapshot",
-      "price": "HK$3,000",
-      "intro": "For a team that is not yet ready to commit HK$6,800 to Discovery and needs a smaller evidence-based decision first.",
+      "price": "Quoted after diagnosis",
+      "intro": "For a team that is not yet ready to commit Quoted after diagnosis to Discovery and needs a smaller evidence-based decision first.",
       "points": [
         "60–90 minute interview",
         "One-page readiness scorecard",
@@ -516,9 +487,9 @@
         "Clear recommendation: not ready yet or proceed to Discovery"
       ],
       "excludes": "Does not include an SOP, prototype, implementation scope or custom build.",
-      "upgrade": "Upgrade within 14 calendar days: pay HK$3,800 more to enter the HK$6,800 Discovery.",
+      "upgrade": "Upgrade within 14 calendar days: pay Quoted after diagnosis more to enter the Quoted after diagnosis Discovery.",
       "educationTitle": "Optional 1-month education track — scoped separately",
-      "educationIntro": "Four 60-minute sessions, one per week, for the same client organization. This is not included in the HK$3,000 Snapshot.",
+      "educationIntro": "Four 60-minute sessions, one per week, for the same client organization. This is not included in the Quoted after diagnosis Snapshot.",
       "educationPoints": [
         "No per-head teaching fee; attendance is limited by the agreed room or online-platform capacity",
         "Content is agreed before the first session; extra preparation or sessions are separate",
@@ -621,5 +592,38 @@
       "lead": "This is a technology prototype / AI visual-tracking demo, suitable for triage only. It is not a registered medical device and cannot replace professional optometry or ophthalmology examination.",
       "items": []
     }
+  },
+  "faqExtended": {
+    "title": "More FAQ",
+    "items": [
+      {
+        "question": "Are diagnosis and AI consulting the same track?",
+        "answer": "Yes. Larry Lo / InnovateXP is the AI business consultant; diagnosis is the signature method before any land or co-run — not a SaaS pitch first."
+      },
+      {
+        "question": "How does SME workflow diagnosis work in Hong Kong?",
+        "answer": "Book a diagnosis with your messiest line. We map ownership, handoffs, and tracking, then recommend next steps. Built for HK teams of 3–30 still running on manual follow-up."
+      },
+      {
+        "question": "WhatsApp and Excel are chaos — must we buy a CRM first?",
+        "answer": "Not always. Diagnosis checks how current tools leak leads; if a clearer process is enough, you can wait on CRM."
+      },
+      {
+        "question": "Are training centres, tutoring, and fitness studios a fit?",
+        "answer": "Yes. Common pain is class, attendance, renewals, or rostering stuck in WhatsApp/Excel. Diagnose ownership first, then decide on tools."
+      },
+      {
+        "question": "Will an SOP/automation advisor push AI immediately?",
+        "answer": "No. Fix the process first; automate only when nodes are stable."
+      },
+      {
+        "question": "How do I book Larry Lo / InnovateXP?",
+        "answer": "Use “Book a 30-min diagnosis” to pick a slot, or ask on WhatsApp. We'll confirm industry, messiest workflow, and expected outcome."
+      },
+      {
+        "question": "Who does InnovateXP partner with?",
+        "answer": "Partners we've delivered with or exchanged referrals with include Flower Nice Day, Agilizing, BNI Anchor, Dr Steven Cheung Dental Surgery, Mentalok, digidumpling, Zomate Fitness, OL International, and LinkedInLocal Asia."
+      }
+    ]
   }
 }

@@ -53,6 +53,10 @@ export function PrimaryFabCluster() {
   const theme = useInnovateXpM3Theme();
   const { itemCount, setDrawerOpen } = useInquiryCart();
 
+  // Homepage conversion rules: only header/hero/case/final CTAs — no floating dial.
+  const isHomepageRoot = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)\/?$/.test(pathname));
+  if (isHomepageRoot) return null;
+
   const whatsappHref = buildWhatsAppHref(whatsappPrefillForLocale(locale));
 
   const scrollToFaq = () => {

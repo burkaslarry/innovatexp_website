@@ -22,12 +22,12 @@ const HOME: LocalePair = {
   zh: {
     title: "業務聽診｜AI商業顧問Larry Lo｜InnovateXP",
     description:
-      "我係 AI 商業顧問 Larry Lo／InnovateXP。聽診 → AI agents → 陪跑。公開價：Snapshot HK$3,000、Discovery HK$6,800。唔使買系統我會直講。預約 30 分鐘業務聽診。",
+      "我係 AI 商業顧問 Larry Lo／InnovateXP。先執順流程，再落地 AI。30 分鐘業務聽診搵出最漏客、最慢嗰條流程。唔使買系統我會直講。",
   },
   en: {
     title: "Business Workflow Diagnosis | Larry Lo | InnovateXP",
     description:
-      "AI Business Consultant Larry Lo / InnovateXP: diagnose → AI agents → co-run. Public prices: Snapshot HK$3,000, Discovery HK$6,800. I'll say so if you shouldn't buy a system.",
+      "AI Business Consultant Larry Lo / InnovateXP: fix the workflow first, then land AI. 30-minute diagnosis. I'll say so if you shouldn't buy a system.",
   },
 };
 
@@ -35,12 +35,12 @@ const BOOKME: LocalePair = {
   zh: {
     title: "預約業務聽診｜Larry Lo｜InnovateXP",
     description:
-      "預約 AI 商業顧問 Larry Lo／InnovateXP：30 分鐘業務聽診，鎖定漏單、慢報價或交接卡位，再決定 Snapshot／Discovery（HK$6,800）或陪跑。立即選時段。",
+      "預約 AI 商業顧問 Larry Lo／InnovateXP：30 分鐘業務聽診，鎖定漏單、慢報價或交接卡位。聽診後先報價，唔使買系統會直講。",
   },
   en: {
     title: "Book Business Workflow Diagnosis | Larry Lo",
     description:
-      "Book a 30-minute Business Workflow Diagnosis with Larry Lo / InnovateXP. Find enquiry leaks before buying tools. Next steps: Snapshot or Discovery (HK$6,800).",
+      "Book a 30-minute Business Workflow Diagnosis with Larry Lo / InnovateXP. Find enquiry leaks before buying tools. Quoted after diagnosis.",
   },
 };
 
@@ -102,18 +102,18 @@ const FITNESSXP: LocalePair = {
 
 const AI_CONSULTING: LocalePair = {
   zh: {
-    title: "AI商業顧問｜業務聽診｜Discovery HK$6,800",
+    title: "AI商業顧問｜業務聽診｜InnovateXP",
     description:
-      "我係 AI 商業顧問 Larry Lo／InnovateXP：業務聽診 → AI agents → 陪跑。Snapshot HK$3,000、Discovery HK$6,800。唔使買系統我會直講。",
-    ogTitle: "AI 商業顧問｜業務聽診｜Discovery HK$6,800",
+      "我係 AI 商業顧問 Larry Lo／InnovateXP：業務聽診 → AI agents → 陪跑。唔使買系統我會直講。",
+    ogTitle: "AI 商業顧問｜業務聽診｜InnovateXP",
     ogDescription: "聽診、Discovery、陪跑。適合要實務落地嘅香港中小企。",
   },
   en: {
-    title: "AI Business Consultant | Diagnosis | Discovery HK$6,800",
+    title: "AI Business Consultant | Diagnosis | InnovateXP",
     description:
-      "Larry Lo / InnovateXP: diagnosis → AI agents → co-run. Snapshot HK$3,000, Discovery HK$6,800. Book a diagnosis — not a tool pitch.",
+      "Larry Lo / InnovateXP: diagnosis → AI agents → co-run. Book a diagnosis — not a tool pitch.",
     ogTitle: "AI Business Consultant HK — diagnosis first",
-    ogDescription: "Business Workflow Diagnosis, Discovery (HK$6,800), and co-run advisory for SMEs.",
+    ogDescription: "Business Workflow Diagnosis, co-run advisory for SMEs.",
   },
 };
 
