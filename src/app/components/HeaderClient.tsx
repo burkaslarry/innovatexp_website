@@ -9,6 +9,7 @@ import LanguageSwitcher from '../LanguageSwitcher';
 import type { HeaderProps } from './Header';
 import { useLocalizedHref } from '@/hooks/useLocalizedHref';
 import { HeaderCartButton } from '@/components/inquiry-cart/HeaderCartButton';
+import { trackBookingCtaClick } from '@/lib/analytics';
 
 const LOGO_ALT = 'InnovateXP Limited - AI CRM and Event Management Solutions Hong Kong';
 
@@ -196,6 +197,9 @@ export default function HeaderClient({
                 <a
                   href={ctaHref}
                   className="hidden min-h-[44px] items-center rounded-[var(--btn-radius)] bg-[color:var(--brand-primary)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[color:var(--brand-primary-hover)] md:inline-flex"
+                  data-cta="book-diagnosis"
+                  data-cta-placement="header"
+                  onClick={() => trackBookingCtaClick('header')}
                 >
                   {ctaLabel}
                 </a>
@@ -252,7 +256,12 @@ export default function HeaderClient({
                 <a
                   href={ctaHref}
                   className="btn-brand mt-2 inline-flex min-h-[48px] items-center justify-center px-4 py-3 text-base font-semibold"
-                  onClick={() => setMobileMenuOpen(false)}
+                  data-cta="book-diagnosis"
+                  data-cta-placement="header_mobile"
+                  onClick={() => {
+                    trackBookingCtaClick('header_mobile');
+                    setMobileMenuOpen(false);
+                  }}
                 >
                   {ctaLabel}
                 </a>

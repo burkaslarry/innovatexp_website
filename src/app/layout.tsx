@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 
+import { AnalyticsScripts } from "@/components/AnalyticsScripts";
 import { getSiteUrl } from "@/lib/site-url";
 import { rootFontClassName } from "@/lib/fonts";
 
@@ -51,6 +52,7 @@ export default function RootLayout({
         suppressHydrationWarning
       >
         {children}
+        <AnalyticsScripts />
         <script
           dangerouslySetInnerHTML={{
             __html: `

@@ -11,6 +11,7 @@ import {
   primaryCtaLabel,
   secondaryWhatsAppLabel,
 } from "@/content/cta-config";
+import { trackBookingCtaClick } from "@/lib/analytics";
 import { useLanguage } from "../../LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
 
@@ -53,6 +54,7 @@ function LandingPage() {
           description={content.hero.description}
           primaryHref={bookingHref}
           primaryLabel={ctaLabel}
+          onPrimaryClick={() => trackBookingCtaClick("hero")}
           secondaryHref={whatsappHref}
           secondaryLabel={secondaryWhatsAppLabel(locale)}
           trustBadges={content.hero.trustPoints}

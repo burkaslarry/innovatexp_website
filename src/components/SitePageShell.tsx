@@ -2,7 +2,7 @@
 
 import type { ReactNode } from "react";
 import Header from "@/app/components/Header";
-import { Button } from "@/components/ui/Button";
+import { BookingCtaButton } from "@/components/BookingCtaButton";
 import { getHomepageContent, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
 import { getBookingHref, primaryCtaLabel } from "@/content/cta-config";
 import { useLanguage } from "@/app/LanguageContext";
@@ -45,9 +45,9 @@ export function SitePageShell({
         </h1>
         <div className="mt-8">{children}</div>
         <div className="mt-12 border-t border-[color:var(--border-light)] pt-8">
-          <Button href={bookingHref} variant="primary" className="px-6">
+          <BookingCtaButton href={bookingHref} placement="page_footer" className="px-6">
             {ctaLabel}
-          </Button>
+          </BookingCtaButton>
         </div>
       </main>
       <footer className="border-t border-[color:var(--border-light)] bg-[color:var(--bg-secondary)] py-8">

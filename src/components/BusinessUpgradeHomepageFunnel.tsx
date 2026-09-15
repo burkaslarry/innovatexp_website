@@ -1,6 +1,6 @@
 import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare } from "lucide-react";
 import { FaqAccordion } from "@/components/FaqAccordion";
-import { Button } from "@/components/ui/Button";
+import { BookingCtaButton } from "@/components/BookingCtaButton";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getHomepageContent } from "@/content/homepage";
 import { primaryCtaLabel } from "@/content/cta-config";
@@ -143,9 +143,9 @@ export function BusinessUpgradeHomepageFunnel({
               </div>
             </div>
             <div className="mt-6">
-              <Button href={bookingHref} variant="primary" className="px-6">
+              <BookingCtaButton href={bookingHref} placement="case_study" className="px-6">
                 {ctaLabel}
-              </Button>
+              </BookingCtaButton>
             </div>
           </article>
         ) : null}
@@ -222,9 +222,9 @@ export function BusinessUpgradeHomepageFunnel({
             </p>
           ) : null}
           <div className="mt-6">
-            <Button href={bookingHref} variant="primary" className="px-6">
+            <BookingCtaButton href={bookingHref} placement="final_cta" className="px-6">
               {ctaLabel}
-            </Button>
+            </BookingCtaButton>
           </div>
         </div>
       </SectionShell>

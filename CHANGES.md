@@ -68,3 +68,9 @@ Added to `STATIC_LOCALIZED_PATHS` for sitemap.
 4. Final CTA section
 
 Secondary WhatsApp: hero only.
+
+## Booking URL + conversion analytics (follow-up)
+- `TODO_BOOKING_URL` = `https://innovatexp.co/bookme` (locale injected → `/{locale}/bookme`)
+- Click event `book_diagnosis_click` with `placement` prop fired to GA4 and/or Plausible
+- Set `NEXT_PUBLIC_GA4_MEASUREMENT_ID` and/or `NEXT_PUBLIC_PLAUSIBLE_DOMAIN` (see `.env.analytics.example`)
+

@@ -3,7 +3,6 @@
 import { usePathname } from "next/navigation";
 import type { AppLocale } from "@/lib/i18n-routing";
 import { getLocaleFromPathname, localeToHtmlLang, localeUsesChineseCopy, stripLocaleFromPathname } from "@/lib/i18n-routing";
-import { PRICING } from "@/content/pricing";
 import { VISIONXP_DEMO_URL } from "@/content/visionxp";
 
 /** Pick JSON-LD copy per URL locale — explicit `AppLocale` rows (no zh/en boolean). */
