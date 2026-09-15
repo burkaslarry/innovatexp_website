@@ -965,6 +965,28 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
         name: "BNI Anchor",
         sameAs: "https://www.bni-anchor.com/",
       },
+      {
+        "@type": "Organization",
+        name: "Flower Nice Day",
+        alternateName: "販賣美好",
+        url: "https://www.flowerniceday.com",
+        sameAs: "https://www.flowerniceday.com",
+      },
+      {
+        "@type": "Organization",
+        name: "Dr Steven Cheung Dental Surgery",
+        sameAs: "https://www.drstevenchungdentalsurgery.com",
+      },
+      {
+        "@type": "Organization",
+        name: "Mentalok",
+        sameAs: "https://mentalok.io/zh-TW",
+      },
+      {
+        "@type": "Organization",
+        name: "digidumpling",
+        sameAs: "https://digidumpling.com",
+      },
     ],
   };
 

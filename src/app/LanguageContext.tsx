@@ -245,6 +245,8 @@ export const translations = {
     'partnership.ol_international.title': 'OL International Services Limited',
     'partnership.ol_international.desc':
       'Corporate services & international business support — strategic collaboration across markets.',
+    'partnership.flowerniceday.title': 'Flower Nice Day 販賣美好',
+    'partnership.flowerniceday.desc': 'Florist, floral gifts & bouquet ordering partner',
     
     // Contact Section
     'contact.title': 'Contact Us',
@@ -1212,6 +1214,8 @@ export const translations = {
     'partnership.kirapay.desc': '支付與金融科技協作',
     'partnership.ol_international.title': 'OL International Services Limited',
     'partnership.ol_international.desc': '企業及國際業務服務夥伴，跨市場策略協作',
+    'partnership.flowerniceday.title': 'Flower Nice Day 販賣美好',
+    'partnership.flowerniceday.desc': '鮮花販賣機・花藝禮品及花束訂購夥伴',
     
     // Contact Section
     'contact.title': '聯絡我們',

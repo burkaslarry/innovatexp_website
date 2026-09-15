@@ -11,7 +11,8 @@
     "faq": "常見問題",
     "cta": "預約業務聽診",
     "products": "產品方案",
-    "visionXp": "VisionXP"
+    "visionXp": "VisionXP",
+    "partnership": "合作夥伴"
   },
   "hero": {
     "eyebrow": "AI 顧問 Larry Lo｜InnovateXP",
@@ -291,6 +292,10 @@
       {
         "question": "點樣預約 Larry Lo／InnovateXP？",
         "answer": "喺 innovatexp.co 預約業務聽診（約 30 分鐘），或 WhatsApp／電郵聯絡。會確認你嘅行業、最亂嘅一條流程，同預期結果。主線係聽診 → Discovery／30 日落地 → 陪跑，而唔係即買工具。"
+      },
+      {
+        "question": "InnovateXP 有邊啲合作夥伴？",
+        "answer": "首頁「合作夥伴」列出真係一齊做過嘢或互相轉介過客嘅夥伴，包括 Flower Nice Day 販賣美好（flowerniceday.com）、善敏教育中心 Agilizing、BNI Anchor、Dr Steven Cheung Dental Surgery、Mentalok、digidumpling、Zomate Fitness、OL International、LinkedInLocal Asia。"
       }
     ]
   },
@@ -347,6 +352,12 @@
         "desc": "數碼內容與產品夥伴",
         "logo": "/partners/digidumpling-logo.png",
         "href": "https://digidumpling.com"
+      },
+      {
+        "name": "Flower Nice Day 販賣美好",
+        "desc": "鮮花販賣機・花藝禮品及花束訂購夥伴",
+        "logo": "/partners/flowerniceday-logo.png",
+        "href": "https://www.flowerniceday.com"
       }
     ]
   },

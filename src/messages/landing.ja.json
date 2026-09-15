@@ -11,7 +11,8 @@
     "faq": "よくある質問",
     "cta": "30分診断を予約",
     "products": "プロダクト",
-    "visionXp": "VisionXP"
+    "visionXp": "VisionXP",
+    "partnership": "パートナー"
   },
   "hero": {
     "eyebrow": "AIビジネスコンサルタント｜14年以上のIT納品・業務実装経験",
@@ -283,6 +284,10 @@
       {
         "question": "VisionXP は医療機器ですか？",
         "answer": "いいえ。VisionXP は技術プロトタイプ／AI視覚トラッキングデモであり、医療診断ツールでも登録医療機器でもなく、専門の視能・眼科検査の代替にもなりません。"
+      },
+      {
+        "question": "InnovateXPのパートナーは誰ですか？",
+        "answer": "ホームページのパートナー欄には、実際に共同納品や紹介交換をした組織を掲載しています。Flower Nice Day（flowerniceday.com）、Agilizing Education Center、BNI Anchor、Dr Steven Cheung Dental Surgery、Mentalok、digidumpling、Zomate Fitness、OL International、LinkedInLocal Asia などです。"
       }
     ]
   },
@@ -339,6 +344,12 @@
         "desc": "Digital content and product partner",
         "logo": "/partners/digidumpling-logo.png",
         "href": "https://digidumpling.com"
+      },
+      {
+        "name": "Flower Nice Day 販賣美好",
+        "desc": "フローリスト・花ギフト・花束注文パートナー",
+        "logo": "/partners/flowerniceday-logo.png",
+        "href": "https://www.flowerniceday.com"
       }
     ]
   },

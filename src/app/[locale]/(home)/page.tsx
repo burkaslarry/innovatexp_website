@@ -41,6 +41,7 @@ function LandingPage() {
       { label: content.nav.products, href: "#product-packages" },
       { label: content.nav.visionXp, href: "#visionxp" },
       { label: content.nav.cases, href: "#case-directions" },
+      { label: content.nav.partnership, href: "#partnership" },
       { label: content.nav.about, href: "#about-larry" },
       { label: content.nav.faq, href: "#faq" },
     ];

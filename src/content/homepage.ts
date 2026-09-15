@@ -124,6 +124,7 @@ export type HomepageContent = {
     products: string;
     visionXp: string;
     cases: string;
+    partnership: string;
     about: string;
     faq: string;
     cta: string;

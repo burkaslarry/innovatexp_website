@@ -11,7 +11,8 @@
     "faq": "常見問題",
     "cta": "預約 30 分鐘診斷",
     "products": "產品方案",
-    "visionXp": "VisionXP"
+    "visionXp": "VisionXP",
+    "partnership": "合作夥伴"
   },
   "hero": {
     "eyebrow": "AI 商業顧問 Larry Lo／InnovateXP",
@@ -283,6 +284,10 @@
       {
         "question": "VisionXP 是醫療器材嗎？",
         "answer": "不是。VisionXP 只是技術原型／AI 視覺追蹤示範，並非醫療診斷工具，也不是註冊醫療器材，不能取代專業視光或眼科檢查。"
+      },
+      {
+        "question": "InnovateXP 有哪些合作夥伴？",
+        "answer": "首頁「合作夥伴」列出實際合作或轉介過的夥伴，包括 Flower Nice Day 販賣美好（flowerniceday.com）、善敏教育中心 Agilizing、BNI Anchor、Dr Steven Cheung Dental Surgery、Mentalok、digidumpling、Zomate Fitness、OL International、LinkedInLocal Asia。"
       }
     ]
   },
@@ -339,6 +344,12 @@
         "desc": "數碼內容與產品夥伴",
         "logo": "/partners/digidumpling-logo.png",
         "href": "https://digidumpling.com"
+      },
+      {
+        "name": "Flower Nice Day 販賣美好",
+        "desc": "鮮花販賣機・花藝禮品及花束訂購夥伴",
+        "logo": "/partners/flowerniceday-logo.png",
+        "href": "https://www.flowerniceday.com"
       }
     ]
   },

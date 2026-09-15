@@ -11,7 +11,8 @@
     "faq": "FAQ",
     "cta": "Book a diagnosis",
     "products": "Products",
-    "visionXp": "VisionXP"
+    "visionXp": "VisionXP",
+    "partnership": "Partners"
   },
   "hero": {
     "eyebrow": "AI Consultant Larry Lo | InnovateXP",
@@ -291,6 +292,10 @@
       {
         "question": "How do I book Larry Lo / InnovateXP?",
         "answer": "Book a Business Workflow Diagnosis on innovatexp.co, or contact via WhatsApp/email. We confirm industry, messiest workflow, and expected outcome. Path: diagnosis → Discovery/30-day Sprint → advisory — not instant tool purchase."
+      },
+      {
+        "question": "Who does InnovateXP partner with?",
+        "answer": "The homepage Partners section lists organisations Larry has delivered with or exchanged referrals with — including Flower Nice Day (flowerniceday.com), Agilizing Education Center, BNI Anchor, Dr Steven Cheung Dental Surgery, Mentalok, digidumpling, Zomate Fitness, OL International, and LinkedInLocal Asia."
       }
     ]
   },
@@ -347,6 +352,12 @@
         "desc": "Digital content and product partner",
         "logo": "/partners/digidumpling-logo.png",
         "href": "https://digidumpling.com"
+      },
+      {
+        "name": "Flower Nice Day 販賣美好",
+        "desc": "Florist, floral gifts & bouquet ordering partner",
+        "logo": "/partners/flowerniceday-logo.png",
+        "href": "https://www.flowerniceday.com"
       }
     ]
   },
