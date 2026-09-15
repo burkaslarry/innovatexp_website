@@ -2,82 +2,82 @@
   "brandTitle": "InnovateXP Limited",
   "brandSubtitle": "AIビジネスコンサルタント",
   "nav": {
-    "home": "ホーム",
-    "diagnosis": "業務診断",
-    "services": "進め方",
-    "plans": "プログラム",
-    "cases": "業界事例",
-    "about": "Larryについて",
-    "faq": "よくある質問",
-    "cta": "30分診断を予約",
-    "products": "プロダクト",
+    "home": "Home",
+    "diagnosis": "Pain points",
+    "services": "Method",
+    "plans": "Services",
+    "cases": "Case",
+    "about": "Why me",
+    "faq": "FAQ",
+    "cta": "Book a 30-min diagnosis",
+    "products": "Products",
     "visionXp": "VisionXP",
-    "partnership": "パートナー"
+    "partnership": "Partners"
   },
   "hero": {
-    "eyebrow": "AIビジネスコンサルタント｜14年以上のIT納品・業務実装経験",
-    "title": "香港の小規模チームの取りこぼし・遅い見積・引き継ぎ混乱を止めます。",
-    "description": "まず売上・業務に効く1本のフローを特定し、30日で担当・SOP・追跡を整えます。効果が確認できてから CRM／AI／自動化を接続します。",
-    "fitAudience": "香港の3〜30名規模の研修・講座・専門サービスチーム向け",
-    "primaryCta": "30分の業務診断を予約",
-    "secondaryCta": "プログラムと開始価格を見る",
+    "eyebrow": "AI Business Consultant Larry Lo | InnovateXP",
+    "title": "AI business consultant for Hong Kong teams of 3–30",
+    "description": "Fix the workflow first, then land AI. In a 30-minute diagnosis, we find the process that leaks leads, runs slowest, or depends on one person. I'll say so if you shouldn't buy a system.",
+    "fitAudience": "",
+    "primaryCta": "Book a 30-min diagnosis",
+    "secondaryCta": "Ask on WhatsApp",
     "trustPoints": [
-      "14年以上の納品経験",
-      "香港の3〜30名チームに特化",
-      "診断から実装まで伴走"
+      "14 years in large enterprises",
+      "Served training centres, clinics, fitness & professional services",
+      "Decide what to build only after diagnosis"
     ],
     "diagnosticInputs": [
-      "WhatsApp問い合わせ",
-      "Excel追跡表",
-      "Webフォーム",
-      "チーム引き継ぎ"
+      "WhatsApp enquiries",
+      "Spreadsheet tracker",
+      "Web form",
+      "Team handoff"
     ],
-    "diagnosticOutput": "見える・追える・責任者がいる1本のワークフロー",
-    "diagnosticCaption": "漏れを先に直す。その後にAI・CRM・自動化が必要かを判断します。",
-    "imageAlt": "創業者Larry LoによるAIビジネスアップグレードと業務設計の講演"
+    "diagnosticOutput": "One visible workflow with clear ownership",
+    "diagnosticCaption": "Fix the leak first. Then decide whether AI, CRM, or automation is justified.",
+    "imageAlt": "Larry Lo | InnovateXP AI Business Consultant"
   },
   "problem": {
-    "eyebrow": "業務の詰まり",
-    "title": "問題はリード不足ではなく、業務がリードを漏らしていることです。",
+    "eyebrow": "Sound familiar?",
+    "title": "It's not that you have no customers — scattered admin is blocking growth.",
     "items": [
       {
-        "title": "問い合わせの散在",
-        "body": "WhatsApp・表計算・フォームが別々に動いています。"
+        "title": "Enquiries everywhere",
+        "body": "WhatsApp, Excel, and forms each live alone. Nobody follows up — the lead leaves."
       },
       {
-        "title": "見積の遅さ",
-        "body": "探す・聞く・待つが発生します。"
+        "title": "Slow quotes",
+        "body": "You hunt for data, ask around, wait. The client chases you before you notice the miss."
       },
       {
-        "title": "引き継ぎの混乱",
-        "body": "次の担当がはっきりしません。"
+        "title": "Messy handoffs",
+        "body": "No one owns the next step. Same client, three people, three versions."
       },
       {
-        "title": "経営者の火消し",
-        "body": "一人が休むと業務が止まります。"
+        "title": "Founder as firefighter",
+        "body": "One person on leave and the whole process stops. Is that a workflow — or a hostage situation?"
       }
-    ],
-    "quote": "一人が休むと止まる業務は、業務ではなく人質です。"
+    ]
   },
   "approach": {
-    "eyebrow": "進め方",
-    "title": "最初にシステムを売りません。まず直すべき業務を見極めます。",
-    "intro": "全社DXではなく、まず1本の業務に集中します。止血してからツールを検討します。",
+    "eyebrow": "The method",
+    "title": "Diagnose → land AI agents → co-run from 0 to 1",
+    "intro": "In 30 minutes we find your most painful workflow, clarify leaks, ownership, and next steps. We only implement when it helps.",
     "steps": [
       {
         "label": "Step 1",
-        "title": "30分の業務診断",
-        "body": "収益・運営で最も優先すべき詰まりを特定します。"
+        "title": "Business diagnosis (30 min)",
+        "body": "Bring your messiest line. We map where leads leak, where it stalls, and who should own it.",
+        "note": "The diagnosis itself is not a product pitch. If you don't need a system, I'll say so."
       },
       {
         "label": "Step 2",
-        "title": "30日 Workflow Sprint",
-        "body": "業務図、責任者、SOP、追跡ポイント、実行可能なすぐ使える改善点を納品します。"
+        "title": "Land AI agents",
+        "body": "Using system design experience, we deliver a process map, ownership, SOPs, and one improvement the team can actually use."
       },
       {
         "label": "Step 3",
-        "title": "Adoption & KPI Review",
-        "body": "チームの利用を支援し、Day 30／60／90で未フォロー・見積時間・引き継ぎ完了率を確認。必要時のみCRM・AI・自動化を接続します。"
+        "title": "Co-run from 0 to 1",
+        "body": "Help the team adopt it, review regularly. Survive first — then build an edge."
       }
     ]
   },
@@ -108,119 +108,130 @@
     ]
   },
   "consultancy": {
-    "eyebrow": "主力プログラム",
-    "title": "本気の見込み客が最初に見るべき道筋はこれだけです。",
-    "intro": "公開メインライン：Snapshot HK$3,000 → Discovery HK$6,800 → 3／6／12か月伴走。ツール試用は二次。",
-    "fitNote": "最初にシステムを売るのではなく、診断・実装・定着・KPIレビューまで伴走し、収益を止める業務を通します。",
-    "startingBadge": "推奨スタート",
+    "eyebrow": "Mainline",
+    "title": "Quote after diagnosis — then decide the co-run scope",
+    "intro": "Mainline: diagnosis → land → co-run. Tool trials are secondary; we decide after diagnosis.",
+    "fitNote": "We don't sell a system first. Diagnose, land, adopt, review — I'll say so if you shouldn't buy.",
+    "startingBadge": "Suggested start",
     "plans": [
       {
-        "name": "30日 Discovery（検証パック）",
-        "priceLabel": "HK$6,800（10名まで）",
-        "body": "収益や運営に影響する1本の業務を先に検証します。10名まで HK$6,800、11–30名は HK$13,600、31名以上は個別見積。会場費は別途。",
+        "name": "Post-diagnosis validation",
+        "priceLabel": "Quoted after diagnosis",
+        "body": "用一段短週期驗證一條最影響收入或營運嘅流程。範圍同報價按流程複雜程度，聽診後提供。",
         "deliverables": [
-          "業務図",
-          "責任分担",
-          "SOP／フォロー節点",
-          "簡易KPI",
-          "1つのすぐ使える改善点"
+          "流程圖",
+          "責任分工",
+          "SOP／跟進節點",
+          "簡單 KPI",
+          "一個即時改善點"
         ],
-        "cta": "Sprintから始める"
+        "cta": "Book a diagnosis"
       },
       {
-        "name": "3か月伴走スタート",
-        "priceLabel": "SOPの複雑さに応じて見積",
-        "body": "1〜2本の業務定着、SOP v1、毎月のcheckpoint、チーム研修1回。",
+        "name": "3-month co-run",
+        "priceLabel": "Quoted by workflow complexity",
+        "body": "1–2 條流程落地、SOP 初版、每月檢討、一次團隊培訓。",
         "deliverables": [
-          "1〜2本の業務",
-          "SOP v1",
-          "毎月checkpoint",
-          "研修1回"
+          "1–2 條流程",
+          "SOP 初版",
+          "每月檢討",
+          "1 次團隊培訓"
         ],
-        "cta": "Foundationを見る"
+        "cta": "Book a diagnosis"
       },
       {
-        "name": "6か月部門伴走",
-        "priceLabel": "SOPの複雑さに応じて見積",
-        "body": "1部門／3〜4本の業務、adoption追跡、最大2回のワークショップ。",
+        "name": "6-month co-run",
+        "priceLabel": "Quoted by workflow complexity",
+        "body": "一個部門／3–4 條流程、採用追蹤、最多兩次工作坊。",
         "deliverables": [
-          "3〜4本の業務",
-          "Adoption追跡",
-          "最大2回WS"
+          "3–4 條流程",
+          "採用追蹤",
+          "最多 2 次工作坊"
         ],
-        "cta": "Acceleratorを見る"
+        "cta": "Book a diagnosis"
       },
       {
-        "name": "12か月年間伴走",
-        "priceLabel": "SOPの複雑さに応じて見積",
-        "body": "年間roadmap、SOPガバナンス、経営レビュー。",
+        "name": "12-month co-run",
+        "priceLabel": "Quoted by workflow complexity",
+        "body": "年度路線圖、流程管治、管理層檢討。",
         "deliverables": [
-          "年間roadmap",
-          "SOPガバナンス",
-          "経営レビュー"
+          "年度路線圖",
+          "流程管治",
+          "管理層檢討"
         ],
-        "cta": "Partnershipを見る"
+        "cta": "Book a diagnosis"
       }
     ]
   },
   "cases": {
-    "eyebrow": "業界事例",
-    "title": "同じ方法を、異なる業界でどう適用するか。",
-    "intro": "匿名シナリオ（Before → 30日の進め方 → After → 観察指標）。未検証のROIは約束しません。",
+    "eyebrow": "Verified case",
+    "title": "One real case: Agilizing Education Center",
+    "intro": "Numbers below are client-verified. Other industries are scenario references only.",
     "beforeLabel": "Before",
-    "sprintLabel": "30日の進め方",
+    "sprintLabel": "What we did",
     "afterLabel": "After",
-    "metricLabel": "観察指標",
+    "metricLabel": "Measured results",
+    "scenarioLabel": "Scenario references (not verified cases)",
     "items": [
       {
-        "industry": "研修／講座",
-        "title": "申込問い合わせがWhatsAppに散在し、フォローが記憶頼み",
-        "before": "問い合わせ・体験・申込・入金が別チャットとExcelに散在。休暇で継続が途切れる。",
-        "sprint": "問い合わせ→体験→申込の1本に固定し、責任者・節点・簡易ステータス表を明確化。",
-        "after": "各問い合わせに担当と次アクションがあり、経営者が毎日追わなくてよい。",
-        "metric": "フォロー漏れが減り、申込転換を1画面で把握。"
+        "industry": "Corporate training | Agilizing Limited",
+        "title": "Courseware from 10 days to 3 hours — ~HK$25,000/mo saved",
+        "before": "Each corporate training pack (PPT + digital-human video) took one assistant ~10 days. Costly, slow, hard to scale.",
+        "sprint": "In one month we built an automated production flow, cutting PPT + digital-human courseware from 10 days to 3 hours.",
+        "after": "About HK$25,000/mo in full-time assistant cost saved. Capacity to expand into social welfare and Cathay-type institutional clients.",
+        "metric": "Production: 10 days → 3 hours. ~HK$25,000/mo assistant cost saved. New segments: social welfare, Cathay."
       },
       {
-        "industry": "専門サービス",
-        "title": "見積が遅く、版が多く、引き継ぎが口頭",
-        "before": "不足情報待ちで見積が停滞。各自の「最新版」が並存。催促で漏れが発覚。",
-        "sprint": "見積入力・責任・承認節点を整理し、追跡可能なチェックリストを固定。",
-        "after": "見積に標準リズムができ、引き継ぎが口頭だけに依存しない。",
-        "metric": "平均見積時間短縮。重複のデータ確認が減少。"
+        "industry": "Training / courses | Scenario",
+        "title": "Enrolment enquiries stuck in WhatsApp",
+        "before": "Trial class, signup, and payment live in different chats and sheets. Diagnosis locks the enquiry → trial → signup line.",
+        "sprint": "",
+        "after": "",
+        "metric": ""
       },
       {
-        "industry": "スタジオ業（方法事例）",
-        "title": "予定／入金／出欠がWhatsApp + Excel依存",
-        "before": "講師ごとに授業・未払い・コミッション管理が異なり、管理が毎日火消し。",
-        "sprint": "同じ「業務を先に直し、その後にツール」手法：責任・状態・リマインド・出力照合。",
-        "after": "予定・生徒状態・入金リマインドが集約され、記憶でスタジオを回さない。",
-        "metric": "未払いフォローにリマインド。出欠／コミッション出力が可能。"
+        "industry": "Professional services | Scenario",
+        "title": "Slow quotes, many versions, verbal handoffs",
+        "before": "Quote data needs chasing; everyone has a 'latest' file. Diagnosis clarifies sources, ownership, and approval nodes.",
+        "sprint": "",
+        "after": "",
+        "metric": ""
+      },
+      {
+        "industry": "Studio / fitness / tutoring | Scenario",
+        "title": "Schedule, payment, attendance on WhatsApp + Excel",
+        "before": "Coaches and admin firefight daily. Diagnosis clarifies ownership and status before any tool.",
+        "sprint": "",
+        "after": "",
+        "metric": ""
       }
     ]
   },
   "whyUs": {
-    "eyebrow": "なぜLarryか",
-    "title": "多くの人はツールを売り、一部は助言を売ります。私は先に業務を直します。",
-    "intro": "顧客利益の対比です。社内の商品戦略用語ではありません。",
+    "eyebrow": "Why me",
+    "title": "Tech is everywhere. Human AI adoption is scarce.",
+    "intro": "Enterprise architecture plus organisational reality plus human warmth — a hard combination to copy.",
     "rows": [
       {
-        "opponent": "経営コンサル（報告書で終了）",
-        "difference": "構築し、つなぎ、チームに定着させる"
+        "opponent": "Hardcore tech consultants (prompts, agents, automation)",
+        "difference": "I know the pain usually isn't missing tech — it's combining AI with people"
       },
       {
-        "opponent": "SaaSベンダー（ライセンス販売）",
-        "difference": "買わなくてよいと伝えられる"
+        "opponent": "Management consultants (report and leave)",
+        "difference": "I build, connect, and co-run adoption from 0 to 1"
       },
       {
-        "opponent": "自動化／AIフリーランス（案件受注）",
-        "difference": "ツール名の前に事業課題を問う"
+        "opponent": "SaaS vendors (sell licences)",
+        "difference": "I can tell you not to buy"
       },
       {
-        "opponent": "大手IT（六桁プロジェクト）",
-        "difference": "HK$6,800で1本の業務を試せる低リスク"
+        "opponent": "Large IT firms (big programmes)",
+        "difference": "Start with one workflow — no forced mega-project commitment"
       }
     ],
-    "punchline": "システムが不要なら、はっきりそう伝えます。"
+    "punchline": "AI handles efficiency. I preserve human warmth and organisational connection.",
+    "aboutBlurb": "Fourteen years in large enterprises and international organisations taught me how metrics, politics, and people actually work. AI raises efficiency; I keep the human temperature — diagnose first, then decide what to land.",
+    "aboutLinkLabel": "More about Larry →"
   },
   "about": {
     "eyebrow": "Larryについて",
@@ -235,67 +246,35 @@
     "portraitAlt": "Larry LoがAIビジネスコンサルと顧客業務設計について講演する様子"
   },
   "faq": {
-    "title": "よくある質問",
+    "title": "FAQ",
     "items": [
       {
-        "question": "InnovateXP は何をする会社ですか？",
-        "answer": "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。入口は 30 日 Discovery Sprint（HK$6,800〜）です。"
+        "question": "What is a Business Workflow Diagnosis — and how is it different?",
+        "answer": "About 30 minutes to lock one revenue- or ops-critical workflow, clarify leaks, ownership, and next steps. Unlike report-only consultants, we can land and co-run so the team actually uses it."
       },
       {
-        "question": "Larry Lo とは誰ですか？",
-        "answer": "Larry Lo は InnovateXP Limited の創業者で AI ビジネスコンサルタントです。13年以上の IT デリバリー経験があり、2025年には GDG Hong Kong、PISM Sharing、DevFest Hong Kong で司会・登壇・プロジェクト紹介を行った7件の公開記録があります。"
+        "question": "How much time do I need — and what should I prepare?",
+        "answer": "About 30 minutes. Bring your messiest line (e.g. WhatsApp sign-ups or quotes) and a concrete pain example. No polished deck required."
       },
       {
-        "question": "今すぐAIを導入すべきですか？",
-        "answer": "最初からAIが必要とは限りません。まず収益や運営に影響する1本の業務を見て、価値があるか判断します。"
+        "question": "How are consulting fees calculated?",
+        "answer": "By workflow complexity and scope — quoted after diagnosis. We don't push a system at the start."
       },
       {
-        "question": "先にCRMを買う必要はありますか？",
-        "answer": "必ずしもありません。責任・引き継ぎ・フォローのリズムを先に整えます。既存ツールで足りるなら、すぐには替えません。"
+        "question": "What if we don't actually need AI or a CRM?",
+        "answer": "I'll say so. Often the issue is unclear ownership and follow-up rhythm, not missing tools. Fixing the process may be enough."
       },
       {
-        "question": "どれくらいで改善が見えますか？",
-        "answer": "全社一気の大改修はしません。1本の業務から始め、観察可能な改善を見てから拡大を判断します。"
-      },
-      {
-        "question": "チームが新システムを嫌がったら？",
-        "answer": "AdoptionとOwnershipはツールと同じくらい重要です。既存の働き方に寄せ、無理押しを減らします。"
-      },
-      {
-        "question": "30分診断では何をしますか？",
-        "answer": "最も詰まっている1本の業務に集中し、漏れ・責任の曖昧さ・優先して直すべき点を特定します。"
-      },
-      {
-        "question": "会社が小さいですが価値はありますか？",
-        "answer": "一人の休暇で全体が止まるなら、十分価値があります。小規模ほどコア業務の整理が必要です。主線はHK$6,800の30日Sprint（10名まで）から、低リスクで始められます。"
-      },
-      {
-        "question": "プログラムはどう始めますか？",
-        "answer": "段階的に進めます：\n30日 Discovery Sprint — 10名まで HK$6,800；11–30名 HK$13,600；31名以上は個別見積（会場費別途）\n3か月 Foundation（SOPの複雑さに応じて見積）\n6か月 Accelerator（SOPの複雑さに応じて見積）\n12か月 Partnership（SOPの複雑さに応じて見積）\n（注：実際の課題解決が中心です。ツール試用がトップの売りではありません。）"
-      },
-      {
-        "question": "EventXP とは何ですか？",
-        "answer": "EventXP は香港のイベントチーム向けの受付・フォローツールです。QR チェックイン、リードスコア、リアルタイムレポート、イベント後フォロー。トライアル HK$4,000／イベント、保守は月額約 HK$880〜。"
-      },
-      {
-        "question": "VisionXP とは何ですか？",
-        "answer": "VisionXP は InnovateXP の技術プロトタイプ／AI視覚トラッキングデモ（3–12歳向けトレーニング業務）です。公開サイトはフロントエンドのみで、ログイン不要・患者データ非保存。商用経路は demo → Discovery → Implementation Sprint です。"
-      },
-      {
-        "question": "VisionXP は医療機器ですか？",
-        "answer": "いいえ。VisionXP は技術プロトタイプ／AI視覚トラッキングデモであり、医療診断ツールでも登録医療機器でもなく、専門の視能・眼科検査の代替にもなりません。"
-      },
-      {
-        "question": "InnovateXPのパートナーは誰ですか？",
-        "answer": "ホームページのパートナー欄には、実際に共同納品や紹介交換をした組織を掲載しています。Flower Nice Day（flowerniceday.com）、Agilizing Education Center、BNI Anchor、Dr Steven Cheung Dental Surgery、Mentalok、digidumpling、Zomate Fitness、OL International、LinkedInLocal Asia などです。"
+        "question": "Will our data and processes stay confidential?",
+        "answer": "Yes. Operational details, customer data, and internal workflows shared in diagnosis or delivery are only used to serve you — never disclosed or published as a case without written consent."
       }
     ]
   },
   "finalCta": {
-    "title": "御社で最初に直すべき業務はどれですか？",
-    "body": "30分の業務診断で、取りこぼし・遅い見積・引き継ぎ停滞が起きやすい1本を特定します。",
-    "primary": "30分の業務診断を予約",
-    "secondary": "WhatsAppでLarryに連絡"
+    "title": "Book a 30-minute diagnosis now",
+    "body": "Bring your messiest workflow. After the session we'll say what to land, what to co-run — or that you shouldn't buy a system yet.",
+    "primary": "Book a 30-min diagnosis",
+    "secondary": ""
   },
   "partnership": {
     "eyebrow": "パートナー",
@@ -407,7 +386,7 @@
         "price": "基本サイト HK$3,000 · 基本EC HK$12,000",
         "body": "基本サイト、EC、月次コンテンツ、検索対策まで支援。",
         "points": [
-          "基本 Website HK$3,000",
+          "基本サイト HK$3,000",
           "基本 Eshop HK$12,000（売上歩合型も可）",
           "月次更新 + 自動化 月額 HK$800〜",
           "SEO + GEO + 自動投稿 月額 HK$1,800〜"
@@ -447,14 +426,14 @@
         "eyebrow": "AIビジネスコンサルティング",
         "name": "AI Consultancy",
         "tagline": "まず一つの業務フローを改善",
-        "price": "30日 Sprint · HK$6,800（10名まで）",
-        "body": "診断、導入、定着支援、KPIレビューまで伴走。Discoveryは10名まで HK$6,800、11–30名 HK$13,600、31名以上は個別見積。会場費別途。長期プランはSOPの複雑さに応じて見積。",
+        "price": "Quoted after diagnosis",
+        "body": "診断から導入・定着・レビューまで伴走。範囲と料金はフローの複雑さに応じて診断後に見積。",
         "points": [
           "3か月 Foundation",
           "6か月 Accelerator",
           "12か月 Partnership",
-          "成果物：業務フロー、担当、SOP、KPI、Quick Win",
-          "10名まで HK$6,800 · 11–30名 HK$13,600 · 31名以上は個別見積 · 会場費別途"
+          "Quoted after diagnosis",
+          "Quoted after diagnosis"
         ]
       }
     ],
@@ -499,8 +478,8 @@
     "readiness": {
       "eyebrow": "Downsell のみ",
       "title": "AI Readiness Snapshot",
-      "price": "HK$3,000",
-      "intro": "まだ HK$6,800 の Discovery に踏み切れないチーム向け。小さいコストで根拠ある判断を先に取る。",
+      "price": "Quoted after diagnosis",
+      "intro": "まだ Quoted after diagnosis の Discovery に踏み切れないチーム向け。小さいコストで根拠ある判断を先に取る。",
       "points": [
         "60–90分インタビュー",
         "1ページの readiness scorecard",
@@ -508,9 +487,9 @@
         "未準備か Discovery へ進むかの明確な推奨"
       ],
       "excludes": "SOP、prototype、implementation scope、custom build は含みません。",
-      "upgrade": "14暦日以内のアップグレードは追加 HK$3,800 で、合計 HK$6,800 の Discovery に入れます。",
+      "upgrade": "14暦日以内のアップグレードは追加 Quoted after diagnosis で、合計 Quoted after diagnosis の Discovery に入れます。",
       "educationTitle": "任意の 1か月 education track — 別見積",
-      "educationIntro": "同一顧客組織向け。週1回×4回、各60分。HK$3,000 Snapshot には含まれません。",
+      "educationIntro": "同一顧客組織向け。週1回×4回、各60分。Quoted after diagnosis Snapshot には含まれません。",
       "educationPoints": [
         "人数課金なし。参加人数は合意した会場またはオンライン基盤の安全定員まで",
         "第1回前に内容を確定。追加準備や追加セッションは別料金",
@@ -613,5 +592,38 @@
       "lead": "技術プロトタイプ／AI視覚トラッキングデモです。トリアージ用途のみ。登録医療機器ではなく、専門的な眼科・視能検査の代替にはなりません。",
       "items": []
     }
+  },
+  "faqExtended": {
+    "title": "More FAQ",
+    "items": [
+      {
+        "question": "Are diagnosis and AI consulting the same track?",
+        "answer": "Yes. Larry Lo / InnovateXP is the AI business consultant; diagnosis is the signature method before any land or co-run — not a SaaS pitch first."
+      },
+      {
+        "question": "How does SME workflow diagnosis work in Hong Kong?",
+        "answer": "Book a diagnosis with your messiest line. We map ownership, handoffs, and tracking, then recommend next steps. Built for HK teams of 3–30 still running on manual follow-up."
+      },
+      {
+        "question": "WhatsApp and Excel are chaos — must we buy a CRM first?",
+        "answer": "Not always. Diagnosis checks how current tools leak leads; if a clearer process is enough, you can wait on CRM."
+      },
+      {
+        "question": "Are training centres, tutoring, and fitness studios a fit?",
+        "answer": "Yes. Common pain is class, attendance, renewals, or rostering stuck in WhatsApp/Excel. Diagnose ownership first, then decide on tools."
+      },
+      {
+        "question": "Will an SOP/automation advisor push AI immediately?",
+        "answer": "No. Fix the process first; automate only when nodes are stable."
+      },
+      {
+        "question": "How do I book Larry Lo / InnovateXP?",
+        "answer": "Use “Book a 30-min diagnosis” to pick a slot, or ask on WhatsApp. We'll confirm industry, messiest workflow, and expected outcome."
+      },
+      {
+        "question": "Who does InnovateXP partner with?",
+        "answer": "Partners we've delivered with or exchanged referrals with include Flower Nice Day, Agilizing, BNI Anchor, Dr Steven Cheung Dental Surgery, Mentalok, digidumpling, Zomate Fitness, OL International, and LinkedInLocal Asia."
+      }
+    ]
   }
 }

@@ -3,81 +3,81 @@
   "brandSubtitle": "AI 商業顧問 Larry Lo／InnovateXP",
   "nav": {
     "home": "首頁",
-    "diagnosis": "流程診斷",
-    "services": "服務方式",
-    "plans": "服務方案",
-    "cases": "行業實例",
-    "about": "關於 Larry",
+    "diagnosis": "痛點",
+    "services": "方法",
+    "plans": "服務",
+    "cases": "案例",
+    "about": "為咩揀我",
     "faq": "常見問題",
-    "cta": "預約 30 分鐘診斷",
-    "products": "產品方案",
+    "cta": "預約 30 分鐘業務聽診",
+    "products": "產品",
     "visionXp": "VisionXP",
     "partnership": "合作夥伴"
   },
   "hero": {
-    "eyebrow": "AI 商業顧問 Larry Lo／InnovateXP",
-    "title": "協助香港小團隊止住漏單、慢報價與交接混亂。",
-    "description": "Larry 會先與你鎖定一條最影響收入或營運的流程，30 日內釐清責任、SOP 與追蹤方式；確認有效後才接 CRM、AI 或自動化。",
-    "fitAudience": "適合香港 3–30 人培訓、課程及專業服務團隊",
-    "primaryCta": "預約 30 分鐘流程診斷",
-    "secondaryCta": "查看服務方案與起步價格",
+    "eyebrow": "AI 商業顧問 Larry Lo｜InnovateXP",
+    "title": "香港 3–30 人團隊嘅 AI 商業顧問",
+    "description": "先執順流程，再落地 AI。用 30 分鐘業務聽診，搵出你間公司最漏客、最慢、最靠人頂住嗰條流程。唔使買系統我會直講。",
+    "fitAudience": "",
+    "primaryCta": "預約 30 分鐘業務聽診",
+    "secondaryCta": "WhatsApp 直接問",
     "trustPoints": [
-      "14+ 年 IT 交付經驗",
-      "專注香港 3–30 人小團隊",
-      "由流程診斷到實際落地"
+      "14 年大企業經驗",
+      "已服務培訓中心／診所／Fitness／專業服務",
+      "聽診後先決定要唔要落地"
     ],
     "diagnosticInputs": [
       "WhatsApp 查詢",
       "Excel 跟進表",
-      "線上表單",
+      "網上表單",
       "同事交接"
     ],
-    "diagnosticOutput": "一條看得見、跟得上、有人負責的 workflow",
-    "diagnosticCaption": "先看清漏點，再決定 AI、CRM 或 automation 是否真正有幫助。",
-    "imageAlt": "Larry Lo｜InnovateXP AI 商業顧問於香港分享業務流程診斷方法"
+    "diagnosticOutput": "一條睇得清、跟得到、有人負責嘅 workflow",
+    "diagnosticCaption": "先睇清漏位，再決定 AI、CRM 或 automation 幫唔幫到手。",
+    "imageAlt": "Larry Lo｜InnovateXP AI 商業顧問"
   },
   "problem": {
-    "eyebrow": "流程卡點",
-    "title": "問題往往不是公司沒有客戶，而是流程讓客戶流失。",
+    "eyebrow": "你係咪都有呢個問題",
+    "title": "唔係你公司冇客，而係離散瑣事同 admin 阻住你拓展業務。",
     "items": [
       {
-        "title": "查詢分散",
-        "body": "WhatsApp、Excel、表單各自為政。"
+        "title": "查詢散晒",
+        "body": "WhatsApp、Excel、表單各做各。客問完冇人跟，過兩日就走咗。"
       },
       {
-        "title": "報價緩慢",
-        "body": "資料要找、要問、要等。"
+        "title": "報價慢",
+        "body": "資料要搵、要問、要等。客人催完先發現原來漏咗。"
       },
       {
-        "title": "交接混亂",
-        "body": "沒有人清楚下一步由誰跟進。"
+        "title": "交接亂",
+        "body": "無人清楚下一步由邊個跟。同一個客，三個人三個版本。"
       },
       {
         "title": "老闆救火",
-        "body": "一個人請假，整條流程就停擺。"
+        "body": "一個人放假，成條流程就停。呢個叫流程，定係叫人質？"
       }
-    ],
-    "quote": "一個人請假就停的流程，不叫流程，叫人質。"
+    ]
   },
   "approach": {
-    "eyebrow": "服務方式",
-    "title": "不是一開始就叫您買系統。先看清楚哪一條流程最值得整理。",
-    "intro": "聚焦一條流程，而不是大規模數位轉型。先止血，再視情況接入工具。",
+    "eyebrow": "業務聽診方法",
+    "title": "聽診 → AI agents 落地 → 由 0 到 1 陪跑",
+    "intro": "用 30 分鐘搵出你公司最痛嗰條流程，講清邊度漏、邊個負責、下一步做咩。確認有用，先落地。",
     "steps": [
       {
         "label": "Step 1",
-        "title": "30 分鐘流程診斷",
-        "body": "鎖定最值得優先處理的收入／營運卡點。"
+        "title": "業務聽診（30 分鐘）",
+        "body": "你帶你最亂嗰條線嚟，我幫你畫清楚邊度漏客、邊度慢、邊個應該負責。",
+        "note": "聽診本身唔會推銷系統。如果你唔需要，我會直接講。"
       },
       {
         "label": "Step 2",
-        "title": "30 日 Workflow Sprint",
-        "body": "交付流程圖、責任人、SOP、追蹤節點與一個可執行的 即時改善點。"
+        "title": "AI agents 落地",
+        "body": "借系統設計同開發經驗，善用 AI agents 交付流程圖、責任分工、SOP，同一個團隊真係用到嘅改善點。"
       },
       {
         "label": "Step 3",
-        "title": "Adoption & KPI Review",
-        "body": "協助團隊實際使用；於 Day 30／60／90 檢討漏跟進、報價時間與交接完成率。有需要時才接入 CRM、AI 或自動化。"
+        "title": "由 0 到 1 陪跑",
+        "body": "幫團隊用順，定期檢討。先搵到生存方法，再建立獨特競爭力。"
       }
     ]
   },
@@ -109,15 +109,15 @@
   },
   "consultancy": {
     "eyebrow": "主線方案",
-    "title": "認真的買家，最先應該看這條主線。",
-    "intro": "公開主線：Snapshot HK$3,000 → Discovery HK$6,800 → 3／6／12 個月陪跑。工具試用收二級。",
-    "fitNote": "不是先賣您一套系統；而是從流程診斷、落地、團隊採用到 KPI review，協助您把卡住收入的流程真正跑順。",
+    "title": "聽診後先報價，再決定陪跑範圍",
+    "intro": "公開主線：業務聽診 → 落地 → 陪跑。工具試用收二級；聽診後先決定要唔要自動化起步包。",
+    "fitNote": "唔係一開始賣你一套系統。由流程聽診、落地、團隊採用到檢討，幫你將一條卡住收入嘅流程真正行順。唔使買系統我會直講。",
     "startingBadge": "建議起步",
     "plans": [
       {
-        "name": "30 日 Discovery（驗證包）",
-        "priceLabel": "HK$6,800（10 人或以下）",
-        "body": "先驗證一條最影響收入或營運的流程。10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價。場地費用另計。",
+        "name": "業務聽診後落地驗證",
+        "priceLabel": "聽診後先報價",
+        "body": "用一段短週期驗證一條最影響收入或營運嘅流程。範圍同報價按流程複雜程度，聽診後提供。",
         "deliverables": [
           "流程圖",
           "責任分工",
@@ -125,102 +125,113 @@
           "簡單 KPI",
           "一個即時改善點"
         ],
-        "cta": "由 Sprint 開始"
+        "cta": "預約業務聽診"
       },
       {
         "name": "3 個月起步陪跑",
-        "priceLabel": "視 SOP 複雜程度決定",
-        "body": "1–2 條流程落地、SOP v1、每月 checkpoint、一次團隊培訓。",
+        "priceLabel": "按流程複雜程度報價",
+        "body": "1–2 條流程落地、SOP 初版、每月檢討、一次團隊培訓。",
         "deliverables": [
           "1–2 條流程",
-          "SOP v1",
-          "每月 checkpoint",
+          "SOP 初版",
+          "每月檢討",
           "1 次團隊培訓"
         ],
-        "cta": "了解 Foundation"
+        "cta": "預約業務聽診"
       },
       {
         "name": "6 個月部門陪跑",
-        "priceLabel": "視 SOP 複雜程度決定",
-        "body": "一個部門／3–4 條流程、adoption 追蹤、最多兩次工作坊。",
+        "priceLabel": "按流程複雜程度報價",
+        "body": "一個部門／3–4 條流程、採用追蹤、最多兩次工作坊。",
         "deliverables": [
           "3–4 條流程",
-          "Adoption 追蹤",
+          "採用追蹤",
           "最多 2 次工作坊"
         ],
-        "cta": "了解 Accelerator"
+        "cta": "預約業務聽診"
       },
       {
         "name": "12 個月年度陪跑",
-        "priceLabel": "視 SOP 複雜程度決定",
-        "body": "年度 roadmap、SOP governance、管理層 review。",
+        "priceLabel": "按流程複雜程度報價",
+        "body": "年度路線圖、流程管治、管理層檢討。",
         "deliverables": [
-          "年度 roadmap",
-          "SOP governance",
-          "管理層 review"
+          "年度路線圖",
+          "流程管治",
+          "管理層檢討"
         ],
-        "cta": "了解 Partnership"
+        "cta": "預約業務聽診"
       }
     ]
   },
   "cases": {
-    "eyebrow": "行業實例",
-    "title": "同一套方法，在不同行業如何落地。",
-    "intro": "以下為匿名情境（Before → 30 日做法 → After → 可觀察指標）。未經驗證的數字不作 ROI 承諾。",
+    "eyebrow": "真實案例",
+    "title": "一個真實案例：善敏教育中心 Agilizing",
+    "intro": "以下數字經客戶核實。其他行業只提供情境參考，唔當已驗證案例。",
     "beforeLabel": "Before",
-    "sprintLabel": "30 日做法",
+    "sprintLabel": "做法",
     "afterLabel": "After",
-    "metricLabel": "可觀察指標",
+    "metricLabel": "可量度結果",
+    "scenarioLabel": "情境參考（非已核實案例）",
     "items": [
       {
-        "industry": "培訓／課程",
-        "title": "報名查詢散落在 WhatsApp，跟進靠記憶",
-        "before": "查詢、試堂、報名、收款各自使用不同聊天與 Excel；同事請假就不知道跟到哪裡。",
-        "sprint": "鎖定「查詢 → 試堂 → 報名」一條線；寫清責任人、跟進節點與簡單狀態表。",
-        "after": "每條查詢都有負責人與下一步；老闆不必每天追問進度。",
-        "metric": "漏跟進明顯減少；報名轉換可在一頁看清。"
+        "industry": "企業培訓｜Agilizing Limited",
+        "title": "教材製作由 10 日壓到 3 個鐘，慳約 HK$25,000／月",
+        "before": "每套企業培訓教材（PPT + 數字人講解影片）靠一位助手全人手做，10 日先出一套。成本高、產量慢，冇法快速拓展新客源。",
+        "sprint": "用一個月建立自動化製作流程，將 PPT 同數字人教材製作時間由 10 日壓縮到 3 小時。",
+        "after": "直接慳咗約 HK$25,000／月全職助理聘請開支，有能力短時間內拓展新客源，成功伸展到社福界同國泰等機構型客戶。",
+        "metric": "製作時間：10 日 → 3 小時。慳約 HK$25,000／月助理開支。新客源：社福界、國泰。"
       },
       {
-        "industry": "專業服務",
+        "industry": "培訓／課程｜情境參考",
+        "title": "報名查詢散喺 WhatsApp，跟進靠記性",
+        "before": "查詢、試堂、報名、收款各自用唔同 chat 同 Excel；同事放假就唔知跟到邊。業務聽診先鎖定「查詢 → 試堂 → 報名」一條線。",
+        "sprint": "",
+        "after": "",
+        "metric": ""
+      },
+      {
+        "industry": "專業服務｜情境參考",
         "title": "報價慢、版本多、交接靠口頭",
-        "before": "報價資料要問完才能出；同事各自有一份「最新版」；客戶催完才發現漏跟。",
-        "sprint": "釐清報價資料來源、責任與審批節點；固定一份可追蹤清單。",
-        "after": "報價有標準節奏；交接不再只靠口頭。",
-        "metric": "平均報價時間縮短；重複詢問資料次數下降。"
+        "before": "報價資料要問完先出；同事各自有一份「最新版」。聽診執清資料來源、責任同審批節點，固定一個可追蹤清單。",
+        "sprint": "",
+        "after": "",
+        "metric": ""
       },
       {
-        "industry": "Studio 行業（方法實例）",
+        "industry": "Studio／Fitness／補習｜情境參考",
         "title": "排程／收款／出勤靠 WhatsApp + Excel",
-        "before": "教練記堂、催未付、對佣金各用各方法；Admin 每天救火。",
-        "sprint": "用同一套「先整理流程再落地工具」方法：責任、狀態、reminder、匯出對數。",
-        "after": "排程、學員狀態、付款提醒集中一處；不再靠記憶撐住 studio。",
-        "metric": "未付追蹤有提醒；出勤／佣金對數可匯出。"
+        "before": "教練記堂、催未付、對佣金各用各方法；Admin 日日救火。聽診先釐清責任同狀態，再視需要落地工具。",
+        "sprint": "",
+        "after": "",
+        "metric": ""
       }
     ]
   },
   "whyUs": {
-    "eyebrow": "為什麼選擇 Larry",
-    "title": "多數人賣工具，有些人賣建議。我先把流程整理好。",
-    "intro": "對比式差異化——談客戶利益，不談內部產品策略。",
+    "eyebrow": "為咩揀我",
+    "title": "技術到處都有，懂人嘅 AI 落地先係稀缺。",
+    "intro": "兼具大企業架構視野、組織遊戲規則理解，同時擁有極強人際溫度——呢個組合極難被複製。",
     "rows": [
       {
-        "opponent": "管理顧問（交報告就離開）",
-        "difference": "我能建置、串接，並帶團隊真正用起來"
+        "opponent": "硬核技術派顧問（賣 Prompting、Agent、Automation）",
+        "difference": "我明白企業真正痛點唔係缺技術，係唔懂將 AI 與人結合"
+      },
+      {
+        "opponent": "管理顧問（交報告就走）",
+        "difference": "我會建到、接到、帶你團隊用到，由 0 到 1 陪跑"
       },
       {
         "opponent": "SaaS 供應商（賣 licence）",
-        "difference": "我可以告訴您其實不需要買"
+        "difference": "我可以話你知你唔需要買"
       },
       {
-        "opponent": "自動化／AI freelancer（接案）",
-        "difference": "我先問商業問題，再談工具"
-      },
-      {
-        "opponent": "大型 IT 公司（六位數專案）",
-        "difference": "HK$6,800 先試一條流程，風險極低"
+        "opponent": "大型 IT 公司（大項目）",
+        "difference": "由一條流程開始試，唔使一次過承諾大項目"
       }
     ],
-    "punchline": "如果您不需要系統，我會直接告訴您。"
+    "punchline": "AI 負責提升效率，我負責保留人的溫度與組織的連結。",
+    "aboutBlurb": "我喺大型企業同國際組織摸爬滾打 14 年，睇透指標與制度嘅運作邏輯，亦明白組織政治同人嘅適應。AI 提升效率，我保留人嘅溫度——陪你先執順流程，再決定要唔要落地。",
+    "aboutLinkLabel": "了解更多關於 Larry →"
   },
   "about": {
     "eyebrow": "關於 Larry",
@@ -238,64 +249,32 @@
     "title": "常見問題",
     "items": [
       {
-        "question": "InnovateXP 是做什麼的？",
-        "answer": "InnovateXP Limited 是由 Larry Lo 創立的香港 AI 商業顧問公司，協助中小企業先理順一條收入或營運流程（責任、SOP、跟進），確認有效後再考慮 AI、CRM 或自動化。起步方案為 30 日 Discovery Sprint，由 HK$6,800 起。"
+        "question": "咩係業務聽診？同一般顧問有咩分別？",
+        "answer": "業務聽診係用大約 30 分鐘鎖定一條最影響收入或營運嘅流程，講清漏位、責任同下一步。同交報告就走嘅顧問唔同，聽診之後會按需要落地同陪跑，確保團隊真係用到。"
       },
       {
-        "question": "Larry Lo 是誰？",
-        "answer": "Larry Lo 是 InnovateXP Limited 創辦人與 AI 商業顧問，駐香港，具備 13 年以上 IT 交付經驗，並有 7 場 2025 年公開紀錄，分別以主持人、講者或專案展示者身分參與 GDG Hong Kong、PISM Sharing 與 DevFest Hong Kong。"
+        "question": "聽診要投入幾多時間？我要準備咩？",
+        "answer": "聽診約 30 分鐘。帶你最亂嗰一條線（例如 WhatsApp 報名或報價），同埋你覺得「最痛」嘅具體例子就夠。唔使事先整齊簡報。"
       },
       {
-        "question": "我們現在適合用 AI 嗎？",
-        "answer": "未必一開始就要。通常建議先選一條最影響收入或營運的核心流程來看清楚，評估過效益，再決定是否值得加 AI。"
+        "question": "顧問費用點計？",
+        "answer": "按流程複雜程度同範圍，聽診後提供報價。唔會一開始就推系統。"
       },
       {
-        "question": "一定要先買 CRM 嗎？",
-        "answer": "不一定。最重要先理順團隊的責任、交接與跟進節奏。如果現有工具已經夠用，就未必需要立刻換系統。"
+        "question": "如果我間公司其實唔需要 AI／CRM 呢？",
+        "answer": "我會直講。好多時問題係責任同跟進節奏未定，而唔係缺工具。如果執順流程已經夠用，可以暫時唔買系統。"
       },
       {
-        "question": "要多久才看得到改善？",
-        "answer": "不會一開始就做全公司大翻新（Overhaul）。通常由一條流程開始，很快就會看到可觀察的改善，然後再決定要不要擴大。"
-      },
-      {
-        "question": "同事不習慣新系統怎麼辦？",
-        "answer": "使用習慣（Adoption）與歸屬感（Ownership）跟工具本身一樣重要。我們的做法是盡量貼近團隊現有的工作習慣，減少「硬推」引起的抗拒。"
-      },
-      {
-        "question": "30 分鐘流程診斷會做什麼？",
-        "answer": "集中協助您檢視一條最卡手的流程，精準找出漏點、責任不清之處，以及最值得優先整理的位置。"
-      },
-      {
-        "question": "公司很小，值得做嗎？",
-        "answer": "如果公司「一個人請假，整個運作就會卡住」，就非常值得做。小團隊更需要先整理好核心流程。主線由 HK$6,800 的 30 日 Sprint 起步（10 人或以下），風險可控。"
-      },
-      {
-        "question": "服務方案怎麼起步？",
-        "answer": "由淺入深，按部就班：\n30 日 Discovery Sprint — 10 人或以下 HK$6,800；11–30 人 HK$13,600；31 人或以上另行報價（場地另計）\n3 個月 Foundation（視 SOP 複雜程度決定）\n6 個月 Accelerator（視 SOP 複雜程度決定）\n12 個月 Partnership（視 SOP 複雜程度決定）\n（註：我們著重協助您解決實際問題，盲目試用新工具絕對不是首頁主打。）"
-      },
-      {
-        "question": "EventXP 是什麼？",
-        "answer": "EventXP 是 InnovateXP 為香港活動團隊設計的報到與跟進工具：QR 報到、名單評分、即時報表、活動後 follow-up。試用 HK$4,000／場；維護月費約由 HK$880 起。"
-      },
-      {
-        "question": "VisionXP 是什麼？",
-        "answer": "VisionXP 是 InnovateXP 的技術原型／AI 視覺追蹤示範（3–12 歲訓練流程）。公開站是純前端——無須登入、不存病人資料。商業路徑是 demo → Discovery → Implementation Sprint。"
-      },
-      {
-        "question": "VisionXP 是醫療器材嗎？",
-        "answer": "不是。VisionXP 只是技術原型／AI 視覺追蹤示範，並非醫療診斷工具，也不是註冊醫療器材，不能取代專業視光或眼科檢查。"
-      },
-      {
-        "question": "InnovateXP 有哪些合作夥伴？",
-        "answer": "首頁「合作夥伴」列出實際合作或轉介過的夥伴，包括 Flower Nice Day 販賣美好（flowerniceday.com）、善敏教育中心 Agilizing、BNI Anchor、Dr Steven Cheung Dental Surgery、Mentalok、digidumpling、Zomate Fitness、OL International、LinkedInLocal Asia。"
+        "question": "我嘅資料同流程會唔會保密？",
+        "answer": "會。聽診同落地過程中分享嘅營運細節、客戶資料同內部流程，只會用於服務你，唔會對外披露或用嚟做公開案例，除非你書面同意。"
       }
     ]
   },
   "finalCta": {
-    "title": "想知道你漏了多少錢、漏在哪？",
-    "body": "現在預約 30 分鐘業務聽診。聽完再決定 Snapshot、Discovery，或直接告訴你暫時不必買系統。",
-    "primary": "立即預約業務聽診（30 分鐘）",
-    "secondary": "WhatsApp 聯絡 Larry"
+    "title": "而家預約 30 分鐘業務聽診",
+    "body": "帶你最亂嗰條線嚟。聽完先講下一步——落地、陪跑，定係直講你暫時唔使買系統。",
+    "primary": "預約 30 分鐘業務聽診",
+    "secondary": ""
   },
   "partnership": {
     "eyebrow": "合作夥伴",
@@ -447,14 +426,14 @@
         "eyebrow": "AI 商業顧問",
         "name": "AI Consultancy",
         "tagline": "先理順一條流程",
-        "price": "30 天 Sprint · HK$6,800（10 人或以下）",
-        "body": "從診斷、導入、團隊採用到 KPI 檢視。Discovery：10 人以下 HK$6,800；11–30 人 HK$13,600；31 人以上另行報價。場地另計。較長方案視 SOP 複雜程度決定。",
+        "price": "聽診後先報價",
+        "body": "從診斷、導入、團隊採用到 KPI 檢視。範圍與報價依流程複雜程度，聽診後提供。",
         "points": [
           "3 個月 Foundation",
           "6 個月 Accelerator",
           "12 個月 Partnership",
           "交付：流程圖、責任分工、SOP、KPI、Quick Win",
-          "10 人以下 HK$6,800；11–30 人 HK$13,600；31 人以上另行報價；場地另計"
+          "聽診後先報價"
         ]
       }
     ],
@@ -499,8 +478,8 @@
     "readiness": {
       "eyebrow": "只作 downsell",
       "title": "AI Readiness Snapshot",
-      "price": "HK$3,000",
-      "intro": "給尚未準備投入 HK$6,800 Discovery 的團隊，先用較小成本取得一個有根據的決定。",
+      "price": "聽診後先報價",
+      "intro": "給尚未準備投入 聽診後先報價 Discovery 的團隊，先用較小成本取得一個有根據的決定。",
       "points": [
         "60–90 分鐘訪談",
         "一頁 readiness scorecard",
@@ -508,9 +487,9 @@
         "清楚建議：暫時未適合，或者進入 Discovery"
       ],
       "excludes": "不包括 SOP、prototype、implementation scope 或任何 custom build。",
-      "upgrade": "14 個曆日內升級，只需補 HK$3,800，即可進入總值 HK$6,800 的 Discovery。",
+      "upgrade": "14 個曆日內升級，只需補 聽診後先報價，即可進入總值 聽診後先報價 的 Discovery。",
       "educationTitle": "可選 1 個月教育 track — 另行報價",
-      "educationIntro": "同一間客戶機構，每星期 1 堂，共 4 堂，每堂 60 分鐘；不包括在 HK$3,000 Snapshot 之內。",
+      "educationIntro": "同一間客戶機構，每星期 1 堂，共 4 堂，每堂 60 分鐘；不包括在 聽診後先報價 Snapshot 之內。",
       "educationPoints": [
         "不按人頭收教學費；人數以已協議場地或網上平台安全容量為限",
         "第一堂前確認內容；額外備課或加堂另行收費",
@@ -574,7 +553,7 @@
         },
         {
           "name": "報價 Implementation Sprint",
-          "text": "流程清楚之後才報 Implementation Sprint。HK$3,000 Snapshot 不含無限開發。"
+          "text": "流程清楚之後才報 Implementation Sprint。Snapshot 唔包無限開發。"
         }
       ],
       "faqTitle": "常見問題",
@@ -613,5 +592,38 @@
       "lead": "這是技術原型／AI 視覺追蹤示範，只適合分流用途；並非註冊醫療器械，不能代替專業視光或眼科檢查。",
       "items": []
     }
+  },
+  "faqExtended": {
+    "title": "更多常見問題",
+    "items": [
+      {
+        "question": "業務聽診同 AI 商業顧問服務係咪同一套？",
+        "answer": "係同一條主線。我係 AI 商業顧問 Larry Lo／InnovateXP；業務聽診係簽名方法，用嚟先釐清流程，再按需要落地或陪跑，而唔會一開始就推 SaaS。"
+      },
+      {
+        "question": "中小企業務流程診斷喺香港點做？",
+        "answer": "預約一節業務聽診，帶你最亂嘅一條線。會一齊畫出責任、交接同追蹤節點，再建議下一步。適合香港 3–30 人、仍然靠人手跟進嘅團隊。"
+      },
+      {
+        "question": "WhatsApp、Excel 管理太亂，一定要先買 CRM 嗎？",
+        "answer": "唔一定。多數問題係責任同跟進節奏未定。業務聽診會先睇現有工具點樣漏客；如果流程執順已經夠用，可以暫時唔買 CRM。"
+      },
+      {
+        "question": "培訓機構／補習社／Fitness studio 適唔適合業務聽診？",
+        "answer": "適合。常見痛點係課堂、出席、續堂或排程靠 WhatsApp／Excel 頂住。聽診先釐清狀態同責任，再決定要唔要落地工具。"
+      },
+      {
+        "question": "SOP 自動化顧問會唔會一開始就推 AI？",
+        "answer": "唔會。定位係「先執順流程，再落地 AI」。如果 SOP 未寫清、責任未定，自動化只會放大混亂。"
+      },
+      {
+        "question": "點樣預約 Larry Lo／InnovateXP？",
+        "answer": "撳「預約 30 分鐘業務聽診」揀時段，或 WhatsApp 直接問。會確認你嘅行業、最亂嘅一條流程，同預期結果。"
+      },
+      {
+        "question": "InnovateXP 有邊啲合作夥伴？",
+        "answer": "包括 Flower Nice Day 販賣美好、善敏教育中心 Agilizing、BNI Anchor、Dr Steven Cheung Dental Surgery、Mentalok、digidumpling、Zomate Fitness、OL International、LinkedInLocal Asia 等真係一齊做過嘢或互相轉介過客嘅夥伴。"
+      }
+    ]
   }
 }

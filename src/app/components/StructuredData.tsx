@@ -23,8 +23,8 @@ const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
     "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。定位「聽診先——唔使買系統我會直講」。幫 3–30 人中小企先聽清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
   "zh-tw":
     "InnovateXP Limited 由 Larry Lo 創立，是香港 AI 商業顧問公司。定位「聽診先——唔使買系統我會直講」。協助 3–30 人中小企業先釐清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
-  ja: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。Discovery Sprint は HK$6,800〜。業務が明確になった後、SmartSales CRM、EventXP、VisionXP デモを選べます。",
-  de: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen Workflow und führen AI, CRM oder Automation erst danach ein. Discovery Sprint ab HK$6,800. Nach Workflow-Klarheit optional SmartSales CRM, EventXP und VisionXP-Demo.",
+  ja: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。料金は診断後に見積。業務が明確になった後、SmartSales CRM、EventXP、VisionXP デモを選べます。",
+  de: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen Workflow und führen AI, CRM oder Automation erst danach ein. Honorar nach Diagnose. Nach Workflow-Klarheit optional SmartSales CRM, EventXP und VisionXP-Demo.",
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
@@ -81,11 +81,11 @@ const SCHEMA_AI_SEO_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Hong Kong AI business consultancy: workflow diagnosis, Discovery Sprint from HK$6,800, WhatsApp CRM (SmartSales), EventXP, VisionXP demo, and optional private AI for SMEs.",
-  "zh-hk": "香港 AI 商業顧問：流程診斷、Discovery Sprint 由 HK$6,800 起、WhatsApp CRM（SmartSales）、EventXP、VisionXP 示範，以及按需私有 AI。",
-  "zh-tw": "香港 AI 商業顧問：流程診斷、Discovery Sprint 由 HK$6,800 起、WhatsApp CRM（SmartSales）、EventXP、VisionXP 示範，以及按需私有 AI。",
-  ja: "香港の AI ビジネスコンサル：業務診断、Discovery Sprint（HK$6,800〜）、WhatsApp CRM（SmartSales）、EventXP、VisionXP デモ、必要に応じてプライベート AI。",
-  de: "AI-Business-Beratung Hongkong: Workflow-Diagnose, Discovery Sprint ab HK$6,800, WhatsApp-CRM (SmartSales), EventXP, VisionXP-Demo und optionale Private AI für KMUs.",
+  en: "Hong Kong AI business consultancy: workflow diagnosis, WhatsApp CRM (SmartSales), EventXP, VisionXP demo, and optional private AI for SMEs.",
+  "zh-hk": "香港 AI 商業顧問：流程診斷、WhatsApp CRM（SmartSales）、EventXP、VisionXP 示範，以及按需私有 AI。",
+  "zh-tw": "香港 AI 商業顧問：流程診斷、WhatsApp CRM（SmartSales）、EventXP、VisionXP 示範，以及按需私有 AI。",
+  ja: "香港の AI ビジネスコンサル：業務診断、WhatsApp CRM（SmartSales）、EventXP、VisionXP デモ、必要に応じてプライベート AI。",
+  de: "AI-Business-Beratung Hongkong: Workflow-Diagnose, WhatsApp-CRM (SmartSales), EventXP, VisionXP-Demo und optionale Private AI für KMUs.",
 };
 
 const SCHEMA_CONSULTING_SERVICE_DESCRIPTION: Record<AppLocale, string> = {
@@ -554,7 +554,7 @@ const HOME_FAQ_JA: FaqMainEntity = [
     name: "InnovateXP は何をする会社ですか？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入する支援をします。入口は 30 日 Discovery Sprint（HK$6,800〜）です。",
+      text: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入する支援をします。入口は 30 分の業務診断です。料金は診断後に見積。",
     },
   },
   {
@@ -586,7 +586,7 @@ const HOME_FAQ_JA: FaqMainEntity = [
     name: "Discovery Sprint の料金は？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "30日 Discovery Sprint は10人以下 HK$6,800、11–30人 HK$13,600、31人以上は個別見積です。Foundation／Accelerator／Partnership は SOP の複雑さに応じて見積ります。",
+      text: "料金はフローの複雑さに応じて診断後に見積ります。最初からシステムを売りません。",
     },
   },
   {
@@ -629,7 +629,7 @@ const HOME_FAQ_DE: FaqMainEntity = [
     name: "Was macht InnovateXP?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen umsatz- oder betriebsrelevanten Workflow (Ownership, SOP, Follow-up) und führen AI, CRM oder Automation erst danach ein — wenn es gerechtfertigt ist. Einstieg: 30-Tage Discovery Sprint ab HK$6,800.",
+      text: "InnovateXP Limited ist eine von Larry Lo gegründete AI-Business-Beratung in Hongkong. KMUs reparieren zuerst einen umsatz- oder betriebsrelevanten Workflow (Ownership, SOP, Follow-up) und führen AI, CRM oder Automation erst danach ein — wenn es gerechtfertigt ist. Einstieg: 30-Tage Honorar nach Diagnose.",
     },
   },
   {
@@ -661,7 +661,7 @@ const HOME_FAQ_DE: FaqMainEntity = [
     name: "Was kostet der Discovery Sprint?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Der 30-Tage Discovery Sprint kostet HK$6,800 bis 10 Personen, HK$13,600 für 11–30 Personen und wird ab 31 Personen individuell angeboten. Foundation/Accelerator/Partnership werden nach SOP-Komplexität bewertet.",
+      text: "Beratungshonorar wird nach der Diagnose nach Workflow-Komplexität angeboten. Kein Systemverkauf am Anfang.",
     },
   },
   {
@@ -923,7 +923,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "業務聽診",
       "Business Workflow Diagnosis",
       "聽診先唔使買系統我會直講",
-      "Discovery HK$6,800",
+      
       "AI Readiness Snapshot",
       "AI 陪跑課程",
       "中小企 AI 升級",
@@ -1163,7 +1163,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "HKD",
-      lowPrice: "6800",
+      description: "Quoted after diagnosis",
       highPrice: "9800",
       offerCount: 3,
     },
@@ -1223,8 +1223,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: localeUsesChineseCopy(routeLocale)
-        ? "公開主線價（Snapshot／Discovery／試用）"
-        : "Public mainline prices (Snapshot / Discovery / trial)",
+        ? "主線方案（聽診後報價）"
+        : "Mainline programmes (quoted after diagnosis)",
       itemListElement: [
         {
           "@type": "Offer",
@@ -1239,8 +1239,6 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
               ? "較細成本先做證據型決定；可升級 Discovery。"
               : "Smaller evidence-based decision before Discovery.",
           },
-          price: String(PRICING.quickCash.aiReadinessAssessment),
-          priceCurrency: "HKD",
         },
         {
           "@type": "Offer",
@@ -1252,11 +1250,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
             "@type": "Service",
             name: "30-day Discovery validation pack",
             description: localeUsesChineseCopy(routeLocale)
-              ? "30 日驗證一條卡住收入／營運嘅流程。10 人或以下 HK$6,800；場地另計。"
-              : "Validate one revenue- or operations-blocking workflow in 30 days. HK$6,800 for up to 10 people. Venue extra.",
+              ? "30 日驗證一條卡住收入／營運嘅流程。範圍同報價聽診後提供。"
+              : "Validate one revenue- or operations-blocking workflow in 30 days. Scope and fee quoted after diagnosis.",
           },
-          price: String(PRICING.consultancy.discoverySprint30Day),
-          priceCurrency: "HKD",
         },
         {
           "@type": "Offer",
@@ -1268,11 +1264,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
             "@type": "Service",
             name: "Discovery workshop (11–30 people)",
             description: localeUsesChineseCopy(routeLocale)
-              ? "11–30 人 HK$13,600；31+ 另行報價；場地另計。"
-              : "HK$13,600 for 11–30 people. 31+ quoted separately. Venue extra.",
+              ? "較大團隊嘅工作坊範圍，聽診後報價。"
+              : "Workshop for larger teams — quoted after diagnosis.",
           },
-          price: String(PRICING.consultancy.discoveryWorkshop11To30),
-          priceCurrency: "HKD",
         },
         {
           "@type": "Offer",
@@ -1287,16 +1281,14 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
               ? "聽診後 14 日流程試用；轉正式可扣部分費用。"
               : "14-day workflow trial after diagnosis; credit toward a formal starter pack.",
           },
-          price: String(PRICING.quickCash.automationTrial14Day),
-          priceCurrency: "HKD",
+
         },
       ],
     },
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "HKD",
-      lowPrice: String(PRICING.quickCash.aiReadinessAssessment),
-      highPrice: String(PRICING.consultancy.discoveryWorkshop11To30),
+      description: "Consulting fees quoted after diagnosis",
       offerCount: 4,
     },
   };
@@ -1383,27 +1375,23 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
-      name: "Public mainline — Snapshot, Discovery, trial",
+      name: "Mainline programmes — quoted after diagnosis",
       itemListElement: [
         {
           "@type": "Offer",
           name: "AI Readiness Snapshot",
-          price: String(PRICING.quickCash.aiReadinessAssessment),
-          priceCurrency: "HKD",
+
           itemOffered: { "@type": "Service", name: "AI Readiness Snapshot" },
         },
         {
           "@type": "Offer",
           name: "30-day Discovery (≤10 people)",
-          price: String(PRICING.consultancy.discoverySprint30Day),
-          priceCurrency: "HKD",
+
           itemOffered: { "@type": "Service", name: "30-day Discovery" },
         },
         {
           "@type": "Offer",
           name: "14-day automation trial",
-          price: String(PRICING.quickCash.automationTrial14Day),
-          priceCurrency: "HKD",
           itemOffered: { "@type": "Service", name: "14-day automation trial" },
         },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "SmartSales CRM" } },

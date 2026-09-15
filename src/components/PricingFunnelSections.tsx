@@ -323,7 +323,7 @@ export function consultancyPlanPrice(planIndex: number, locale: AppLocale): stri
   const pl = toPricingLocale(locale);
   const scoped = SCOPED_SOP_PRICE_LABEL[pl] ?? SCOPED_SOP_PRICE_LABEL.en;
   const plans = [
-    formatHkd(PRICING.consultancy.discoverySprint30Day, pl),
+    pl === "zh-hk" || pl === "zh-tw" ? "聽診後報價" : "Quoted after diagnosis",
     scoped,
     scoped,
     scoped,

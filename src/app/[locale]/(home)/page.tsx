@@ -5,44 +5,31 @@ import Header from "../../components/Header";
 import { Hero } from "@/components/Hero";
 import { BusinessUpgradeHomepageFunnel } from "@/components/BusinessUpgradeHomepageFunnel";
 import { getHomepageContent, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
-import { uiStrings } from "@/content/ui-strings";
+import {
+  getBookingHref,
+  getWhatsAppHref,
+  primaryCtaLabel,
+  secondaryWhatsAppLabel,
+} from "@/content/cta-config";
 import { useLanguage } from "../../LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
-import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
 
 function LandingPage() {
   const { locale } = useLanguage();
   const loc = useLocalizedHref();
   const content = getHomepageContent(locale);
-  const ui = uiStrings(locale);
 
-  const bookingHref = loc("/bookme");
-  const whatsappHref = buildWhatsAppHref(ui.whatsappPrefill);
-
-  const scrollToAnchor = (e: React.MouseEvent<HTMLAnchorElement>, href: string) => {
-    if (!href.startsWith("#")) return;
-    e.preventDefault();
-    const id = href.slice(1);
-    const offset =
-      parseInt(getComputedStyle(document.documentElement).getPropertyValue("--header-offset"), 10) || 180;
-    if (id === "") window.scrollTo({ top: 0, behavior: "smooth" });
-    else {
-      const el = document.getElementById(id);
-      if (el) window.scrollTo({ top: el.getBoundingClientRect().top + window.scrollY - offset, behavior: "smooth" });
-    }
-  };
+  const bookingHref = getBookingHref(locale);
+  const whatsappHref = getWhatsAppHref(locale);
+  const ctaLabel = primaryCtaLabel(locale);
 
   const navItems = useMemo(() => {
     return [
       { label: content.nav.home, href: "#top" },
-      { label: content.nav.diagnosis, href: "#workflow-diagnosis" },
-      { label: content.nav.services, href: "#service-approach" },
-      { label: content.nav.plans, href: "#service-plans" },
-      { label: content.nav.products, href: "#product-packages" },
-      { label: content.nav.visionXp, href: "#visionxp" },
-      { label: content.nav.cases, href: "#case-directions" },
-      { label: content.nav.partnership, href: "#partnership" },
-      { label: content.nav.about, href: "#about-larry" },
+      { label: content.nav.diagnosis, href: "#pain-points" },
+      { label: content.nav.services, href: "#method" },
+      { label: content.nav.cases, href: "#case-study" },
+      { label: content.nav.about, href: "#why-me" },
       { label: content.nav.faq, href: "#faq" },
     ];
   }, [content]);
@@ -54,28 +41,26 @@ function LandingPage() {
         title={content.brandTitle}
         subtitle={content.brandSubtitle}
         navItems={navItems}
-        ctaLabel={content.nav.cta}
+        ctaLabel={ctaLabel}
         ctaHref={bookingHref}
       />
 
-      <main className="mx-auto max-w-[1280px] bg-bg px-4 py-8 pb-10 text-fg sm:px-6 md:py-12">
+      <main className="mx-auto max-w-[1280px] bg-bg px-4 py-6 pb-10 text-fg sm:px-6 md:py-10">
+        {/* Section 1 — Hero: who I help + what I fix; primary + WhatsApp only */}
         <Hero
           eyebrow={content.hero.eyebrow}
           title={content.hero.title}
-          tagline={content.footer.tagline}
           description={content.hero.description}
-          fitAudience={content.hero.fitAudience}
           primaryHref={bookingHref}
-          primaryLabel={content.hero.primaryCta}
-          secondaryHref="#service-plans"
-          secondaryLabel={content.hero.secondaryCta}
-          onSecondaryClick={(e) => scrollToAnchor(e, "#service-plans")}
+          primaryLabel={ctaLabel}
+          secondaryHref={whatsappHref}
+          secondaryLabel={secondaryWhatsAppLabel(locale)}
           trustBadges={content.hero.trustPoints}
           imageSrc="/mypresent.jpg"
           imageAlt={content.hero.imageAlt}
         />
 
-        <BusinessUpgradeHomepageFunnel locale={locale} bookingHref={bookingHref} whatsappHref={whatsappHref} />
+        <BusinessUpgradeHomepageFunnel locale={locale} bookingHref={bookingHref} />
       </main>
 
       <footer className="border-t border-[color:var(--border-light)] bg-[color:var(--bg-secondary)] py-10">
@@ -89,11 +74,11 @@ function LandingPage() {
             <a href={HOMEPAGE_PLACEHOLDERS.linkedinUrl} target="_blank" rel="noopener noreferrer">
               LinkedIn
             </a>
-            <a href={whatsappHref} target="_blank" rel="noopener noreferrer">
-              WhatsApp
-            </a>
             <a href={`mailto:${HOMEPAGE_PLACEHOLDERS.emailAddress}`}>{HOMEPAGE_PLACEHOLDERS.emailAddress}</a>
-            <a href={loc("/visionxp")}>{content.nav.visionXp}</a>
+            <a href={loc("/services")}>{content.nav.services}</a>
+            <a href={loc("/products")}>{content.nav.products}</a>
+            <a href={loc("/about")}>{content.nav.about}</a>
+            <a href={loc("/faq")}>{content.nav.faq}</a>
             <a href={loc("/privacy-policy")}>{content.footer.privacy}</a>
           </div>
         </div>

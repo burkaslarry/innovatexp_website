@@ -76,7 +76,7 @@ type Copy = {
 const zh: Copy = {
   metaTitle: "n8n自動化＋ERP｜業務聽診先｜InnovateXP",
   metaDescription:
-    "AI 商業顧問 Larry Lo／InnovateXP：業務聽診後先報自動化起步包。公開試用 HK$3,800、Lite／Starter；Snapshot HK$3,000、Discovery HK$6,800。唔使買系統會直講。",
+    "AI 商業顧問 Larry Lo／InnovateXP：業務聽診後先報自動化起步包。Lite／Starter 同試用聽診後報價。唔使買系統會直講。",
   eyebrow: "服務先行 · 產品其後",
   h1: "先聽診卡住收入嘅線，再決定自動化定 AI agent",
   lead:
@@ -136,7 +136,7 @@ const zh: Copy = {
     {
       id: "lite",
       name: "Automation Lite",
-      setup: "HK$6,800",
+      setup: "聽診後報價",
       monthly: "HK$1,200",
       includes: "n8n＋自選 ERP＋2 workflows＋1hr training",
       bestFor: "Form／通知／sync，唔使 LLM",
@@ -145,7 +145,7 @@ const zh: Copy = {
     {
       id: "trial",
       name: "14 日試用",
-      setup: "HK$3,800（一次）",
+      setup: "聽診後報價（一次）",
       monthly: "—",
       includes: "n8n＋HTTPS＋ERP lite＋2 workflows；轉 Starter 扣 HK$2,000",
       bestFor: "想先試",
@@ -201,7 +201,7 @@ const zh: Copy = {
     },
     {
       question: "可唔可以先試？",
-      answer: "可以。14 日試用 HK$3,800；轉正式扣 HK$2,000。開工前仍會聽診，避免裝錯嘢。",
+      answer: "可以。14 日試用聽診後報價；轉正式有抵扣。開工前仍會聽診，避免裝錯嘢。",
     },
     {
       question: "我要 AI agent／私有模型／數據唔出街？",
@@ -295,7 +295,7 @@ const zh: Copy = {
       id: "budget",
       label: "9. 預算帶？",
       options: [
-        { id: "trial", label: "試用約 HK$3,800" },
+        { id: "trial", label: "試用（聽診後報價）" },
         { id: "lite", label: "Setup 約 HK$7–13k" },
         { id: "ai", label: "AI／私有更高" },
       ],
@@ -323,7 +323,7 @@ const zh: Copy = {
     },
     trial: {
       title: "建議：14 日試用 → 再轉 Starter",
-      body: "低風險試跑。試用 HK$3,800；轉正式扣 HK$2,000。",
+      body: "低風險試跑。試用聽診後報價；轉正式有抵扣。",
     },
     starter: {
       title: "建議：Starter（n8n＋ERP）",
@@ -351,7 +351,7 @@ const zh: Copy = {
 const en: Copy = {
   metaTitle: "n8n Automation + ERP | Diagnose First | InnovateXP",
   metaDescription:
-    "AI Business Consultant Larry Lo / InnovateXP: after diagnosis we quote automation starter packs. Public: 14-day trial HK$3,800, Lite/Starter; Snapshot HK$3,000, Discovery HK$6,800.",
+    "AI Business Consultant Larry Lo / InnovateXP: after diagnosis we quote automation starter packs. Lite/Starter and trial quoted after diagnosis.",
   eyebrow: "Service first · products second",
   h1: "Diagnose the revenue-blocking line before you buy automation or an AI agent",
   lead:
@@ -411,7 +411,7 @@ const en: Copy = {
     {
       id: "lite",
       name: "Automation Lite",
-      setup: "HK$6,800",
+      setup: "聽診後報價",
       monthly: "HK$1,200",
       includes: "n8n + ERP of choice + 2 workflows + 1hr training",
       bestFor: "Form/notify/sync — no LLM",
@@ -420,7 +420,7 @@ const en: Copy = {
     {
       id: "trial",
       name: "14-day Trial",
-      setup: "HK$3,800 (once)",
+      setup: "Quoted after diagnosis (once)",
       monthly: "—",
       includes: "n8n + HTTPS + ERP lite + 2 workflows; HK$2,000 credit to Starter",
       bestFor: "Want to try first",
@@ -476,7 +476,7 @@ const en: Copy = {
     },
     {
       question: "Can we try first?",
-      answer: "Yes. 14-day trial HK$3,800 with HK$2,000 credit to Starter. Diagnosis still happens before build.",
+      answer: "Yes. 14-day trial quoted after diagnosis, with credit toward Starter. Diagnosis still happens before build.",
     },
     {
       question: "We need a private AI agent / data residency?",
@@ -570,7 +570,7 @@ const en: Copy = {
       id: "budget",
       label: "9. Budget band?",
       options: [
-        { id: "trial", label: "Trial ~HK$3,800" },
+        { id: "trial", label: "Trial (quoted after diagnosis)" },
         { id: "lite", label: "Setup ~HK$7–13k" },
         { id: "ai", label: "AI / private higher" },
       ],
@@ -598,7 +598,7 @@ const en: Copy = {
     },
     trial: {
       title: "Recommendation: 14-day trial → Starter",
-      body: "Low-risk pilot. Trial HK$3,800 with HK$2,000 credit to Starter.",
+      body: "Low-risk pilot. Trial quoted after diagnosis, with credit toward Starter.",
     },
     starter: {
       title: "Recommendation: Starter (n8n + ERP)",

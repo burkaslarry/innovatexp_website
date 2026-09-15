@@ -146,13 +146,14 @@ export type HomepageContent = {
     eyebrow: string;
     title: string;
     items: SectionItem[];
-    quote: string;
+    /** @deprecated Removed from homepage; kept optional for older locale JSON. */
+    quote?: string;
   };
   approach: {
     eyebrow: string;
     title: string;
     intro: string;
-    steps: { label: string; title: string; body: string }[];
+    steps: { label: string; title: string; body: string; note?: string }[];
   };
   services: {
     eyebrow: string;
@@ -184,6 +185,7 @@ export type HomepageContent = {
     sprintLabel: string;
     afterLabel: string;
     metricLabel: string;
+    scenarioLabel: string;
     items: CaseStudy[];
   };
   whyUs: {
@@ -192,6 +194,8 @@ export type HomepageContent = {
     intro: string;
     rows: { opponent: string; difference: string }[];
     punchline: string;
+    aboutBlurb: string;
+    aboutLinkLabel: string;
   };
   about: {
     eyebrow: string;
@@ -202,6 +206,11 @@ export type HomepageContent = {
     portraitAlt: string;
   };
   faq: {
+    title: string;
+    items: { question: string; answer: string }[];
+  };
+  /** Extra FAQs for /faq — not rendered on homepage. */
+  faqExtended?: {
     title: string;
     items: { question: string; answer: string }[];
   };

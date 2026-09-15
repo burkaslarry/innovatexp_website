@@ -16,7 +16,7 @@ export function getOrganizationSchema() {
     url: siteUrl,
     logo: `${siteUrl}/innovatexp_color_no_bg.svg`,
     description:
-      "Hong Kong AI business consultancy founded by Larry Lo. Diagnose first, then AI agents and co-run. Public prices: Snapshot HK$3,000, Discovery from HK$6,800.",
+      "Hong Kong AI business consultancy founded by Larry Lo. Diagnose first, then AI agents and co-run. Fees quoted after diagnosis by workflow complexity.",
     sameAs: [
       "https://www.linkedin.com/company/innovatexp",
       "https://www.linkedin.com/in/innovatexp/",
@@ -152,7 +152,7 @@ export function getAIConsultingServiceSchema() {
     "@type": "Service",
     name: "AI Business Consultancy — Discovery",
     description:
-      "InnovateXP helps Hong Kong SMEs diagnose one revenue-blocking workflow, validate it in 30 days (Discovery from HK$6,800), then expand with AI agents or co-run advisory when justified.",
+      "InnovateXP helps Hong Kong SMEs diagnose one revenue-blocking workflow, validate it, then expand with AI agents or co-run advisory when justified. Consulting fees quoted after diagnosis.",
     provider: {
       "@type": "Organization",
       name: "InnovateXP Limited",
@@ -164,37 +164,11 @@ export function getAIConsultingServiceSchema() {
     },
     url: `${siteUrl}/zh-hk/ai-consulting`,
     offers: {
-      "@type": "AggregateOffer",
+      "@type": "Offer",
       priceCurrency: "HKD",
-      lowPrice: "3000",
-      highPrice: "13600",
-      offerCount: 4,
-      offers: [
-        {
-          "@type": "Offer",
-          name: "AI Readiness Snapshot",
-          price: "3000",
-          priceCurrency: "HKD",
-        },
-        {
-          "@type": "Offer",
-          name: "30-day Discovery (up to 10 people)",
-          price: "6800",
-          priceCurrency: "HKD",
-        },
-        {
-          "@type": "Offer",
-          name: "Discovery workshop (11–30 people)",
-          price: "13600",
-          priceCurrency: "HKD",
-        },
-        {
-          "@type": "Offer",
-          name: "14-day automation trial",
-          price: "3800",
-          priceCurrency: "HKD",
-        },
-      ],
+      description:
+        "Consulting fees quoted after a 30-minute Business Workflow Diagnosis, based on workflow complexity and scope. No public fixed list price.",
+      url: `${siteUrl}/zh-hk/bookme`,
     },
   };
 }

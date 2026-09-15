@@ -50,7 +50,7 @@ export function Hero({
             </p>
           ) : null}
           <h1
-            className="mx-auto max-w-[14ch] text-[clamp(2rem,7vw,3.75rem)] font-bold leading-[1.12] tracking-[-0.025em] text-[color:var(--heading-foreground)] lg:mx-0"
+            className="mx-auto max-w-[18ch] text-[clamp(1.75rem,6vw,3.25rem)] font-bold leading-[1.15] tracking-[-0.025em] text-[color:var(--heading-foreground)] lg:mx-0"
             style={{ textWrap: "balance" }}
           >
             {title}

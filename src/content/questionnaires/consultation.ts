@@ -215,25 +215,25 @@ function pricingCards(locale: AppLocale) {
     },
     {
       name: "AI Readiness Snapshot",
-      price: formatHkd(PRICING.quickCash.aiReadinessAssessment, locale === "zh-hk" || locale === "zh-tw" ? "zh-hk" : "en"),
+      price: zh ? "聽診後報價" : "Quoted after diagnosis",
       note: zh
-        ? "只作 downsell：60–90 分鐘訪談 + 一頁 scorecard。14 日內升級補 HK$3,800。"
+        ? "只作 downsell：60–90 分鐘訪談 + 一頁 scorecard。14 日內升級補差價（聽診後說明）。"
         : locale === "ja"
-          ? "Downsellのみ：60–90分インタビュー + 1ページscorecard。14日以内のアップグレードは追加HK$3,800。"
+          ? "Downsellのみ：60–90分インタビュー + 1ページscorecard。14日以内のアップグレード差額は診断後に説明。"
           : locale === "de"
-            ? "Nur Downsell: 60–90 Min. Interview + einseitige Scorecard. Upgrade in 14 Tagen: zusätzlich HK$3,800."
-            : "Downsell only: 60–90 min interview + one-page scorecard. 14-day upgrade: pay HK$3,800 more.",
+            ? "Nur Downsell: 60–90 Min. Interview + einseitige Scorecard. Upgrade in 14 Tagen: Differenz nach Diagnose."
+            : "Downsell only: 60–90 min interview + one-page scorecard. 14-day upgrade: scoped top-up after diagnosis.",
     },
     {
       name: "AI Discovery Sprint",
-      price: formatHkd(PRICING.quickCash.aiDiscoverySprint, locale === "zh-hk" || locale === "zh-tw" ? "zh-hk" : "en"),
+      price: zh ? "聽診後報價" : "Quoted after diagnosis",
       note: zh
-        ? "10 人或以下 HK$6,800；11–30 人 HK$13,600；31+ 另行報價。場地另計。"
+        ? "範圍同報價聽診後提供。"
         : locale === "ja"
-          ? "10名までHK$6,800、11–30名HK$13,600、31名以上は個別見積。会場費別途。"
+          ? "範囲と料金は診断後に見積。"
           : locale === "de"
-            ? "HK$6,800 bis 10 Personen; 11–30: HK$13,600; 31+ auf Anfrage. Venue extra."
-            : "HK$6,800 for up to 10 people; 11–30: HK$13,600; 31+ quoted. Venue extra.",
+            ? "Honorar nach Diagnose nach Umfang."
+            : "Quoted after diagnosis by scope.",
     },
     {
       name: zh ? "AccountXP 體驗方案" : "AccountXP experience",

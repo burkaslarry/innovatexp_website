@@ -1,20 +1,20 @@
 import type { AppLocale } from "@/lib/i18n-routing";
 import type { ServicePageContent, ServicePageSlug, VisionCopy } from "@/types/marketing";
 import { PRICING, formatHkd } from "@/content/pricing";
-import { SCOPED_SOP_PRICE_LABEL } from "@/content/pricing-labels";
 
 function consultancyDisplayPrices(locale: "en" | "zh-hk") {
-  const pl = locale;
-  const c = PRICING.consultancy;
-  const scoped = SCOPED_SOP_PRICE_LABEL[pl];
+  const scoped =
+    locale === "zh-hk"
+      ? "按流程複雜程度報價，聽診後提供"
+      : "Quoted after diagnosis by workflow complexity";
   return {
-    discovery: formatHkd(c.discoverySprint30Day, pl),
-    discovery11To30: formatHkd(c.discoveryWorkshop11To30, pl),
+    discovery: scoped,
+    discovery11To30: scoped,
     foundation: scoped,
     accelerator: scoped,
     partnership: scoped,
-    eventTrial: formatHkd(PRICING.quickCash.eventXpTrial, pl),
-    salesTrial: formatHkd(PRICING.quickCash.smartSalesTrial, pl),
+    eventTrial: formatHkd(PRICING.quickCash.eventXpTrial, locale),
+    salesTrial: formatHkd(PRICING.quickCash.smartSalesTrial, locale),
   };
 }
 
