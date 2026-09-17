@@ -966,6 +966,12 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       },
       {
         "@type": "Organization",
+        name: "Zomate Fitness Limited",
+        url: "https://zoesportdiary.com/",
+        sameAs: "https://zoesportdiary.com/",
+      },
+      {
+        "@type": "Organization",
         name: "Flower Nice Day",
         alternateName: "販賣美好",
         url: "https://www.flowerniceday.com",
