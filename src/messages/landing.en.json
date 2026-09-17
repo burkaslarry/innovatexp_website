@@ -284,7 +284,8 @@
       {
         "name": "Zomate Fitness Limited",
         "desc": "Fitness class management system partner",
-        "logo": ""
+        "logo": "/partners/zomate-fitness-logo.png",
+        "href": "https://zoesportdiary.com/"
       },
       {
         "name": "Agilizing Education Center",
