@@ -16,7 +16,7 @@ import {
   Alert,
 } from "@mui/material";
 import Link from "next/link";
-import type { QuestionField } from "@/content/questionnaires/consultation";
+import type { QuestionField, StepNotice } from "@/content/questionnaires/consultation";
 import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
 
 export type Answers = Record<string, string | string[]>;
@@ -27,6 +27,7 @@ type ShellCopy = {
   submit: string;
   sending: string;
   requiredError: string;
+  contactRequiredError?: string;
   failError: string;
   consent: string;
   successTitle: string;
@@ -47,6 +48,7 @@ type Props = {
   privacy: string;
   questions: QuestionField[];
   steps?: { title: string; questionIds: string[] }[];
+  notices?: StepNotice[];
   copy: ShellCopy;
   pathId: string;
   subjectPrefix: string;
@@ -54,6 +56,8 @@ type Props = {
   whatsappHref?: string;
   showBookingOnSuccess?: boolean;
   requireContact?: boolean;
+  /** Require WhatsApp OR email (diagnosis intake). */
+  requirePhoneOrEmail?: boolean;
   isHighIntent?: (answers: Answers) => boolean;
   contactDefaults?: { name?: string; company?: string; email?: string; phone?: string };
 };
@@ -79,6 +83,13 @@ function formatQa(questions: QuestionField[], answers: Answers): string {
     .join("\n");
 }
 
+function isVisible(q: QuestionField, answers: Answers): boolean {
+  if (!q.showWhen) return true;
+  const v = answers[q.showWhen.fieldId];
+  if (Array.isArray(v)) return v.includes(q.showWhen.optionId);
+  return v === q.showWhen.optionId;
+}
+
 export function M3QuestionnaireForm({
   eyebrow,
   title,
@@ -86,6 +97,7 @@ export function M3QuestionnaireForm({
   privacy,
   questions,
   steps,
+  notices = [],
   copy,
   pathId,
   subjectPrefix,
@@ -93,6 +105,7 @@ export function M3QuestionnaireForm({
   whatsappHref,
   showBookingOnSuccess = false,
   requireContact = true,
+  requirePhoneOrEmail = false,
   isHighIntent,
 }: Props) {
   const stepDefs = useMemo(() => {
@@ -109,8 +122,15 @@ export function M3QuestionnaireForm({
 
   const progress = ((stepIndex + 1) / stepDefs.length) * 100;
   const current = stepDefs[stepIndex];
-  const currentQuestions = questions.filter((q) => current.questionIds.includes(q.id));
+  const currentQuestions = questions.filter(
+    (q) => current.questionIds.includes(q.id) && isVisible(q, answers),
+  );
   const isLast = stepIndex === stepDefs.length - 1;
+  const activeNotices = notices.filter((n) => {
+    const v = answers[n.when.fieldId];
+    if (Array.isArray(v)) return v.includes(n.when.optionId);
+    return v === n.when.optionId;
+  });
 
   const setSingle = (id: string, value: string) => {
     setAnswers((a) => ({ ...a, [id]: value }));
@@ -128,6 +148,13 @@ export function M3QuestionnaireForm({
     });
   };
 
+  const hasPhoneOrEmail = () => {
+    const phone = String(answers.phone || "").trim();
+    const email = String(answers.email || "").trim();
+    const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    return Boolean(phone) || emailOk;
+  };
+
   const validateCurrent = () => {
     for (const q of currentQuestions) {
       if (!q.required) continue;
@@ -140,12 +167,22 @@ export function M3QuestionnaireForm({
         return false;
       }
     }
+    const stepHasContactFields =
+      current.questionIds.includes("phone") || current.questionIds.includes("email");
+    if (requirePhoneOrEmail && stepHasContactFields && !hasPhoneOrEmail()) {
+      return "contact";
+    }
     if (isLast && !consent) return false;
     return true;
   };
 
   const goNext = () => {
-    if (!validateCurrent()) {
+    const ok = validateCurrent();
+    if (ok === "contact") {
+      setError(copy.contactRequiredError || copy.requiredError);
+      return;
+    }
+    if (!ok) {
       setError(copy.requiredError);
       return;
     }
@@ -154,7 +191,12 @@ export function M3QuestionnaireForm({
   };
 
   const submit = async () => {
-    if (!validateCurrent()) {
+    const ok = validateCurrent();
+    if (ok === "contact") {
+      setError(copy.contactRequiredError || copy.requiredError);
+      return;
+    }
+    if (!ok) {
       setError(copy.requiredError);
       return;
     }
@@ -166,7 +208,13 @@ export function M3QuestionnaireForm({
     const email = String(answers.email || "").trim();
     const phone = String(answers.phone || "").trim() || "n/a";
 
-    if (requireContact) {
+    if (requirePhoneOrEmail) {
+      if (!hasPhoneOrEmail() || !company || !name || name === "-") {
+        setStatus("error");
+        setError(copy.contactRequiredError || copy.requiredError);
+        return;
+      }
+    } else if (requireContact) {
       if (!company || !email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
         setStatus("error");
         setError(copy.requiredError);
@@ -176,9 +224,14 @@ export function M3QuestionnaireForm({
 
     const formattedQa = formatQa(questions, answers);
     const profession = String(answers.role || answers.profession || "").trim();
-    const industry = String(answers.industry || "").trim();
-    const urgency = String(answers.urgency || "").trim();
-    const interest = String(answers.interest || "").trim();
+    const industryRaw = answers.industry;
+    const industry = Array.isArray(industryRaw)
+      ? industryRaw.join(", ")
+      : String(industryRaw || "").trim();
+    const urgency = String(answers.startWhen || answers.urgency || "").trim();
+    const interest = Array.isArray(answers.afterDiagnosis)
+      ? answers.afterDiagnosis.join(", ")
+      : String(answers.interest || "").trim();
 
     try {
       const response = await fetch("/api/questionnaire", {
@@ -302,12 +355,23 @@ export function M3QuestionnaireForm({
         </Typography>
 
         <Stack spacing={3}>
+          {activeNotices.map((n) => (
+            <Alert key={`${n.when.fieldId}-${n.when.optionId}`} severity="info">
+              {n.message}
+            </Alert>
+          ))}
+
           {currentQuestions.map((q) => (
             <Box key={q.id}>
-              <Typography fontWeight={700} sx={{ mb: 1.25 }}>
+              <Typography fontWeight={700} sx={{ mb: q.hint ? 0.5 : 1.25 }}>
                 {q.label}
                 {q.required ? " *" : ""}
               </Typography>
+              {q.hint ? (
+                <Typography variant="body2" color="text.secondary" sx={{ mb: 1.25 }}>
+                  {q.hint}
+                </Typography>
+              ) : null}
               {q.type === "single" || q.type === "multi" ? (
                 <Stack direction="row" flexWrap="wrap" useFlexGap gap={1}>
                   {(q.options ?? []).map((opt) => {
@@ -363,8 +427,8 @@ export function M3QuestionnaireForm({
                   placeholder={q.placeholder}
                   value={(answers[q.id] as string) || ""}
                   onChange={(e) => setSingle(q.id, e.target.value)}
-                  multiline={q.id === "improve" || q.id === "discountNote"}
-                  minRows={q.id === "improve" || q.id === "discountNote" ? 3 : 1}
+                  multiline={Boolean(q.multiline)}
+                  minRows={q.multiline ? q.minRows ?? 2 : 1}
                 />
               )}
             </Box>

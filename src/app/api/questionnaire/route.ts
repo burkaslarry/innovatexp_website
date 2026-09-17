@@ -54,8 +54,14 @@ export async function POST(req: Request) {
       labelFromAnswers(body.answers, "whatsapp") ||
       "—";
     const industry = safeTrim(body.industry) || labelFromAnswers(body.answers, "industry");
-    const urgency = safeTrim(body.urgency) || labelFromAnswers(body.answers, "urgency");
-    const interest = safeTrim(body.interest) || labelFromAnswers(body.answers, "interest");
+    const urgency =
+      safeTrim(body.urgency) ||
+      labelFromAnswers(body.answers, "startWhen") ||
+      labelFromAnswers(body.answers, "urgency");
+    const interest =
+      safeTrim(body.interest) ||
+      labelFromAnswers(body.answers, "afterDiagnosis") ||
+      labelFromAnswers(body.answers, "interest");
     const formattedQa = safeTrim(body.formattedQa) || JSON.stringify(body.answers ?? {}, null, 2);
     const subject =
       safeTrim(body.subject) || `${questionnaireType} — ${company !== "—" ? company : name}`;
@@ -63,8 +69,13 @@ export async function POST(req: Request) {
     const isFeedback = pathId.includes("feedback") || questionnaireType.toLowerCase().includes("feedback");
 
     if (!isFeedback) {
-      if (!email || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) {
-        return NextResponse.json({ ok: false, error: "Valid email is required." }, { status: 400 });
+      const emailOk = Boolean(email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
+      const phoneOk = Boolean(phone && phone !== "—");
+      if (!emailOk && !phoneOk) {
+        return NextResponse.json(
+          { ok: false, error: "WhatsApp number or valid email is required." },
+          { status: 400 },
+        );
       }
       if (!company || company === "—") {
         return NextResponse.json({ ok: false, error: "Company is required." }, { status: 400 });

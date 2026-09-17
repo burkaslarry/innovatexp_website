@@ -66,7 +66,7 @@ export function FloatingActionMenu() {
     },
     {
       icon: <AssignmentIcon />,
-      name: zh ? "填諮詢問卷" : "Consultation questionnaire",
+      name: zh ? "聽診前問卷" : "Pre-diagnosis form",
       href: withLocale(locale, "/ai-consultation-questionnaire"),
     },
   ];

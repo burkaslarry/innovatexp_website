@@ -10,6 +10,18 @@ export type QuestionField = {
   maxSelect?: number;
   options?: QuestionOption[];
   placeholder?: string;
+  /** Helper under the label */
+  hint?: string;
+  /** Show this text field only when parent answer includes `whenOption` */
+  showWhen?: { fieldId: string; optionId: string };
+  /** Render as multiline textarea */
+  multiline?: boolean;
+  minRows?: number;
+};
+
+export type StepNotice = {
+  when: { fieldId: string; optionId: string };
+  message: string;
 };
 
 type LocaleBlock = {
@@ -31,6 +43,7 @@ type LocaleBlock = {
   bookCta: string;
   whatsappCta: string;
   requiredError: string;
+  contactRequiredError: string;
   failError: string;
   pricingEyebrow: string;
   pricingTitle: string;
@@ -38,829 +51,741 @@ type LocaleBlock = {
   pricingCards: { name: string; price: string; note: string }[];
   consent: string;
   questions: QuestionField[];
+  notices: StepNotice[];
+  steps: { title: string; questionIds: string[] }[];
 };
-
-type QCopy = {
-  industry: string;
-  role: string;
-  teamSize: string;
-  workflows: string;
-  painPoints: string;
-  weeklyHours: string;
-  keyPersonRisk: string;
-  currentTools: string;
-  outcomes: string;
-  urgency: string;
-  name: string;
-  company: string;
-  email: string;
-  phone: string;
-  website: string;
-  industryOpts: Record<string, string>;
-  roleOpts: Record<string, string>;
-  teamSizeOpts: Record<string, string>;
-  workflowsOpts: Record<string, string>;
-  painPointsOpts: Record<string, string>;
-  weeklyHoursOpts: Record<string, string>;
-  keyPersonRiskOpts: Record<string, string>;
-  currentToolsOpts: Record<string, string>;
-  outcomesOpts: Record<string, string>;
-  urgencyOpts: Record<string, string>;
-  namePh: string;
-  companyPh: string;
-  emailPh: string;
-  phonePh: string;
-  websitePh: string;
-};
-
-const INDUSTRY_IDS = ["edu", "pro", "retail", "health", "event", "field", "other"] as const;
-const ROLE_IDS = ["owner", "manager", "ops", "other"] as const;
-const TEAM_SIZE_IDS = ["1-5", "6-15", "16-30", "30+"] as const;
-const WORKFLOW_IDS = ["enquiries", "bookings", "payments", "reporting", "scheduling", "other"] as const;
-const PAIN_IDS = ["manual", "missed", "unclear", "norecord", "other"] as const;
-const HOURS_IDS = ["lt3", "3-8", "8-15", "15+"] as const;
-const KEY_PERSON_IDS = ["stop", "slower", "minor"] as const;
-const TOOL_IDS = ["wa-business", "workbuddy", "respondio", "crm", "sheets", "notion", "none", "other"] as const;
-const OUTCOME_IDS = ["time", "leads", "handover", "visibility", "cost"] as const;
-const URGENCY_IDS = ["now", "1m", "3m", "unsure"] as const;
 
 function opts(ids: readonly string[], map: Record<string, string>): QuestionOption[] {
   return ids.map((id) => ({ id, label: map[id] }));
 }
 
-function buildQuestions(q: QCopy): QuestionField[] {
-  return [
-    {
-      id: "industry",
-      label: q.industry,
-      type: "single",
-      required: true,
-      options: opts(INDUSTRY_IDS, q.industryOpts),
-    },
-    {
-      id: "role",
-      label: q.role,
-      type: "single",
-      required: true,
-      options: opts(ROLE_IDS, q.roleOpts),
-    },
-    {
-      id: "teamSize",
-      label: q.teamSize,
-      type: "single",
-      required: true,
-      options: opts(TEAM_SIZE_IDS, q.teamSizeOpts),
-    },
-    {
-      id: "workflows",
-      label: q.workflows,
-      type: "multi",
-      required: true,
-      maxSelect: 3,
-      options: opts(WORKFLOW_IDS, q.workflowsOpts),
-    },
-    {
-      id: "painPoints",
-      label: q.painPoints,
-      type: "single",
-      required: true,
-      options: opts(PAIN_IDS, q.painPointsOpts),
-    },
-    {
-      id: "weeklyHours",
-      label: q.weeklyHours,
-      type: "single",
-      required: true,
-      options: opts(HOURS_IDS, q.weeklyHoursOpts),
-    },
-    {
-      id: "keyPersonRisk",
-      label: q.keyPersonRisk,
-      type: "single",
-      required: true,
-      options: opts(KEY_PERSON_IDS, q.keyPersonRiskOpts),
-    },
-    {
-      id: "currentTools",
-      label: q.currentTools,
-      type: "single",
-      required: true,
-      options: opts(TOOL_IDS, q.currentToolsOpts),
-    },
-    {
-      id: "outcomes",
-      label: q.outcomes,
-      type: "single",
-      required: true,
-      options: opts(OUTCOME_IDS, q.outcomesOpts),
-    },
-    {
-      id: "urgency",
-      label: q.urgency,
-      type: "single",
-      required: true,
-      options: opts(URGENCY_IDS, q.urgencyOpts),
-    },
-    {
-      id: "name",
-      label: q.name,
-      type: "text",
-      required: true,
-      placeholder: q.namePh,
-    },
-    {
-      id: "company",
-      label: q.company,
-      type: "text",
-      required: true,
-      placeholder: q.companyPh,
-    },
-    {
-      id: "email",
-      label: q.email,
-      type: "email",
-      required: true,
-      placeholder: q.emailPh,
-    },
-    {
-      id: "phone",
-      label: q.phone,
-      type: "tel",
-      required: false,
-      placeholder: q.phonePh,
-    },
-    {
-      id: "website",
-      label: q.website,
-      type: "text",
-      required: false,
-      placeholder: q.websitePh,
-    },
-  ];
-}
+const ROLE_IDS = ["founder", "ops", "sales", "admin", "other"] as const;
+const TEAM_IDS = ["1-2", "3-10", "11-30", "31+"] as const;
+const INDUSTRY_IDS = ["training", "clinic", "fitness", "pro", "retail", "other"] as const;
+const PAIN_IDS = [
+  "lead_scatter",
+  "quote_chaos",
+  "booking_pay",
+  "class_ops",
+  "event_followup",
+  "firefighter",
+  "other",
+] as const;
+const TOOL_IDS = ["whatsapp", "sheets", "paper", "crm", "other"] as const;
+const OWNER_IDS = ["just_me", "2-3", "whole_team"] as const;
+const LOSS_IDS = ["leads", "labour", "cx", "unsure"] as const;
+const AFTER_IDS = ["clarity", "sop", "buy_or_not", "land", "just_clear"] as const;
+const ATTITUDE_IDS = ["process_enough", "open_trial", "already_buy", "undecided"] as const;
+const CONSTRAINT_IDS = ["budget", "sensitive", "resistance", "vendor_lock", "none"] as const;
+const START_IDS = ["this_week", "two_weeks", "this_month", "form_only"] as const;
+const SLOT_IDS = ["weekday_am", "weekday_pm", "weekday_eve", "weekend"] as const;
 
 function pricingCards(locale: AppLocale) {
   const zh = locale === "zh-hk" || locale === "zh-tw";
+  const money = (n: number) => formatHkd(n, zh ? "zh-hk" : "en");
   return [
     {
-      name: zh ? "30 分鐘流程診斷" : locale === "ja" ? "30分ワークフロー診断" : locale === "de" ? "30-Min. Workflow-Review" : "30-min workflow review",
-      price: zh ? "免費" : locale === "ja" ? "無料" : locale === "de" ? "Kostenlos" : "Free",
+      name: zh ? "30 分鐘業務聽診" : locale === "ja" ? "30分業務診断" : locale === "de" ? "30-Min. Business-Diagnose" : "30-min Business Workflow Diagnosis",
+      price: zh ? "免費入口" : locale === "ja" ? "無料入口" : locale === "de" ? "Kostenloser Einstieg" : "Free entry",
       note: zh
-        ? "揀最值得先改善嘅 workflow"
-        : locale === "ja"
-          ? "まず改善すべきワークフローを選ぶ"
-          : locale === "de"
-            ? "Den ersten Workflow zum Verbessern auswählen"
-            : "Pick the first workflow worth fixing",
+        ? "聽完先講下一步——落地、陪跑，定係直講你暫時唔使買系統"
+        : "After the call: land, co-run, or we’ll say you shouldn’t buy a system yet",
     },
     {
       name: "AI Readiness Snapshot",
-      price: zh ? "聽診後報價" : "Quoted after diagnosis",
-      note: zh
-        ? "只作 downsell：60–90 分鐘訪談 + 一頁 scorecard。14 日內升級補差價（聽診後說明）。"
-        : locale === "ja"
-          ? "Downsellのみ：60–90分インタビュー + 1ページscorecard。14日以内のアップグレード差額は診断後に説明。"
-          : locale === "de"
-            ? "Nur Downsell: 60–90 Min. Interview + einseitige Scorecard. Upgrade in 14 Tagen: Differenz nach Diagnose."
-            : "Downsell only: 60–90 min interview + one-page scorecard. 14-day upgrade: scoped top-up after diagnosis.",
+      price: money(PRICING.quickCash.aiReadinessAssessment),
+      note: zh ? "較細成本先做證據型決定；可升級 Discovery" : "Smaller evidence-based decision; can upgrade to Discovery",
     },
     {
-      name: "AI Discovery Sprint",
-      price: zh ? "聽診後報價" : "Quoted after diagnosis",
-      note: zh
-        ? "範圍同報價聽診後提供。"
-        : locale === "ja"
-          ? "範囲と料金は診断後に見積。"
-          : locale === "de"
-            ? "Honorar nach Diagnose nach Umfang."
-            : "Quoted after diagnosis by scope.",
-    },
-    {
-      name: zh ? "AccountXP 體驗方案" : "AccountXP experience",
-      price: formatHkd(PRICING.quickCash.accountXpExperience, locale === "zh-hk" || locale === "zh-tw" ? "zh-hk" : "en"),
-      note: zh
-        ? "收據 pilot + 首月使用；維護 480 / 680 / 1,080"
-        : locale === "ja"
-          ? "レシート pilot + 初月利用；保守 480 / 680 / 1,080"
-          : locale === "de"
-            ? "Beleg-Pilot + erster Monat; Wartung 480 / 680 / 1,080"
-            : "Receipt pilot + first month; maintenance 480 / 680 / 1,080",
-    },
-    {
-      name: "Website Starter",
-      price: formatHkd(PRICING.quickCash.websiteStarter, locale === "zh-hk" || locale === "zh-tw" ? "zh-hk" : "en"),
-      note: zh
-        ? "1 Landing + Mobile + WhatsApp/Booking + SEO（10 工作日）"
-        : locale === "ja"
-          ? "1 LP + モバイル + WhatsApp/予約 + SEO（10営業日）"
-          : locale === "de"
-            ? "1 Landing + Mobile + WhatsApp/Booking + SEO (10 Werktage)"
-            : "1 landing + mobile + WhatsApp/Booking + SEO (10 working days)",
+      name: zh ? "30 日 Discovery（≤10 人）" : "30-day Discovery (≤10 people)",
+      price: money(PRICING.consultancy.discoverySprint30Day),
+      note: zh ? "驗證一條卡住收入／營運嘅流程；場地另計" : "Validate one revenue-blocking workflow; venue extra",
     },
   ];
 }
 
-function shell(locale: AppLocale, q: QCopy, overrides: Partial<LocaleBlock>): LocaleBlock {
-  const zhHk = locale === "zh-hk";
-  const zhTw = locale === "zh-tw";
-  const ja = locale === "ja";
-  const de = locale === "de";
-
-  const defaults: LocaleBlock = {
-    eyebrow: "AI Consultation Questionnaire",
-    title: zhHk
-      ? "3 分鐘 AI 流程健康檢查"
-      : zhTw
-        ? "3 分鐘 AI 流程健康檢查"
-        : ja
-          ? "3分間のAIワークフロー健康チェック"
-          : de
-            ? "3-Minuten AI-Workflow-Gesundheitscheck"
-            : "3-minute AI workflow health check",
-    intro: zhHk
-      ? "想用 AI 改善公司營運，但唔知道應該由邊度開始？回答以下問題，我哋會初步判斷邊個流程最值得優先改善，以及下一步應該梳理流程、試用 AI，定係考慮 CRM／自動化。"
-      : zhTw
-        ? "想用 AI 改善公司營運，但不確定該從哪裡開始？回答以下問題，我們會初步判斷哪個流程最值得優先改善，以及下一步應該梳理流程、試用 AI，還是考慮 CRM／自動化。"
-        : ja
-          ? "AIで業務を改善したいが、どこから始めるべきか不明ですか？いくつかの質問に答えると、最優先で改善すべきワークフローと、次のステップ（プロセス整理、AI試行、CRM／自動化）を判断します。"
-          : de
-            ? "Sie möchten mit AI die Abläufe verbessern, wissen aber nicht, wo anfangen? Mit ein paar Antworten erkennen wir den wertvollsten Workflow und ob zuerst Prozessklärung, AI-Pilot oder CRM/Automatisierung sinnvoll ist."
-            : "Want AI to improve operations but unsure where to start? Answer a few questions so we can spot the highest-value workflow and whether you should map process first, trial AI, or consider CRM / automation.",
-    privacy: zhHk
-      ? "請勿輸入客戶名單、財務明細或敏感營運資料。呢份問卷只作初步了解，不構成任何保證或專業意見。"
-      : zhTw
-        ? "請勿輸入客戶名單、財務明細或敏感營運資料。本問卷僅供初步了解，不構成任何保證或專業意見。"
-        : ja
-          ? "顧客リスト、財務詳細、機密の業務データは入力しないでください。本フォームは初期トリアージのみで、専門的助言ではありません。"
-          : de
-            ? "Keine Kundenlisten, Finanzdaten oder sensible Betriebsdaten eingeben. Dieses Formular dient nur der ersten Einschätzung und ist keine Beratung."
-            : "Do not enter customer lists, financial details, or sensitive operational data. This form is for initial triage only and is not professional advice.",
-    sectionA: zhHk || zhTw ? "A. 基本資料" : ja ? "A. 基本情報" : de ? "A. Grundlagen" : "A. Basics",
-    sectionB: zhHk || zhTw ? "B. 日常工作" : ja ? "B. 日常業務" : de ? "B. Tägliche Aufgaben" : "B. Day-to-day tasks",
-    sectionC: zhHk || zhTw ? "C. 工具與目標" : ja ? "C. ツールと目標" : de ? "C. Tools & Ziele" : "C. Tools & priorities",
-    sectionD: zhHk || zhTw ? "D. 聯絡資料" : ja ? "D. 連絡先" : de ? "D. Kontakt" : "D. Contact",
-    next: zhHk || zhTw ? (zhHk ? "下一頁" : "下一頁") : ja ? "次へ" : de ? "Weiter" : "Next",
-    back: zhHk || zhTw ? "上一頁" : ja ? "戻る" : de ? "Zurück" : "Back",
-    submit: zhHk || zhTw ? "提交問卷" : ja ? "送信" : de ? "Absenden" : "Submit",
-    sending: zhHk || zhTw ? "提交中…" : ja ? "送信中…" : de ? "Wird gesendet…" : "Submitting…",
-    successTitle: zhHk || zhTw
-      ? "多謝完成流程健康檢查"
-      : ja
-        ? "健康チェックのご回答ありがとうございます"
-        : de
-          ? "Danke für den Gesundheitscheck"
-          : "Thanks for completing the health check",
-    successBody: zhHk
-      ? "你嘅答案顯示，下一步未必係立即買新系統，而係先揀出一個最影響效率或客戶跟進嘅流程，梳理現況、定 KPI，再試行一個 AI quick win。"
-      : zhTw
-        ? "您的答案顯示，下一步未必是立即購買新系統，而是先選出一個最影響效率或客戶跟進的流程，梳理現況、設定 KPI，再試行一個 AI quick win。"
-        : ja
-          ? "次の一歩は新システム購入ではなく、効率やフォローアップに最も影響するワークフローを1つ選び、現状を整理し、KPIを設定してからAI quick winを試すことが多いです。"
-          : de
-            ? "Der nächste Schritt ist oft nicht ein neues System, sondern ein Workflow, der Effizienz oder Follow-up am stärksten belastet — klären, KPIs setzen, dann einen AI Quick Win testen."
-            : "Your answers suggest the next step may not be buying a new system yet—pick one workflow that hurts efficiency or follow-up most, clarify it, set KPIs, then trial one AI quick win.",
-    highIntentBody: zhHk
-      ? "你適合優先做一次流程診斷。我哋會聚焦一個最痛嘅 workflow，先了解現況，再判斷 AI、CRM 或自動化有冇實際價值。"
-      : zhTw
-        ? "您適合優先做一次流程診斷。我們會聚焦一個最痛的 workflow，先了解現況，再判斷 AI、CRM 或自動化是否有實際價值。"
-        : ja
-          ? "ワークフロー診断を優先するのが適しています。最も痛いプロセスに絞り、現状を把握してからAI、CRM、自動化の価値を判断します。"
-          : de
-            ? "Ein Workflow-Review passt gut: wir fokussieren einen schmerzhaften Prozess und prüfen, ob AI, CRM oder Automatisierung echten Wert bringen."
-            : "You look ready for a workflow diagnosis. We will focus on one painful process, understand the current state, then decide whether AI, CRM, or automation has real value.",
-    bookCta: zhHk || zhTw
-      ? "預約 30 分鐘流程診斷"
-      : ja
-        ? "30分ワークフロー診断を予約"
-        : de
-          ? "30-Minuten-Workflow-Review buchen"
-          : "Book a 30-minute workflow review",
-    whatsappCta: zhHk || zhTw ? "WhatsApp 聯絡 Larry" : ja ? "WhatsAppでLarryに連絡" : de ? "Larry per WhatsApp" : "WhatsApp Larry",
-    requiredError: zhHk || zhTw
-      ? "請完成必填題目再繼續。"
-      : ja
-        ? "必須項目を入力してから続けてください。"
-        : de
-          ? "Bitte Pflichtfelder ausfüllen, bevor Sie fortfahren."
-          : "Please complete required questions before continuing.",
-    failError: zhHk || zhTw
-      ? "暫時未能送出，請改用 WhatsApp 或直接預約。"
-      : ja
-        ? "送信できませんでした。WhatsAppまたは直接予約をご利用ください。"
-        : de
-          ? "Senden fehlgeschlagen. Bitte WhatsApp oder direkte Buchung nutzen."
-          : "Could not submit right now. Please WhatsApp us or book directly.",
-    pricingEyebrow: zhHk || zhTw ? "相關定價" : ja ? "関連料金" : de ? "Preise" : "Related pricing",
-    pricingTitle: zhHk || zhTw
-      ? "由免費診斷開始，再決定試用或陪跑"
-      : ja
-        ? "無料診断から始め、試行または伴走を選択"
-        : de
-          ? "Kostenlos starten, dann Pilot oder Begleitung"
-          : "Start free, then choose trial or advisory",
-    pricingIntro: zhHk || zhTw
-      ? "問卷免費。有興趣落地時，可按以下公開價起步（HKD）。"
-      : ja
-        ? "アンケートは無料。本格導入時は以下の公開価格（HKD）から。"
-        : de
-          ? "Der Fragebogen ist kostenlos. Öffentliche HKD-Startpreise bei Umsetzung:"
-          : "The questionnaire is free. Public HKD starting prices if you want to go further:",
-    pricingCards: pricingCards(locale),
-    consent: zhHk
-      ? "我同意 InnovateXP 使用以上資料聯絡我，提供流程診斷及相關服務資訊。我明白此問卷只作初步了解。"
-      : zhTw
-        ? "我同意 InnovateXP 使用以上資料聯絡我，提供流程診斷及相關服務資訊。我明白本問卷僅供初步了解。"
-        : ja
-          ? "InnovateXPが上記情報でワークフロー診断および関連サービスについて連絡することに同意します。本アンケートは初期理解のみを目的とします。"
-          : de
-            ? "Ich stimme zu, dass InnovateXP diese Daten für Workflow-Diagnose und verwandte Services nutzen darf. Der Fragebogen dient nur der ersten Einschätzung."
-            : "I agree that InnovateXP may use these details to contact me about a workflow diagnosis and related services. This questionnaire is for initial understanding only.",
-    questions: buildQuestions(q),
+type L = {
+  role: Record<(typeof ROLE_IDS)[number], string>;
+  team: Record<(typeof TEAM_IDS)[number], string>;
+  industry: Record<(typeof INDUSTRY_IDS)[number], string>;
+  pain: Record<(typeof PAIN_IDS)[number], string>;
+  tools: Record<(typeof TOOL_IDS)[number], string>;
+  owners: Record<(typeof OWNER_IDS)[number], string>;
+  loss: Record<(typeof LOSS_IDS)[number], string>;
+  after: Record<(typeof AFTER_IDS)[number], string>;
+  attitude: Record<(typeof ATTITUDE_IDS)[number], string>;
+  constraints: Record<(typeof CONSTRAINT_IDS)[number], string>;
+  start: Record<(typeof START_IDS)[number], string>;
+  slots: Record<(typeof SLOT_IDS)[number], string>;
+  labels: {
+    name: string;
+    company: string;
+    role: string;
+    phone: string;
+    email: string;
+    teamSize: string;
+    industry: string;
+    industryOther: string;
+    painLine: string;
+    painLineOther: string;
+    painExample: string;
+    painExampleHint: string;
+    tools: string;
+    toolsCrmName: string;
+    toolsOther: string;
+    lineOwners: string;
+    monthlyLoss: string;
+    afterDiagnosis: string;
+    toolAttitude: string;
+    constraints: string;
+    startWhen: string;
+    preferredSlots: string;
+    notes: string;
   };
+  ph: {
+    name: string;
+    company: string;
+    phone: string;
+    email: string;
+    industryOther: string;
+    painOther: string;
+    painExample: string;
+    crm: string;
+    toolsOther: string;
+    notes: string;
+  };
+  notice31: string;
+  noticeEvent: string;
+  shell: {
+    eyebrow: string;
+    title: string;
+    intro: string;
+    privacy: string;
+    sectionA: string;
+    sectionB: string;
+    sectionC: string;
+    sectionD: string;
+    successTitle: string;
+    successBody: string;
+    highIntentBody: string;
+    bookCta: string;
+    consent: string;
+  };
+};
 
-  return { ...defaults, ...overrides };
+function buildQuestions(l: L): QuestionField[] {
+  const lab = l.labels;
+  return [
+    { id: "name", label: lab.name, type: "text", required: true, placeholder: l.ph.name },
+    { id: "company", label: lab.company, type: "text", required: true, placeholder: l.ph.company },
+    { id: "role", label: lab.role, type: "single", required: true, options: opts(ROLE_IDS, l.role) },
+    { id: "phone", label: lab.phone, type: "tel", required: false, placeholder: l.ph.phone },
+    { id: "email", label: lab.email, type: "email", required: false, placeholder: l.ph.email },
+    { id: "teamSize", label: lab.teamSize, type: "single", required: true, options: opts(TEAM_IDS, l.team) },
+    { id: "industry", label: lab.industry, type: "multi", required: true, options: opts(INDUSTRY_IDS, l.industry) },
+    {
+      id: "industryOther",
+      label: lab.industryOther,
+      type: "text",
+      required: false,
+      placeholder: l.ph.industryOther,
+      showWhen: { fieldId: "industry", optionId: "other" },
+    },
+    { id: "painLine", label: lab.painLine, type: "single", required: true, options: opts(PAIN_IDS, l.pain) },
+    {
+      id: "painLineOther",
+      label: lab.painLineOther,
+      type: "text",
+      required: false,
+      placeholder: l.ph.painOther,
+      showWhen: { fieldId: "painLine", optionId: "other" },
+    },
+    {
+      id: "painExample",
+      label: lab.painExample,
+      type: "text",
+      required: true,
+      hint: lab.painExampleHint,
+      placeholder: l.ph.painExample,
+      multiline: true,
+      minRows: 2,
+    },
+    { id: "tools", label: lab.tools, type: "multi", required: true, options: opts(TOOL_IDS, l.tools) },
+    {
+      id: "toolsCrmName",
+      label: lab.toolsCrmName,
+      type: "text",
+      required: false,
+      placeholder: l.ph.crm,
+      showWhen: { fieldId: "tools", optionId: "crm" },
+    },
+    {
+      id: "toolsOther",
+      label: lab.toolsOther,
+      type: "text",
+      required: false,
+      placeholder: l.ph.toolsOther,
+      showWhen: { fieldId: "tools", optionId: "other" },
+    },
+    { id: "lineOwners", label: lab.lineOwners, type: "single", required: true, options: opts(OWNER_IDS, l.owners) },
+    { id: "monthlyLoss", label: lab.monthlyLoss, type: "single", required: true, options: opts(LOSS_IDS, l.loss) },
+    { id: "afterDiagnosis", label: lab.afterDiagnosis, type: "multi", required: true, options: opts(AFTER_IDS, l.after) },
+    { id: "toolAttitude", label: lab.toolAttitude, type: "single", required: true, options: opts(ATTITUDE_IDS, l.attitude) },
+    { id: "constraints", label: lab.constraints, type: "multi", required: false, options: opts(CONSTRAINT_IDS, l.constraints) },
+    { id: "startWhen", label: lab.startWhen, type: "single", required: true, options: opts(START_IDS, l.start) },
+    { id: "preferredSlots", label: lab.preferredSlots, type: "multi", required: true, options: opts(SLOT_IDS, l.slots) },
+    {
+      id: "notes",
+      label: lab.notes,
+      type: "text",
+      required: false,
+      placeholder: l.ph.notes,
+      multiline: true,
+      minRows: 2,
+    },
+  ];
 }
 
-const enQ: QCopy = {
-  industry: "Which industry best describes your company?",
-  role: "What is your role?",
-  teamSize: "Approximate team size?",
-  workflows: "Which day-to-day tasks do you most want to make easier? (pick up to 3)",
-  painPoints: "What's the biggest headache with this?",
-  weeklyHours: "Roughly how many hours a week does this take up?",
-  keyPersonRisk: "If the person who normally handles this is away, what happens?",
-  currentTools: "Are you using any tools already?",
-  outcomes: "What matters most to you?",
-  urgency: "When would you like to start?",
-  name: "Name",
-  company: "Company",
-  email: "Email",
-  phone: "WhatsApp (optional)",
-  website: "Website / LinkedIn (optional)",
-  industryOpts: {
-    edu: "Education / training / courses",
-    pro: "Professional services / consulting",
-    retail: "Retail / e-commerce",
-    health: "F&B / beauty / health services",
-    event: "Events / community / membership",
-    field: "Engineering / property / field service",
-    other: "Other",
+function pack(locale: AppLocale, l: L): LocaleBlock {
+  const zh = locale === "zh-hk" || locale === "zh-tw";
+  const questions = buildQuestions(l);
+  return {
+    eyebrow: zh ? "業務聽診入口" : locale === "ja" ? "業務診断入口" : locale === "de" ? "Diagnose-Einstieg" : "Diagnosis intake",
+    title: l.shell.title,
+    intro: l.shell.intro,
+    privacy: l.shell.privacy,
+    sectionA: l.shell.sectionA,
+    sectionB: l.shell.sectionB,
+    sectionC: l.shell.sectionC,
+    sectionD: l.shell.sectionD,
+    next: zh ? "下一頁" : locale === "ja" ? "次へ" : locale === "de" ? "Weiter" : "Next",
+    back: zh ? "上一頁" : locale === "ja" ? "戻る" : locale === "de" ? "Zurück" : "Back",
+    submit: zh ? "提交問卷" : locale === "ja" ? "送信" : locale === "de" ? "Absenden" : "Submit",
+    sending: zh ? "提交中…" : locale === "ja" ? "送信中…" : locale === "de" ? "Wird gesendet…" : "Submitting…",
+    successTitle: l.shell.successTitle,
+    successBody: l.shell.successBody,
+    highIntentBody: l.shell.highIntentBody,
+    bookCta: l.shell.bookCta,
+    whatsappCta: zh ? "WhatsApp 聯絡 Larry" : locale === "ja" ? "WhatsAppでLarryに連絡" : locale === "de" ? "Larry per WhatsApp" : "WhatsApp Larry",
+    requiredError: zh
+      ? "請完成必填題目再繼續。"
+      : locale === "ja"
+        ? "必須項目を入力してから続けてください。"
+        : locale === "de"
+          ? "Bitte Pflichtfelder ausfüllen."
+          : "Please complete required questions before continuing.",
+    contactRequiredError: zh
+      ? "請至少填寫 WhatsApp 號碼或 Email 其中一項。"
+      : locale === "ja"
+        ? "WhatsApp番号またはメールのいずれかを入力してください。"
+        : locale === "de"
+          ? "Bitte WhatsApp oder E-Mail angeben."
+          : "Please provide at least a WhatsApp number or an email.",
+    failError: zh
+      ? "暫時未能送出，請改用 WhatsApp 或直接預約。"
+      : locale === "ja"
+        ? "送信できませんでした。WhatsAppまたは直接予約をご利用ください。"
+        : locale === "de"
+          ? "Senden fehlgeschlagen. Bitte WhatsApp oder direkte Buchung nutzen."
+          : "Could not submit right now. Please WhatsApp us or book directly.",
+    pricingEyebrow: zh ? "公開起步價（聽診後先決定）" : "Public starting prices (decide after diagnosis)",
+    pricingTitle: zh ? "唔硬推產品——先對齊主線" : "No hard sell — mainline first",
+    pricingIntro: zh
+      ? "問卷免費。有興趣落地時，可按以下公開價起步（HKD）。"
+      : "The questionnaire is free. Public HKD starting prices if you want to go further:",
+    pricingCards: pricingCards(locale),
+    consent: l.shell.consent,
+    questions,
+    notices: [
+      { when: { fieldId: "teamSize", optionId: "31+" }, message: l.notice31 },
+      { when: { fieldId: "painLine", optionId: "event_followup" }, message: l.noticeEvent },
+    ],
+    steps: [
+      {
+        title: l.shell.sectionA,
+        questionIds: ["name", "company", "role", "phone", "email", "teamSize", "industry", "industryOther"],
+      },
+      {
+        title: l.shell.sectionB,
+        questionIds: [
+          "painLine",
+          "painLineOther",
+          "painExample",
+          "tools",
+          "toolsCrmName",
+          "toolsOther",
+          "lineOwners",
+          "monthlyLoss",
+        ],
+      },
+      {
+        title: l.shell.sectionC,
+        questionIds: ["afterDiagnosis", "toolAttitude", "constraints", "startWhen"],
+      },
+      {
+        title: l.shell.sectionD,
+        questionIds: ["preferredSlots", "notes"],
+      },
+    ],
+  };
+}
+
+const zhHk: L = {
+  role: { founder: "創辦人", ops: "營運", sales: "銷售", admin: "Admin", other: "其他" },
+  team: { "1-2": "1–2", "3-10": "3–10", "11-30": "11–30", "31+": "31+" },
+  industry: {
+    training: "培訓／教育",
+    clinic: "診所",
+    fitness: "Fitness",
+    pro: "專業服務",
+    retail: "零售",
+    other: "其他",
   },
-  roleOpts: {
-    owner: "Owner",
-    manager: "Manager",
-    ops: "Operations",
-    other: "Other",
+  pain: {
+    lead_scatter: "查詢／Lead 跟進散晒（WhatsApp、表單、Excel 各做各）",
+    quote_chaos: "報價慢、版本多、交接亂",
+    booking_pay: "報名／預約／收款對唔齊",
+    class_ops: "課堂／排程／出席／續約靠人手",
+    event_followup: "活動完咗冇跟進",
+    firefighter: "老闆日日救火、一個人放假就停",
+    other: "其他",
   },
-  teamSizeOpts: {
-    "1-5": "1–5",
-    "6-15": "6–15",
-    "16-30": "16–30",
-    "30+": "30+",
+  tools: {
+    whatsapp: "WhatsApp",
+    sheets: "Excel／Google Sheet",
+    paper: "紙／口頭",
+    crm: "現有 CRM／系統（請寫名）",
+    other: "其他",
   },
-  workflowsOpts: {
-    enquiries: "Enquiries & follow-up",
-    bookings: "Bookings & attendance",
-    payments: "Payments & reminders",
-    reporting: "Reporting",
-    scheduling: "Staff scheduling",
-    other: "Other",
+  owners: { just_me: "淨係我", "2-3": "2–3 人", whole_team: "成個團隊" },
+  loss: {
+    leads: "漏客／成交變慢",
+    labour: "人工時間（救火、重複輸入）",
+    cx: "客戶體驗差／投訴",
+    unsure: "暫時講唔準，想聽診先釐清",
   },
-  painPointsOpts: {
-    manual: "Too manual",
-    missed: "Things get missed",
-    unclear: "Unclear who's responsible",
-    norecord: "No easy record",
-    other: "Other",
+  after: {
+    clarity: "講清邊度漏、邊個負責、下一步做咩",
+    sop: "簡單流程圖／SOP",
+    buy_or_not: "知自己需唔需要買系統／AI",
+    land: "想開始落地／陪跑",
+    just_clear: "暫時只想搞清楚問題",
   },
-  weeklyHoursOpts: {
-    lt3: "<3",
-    "3-8": "3–8",
-    "8-15": "8–15",
-    "15+": "15+",
+  attitude: {
+    process_enough: "流程執順就夠，唔一定要買系統",
+    open_trial: "開放試工具，但要真係用得順",
+    already_buy: "已經決定要上系統／自動化",
+    undecided: "未定，聽完先講",
   },
-  keyPersonRiskOpts: {
-    stop: "Things stop",
-    slower: "Gets much slower",
-    minor: "Minor impact",
+  constraints: {
+    budget: "預算未批",
+    sensitive: "資料敏感／要保密",
+    resistance: "團隊抗拒改流程",
+    vendor_lock: "已經有供應商／系統綁住",
+    none: "冇特別",
   },
-  currentToolsOpts: {
-    "wa-business": "WhatsApp Business App",
-    workbuddy: "Workbuddy",
-    respondio: "Respond.io",
-    crm: "CRM",
-    sheets: "Google Sheet",
-    notion: "Notion",
-    none: "None",
-    other: "Other",
+  start: {
+    this_week: "本週",
+    two_weeks: "兩週內",
+    this_month: "呢個月內",
+    form_only: "只係先填表了解",
   },
-  outcomesOpts: {
-    time: "Save time",
-    leads: "Fewer missed leads or bookings",
-    handover: "Easier handover",
-    visibility: "Better visibility",
-    cost: "Lower cost",
+  slots: {
+    weekday_am: "平日上午",
+    weekday_pm: "平日下午",
+    weekday_eve: "平日晚上",
+    weekend: "週末",
   },
-  urgencyOpts: {
-    now: "Right away",
-    "1m": "Within 1 month",
-    "3m": "Within 3 months",
-    unsure: "Not sure yet",
+  labels: {
+    name: "你叫咩名？",
+    company: "公司／品牌名稱？",
+    role: "你嘅職位？",
+    phone: "WhatsApp 號碼",
+    email: "Email",
+    teamSize: "團隊大約幾多人？",
+    industry: "行業？（可多選）",
+    industryOther: "其他行業（請註明）",
+    painLine: "你最想改善嘅係邊一類？",
+    painLineOther: "其他痛點（請一句講清）",
+    painExample: "用一句講：呢條線「最亂／最漏客」嘅具體例子係咩？",
+    painExampleHint: "例如「客問完兩日冇人回」「報價要問三個人先出得」",
+    tools: "呢條線而家主要用咩工具？（可多選）",
+    toolsCrmName: "現有 CRM／系統名稱",
+    toolsOther: "其他工具（請註明）",
+    lineOwners: "大概有幾多人一齊跟呢條線？",
+    monthlyLoss: "如果呢條線繼續咁，一個月大概損失咩？（可估）",
+    afterDiagnosis: "你今次最想聽診之後拎到咩？（可多選）",
+    toolAttitude: "你對導入工具／AI 嘅態度？",
+    constraints: "有冇硬性限制我哋要知？（可空）",
+    startWhen: "希望幾快開始 30 分鐘聽診？",
+    preferredSlots: "方便聽診嘅時段？（可多選）",
+    notes: "有冇想補充？（可空）",
   },
-  namePh: "Your name",
-  companyPh: "Company / org",
-  emailPh: "you@company.com",
-  phonePh: "+…",
-  websitePh: "https://…",
+  ph: {
+    name: "你的稱呼",
+    company: "公司／品牌",
+    phone: "+852…",
+    email: "you@company.com",
+    industryOther: "請註明行業",
+    painOther: "請簡述",
+    painExample: "一句具體例子…",
+    crm: "例如 Salesforce／HubSpot／自建…",
+    toolsOther: "請註明",
+    notes: "可選",
+  },
+  notice31: "我哋主力服務 3–30 人團隊；仍可約聽診，但範圍可能不同。",
+  noticeEvent: "聽診後可能方案之一：活動後跟進流程（EventXP 只係選項，唔會硬推）。",
+  shell: {
+    eyebrow: "業務聽診入口",
+    title: "業務聽診前小問卷（約 2 分鐘）",
+    intro: "帶你最亂嗰條線嚟。聽完先講下一步——落地、陪跑，定係直講你暫時唔使買系統。",
+    privacy: "請勿貼上客戶名單、財務明細或敏感個人資料。呢份問卷只用作準備 30 分鐘業務聽診。",
+    sectionA: "A. 基本資料",
+    sectionB: "B. 而家最痛嘅一條線",
+    sectionC: "C. 期望同邊界",
+    sectionD: "D. 預約確認",
+    successTitle: "收到。",
+    successBody:
+      "我會用你填嘅內容準備聽診。請用以下連結揀時間——聽診約 30 分鐘，唔等於一定要買系統。",
+    highIntentBody:
+      "你似係想盡快開波。我會用你填嘅內容準備聽診；請即刻揀時間——聽完先講要唔要落地或系統。",
+    bookCta: "揀時間：預約業務聽診",
+    consent:
+      "我明白聽診約 30 分鐘，唔等於一定要買系統；分享嘅營運細節只用於服務我哋，除非書面同意否則唔作公開案例。",
+  },
 };
 
-const zhHkQ: QCopy = {
-  industry: "你公司屬於邊個行業？",
-  role: "你嘅職位係？",
-  teamSize: "公司大約有幾多位同事？",
-  workflows: "你最想令邊類日常工作更容易？（最多 3 項）",
-  painPoints: "呢個流程最大嘅困擾係咩？",
-  weeklyHours: "每星期大約花幾多時間處理？",
-  keyPersonRisk: "如果平時負責嘅同事唔喺，會點？",
-  currentTools: "你而家有冇用任何工具？",
-  outcomes: "你最重視咩？",
-  urgency: "你希望幾時開始？",
-  name: "姓名",
-  company: "公司名稱",
-  email: "電郵",
-  phone: "WhatsApp 電話（選填）",
-  website: "公司網站／LinkedIn（選填）",
-  industryOpts: {
-    edu: "教育／培訓／課程",
-    pro: "專業服務／顧問",
-    retail: "零售／電商",
-    health: "餐飲／美容／健康服務",
-    event: "活動／社群／會員制業務",
-    field: "工程／物業／現場服務",
+const zhTw: L = {
+  ...zhHk,
+  labels: {
+    ...zhHk.labels,
+    name: "您叫什麼名字？",
+    company: "公司／品牌名稱？",
+    role: "您的職位？",
+    teamSize: "團隊大約多少人？",
+    industry: "行業？（可多選）",
+    industryOther: "其他行業（請註明）",
+    painLine: "您最想改善的是哪一類？",
+    painLineOther: "其他痛點（請一句說清楚）",
+    painExample: "用一句說：這條線「最亂／最漏客」的具體例子是什麼？",
+    painExampleHint: "例如「客人問完兩天沒人回」「報價要問三個人才能出」",
+    tools: "這條線目前主要用什麼工具？（可多選）",
+    toolsCrmName: "現有 CRM／系統名稱",
+    toolsOther: "其他工具（請註明）",
+    lineOwners: "大概有多少人一起跟這條線？",
+    monthlyLoss: "如果這條線繼續這樣，一個月大概損失什麼？（可估）",
+    afterDiagnosis: "您這次最想聽診之後拿到什麼？（可多選）",
+    toolAttitude: "您對導入工具／AI 的態度？",
+    constraints: "有沒有硬性限制我們要知道？（可空）",
+    startWhen: "希望多快開始 30 分鐘聽診？",
+    preferredSlots: "方便聽診的時段？（可多選）",
+    notes: "有沒有想補充？（可空）",
+  },
+  role: { founder: "創辦人", ops: "營運", sales: "銷售", admin: "Admin", other: "其他" },
+  pain: {
+    lead_scatter: "查詢／Lead 跟進分散（WhatsApp、表單、Excel 各做各的）",
+    quote_chaos: "報價慢、版本多、交接亂",
+    booking_pay: "報名／預約／收款對不齊",
+    class_ops: "課堂／排程／出席／續約靠人手",
+    event_followup: "活動結束後沒有跟進",
+    firefighter: "老闆天天救火、一個人請假就停",
     other: "其他",
   },
-  roleOpts: {
-    owner: "老闆／負責人",
-    manager: "管理層",
-    ops: "營運",
+  tools: {
+    whatsapp: "WhatsApp",
+    sheets: "Excel／Google Sheet",
+    paper: "紙本／口頭",
+    crm: "現有 CRM／系統（請寫名）",
     other: "其他",
   },
-  teamSizeOpts: {
-    "1-5": "1–5 人",
-    "6-15": "6–15 人",
-    "16-30": "16–30 人",
-    "30+": "30 人以上",
+  owners: { just_me: "只有我", "2-3": "2–3 人", whole_team: "整個團隊" },
+  loss: {
+    leads: "漏客／成交變慢",
+    labour: "人力時間（救火、重複輸入）",
+    cx: "客戶體驗差／投訴",
+    unsure: "暫時說不準，想聽診先釐清",
   },
-  workflowsOpts: {
-    enquiries: "查詢同跟進",
-    bookings: "預約同出席",
-    payments: "收款同提醒",
-    reporting: "報表",
-    scheduling: "員工排班",
-    other: "其他",
+  after: {
+    clarity: "講清哪裡漏、誰負責、下一步做什麼",
+    sop: "簡單流程圖／SOP",
+    buy_or_not: "知道自己需不需要買系統／AI",
+    land: "想開始落地／陪跑",
+    just_clear: "暫時只想搞清楚問題",
   },
-  painPointsOpts: {
-    manual: "太人手",
-    missed: "容易漏事",
-    unclear: "唔清楚邊個負責",
-    norecord: "冇易查記錄",
-    other: "其他",
+  attitude: {
+    process_enough: "流程理順就夠，不一定要買系統",
+    open_trial: "開放試工具，但要真的用得順",
+    already_buy: "已經決定要上系統／自動化",
+    undecided: "未定，聽完再說",
   },
-  weeklyHoursOpts: {
-    lt3: "少於 3 小時",
-    "3-8": "3–8 小時",
-    "8-15": "8–15 小時",
-    "15+": "15 小時以上",
+  constraints: {
+    budget: "預算未批",
+    sensitive: "資料敏感／要保密",
+    resistance: "團隊抗拒改流程",
+    vendor_lock: "已經有供應商／系統綁定",
+    none: "沒有特別",
   },
-  keyPersonRiskOpts: {
-    stop: "流程會停",
-    slower: "明顯變慢",
-    minor: "影響不大",
+  start: {
+    this_week: "本週",
+    two_weeks: "兩週內",
+    this_month: "這個月內",
+    form_only: "只是先填表了解",
   },
-  currentToolsOpts: {
-    "wa-business": "WhatsApp Business App",
-    workbuddy: "Workbuddy",
-    respondio: "Respond.io",
-    crm: "CRM",
-    sheets: "Google Sheet",
-    notion: "Notion",
-    none: "未使用",
-    other: "其他",
+  slots: {
+    weekday_am: "平日上午",
+    weekday_pm: "平日下午",
+    weekday_eve: "平日晚上",
+    weekend: "週末",
   },
-  outcomesOpts: {
-    time: "慳時間",
-    leads: "減少漏單或漏預約",
-    handover: "交接更容易",
-    visibility: "睇得更清楚",
-    cost: "降低成本",
+  notice31: "我們主力服務 3–30 人團隊；仍可約聽診，但範圍可能不同。",
+  noticeEvent: "聽診後可能方案之一：活動後跟進流程（EventXP 只是選項，不會硬推）。",
+  shell: {
+    ...zhHk.shell,
+    title: "業務聽診前小問卷（約 2 分鐘）",
+    intro: "帶你最亂的那條線來。聽完再講下一步——落地、陪跑，或直接告訴你暫時不必買系統。",
+    privacy: "請勿貼上客戶名單、財務明細或敏感個人資料。本問卷只用來準備 30 分鐘業務聽診。",
+    sectionB: "B. 現在最痛的一條線",
+    sectionC: "C. 期望與邊界",
+    successBody:
+      "我會用您填的內容準備聽診。請用以下連結選時間——聽診約 30 分鐘，不等於一定要買系統。",
+    highIntentBody:
+      "您似乎想盡快開始。我會用您填的內容準備聽診；請立刻選時間——聽完再決定要不要落地或系統。",
+    bookCta: "選時間：預約業務聽診",
+    consent:
+      "我明白聽診約 30 分鐘，不等於一定要買系統；分享的營運細節只用於服務我們，除非書面同意否則不作公開案例。",
   },
-  urgencyOpts: {
-    now: "即刻",
-    "1m": "1 個月內",
-    "3m": "3 個月內",
-    unsure: "暫時未肯定",
-  },
-  namePh: "你的稱呼",
-  companyPh: "公司／機構",
-  emailPh: "you@company.com",
-  phonePh: "+852…",
-  websitePh: "https://…",
 };
 
-const zhTwQ: QCopy = {
-  industry: "您的公司屬於哪個行業？",
-  role: "您的職位是？",
-  teamSize: "公司大約有多少位同事？",
-  workflows: "您最想讓哪類日常工作更容易？（最多 3 項）",
-  painPoints: "這個流程最大的困擾是什麼？",
-  weeklyHours: "每星期大約花多少時間處理？",
-  keyPersonRisk: "如果平時負責的同事不在，會怎樣？",
-  currentTools: "您目前有使用任何工具嗎？",
-  outcomes: "您最重視什麼？",
-  urgency: "您希望何時開始？",
-  name: "姓名",
-  company: "公司名稱",
-  email: "電子郵件",
-  phone: "WhatsApp 電話（選填）",
-  website: "公司網站／LinkedIn（選填）",
-  industryOpts: {
-    edu: "教育／培訓／課程",
-    pro: "專業服務／顧問",
-    retail: "零售／電商",
-    health: "餐飲／美容／健康服務",
-    event: "活動／社群／會員制業務",
-    field: "工程／物業／現場服務",
-    other: "其他",
+const en: L = {
+  role: { founder: "Founder", ops: "Operations", sales: "Sales", admin: "Admin", other: "Other" },
+  team: { "1-2": "1–2", "3-10": "3–10", "11-30": "11–30", "31+": "31+" },
+  industry: {
+    training: "Training / education",
+    clinic: "Clinic",
+    fitness: "Fitness",
+    pro: "Professional services",
+    retail: "Retail",
+    other: "Other",
   },
-  roleOpts: {
-    owner: "負責人",
-    manager: "管理者",
-    ops: "營運",
-    other: "其他",
+  pain: {
+    lead_scatter: "Enquiry / lead follow-up is scattered (WhatsApp, forms, Excel)",
+    quote_chaos: "Slow quotes, many versions, messy handoffs",
+    booking_pay: "Enrolment / booking / payment don’t line up",
+    class_ops: "Classes / scheduling / attendance / renewals are manual",
+    event_followup: "No follow-up after events",
+    firefighter: "Founder firefighting daily; one absence stalls everything",
+    other: "Other",
   },
-  teamSizeOpts: {
-    "1-5": "1–5 人",
-    "6-15": "6–15 人",
-    "16-30": "16–30 人",
-    "30+": "30 人以上",
+  tools: {
+    whatsapp: "WhatsApp",
+    sheets: "Excel / Google Sheets",
+    paper: "Paper / verbal",
+    crm: "Existing CRM / system (name it)",
+    other: "Other",
   },
-  workflowsOpts: {
-    enquiries: "詢問與跟進",
-    bookings: "預約與出席",
-    payments: "收款與提醒",
-    reporting: "報表",
-    scheduling: "員工排班",
-    other: "其他",
+  owners: { just_me: "Just me", "2-3": "2–3 people", whole_team: "The whole team" },
+  loss: {
+    leads: "Lost leads / slower closes",
+    labour: "Labour time (firefighting, re-entry)",
+    cx: "Poor CX / complaints",
+    unsure: "Not sure yet — want diagnosis to clarify",
   },
-  painPointsOpts: {
-    manual: "太依賴人工",
-    missed: "容易漏事",
-    unclear: "不清楚誰負責",
-    norecord: "沒有易查的記錄",
-    other: "其他",
+  after: {
+    clarity: "Clear where leakage is, who owns it, and next steps",
+    sop: "Simple process map / SOP",
+    buy_or_not: "Know whether I need to buy a system / AI",
+    land: "Ready to start implementation / co-run",
+    just_clear: "Just want the problem clarified for now",
   },
-  weeklyHoursOpts: {
-    lt3: "少於 3 小時",
-    "3-8": "3–8 小時",
-    "8-15": "8–15 小時",
-    "15+": "15 小時以上",
+  attitude: {
+    process_enough: "Fixing the process is enough — no need to buy a system",
+    open_trial: "Open to tools if the team will actually use them",
+    already_buy: "Already decided to implement a system / automation",
+    undecided: "Undecided — decide after the call",
   },
-  keyPersonRiskOpts: {
-    stop: "流程會停",
-    slower: "明顯變慢",
-    minor: "影響不大",
+  constraints: {
+    budget: "Budget not approved",
+    sensitive: "Sensitive / confidential data",
+    resistance: "Team resists process change",
+    vendor_lock: "Already locked to a vendor / system",
+    none: "Nothing special",
   },
-  currentToolsOpts: {
-    "wa-business": "WhatsApp Business App",
-    workbuddy: "Workbuddy",
-    respondio: "Respond.io",
-    crm: "CRM",
-    sheets: "Google Sheet",
-    notion: "Notion",
-    none: "未使用",
-    other: "其他",
+  start: {
+    this_week: "This week",
+    two_weeks: "Within two weeks",
+    this_month: "This month",
+    form_only: "Just filling the form for now",
   },
-  outcomesOpts: {
-    time: "節省時間",
-    leads: "減少漏單或漏預約",
-    handover: "交接更容易",
-    visibility: "看得更清楚",
-    cost: "降低成本",
+  slots: {
+    weekday_am: "Weekday morning",
+    weekday_pm: "Weekday afternoon",
+    weekday_eve: "Weekday evening",
+    weekend: "Weekend",
   },
-  urgencyOpts: {
-    now: "馬上",
-    "1m": "1 個月內",
-    "3m": "3 個月內",
-    unsure: "暫時不確定",
+  labels: {
+    name: "Your name?",
+    company: "Company / brand name?",
+    role: "Your role?",
+    phone: "WhatsApp number",
+    email: "Email",
+    teamSize: "Approx. team size?",
+    industry: "Industry? (multi-select OK)",
+    industryOther: "Other industry (please specify)",
+    painLine: "Which line do you most want to improve?",
+    painLineOther: "Other pain (one sentence)",
+    painExample: "In one sentence: what’s the most chaotic / leaky example on this line?",
+    painExampleHint: 'e.g. “No reply for two days after an enquiry” / “Needs three people to issue a quote”',
+    tools: "What tools does this line mainly use? (multi-select)",
+    toolsCrmName: "Current CRM / system name",
+    toolsOther: "Other tools (please specify)",
+    lineOwners: "How many people work this line together?",
+    monthlyLoss: "If this continues, what’s the rough monthly loss? (estimate OK)",
+    afterDiagnosis: "What do you most want after the diagnosis? (multi-select)",
+    toolAttitude: "How do you feel about adopting tools / AI?",
+    constraints: "Any hard constraints we should know? (optional)",
+    startWhen: "How soon do you want the 30-min diagnosis?",
+    preferredSlots: "Preferred time windows? (multi-select)",
+    notes: "Anything else to add? (optional)",
   },
-  namePh: "您的稱呼",
-  companyPh: "公司／機構",
-  emailPh: "you@company.com",
-  phonePh: "+886…",
-  websitePh: "https://…",
+  ph: {
+    name: "Your name",
+    company: "Company / brand",
+    phone: "+852…",
+    email: "you@company.com",
+    industryOther: "Please specify",
+    painOther: "Briefly describe",
+    painExample: "One concrete example…",
+    crm: "e.g. Salesforce / HubSpot / custom…",
+    toolsOther: "Please specify",
+    notes: "Optional",
+  },
+  notice31: "We mainly serve teams of 3–30. You can still book a diagnosis; scope may differ.",
+  noticeEvent: "After diagnosis, one possible option is post-event follow-up (EventXP is optional — not a hard sell).",
+  shell: {
+    eyebrow: "Diagnosis intake",
+    title: "Pre-diagnosis mini questionnaire (~2 min)",
+    intro:
+      "Bring your messiest workflow. After the call we’ll say next steps — land, co-run, or plainly that you shouldn’t buy a system yet.",
+    privacy:
+      "Do not paste customer lists, financial details, or sensitive personal data. This form only prepares your 30-minute Business Workflow Diagnosis.",
+    sectionA: "A. Basics",
+    sectionB: "B. The line that hurts most",
+    sectionC: "C. Expectations & boundaries",
+    sectionD: "D. Booking preferences",
+    successTitle: "Got it.",
+    successBody:
+      "I’ll use what you shared to prepare the diagnosis. Pick a time below — about 30 minutes, and it does not mean you must buy a system.",
+    highIntentBody:
+      "You look ready to start soon. I’ll prepare from your answers — pick a slot now. After the call we’ll decide whether to land or buy anything.",
+    bookCta: "Pick a time: book diagnosis",
+    consent:
+      "I understand the diagnosis is about 30 minutes and does not require buying a system. Operational details I share are only used to serve us, and will not be published as a case study without written consent.",
+  },
 };
 
-const jaQ: QCopy = {
-  industry: "御社に最も近い業種はどれですか？",
-  role: "ご役職は？",
-  teamSize: "おおよそのチーム規模は？",
-  workflows: "最も楽にしたい日常業務は？（最大3つ）",
-  painPoints: "この業務で最も困ることは？",
-  weeklyHours: "週にどれくらいの時間がかかりますか？",
-  keyPersonRisk: "普段担当する人が不在の場合、どうなりますか？",
-  currentTools: "すでに使っているツールはありますか？",
-  outcomes: "最も重視することは？",
-  urgency: "いつ頃始めたいですか？",
-  name: "氏名",
-  company: "会社名",
-  email: "メール",
-  phone: "WhatsApp（任意）",
-  website: "Webサイト／LinkedIn（任意）",
-  industryOpts: {
-    edu: "教育／研修／コース",
-    pro: "専門サービス／コンサル",
-    retail: "小売／EC",
-    health: "飲食／美容／ヘルスサービス",
-    event: "イベント／コミュニティ／会員制",
-    field: "エンジニアリング／不動産／現場サービス",
+const ja: L = {
+  ...en,
+  role: { founder: "創業者", ops: "オペレーション", sales: "営業", admin: "管理", other: "その他" },
+  industry: {
+    training: "研修／教育",
+    clinic: "クリニック",
+    fitness: "フィットネス",
+    pro: "専門サービス",
+    retail: "小売",
     other: "その他",
   },
-  roleOpts: {
-    owner: "オーナー",
-    manager: "マネージャー",
-    ops: "オペレーション",
-    other: "その他",
+  notice31: "主に3–30名チーム向けです。診断は可能ですが、範囲が異なる場合があります。",
+  noticeEvent: "診断後の選択肢の一つにイベント後フォローがあります（EventXPは任意・押し売りしません）。",
+  shell: {
+    ...en.shell,
+    title: "業務診断前ミニ質問（約2分）",
+    intro: "いちばん乱れている業務ラインを持ってきてください。診断後に次の一手——実装・伴走、または「今は買わなくてよい」と率直に伝えます。",
+    privacy: "顧客リストや財務詳細、機微な個人情報は入力しないでください。本フォームは30分の業務診断準備のみに使います。",
+    sectionA: "A. 基本情報",
+    sectionB: "B. いちばん痛いライン",
+    sectionC: "C. 期待と境界",
+    sectionD: "D. 予約希望",
+    successTitle: "受け取りました。",
+    successBody: "ご回答を診断準備に使います。下のリンクから時間を選んでください——約30分で、システム購入は必須ではありません。",
+    highIntentBody: "早めに始めたいご意向のようです。回答をもとに準備しますので、今すぐ枠を選んでください。",
+    bookCta: "時間を選ぶ：業務診断を予約",
+    consent:
+      "診断は約30分で、システム購入を必須としないことを理解します。共有した業務詳細はサービス提供のみに使い、書面同意なしに公開事例にしません。",
   },
-  teamSizeOpts: {
-    "1-5": "1–5人",
-    "6-15": "6–15人",
-    "16-30": "16–30人",
-    "30+": "30人以上",
+  labels: {
+    ...en.labels,
+    name: "お名前は？",
+    company: "会社／ブランド名は？",
+    role: "ご役職は？",
+    teamSize: "チーム規模は？",
+    industry: "業種は？（複数可）",
+    painLine: "いちばん改善したいのはどれですか？",
+    painExample: "一言で：このラインでいちばん乱れている／漏れている具体例は？",
+    tools: "このラインで主に使うツールは？（複数可）",
+    lineOwners: "このラインを一緒に追う人数は？",
+    monthlyLoss: "このまま続くと、月に何を失いそうですか？（概算可）",
+    afterDiagnosis: "診断後に得たいものは？（複数可）",
+    toolAttitude: "ツール／AI導入への姿勢は？",
+    startWhen: "30分診断はいつ頃希望ですか？",
+    preferredSlots: "都合のよい時間帯は？（複数可）",
+    notes: "補足はありますか？（任意）",
   },
-  workflowsOpts: {
-    enquiries: "問い合わせとフォローアップ",
-    bookings: "予約と出席管理",
-    payments: "支払いとリマインダー",
-    reporting: "レポート",
-    scheduling: "スタッフのシフト",
-    other: "その他",
-  },
-  painPointsOpts: {
-    manual: "手作業が多い",
-    missed: "漏れが起きる",
-    unclear: "責任者が不明確",
-    norecord: "記録が残りにくい",
-    other: "その他",
-  },
-  weeklyHoursOpts: {
-    lt3: "3時間未満",
-    "3-8": "3–8時間",
-    "8-15": "8–15時間",
-    "15+": "15時間以上",
-  },
-  keyPersonRiskOpts: {
-    stop: "業務が止まる",
-    slower: "かなり遅くなる",
-    minor: "影響は小さい",
-  },
-  currentToolsOpts: {
-    "wa-business": "WhatsApp Business App",
-    workbuddy: "Workbuddy",
-    respondio: "Respond.io",
-    crm: "CRM",
-    sheets: "Google Sheet",
-    notion: "Notion",
-    none: "なし",
-    other: "その他",
-  },
-  outcomesOpts: {
-    time: "時間を節約",
-    leads: "漏れ（リード・予約）を減らす",
-    handover: "引き継ぎを楽に",
-    visibility: "見える化を改善",
-    cost: "コストを下げる",
-  },
-  urgencyOpts: {
-    now: "すぐに",
-    "1m": "1か月以内",
-    "3m": "3か月以内",
-    unsure: "まだ未定",
-  },
-  namePh: "お名前",
-  companyPh: "会社／組織",
-  emailPh: "you@company.com",
-  phonePh: "+81…",
-  websitePh: "https://…",
 };
 
-const deQ: QCopy = {
-  industry: "Welche Branche beschreibt Ihr Unternehmen am besten?",
-  role: "Welche Rolle haben Sie?",
-  teamSize: "Ungefähre Teamgröße?",
-  workflows: "Welche täglichen Aufgaben möchten Sie am leichtesten machen? (max. 3)",
-  painPoints: "Was ist der größte Ärger damit?",
-  weeklyHours: "Wie viele Stunden pro Woche nimmt das ungefähr in Anspruch?",
-  keyPersonRisk: "Wenn die zuständige Person weg ist, was passiert?",
-  currentTools: "Nutzen Sie bereits Tools?",
-  outcomes: "Was ist Ihnen am wichtigsten?",
-  urgency: "Wann möchten Sie starten?",
-  name: "Name",
-  company: "Unternehmen",
-  email: "E-Mail",
-  phone: "WhatsApp (optional)",
-  website: "Website / LinkedIn (optional)",
-  industryOpts: {
-    edu: "Bildung / Training / Kurse",
-    pro: "Professional Services / Beratung",
-    retail: "Retail / E-Commerce",
-    health: "Gastronomie / Beauty / Gesundheit",
-    event: "Events / Community / Membership",
-    field: "Engineering / Immobilien / Field Service",
-    other: "Sonstige",
+const de: L = {
+  ...en,
+  role: { founder: "Gründer/in", ops: "Operations", sales: "Sales", admin: "Admin", other: "Sonstiges" },
+  notice31: "Wir betreuen vor allem Teams mit 3–30 Personen. Diagnose ist möglich; der Umfang kann abweichen.",
+  noticeEvent: "Nach der Diagnose kann Event-Follow-up eine Option sein (EventXP optional — kein Hard-Sell).",
+  shell: {
+    ...en.shell,
+    title: "Mini-Fragebogen vor der Diagnose (~2 Min.)",
+    intro:
+      "Bringen Sie Ihre chaotischste Linie mit. Danach sagen wir den nächsten Schritt — Umsetzung, Begleitung oder klar: noch kein System kaufen.",
+    privacy:
+      "Keine Kundenlisten, Finanzdetails oder sensible Personendaten. Nur zur Vorbereitung der 30-Minuten-Diagnose.",
+    sectionA: "A. Grundlagen",
+    sectionB: "B. Die schmerzhafteste Linie",
+    sectionC: "C. Erwartungen & Grenzen",
+    sectionD: "D. Terminwünsche",
+    successTitle: "Erhalten.",
+    successBody:
+      "Ich bereite die Diagnose mit Ihren Angaben vor. Bitte Zeit wählen — ca. 30 Minuten, kein Kaufzwang.",
+    highIntentBody:
+      "Sie wirken startbereit. Bitte jetzt einen Slot wählen — nach dem Call entscheiden wir über Umsetzung oder System.",
+    bookCta: "Zeit wählen: Diagnose buchen",
+    consent:
+      "Ich verstehe: Diagnose ca. 30 Minuten, kein Systemkauf nötig. Geteilte Betriebsdetails dienen nur der Betreuung und werden ohne schriftliche Zustimmung nicht als Fallstudie veröffentlicht.",
   },
-  roleOpts: {
-    owner: "Owner",
-    manager: "Manager",
-    ops: "Operations",
-    other: "Sonstige",
-  },
-  teamSizeOpts: {
-    "1-5": "1–5",
-    "6-15": "6–15",
-    "16-30": "16–30",
-    "30+": "30+",
-  },
-  workflowsOpts: {
-    enquiries: "Anfragen & Follow-up",
-    bookings: "Buchungen & Teilnahme",
-    payments: "Zahlungen & Reminder",
-    reporting: "Reporting",
-    scheduling: "Mitarbeiterplanung",
-    other: "Sonstige",
-  },
-  painPointsOpts: {
-    manual: "Zu manuell",
-    missed: "Dinge werden vergessen",
-    unclear: "Unklar, wer verantwortlich ist",
-    norecord: "Keine einfache Aufzeichnung",
-    other: "Sonstige",
-  },
-  weeklyHoursOpts: {
-    lt3: "<3",
-    "3-8": "3–8",
-    "8-15": "8–15",
-    "15+": "15+",
-  },
-  keyPersonRiskOpts: {
-    stop: "Es stoppt",
-    slower: "Wird deutlich langsamer",
-    minor: "Geringer Einfluss",
-  },
-  currentToolsOpts: {
-    "wa-business": "WhatsApp Business App",
-    workbuddy: "Workbuddy",
-    respondio: "Respond.io",
-    crm: "CRM",
-    sheets: "Google Sheet",
-    notion: "Notion",
-    none: "Keine",
-    other: "Sonstige",
-  },
-  outcomesOpts: {
-    time: "Zeit sparen",
-    leads: "Weniger verpasste Leads oder Buchungen",
-    handover: "Einfachere Übergabe",
-    visibility: "Bessere Sichtbarkeit",
-    cost: "Geringere Kosten",
-  },
-  urgencyOpts: {
-    now: "Sofort",
-    "1m": "Innerhalb 1 Monat",
-    "3m": "Innerhalb 3 Monate",
-    unsure: "Noch unsicher",
-  },
-  namePh: "Ihr Name",
-  companyPh: "Unternehmen / Organisation",
-  emailPh: "you@company.com",
-  phonePh: "+49…",
-  websitePh: "https://…",
 };
 
 export function getConsultationCopy(locale: AppLocale): LocaleBlock {
   switch (locale) {
     case "zh-hk":
-      return shell("zh-hk", zhHkQ, {});
+      return pack("zh-hk", zhHk);
     case "zh-tw":
-      return shell("zh-tw", zhTwQ, {});
+      return pack("zh-tw", zhTw);
     case "ja":
-      return shell("ja", jaQ, {});
+      return pack("ja", ja);
     case "de":
-      return shell("de", deQ, {});
+      return pack("de", de);
     default:
-      return shell("en", enQ, {});
+      return pack("en", en);
   }
 }
 
+/** High intent: wants to start soon or explicitly wants to land / co-run. */
 export function isHighIntent(answers: Record<string, string | string[]>): boolean {
-  return answers.urgency === "now";
+  if (answers.startWhen === "this_week" || answers.startWhen === "two_weeks") return true;
+  const after = answers.afterDiagnosis;
+  if (Array.isArray(after) && after.includes("land")) return true;
+  return false;
+}
+
+/** At least one of WhatsApp or email must be present. */
+export function hasUsableContact(answers: Record<string, string | string[]>): boolean {
+  const phone = String(answers.phone || "").trim();
+  const email = String(answers.email || "").trim();
+  const emailOk = /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+  return Boolean(phone) || emailOk;
 }

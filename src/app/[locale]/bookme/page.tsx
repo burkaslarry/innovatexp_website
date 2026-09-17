@@ -2,9 +2,10 @@
 'use client';
 
 import { useState } from 'react';
+import Link from 'next/link';
 import { useLanguage } from '../../LanguageContext';
 import { uiStrings } from '@/content/ui-strings';
-import { getLocaleFromPathname } from '@/lib/i18n-routing';
+import { getLocaleFromPathname, localeUsesChineseCopy, withLocale } from '@/lib/i18n-routing';
 import { usePathname } from 'next/navigation';
 import Header from '../../components/Header';
 import QuotationWizard from '@/components/QuotationWizard';
@@ -12,8 +13,11 @@ import QuotationWizard from '@/components/QuotationWizard';
 export default function BookVisitPage() {
   const { t } = useLanguage();
   const pathname = usePathname();
-  const ui = uiStrings(getLocaleFromPathname(pathname));
+  const locale = getLocaleFromPathname(pathname);
+  const ui = uiStrings(locale);
+  const zh = localeUsesChineseCopy(locale);
   const [showGuidelines, setShowGuidelines] = useState(false);
+  const intakeHref = withLocale(locale, '/ai-consultation-questionnaire');
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-gray-950">
@@ -29,6 +33,15 @@ export default function BookVisitPage() {
               </h1>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 md:text-base">
                 {t('bookme.subtitle')}
+              </p>
+              <p className="mt-3 rounded-xl border border-brand-primary/20 bg-brand-primary/5 px-3 py-2.5 text-sm text-slate-700 dark:text-slate-300">
+                {zh
+                  ? '想聽診更準？可先填 '
+                  : 'Want a sharper diagnosis? Optionally complete '}
+                <Link href={intakeHref} className="font-semibold text-brand-primary underline-offset-2 hover:underline">
+                  {zh ? '業務聽診前小問卷（約 2 分鐘）' : 'the pre-diagnosis mini form (~2 min)'}
+                </Link>
+                {zh ? '，再返嚟揀時間。' : ', then come back to pick a time.'}
               </p>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                 Email:{' '}

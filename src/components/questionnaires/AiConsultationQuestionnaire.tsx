@@ -14,14 +14,6 @@ export function AiConsultationQuestionnaire({
   whatsappHref?: string;
 }) {
   const c = getConsultationCopy(locale);
-  const q = c.questions;
-
-  const steps = [
-    { title: c.sectionA, questionIds: ["industry", "role", "teamSize"] },
-    { title: c.sectionB, questionIds: ["workflows", "painPoints", "weeklyHours", "keyPersonRisk"] },
-    { title: c.sectionC, questionIds: ["currentTools", "outcomes", "urgency"] },
-    { title: c.sectionD, questionIds: ["name", "company", "email", "phone", "website"] },
-  ];
 
   return (
     <M3QuestionnaireForm
@@ -29,14 +21,16 @@ export function AiConsultationQuestionnaire({
       title={c.title}
       intro={c.intro}
       privacy={c.privacy}
-      questions={q}
-      steps={steps}
+      questions={c.questions}
+      steps={c.steps}
+      notices={c.notices}
       pathId="ai-consultation-questionnaire"
-      subjectPrefix="AI Consultation Questionnaire"
+      subjectPrefix="業務聽診前小問卷 / Diagnosis Intake"
       bookingHref={bookingHref}
       whatsappHref={whatsappHref}
       showBookingOnSuccess
       requireContact
+      requirePhoneOrEmail
       isHighIntent={isHighIntent}
       copy={{
         next: c.next,
@@ -44,6 +38,7 @@ export function AiConsultationQuestionnaire({
         submit: c.submit,
         sending: c.sending,
         requiredError: c.requiredError,
+        contactRequiredError: c.contactRequiredError,
         failError: c.failError,
         consent: c.consent,
         successTitle: c.successTitle,
