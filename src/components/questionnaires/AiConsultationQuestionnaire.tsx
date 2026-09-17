@@ -2,16 +2,23 @@
 
 import { M3QuestionnaireForm } from "@/components/questionnaires/M3QuestionnaireForm";
 import { getConsultationCopy, isHighIntent } from "@/content/questionnaires/consultation";
+import type { Answers } from "@/components/questionnaires/M3QuestionnaireForm";
 import type { AppLocale } from "@/lib/i18n-routing";
 
 export function AiConsultationQuestionnaire({
   locale,
   bookingHref,
   whatsappHref,
+  handoffOnSubmit,
+  onSubmittedAnswers,
+  successPrimaryLabel,
 }: {
   locale: AppLocale;
-  bookingHref: string;
+  bookingHref?: string;
   whatsappHref?: string;
+  handoffOnSubmit?: boolean;
+  onSubmittedAnswers?: (payload: { answers: Answers; formattedQa: string }) => void;
+  successPrimaryLabel?: string;
 }) {
   const c = getConsultationCopy(locale);
 
@@ -28,9 +35,12 @@ export function AiConsultationQuestionnaire({
       subjectPrefix="業務聽診前小問卷 / Diagnosis Intake"
       bookingHref={bookingHref}
       whatsappHref={whatsappHref}
-      showBookingOnSuccess
+      showBookingOnSuccess={Boolean(bookingHref) && !handoffOnSubmit}
       requireContact
       requirePhoneOrEmail
+      handoffOnSubmit={handoffOnSubmit}
+      onSubmittedAnswers={onSubmittedAnswers}
+      successPrimaryLabel={successPrimaryLabel}
       isHighIntent={isHighIntent}
       copy={{
         next: c.next,

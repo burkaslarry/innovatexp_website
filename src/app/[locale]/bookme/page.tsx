@@ -1,14 +1,18 @@
-/* F06: Bookme page - Booking/quotation entry with header, guidelines, and QuotationWizard mount. */
+/* F06: Bookme page - Diagnosis intake (same as questionnaire) then calendar booking. */
 'use client';
 
-import { useState } from 'react';
-import Link from 'next/link';
+import { useMemo, useState } from 'react';
 import { useLanguage } from '../../LanguageContext';
 import { uiStrings } from '@/content/ui-strings';
-import { getLocaleFromPathname, localeUsesChineseCopy, withLocale } from '@/lib/i18n-routing';
+import { getLocaleFromPathname, localeUsesChineseCopy } from '@/lib/i18n-routing';
 import { usePathname } from 'next/navigation';
 import Header from '../../components/Header';
 import QuotationWizard from '@/components/QuotationWizard';
+import { AiConsultationQuestionnaire } from '@/components/questionnaires/AiConsultationQuestionnaire';
+import type { Answers } from '@/components/questionnaires/M3QuestionnaireForm';
+import { buildWhatsAppHref } from '@/lib/whatsapp-contact';
+
+type IntakePayload = { answers: Answers; formattedQa: string };
 
 export default function BookVisitPage() {
   const { t } = useLanguage();
@@ -17,14 +21,35 @@ export default function BookVisitPage() {
   const ui = uiStrings(locale);
   const zh = localeUsesChineseCopy(locale);
   const [showGuidelines, setShowGuidelines] = useState(false);
-  const intakeHref = withLocale(locale, '/ai-consultation-questionnaire');
+  const [phase, setPhase] = useState<'intake' | 'booking'>('intake');
+  const [intake, setIntake] = useState<IntakePayload | null>(null);
+
+  const whatsappHref = useMemo(
+    () =>
+      buildWhatsAppHref(
+        zh
+          ? '你好，我想預約 30 分鐘業務聽診。'
+          : 'Hi — I would like to book a 30-minute Business Workflow Diagnosis.',
+      ),
+    [zh],
+  );
+
+  const prefill = useMemo(() => {
+    if (!intake) return undefined;
+    const a = intake.answers;
+    return {
+      name: String(a.name || '').trim(),
+      email: String(a.email || '').trim(),
+      phone: String(a.phone || '').trim(),
+      company: String(a.company || '').trim(),
+    };
+  }, [intake]);
 
   return (
     <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-gray-950">
       <Header variant="booking" title={t('bookme.header.title')} subtitle={t('bookme.header.subtitle')} />
 
       <main className="pt-24">
-        {/* Mobile: single horizontal gutter (avoid double px-6); desktop unchanged from md breakpoint */}
         <div className="mx-auto max-w-5xl px-3 sm:px-5 md:px-6">
           <div className="mx-auto max-w-4xl py-8 md:px-6 md:py-10">
             <div className="rounded-3xl border border-slate-200 bg-white/90 p-4 shadow-xl backdrop-blur dark:border-slate-700 dark:bg-slate-900/60 sm:p-6 md:p-10">
@@ -32,16 +57,9 @@ export default function BookVisitPage() {
                 {t('bookme.title')}
               </h1>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 md:text-base">
-                {t('bookme.subtitle')}
-              </p>
-              <p className="mt-3 rounded-xl border border-brand-primary/20 bg-brand-primary/5 px-3 py-2.5 text-sm text-slate-700 dark:text-slate-300">
                 {zh
-                  ? '想聽診更準？可先填 '
-                  : 'Want a sharper diagnosis? Optionally complete '}
-                <Link href={intakeHref} className="font-semibold text-brand-primary underline-offset-2 hover:underline">
-                  {zh ? '業務聽診前小問卷（約 2 分鐘）' : 'the pre-diagnosis mini form (~2 min)'}
-                </Link>
-                {zh ? '，再返嚟揀時間。' : ', then come back to pick a time.'}
+                  ? '先填業務聽診前小問卷（同諮詢問卷同一套），再揀 30 分鐘時段。唔硬推產品。'
+                  : 'Complete the same pre-diagnosis mini form first, then pick a 30-minute slot. No hard sell.'}
               </p>
               <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
                 Email:{' '}
@@ -106,7 +124,48 @@ export default function BookVisitPage() {
                 ) : null}
               </div>
 
-              <QuotationWizard />
+              <div className="mt-8">
+                {phase === 'intake' ? (
+                  <div className="space-y-4">
+                    <AiConsultationQuestionnaire
+                      locale={locale}
+                      whatsappHref={whatsappHref}
+                      handoffOnSubmit
+                      onSubmittedAnswers={(payload) => {
+                        setIntake(payload);
+                        setPhase('booking');
+                      }}
+                    />
+                    <div className="text-center">
+                      <button
+                        type="button"
+                        onClick={() => {
+                          setIntake(null);
+                          setPhase('booking');
+                        }}
+                        className="text-sm font-semibold text-slate-600 underline-offset-2 hover:underline dark:text-slate-300"
+                      >
+                        {zh ? '已填過／直接揀時間' : 'Already done / skip to pick a time'}
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div className="space-y-4">
+                    <button
+                      type="button"
+                      onClick={() => setPhase('intake')}
+                      className="text-sm font-semibold text-brand-primary underline-offset-2 hover:underline"
+                    >
+                      {zh ? '← 返回聽診前問卷' : '← Back to pre-diagnosis form'}
+                    </button>
+                    <QuotationWizard
+                      bookingOnly
+                      diagnosticQaOverride={intake?.formattedQa}
+                      prefillIdentity={prefill}
+                    />
+                  </div>
+                )}
+              </div>
             </div>
           </div>
         </div>
@@ -118,4 +177,3 @@ export default function BookVisitPage() {
     </div>
   );
 }
-

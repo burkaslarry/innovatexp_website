@@ -123,6 +123,9 @@ function ExpertShortcut({
 
 export default function QuotationWizard({
   onEnquirySubmitted,
+  bookingOnly = false,
+  diagnosticQaOverride,
+  prefillIdentity,
 }: {
   onEnquirySubmitted?: (data: {
     summary: string;
@@ -131,21 +134,37 @@ export default function QuotationWizard({
     company?: string;
     contactName?: string;
   }) => void;
+  /** Skip product-path quiz; start at calendar (after diagnosis intake on bookme). */
+  bookingOnly?: boolean;
+  /** Formatted Q&A from diagnosis intake — attached to booking message. */
+  diagnosticQaOverride?: string;
+  prefillIdentity?: {
+    name?: string;
+    email?: string;
+    phone?: string;
+    company?: string;
+  };
 }) {
   const { t, locale } = useLanguage();
   const usesChineseUi = locale === "zh-hk" || locale === "zh-tw";
 
-  const [path, setPath] = useState<QuotePath | null>(null);
+  const [path, setPath] = useState<QuotePath | null>(bookingOnly ? "consulting" : null);
   const [answers, setAnswers] = useState<QuoteAnswers>({});
-  const [step, setStep] = useState<StepId>("q0");
+  const [step, setStep] = useState<StepId>(bookingOnly ? "flowx_booking" : "q0");
   const [result, setResult] = useState<QuoteComputed | null>(null);
 
-  const [fxName, setFxName] = useState("");
-  const [fxEmail, setFxEmail] = useState("");
+  const [fxName, setFxName] = useState(prefillIdentity?.name ?? "");
+  const [fxEmail, setFxEmail] = useState(prefillIdentity?.email ?? "");
   const [fxDialSelect, setFxDialSelect] = useState("852");
   const [fxCustomDial, setFxCustomDial] = useState("");
-  const [fxWa, setFxWa] = useState("");
-  const [fxCompany, setFxCompany] = useState("");
+  const [fxWa, setFxWa] = useState(() => {
+    const raw = (prefillIdentity?.phone || "").replace(/\s+/g, "");
+    if (!raw) return "";
+    if (raw.startsWith("+852")) return raw.slice(4);
+    if (raw.startsWith("852") && raw.length > 8) return raw.slice(3);
+    return raw.replace(/^\+/, "");
+  });
+  const [fxCompany, setFxCompany] = useState(prefillIdentity?.company ?? "");
   const [fxBusy, setFxBusy] = useState(false);
   const [fxErr, setFxErr] = useState<string | null>(null);
 
@@ -158,10 +177,11 @@ export default function QuotationWizard({
   const [bookingSuccess, setBookingSuccess] = useState<string | null>(null);
 
   const summary = useMemo(() => {
+    if (diagnosticQaOverride?.trim()) return diagnosticQaOverride.trim();
     if (!path) return "";
     if (result) return formatQuoteSummary(result, answers, t);
     return formatDiagnosticAnswersOnly(path, answers, t);
-  }, [result, answers, t, path]);
+  }, [result, answers, t, path, diagnosticQaOverride]);
 
   const diagnosticText = summary;
 
@@ -466,8 +486,20 @@ export default function QuotationWizard({
     >
       {!["result", "flowx_identity"].includes(step) ? (
         <div className="text-left md:text-center">
-          <h2 className="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">{t("wizard.title")}</h2>
-          <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{t("wizard.subtitle")}</p>
+          <h2 className="text-xl font-bold text-slate-900 dark:text-white sm:text-2xl">
+            {bookingOnly
+              ? usesChineseUi
+                ? "揀聽診時間"
+                : "Pick a diagnosis time"
+              : t("wizard.title")}
+          </h2>
+          <p className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            {bookingOnly
+              ? usesChineseUi
+                ? "你已完成聽診前問卷。請揀日期同時段，再填聯絡資料確認預約。"
+                : "Intake complete. Choose a date and slot, then confirm your contact details."
+              : t("wizard.subtitle")}
+          </p>
         </div>
       ) : null}
 

@@ -60,6 +60,12 @@ type Props = {
   requirePhoneOrEmail?: boolean;
   isHighIntent?: (answers: Answers) => boolean;
   contactDefaults?: { name?: string; company?: string; email?: string; phone?: string };
+  /** After successful API submit — used when embedding on bookme before calendar. */
+  onSubmittedAnswers?: (payload: { answers: Answers; formattedQa: string }) => void;
+  /** Skip success panel and hand off immediately (bookme embed). */
+  handoffOnSubmit?: boolean;
+  /** Override success primary CTA label (e.g. continue to pick a time). */
+  successPrimaryLabel?: string;
 };
 
 function labelFor(q: QuestionField, value: string): string {
@@ -107,6 +113,9 @@ export function M3QuestionnaireForm({
   requireContact = true,
   requirePhoneOrEmail = false,
   isHighIntent,
+  onSubmittedAnswers,
+  handoffOnSubmit = false,
+  successPrimaryLabel,
 }: Props) {
   const stepDefs = useMemo(() => {
     if (steps?.length) return steps;
@@ -254,6 +263,11 @@ export function M3QuestionnaireForm({
         }),
       });
       if (!response.ok) throw new Error("fail");
+      onSubmittedAnswers?.({ answers, formattedQa });
+      if (handoffOnSubmit && onSubmittedAnswers) {
+        setStatus("idle");
+        return;
+      }
       setStatus("success");
     } catch {
       setStatus("error");
@@ -271,6 +285,7 @@ export function M3QuestionnaireForm({
 
   if (status === "success") {
     const high = isHighIntent?.(answers);
+    const primaryLabel = successPrimaryLabel || copy.bookCta;
     return (
       <ThemeProvider theme={theme}>
         <Paper elevation={0} sx={shellSx}>
@@ -283,7 +298,7 @@ export function M3QuestionnaireForm({
           {showBookingOnSuccess && bookingHref ? (
             <Stack direction={{ xs: "column", sm: "row" }} spacing={2}>
               <Button component={Link} href={bookingHref} variant="contained" size="large" sx={{ color: "#fff" }}>
-                {copy.bookCta}
+                {primaryLabel}
               </Button>
               {whatsappHref ? (
                 <Button href={whatsappHref} target="_blank" rel="noopener noreferrer" variant="outlined" size="large">
