@@ -119,14 +119,14 @@ const AI_CONSULTING: LocalePair = {
 
 const AI_SEO: LocalePair = {
   zh: {
-    title: "AI SEO／GEO更新套餐｜InnovateXP",
+    title: "AI SEO／AEO 月費｜AI Visibility 診斷｜InnovateXP",
     description:
-      "AI SEO + GEO 更新套餐：Starter HK$2,000（3 次）或 Growth HK$6,000（10 次）。優化標題、描述、Schema 與 AI 答案可見度。",
+      "先做 HKD 2,800 AI Visibility 診斷（可抵扣首月），再選 Lite HKD 1,800／月或 Growth HKD 3,800／月（6 個月起）。追蹤 AI 引用、品牌曝光、詢盤。",
   },
   en: {
-    title: "AI SEO & GEO Update Package | InnovateXP",
+    title: "AI SEO / AEO retainer | AI Visibility diagnosis | InnovateXP",
     description:
-      "AI SEO/GEO package: Starter HK$2,000 (3 changes) or Growth HK$6,000 (10). Improve titles, descriptions, schema, and answer-engine visibility.",
+      "Start with a HKD 2,800 AI Visibility diagnosis (credited to month 1), then Lite HKD 1,800/mo or Growth HKD 3,800/mo (6-month min). Track citations, brand impressions, enquiries.",
   },
 };
 

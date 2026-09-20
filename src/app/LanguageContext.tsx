@@ -800,15 +800,15 @@ export const translations = {
     'nav.contact': 'Contact',
     'nav.vision': 'Vision',
     'nav.partnership': 'Partnership',
-    'nav.ai_seo_package': 'AI SEO package',
+    'nav.ai_seo_package': 'AI SEO / AEO retainer',
     'nav.pitch_decks': 'Pitch decks',
     'nav.reliability': 'Reliability',
     'nav.ai_quality': 'AI-era quality',
     'nav.premium_offer': 'Premium consulting',
-    'ai_seo_cta.title': 'Need fast AI SEO updates?',
+    'ai_seo_cta.title': 'Want to be cited in AI search?',
     'ai_seo_cta.description':
-      'Choose a fixed-scope update package for structured data, content refinement, and delivery timeline you can plan around.',
-    'ai_seo_cta.button': 'View AI SEO update packages',
+      'Start with an AI Visibility diagnosis, then a 6-month retainer: schema upkeep, answer-first copy, and a monthly report on citations, brand impressions, and enquiries.',
+    'ai_seo_cta.button': 'View AI SEO / AEO retainers',
     
     // Footer
     'footer.copyright': `© ${new Date().getFullYear()} InnovateXP Limited. All rights reserved.`,
@@ -1749,14 +1749,14 @@ export const translations = {
     'nav.contact': '聯絡我們',
     'nav.vision': '願景',
     'nav.partnership': '合作夥伴',
-    'nav.ai_seo_package': 'AI SEO 更新套餐',
+    'nav.ai_seo_package': 'AI SEO／AEO 月費',
     'nav.pitch_decks': 'Pitch Deck',
     'nav.reliability': '可靠 AI',
     'nav.ai_quality': 'AI 時代品質工程',
     'nav.premium_offer': '高票價顧問',
-    'ai_seo_cta.title': '想快速完成 AI SEO 更新？',
-    'ai_seo_cta.description': '選擇固定範圍更新套餐，包含結構化資料、內容微調與可預期交付時程。',
-    'ai_seo_cta.button': '查看 AI SEO 更新套餐',
+    'ai_seo_cta.title': '想被 AI 搜尋引用？',
+    'ai_seo_cta.description': '先做 AI Visibility 診斷，再簽 6 個月起月費：schema 維護、answer-first 文案，以及 AI 引用／品牌曝光／詢盤月報。',
+    'ai_seo_cta.button': '查看 AI SEO／AEO 月費',
     
     // Footer
     'footer.copyright': `© ${new Date().getFullYear()} InnovateXP Limited. 版權所有。`,

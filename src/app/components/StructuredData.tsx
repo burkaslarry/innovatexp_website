@@ -64,19 +64,19 @@ const SCHEMA_VISIONXP_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_AI_SEO_NAME: Record<AppLocale, string> = {
-  en: "AI SEO Update Package",
-  "zh-hk": "AI SEO 更新套餐",
-  "zh-tw": "AI SEO 更新方案",
-  ja: "AI SEO アップデートパッケージ",
-  de: "AI-SEO-Update-Paket",
+  en: "AI SEO / AEO retainer",
+  "zh-hk": "AI SEO／AEO 月費服務",
+  "zh-tw": "AI SEO／AEO 月費服務",
+  ja: "AI SEO／AEO 月額リテーナー",
+  de: "AI-SEO/AEO-Retainer",
 };
 
 const SCHEMA_AI_SEO_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Done-for-you AI SEO content and schema update package for SMEs, with fixed revision rounds and follow-up sessions.",
-  "zh-hk": "為中小企提供 AI SEO 內容與結構化資料更新服務，包含固定修改輪次與跟進會議。",
-  "zh-tw": "為中小企提供 AI SEO 內容與結構化資料更新服務，含固定修改輪次與後續會議。",
-  ja: "中小企業向けの代行型 AI SEO／構造化データ更新パッケージ。改訂ラウンドとフォロー面談を定額回数で提供。",
-  de: "Done-for-you-Paket für KI-gestützte SEO-Inhalte und Schema-Updates für KMUs, mit festen Überarbeitungsrunden und Follow-up-Terminen.",
+  en: "Diagnosis then retainer: AI Visibility report, monthly schema and answer-first copy, plus citation / brand-impression / enquiry reporting for Hong Kong SMEs. Six-month minimum on retainers.",
+  "zh-hk": "先 AI Visibility 診斷，再月費維護結構化資料同 answer-first 文案，並報告 AI 引用、品牌曝光、詢盤。月費最低 6 個月。",
+  "zh-tw": "先 AI Visibility 診斷，再月費維護結構化資料與 answer-first 文案，並報告 AI 引用、品牌曝光、詢盤。月費最低 6 個月。",
+  ja: "まず AI Visibility 診断、その後リテーナーで schema と answer-first 文を維持し、引用・ブランド露出・問い合わせを報告。リテーナーは最短 6 か月。",
+  de: "Zuerst AI-Visibility-Diagnose, dann Retainer für Schema und Answer-first-Texte plus Bericht zu Zitaten, Markenimpressionen und Anfragen. Retainer mindestens 6 Monate.",
 };
 
 const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
@@ -221,11 +221,11 @@ const BREADCRUMB_SEGMENTS: Record<string, Record<AppLocale, string>> = {
     de: "Fallstudien",
   },
   "ai-seo-update-package": {
-    en: "AI SEO update package",
-    "zh-hk": "AI SEO 更新套餐",
-    "zh-tw": "AI SEO 更新方案",
-    ja: "AI SEO アップデート",
-    de: "AI-SEO-Update-Paket",
+    en: "AI SEO / AEO retainer",
+    "zh-hk": "AI SEO／AEO 月費",
+    "zh-tw": "AI SEO／AEO 月費",
+    ja: "AI SEO／AEO リテーナー",
+    de: "AI-SEO/AEO-Retainer",
   },
   compare: {
     en: "Compare",
@@ -715,10 +715,10 @@ function homeFaqMainEntity(locale: AppLocale): FaqMainEntity {
 const AI_SEO_FAQ_EN: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "How many revisions are included in the AI SEO Update Package?",
+    name: "How does InnovateXP AI SEO / AEO pricing work?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "The Starter package includes 3 revisions in one week with 1 follow-up. The Growth package includes 10 revisions in one month with 2 follow-ups.",
+      text: "Start with a HKD 2,800 AI Visibility diagnosis (credited to month 1 if you take a retainer). Lite is HKD 1,800 per month; Growth is HKD 3,800 per month; both 6 months minimum. A one-off full-site AEO rebuild starts at HKD 12,000. Monthly reports track AI citations, brand-keyword impressions, and site enquiries — not a revision count.",
     },
   },
 ];
@@ -726,10 +726,10 @@ const AI_SEO_FAQ_EN: FaqMainEntity = [
 const AI_SEO_FAQ_ZH_HK: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "AI SEO 更新套餐包含幾多次修改？",
+    name: "InnovateXP AI SEO／AEO 點計費？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Starter 套餐一星期內提供 3 次修改與 1 次 follow-up。Growth 套餐一個月內提供 10 次修改與 2 次 follow-up。",
+      text: "第一步係 HKD 2,800 AI Visibility 診斷（簽 retainer 可全額抵扣首月）。Lite 每月 HKD 1,800、Growth 每月 HKD 3,800，最低約期 6 個月。全站 AEO 重整由 HKD 12,000 起。月報追蹤 AI 引用、品牌關鍵字曝光、網站詢盤，唔用改動次數交差。",
     },
   },
 ];
@@ -737,10 +737,10 @@ const AI_SEO_FAQ_ZH_HK: FaqMainEntity = [
 const AI_SEO_FAQ_ZH_TW: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "AI SEO 更新方案包含幾次修改？",
+    name: "InnovateXP AI SEO／AEO 如何計費？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Starter 方案於一週內提供 3 次修改與 1 次後續會議；Growth 方案於一個月內提供 10 次修改與 2 次後續會議。",
+      text: "第一步為 HKD 2,800 AI Visibility 診斷（簽 retainer 可全額抵扣首月）。Lite 每月 HKD 1,800、Growth 每月 HKD 3,800，最低約期 6 個月。全站 AEO 重整由 HKD 12,000 起。月報追蹤 AI 引用、品牌關鍵字曝光、網站詢盤。",
     },
   },
 ];
@@ -748,10 +748,10 @@ const AI_SEO_FAQ_ZH_TW: FaqMainEntity = [
 const AI_SEO_FAQ_JA: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "AI SEO アップデートパッケージには何回の修正が含まれますか？",
+    name: "InnovateXP の AI SEO／AEO の料金は？",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Starter は 1 週間で 3 回の修正とフォローアップ 1 回。Growth は 1 か月で 10 回の修正とフォローアップ 2 回です。",
+      text: "まず HKD 2,800 の AI Visibility 診断（リテーナー契約時は初月に全額充当）。Lite は月額 HKD 1,800、Growth は月額 HKD 3,800、最短 6 か月。サイト全体の AEO 再構築は HKD 12,000 から。月次レポートは引用・ブランド露出・問い合わせを追い、修正回数では測りません。",
     },
   },
 ];
@@ -759,10 +759,10 @@ const AI_SEO_FAQ_JA: FaqMainEntity = [
 const AI_SEO_FAQ_DE: FaqMainEntity = [
   {
     "@type": "Question",
-    name: "Wie viele Überarbeitungen sind im AI-SEO-Update-Paket enthalten?",
+    name: "Wie ist die AI-SEO/AEO-Preisstruktur bei InnovateXP?",
     acceptedAnswer: {
       "@type": "Answer",
-      text: "Das Starter-Paket umfasst innerhalb einer Woche 3 Überarbeitungen und 1 Follow-up. Das Growth-Paket umfasst innerhalb eines Monats 10 Überarbeitungen und 2 Follow-ups.",
+      text: "Zuerst AI-Visibility-Diagnose für HKD 2.800 (voll auf Monat 1 anrechenbar bei Retainer). Lite HKD 1.800/Monat, Growth HKD 3.800/Monat, Mindestlaufzeit 6 Monate. Einmaliger AEO-Relaunch ab HKD 12.000. Monatsberichte: KI-Zitate, Markenimpressionen, Anfragen — keine Revisionszählung.",
     },
   },
 ];
@@ -1295,7 +1295,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${baseUrl}/#ai-seo-update-package`,
-    serviceType: "AI SEO Content Update Service",
+    serviceType: "AI SEO and AEO retainer",
     name: pickSchema(routeLocale, SCHEMA_AI_SEO_NAME),
     description: pickSchema(routeLocale, SCHEMA_AI_SEO_DESCRIPTION),
     provider: {
@@ -1305,23 +1305,37 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "HKD",
-      lowPrice: "2000",
-      highPrice: "6000",
-      offerCount: 2,
+      lowPrice: "1800",
+      highPrice: "12000",
+      offerCount: 4,
       offers: [
         {
           "@type": "Offer",
-          name: "AI SEO 更新套餐 - Starter",
-          price: "2000",
+          name: "AI Visibility diagnosis",
+          price: "2800",
           priceCurrency: "HKD",
-          description: "3 次改動、1 星期完成、1 次 follow-up",
+          description: "Citation report, 3 quick wins, 12-month AEO roadmap. Credited to month 1 on a 6-month retainer.",
         },
         {
           "@type": "Offer",
-          name: "AI SEO 更新套餐 - Growth",
-          price: "6000",
+          name: "Lite AEO retainer",
+          price: "1800",
           priceCurrency: "HKD",
-          description: "10 次改動、1 個月完成、2 次 follow-up",
+          description: "Monthly schema upkeep, 1–2 core pages, monthly metrics report. 6-month minimum.",
+        },
+        {
+          "@type": "Offer",
+          name: "Growth AEO retainer",
+          price: "3800",
+          priceCurrency: "HKD",
+          description: "4–6 monthly updates, AI citation tracking, competitor compare, review call. 6-month minimum.",
+        },
+        {
+          "@type": "Offer",
+          name: "Full-site AEO project",
+          price: "12000",
+          priceCurrency: "HKD",
+          description: "One-off full-site AEO rebuild. From HKD 12,000.",
         },
       ],
     },
