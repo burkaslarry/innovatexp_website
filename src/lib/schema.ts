@@ -109,13 +109,6 @@ export function getVisionXPProductSchema() {
       "Frontend-only demo; no login; no patient data stored",
     ],
     sameAs: ["https://visionquest-web.vercel.app"],
-    offers: {
-      "@type": "Offer",
-      url: "https://visionquest-web.vercel.app",
-      price: "0",
-      priceCurrency: "HKD",
-      description: "Frontend-only public demo. Implementation scoped after Discovery.",
-    },
     url: `${siteUrl}/visionxp`,
   };
 }

@@ -1026,7 +1026,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
 
   const smartSalesCRMService = {
     "@context": "https://schema.org",
-    "@type": ["Service", "Product"],
+    "@type": "Service",
     "@id": `${baseUrl}/#smartsales-crm`,
     serviceType: "AI CRM Software",
     name: "SmartSales CRM",
@@ -1101,7 +1101,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
 
   const eventXPService = {
     "@context": "https://schema.org",
-    "@type": ["Service", "Product"],
+    "@type": "Service",
     "@id": `${baseUrl}/#eventxp`,
     serviceType: "Event Management Software",
     name: "EventXP",
@@ -1176,7 +1176,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
 
   const visionXPService = {
     "@context": "https://schema.org",
-    "@type": ["SoftwareApplication", "Product"],
+    "@type": "SoftwareApplication",
     "@id": `${baseUrl}/#visionxp`,
     name: "VisionXP",
     applicationCategory: "EducationalApplication",
@@ -1198,13 +1198,6 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     },
     url: `${baseUrl}/visionxp`,
     sameAs: [VISIONXP_DEMO_URL],
-    offers: {
-      "@type": "Offer",
-      url: VISIONXP_DEMO_URL,
-      price: "0",
-      priceCurrency: "HKD",
-      description: "Frontend-only public demo. Implementation scoped after Discovery.",
-    },
   };
 
   const aiConsultingService = {
@@ -1401,7 +1394,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
         },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "SmartSales CRM" } },
         { "@type": "Offer", itemOffered: { "@type": "Service", name: "EventXP" } },
-        { "@type": "Offer", itemOffered: { "@type": "SoftwareApplication", name: "VisionXP" } },
+        { "@type": "Offer", itemOffered: { "@type": "Service", name: "VisionXP demo" } },
       ],
     },
   };
