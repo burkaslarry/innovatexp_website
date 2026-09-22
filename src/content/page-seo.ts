@@ -210,14 +210,14 @@ const CREATIVE_STUDIO: LocalePair = {
 
 const COFFEE_MAP: LocalePair = {
   zh: {
-    title: "香港咖啡店地圖｜特色咖啡店清單｜Creative Studio",
+    title: "香港咖啡茶飲地圖｜電插・限時・霸王茶姬｜Creative Studio",
     description:
-      "收錄香港特色咖啡店，按地區篩選並喺 Google 地圖顯示。每間店可一鍵打開 Google Maps 導航。",
+      "收錄香港特色咖啡店同霸王茶姬分店，按地區、電插、2/4人檯、音樂、限時、必須消費篩選，並喺 Google 地圖顯示。",
   },
   en: {
-    title: "Hong Kong Coffeeshop Map | Specialty Coffee | Creative Studio",
+    title: "Hong Kong Coffee & Tea Map | Outlets, Time Limit, CHAGEE | Creative Studio",
     description:
-      "A curated list of Hong Kong specialty coffee shops, filterable by neighborhood and shown on Google Maps. Open any shop straight into Google Maps.",
+      "Curated Hong Kong coffee shops and CHAGEE branches, filterable by neighborhood, power outlets, 2/4-seat tables, music, time limit, and must-order, shown on Google Maps.",
   },
 };
 

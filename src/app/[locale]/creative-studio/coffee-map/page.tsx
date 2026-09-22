@@ -66,12 +66,12 @@ export default async function CoffeeMapPage({
           {zh ? "Creative Studio" : "Creative Studio"}
         </p>
         <h1 className="mt-2 text-3xl font-bold md:text-4xl">
-          {zh ? "香港咖啡店地圖" : "Hong Kong Coffeeshop Map"}
+          {zh ? "香港咖啡茶飲地圖" : "Hong Kong Coffee & Tea Map"}
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-8 text-[color:var(--text-secondary)]">
           {zh
-            ? "收錄香港特色咖啡店，按地區篩選，並喺 Google 地圖顯示。每間店可一鍵打開 Google Maps 導航。"
-            : "A curated list of Hong Kong specialty coffee shops, filterable by neighborhood and shown on Google Maps. Each shop opens straight into Google Maps for directions."}
+            ? "收錄香港特色咖啡店同霸王茶姬分店，可按地區、電插、2/4人檯、音樂、限時、必須消費篩選，並喺 Google 地圖顯示。每間店可一鍵打開 Google Maps 導航。"
+            : "A curated list of Hong Kong specialty coffee shops and CHAGEE branches, filterable by neighborhood, power outlets, 2/4-seat tables, music, time limit, and must-order, shown on Google Maps. Each shop opens straight into Google Maps for directions."}
         </p>
       </header>
       <CoffeeShopMap zh={zh} />
