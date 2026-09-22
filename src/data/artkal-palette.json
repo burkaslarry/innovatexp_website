@@ -1,0 +1,9375 @@
+[
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S01",
+    "name": "White",
+    "zhName": "白色",
+    "hex": "#EAEEF3",
+    "rgb": [
+      234,
+      238,
+      243
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S02",
+    "name": "Burning Sand",
+    "zhName": "燃沙粉",
+    "hex": "#EE927C",
+    "rgb": [
+      238,
+      146,
+      124
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S03",
+    "name": "Tangerine",
+    "zhName": "柑橘色",
+    "hex": "#FFA630",
+    "rgb": [
+      255,
+      166,
+      48
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S04",
+    "name": "Orange",
+    "zhName": "橙色",
+    "hex": "#EB6027",
+    "rgb": [
+      235,
+      96,
+      39
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S05",
+    "name": "Tall Poppy",
+    "zhName": "罌粟紅",
+    "hex": "#CB3531",
+    "rgb": [
+      203,
+      53,
+      49
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S06",
+    "name": "Raspberry Pink",
+    "zhName": "覆盆子粉",
+    "hex": "#EF67B2",
+    "rgb": [
+      239,
+      103,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S07",
+    "name": "Gray",
+    "zhName": "灰色",
+    "hex": "#959698",
+    "rgb": [
+      149,
+      150,
+      152
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S08",
+    "name": "Emerald",
+    "zhName": "祖母綠",
+    "hex": "#1FC467",
+    "rgb": [
+      31,
+      196,
+      103
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S09",
+    "name": "Dark Green",
+    "zhName": "深綠",
+    "hex": "#00685E",
+    "rgb": [
+      0,
+      104,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S10",
+    "name": "Baby Blue",
+    "zhName": "嬰兒藍",
+    "hex": "#2EABD8",
+    "rgb": [
+      46,
+      171,
+      216
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S11",
+    "name": "Dark Blue",
+    "zhName": "深藍",
+    "hex": "#004FA4",
+    "rgb": [
+      0,
+      79,
+      164
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S12",
+    "name": "Pastel Lavender",
+    "zhName": "粉紫",
+    "hex": "#9165B2",
+    "rgb": [
+      145,
+      101,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S13",
+    "name": "Black",
+    "zhName": "黑色",
+    "hex": "#292A2B",
+    "rgb": [
+      41,
+      42,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S14",
+    "name": "Sandstorm",
+    "zhName": "沙塵黃",
+    "hex": "#E1C835",
+    "rgb": [
+      225,
+      200,
+      53
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S15",
+    "name": "Redwood",
+    "zhName": "紅木色",
+    "hex": "#9A4541",
+    "rgb": [
+      154,
+      69,
+      65
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S16",
+    "name": "Brown",
+    "zhName": "棕色",
+    "hex": "#65463D",
+    "rgb": [
+      101,
+      70,
+      61
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S17",
+    "name": "Light Brown",
+    "zhName": "淺棕",
+    "hex": "#895D49",
+    "rgb": [
+      137,
+      93,
+      73
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S18",
+    "name": "Sand",
+    "zhName": "沙色",
+    "hex": "#DCA384",
+    "rgb": [
+      220,
+      163,
+      132
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S19",
+    "name": "Bubble Gum",
+    "zhName": "泡泡糖粉",
+    "hex": "#F2BFB8",
+    "rgb": [
+      242,
+      191,
+      184
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S20",
+    "name": "Green",
+    "zhName": "綠色",
+    "hex": "#009053",
+    "rgb": [
+      0,
+      144,
+      83
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S21",
+    "name": "Pastel Green",
+    "zhName": "粉綠",
+    "hex": "#8BB23A",
+    "rgb": [
+      139,
+      178,
+      58
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S22",
+    "name": "Purple",
+    "zhName": "紫色",
+    "hex": "#48337E",
+    "rgb": [
+      72,
+      51,
+      126
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S23",
+    "name": "Royal Purple",
+    "zhName": "皇家紫",
+    "hex": "#644FA4",
+    "rgb": [
+      100,
+      79,
+      164
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S24",
+    "name": "True Blue",
+    "zhName": "正藍",
+    "hex": "#0078BF",
+    "rgb": [
+      0,
+      120,
+      191
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S25",
+    "name": "Hot Pink",
+    "zhName": "亮粉紅",
+    "hex": "#DC519A",
+    "rgb": [
+      220,
+      81,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S26",
+    "name": "Magenta",
+    "zhName": "洋紅",
+    "hex": "#DA4383",
+    "rgb": [
+      218,
+      67,
+      131
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S27",
+    "name": "Yellow",
+    "zhName": "黃色",
+    "hex": "#EAC125",
+    "rgb": [
+      234,
+      193,
+      37
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S28",
+    "name": "Lily Pink",
+    "zhName": "百合粉",
+    "hex": "#DDA1CC",
+    "rgb": [
+      221,
+      161,
+      204
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S29",
+    "name": "Pastel Yellow",
+    "zhName": "粉黃",
+    "hex": "#E1D367",
+    "rgb": [
+      225,
+      211,
+      103
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S30",
+    "name": "Shadow Green",
+    "zhName": "影綠",
+    "hex": "#9EC9CD",
+    "rgb": [
+      158,
+      201,
+      205
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S31",
+    "name": "Sea Mist",
+    "zhName": "海霧綠",
+    "hex": "#B2D7CE",
+    "rgb": [
+      178,
+      215,
+      206
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S32",
+    "name": "Beeswax",
+    "zhName": "蜂蠟色",
+    "hex": "#EED39E",
+    "rgb": [
+      238,
+      211,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S33",
+    "name": "Maverick",
+    "zhName": "淡丁香",
+    "hex": "#C0B7D7",
+    "rgb": [
+      192,
+      183,
+      215
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S34",
+    "name": "Red",
+    "zhName": "紅色",
+    "hex": "#B61927",
+    "rgb": [
+      182,
+      25,
+      39
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S35",
+    "name": "Mona Lisa",
+    "zhName": "蒙娜麗莎粉",
+    "hex": "#E1CCD2",
+    "rgb": [
+      225,
+      204,
+      210
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S36",
+    "name": "Old Pink",
+    "zhName": "古典粉",
+    "hex": "#CE6D83",
+    "rgb": [
+      206,
+      109,
+      131
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S37",
+    "name": "Blue-Green",
+    "zhName": "藍綠色",
+    "hex": "#60BFCB",
+    "rgb": [
+      96,
+      191,
+      203
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S38",
+    "name": "Burgundy",
+    "zhName": "酒紅",
+    "hex": "#A3134A",
+    "rgb": [
+      163,
+      19,
+      74
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S39",
+    "name": "Yellow Orange",
+    "zhName": "橙黃",
+    "hex": "#E68739",
+    "rgb": [
+      230,
+      135,
+      57
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S40",
+    "name": "Carnation Pink",
+    "zhName": "康乃馨粉",
+    "hex": "#E182B0",
+    "rgb": [
+      225,
+      130,
+      176
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S41",
+    "name": "Copper",
+    "zhName": "銅色",
+    "hex": "#9D5B2E",
+    "rgb": [
+      157,
+      91,
+      46
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S42",
+    "name": "Silver",
+    "zhName": "銀色",
+    "hex": "#676B73",
+    "rgb": [
+      103,
+      107,
+      115
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S43",
+    "name": "Dark Gray",
+    "zhName": "深灰",
+    "hex": "#70757B",
+    "rgb": [
+      112,
+      117,
+      123
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S44",
+    "name": "Sky Blue",
+    "zhName": "天藍",
+    "hex": "#A7CDDE",
+    "rgb": [
+      167,
+      205,
+      222
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S45",
+    "name": "Medium Turquoise",
+    "zhName": "中土耳其藍",
+    "hex": "#00A5A1",
+    "rgb": [
+      0,
+      165,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S46",
+    "name": "Bright Green",
+    "zhName": "亮綠",
+    "hex": "#8EC324",
+    "rgb": [
+      142,
+      195,
+      36
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S47",
+    "name": "Marigold",
+    "zhName": "金盞花",
+    "hex": "#B27938",
+    "rgb": [
+      178,
+      121,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S48",
+    "name": "Corn",
+    "zhName": "玉米黃",
+    "hex": "#ECC03D",
+    "rgb": [
+      236,
+      192,
+      61
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S49",
+    "name": "Mulberry Wood",
+    "zhName": "桑木紫",
+    "hex": "#921E5D",
+    "rgb": [
+      146,
+      30,
+      93
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S50",
+    "name": "Mandys Pink",
+    "zhName": "曼蒂粉",
+    "hex": "#E2A488",
+    "rgb": [
+      226,
+      164,
+      136
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S51",
+    "name": "Spring Sun",
+    "zhName": "春日陽",
+    "hex": "#DFDABD",
+    "rgb": [
+      223,
+      218,
+      189
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S52",
+    "name": "Picasso",
+    "zhName": "畢卡索黃",
+    "hex": "#EADE7F",
+    "rgb": [
+      234,
+      222,
+      127
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S53",
+    "name": "Turquoise",
+    "zhName": "土耳其藍",
+    "hex": "#55A4D9",
+    "rgb": [
+      85,
+      164,
+      217
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S54",
+    "name": "Light Blue",
+    "zhName": "淺藍",
+    "hex": "#0084CE",
+    "rgb": [
+      0,
+      132,
+      206
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S55",
+    "name": "Pistachio",
+    "zhName": "開心果綠",
+    "hex": "#97CF87",
+    "rgb": [
+      151,
+      207,
+      135
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S56",
+    "name": "Bright Carrot",
+    "zhName": "胡蘿蔔橙",
+    "hex": "#F96F40",
+    "rgb": [
+      249,
+      111,
+      64
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S57",
+    "name": "Buccaneer",
+    "zhName": "海盜棕紅",
+    "hex": "#B35540",
+    "rgb": [
+      179,
+      85,
+      64
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S58",
+    "name": "Paprika",
+    "zhName": "辣椒紅",
+    "hex": "#B11836",
+    "rgb": [
+      177,
+      24,
+      54
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S59",
+    "name": "Butterfly Bush",
+    "zhName": "醉魚草紫",
+    "hex": "#4F3989",
+    "rgb": [
+      79,
+      57,
+      137
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S60",
+    "name": "Lavender",
+    "zhName": "薰衣草",
+    "hex": "#8A7EC2",
+    "rgb": [
+      138,
+      126,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S61",
+    "name": "Key Lemon Pie",
+    "zhName": "檸檬批黃",
+    "hex": "#CDC03F",
+    "rgb": [
+      205,
+      192,
+      63
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S62",
+    "name": "Green Tea",
+    "zhName": "綠茶",
+    "hex": "#00765F",
+    "rgb": [
+      0,
+      118,
+      95
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S63",
+    "name": "Metallic Gold",
+    "zhName": "金屬金",
+    "hex": "#696046",
+    "rgb": [
+      105,
+      96,
+      70
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S64",
+    "name": "Black Rock",
+    "zhName": "黑岩藍",
+    "hex": "#36384D",
+    "rgb": [
+      54,
+      56,
+      77
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S65",
+    "name": "Canary",
+    "zhName": "金絲雀黃",
+    "hex": "#E2E65D",
+    "rgb": [
+      226,
+      230,
+      93
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S66",
+    "name": "Blaze Orange",
+    "zhName": "火焰橙",
+    "hex": "#E5533C",
+    "rgb": [
+      229,
+      83,
+      60
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S67",
+    "name": "Vanilla",
+    "zhName": "香草",
+    "hex": "#E9C1A6",
+    "rgb": [
+      233,
+      193,
+      166
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S68",
+    "name": "Tan",
+    "zhName": "茶色",
+    "hex": "#CC9B74",
+    "rgb": [
+      204,
+      155,
+      116
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S69",
+    "name": "Mine Shaft",
+    "zhName": "礦井灰",
+    "hex": "#383E44",
+    "rgb": [
+      56,
+      62,
+      68
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S70",
+    "name": "Dark Algae",
+    "zhName": "深藻綠",
+    "hex": "#ADAD29",
+    "rgb": [
+      173,
+      173,
+      41
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S71",
+    "name": "Jade Green",
+    "zhName": "翡翠綠",
+    "hex": "#007D2B",
+    "rgb": [
+      0,
+      125,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S72",
+    "name": "Light Sea Blue",
+    "zhName": "淺海藍",
+    "hex": "#68C4D2",
+    "rgb": [
+      104,
+      196,
+      210
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S73",
+    "name": "Steel Blue",
+    "zhName": "鋼藍",
+    "hex": "#5AB0BF",
+    "rgb": [
+      90,
+      176,
+      191
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S74",
+    "name": "Azure",
+    "zhName": "蔚藍",
+    "hex": "#009EC2",
+    "rgb": [
+      0,
+      158,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S75",
+    "name": "Dark Steel Blue",
+    "zhName": "深鋼藍",
+    "hex": "#0084B2",
+    "rgb": [
+      0,
+      132,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S76",
+    "name": "Sea Blue",
+    "zhName": "海藍",
+    "hex": "#0093A9",
+    "rgb": [
+      0,
+      147,
+      169
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S77",
+    "name": "Ghost White",
+    "zhName": "幽靈白",
+    "hex": "#D4D8D3",
+    "rgb": [
+      212,
+      216,
+      211
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S78",
+    "name": "Ash Gray",
+    "zhName": "灰白",
+    "hex": "#C2C4C2",
+    "rgb": [
+      194,
+      196,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S79",
+    "name": "Light Gray",
+    "zhName": "淺灰",
+    "hex": "#A7ACAD",
+    "rgb": [
+      167,
+      172,
+      173
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S80",
+    "name": "Dark Olive",
+    "zhName": "深橄欖",
+    "hex": "#8F8E3C",
+    "rgb": [
+      143,
+      142,
+      60
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S81",
+    "name": "Deer",
+    "zhName": "鹿棕",
+    "hex": "#BF9168",
+    "rgb": [
+      191,
+      145,
+      104
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S82",
+    "name": "Clay",
+    "zhName": "陶土",
+    "hex": "#AA744E",
+    "rgb": [
+      170,
+      116,
+      78
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S83",
+    "name": "Sienna",
+    "zhName": "赭石",
+    "hex": "#BB6833",
+    "rgb": [
+      187,
+      104,
+      51
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S84",
+    "name": "Deep Chestnut",
+    "zhName": "深栗",
+    "hex": "#BE5D65",
+    "rgb": [
+      190,
+      93,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S85",
+    "name": "Red Wine",
+    "zhName": "紅酒色",
+    "hex": "#99323A",
+    "rgb": [
+      153,
+      50,
+      58
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S86",
+    "name": "Goldenrod",
+    "zhName": "金麒麟",
+    "hex": "#E8AE00",
+    "rgb": [
+      232,
+      174,
+      0
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S87",
+    "name": "Coral Red",
+    "zhName": "珊瑚紅",
+    "hex": "#EC625E",
+    "rgb": [
+      236,
+      98,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S88",
+    "name": "Dark Pink",
+    "zhName": "深粉",
+    "hex": "#D62779",
+    "rgb": [
+      214,
+      39,
+      121
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S89",
+    "name": "Charcoal Gray",
+    "zhName": "炭灰",
+    "hex": "#565A5E",
+    "rgb": [
+      86,
+      90,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S90",
+    "name": "Pastel Orange",
+    "zhName": "粉橘",
+    "hex": "#D9B35E",
+    "rgb": [
+      217,
+      179,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S91",
+    "name": "Brunswick Green",
+    "zhName": "不倫瑞克綠",
+    "hex": "#153838",
+    "rgb": [
+      21,
+      56,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S92",
+    "name": "Dandelion",
+    "zhName": "蒲公英黃",
+    "hex": "#CEA433",
+    "rgb": [
+      206,
+      164,
+      51
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S93",
+    "name": "Pale Skin",
+    "zhName": "淺膚色",
+    "hex": "#DCB794",
+    "rgb": [
+      220,
+      183,
+      148
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S94",
+    "name": "Warm Blush",
+    "zhName": "暖腮紅",
+    "hex": "#DD9285",
+    "rgb": [
+      221,
+      146,
+      133
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S95",
+    "name": "Salmon",
+    "zhName": "鮭魚色",
+    "hex": "#E07B69",
+    "rgb": [
+      224,
+      123,
+      105
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S96",
+    "name": "Apricot",
+    "zhName": "杏色",
+    "hex": "#EF7F61",
+    "rgb": [
+      239,
+      127,
+      97
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S97",
+    "name": "Papaya",
+    "zhName": "木瓜橙",
+    "hex": "#DC772B",
+    "rgb": [
+      220,
+      119,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S98",
+    "name": "Himalaya Blue",
+    "zhName": "喜馬拉雅藍",
+    "hex": "#6AAEDB",
+    "rgb": [
+      106,
+      174,
+      219
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S99",
+    "name": "Waterfall",
+    "zhName": "瀑布藍",
+    "hex": "#61BBD3",
+    "rgb": [
+      97,
+      187,
+      211
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S100",
+    "name": "Lagoon",
+    "zhName": "潟湖藍",
+    "hex": "#279BBE",
+    "rgb": [
+      39,
+      155,
+      190
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S101",
+    "name": "Electric Blue",
+    "zhName": "電光藍",
+    "hex": "#00A7E3",
+    "rgb": [
+      0,
+      167,
+      227
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S102",
+    "name": "Pool Blue",
+    "zhName": "泳池藍",
+    "hex": "#0077CA",
+    "rgb": [
+      0,
+      119,
+      202
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S103",
+    "name": "Caribbean Blue",
+    "zhName": "加勒比藍",
+    "hex": "#005AA9",
+    "rgb": [
+      0,
+      90,
+      169
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S104",
+    "name": "Deep Water",
+    "zhName": "深水藍",
+    "hex": "#007F9E",
+    "rgb": [
+      0,
+      127,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S105",
+    "name": "Petrol Blue",
+    "zhName": "石油藍",
+    "hex": "#007D91",
+    "rgb": [
+      0,
+      125,
+      145
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S106",
+    "name": "Wedgewood Blue",
+    "zhName": "韋奇伍德藍",
+    "hex": "#00649A",
+    "rgb": [
+      0,
+      100,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S107",
+    "name": "Pond Blue",
+    "zhName": "池塘藍",
+    "hex": "#006C9F",
+    "rgb": [
+      0,
+      108,
+      159
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S108",
+    "name": "Seashell Beige",
+    "zhName": "貝殼米",
+    "hex": "#CFC179",
+    "rgb": [
+      207,
+      193,
+      121
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S109",
+    "name": "Beige",
+    "zhName": "米色",
+    "hex": "#C4AE64",
+    "rgb": [
+      196,
+      174,
+      100
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S110",
+    "name": "Beach Beige",
+    "zhName": "沙灘米",
+    "hex": "#AB9745",
+    "rgb": [
+      171,
+      151,
+      69
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S111",
+    "name": "Caffe Latte",
+    "zhName": "咖啡拿鐵",
+    "hex": "#978138",
+    "rgb": [
+      151,
+      129,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S112",
+    "name": "Oaktree Brown",
+    "zhName": "橡樹棕",
+    "hex": "#907C41",
+    "rgb": [
+      144,
+      124,
+      65
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S113",
+    "name": "Khaki",
+    "zhName": "卡其",
+    "hex": "#B6AE84",
+    "rgb": [
+      182,
+      174,
+      132
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S114",
+    "name": "Light Greengray",
+    "zhName": "淺綠灰",
+    "hex": "#A59F65",
+    "rgb": [
+      165,
+      159,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S115",
+    "name": "Mossy Green",
+    "zhName": "苔綠",
+    "hex": "#938D54",
+    "rgb": [
+      147,
+      141,
+      84
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S116",
+    "name": "Earth Green",
+    "zhName": "大地綠",
+    "hex": "#8D8B51",
+    "rgb": [
+      141,
+      139,
+      81
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S117",
+    "name": "Sage Green",
+    "zhName": "鼠尾草綠",
+    "hex": "#7F7E49",
+    "rgb": [
+      127,
+      126,
+      73
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S118",
+    "name": "Pinetree Green",
+    "zhName": "松樹綠",
+    "hex": "#5B6E35",
+    "rgb": [
+      91,
+      110,
+      53
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S119",
+    "name": "Frosty Blue",
+    "zhName": "霜藍",
+    "hex": "#8AD5C9",
+    "rgb": [
+      138,
+      213,
+      201
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S120",
+    "name": "Polar Mint",
+    "zhName": "極地薄荷",
+    "hex": "#7CD2A5",
+    "rgb": [
+      124,
+      210,
+      165
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S121",
+    "name": "Celadon Green",
+    "zhName": "青瓷綠",
+    "hex": "#72AC9A",
+    "rgb": [
+      114,
+      172,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S122",
+    "name": "Eucalyptus",
+    "zhName": "尤加利綠",
+    "hex": "#00B26F",
+    "rgb": [
+      0,
+      178,
+      111
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S123",
+    "name": "Clover Field",
+    "zhName": "三葉草綠",
+    "hex": "#3EB724",
+    "rgb": [
+      62,
+      183,
+      36
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S124",
+    "name": "Pooltable Felt",
+    "zhName": "撞球檯綠",
+    "hex": "#0D7535",
+    "rgb": [
+      13,
+      117,
+      53
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S125",
+    "name": "Snake Green",
+    "zhName": "蛇綠",
+    "hex": "#007D6E",
+    "rgb": [
+      0,
+      125,
+      110
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S126",
+    "name": "Dark Eucalyptus",
+    "zhName": "深尤加利",
+    "hex": "#006E69",
+    "rgb": [
+      0,
+      110,
+      105
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S127",
+    "name": "Marshmallow Rose",
+    "zhName": "棉花糖玫瑰",
+    "hex": "#DFC3E1",
+    "rgb": [
+      223,
+      195,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S128",
+    "name": "Light Grape",
+    "zhName": "淺葡萄紫",
+    "hex": "#D38ED4",
+    "rgb": [
+      211,
+      142,
+      212
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S129",
+    "name": "Rosebud Pink",
+    "zhName": "玫瑰蕾粉",
+    "hex": "#D5A6BA",
+    "rgb": [
+      213,
+      166,
+      186
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S130",
+    "name": "Fuchsia",
+    "zhName": "品紅",
+    "hex": "#D6668E",
+    "rgb": [
+      214,
+      102,
+      142
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S131",
+    "name": "Candy Violet",
+    "zhName": "糖果紫",
+    "hex": "#B8AAD9",
+    "rgb": [
+      184,
+      170,
+      217
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S132",
+    "name": "Flamingo",
+    "zhName": "火烈鳥粉",
+    "hex": "#DF486D",
+    "rgb": [
+      223,
+      72,
+      109
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S133",
+    "name": "Pink Plum",
+    "zhName": "粉梅",
+    "hex": "#BC3CA6",
+    "rgb": [
+      188,
+      60,
+      166
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S134",
+    "name": "Amethyst",
+    "zhName": "紫水晶",
+    "hex": "#803897",
+    "rgb": [
+      128,
+      56,
+      151
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S135",
+    "name": "Moonlight Blue",
+    "zhName": "月光藍",
+    "hex": "#A7BAE1",
+    "rgb": [
+      167,
+      186,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S136",
+    "name": "Summer Rain",
+    "zhName": "夏雨藍",
+    "hex": "#AFB8DF",
+    "rgb": [
+      175,
+      184,
+      223
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S137",
+    "name": "Azur Blue",
+    "zhName": "碧藍",
+    "hex": "#6B9AD4",
+    "rgb": [
+      107,
+      154,
+      212
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S138",
+    "name": "Cornflower Blue",
+    "zhName": "矢車菊藍",
+    "hex": "#5A89CE",
+    "rgb": [
+      90,
+      137,
+      206
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S139",
+    "name": "Forget Me Not",
+    "zhName": "勿忘我藍",
+    "hex": "#658AD0",
+    "rgb": [
+      101,
+      138,
+      208
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S140",
+    "name": "Indigo",
+    "zhName": "靛藍",
+    "hex": "#566CBD",
+    "rgb": [
+      86,
+      108,
+      189
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S141",
+    "name": "Horizon Blue",
+    "zhName": "地平線藍",
+    "hex": "#4D74C6",
+    "rgb": [
+      77,
+      116,
+      198
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S142",
+    "name": "Cobalt",
+    "zhName": "鈷藍",
+    "hex": "#416DBE",
+    "rgb": [
+      65,
+      109,
+      190
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S143",
+    "name": "Royal Blue",
+    "zhName": "寶藍",
+    "hex": "#30429E",
+    "rgb": [
+      48,
+      66,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S144",
+    "name": "Marine",
+    "zhName": "海軍藍",
+    "hex": "#024288",
+    "rgb": [
+      2,
+      66,
+      136
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S145",
+    "name": "Pale Yellow Moss",
+    "zhName": "淺黃苔",
+    "hex": "#D6CA6A",
+    "rgb": [
+      214,
+      202,
+      106
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S146",
+    "name": "Bloodrose Red",
+    "zhName": "血玫瑰紅",
+    "hex": "#9D1A38",
+    "rgb": [
+      157,
+      26,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S147",
+    "name": "Spearmint",
+    "zhName": "留蘭香綠",
+    "hex": "#80B7A1",
+    "rgb": [
+      128,
+      183,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S148",
+    "name": "Mocha",
+    "zhName": "摩卡",
+    "hex": "#7A594F",
+    "rgb": [
+      122,
+      89,
+      79
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S149",
+    "name": "Creme",
+    "zhName": "奶油色",
+    "hex": "#EFDBA1",
+    "rgb": [
+      239,
+      219,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S150",
+    "name": "Iris Violet",
+    "zhName": "鳶尾紫",
+    "hex": "#8884D0",
+    "rgb": [
+      136,
+      132,
+      208
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S151",
+    "name": "Forrest Green",
+    "zhName": "森林綠",
+    "hex": "#345621",
+    "rgb": [
+      52,
+      86,
+      33
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S152",
+    "name": "Lilac",
+    "zhName": "丁香紫",
+    "hex": "#AEADDC",
+    "rgb": [
+      174,
+      173,
+      220
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S153",
+    "name": "Pale Lilac",
+    "zhName": "淺丁香",
+    "hex": "#BCC3E1",
+    "rgb": [
+      188,
+      195,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S154",
+    "name": "Sahara Sand",
+    "zhName": "撒哈拉沙",
+    "hex": "#E3C09A",
+    "rgb": [
+      227,
+      192,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S155",
+    "name": "Sunkissed Teint",
+    "zhName": "日光膚色",
+    "hex": "#C58B60",
+    "rgb": [
+      197,
+      139,
+      96
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S156",
+    "name": "Steel Gray",
+    "zhName": "鋼灰",
+    "hex": "#5A5F65",
+    "rgb": [
+      90,
+      95,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S157",
+    "name": "Iron Gray",
+    "zhName": "鐵灰",
+    "hex": "#4C5156",
+    "rgb": [
+      76,
+      81,
+      86
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S158",
+    "name": "Pepper",
+    "zhName": "胡椒黑",
+    "hex": "#3A3E42",
+    "rgb": [
+      58,
+      62,
+      66
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "S159",
+    "name": "Oslo Gray",
+    "zhName": "奧斯陸灰",
+    "hex": "#82878B",
+    "rgb": [
+      130,
+      135,
+      139
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE1",
+    "name": "Moon",
+    "zhName": "月光白",
+    "hex": "#F1F4FA",
+    "rgb": [
+      241,
+      244,
+      250
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE2",
+    "name": "Raincloud",
+    "zhName": "雨雲藍",
+    "hex": "#A2B2D3",
+    "rgb": [
+      162,
+      178,
+      211
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE3",
+    "name": "Winter",
+    "zhName": "冬日藍",
+    "hex": "#83A6DC",
+    "rgb": [
+      131,
+      166,
+      220
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE4",
+    "name": "Tide",
+    "zhName": "潮汐藍",
+    "hex": "#70D8ED",
+    "rgb": [
+      112,
+      216,
+      237
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE5",
+    "name": "Aquamarine",
+    "zhName": "海藍寶",
+    "hex": "#69E3D5",
+    "rgb": [
+      105,
+      227,
+      213
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE6",
+    "name": "Neptune",
+    "zhName": "海王藍",
+    "hex": "#2A63C8",
+    "rgb": [
+      42,
+      99,
+      200
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE7",
+    "name": "Rose Quartz",
+    "zhName": "粉晶",
+    "hex": "#D5AEC9",
+    "rgb": [
+      213,
+      174,
+      201
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE8",
+    "name": "Mauve",
+    "zhName": "藕荷色",
+    "hex": "#AF739A",
+    "rgb": [
+      175,
+      115,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE9",
+    "name": "Dark Mauve",
+    "zhName": "深藕荷",
+    "hex": "#704B6D",
+    "rgb": [
+      112,
+      75,
+      109
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE10",
+    "name": "Wild Berry",
+    "zhName": "野莓紫",
+    "hex": "#D977CD",
+    "rgb": [
+      217,
+      119,
+      205
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE11",
+    "name": "Sugar Plum",
+    "zhName": "糖梅紫",
+    "hex": "#B643AC",
+    "rgb": [
+      182,
+      67,
+      172
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE12",
+    "name": "Desert",
+    "zhName": "沙漠色",
+    "hex": "#DEB181",
+    "rgb": [
+      222,
+      177,
+      129
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE13",
+    "name": "Peanut",
+    "zhName": "花生色",
+    "hex": "#BC9D77",
+    "rgb": [
+      188,
+      157,
+      119
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE14",
+    "name": "Toffee",
+    "zhName": "太妃糖",
+    "hex": "#AC7F5D",
+    "rgb": [
+      172,
+      127,
+      93
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SE15",
+    "name": "Bark",
+    "zhName": "樹皮色",
+    "hex": "#A37E66",
+    "rgb": [
+      163,
+      126,
+      102
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SG1",
+    "name": "Glow Yellow",
+    "zhName": "夜光黃",
+    "hex": "#C6C0B4",
+    "rgb": [
+      198,
+      192,
+      180
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SG2",
+    "name": "Glow Pink",
+    "zhName": "夜光粉",
+    "hex": "#DFABBC",
+    "rgb": [
+      223,
+      171,
+      188
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SG3",
+    "name": "Glow Blue",
+    "zhName": "夜光藍",
+    "hex": "#6FADC1",
+    "rgb": [
+      111,
+      173,
+      193
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SL1",
+    "name": "Glitter Blue",
+    "zhName": "閃粉藍",
+    "hex": "#3687B2",
+    "rgb": [
+      54,
+      135,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SL2",
+    "name": "Glitter Green",
+    "zhName": "閃粉綠",
+    "hex": "#117C52",
+    "rgb": [
+      17,
+      124,
+      82
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SL3",
+    "name": "Glitter Red",
+    "zhName": "閃粉紅",
+    "hex": "#C22933",
+    "rgb": [
+      194,
+      41,
+      51
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SL4",
+    "name": "Glitter Yellow",
+    "zhName": "閃粉黃",
+    "hex": "#CDBD00",
+    "rgb": [
+      205,
+      189,
+      0
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SN1",
+    "name": "Neon Orange",
+    "zhName": "螢光橙",
+    "hex": "#FF7405",
+    "rgb": [
+      255,
+      116,
+      5
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SN2",
+    "name": "Neon Green",
+    "zhName": "螢光綠",
+    "hex": "#01C63E",
+    "rgb": [
+      1,
+      198,
+      62
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SN3",
+    "name": "Neon Yellow",
+    "zhName": "螢光黃",
+    "hex": "#F2F33C",
+    "rgb": [
+      242,
+      243,
+      60
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SN4",
+    "name": "Neon Rose",
+    "zhName": "螢光玫紅",
+    "hex": "#FF477A",
+    "rgb": [
+      255,
+      71,
+      122
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SP1",
+    "name": "Pearlescent Green",
+    "zhName": "珠光綠",
+    "hex": "#93CA87",
+    "rgb": [
+      147,
+      202,
+      135
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SP2",
+    "name": "Pearlescent Tangerine",
+    "zhName": "珠光柑橘",
+    "hex": "#FE7F54",
+    "rgb": [
+      254,
+      127,
+      84
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SP3",
+    "name": "Pearlescent Orange",
+    "zhName": "珠光橙",
+    "hex": "#F0A149",
+    "rgb": [
+      240,
+      161,
+      73
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SP4",
+    "name": "Pearlescent Pink",
+    "zhName": "珠光粉",
+    "hex": "#DC9EA9",
+    "rgb": [
+      220,
+      158,
+      169
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SP5",
+    "name": "Pearlescent Red",
+    "zhName": "珠光紅",
+    "hex": "#D63C53",
+    "rgb": [
+      214,
+      60,
+      83
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SP6",
+    "name": "Pearlescent Blue",
+    "zhName": "珠光藍",
+    "hex": "#2C4E97",
+    "rgb": [
+      44,
+      78,
+      151
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SP7",
+    "name": "Pearlescent Purple",
+    "zhName": "珠光紫",
+    "hex": "#64427E",
+    "rgb": [
+      100,
+      66,
+      126
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "SP8",
+    "name": "Pearlescent White",
+    "zhName": "珠光白",
+    "hex": "#E0DBCA",
+    "rgb": [
+      224,
+      219,
+      202
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "ST1",
+    "name": "Transparent",
+    "zhName": "透明",
+    "hex": "#C7BCB8",
+    "rgb": [
+      199,
+      188,
+      184
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "ST2",
+    "name": "Transparent Pink",
+    "zhName": "透明粉",
+    "hex": "#F95498",
+    "rgb": [
+      249,
+      84,
+      152
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "ST3",
+    "name": "Transparent Tangerine",
+    "zhName": "透明柑橘",
+    "hex": "#FF7C45",
+    "rgb": [
+      255,
+      124,
+      69
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "ST4",
+    "name": "Transparent Yellow",
+    "zhName": "透明黃",
+    "hex": "#DADF3D",
+    "rgb": [
+      218,
+      223,
+      61
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "ST5",
+    "name": "Transparent Green",
+    "zhName": "透明綠",
+    "hex": "#0FAE58",
+    "rgb": [
+      15,
+      174,
+      88
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "S",
+    "code": "ST6",
+    "name": "Transparent Purple",
+    "zhName": "透明紫",
+    "hex": "#8477B3",
+    "rgb": [
+      132,
+      119,
+      179
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A01",
+    "name": "White",
+    "zhName": "白色",
+    "hex": "#EAEEF3",
+    "rgb": [
+      234,
+      238,
+      243
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A02",
+    "name": "Black",
+    "zhName": "黑色",
+    "hex": "#292A2B",
+    "rgb": [
+      41,
+      42,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A03",
+    "name": "Tangerine",
+    "zhName": "柑橘色",
+    "hex": "#FFA630",
+    "rgb": [
+      255,
+      166,
+      48
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A04",
+    "name": "Yellow Orange",
+    "zhName": "橙黃",
+    "hex": "#E68739",
+    "rgb": [
+      230,
+      135,
+      57
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A05",
+    "name": "Tall Poppy",
+    "zhName": "罌粟紅",
+    "hex": "#CB3531",
+    "rgb": [
+      203,
+      53,
+      49
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A06",
+    "name": "Red",
+    "zhName": "紅色",
+    "hex": "#B61927",
+    "rgb": [
+      182,
+      25,
+      39
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A07",
+    "name": "Carnation Pink",
+    "zhName": "康乃馨粉",
+    "hex": "#E182B0",
+    "rgb": [
+      225,
+      130,
+      176
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A08",
+    "name": "Hot Pink",
+    "zhName": "亮粉紅",
+    "hex": "#DC519A",
+    "rgb": [
+      220,
+      81,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A09",
+    "name": "Magenta",
+    "zhName": "洋紅",
+    "hex": "#DA4383",
+    "rgb": [
+      218,
+      67,
+      131
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A10",
+    "name": "Picasso",
+    "zhName": "畢卡索黃",
+    "hex": "#EADE7F",
+    "rgb": [
+      234,
+      222,
+      127
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A11",
+    "name": "Yellow",
+    "zhName": "黃色",
+    "hex": "#EAC125",
+    "rgb": [
+      234,
+      193,
+      37
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A12",
+    "name": "Pistachio",
+    "zhName": "開心果綠",
+    "hex": "#97CF87",
+    "rgb": [
+      151,
+      207,
+      135
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A13",
+    "name": "Pastel Green",
+    "zhName": "粉綠",
+    "hex": "#8BB23A",
+    "rgb": [
+      139,
+      178,
+      58
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A14",
+    "name": "Green",
+    "zhName": "綠色",
+    "hex": "#009053",
+    "rgb": [
+      0,
+      144,
+      83
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A15",
+    "name": "Green Tea",
+    "zhName": "綠茶",
+    "hex": "#00765F",
+    "rgb": [
+      0,
+      118,
+      95
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A16",
+    "name": "Bright Carrot",
+    "zhName": "胡蘿蔔橙",
+    "hex": "#F96F40",
+    "rgb": [
+      249,
+      111,
+      64
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A17",
+    "name": "Orange",
+    "zhName": "橙色",
+    "hex": "#EB6027",
+    "rgb": [
+      235,
+      96,
+      39
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A18",
+    "name": "Sky Blue",
+    "zhName": "天藍",
+    "hex": "#A7CDDE",
+    "rgb": [
+      167,
+      205,
+      222
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A19",
+    "name": "Baby Blue",
+    "zhName": "嬰兒藍",
+    "hex": "#2EABD8",
+    "rgb": [
+      46,
+      171,
+      216
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A20",
+    "name": "Light Blue",
+    "zhName": "淺藍",
+    "hex": "#0084CE",
+    "rgb": [
+      0,
+      132,
+      206
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A21",
+    "name": "Dark Blue",
+    "zhName": "深藍",
+    "hex": "#004FA4",
+    "rgb": [
+      0,
+      79,
+      164
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A22",
+    "name": "Bubble Gum",
+    "zhName": "泡泡糖粉",
+    "hex": "#F2BFB8",
+    "rgb": [
+      242,
+      191,
+      184
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A23",
+    "name": "Sand",
+    "zhName": "沙色",
+    "hex": "#DCA384",
+    "rgb": [
+      220,
+      163,
+      132
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A24",
+    "name": "Beeswax",
+    "zhName": "蜂蠟色",
+    "hex": "#EED39E",
+    "rgb": [
+      238,
+      211,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A25",
+    "name": "Lavender",
+    "zhName": "薰衣草",
+    "hex": "#8A7EC2",
+    "rgb": [
+      138,
+      126,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A26",
+    "name": "Pastel Lavender",
+    "zhName": "粉紫",
+    "hex": "#9165B2",
+    "rgb": [
+      145,
+      101,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A27",
+    "name": "Purple",
+    "zhName": "紫色",
+    "hex": "#48337E",
+    "rgb": [
+      72,
+      51,
+      126
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A28",
+    "name": "Marigold",
+    "zhName": "金盞花",
+    "hex": "#B27938",
+    "rgb": [
+      178,
+      121,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A29",
+    "name": "Buccaneer",
+    "zhName": "海盜棕紅",
+    "hex": "#B35540",
+    "rgb": [
+      179,
+      85,
+      64
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A30",
+    "name": "Redwood",
+    "zhName": "紅木色",
+    "hex": "#9A4541",
+    "rgb": [
+      154,
+      69,
+      65
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A31",
+    "name": "Light Brown",
+    "zhName": "淺棕",
+    "hex": "#895D49",
+    "rgb": [
+      137,
+      93,
+      73
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A32",
+    "name": "Brown",
+    "zhName": "棕色",
+    "hex": "#65463D",
+    "rgb": [
+      101,
+      70,
+      61
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A33",
+    "name": "Gray",
+    "zhName": "灰色",
+    "hex": "#959698",
+    "rgb": [
+      149,
+      150,
+      152
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A34",
+    "name": "Dark Gray",
+    "zhName": "深灰",
+    "hex": "#70757B",
+    "rgb": [
+      112,
+      117,
+      123
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A35",
+    "name": "Silver",
+    "zhName": "銀色",
+    "hex": "#676B73",
+    "rgb": [
+      103,
+      107,
+      115
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A36",
+    "name": "Old Pink",
+    "zhName": "古典粉",
+    "hex": "#CE6D83",
+    "rgb": [
+      206,
+      109,
+      131
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A37",
+    "name": "True Blue",
+    "zhName": "正藍",
+    "hex": "#0078BF",
+    "rgb": [
+      0,
+      120,
+      191
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A38",
+    "name": "Turquoise",
+    "zhName": "土耳其藍",
+    "hex": "#55A4D9",
+    "rgb": [
+      85,
+      164,
+      217
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A39",
+    "name": "Shadow Green",
+    "zhName": "影綠",
+    "hex": "#9EC9CD",
+    "rgb": [
+      158,
+      201,
+      205
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A40",
+    "name": "Key Lemon Pie",
+    "zhName": "檸檬批黃",
+    "hex": "#CDC03F",
+    "rgb": [
+      205,
+      192,
+      63
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A41",
+    "name": "Pastel Yellow",
+    "zhName": "粉黃",
+    "hex": "#E1D367",
+    "rgb": [
+      225,
+      211,
+      103
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A42",
+    "name": "Sandstorm",
+    "zhName": "沙塵黃",
+    "hex": "#E1C835",
+    "rgb": [
+      225,
+      200,
+      53
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A43",
+    "name": "Paprika",
+    "zhName": "辣椒紅",
+    "hex": "#B11836",
+    "rgb": [
+      177,
+      24,
+      54
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A44",
+    "name": "Burning Sand",
+    "zhName": "燃沙粉",
+    "hex": "#EE927C",
+    "rgb": [
+      238,
+      146,
+      124
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A46",
+    "name": "Canary",
+    "zhName": "金絲雀黃",
+    "hex": "#E2E65D",
+    "rgb": [
+      226,
+      230,
+      93
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A47",
+    "name": "Vanilla",
+    "zhName": "香草",
+    "hex": "#E9C1A6",
+    "rgb": [
+      233,
+      193,
+      166
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A48",
+    "name": "Corn",
+    "zhName": "玉米黃",
+    "hex": "#ECC03D",
+    "rgb": [
+      236,
+      192,
+      61
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A49",
+    "name": "Raspberry Pink",
+    "zhName": "覆盆子粉",
+    "hex": "#EF67B2",
+    "rgb": [
+      239,
+      103,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A50",
+    "name": "Maverick",
+    "zhName": "淡丁香",
+    "hex": "#C0B7D7",
+    "rgb": [
+      192,
+      183,
+      215
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A51",
+    "name": "Spring Sun",
+    "zhName": "春日陽",
+    "hex": "#DFDABD",
+    "rgb": [
+      223,
+      218,
+      189
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A52",
+    "name": "Butterfly Bush",
+    "zhName": "醉魚草紫",
+    "hex": "#4F3989",
+    "rgb": [
+      79,
+      57,
+      137
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A53",
+    "name": "Bright Green",
+    "zhName": "亮綠",
+    "hex": "#8EC324",
+    "rgb": [
+      142,
+      195,
+      36
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A54",
+    "name": "Medium Turquoise",
+    "zhName": "中土耳其藍",
+    "hex": "#00A5A1",
+    "rgb": [
+      0,
+      165,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A56",
+    "name": "Oslo Gray",
+    "zhName": "奧斯陸灰",
+    "hex": "#82878B",
+    "rgb": [
+      130,
+      135,
+      139
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A58",
+    "name": "Black Rock",
+    "zhName": "黑岩藍",
+    "hex": "#36384D",
+    "rgb": [
+      54,
+      56,
+      77
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A60",
+    "name": "Sea Mist",
+    "zhName": "海霧綠",
+    "hex": "#B2D7CE",
+    "rgb": [
+      178,
+      215,
+      206
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A69",
+    "name": "Mine Shaft",
+    "zhName": "礦井灰",
+    "hex": "#383E44",
+    "rgb": [
+      56,
+      62,
+      68
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A70",
+    "name": "Brunswick Green",
+    "zhName": "不倫瑞克綠",
+    "hex": "#153838",
+    "rgb": [
+      21,
+      56,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A71",
+    "name": "Goldenrod",
+    "zhName": "金麒麟",
+    "hex": "#E8AE00",
+    "rgb": [
+      232,
+      174,
+      0
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A72",
+    "name": "Pastel Orange",
+    "zhName": "粉橘",
+    "hex": "#D9B35E",
+    "rgb": [
+      217,
+      179,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A73",
+    "name": "Sienna",
+    "zhName": "赭石",
+    "hex": "#BB6833",
+    "rgb": [
+      187,
+      104,
+      51
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A74",
+    "name": "Deer",
+    "zhName": "鹿棕",
+    "hex": "#BF9168",
+    "rgb": [
+      191,
+      145,
+      104
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A75",
+    "name": "Clay",
+    "zhName": "陶土",
+    "hex": "#AA744E",
+    "rgb": [
+      170,
+      116,
+      78
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A76",
+    "name": "Coral Red",
+    "zhName": "珊瑚紅",
+    "hex": "#EC625E",
+    "rgb": [
+      236,
+      98,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A77",
+    "name": "Deep Chestnut",
+    "zhName": "深栗",
+    "hex": "#BE5D65",
+    "rgb": [
+      190,
+      93,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A78",
+    "name": "Red Wine",
+    "zhName": "紅酒色",
+    "hex": "#99323A",
+    "rgb": [
+      153,
+      50,
+      58
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A79",
+    "name": "Light Sea Blue",
+    "zhName": "淺海藍",
+    "hex": "#68C4D2",
+    "rgb": [
+      104,
+      196,
+      210
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A80",
+    "name": "Sea Blue",
+    "zhName": "海藍",
+    "hex": "#0093A9",
+    "rgb": [
+      0,
+      147,
+      169
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A81",
+    "name": "Steel Blue",
+    "zhName": "鋼藍",
+    "hex": "#5AB0BF",
+    "rgb": [
+      90,
+      176,
+      191
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A82",
+    "name": "Azure",
+    "zhName": "蔚藍",
+    "hex": "#009EC2",
+    "rgb": [
+      0,
+      158,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A83",
+    "name": "Dark Steel Blue",
+    "zhName": "深鋼藍",
+    "hex": "#0084B2",
+    "rgb": [
+      0,
+      132,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A84",
+    "name": "Dark Algae",
+    "zhName": "深藻綠",
+    "hex": "#ADAD29",
+    "rgb": [
+      173,
+      173,
+      41
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A85",
+    "name": "Dark Olive",
+    "zhName": "深橄欖",
+    "hex": "#8F8E3C",
+    "rgb": [
+      143,
+      142,
+      60
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A86",
+    "name": "Jade Green",
+    "zhName": "翡翠綠",
+    "hex": "#007D2B",
+    "rgb": [
+      0,
+      125,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A87",
+    "name": "Ghost White",
+    "zhName": "幽靈白",
+    "hex": "#D4D8D3",
+    "rgb": [
+      212,
+      216,
+      211
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A88",
+    "name": "Ash Gray",
+    "zhName": "灰白",
+    "hex": "#C2C4C2",
+    "rgb": [
+      194,
+      196,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A89",
+    "name": "Light Gray",
+    "zhName": "淺灰",
+    "hex": "#A7ACAD",
+    "rgb": [
+      167,
+      172,
+      173
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A90",
+    "name": "Charcoal Gray",
+    "zhName": "炭灰",
+    "hex": "#565A5E",
+    "rgb": [
+      86,
+      90,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A91",
+    "name": "Dandelion",
+    "zhName": "蒲公英黃",
+    "hex": "#CEA433",
+    "rgb": [
+      206,
+      164,
+      51
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A92",
+    "name": "Pale Skin",
+    "zhName": "淺膚色",
+    "hex": "#DCB794",
+    "rgb": [
+      220,
+      183,
+      148
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A93",
+    "name": "Warm Blush",
+    "zhName": "暖腮紅",
+    "hex": "#DD9285",
+    "rgb": [
+      221,
+      146,
+      133
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A94",
+    "name": "Salmon",
+    "zhName": "鮭魚色",
+    "hex": "#E07B69",
+    "rgb": [
+      224,
+      123,
+      105
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A95",
+    "name": "Apricot",
+    "zhName": "杏色",
+    "hex": "#EF7F61",
+    "rgb": [
+      239,
+      127,
+      97
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A96",
+    "name": "Papaya",
+    "zhName": "木瓜橙",
+    "hex": "#DC772B",
+    "rgb": [
+      220,
+      119,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A97",
+    "name": "Himalaya Blue",
+    "zhName": "喜馬拉雅藍",
+    "hex": "#6AAEDB",
+    "rgb": [
+      106,
+      174,
+      219
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A98",
+    "name": "Waterfall",
+    "zhName": "瀑布藍",
+    "hex": "#61BBD3",
+    "rgb": [
+      97,
+      187,
+      211
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A99",
+    "name": "Lagoon",
+    "zhName": "潟湖藍",
+    "hex": "#279BBE",
+    "rgb": [
+      39,
+      155,
+      190
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A100",
+    "name": "Electric Blue",
+    "zhName": "電光藍",
+    "hex": "#00A7E3",
+    "rgb": [
+      0,
+      167,
+      227
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A101",
+    "name": "Pool Blue",
+    "zhName": "泳池藍",
+    "hex": "#0077CA",
+    "rgb": [
+      0,
+      119,
+      202
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A102",
+    "name": "Caribbean Blue",
+    "zhName": "加勒比藍",
+    "hex": "#005AA9",
+    "rgb": [
+      0,
+      90,
+      169
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A103",
+    "name": "Deep Water",
+    "zhName": "深水藍",
+    "hex": "#007F9E",
+    "rgb": [
+      0,
+      127,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A104",
+    "name": "Petrol Blue",
+    "zhName": "石油藍",
+    "hex": "#007D91",
+    "rgb": [
+      0,
+      125,
+      145
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A105",
+    "name": "Wedgewood Blue",
+    "zhName": "韋奇伍德藍",
+    "hex": "#00649A",
+    "rgb": [
+      0,
+      100,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A106",
+    "name": "Pond Blue",
+    "zhName": "池塘藍",
+    "hex": "#006C9F",
+    "rgb": [
+      0,
+      108,
+      159
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A107",
+    "name": "Seashell Beige",
+    "zhName": "貝殼米",
+    "hex": "#CFC179",
+    "rgb": [
+      207,
+      193,
+      121
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A108",
+    "name": "Beige",
+    "zhName": "米色",
+    "hex": "#C4AE64",
+    "rgb": [
+      196,
+      174,
+      100
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A109",
+    "name": "Beach Beige",
+    "zhName": "沙灘米",
+    "hex": "#AB9745",
+    "rgb": [
+      171,
+      151,
+      69
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A110",
+    "name": "Caffe Latte",
+    "zhName": "咖啡拿鐵",
+    "hex": "#978138",
+    "rgb": [
+      151,
+      129,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A111",
+    "name": "Oaktree Brown",
+    "zhName": "橡樹棕",
+    "hex": "#907C41",
+    "rgb": [
+      144,
+      124,
+      65
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A112",
+    "name": "Khaki",
+    "zhName": "卡其",
+    "hex": "#B6AE84",
+    "rgb": [
+      182,
+      174,
+      132
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A113",
+    "name": "Light Greengray",
+    "zhName": "淺綠灰",
+    "hex": "#A59F65",
+    "rgb": [
+      165,
+      159,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A114",
+    "name": "Mossy Green",
+    "zhName": "苔綠",
+    "hex": "#938D54",
+    "rgb": [
+      147,
+      141,
+      84
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A115",
+    "name": "Earth Green",
+    "zhName": "大地綠",
+    "hex": "#8D8B51",
+    "rgb": [
+      141,
+      139,
+      81
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A116",
+    "name": "Sage Green",
+    "zhName": "鼠尾草綠",
+    "hex": "#7F7E49",
+    "rgb": [
+      127,
+      126,
+      73
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A117",
+    "name": "Pinetree Green",
+    "zhName": "松樹綠",
+    "hex": "#5B6E35",
+    "rgb": [
+      91,
+      110,
+      53
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A118",
+    "name": "Frosty Blue",
+    "zhName": "霜藍",
+    "hex": "#8AD5C9",
+    "rgb": [
+      138,
+      213,
+      201
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A119",
+    "name": "Polar Mint",
+    "zhName": "極地薄荷",
+    "hex": "#7CD2A5",
+    "rgb": [
+      124,
+      210,
+      165
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A120",
+    "name": "Celadon Green",
+    "zhName": "青瓷綠",
+    "hex": "#72AC9A",
+    "rgb": [
+      114,
+      172,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A121",
+    "name": "Eucalyptus",
+    "zhName": "尤加利綠",
+    "hex": "#00B26F",
+    "rgb": [
+      0,
+      178,
+      111
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A122",
+    "name": "Clover Field",
+    "zhName": "三葉草綠",
+    "hex": "#3EB724",
+    "rgb": [
+      62,
+      183,
+      36
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A123",
+    "name": "Pooltable Felt",
+    "zhName": "撞球檯綠",
+    "hex": "#0D7535",
+    "rgb": [
+      13,
+      117,
+      53
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A124",
+    "name": "Snake Green",
+    "zhName": "蛇綠",
+    "hex": "#007D6E",
+    "rgb": [
+      0,
+      125,
+      110
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A125",
+    "name": "Dark Eucalyptus",
+    "zhName": "深尤加利",
+    "hex": "#006E69",
+    "rgb": [
+      0,
+      110,
+      105
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A126",
+    "name": "Marshmallow Rose",
+    "zhName": "棉花糖玫瑰",
+    "hex": "#DFC3E1",
+    "rgb": [
+      223,
+      195,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A127",
+    "name": "Light Grape",
+    "zhName": "淺葡萄紫",
+    "hex": "#D38ED4",
+    "rgb": [
+      211,
+      142,
+      212
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A128",
+    "name": "Rosebud Pink",
+    "zhName": "玫瑰蕾粉",
+    "hex": "#D5A6BA",
+    "rgb": [
+      213,
+      166,
+      186
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A129",
+    "name": "Fuchsia",
+    "zhName": "品紅",
+    "hex": "#D6668E",
+    "rgb": [
+      214,
+      102,
+      142
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A130",
+    "name": "Candy Violet",
+    "zhName": "糖果紫",
+    "hex": "#B8AAD9",
+    "rgb": [
+      184,
+      170,
+      217
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A131",
+    "name": "Flamingo",
+    "zhName": "火烈鳥粉",
+    "hex": "#DF486D",
+    "rgb": [
+      223,
+      72,
+      109
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A132",
+    "name": "Pink Plum",
+    "zhName": "粉梅",
+    "hex": "#BC3CA6",
+    "rgb": [
+      188,
+      60,
+      166
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A133",
+    "name": "Amethyst",
+    "zhName": "紫水晶",
+    "hex": "#803897",
+    "rgb": [
+      128,
+      56,
+      151
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A134",
+    "name": "Moonlight Blue",
+    "zhName": "月光藍",
+    "hex": "#A7BAE1",
+    "rgb": [
+      167,
+      186,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A135",
+    "name": "Summer Rain",
+    "zhName": "夏雨藍",
+    "hex": "#AFB8DF",
+    "rgb": [
+      175,
+      184,
+      223
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A136",
+    "name": "Azur Blue",
+    "zhName": "碧藍",
+    "hex": "#6B9AD4",
+    "rgb": [
+      107,
+      154,
+      212
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A137",
+    "name": "Cornflower Blue",
+    "zhName": "矢車菊藍",
+    "hex": "#5A89CE",
+    "rgb": [
+      90,
+      137,
+      206
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A138",
+    "name": "Forget Me Not",
+    "zhName": "勿忘我藍",
+    "hex": "#658AD0",
+    "rgb": [
+      101,
+      138,
+      208
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A139",
+    "name": "Indigo",
+    "zhName": "靛藍",
+    "hex": "#566CBD",
+    "rgb": [
+      86,
+      108,
+      189
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A140",
+    "name": "Horizon Blue",
+    "zhName": "地平線藍",
+    "hex": "#4D74C6",
+    "rgb": [
+      77,
+      116,
+      198
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A141",
+    "name": "Cobalt",
+    "zhName": "鈷藍",
+    "hex": "#416DBE",
+    "rgb": [
+      65,
+      109,
+      190
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A142",
+    "name": "Royal Blue",
+    "zhName": "寶藍",
+    "hex": "#30429E",
+    "rgb": [
+      48,
+      66,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A143",
+    "name": "Marine",
+    "zhName": "海軍藍",
+    "hex": "#024288",
+    "rgb": [
+      2,
+      66,
+      136
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A144",
+    "name": "Pale Yellow Moss",
+    "zhName": "淺黃苔",
+    "hex": "#D6CA6A",
+    "rgb": [
+      214,
+      202,
+      106
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A145",
+    "name": "Bloodrose Red",
+    "zhName": "血玫瑰紅",
+    "hex": "#9D1A38",
+    "rgb": [
+      157,
+      26,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A146",
+    "name": "Spearmint",
+    "zhName": "留蘭香綠",
+    "hex": "#80B7A1",
+    "rgb": [
+      128,
+      183,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A147",
+    "name": "Mocha",
+    "zhName": "摩卡",
+    "hex": "#7A594F",
+    "rgb": [
+      122,
+      89,
+      79
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A148",
+    "name": "Creme",
+    "zhName": "奶油色",
+    "hex": "#EFDBA1",
+    "rgb": [
+      239,
+      219,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A149",
+    "name": "Iris Violet",
+    "zhName": "鳶尾紫",
+    "hex": "#8884D0",
+    "rgb": [
+      136,
+      132,
+      208
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A150",
+    "name": "Forrest Green",
+    "zhName": "森林綠",
+    "hex": "#345621",
+    "rgb": [
+      52,
+      86,
+      33
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A151",
+    "name": "Lilac",
+    "zhName": "丁香紫",
+    "hex": "#AEADDC",
+    "rgb": [
+      174,
+      173,
+      220
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A152",
+    "name": "Pale Lilac",
+    "zhName": "淺丁香",
+    "hex": "#BCC3E1",
+    "rgb": [
+      188,
+      195,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A153",
+    "name": "Sahara Sand",
+    "zhName": "撒哈拉沙",
+    "hex": "#E3C09A",
+    "rgb": [
+      227,
+      192,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A154",
+    "name": "Sunkissed Teint",
+    "zhName": "日光膚色",
+    "hex": "#C58B60",
+    "rgb": [
+      197,
+      139,
+      96
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A155",
+    "name": "Steel Gray",
+    "zhName": "鋼灰",
+    "hex": "#5A5F65",
+    "rgb": [
+      90,
+      95,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A156",
+    "name": "Iron Gray",
+    "zhName": "鐵灰",
+    "hex": "#4C5156",
+    "rgb": [
+      76,
+      81,
+      86
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A157",
+    "name": "Pepper",
+    "zhName": "胡椒黑",
+    "hex": "#3A3E42",
+    "rgb": [
+      58,
+      62,
+      66
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C01",
+    "name": "White",
+    "zhName": "白色",
+    "hex": "#EAEEF3",
+    "rgb": [
+      234,
+      238,
+      243
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C02",
+    "name": "Black",
+    "zhName": "黑色",
+    "hex": "#292A2B",
+    "rgb": [
+      41,
+      42,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C03",
+    "name": "Tangerine",
+    "zhName": "柑橘色",
+    "hex": "#FFA630",
+    "rgb": [
+      255,
+      166,
+      48
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C04",
+    "name": "Yellow Orange",
+    "zhName": "橙黃",
+    "hex": "#E68739",
+    "rgb": [
+      230,
+      135,
+      57
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C05",
+    "name": "Tall Poppy",
+    "zhName": "罌粟紅",
+    "hex": "#CB3531",
+    "rgb": [
+      203,
+      53,
+      49
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C06",
+    "name": "Red",
+    "zhName": "紅色",
+    "hex": "#B61927",
+    "rgb": [
+      182,
+      25,
+      39
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C07",
+    "name": "Carnation Pink",
+    "zhName": "康乃馨粉",
+    "hex": "#E182B0",
+    "rgb": [
+      225,
+      130,
+      176
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C08",
+    "name": "Hot Pink",
+    "zhName": "亮粉紅",
+    "hex": "#DC519A",
+    "rgb": [
+      220,
+      81,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C09",
+    "name": "Magenta",
+    "zhName": "洋紅",
+    "hex": "#DA4383",
+    "rgb": [
+      218,
+      67,
+      131
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C10",
+    "name": "Picasso",
+    "zhName": "畢卡索黃",
+    "hex": "#EADE7F",
+    "rgb": [
+      234,
+      222,
+      127
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C11",
+    "name": "Yellow",
+    "zhName": "黃色",
+    "hex": "#EAC125",
+    "rgb": [
+      234,
+      193,
+      37
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C12",
+    "name": "Pistachio",
+    "zhName": "開心果綠",
+    "hex": "#97CF87",
+    "rgb": [
+      151,
+      207,
+      135
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C13",
+    "name": "Pastel Green",
+    "zhName": "粉綠",
+    "hex": "#8BB23A",
+    "rgb": [
+      139,
+      178,
+      58
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C14",
+    "name": "Green",
+    "zhName": "綠色",
+    "hex": "#009053",
+    "rgb": [
+      0,
+      144,
+      83
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C15",
+    "name": "Green Tea",
+    "zhName": "綠茶",
+    "hex": "#00765F",
+    "rgb": [
+      0,
+      118,
+      95
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C16",
+    "name": "Bright Carrot",
+    "zhName": "胡蘿蔔橙",
+    "hex": "#F96F40",
+    "rgb": [
+      249,
+      111,
+      64
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C17",
+    "name": "Orange",
+    "zhName": "橙色",
+    "hex": "#EB6027",
+    "rgb": [
+      235,
+      96,
+      39
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C18",
+    "name": "Sky Blue",
+    "zhName": "天藍",
+    "hex": "#A7CDDE",
+    "rgb": [
+      167,
+      205,
+      222
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C19",
+    "name": "Baby Blue",
+    "zhName": "嬰兒藍",
+    "hex": "#2EABD8",
+    "rgb": [
+      46,
+      171,
+      216
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C20",
+    "name": "Light Blue",
+    "zhName": "淺藍",
+    "hex": "#0084CE",
+    "rgb": [
+      0,
+      132,
+      206
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C21",
+    "name": "Dark Blue",
+    "zhName": "深藍",
+    "hex": "#004FA4",
+    "rgb": [
+      0,
+      79,
+      164
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C22",
+    "name": "Bubble Gum",
+    "zhName": "泡泡糖粉",
+    "hex": "#F2BFB8",
+    "rgb": [
+      242,
+      191,
+      184
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C23",
+    "name": "Sand",
+    "zhName": "沙色",
+    "hex": "#DCA384",
+    "rgb": [
+      220,
+      163,
+      132
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C24",
+    "name": "Beeswax",
+    "zhName": "蜂蠟色",
+    "hex": "#EED39E",
+    "rgb": [
+      238,
+      211,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C25",
+    "name": "Lavender",
+    "zhName": "薰衣草",
+    "hex": "#8A7EC2",
+    "rgb": [
+      138,
+      126,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C26",
+    "name": "Pastel Lavender",
+    "zhName": "粉紫",
+    "hex": "#9165B2",
+    "rgb": [
+      145,
+      101,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C27",
+    "name": "Purple",
+    "zhName": "紫色",
+    "hex": "#48337E",
+    "rgb": [
+      72,
+      51,
+      126
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C28",
+    "name": "Marigold",
+    "zhName": "金盞花",
+    "hex": "#B27938",
+    "rgb": [
+      178,
+      121,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C29",
+    "name": "Buccaneer",
+    "zhName": "海盜棕紅",
+    "hex": "#B35540",
+    "rgb": [
+      179,
+      85,
+      64
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C30",
+    "name": "Redwood",
+    "zhName": "紅木色",
+    "hex": "#9A4541",
+    "rgb": [
+      154,
+      69,
+      65
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C31",
+    "name": "Light Brown",
+    "zhName": "淺棕",
+    "hex": "#895D49",
+    "rgb": [
+      137,
+      93,
+      73
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C32",
+    "name": "Brown",
+    "zhName": "棕色",
+    "hex": "#65463D",
+    "rgb": [
+      101,
+      70,
+      61
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C33",
+    "name": "Gray",
+    "zhName": "灰色",
+    "hex": "#959698",
+    "rgb": [
+      149,
+      150,
+      152
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C34",
+    "name": "Dark Gray",
+    "zhName": "深灰",
+    "hex": "#70757B",
+    "rgb": [
+      112,
+      117,
+      123
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C35",
+    "name": "Silver",
+    "zhName": "銀色",
+    "hex": "#676B73",
+    "rgb": [
+      103,
+      107,
+      115
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C36",
+    "name": "Old Pink",
+    "zhName": "古典粉",
+    "hex": "#CE6D83",
+    "rgb": [
+      206,
+      109,
+      131
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C37",
+    "name": "True Blue",
+    "zhName": "正藍",
+    "hex": "#0078BF",
+    "rgb": [
+      0,
+      120,
+      191
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C38",
+    "name": "Turquoise",
+    "zhName": "土耳其藍",
+    "hex": "#55A4D9",
+    "rgb": [
+      85,
+      164,
+      217
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C39",
+    "name": "Shadow Green",
+    "zhName": "影綠",
+    "hex": "#9EC9CD",
+    "rgb": [
+      158,
+      201,
+      205
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C40",
+    "name": "Key Lemon Pie",
+    "zhName": "檸檬批黃",
+    "hex": "#CDC03F",
+    "rgb": [
+      205,
+      192,
+      63
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C41",
+    "name": "Pastel Yellow",
+    "zhName": "粉黃",
+    "hex": "#E1D367",
+    "rgb": [
+      225,
+      211,
+      103
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C42",
+    "name": "Sandstorm",
+    "zhName": "沙塵黃",
+    "hex": "#E1C835",
+    "rgb": [
+      225,
+      200,
+      53
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C43",
+    "name": "Paprika",
+    "zhName": "辣椒紅",
+    "hex": "#B11836",
+    "rgb": [
+      177,
+      24,
+      54
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C44",
+    "name": "Burning Sand",
+    "zhName": "燃沙粉",
+    "hex": "#EE927C",
+    "rgb": [
+      238,
+      146,
+      124
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C46",
+    "name": "Canary",
+    "zhName": "金絲雀黃",
+    "hex": "#E2E65D",
+    "rgb": [
+      226,
+      230,
+      93
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C47",
+    "name": "Vanilla",
+    "zhName": "香草",
+    "hex": "#E9C1A6",
+    "rgb": [
+      233,
+      193,
+      166
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C48",
+    "name": "Corn",
+    "zhName": "玉米黃",
+    "hex": "#ECC03D",
+    "rgb": [
+      236,
+      192,
+      61
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C49",
+    "name": "Raspberry Pink",
+    "zhName": "覆盆子粉",
+    "hex": "#EF67B2",
+    "rgb": [
+      239,
+      103,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C50",
+    "name": "Maverick",
+    "zhName": "淡丁香",
+    "hex": "#C0B7D7",
+    "rgb": [
+      192,
+      183,
+      215
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C51",
+    "name": "Spring Sun",
+    "zhName": "春日陽",
+    "hex": "#DFDABD",
+    "rgb": [
+      223,
+      218,
+      189
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C52",
+    "name": "Butterfly Bush",
+    "zhName": "醉魚草紫",
+    "hex": "#4F3989",
+    "rgb": [
+      79,
+      57,
+      137
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C53",
+    "name": "Bright Green",
+    "zhName": "亮綠",
+    "hex": "#8EC324",
+    "rgb": [
+      142,
+      195,
+      36
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C54",
+    "name": "Medium Turquoise",
+    "zhName": "中土耳其藍",
+    "hex": "#00A5A1",
+    "rgb": [
+      0,
+      165,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C56",
+    "name": "Oslo Gray",
+    "zhName": "奧斯陸灰",
+    "hex": "#82878B",
+    "rgb": [
+      130,
+      135,
+      139
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C58",
+    "name": "Black Rock",
+    "zhName": "黑岩藍",
+    "hex": "#36384D",
+    "rgb": [
+      54,
+      56,
+      77
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C60",
+    "name": "Sea Mist",
+    "zhName": "海霧綠",
+    "hex": "#B2D7CE",
+    "rgb": [
+      178,
+      215,
+      206
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C69",
+    "name": "Mine Shaft",
+    "zhName": "礦井灰",
+    "hex": "#383E44",
+    "rgb": [
+      56,
+      62,
+      68
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C70",
+    "name": "Brunswick Green",
+    "zhName": "不倫瑞克綠",
+    "hex": "#153838",
+    "rgb": [
+      21,
+      56,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C71",
+    "name": "Goldenrod",
+    "zhName": "金麒麟",
+    "hex": "#E8AE00",
+    "rgb": [
+      232,
+      174,
+      0
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C72",
+    "name": "Pastel Orange",
+    "zhName": "粉橘",
+    "hex": "#D9B35E",
+    "rgb": [
+      217,
+      179,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C73",
+    "name": "Sienna",
+    "zhName": "赭石",
+    "hex": "#BB6833",
+    "rgb": [
+      187,
+      104,
+      51
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C74",
+    "name": "Deer",
+    "zhName": "鹿棕",
+    "hex": "#CDB277",
+    "rgb": [
+      205,
+      178,
+      119
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C75",
+    "name": "Clay",
+    "zhName": "陶土",
+    "hex": "#AA744E",
+    "rgb": [
+      170,
+      116,
+      78
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C76",
+    "name": "Coral Red",
+    "zhName": "珊瑚紅",
+    "hex": "#EC625E",
+    "rgb": [
+      236,
+      98,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C77",
+    "name": "Deep Chestnut",
+    "zhName": "深栗",
+    "hex": "#BE5D65",
+    "rgb": [
+      190,
+      93,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C78",
+    "name": "Red Wine",
+    "zhName": "紅酒色",
+    "hex": "#99323A",
+    "rgb": [
+      153,
+      50,
+      58
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C79",
+    "name": "Light Sea Blue",
+    "zhName": "淺海藍",
+    "hex": "#68C4D2",
+    "rgb": [
+      104,
+      196,
+      210
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C80",
+    "name": "Sea Blue",
+    "zhName": "海藍",
+    "hex": "#0093A9",
+    "rgb": [
+      0,
+      147,
+      169
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C81",
+    "name": "Steel Blue",
+    "zhName": "鋼藍",
+    "hex": "#5AB0BF",
+    "rgb": [
+      90,
+      176,
+      191
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C82",
+    "name": "Azure",
+    "zhName": "蔚藍",
+    "hex": "#009EC2",
+    "rgb": [
+      0,
+      158,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C83",
+    "name": "Dark Steel Blue",
+    "zhName": "深鋼藍",
+    "hex": "#0084B2",
+    "rgb": [
+      0,
+      132,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C84",
+    "name": "Dark Algae",
+    "zhName": "深藻綠",
+    "hex": "#ADAD29",
+    "rgb": [
+      173,
+      173,
+      41
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C85",
+    "name": "Dark Olive",
+    "zhName": "深橄欖",
+    "hex": "#8F8E3C",
+    "rgb": [
+      143,
+      142,
+      60
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C86",
+    "name": "Jade Green",
+    "zhName": "翡翠綠",
+    "hex": "#007D2B",
+    "rgb": [
+      0,
+      125,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C87",
+    "name": "Ghost White",
+    "zhName": "幽靈白",
+    "hex": "#D4D8D3",
+    "rgb": [
+      212,
+      216,
+      211
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C88",
+    "name": "Ash Gray",
+    "zhName": "灰白",
+    "hex": "#C2C4C2",
+    "rgb": [
+      194,
+      196,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C89",
+    "name": "Light Gray",
+    "zhName": "淺灰",
+    "hex": "#A7ACAD",
+    "rgb": [
+      167,
+      172,
+      173
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C90",
+    "name": "Charcoal Gray",
+    "zhName": "炭灰",
+    "hex": "#565A5E",
+    "rgb": [
+      86,
+      90,
+      94
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C91",
+    "name": "Dandelion",
+    "zhName": "蒲公英黃",
+    "hex": "#CEA433",
+    "rgb": [
+      206,
+      164,
+      51
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C92",
+    "name": "Pale Skin",
+    "zhName": "淺膚色",
+    "hex": "#DCB794",
+    "rgb": [
+      220,
+      183,
+      148
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C93",
+    "name": "Warm Blush",
+    "zhName": "暖腮紅",
+    "hex": "#DD9285",
+    "rgb": [
+      221,
+      146,
+      133
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C94",
+    "name": "Salmon",
+    "zhName": "鮭魚色",
+    "hex": "#E07B69",
+    "rgb": [
+      224,
+      123,
+      105
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C95",
+    "name": "Apricot",
+    "zhName": "杏色",
+    "hex": "#EF7F61",
+    "rgb": [
+      239,
+      127,
+      97
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C96",
+    "name": "Papaya",
+    "zhName": "木瓜橙",
+    "hex": "#DC772B",
+    "rgb": [
+      220,
+      119,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C97",
+    "name": "Himalaya Blue",
+    "zhName": "喜馬拉雅藍",
+    "hex": "#6AAEDB",
+    "rgb": [
+      106,
+      174,
+      219
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C98",
+    "name": "Waterfall",
+    "zhName": "瀑布藍",
+    "hex": "#61BBD3",
+    "rgb": [
+      97,
+      187,
+      211
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C99",
+    "name": "Lagoon",
+    "zhName": "潟湖藍",
+    "hex": "#279BBE",
+    "rgb": [
+      39,
+      155,
+      190
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C100",
+    "name": "Electric Blue",
+    "zhName": "電光藍",
+    "hex": "#00A7E3",
+    "rgb": [
+      0,
+      167,
+      227
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C101",
+    "name": "Pool Blue",
+    "zhName": "泳池藍",
+    "hex": "#0077CA",
+    "rgb": [
+      0,
+      119,
+      202
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C102",
+    "name": "Caribbean Blue",
+    "zhName": "加勒比藍",
+    "hex": "#005AA9",
+    "rgb": [
+      0,
+      90,
+      169
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C103",
+    "name": "Deep Water",
+    "zhName": "深水藍",
+    "hex": "#007F9E",
+    "rgb": [
+      0,
+      127,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C104",
+    "name": "Petrol Blue",
+    "zhName": "石油藍",
+    "hex": "#007D91",
+    "rgb": [
+      0,
+      125,
+      145
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C105",
+    "name": "Wedgewood Blue",
+    "zhName": "韋奇伍德藍",
+    "hex": "#00649A",
+    "rgb": [
+      0,
+      100,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C106",
+    "name": "Pond Blue",
+    "zhName": "池塘藍",
+    "hex": "#006C9F",
+    "rgb": [
+      0,
+      108,
+      159
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C107",
+    "name": "Seashell Beige",
+    "zhName": "貝殼米",
+    "hex": "#CFC179",
+    "rgb": [
+      207,
+      193,
+      121
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C108",
+    "name": "Beige",
+    "zhName": "米色",
+    "hex": "#C4AE64",
+    "rgb": [
+      196,
+      174,
+      100
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C109",
+    "name": "Beach Beige",
+    "zhName": "沙灘米",
+    "hex": "#AB9745",
+    "rgb": [
+      171,
+      151,
+      69
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C110",
+    "name": "Caffe Latte",
+    "zhName": "咖啡拿鐵",
+    "hex": "#978138",
+    "rgb": [
+      151,
+      129,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C111",
+    "name": "Oaktree Brown",
+    "zhName": "橡樹棕",
+    "hex": "#907C41",
+    "rgb": [
+      144,
+      124,
+      65
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C112",
+    "name": "Khaki",
+    "zhName": "卡其",
+    "hex": "#B6AE84",
+    "rgb": [
+      182,
+      174,
+      132
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C113",
+    "name": "Light Greengray",
+    "zhName": "淺綠灰",
+    "hex": "#A59F65",
+    "rgb": [
+      165,
+      159,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C114",
+    "name": "Mossy Green",
+    "zhName": "苔綠",
+    "hex": "#938D54",
+    "rgb": [
+      147,
+      141,
+      84
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C115",
+    "name": "Earth Green",
+    "zhName": "大地綠",
+    "hex": "#8D8B51",
+    "rgb": [
+      141,
+      139,
+      81
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C116",
+    "name": "Sage Green",
+    "zhName": "鼠尾草綠",
+    "hex": "#7F7E49",
+    "rgb": [
+      127,
+      126,
+      73
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C117",
+    "name": "Pinetree Green",
+    "zhName": "松樹綠",
+    "hex": "#5B6E35",
+    "rgb": [
+      91,
+      110,
+      53
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C118",
+    "name": "Frosty Blue",
+    "zhName": "霜藍",
+    "hex": "#8AD5C9",
+    "rgb": [
+      138,
+      213,
+      201
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C119",
+    "name": "Polar Mint",
+    "zhName": "極地薄荷",
+    "hex": "#7CD2A5",
+    "rgb": [
+      124,
+      210,
+      165
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C120",
+    "name": "Celadon Green",
+    "zhName": "青瓷綠",
+    "hex": "#72AC9A",
+    "rgb": [
+      114,
+      172,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C121",
+    "name": "Eucalyptus",
+    "zhName": "尤加利綠",
+    "hex": "#00B26F",
+    "rgb": [
+      0,
+      178,
+      111
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C122",
+    "name": "Clover Field",
+    "zhName": "三葉草綠",
+    "hex": "#3EB724",
+    "rgb": [
+      62,
+      183,
+      36
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C123",
+    "name": "Pooltable Felt",
+    "zhName": "撞球檯綠",
+    "hex": "#0D7535",
+    "rgb": [
+      13,
+      117,
+      53
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C124",
+    "name": "Snake Green",
+    "zhName": "蛇綠",
+    "hex": "#007D6E",
+    "rgb": [
+      0,
+      125,
+      110
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C125",
+    "name": "Dark Eucalyptus",
+    "zhName": "深尤加利",
+    "hex": "#006E69",
+    "rgb": [
+      0,
+      110,
+      105
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C126",
+    "name": "Marshmallow Rose",
+    "zhName": "棉花糖玫瑰",
+    "hex": "#DFC3E1",
+    "rgb": [
+      223,
+      195,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C127",
+    "name": "Light Grape",
+    "zhName": "淺葡萄紫",
+    "hex": "#D38ED4",
+    "rgb": [
+      211,
+      142,
+      212
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C128",
+    "name": "Rosebud Pink",
+    "zhName": "玫瑰蕾粉",
+    "hex": "#D5A6BA",
+    "rgb": [
+      213,
+      166,
+      186
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C129",
+    "name": "Fuchsia",
+    "zhName": "品紅",
+    "hex": "#D6668E",
+    "rgb": [
+      214,
+      102,
+      142
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C130",
+    "name": "Candy Violet",
+    "zhName": "糖果紫",
+    "hex": "#B8AAD9",
+    "rgb": [
+      184,
+      170,
+      217
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C131",
+    "name": "Flamingo",
+    "zhName": "火烈鳥粉",
+    "hex": "#DF486D",
+    "rgb": [
+      223,
+      72,
+      109
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C132",
+    "name": "Pink Plum",
+    "zhName": "粉梅",
+    "hex": "#BC3CA6",
+    "rgb": [
+      188,
+      60,
+      166
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C133",
+    "name": "Amethyst",
+    "zhName": "紫水晶",
+    "hex": "#803897",
+    "rgb": [
+      128,
+      56,
+      151
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C134",
+    "name": "Moonlight Blue",
+    "zhName": "月光藍",
+    "hex": "#A7BAE1",
+    "rgb": [
+      167,
+      186,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C135",
+    "name": "Summer Rain",
+    "zhName": "夏雨藍",
+    "hex": "#AFB8DF",
+    "rgb": [
+      175,
+      184,
+      223
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C136",
+    "name": "Azur Blue",
+    "zhName": "碧藍",
+    "hex": "#6B9AD4",
+    "rgb": [
+      107,
+      154,
+      212
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C137",
+    "name": "Cornflower Blue",
+    "zhName": "矢車菊藍",
+    "hex": "#5A89CE",
+    "rgb": [
+      90,
+      137,
+      206
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C138",
+    "name": "Forget Me Not",
+    "zhName": "勿忘我藍",
+    "hex": "#658AD0",
+    "rgb": [
+      101,
+      138,
+      208
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C139",
+    "name": "Indigo",
+    "zhName": "靛藍",
+    "hex": "#566CBD",
+    "rgb": [
+      86,
+      108,
+      189
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C140",
+    "name": "Horizon Blue",
+    "zhName": "地平線藍",
+    "hex": "#4D74C6",
+    "rgb": [
+      77,
+      116,
+      198
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C141",
+    "name": "Cobalt",
+    "zhName": "鈷藍",
+    "hex": "#416DBE",
+    "rgb": [
+      65,
+      109,
+      190
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C142",
+    "name": "Royal Blue",
+    "zhName": "寶藍",
+    "hex": "#30429E",
+    "rgb": [
+      48,
+      66,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C143",
+    "name": "Marine",
+    "zhName": "海軍藍",
+    "hex": "#024288",
+    "rgb": [
+      2,
+      66,
+      136
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C144",
+    "name": "Pale Yellow Moss",
+    "zhName": "淺黃苔",
+    "hex": "#D6CA6A",
+    "rgb": [
+      214,
+      202,
+      106
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C145",
+    "name": "Bloodrose Red",
+    "zhName": "血玫瑰紅",
+    "hex": "#9D1A38",
+    "rgb": [
+      157,
+      26,
+      56
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C146",
+    "name": "Spearmint",
+    "zhName": "留蘭香綠",
+    "hex": "#80B7A1",
+    "rgb": [
+      128,
+      183,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C147",
+    "name": "Mocha",
+    "zhName": "摩卡",
+    "hex": "#7A594F",
+    "rgb": [
+      122,
+      89,
+      79
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C148",
+    "name": "Creme",
+    "zhName": "奶油色",
+    "hex": "#EFDBA1",
+    "rgb": [
+      239,
+      219,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C149",
+    "name": "Iris Violet",
+    "zhName": "鳶尾紫",
+    "hex": "#8884D0",
+    "rgb": [
+      136,
+      132,
+      208
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C150",
+    "name": "Forrest Green",
+    "zhName": "森林綠",
+    "hex": "#345621",
+    "rgb": [
+      52,
+      86,
+      33
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C151",
+    "name": "Lilac",
+    "zhName": "丁香紫",
+    "hex": "#AEADDC",
+    "rgb": [
+      174,
+      173,
+      220
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C152",
+    "name": "Pale Lilac",
+    "zhName": "淺丁香",
+    "hex": "#BCC3E1",
+    "rgb": [
+      188,
+      195,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C153",
+    "name": "Sahara Sand",
+    "zhName": "撒哈拉沙",
+    "hex": "#E3C09A",
+    "rgb": [
+      227,
+      192,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C154",
+    "name": "Sunkissed Teint",
+    "zhName": "日光膚色",
+    "hex": "#C58B60",
+    "rgb": [
+      197,
+      139,
+      96
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C155",
+    "name": "Steel Gray",
+    "zhName": "鋼灰",
+    "hex": "#5A5F65",
+    "rgb": [
+      90,
+      95,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C156",
+    "name": "Iron Gray",
+    "zhName": "鐵灰",
+    "hex": "#4C5156",
+    "rgb": [
+      76,
+      81,
+      86
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C157",
+    "name": "Pepper",
+    "zhName": "胡椒黑",
+    "hex": "#3A3E42",
+    "rgb": [
+      58,
+      62,
+      66
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C45",
+    "name": "Spring Green",
+    "zhName": "Spring Green",
+    "hex": "#5DDB5D",
+    "rgb": [
+      93,
+      219,
+      93
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C55",
+    "name": "Conifer",
+    "zhName": "Conifer",
+    "hex": "#6CC24A",
+    "rgb": [
+      108,
+      194,
+      74
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C57",
+    "name": "Fresh Red",
+    "zhName": "Fresh Red",
+    "hex": "#BC0423",
+    "rgb": [
+      188,
+      4,
+      35
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C59",
+    "name": "Scarlett",
+    "zhName": "Scarlett",
+    "hex": "#531A23",
+    "rgb": [
+      83,
+      26,
+      35
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C61",
+    "name": "Feta",
+    "zhName": "Feta",
+    "hex": "#F1EB9C",
+    "rgb": [
+      241,
+      235,
+      156
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C62",
+    "name": "Carnation",
+    "zhName": "Carnation",
+    "hex": "#FC3F3F",
+    "rgb": [
+      252,
+      63,
+      63
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C63",
+    "name": "Pink Pearl",
+    "zhName": "Pink Pearl",
+    "hex": "#EABEDB",
+    "rgb": [
+      234,
+      190,
+      219
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C64",
+    "name": "Rose",
+    "zhName": "Rose",
+    "hex": "#A50050",
+    "rgb": [
+      165,
+      0,
+      80
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C65",
+    "name": "Mango",
+    "zhName": "Mango",
+    "hex": "#EF7E2E",
+    "rgb": [
+      239,
+      126,
+      46
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C66",
+    "name": "Wild Watermelon",
+    "zhName": "Wild Watermelon",
+    "hex": "#FC6C85",
+    "rgb": [
+      252,
+      108,
+      133
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C67",
+    "name": "Orchid",
+    "zhName": "Orchid",
+    "hex": "#B14EB5",
+    "rgb": [
+      177,
+      78,
+      181
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "C68",
+    "name": "Toothpaste Blue",
+    "zhName": "Toothpaste Blue",
+    "hex": "#69C2EE",
+    "rgb": [
+      105,
+      194,
+      238
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE01",
+    "name": "Columbia Blue",
+    "zhName": "Columbia Blue",
+    "hex": "#C3CED6",
+    "rgb": [
+      195,
+      206,
+      214
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE02",
+    "name": "Pale Cerulean",
+    "zhName": "Pale Cerulean",
+    "hex": "#9AB2DB",
+    "rgb": [
+      154,
+      178,
+      219
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE03",
+    "name": "Silver Lake Blue",
+    "zhName": "Silver Lake Blue",
+    "hex": "#5D88B2",
+    "rgb": [
+      93,
+      136,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE04",
+    "name": "Sky Blue (Crayola)",
+    "zhName": "Sky Blue (Crayola)",
+    "hex": "#02BDD1",
+    "rgb": [
+      2,
+      189,
+      209
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE05",
+    "name": "Maximum Blue Green",
+    "zhName": "Maximum Blue Green",
+    "hex": "#52CAAC",
+    "rgb": [
+      82,
+      202,
+      172
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE06",
+    "name": "Bright Navy Blue",
+    "zhName": "Bright Navy Blue",
+    "hex": "#2D6DB2",
+    "rgb": [
+      45,
+      109,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE07",
+    "name": "Black Shadows",
+    "zhName": "Black Shadows",
+    "hex": "#C2A3B7",
+    "rgb": [
+      194,
+      163,
+      183
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE08",
+    "name": "Mountbatten Pink",
+    "zhName": "Mountbatten Pink",
+    "hex": "#8A5877",
+    "rgb": [
+      138,
+      88,
+      119
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE09",
+    "name": "Halayà Úbe",
+    "zhName": "Halayà Úbe",
+    "hex": "#68355D",
+    "rgb": [
+      104,
+      53,
+      93
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE10",
+    "name": "Deep Mauve",
+    "zhName": "Deep Mauve",
+    "hex": "#B84FA8",
+    "rgb": [
+      184,
+      79,
+      168
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE11",
+    "name": "Heliotrope Magenta",
+    "zhName": "Heliotrope Magenta",
+    "hex": "#B02FA4",
+    "rgb": [
+      176,
+      47,
+      164
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE12",
+    "name": "Rajah",
+    "zhName": "Rajah",
+    "hex": "#E2A365",
+    "rgb": [
+      226,
+      163,
+      101
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE13",
+    "name": "Earth Yellow",
+    "zhName": "Earth Yellow",
+    "hex": "#BE8E59",
+    "rgb": [
+      190,
+      142,
+      89
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE14",
+    "name": "Chinese Bronze",
+    "zhName": "Chinese Bronze",
+    "hex": "#A87443",
+    "rgb": [
+      168,
+      116,
+      67
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE15",
+    "name": "Alloy Orange",
+    "zhName": "Alloy Orange",
+    "hex": "#A06E52",
+    "rgb": [
+      160,
+      110,
+      82
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE16",
+    "name": "Orchid Pink",
+    "zhName": "Orchid Pink",
+    "hex": "#F9C1D7",
+    "rgb": [
+      249,
+      193,
+      215
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "C",
+    "code": "CE17",
+    "name": "Caput Mortuum",
+    "zhName": "Caput Mortuum",
+    "hex": "#59292B",
+    "rgb": [
+      89,
+      41,
+      43
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A1",
+    "name": "Yellow A1",
+    "zhName": "黃色系 A1",
+    "hex": "#FFF6D4",
+    "rgb": [
+      255,
+      246,
+      212
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A2",
+    "name": "Yellow A2",
+    "zhName": "黃色系 A2",
+    "hex": "#F6F9E5",
+    "rgb": [
+      246,
+      249,
+      229
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A3",
+    "name": "Yellow A3",
+    "zhName": "黃色系 A3",
+    "hex": "#FFFBAA",
+    "rgb": [
+      255,
+      251,
+      170
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A4",
+    "name": "Yellow A4",
+    "zhName": "黃色系 A4",
+    "hex": "#FFDF58",
+    "rgb": [
+      255,
+      223,
+      88
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A5",
+    "name": "Yellow A5",
+    "zhName": "黃色系 A5",
+    "hex": "#FECF4D",
+    "rgb": [
+      254,
+      207,
+      77
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A6",
+    "name": "Yellow A6",
+    "zhName": "黃色系 A6",
+    "hex": "#FFA80C",
+    "rgb": [
+      255,
+      168,
+      12
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A7",
+    "name": "Yellow A7",
+    "zhName": "黃色系 A7",
+    "hex": "#FF8837",
+    "rgb": [
+      255,
+      136,
+      55
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A8",
+    "name": "Yellow A8",
+    "zhName": "黃色系 A8",
+    "hex": "#EAC431",
+    "rgb": [
+      234,
+      196,
+      49
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "A9",
+    "name": "Yellow A9",
+    "zhName": "黃色系 A9",
+    "hex": "#F1AA8F",
+    "rgb": [
+      241,
+      170,
+      143
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B1",
+    "name": "Green B1",
+    "zhName": "綠色系 B1",
+    "hex": "#D2E318",
+    "rgb": [
+      210,
+      227,
+      24
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B2",
+    "name": "Green B2",
+    "zhName": "綠色系 B2",
+    "hex": "#79CD41",
+    "rgb": [
+      121,
+      205,
+      65
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B3",
+    "name": "Green B3",
+    "zhName": "綠色系 B3",
+    "hex": "#82D7A1",
+    "rgb": [
+      130,
+      215,
+      161
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B4",
+    "name": "Green B4",
+    "zhName": "綠色系 B4",
+    "hex": "#65DF4F",
+    "rgb": [
+      101,
+      223,
+      79
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B5",
+    "name": "Green B5",
+    "zhName": "綠色系 B5",
+    "hex": "#5FC873",
+    "rgb": [
+      95,
+      200,
+      115
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B6",
+    "name": "Green B6",
+    "zhName": "綠色系 B6",
+    "hex": "#49D1AE",
+    "rgb": [
+      73,
+      209,
+      174
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B7",
+    "name": "Green B7",
+    "zhName": "綠色系 B7",
+    "hex": "#009696",
+    "rgb": [
+      0,
+      150,
+      150
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B8",
+    "name": "Green B8",
+    "zhName": "綠色系 B8",
+    "hex": "#08774F",
+    "rgb": [
+      8,
+      119,
+      79
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B9",
+    "name": "Green B9",
+    "zhName": "綠色系 B9",
+    "hex": "#183823",
+    "rgb": [
+      24,
+      56,
+      35
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B10",
+    "name": "Green B10",
+    "zhName": "綠色系 B10",
+    "hex": "#83CFC3",
+    "rgb": [
+      131,
+      207,
+      195
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B11",
+    "name": "Green B11",
+    "zhName": "綠色系 B11",
+    "hex": "#5A6A27",
+    "rgb": [
+      90,
+      106,
+      39
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B12",
+    "name": "Green B12",
+    "zhName": "綠色系 B12",
+    "hex": "#045F45",
+    "rgb": [
+      4,
+      95,
+      69
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B13",
+    "name": "Green B13",
+    "zhName": "綠色系 B13",
+    "hex": "#E2FFB3",
+    "rgb": [
+      226,
+      255,
+      179
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B14",
+    "name": "Green B14",
+    "zhName": "綠色系 B14",
+    "hex": "#9DD12E",
+    "rgb": [
+      157,
+      209,
+      46
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B15",
+    "name": "Green B15",
+    "zhName": "綠色系 B15",
+    "hex": "#254B3C",
+    "rgb": [
+      37,
+      75,
+      60
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B16",
+    "name": "Green B16",
+    "zhName": "綠色系 B16",
+    "hex": "#D0FCAD",
+    "rgb": [
+      208,
+      252,
+      173
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B17",
+    "name": "Green B17",
+    "zhName": "綠色系 B17",
+    "hex": "#8CA12A",
+    "rgb": [
+      140,
+      161,
+      42
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B18",
+    "name": "Green B18",
+    "zhName": "綠色系 B18",
+    "hex": "#D2D958",
+    "rgb": [
+      210,
+      217,
+      88
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B19",
+    "name": "Green B19",
+    "zhName": "綠色系 B19",
+    "hex": "#49BCA9",
+    "rgb": [
+      73,
+      188,
+      169
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B20",
+    "name": "Green B20",
+    "zhName": "綠色系 B20",
+    "hex": "#E8FDEC",
+    "rgb": [
+      232,
+      253,
+      236
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B21",
+    "name": "Green B21",
+    "zhName": "綠色系 B21",
+    "hex": "#188B81",
+    "rgb": [
+      24,
+      139,
+      129
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B22",
+    "name": "Green B22",
+    "zhName": "綠色系 B22",
+    "hex": "#0C5C5B",
+    "rgb": [
+      12,
+      92,
+      91
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B23",
+    "name": "Green B23",
+    "zhName": "綠色系 B23",
+    "hex": "#3D461B",
+    "rgb": [
+      61,
+      70,
+      27
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B24",
+    "name": "Green B24",
+    "zhName": "綠色系 B24",
+    "hex": "#EAFCB6",
+    "rgb": [
+      234,
+      252,
+      182
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B25",
+    "name": "Green B25",
+    "zhName": "綠色系 B25",
+    "hex": "#538771",
+    "rgb": [
+      83,
+      135,
+      113
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B26",
+    "name": "Green B26",
+    "zhName": "綠色系 B26",
+    "hex": "#8A7A40",
+    "rgb": [
+      138,
+      122,
+      64
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B27",
+    "name": "Green B27",
+    "zhName": "綠色系 B27",
+    "hex": "#D2DEB6",
+    "rgb": [
+      210,
+      222,
+      182
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B28",
+    "name": "Green B28",
+    "zhName": "綠色系 B28",
+    "hex": "#9FF4C2",
+    "rgb": [
+      159,
+      244,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B29",
+    "name": "Green B29",
+    "zhName": "綠色系 B29",
+    "hex": "#BBD747",
+    "rgb": [
+      187,
+      215,
+      71
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B30",
+    "name": "Green B30",
+    "zhName": "綠色系 B30",
+    "hex": "#F5FFE6",
+    "rgb": [
+      245,
+      255,
+      230
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B31",
+    "name": "Green B31",
+    "zhName": "綠色系 B31",
+    "hex": "#BFE1C2",
+    "rgb": [
+      191,
+      225,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "B32",
+    "name": "Green B32",
+    "zhName": "綠色系 B32",
+    "hex": "#9FBA5C",
+    "rgb": [
+      159,
+      186,
+      92
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C1",
+    "name": "Blue C1",
+    "zhName": "藍色系 C1",
+    "hex": "#D5E3DE",
+    "rgb": [
+      213,
+      227,
+      222
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C2",
+    "name": "Blue C2",
+    "zhName": "藍色系 C2",
+    "hex": "#BBF1F4",
+    "rgb": [
+      187,
+      241,
+      244
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C3",
+    "name": "Blue C3",
+    "zhName": "藍色系 C3",
+    "hex": "#73C0DF",
+    "rgb": [
+      115,
+      192,
+      223
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C4",
+    "name": "Blue C4",
+    "zhName": "藍色系 C4",
+    "hex": "#33B3E1",
+    "rgb": [
+      51,
+      179,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C5",
+    "name": "Blue C5",
+    "zhName": "藍色系 C5",
+    "hex": "#00A3CA",
+    "rgb": [
+      0,
+      163,
+      202
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C6",
+    "name": "Blue C6",
+    "zhName": "藍色系 C6",
+    "hex": "#58A0D9",
+    "rgb": [
+      88,
+      160,
+      217
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C7",
+    "name": "Blue C7",
+    "zhName": "藍色系 C7",
+    "hex": "#0588CC",
+    "rgb": [
+      5,
+      136,
+      204
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C8",
+    "name": "Blue C8",
+    "zhName": "藍色系 C8",
+    "hex": "#005F9E",
+    "rgb": [
+      0,
+      95,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C9",
+    "name": "Blue C9",
+    "zhName": "藍色系 C9",
+    "hex": "#086FB9",
+    "rgb": [
+      8,
+      111,
+      185
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C10",
+    "name": "Blue C10",
+    "zhName": "藍色系 C10",
+    "hex": "#52B4E0",
+    "rgb": [
+      82,
+      180,
+      224
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C11",
+    "name": "Blue C11",
+    "zhName": "藍色系 C11",
+    "hex": "#00A9B9",
+    "rgb": [
+      0,
+      169,
+      185
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C12",
+    "name": "Blue C12",
+    "zhName": "藍色系 C12",
+    "hex": "#1C375A",
+    "rgb": [
+      28,
+      55,
+      90
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C13",
+    "name": "Blue C13",
+    "zhName": "藍色系 C13",
+    "hex": "#CEE0F0",
+    "rgb": [
+      206,
+      224,
+      240
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C14",
+    "name": "Blue C14",
+    "zhName": "藍色系 C14",
+    "hex": "#EBF5F4",
+    "rgb": [
+      235,
+      245,
+      244
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C15",
+    "name": "Blue C15",
+    "zhName": "藍色系 C15",
+    "hex": "#00AAAD",
+    "rgb": [
+      0,
+      170,
+      173
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C16",
+    "name": "Blue C16",
+    "zhName": "藍色系 C16",
+    "hex": "#004C7D",
+    "rgb": [
+      0,
+      76,
+      125
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C17",
+    "name": "Blue C17",
+    "zhName": "藍色系 C17",
+    "hex": "#5BD4F6",
+    "rgb": [
+      91,
+      212,
+      246
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C18",
+    "name": "Blue C18",
+    "zhName": "藍色系 C18",
+    "hex": "#36515C",
+    "rgb": [
+      54,
+      81,
+      92
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C19",
+    "name": "Blue C19",
+    "zhName": "藍色系 C19",
+    "hex": "#0F909D",
+    "rgb": [
+      15,
+      144,
+      157
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C20",
+    "name": "Blue C20",
+    "zhName": "藍色系 C20",
+    "hex": "#0084B7",
+    "rgb": [
+      0,
+      132,
+      183
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C21",
+    "name": "Blue C21",
+    "zhName": "藍色系 C21",
+    "hex": "#DDECFA",
+    "rgb": [
+      221,
+      236,
+      250
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C22",
+    "name": "Blue C22",
+    "zhName": "藍色系 C22",
+    "hex": "#84BAC2",
+    "rgb": [
+      132,
+      186,
+      194
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C23",
+    "name": "Blue C23",
+    "zhName": "藍色系 C23",
+    "hex": "#CBDBDB",
+    "rgb": [
+      203,
+      219,
+      219
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C24",
+    "name": "Blue C24",
+    "zhName": "藍色系 C24",
+    "hex": "#88BDE2",
+    "rgb": [
+      136,
+      189,
+      226
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C25",
+    "name": "Blue C25",
+    "zhName": "藍色系 C25",
+    "hex": "#B3ECE0",
+    "rgb": [
+      179,
+      236,
+      224
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C26",
+    "name": "Blue C26",
+    "zhName": "藍色系 C26",
+    "hex": "#3E9EBF",
+    "rgb": [
+      62,
+      158,
+      191
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C27",
+    "name": "Blue C27",
+    "zhName": "藍色系 C27",
+    "hex": "#E9F0F3",
+    "rgb": [
+      233,
+      240,
+      243
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C28",
+    "name": "Blue C28",
+    "zhName": "藍色系 C28",
+    "hex": "#C2CDE3",
+    "rgb": [
+      194,
+      205,
+      227
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "C29",
+    "name": "Blue C29",
+    "zhName": "藍色系 C29",
+    "hex": "#586B8F",
+    "rgb": [
+      88,
+      107,
+      143
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D1",
+    "name": "Purple D1",
+    "zhName": "紫色系 D1",
+    "hex": "#7292E2",
+    "rgb": [
+      114,
+      146,
+      226
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D2",
+    "name": "Purple D2",
+    "zhName": "紫色系 D2",
+    "hex": "#6E8CCC",
+    "rgb": [
+      110,
+      140,
+      204
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D3",
+    "name": "Purple D3",
+    "zhName": "紫色系 D3",
+    "hex": "#13419A",
+    "rgb": [
+      19,
+      65,
+      154
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D4",
+    "name": "Purple D4",
+    "zhName": "紫色系 D4",
+    "hex": "#1E3175",
+    "rgb": [
+      30,
+      49,
+      117
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D5",
+    "name": "Purple D5",
+    "zhName": "紫色系 D5",
+    "hex": "#B850B2",
+    "rgb": [
+      184,
+      80,
+      178
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D6",
+    "name": "Purple D6",
+    "zhName": "紫色系 D6",
+    "hex": "#AD92E9",
+    "rgb": [
+      173,
+      146,
+      233
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D7",
+    "name": "Purple D7",
+    "zhName": "紫色系 D7",
+    "hex": "#5F2D91",
+    "rgb": [
+      95,
+      45,
+      145
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D8",
+    "name": "Purple D8",
+    "zhName": "紫色系 D8",
+    "hex": "#D7CDF1",
+    "rgb": [
+      215,
+      205,
+      241
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D9",
+    "name": "Purple D9",
+    "zhName": "紫色系 D9",
+    "hex": "#BDB2E6",
+    "rgb": [
+      189,
+      178,
+      230
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D10",
+    "name": "Purple D10",
+    "zhName": "紫色系 D10",
+    "hex": "#251B58",
+    "rgb": [
+      37,
+      27,
+      88
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D11",
+    "name": "Purple D11",
+    "zhName": "紫色系 D11",
+    "hex": "#A2BBE7",
+    "rgb": [
+      162,
+      187,
+      231
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D12",
+    "name": "Purple D12",
+    "zhName": "紫色系 D12",
+    "hex": "#CF8BBE",
+    "rgb": [
+      207,
+      139,
+      190
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D13",
+    "name": "Purple D13",
+    "zhName": "紫色系 D13",
+    "hex": "#B80096",
+    "rgb": [
+      184,
+      0,
+      150
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D14",
+    "name": "Purple D14",
+    "zhName": "紫色系 D14",
+    "hex": "#A137A7",
+    "rgb": [
+      161,
+      55,
+      167
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D15",
+    "name": "Purple D15",
+    "zhName": "紫色系 D15",
+    "hex": "#4A388A",
+    "rgb": [
+      74,
+      56,
+      138
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D16",
+    "name": "Purple D16",
+    "zhName": "紫色系 D16",
+    "hex": "#DCE8F6",
+    "rgb": [
+      220,
+      232,
+      246
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D17",
+    "name": "Purple D17",
+    "zhName": "紫色系 D17",
+    "hex": "#AECEF0",
+    "rgb": [
+      174,
+      206,
+      240
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D18",
+    "name": "Purple D18",
+    "zhName": "紫色系 D18",
+    "hex": "#B38EDB",
+    "rgb": [
+      179,
+      142,
+      219
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D19",
+    "name": "Purple D19",
+    "zhName": "紫色系 D19",
+    "hex": "#E8D2EA",
+    "rgb": [
+      232,
+      210,
+      234
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D20",
+    "name": "Purple D20",
+    "zhName": "紫色系 D20",
+    "hex": "#B460C3",
+    "rgb": [
+      180,
+      96,
+      195
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D21",
+    "name": "Purple D21",
+    "zhName": "紫色系 D21",
+    "hex": "#842A94",
+    "rgb": [
+      132,
+      42,
+      148
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D22",
+    "name": "Purple D22",
+    "zhName": "紫色系 D22",
+    "hex": "#4B5E9E",
+    "rgb": [
+      75,
+      94,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D23",
+    "name": "Purple D23",
+    "zhName": "紫色系 D23",
+    "hex": "#D6D2E2",
+    "rgb": [
+      214,
+      210,
+      226
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D24",
+    "name": "Purple D24",
+    "zhName": "紫色系 D24",
+    "hex": "#7776D1",
+    "rgb": [
+      119,
+      118,
+      209
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D25",
+    "name": "Purple D25",
+    "zhName": "紫色系 D25",
+    "hex": "#3837A8",
+    "rgb": [
+      56,
+      55,
+      168
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "D26",
+    "name": "Purple D26",
+    "zhName": "紫色系 D26",
+    "hex": "#DDC8DD",
+    "rgb": [
+      221,
+      200,
+      221
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E1",
+    "name": "Pink E1",
+    "zhName": "粉色系 E1",
+    "hex": "#FDD6C9",
+    "rgb": [
+      253,
+      214,
+      201
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E2",
+    "name": "Pink E2",
+    "zhName": "粉色系 E2",
+    "hex": "#FFD8F4",
+    "rgb": [
+      255,
+      216,
+      244
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E3",
+    "name": "Pink E3",
+    "zhName": "粉色系 E3",
+    "hex": "#FFA0C3",
+    "rgb": [
+      255,
+      160,
+      195
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E4",
+    "name": "Pink E4",
+    "zhName": "粉色系 E4",
+    "hex": "#F67AAB",
+    "rgb": [
+      246,
+      122,
+      171
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E5",
+    "name": "Pink E5",
+    "zhName": "粉色系 E5",
+    "hex": "#DA5B95",
+    "rgb": [
+      218,
+      91,
+      149
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E6",
+    "name": "Pink E6",
+    "zhName": "粉色系 E6",
+    "hex": "#FF4B78",
+    "rgb": [
+      255,
+      75,
+      120
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E7",
+    "name": "Pink E7",
+    "zhName": "粉色系 E7",
+    "hex": "#9E156B",
+    "rgb": [
+      158,
+      21,
+      107
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E8",
+    "name": "Pink E8",
+    "zhName": "粉色系 E8",
+    "hex": "#FFE1E6",
+    "rgb": [
+      255,
+      225,
+      230
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E9",
+    "name": "Pink E9",
+    "zhName": "粉色系 E9",
+    "hex": "#F378CA",
+    "rgb": [
+      243,
+      120,
+      202
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E10",
+    "name": "Pink E10",
+    "zhName": "粉色系 E10",
+    "hex": "#BE316D",
+    "rgb": [
+      190,
+      49,
+      109
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E11",
+    "name": "Pink E11",
+    "zhName": "粉色系 E11",
+    "hex": "#FFE8DA",
+    "rgb": [
+      255,
+      232,
+      218
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E12",
+    "name": "Pink E12",
+    "zhName": "粉色系 E12",
+    "hex": "#FFA5C6",
+    "rgb": [
+      255,
+      165,
+      198
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E13",
+    "name": "Pink E13",
+    "zhName": "粉色系 E13",
+    "hex": "#B53883",
+    "rgb": [
+      181,
+      56,
+      131
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E14",
+    "name": "Pink E14",
+    "zhName": "粉色系 E14",
+    "hex": "#FFDDC7",
+    "rgb": [
+      255,
+      221,
+      199
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E15",
+    "name": "Pink E15",
+    "zhName": "粉色系 E15",
+    "hex": "#E5C6D0",
+    "rgb": [
+      229,
+      198,
+      208
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E16",
+    "name": "Pink E16",
+    "zhName": "粉色系 E16",
+    "hex": "#F9F2EB",
+    "rgb": [
+      249,
+      242,
+      235
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E17",
+    "name": "Pink E17",
+    "zhName": "粉色系 E17",
+    "hex": "#E7DCE6",
+    "rgb": [
+      231,
+      220,
+      230
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E18",
+    "name": "Pink E18",
+    "zhName": "粉色系 E18",
+    "hex": "#FFD3E6",
+    "rgb": [
+      255,
+      211,
+      230
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E19",
+    "name": "Pink E19",
+    "zhName": "粉色系 E19",
+    "hex": "#FFD5EC",
+    "rgb": [
+      255,
+      213,
+      236
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E20",
+    "name": "Pink E20",
+    "zhName": "粉色系 E20",
+    "hex": "#F3DCE8",
+    "rgb": [
+      243,
+      220,
+      232
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E21",
+    "name": "Pink E21",
+    "zhName": "粉色系 E21",
+    "hex": "#BD9CA3",
+    "rgb": [
+      189,
+      156,
+      163
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E22",
+    "name": "Pink E22",
+    "zhName": "粉色系 E22",
+    "hex": "#C578A5",
+    "rgb": [
+      197,
+      120,
+      165
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E23",
+    "name": "Pink E23",
+    "zhName": "粉色系 E23",
+    "hex": "#A37A9B",
+    "rgb": [
+      163,
+      122,
+      155
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "E24",
+    "name": "Pink E24",
+    "zhName": "粉色系 E24",
+    "hex": "#F4E8FF",
+    "rgb": [
+      244,
+      232,
+      255
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F1",
+    "name": "Red F1",
+    "zhName": "紅色系 F1",
+    "hex": "#FF7F67",
+    "rgb": [
+      255,
+      127,
+      103
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F2",
+    "name": "Red F2",
+    "zhName": "紅色系 F2",
+    "hex": "#FF5D46",
+    "rgb": [
+      255,
+      93,
+      70
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F3",
+    "name": "Red F3",
+    "zhName": "紅色系 F3",
+    "hex": "#E3564A",
+    "rgb": [
+      227,
+      86,
+      74
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F4",
+    "name": "Red F4",
+    "zhName": "紅色系 F4",
+    "hex": "#C7270D",
+    "rgb": [
+      199,
+      39,
+      13
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F5",
+    "name": "Red F5",
+    "zhName": "紅色系 F5",
+    "hex": "#BE0A27",
+    "rgb": [
+      190,
+      10,
+      39
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F6",
+    "name": "Red F6",
+    "zhName": "紅色系 F6",
+    "hex": "#83411E",
+    "rgb": [
+      131,
+      65,
+      30
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F7",
+    "name": "Red F7",
+    "zhName": "紅色系 F7",
+    "hex": "#730037",
+    "rgb": [
+      115,
+      0,
+      55
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F8",
+    "name": "Red F8",
+    "zhName": "紅色系 F8",
+    "hex": "#AB0022",
+    "rgb": [
+      171,
+      0,
+      34
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F9",
+    "name": "Red F9",
+    "zhName": "紅色系 F9",
+    "hex": "#DE7995",
+    "rgb": [
+      222,
+      121,
+      149
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F10",
+    "name": "Red F10",
+    "zhName": "紅色系 F10",
+    "hex": "#AB613C",
+    "rgb": [
+      171,
+      97,
+      60
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F11",
+    "name": "Red F11",
+    "zhName": "紅色系 F11",
+    "hex": "#5C2929",
+    "rgb": [
+      92,
+      41,
+      41
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F12",
+    "name": "Red F12",
+    "zhName": "紅色系 F12",
+    "hex": "#F34461",
+    "rgb": [
+      243,
+      68,
+      97
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F13",
+    "name": "Red F13",
+    "zhName": "紅色系 F13",
+    "hex": "#C64239",
+    "rgb": [
+      198,
+      66,
+      57
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F14",
+    "name": "Red F14",
+    "zhName": "紅色系 F14",
+    "hex": "#FFA5BB",
+    "rgb": [
+      255,
+      165,
+      187
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F15",
+    "name": "Red F15",
+    "zhName": "紅色系 F15",
+    "hex": "#BC0018",
+    "rgb": [
+      188,
+      0,
+      24
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F16",
+    "name": "Red F16",
+    "zhName": "紅色系 F16",
+    "hex": "#FFD7CB",
+    "rgb": [
+      255,
+      215,
+      203
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F17",
+    "name": "Red F17",
+    "zhName": "紅色系 F17",
+    "hex": "#F19D8A",
+    "rgb": [
+      241,
+      157,
+      138
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F18",
+    "name": "Red F18",
+    "zhName": "紅色系 F18",
+    "hex": "#DC7B45",
+    "rgb": [
+      220,
+      123,
+      69
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F19",
+    "name": "Red F19",
+    "zhName": "紅色系 F19",
+    "hex": "#C74651",
+    "rgb": [
+      199,
+      70,
+      81
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F20",
+    "name": "Red F20",
+    "zhName": "紅色系 F20",
+    "hex": "#D8A89E",
+    "rgb": [
+      216,
+      168,
+      158
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F21",
+    "name": "Red F21",
+    "zhName": "紅色系 F21",
+    "hex": "#EB9DB9",
+    "rgb": [
+      235,
+      157,
+      185
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F22",
+    "name": "Red F22",
+    "zhName": "紅色系 F22",
+    "hex": "#FFD4D4",
+    "rgb": [
+      255,
+      212,
+      212
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F23",
+    "name": "Red F23",
+    "zhName": "紅色系 F23",
+    "hex": "#EA8474",
+    "rgb": [
+      234,
+      132,
+      116
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F24",
+    "name": "Red F24",
+    "zhName": "紅色系 F24",
+    "hex": "#F7C1C5",
+    "rgb": [
+      247,
+      193,
+      197
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "F25",
+    "name": "Red F25",
+    "zhName": "紅色系 F25",
+    "hex": "#FC5768",
+    "rgb": [
+      252,
+      87,
+      104
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G1",
+    "name": "Skin G1",
+    "zhName": "膚色 G1",
+    "hex": "#FFE7C8",
+    "rgb": [
+      255,
+      231,
+      200
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G2",
+    "name": "Skin G2",
+    "zhName": "膚色 G2",
+    "hex": "#FFD6C3",
+    "rgb": [
+      255,
+      214,
+      195
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G3",
+    "name": "Skin G3",
+    "zhName": "膚色 G3",
+    "hex": "#EEB694",
+    "rgb": [
+      238,
+      182,
+      148
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G4",
+    "name": "Skin G4",
+    "zhName": "膚色 G4",
+    "hex": "#D9A58C",
+    "rgb": [
+      217,
+      165,
+      140
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G5",
+    "name": "Skin G5",
+    "zhName": "膚色 G5",
+    "hex": "#F49630",
+    "rgb": [
+      244,
+      150,
+      48
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G6",
+    "name": "Skin G6",
+    "zhName": "膚色 G6",
+    "hex": "#F19937",
+    "rgb": [
+      241,
+      153,
+      55
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G7",
+    "name": "Skin G7",
+    "zhName": "膚色 G7",
+    "hex": "#AC745B",
+    "rgb": [
+      172,
+      116,
+      91
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G8",
+    "name": "Skin G8",
+    "zhName": "膚色 G8",
+    "hex": "#694A42",
+    "rgb": [
+      105,
+      74,
+      66
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G9",
+    "name": "Skin G9",
+    "zhName": "膚色 G9",
+    "hex": "#F7CC9D",
+    "rgb": [
+      247,
+      204,
+      157
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G10",
+    "name": "Skin G10",
+    "zhName": "膚色 G10",
+    "hex": "#C7832F",
+    "rgb": [
+      199,
+      131,
+      47
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G11",
+    "name": "Skin G11",
+    "zhName": "膚色 G11",
+    "hex": "#D3C391",
+    "rgb": [
+      211,
+      195,
+      145
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G12",
+    "name": "Skin G12",
+    "zhName": "膚色 G12",
+    "hex": "#E6B986",
+    "rgb": [
+      230,
+      185,
+      134
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G13",
+    "name": "Skin G13",
+    "zhName": "膚色 G13",
+    "hex": "#C67B4F",
+    "rgb": [
+      198,
+      123,
+      79
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G14",
+    "name": "Skin G14",
+    "zhName": "膚色 G14",
+    "hex": "#8D6242",
+    "rgb": [
+      141,
+      98,
+      66
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G15",
+    "name": "Skin G15",
+    "zhName": "膚色 G15",
+    "hex": "#F6F7E2",
+    "rgb": [
+      246,
+      247,
+      226
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G16",
+    "name": "Skin G16",
+    "zhName": "膚色 G16",
+    "hex": "#F2E7D7",
+    "rgb": [
+      242,
+      231,
+      215
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G17",
+    "name": "Skin G17",
+    "zhName": "膚色 G17",
+    "hex": "#786562",
+    "rgb": [
+      120,
+      101,
+      98
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G18",
+    "name": "Skin G18",
+    "zhName": "膚色 G18",
+    "hex": "#FEF5EB",
+    "rgb": [
+      254,
+      245,
+      235
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G19",
+    "name": "Skin G19",
+    "zhName": "膚色 G19",
+    "hex": "#F0AB47",
+    "rgb": [
+      240,
+      171,
+      71
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G20",
+    "name": "Skin G20",
+    "zhName": "膚色 G20",
+    "hex": "#AE6949",
+    "rgb": [
+      174,
+      105,
+      73
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "G21",
+    "name": "Skin G21",
+    "zhName": "膚色 G21",
+    "hex": "#BF8C6E",
+    "rgb": [
+      191,
+      140,
+      110
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H2",
+    "name": "Neutral H2",
+    "zhName": "中性 H2",
+    "hex": "#FFFFFF",
+    "rgb": [
+      255,
+      255,
+      255
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H3",
+    "name": "Neutral H3",
+    "zhName": "中性 H3",
+    "hex": "#9B9B9B",
+    "rgb": [
+      155,
+      155,
+      155
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H4",
+    "name": "Neutral H4",
+    "zhName": "中性 H4",
+    "hex": "#6D6D6D",
+    "rgb": [
+      109,
+      109,
+      109
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H5",
+    "name": "Neutral H5",
+    "zhName": "中性 H5",
+    "hex": "#4D4D4D",
+    "rgb": [
+      77,
+      77,
+      77
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H6",
+    "name": "Neutral H6",
+    "zhName": "中性 H6",
+    "hex": "#3A3A3A",
+    "rgb": [
+      58,
+      58,
+      58
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H7",
+    "name": "Neutral H7",
+    "zhName": "中性 H7",
+    "hex": "#000000",
+    "rgb": [
+      0,
+      0,
+      0
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H8",
+    "name": "Neutral H8",
+    "zhName": "中性 H8",
+    "hex": "#FFF0F1",
+    "rgb": [
+      255,
+      240,
+      241
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H9",
+    "name": "Neutral H9",
+    "zhName": "中性 H9",
+    "hex": "#E3E6DF",
+    "rgb": [
+      227,
+      230,
+      223
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H10",
+    "name": "Neutral H10",
+    "zhName": "中性 H10",
+    "hex": "#E2E0E7",
+    "rgb": [
+      226,
+      224,
+      231
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H11",
+    "name": "Neutral H11",
+    "zhName": "中性 H11",
+    "hex": "#BCB8B5",
+    "rgb": [
+      188,
+      184,
+      181
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H12",
+    "name": "Neutral H12",
+    "zhName": "中性 H12",
+    "hex": "#F7F3E1",
+    "rgb": [
+      247,
+      243,
+      225
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H13",
+    "name": "Neutral H13",
+    "zhName": "中性 H13",
+    "hex": "#EADDC8",
+    "rgb": [
+      234,
+      221,
+      200
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H14",
+    "name": "Neutral H14",
+    "zhName": "中性 H14",
+    "hex": "#B8C8C5",
+    "rgb": [
+      184,
+      200,
+      197
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H15",
+    "name": "Neutral H15",
+    "zhName": "中性 H15",
+    "hex": "#99ABAC",
+    "rgb": [
+      153,
+      171,
+      172
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H16",
+    "name": "Neutral H16",
+    "zhName": "中性 H16",
+    "hex": "#444236",
+    "rgb": [
+      68,
+      66,
+      54
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H17",
+    "name": "Neutral H17",
+    "zhName": "中性 H17",
+    "hex": "#FAFBF5",
+    "rgb": [
+      250,
+      251,
+      245
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H18",
+    "name": "Neutral H18",
+    "zhName": "中性 H18",
+    "hex": "#FEFEEE",
+    "rgb": [
+      254,
+      254,
+      238
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H19",
+    "name": "Neutral H19",
+    "zhName": "中性 H19",
+    "hex": "#FBF2E4",
+    "rgb": [
+      251,
+      242,
+      228
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H20",
+    "name": "Neutral H20",
+    "zhName": "中性 H20",
+    "hex": "#9EAEAD",
+    "rgb": [
+      158,
+      174,
+      173
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H21",
+    "name": "Neutral H21",
+    "zhName": "中性 H21",
+    "hex": "#FDFFF2",
+    "rgb": [
+      253,
+      255,
+      242
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H22",
+    "name": "Neutral H22",
+    "zhName": "中性 H22",
+    "hex": "#EDEDE7",
+    "rgb": [
+      237,
+      237,
+      231
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "H23",
+    "name": "Neutral H23",
+    "zhName": "中性 H23",
+    "hex": "#B4B8A7",
+    "rgb": [
+      180,
+      184,
+      167
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M1",
+    "name": "Muted M1",
+    "zhName": "霧彩色 M1",
+    "hex": "#AEBBA8",
+    "rgb": [
+      174,
+      187,
+      168
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M2",
+    "name": "Muted M2",
+    "zhName": "霧彩色 M2",
+    "hex": "#729376",
+    "rgb": [
+      114,
+      147,
+      118
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M3",
+    "name": "Muted M3",
+    "zhName": "霧彩色 M3",
+    "hex": "#6A8890",
+    "rgb": [
+      106,
+      136,
+      144
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M4",
+    "name": "Muted M4",
+    "zhName": "霧彩色 M4",
+    "hex": "#BEB39D",
+    "rgb": [
+      190,
+      179,
+      157
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M5",
+    "name": "Muted M5",
+    "zhName": "霧彩色 M5",
+    "hex": "#B8B78C",
+    "rgb": [
+      184,
+      183,
+      140
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M6",
+    "name": "Muted M6",
+    "zhName": "霧彩色 M6",
+    "hex": "#B2AC93",
+    "rgb": [
+      178,
+      172,
+      147
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M7",
+    "name": "Muted M7",
+    "zhName": "霧彩色 M7",
+    "hex": "#BC9F94",
+    "rgb": [
+      188,
+      159,
+      148
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M8",
+    "name": "Muted M8",
+    "zhName": "霧彩色 M8",
+    "hex": "#968381",
+    "rgb": [
+      150,
+      131,
+      129
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M9",
+    "name": "Muted M9",
+    "zhName": "霧彩色 M9",
+    "hex": "#B39D88",
+    "rgb": [
+      179,
+      157,
+      136
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M10",
+    "name": "Muted M10",
+    "zhName": "霧彩色 M10",
+    "hex": "#B796A3",
+    "rgb": [
+      183,
+      150,
+      163
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M11",
+    "name": "Muted M11",
+    "zhName": "霧彩色 M11",
+    "hex": "#B096B9",
+    "rgb": [
+      176,
+      150,
+      185
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M12",
+    "name": "Muted M12",
+    "zhName": "霧彩色 M12",
+    "hex": "#685951",
+    "rgb": [
+      104,
+      89,
+      81
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M13",
+    "name": "Muted M13",
+    "zhName": "霧彩色 M13",
+    "hex": "#C79582",
+    "rgb": [
+      199,
+      149,
+      130
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M14",
+    "name": "Muted M14",
+    "zhName": "霧彩色 M14",
+    "hex": "#CA694F",
+    "rgb": [
+      202,
+      105,
+      79
+    ]
+  },
+  {
+    "brand": "Artkal",
+    "series": "A",
+    "code": "M15",
+    "name": "Muted M15",
+    "zhName": "霧彩色 M15",
+    "hex": "#929FA9",
+    "rgb": [
+      146,
+      159,
+      169
+    ]
+  }
+]

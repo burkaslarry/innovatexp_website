@@ -182,6 +182,45 @@ const CX_CONSULTING: LocalePair = {
   },
 };
 
+const ARTKAL_BEAD: LocalePair = {
+  zh: {
+    title: "拼豆圖紙生成器｜Artkal色號對圖｜InnovateXP",
+    description:
+      "上傳圖片轉成 Artkal 拼豆圖紙：S01／A2／B13／H5 色號、CIEDE2000 對色、每色粒數統計，以及 1:1 PDF／PNG 圖紙下載。",
+  },
+  en: {
+    title: "Artkal Bead Pattern Generator | CIEDE2000 | InnovateXP",
+    description:
+      "Turn a photo into an Artkal fuse-bead blueprint: official color codes, CIEDE2000 matching, per-color bead counts, and 1:1 PDF/PNG export.",
+  },
+};
+
+const CREATIVE_STUDIO: LocalePair = {
+  zh: {
+    title: "Creative Studio 自由創作｜拼豆・咖啡地圖｜Larry Lo",
+    description:
+      "Larry Lo 個人瀏覽器小工房：Artkal 拼豆圖紙生成器、香港咖啡店地圖，陸續有得加。全部喺瀏覽器跑，唔使登入。",
+  },
+  en: {
+    title: "Creative Studio | Bead Patterns & Coffee Map | Larry Lo",
+    description:
+      "Larry Lo's side-project corner: Artkal bead pattern generator and a Hong Kong coffeeshop map. All run in the browser, no login.",
+  },
+};
+
+const COFFEE_MAP: LocalePair = {
+  zh: {
+    title: "香港咖啡店地圖｜特色咖啡店清單｜Creative Studio",
+    description:
+      "收錄香港特色咖啡店，按地區篩選並喺 Google 地圖顯示。每間店可一鍵打開 Google Maps 導航。",
+  },
+  en: {
+    title: "Hong Kong Coffeeshop Map | Specialty Coffee | Creative Studio",
+    description:
+      "A curated list of Hong Kong specialty coffee shops, filterable by neighborhood and shown on Google Maps. Open any shop straight into Google Maps.",
+  },
+};
+
 const SME_AUTOMATION: LocalePair = {
   zh: {
     title: "中小企AI工作流顧問｜香港流程自動化｜InnovateXP",
@@ -233,6 +272,15 @@ export function cxConsultingSeo(locale: AppLocale): PageSeo {
 }
 export function smeAutomationSeo(locale: AppLocale): PageSeo {
   return pick(locale, SME_AUTOMATION);
+}
+export function artkalBeadSeo(locale: AppLocale): PageSeo {
+  return pick(locale, ARTKAL_BEAD);
+}
+export function creativeStudioSeo(locale: AppLocale): PageSeo {
+  return pick(locale, CREATIVE_STUDIO);
+}
+export function coffeeMapSeo(locale: AppLocale): PageSeo {
+  return pick(locale, COFFEE_MAP);
 }
 
 export function seoToMetadataFields(seo: PageSeo) {
