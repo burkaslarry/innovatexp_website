@@ -10,8 +10,6 @@ import {
 import { isValidLocale, localeUsesChineseCopy, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { eventXpSeo } from "@/content/page-seo";
-import { FaqAccordion } from "@/components/FaqAccordion";
-import { BookingCtaButton } from "@/components/BookingCtaButton";
 import { EventXpSections } from "@/components/pages/EventXpSections";
 
 const siteUrlMeta =

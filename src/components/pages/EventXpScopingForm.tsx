@@ -4,9 +4,7 @@
 import { useEffect, useMemo, useState, FormEvent } from "react";
 import { CheckCircle2, Loader2, ChevronLeft, ChevronRight, Send, ExternalLink, AlertCircle } from "lucide-react";
 import {
-  ALL_CAPABILITIES,
   CONSENT_VERSION,
-  type Capability,
   type EventXpScopingPayload,
 } from "@/lib/eventxp-scoping/types";
 
