@@ -229,9 +229,12 @@ export function BusinessUpgradeHomepageFunnel({
         </div>
       </SectionShell>
 
-      {/* Quiet partner logo strip — no headline treatment */}
       {c.partnership.items.some((p) => p.logo) ? (
-        <div className="mb-10 flex flex-wrap items-center justify-center gap-6 opacity-70" aria-label={c.partnership.eyebrow}>
+        <div className="mb-10">
+          <p className="mb-4 text-center text-sm font-semibold text-[color:var(--heading-foreground)]">
+            {c.partnership.eyebrow}
+          </p>
+          <div className="flex flex-wrap items-center justify-center gap-6 opacity-70" aria-label={c.partnership.eyebrow}>
           {c.partnership.items
             .filter((p) => p.logo)
             .map((p) => (
@@ -247,6 +250,7 @@ export function BusinessUpgradeHomepageFunnel({
                 <img src={p.logo} alt="" className="h-full w-full object-contain" />
               </a>
             ))}
+          </div>
         </div>
       ) : null}
     </>

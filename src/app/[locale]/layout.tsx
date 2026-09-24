@@ -16,6 +16,7 @@ import {
   type AppLocale,
 } from "@/lib/i18n-routing";
 import { homeSeo } from "@/content/page-seo";
+import { AUTHOR } from "@/lib/author";
 
 const OG_IMAGE_DEFAULT = {
   url: "/opengraph-image" as const,
@@ -83,8 +84,11 @@ export async function generateMetadata({
       "generative engine optimization",
       "AI SEO GEO Hong Kong",
     ].join(", "),
-    authors: [{ name: "InnovateXP Limited", url: "https://www.innovatexp.co" }],
-    creator: "InnovateXP Limited",
+    authors: [
+      { name: AUTHOR.name, url: AUTHOR.threadsUrl },
+      { name: AUTHOR.organization, url: siteUrl },
+    ],
+    creator: AUTHOR.name,
     publisher: "InnovateXP Limited",
     metadataBase: new URL(siteUrl),
     openGraph: {

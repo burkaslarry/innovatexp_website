@@ -16,6 +16,7 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
   { path: "/ai-feedback-questionnaire", priority: 0.4, changeFrequency: "yearly" },
   { path: "/smartsales-crm", priority: 0.82, changeFrequency: "monthly" },
   { path: "/eventxp", priority: 0.82, changeFrequency: "monthly" },
+  { path: "/eventxp-scoping", priority: 0.8, changeFrequency: "monthly" },
   { path: "/visionxp", priority: 0.82, changeFrequency: "monthly" },
   { path: "/fitnessxp", priority: 0.82, changeFrequency: "monthly" },
   { path: "/ai-consulting", priority: 0.82, changeFrequency: "monthly" },
@@ -96,6 +97,12 @@ export function buildLocalizedSitemap(): MetadataRoute.Sitemap {
       url: `${siteUrl}/ai.txt`,
       lastModified: modified,
       priority: 0.3,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${siteUrl}/llms-eventxp.txt`,
+      lastModified: modified,
+      priority: 0.45,
       changeFrequency: "monthly",
     },
   );

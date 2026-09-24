@@ -46,8 +46,8 @@ export default async function CreativeStudioPage({
       icon: Coffee,
       title: zh ? "香港咖啡店地圖" : "Hong Kong Coffeeshop Map",
       body: zh
-        ? "收錄香港特色咖啡店同霸王茶姬分店，按電插、2/4人檯、音樂、限時、必須消費篩選，並喺 Google 地圖顯示。"
-        : "Curated Hong Kong coffee shops and CHAGEE branches, filterable by outlets, tables, music, time limit, and must-order, shown on Google Maps.",
+        ? "香港特色咖啡店同霸王茶姬分店，可按 Wi-Fi、電插、檯型篩選。新增餐廳要有相，人手批核先上地圖。"
+        : "Hong Kong coffee shops and CHAGEE branches, filterable by Wi-Fi, outlets, and tables. New shops need a photo and a manual review.",
     },
   ];
 

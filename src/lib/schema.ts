@@ -1,4 +1,6 @@
 /* F04: Shared schema builders - Reusable Organization/Product helpers consumed by JSON-LD and tooling. */
+import { AUTHOR, authorSameAs } from "@/lib/author";
+
 type FAQQuestion = {
   question: string;
   answer: string;
@@ -7,20 +9,66 @@ type FAQQuestion = {
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
 
+export function getPersonSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "Person",
+    "@id": `${siteUrl}/#founder`,
+    name: AUTHOR.name,
+    alternateName: AUTHOR.alternateName,
+    jobTitle: AUTHOR.jobTitle,
+    url: siteUrl,
+    image: `${siteUrl}/mypresent.jpg`,
+    sameAs: authorSameAs(),
+    worksFor: {
+      "@type": "Organization",
+      "@id": `${siteUrl}/#organization`,
+      name: AUTHOR.organization,
+      url: siteUrl,
+    },
+    knowsAbout: [
+      "Business Workflow Diagnosis",
+      "Event and membership operations",
+      "EventXP",
+      "SmartSales CRM",
+      "Generative Engine Optimization",
+      "AI SEO",
+      "Hong Kong SME automation",
+    ],
+  };
+}
+
 export function getOrganizationSchema() {
   return {
     "@context": "https://schema.org",
     "@type": "Organization",
-    name: "InnovateXP Limited",
+    "@id": `${siteUrl}/#organization`,
+    name: AUTHOR.organization,
     alternateName: "InnovateXP",
     url: siteUrl,
     logo: `${siteUrl}/innovatexp_color_no_bg.svg`,
     description:
       "Hong Kong AI business consultancy founded by Larry Lo. Diagnose first, then AI agents and co-run. Fees quoted after diagnosis by workflow complexity.",
-    sameAs: [
-      "https://www.linkedin.com/company/innovatexp",
-      "https://www.linkedin.com/in/innovatexp/",
-    ],
+    founder: {
+      "@type": "Person",
+      "@id": `${siteUrl}/#founder`,
+      name: AUTHOR.name,
+      sameAs: authorSameAs(),
+    },
+    sameAs: [AUTHOR.linkedInCompany, AUTHOR.linkedInPersonal, AUTHOR.threadsUrl],
+  };
+}
+
+export function getWebSiteSchema() {
+  return {
+    "@context": "https://schema.org",
+    "@type": "WebSite",
+    name: AUTHOR.organization,
+    alternateName: "InnovateXP",
+    url: siteUrl,
+    inLanguage: ["zh-HK", "en", "zh-TW", "ja", "de"],
+    publisher: { "@id": `${siteUrl}/#organization` },
+    author: { "@id": `${siteUrl}/#founder` },
   };
 }
 
@@ -50,11 +98,23 @@ export function getEventXPProductSchema() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "EventXP helps Hong Kong event teams run QR check-in, attendance tracking, lead scoring, and post-event follow-up. Trial HK$4,000 per event.",
+      "EventXP is a configurable event and membership operations solution for Hong Kong organisations — from registration, on-site check-in, member and guest management, to live attendance reporting and post-event follow-up. Configured around each organisation's workflow; fees quoted after a workflow diagnosis.",
+    featureList: [
+      "Event setup and attendee fields",
+      "Member, guest and observer records",
+      "QR and kiosk check-in",
+      "Real-time attendance tracking and reporting",
+      "Roster import and export",
+      "Optional membership status / scoring",
+      "Optional AI matching and seating recommendations",
+      "Post-event follow-up workflow",
+    ],
     offers: {
       "@type": "Offer",
-      price: "4000",
       priceCurrency: "HKD",
+      description:
+        "Implementation is configured around the organisation's workflow. Fees are quoted after a workflow diagnosis — no public fixed list price.",
+      url: `${siteUrl}/bookme`,
     },
     url: `${siteUrl}/eventxp`,
   };

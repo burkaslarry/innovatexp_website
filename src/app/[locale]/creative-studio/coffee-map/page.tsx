@@ -3,6 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BackToHomeControl } from "@/components/BackToHomeControl";
 import { CoffeeShopMap } from "@/components/creative-studio/CoffeeShopMap";
+import { CoffeeShopSubmitForm } from "@/components/creative-studio/CoffeeShopSubmitForm";
 import { coffeeMapSeo } from "@/content/page-seo";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { isValidLocale, localeUsesChineseCopy, type AppLocale } from "@/lib/i18n-routing";
@@ -70,11 +71,14 @@ export default async function CoffeeMapPage({
         </h1>
         <p className="mt-4 max-w-3xl text-base leading-8 text-[color:var(--text-secondary)]">
           {zh
-            ? "收錄香港特色咖啡店同霸王茶姬分店，可按地區、電插、2/4人檯、音樂、限時、必須消費篩選，並喺 Google 地圖顯示。每間店可一鍵打開 Google Maps 導航。"
-            : "A curated list of Hong Kong specialty coffee shops and CHAGEE branches, filterable by neighborhood, power outlets, 2/4-seat tables, music, time limit, and must-order, shown on Google Maps. Each shop opens straight into Google Maps for directions."}
+            ? "收錄香港特色咖啡店同 OpenRice 核實嘅霸王茶姬分店。可按地區、Wi-Fi、電插、2/4人檯、音樂、限時、必須消費篩選。未核實嘅店唔會當有 Wi-Fi。想加店要上傳相片，人手批核後先上地圖。"
+            : "Specialty coffee shops plus OpenRice-checked CHAGEE branches. Filter by area, Wi-Fi, outlets, tables, music, time limit, and must-order. Unverified shops are not treated as having Wi-Fi. New shops need a photo and stay off the map until reviewed."}
         </p>
       </header>
       <CoffeeShopMap zh={zh} />
+      <div className="mt-8">
+        <CoffeeShopSubmitForm zh={zh} />
+      </div>
     </main>
   );
 }

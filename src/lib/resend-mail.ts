@@ -217,6 +217,106 @@ export async function sendInquiryCartResendEmail(
   }
 }
 
+export type CoffeeShopSubmissionEmail = {
+  subject: string;
+  name: string;
+  neighborhood: string;
+  address: string;
+  shopType: string;
+  outlets: string;
+  wifi: string;
+  tableFor2: boolean;
+  tableFor4: boolean;
+  music: boolean;
+  timeLimit: string;
+  mustOrder: boolean;
+  notes: string;
+  submitterName: string;
+  submitterEmail: string;
+  photo: { filename: string; content: Buffer };
+};
+
+export async function sendCoffeeShopSubmissionEmail(
+  payload: CoffeeShopSubmissionEmail,
+): Promise<{ ok: boolean; id?: string; error?: string; skipped?: boolean }> {
+  const client = getResendClient();
+  if (!client) {
+    return { ok: false, skipped: true, error: "RESEND_API_KEY not configured" };
+  }
+
+  const to = getQuestionnaireNotifyEmail();
+  const from = getResendFromEmail();
+  const yesNo = (v: boolean) => (v ? "yes" : "no");
+  const text = [
+    "Creative Studio coffee map — pending human approval",
+    "Do not publish until reviewed. Photo is attached.",
+    "",
+    `Shop: ${payload.name}`,
+    `Neighborhood: ${payload.neighborhood}`,
+    `Address: ${payload.address}`,
+    `Type: ${payload.shopType}`,
+    `Outlets: ${payload.outlets}`,
+    `Wi-Fi: ${payload.wifi}`,
+    `2-seat table: ${yesNo(payload.tableFor2)}`,
+    `4-seat table: ${yesNo(payload.tableFor4)}`,
+    `Music: ${yesNo(payload.music)}`,
+    `Time limit: ${payload.timeLimit}`,
+    `Must order: ${yesNo(payload.mustOrder)}`,
+    payload.notes ? `Notes: ${payload.notes}` : null,
+    "",
+    `Submitted by: ${payload.submitterName}`,
+    `Email: ${payload.submitterEmail}`,
+  ]
+    .filter((line) => line !== null)
+    .join("\n");
+
+  const html = `
+    <div style="font-family:system-ui,-apple-system,sans-serif;line-height:1.5;color:#1a1c1e">
+      <h2 style="margin:0 0 8px">待批核：咖啡地圖新店</h2>
+      <p style="margin:0 0 16px;color:#475569">人手批核後先加入地圖。相片喺附件。</p>
+      <table style="border-collapse:collapse;width:100%;max-width:640px">
+        ${row("Shop", payload.name)}
+        ${row("Neighborhood", payload.neighborhood)}
+        ${row("Address", payload.address)}
+        ${row("Type", payload.shopType)}
+        ${row("Outlets", payload.outlets)}
+        ${row("Wi-Fi", payload.wifi)}
+        ${row("2-seat", yesNo(payload.tableFor2))}
+        ${row("4-seat", yesNo(payload.tableFor4))}
+        ${row("Music", yesNo(payload.music))}
+        ${row("Time limit", payload.timeLimit)}
+        ${row("Must order", yesNo(payload.mustOrder))}
+        ${payload.notes ? row("Notes", payload.notes) : ""}
+        ${row("Submitter", payload.submitterName)}
+        ${row("Email", payload.submitterEmail)}
+      </table>
+    </div>
+  `;
+
+  try {
+    const result = await client.emails.send({
+      from,
+      to: [to],
+      replyTo: payload.submitterEmail.includes("@") ? payload.submitterEmail : undefined,
+      subject: payload.subject,
+      text,
+      html,
+      attachments: [
+        {
+          filename: payload.photo.filename,
+          content: payload.photo.content,
+        },
+      ],
+    });
+    if (result.error) {
+      return { ok: false, error: result.error.message };
+    }
+    return { ok: true, id: result.data?.id };
+  } catch (e) {
+    return { ok: false, error: e instanceof Error ? e.message : "Resend send failed" };
+  }
+}
+
 function row(label: string, value: string) {
   return `<tr><td style="padding:6px 8px;font-weight:700;vertical-align:top;width:160px">${escapeHtml(label)}</td><td style="padding:6px 8px">${escapeHtml(value)}</td></tr>`;
 }

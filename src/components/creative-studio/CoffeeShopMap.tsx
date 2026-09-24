@@ -1,11 +1,12 @@
 "use client";
 
 import { useMemo, useState } from "react";
-import { Clock, Coffee, ExternalLink, MapPin, Music, Plug, Table, Table2, Utensils } from "lucide-react";
+import { Clock, Coffee, ExternalLink, MapPin, Music, Plug, Table, Table2, Utensils, Wifi } from "lucide-react";
 import shopsData from "@/data/hk-coffeeshops.json";
 
 type ShopType = "coffee" | "tea";
 type Outlets = "yes" | "few" | "no";
+type WifiStatus = "yes" | "no" | "unknown";
 type TimeLimit = "none" | "60" | "90" | "120";
 
 type CoffeeShop = {
@@ -16,6 +17,7 @@ type CoffeeShop = {
   lng: number;
   type: ShopType;
   outlets: Outlets;
+  wifi?: WifiStatus;
   tableFor2: boolean;
   tableFor4: boolean;
   music: boolean;
@@ -92,6 +94,7 @@ export function CoffeeShopMap({ zh }: CoffeeShopMapProps) {
   const [mustOrderFilter, setMustOrderFilter] = useState<"all" | "yes" | "no">("all");
   const [musicFilter, setMusicFilter] = useState<"all" | "yes" | "no">("all");
   const [tableFilter, setTableFilter] = useState<"all" | "2" | "4">("all");
+  const [wifiFilter, setWifiFilter] = useState<"all" | "yes">("all");
 
   const filtered = useMemo(() => {
     const q = query.trim().toLowerCase();
@@ -107,6 +110,7 @@ export function CoffeeShopMap({ zh }: CoffeeShopMapProps) {
       if (musicFilter === "no" && shop.music) return false;
       if (tableFilter === "2" && !shop.tableFor2) return false;
       if (tableFilter === "4" && !shop.tableFor4) return false;
+      if (wifiFilter === "yes" && shop.wifi !== "yes") return false;
       if (!q) return true;
       return (
         shop.name.toLowerCase().includes(q) ||
@@ -115,7 +119,7 @@ export function CoffeeShopMap({ zh }: CoffeeShopMapProps) {
         shop.notes.toLowerCase().includes(q)
       );
     });
-  }, [neighborhood, query, typeFilter, outletsFilter, timeFilter, mustOrderFilter, musicFilter, tableFilter]);
+  }, [neighborhood, query, typeFilter, outletsFilter, timeFilter, mustOrderFilter, musicFilter, tableFilter, wifiFilter]);
 
   const embedQuery =
     typeFilter === "tea"
@@ -141,6 +145,9 @@ export function CoffeeShopMap({ zh }: CoffeeShopMapProps) {
         coffee: "咖啡",
         tea: "茶飲",
         outlets: "電插",
+        wifi: "Wi-Fi",
+        wifiYes: "有 Wi-Fi",
+        wifiUnknown: "Wi-Fi 未核",
         yes: "有",
         few: "少",
         no: "冇",
@@ -169,6 +176,9 @@ export function CoffeeShopMap({ zh }: CoffeeShopMapProps) {
         coffee: "Coffee",
         tea: "Tea",
         outlets: "Outlets",
+        wifi: "Wi-Fi",
+        wifiYes: "Has Wi-Fi",
+        wifiUnknown: "Wi-Fi unknown",
         yes: "Yes",
         few: "Few",
         no: "No",
@@ -239,6 +249,13 @@ export function CoffeeShopMap({ zh }: CoffeeShopMapProps) {
               <Chip active={outletsFilter === "yes"} onClick={() => setOutletsFilter("yes")}>{t.yes}</Chip>
               <Chip active={outletsFilter === "few"} onClick={() => setOutletsFilter("few")}>{t.few}</Chip>
               <Chip active={outletsFilter === "no"} onClick={() => setOutletsFilter("no")}>{t.no}</Chip>
+            </div>
+          </div>
+          <div>
+            <span className="mb-1 block text-xs font-semibold text-[color:var(--text-secondary)]">{t.wifi}</span>
+            <div className="flex flex-wrap gap-1.5">
+              <Chip active={wifiFilter === "all"} onClick={() => setWifiFilter("all")}>{t.all}</Chip>
+              <Chip active={wifiFilter === "yes"} onClick={() => setWifiFilter("yes")}>{t.wifiYes}</Chip>
             </div>
           </div>
           <div>
@@ -326,6 +343,7 @@ export function CoffeeShopMap({ zh }: CoffeeShopMapProps) {
               <p className="mt-1.5 text-xs leading-5 text-[color:var(--text-secondary)]">{shop.address}</p>
               <div className="mt-2 flex flex-wrap gap-1">
                 <AttrBadge icon={Plug} on={shop.outlets !== "no"} label={`${t.outlets}: ${shop.outlets === "yes" ? t.yes : shop.outlets === "few" ? t.few : t.no}`} />
+                <AttrBadge icon={Wifi} on={shop.wifi === "yes"} label={shop.wifi === "yes" ? t.wifiYes : shop.wifi === "no" ? `${t.wifi}: ${t.no}` : t.wifiUnknown} />
                 <AttrBadge icon={Table2} on={shop.tableFor2} label={t.t2} />
                 <AttrBadge icon={Table} on={shop.tableFor4} label={t.t4} />
                 <AttrBadge icon={Music} on={shop.music} label={t.music} />

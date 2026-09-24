@@ -76,14 +76,35 @@ const VISIONXP: LocalePair = {
 
 const EVENTXP: LocalePair = {
   zh: {
-    title: "EventXP｜活動簽到評分Follow-up｜InnovateXP",
+    title: "EventXP｜活動簽到・會員及嘉賓管理・即時報告｜InnovateXP",
     description:
-      "EventXP：QR 簽到、名單評分、即時報告、活動後 follow-up。試用 HK$4,000／場；月費由 HK$880 起。把出席變成可跟進商機。",
+      "EventXP 將報名、現場 check-in、會員及嘉賓管理、即時報告同活動後跟進集中到一個按你流程配置嘅方案。減少紙張、Excel、WhatsApp 同重複輸入。預約流程診斷再報價。",
+    ogTitle: "EventXP — 活動簽到・會員及嘉賓管理・即時報告",
+    ogDescription: "將散落喺紙張、Excel、WhatsApp 嘅活動流程集中處理。按你流程配置，預約流程診斷再報價。",
   },
   en: {
-    title: "EventXP | Check-In, Scoring & Follow-Up",
+    title: "EventXP | Check-In, Member & Guest Management, Live Reporting | InnovateXP",
     description:
-      "EventXP for Hong Kong event teams: QR check-in, lead scoring, live reporting, post-event follow-up. Trial HK$4,000/event; care from HK$880/mo.",
+      "EventXP consolidates registration, on-site check-in, member and guest management, live attendance reporting and post-event follow-up into one workflow-configured solution for Hong Kong organisations. Book a workflow diagnosis for a scoped quote.",
+    ogTitle: "EventXP — event & membership operations, configured to your workflow",
+    ogDescription: "Replace paper, Excel and WhatsApp patchwork with one configured workflow. Diagnosis first, then a scoped quote.",
+  },
+};
+
+const EVENTXP_SCOPING: LocalePair = {
+  zh: {
+    title: "EventXP 方案診斷表格｜索取初步方案及報價｜InnovateXP",
+    description:
+      "填妥 EventXP Solution Scoping Form，畀 InnovateXP 了解你嘅活動及會員流程、現有工具同所需功能，再畀你一份配置方案同報價。",
+    ogTitle: "EventXP 方案診斷表格 — 索取初步方案及報價",
+    ogDescription: "6 個步驟，講你現有報名、check-in、報告同跟進流程，我哋畀你配置方案同報價。",
+  },
+  en: {
+    title: "EventXP Solution Scoping Form | Scoped Proposal & Quote | InnovateXP",
+    description:
+      "Complete the EventXP Solution Scoping Form so InnovateXP can understand your event and membership workflow, current tools and required capabilities, then send a configured proposal and quote.",
+    ogTitle: "EventXP Solution Scoping Form — scoped proposal & quote",
+    ogDescription: "6 steps describing your current registration, check-in, reporting and follow-up; we reply with a configured proposal and quote.",
   },
 };
 
@@ -210,14 +231,14 @@ const CREATIVE_STUDIO: LocalePair = {
 
 const COFFEE_MAP: LocalePair = {
   zh: {
-    title: "香港咖啡茶飲地圖｜電插・限時・霸王茶姬｜Creative Studio",
+    title: "香港咖啡茶飲地圖｜Wi-Fi・電插・霸王茶姬｜Creative Studio",
     description:
-      "收錄香港特色咖啡店同霸王茶姬分店，按地區、電插、2/4人檯、音樂、限時、必須消費篩選，並喺 Google 地圖顯示。",
+      "香港特色咖啡店同 OpenRice 核實嘅霸王茶姬分店。可按 Wi-Fi、電插、檯型、限時篩選。新增店舖要有相，人手批核後先上地圖。",
   },
   en: {
-    title: "Hong Kong Coffee & Tea Map | Outlets, Time Limit, CHAGEE | Creative Studio",
+    title: "Hong Kong Coffee & Tea Map | Wi-Fi, Outlets, CHAGEE | Creative Studio",
     description:
-      "Curated Hong Kong coffee shops and CHAGEE branches, filterable by neighborhood, power outlets, 2/4-seat tables, music, time limit, and must-order, shown on Google Maps.",
+      "Hong Kong specialty coffee and OpenRice-checked CHAGEE branches. Filter by Wi-Fi, outlets, tables, and time limit. New shops need a photo and stay pending until reviewed.",
   },
 };
 
@@ -245,6 +266,9 @@ export function smartSalesSeo(locale: AppLocale): PageSeo {
 }
 export function eventXpSeo(locale: AppLocale): PageSeo {
   return pick(locale, EVENTXP);
+}
+export function eventXpScopingSeo(locale: AppLocale): PageSeo {
+  return pick(locale, EVENTXP_SCOPING);
 }
 export function fitnessXpSeo(locale: AppLocale): PageSeo {
   return pick(locale, FITNESSXP);

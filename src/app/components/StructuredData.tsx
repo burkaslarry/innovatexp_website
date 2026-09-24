@@ -4,6 +4,7 @@ import { usePathname } from "next/navigation";
 import type { AppLocale } from "@/lib/i18n-routing";
 import { getLocaleFromPathname, localeToHtmlLang, localeUsesChineseCopy, stripLocaleFromPathname } from "@/lib/i18n-routing";
 import { VISIONXP_DEMO_URL } from "@/content/visionxp";
+import { AUTHOR, authorSameAs } from "@/lib/author";
 
 /** Pick JSON-LD copy per URL locale — explicit `AppLocale` rows (no zh/en boolean). */
 function pickSchema(locale: AppLocale, row: Record<AppLocale, string>): string {
@@ -45,8 +46,8 @@ const SCHEMA_SMARTSALES_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_EVENTXP_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Intelligent event check-in system that transforms attendance data into business insights. QR code scanning, real-time reporting, and AI-powered attendee analysis.",
-  "zh-hk": "智能活動簽到系統，將出席數據轉化為商業洞察。QR 碼掃描、實時報告和 AI 驅動的參與者分析。",
+  en: "Configurable event and membership operations for Hong Kong organisations — registration, QR/kiosk check-in, member and guest records, live attendance reporting, and post-event follow-up. Configured around your workflow; not generic ticketing.",
+  "zh-hk": "按機構流程配置嘅活動暨會員營運方案：報名、QR／kiosk check-in、會員及嘉賓記錄、即時出席報告同活動後跟進。唔係通用售票軟件。",
   "zh-tw":
     "智慧活動報到系統，將出席資料轉為可行动的商業洞察；支援 QRCode 報到、即時報表與 AI 輔助的出席者分析。",
   ja: "出席データをビジネスインサイトへ変えるインテリジェントなイベントチェックイン。QR 読取、リアルタイムレポート、AI による参加者分析。",
@@ -884,9 +885,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       name: "Larry Lo",
       jobTitle: "AI Business Consultant",
       url: baseUrl,
-      sameAs: ["https://www.linkedin.com/in/innovatexp/", "https://www.linkedin.com/company/innovatexp"],
+      sameAs: authorSameAs(),
     },
-    sameAs: ["https://www.linkedin.com/company/innovatexp", "https://www.linkedin.com/in/innovatexp/"],
+    sameAs: [AUTHOR.linkedInCompany, AUTHOR.linkedInPersonal, AUTHOR.threadsUrl],
     knowsAbout: [
       "AI Business Consultancy Hong Kong",
       "Hong Kong AI consultant",
@@ -941,7 +942,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     description: pickSchema(routeLocale, SCHEMA_PERSON_DESCRIPTION),
     url: baseUrl,
     image: `${baseUrl}/mypresent.jpg`,
-    sameAs: ["https://www.linkedin.com/in/innovatexp/", "https://www.linkedin.com/company/innovatexp"],
+    sameAs: authorSameAs(),
     worksFor: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,

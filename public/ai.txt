@@ -1,9 +1,13 @@
 # AI crawler hints for InnovateXP Limited
-# Canonical citation files for answer engines (GEO)
+# Modern SEO Cluster — GEO / AEO / LLM visibility
 
 llms-txt: https://www.innovatexp.co/llms.txt
 llms-full: https://www.innovatexp.co/llms-full.txt
 llms-zh-hk: https://www.innovatexp.co/llms.zh-hk.txt
+llms-eventxp: https://www.innovatexp.co/llms-eventxp.txt
 sitemap: https://www.innovatexp.co/sitemap.xml
 canonical: https://www.innovatexp.co/
 contact: info@innovatexp.co
+author: Larry Lo
+author-threads: https://www.threads.com/@waqarr_alii
+author-linkedin: https://www.linkedin.com/in/innovatexp/
