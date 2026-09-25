@@ -1241,7 +1241,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           name: "AI Readiness Snapshot",
           price: String(PRICING.quickCash.aiReadinessAssessment),
           priceCurrency: "HKD",
-          url: `${baseUrl}/${routeLocale}/#service-plans`,
+          url: `${baseUrl}/${routeLocale}/services`,
           availability: "https://schema.org/InStock",
           itemOffered: {
             "@type": "Service",
