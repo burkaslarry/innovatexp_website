@@ -184,7 +184,7 @@ const zh: Copy = {
       setup: "+HK$8,800",
       monthly: "+HK$800",
       includes: "庫存、會計、採購單等進階模組",
-      bestFor: "Lite ERP 唔夠用",
+      bestFor: "基本資料表已經唔夠用",
       avoidWhen: "仍然 WhatsApp＋Excel 混亂——先聽診",
     },
   ],
@@ -192,7 +192,7 @@ const zh: Copy = {
   faqTitle: "常見問題（SERP／銷售同一套答案）",
   faqs: [
     {
-      question: "我哋要唔要先買 CRM／ERP？",
+      question: "我哋要唔要先買新系統？",
       answer: "多數唔使。先執責任同跟進節奏；系統係後面。半個鐘業務聽診一條線——如果其實唔使買，我會直講。",
     },
     {
@@ -217,7 +217,7 @@ const zh: Copy = {
     },
   ],
   qualifierEyebrow: "10 題快速分級",
-  qualifierTitle: "判斷用 Lite／Starter／AI API／Private GPU",
+  qualifierTitle: "比較落地方案",
   qualifierIntro: "答完即出建議。唔取代業務聽診——聽診仍然係開工前必做。",
   questions: [
     {
@@ -459,7 +459,7 @@ const en: Copy = {
       setup: "+HK$8,800",
       monthly: "+HK$800",
       includes: "Inventory, accounting, and purchase-order modules",
-      bestFor: "Outgrew lite ERP",
+      bestFor: "Basic tables no longer meet the need",
       avoidWhen: "Still WhatsApp+Excel chaos — diagnose first",
     },
   ],
@@ -467,7 +467,7 @@ const en: Copy = {
   faqTitle: "FAQ (same answers for SERP and sales)",
   faqs: [
     {
-      question: "Do we need to buy a CRM/ERP first?",
+      question: "Do we need to buy a new system first?",
       answer: "Usually no. Fix ownership and follow-up rhythm first. Book a 30-min diagnosis — I’ll say if you shouldn’t buy.",
     },
     {
@@ -492,7 +492,7 @@ const en: Copy = {
     },
   ],
   qualifierEyebrow: "10-question qualifier",
-  qualifierTitle: "Pick Lite / Starter / AI API / Private GPU",
+  qualifierTitle: "Compare implementation paths",
   qualifierIntro: "Instant recommendation. Does not replace Business Workflow Diagnosis before build.",
   questions: [
     {

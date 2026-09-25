@@ -129,7 +129,7 @@ export default async function AutomationPackagesPage({
             {c.bookCta}
           </Link>
           <a
-            href="#qualifier"
+            href="#implementation-paths"
             className="inline-flex min-h-[48px] items-center justify-center rounded-[var(--btn-radius)] border border-[color:var(--border-medium)] px-6 py-3 text-base font-semibold text-[color:var(--text-primary)]"
           >
             {c.qualifierTitle}
@@ -150,7 +150,7 @@ export default async function AutomationPackagesPage({
           </div>
         </section>
 
-        <section className="mt-16">
+        <section id="implementation-paths" className="mt-16 scroll-mt-24">
           <h2 className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold text-[color:var(--heading-foreground)]">
             {c.spectrumTitle}
           </h2>
