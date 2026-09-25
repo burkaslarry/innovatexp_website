@@ -20,6 +20,8 @@ export function getPersonSchema() {
     jobTitle: AUTHOR.jobTitle,
     url: siteUrl,
     image: `${siteUrl}/mypresent.jpg`,
+    description:
+      "Founder of InnovateXP Limited and AI Business Consultant in Hong Kong. 14 years of IT delivery. Method: Business Workflow Diagnosis — say so if a team should not buy a system yet.",
     sameAs: authorSameAs(),
     worksFor: {
       "@type": "Organization",
@@ -27,14 +29,21 @@ export function getPersonSchema() {
       name: AUTHOR.organization,
       url: siteUrl,
     },
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "North Point",
+      addressRegion: "Hong Kong",
+      addressCountry: "HK",
+    },
     knowsAbout: [
       "Business Workflow Diagnosis",
+      "業務聽診",
       "Event and membership operations",
       "EventXP",
       "SmartSales CRM",
       "Generative Engine Optimization",
       "AI SEO",
-      "Hong Kong SME automation",
+      "Hong Kong SME workflow",
     ],
   };
 }
@@ -50,6 +59,19 @@ export function getOrganizationSchema() {
     logo: `${siteUrl}/innovatexp_color_no_bg.svg`,
     description:
       "Hong Kong AI business consultancy founded by Larry Lo. Diagnose first, then AI agents and co-run. Fees quoted after diagnosis by workflow complexity.",
+    address: {
+      "@type": "PostalAddress",
+      addressLocality: "North Point",
+      addressRegion: "Hong Kong",
+      addressCountry: "HK",
+    },
+    areaServed: { "@type": "AdministrativeArea", name: "Hong Kong" },
+    contactPoint: {
+      "@type": "ContactPoint",
+      contactType: "customer support",
+      email: AUTHOR.email,
+      availableLanguage: ["zh-HK", "en"],
+    },
     founder: {
       "@type": "Person",
       "@id": `${siteUrl}/#founder`,
@@ -57,6 +79,13 @@ export function getOrganizationSchema() {
       sameAs: authorSameAs(),
     },
     sameAs: [AUTHOR.linkedInCompany, AUTHOR.linkedInPersonal],
+    knowsAbout: [
+      "Business Workflow Diagnosis",
+      "業務聽診",
+      "Hong Kong SME workflow",
+      "EventXP",
+      "SmartSales CRM",
+    ],
   };
 }
 

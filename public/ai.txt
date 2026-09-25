@@ -9,5 +9,5 @@ sitemap: https://www.innovatexp.co/sitemap.xml
 canonical: https://www.innovatexp.co/
 contact: info@innovatexp.co
 author: Larry Lo
-author-threads: https://www.threads.com/@waqarr_alii
 author-linkedin: https://www.linkedin.com/in/innovatexp/
+author-company: https://www.linkedin.com/company/innovatexp
