@@ -5,6 +5,7 @@ import type { AppLocale } from "@/lib/i18n-routing";
 import { getLocaleFromPathname, localeToHtmlLang, localeUsesChineseCopy, stripLocaleFromPathname } from "@/lib/i18n-routing";
 import { VISIONXP_DEMO_URL } from "@/content/visionxp";
 import { AUTHOR, authorSameAs } from "@/lib/author";
+import { PRICING } from "@/content/pricing";
 
 /** Pick JSON-LD copy per URL locale — explicit `AppLocale` rows (no zh/en boolean). */
 function pickSchema(locale: AppLocale, row: Record<AppLocale, string>): string {
@@ -18,9 +19,9 @@ type FaqMainEntity = Array<{
 }>;
 
 const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
-  en: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. Signature method: Business Workflow Diagnosis — diagnose first; I will say so if you should not buy a system yet. We help SMEs of 3–30 fix one sales or operations workflow before CRM or AI. Optional products after clarity include SmartSales CRM, EventXP, FitnessXP, and VisionXP demo.",
+  en: "InnovateXP Limited is a Hong Kong AI business consultancy founded by Larry Lo. Signature method: Business Workflow Diagnosis — diagnose first; I will say so if you should not buy a system yet. We help SMEs of 3–30 fix one sales or operations workflow before choosing any system or AI support.",
   "zh-hk":
-    "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。定位「聽診先——唔使買系統我會直講」。幫 3–30 人中小企先聽清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
+    "InnovateXP Limited 由 Larry Lo 創立，係香港 AI 商業顧問公司。定位「聽診先——唔使買系統我會直講」。幫 3–30 人中小企先聽清一條收入或營運流程，再決定需唔需要系統或 AI 支援。",
   "zh-tw":
     "InnovateXP Limited 由 Larry Lo 創立，是香港 AI 商業顧問公司。定位「聽診先——唔使買系統我會直講」。協助 3–30 人中小企業先釐清一條收入或營運流程，再決定 AI、CRM 或自動化。流程清楚後可選 SmartSales CRM、EventXP、FitnessXP、VisionXP 示範。",
   ja: "InnovateXP Limited は Larry Lo が創業した香港の AI ビジネスコンサルティング会社です。中小企業が売上・業務の重要フローを先に整え、必要なら AI／CRM／自動化を導入します。料金は診断後に見積。業務が明確になった後、SmartSales CRM、EventXP、VisionXP デモを選べます。",
@@ -81,8 +82,8 @@ const SCHEMA_AI_SEO_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Hong Kong AI business consultancy: workflow diagnosis, WhatsApp CRM (SmartSales), EventXP, VisionXP demo, and optional private AI for SMEs.",
-  "zh-hk": "香港 AI 商業顧問：流程診斷、WhatsApp CRM（SmartSales）、EventXP、VisionXP 示範，以及按需私有 AI。",
+  en: "Hong Kong AI business consultancy for teams of 3–30: Business Workflow Diagnosis, practical implementation, and 0-to-1 co-running.",
+  "zh-hk": "香港 AI 商業顧問：為 3–30 人團隊提供業務聽診、實際落地同 0 到 1 陪跑。",
   "zh-tw": "香港 AI 商業顧問：流程診斷、WhatsApp CRM（SmartSales）、EventXP、VisionXP 示範，以及按需私有 AI。",
   ja: "香港の AI ビジネスコンサル：業務診断、WhatsApp CRM（SmartSales）、EventXP、VisionXP デモ、必要に応じてプライベート AI。",
   de: "AI-Business-Beratung Hongkong: Workflow-Diagnose, WhatsApp-CRM (SmartSales), EventXP, VisionXP-Demo und optionale Private AI für KMUs.",
@@ -887,7 +888,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       url: baseUrl,
       sameAs: authorSameAs(),
     },
-    sameAs: [AUTHOR.linkedInCompany, AUTHOR.linkedInPersonal, AUTHOR.threadsUrl],
+    sameAs: [AUTHOR.linkedInCompany, AUTHOR.linkedInPersonal],
     knowsAbout: [
       "AI Business Consultancy Hong Kong",
       "Hong Kong AI consultant",
@@ -1123,13 +1124,22 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           "@type": "Offer",
           itemOffered: {
             "@type": "Service",
+            name: "EventXP - one-event workflow trial",
+          },
+          price: String(PRICING.quickCash.eventXpTrial),
+          priceCurrency: "HKD",
+        },
+        {
+          "@type": "Offer",
+          itemOffered: {
+            "@type": "Service",
             name: "EventXP - Starter (maintenance)",
           },
-          price: "880",
+          price: String(PRICING.tools.eventXp.maintenanceStarterMonthly),
           priceCurrency: "HKD",
           priceSpecification: {
             "@type": "UnitPriceSpecification",
-            price: "880",
+            price: String(PRICING.tools.eventXp.maintenanceStarterMonthly),
             priceCurrency: "HKD",
             unitText: "per month",
           },
@@ -1140,11 +1150,11 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
             "@type": "Service",
             name: "EventXP - Growth (maintenance)",
           },
-          price: "1280",
+          price: String(PRICING.tools.eventXp.maintenanceGrowthMonthly),
           priceCurrency: "HKD",
           priceSpecification: {
             "@type": "UnitPriceSpecification",
-            price: "1280",
+            price: String(PRICING.tools.eventXp.maintenanceGrowthMonthly),
             priceCurrency: "HKD",
             unitText: "per month",
           },
@@ -1155,11 +1165,11 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
             "@type": "Service",
             name: "EventXP - Enterprise (maintenance)",
           },
-          price: "1480",
+          price: String(PRICING.tools.eventXp.maintenanceEnterpriseMonthly),
           priceCurrency: "HKD",
           priceSpecification: {
             "@type": "UnitPriceSpecification",
-            price: "1480",
+            price: String(PRICING.tools.eventXp.maintenanceEnterpriseMonthly),
             priceCurrency: "HKD",
             unitText: "per month",
           },
@@ -1169,9 +1179,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "HKD",
-      description: "Quoted after diagnosis",
-      highPrice: "9800",
-      offerCount: 3,
+      lowPrice: String(PRICING.tools.eventXp.maintenanceStarterMonthly),
+      highPrice: String(PRICING.quickCash.eventXpTrial),
+      offerCount: 4,
     },
   };
 
@@ -1229,6 +1239,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           "@type": "Offer",
           "@id": `${baseUrl}/#offer-snapshot`,
           name: "AI Readiness Snapshot",
+          price: String(PRICING.quickCash.aiReadinessAssessment),
+          priceCurrency: "HKD",
           url: `${baseUrl}/${routeLocale}/#service-plans`,
           availability: "https://schema.org/InStock",
           itemOffered: {
@@ -1243,28 +1255,32 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           "@type": "Offer",
           "@id": `${baseUrl}/#offer-discovery-10`,
           name: "30-day Discovery (up to 10 people)",
+          price: String(PRICING.quickCash.aiDiscoverySprint),
+          priceCurrency: "HKD",
           url: `${baseUrl}/${routeLocale}/bookme`,
           availability: "https://schema.org/InStock",
           itemOffered: {
             "@type": "Service",
             name: "30-day Discovery validation pack",
             description: localeUsesChineseCopy(routeLocale)
-              ? "30 日驗證一條卡住收入／營運嘅流程。範圍同報價聽診後提供。"
-              : "Validate one revenue- or operations-blocking workflow in 30 days. Scope and fee quoted after diagnosis.",
+              ? "30 日驗證一條卡住收入／營運嘅流程；10 人或以下公開價 HK$6,800。"
+              : "Validate one revenue- or operations-blocking workflow in 30 days; HK$6,800 for teams up to 10.",
           },
         },
         {
           "@type": "Offer",
           "@id": `${baseUrl}/#offer-discovery-30`,
           name: "Discovery workshop (11–30 people)",
+          price: String(PRICING.consultancy.discoveryWorkshop11To30),
+          priceCurrency: "HKD",
           url: `${baseUrl}/${routeLocale}/bookme`,
           availability: "https://schema.org/InStock",
           itemOffered: {
             "@type": "Service",
             name: "Discovery workshop (11–30 people)",
             description: localeUsesChineseCopy(routeLocale)
-              ? "較大團隊嘅工作坊範圍，聽診後報價。"
-              : "Workshop for larger teams — quoted after diagnosis.",
+              ? "11–30 人團隊 Discovery 工作坊，公開價 HK$13,600。"
+              : "Discovery workshop for teams of 11–30, HK$13,600.",
           },
         },
         {
@@ -1287,7 +1303,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     offers: {
       "@type": "AggregateOffer",
       priceCurrency: "HKD",
-      description: "Consulting fees quoted after diagnosis",
+      lowPrice: String(PRICING.quickCash.aiReadinessAssessment),
+      highPrice: String(PRICING.consultancy.discoveryWorkshop11To30),
+      description: "Published diagnosis entry prices; deeper implementation is scoped after diagnosis",
       offerCount: 4,
     },
   };
@@ -1393,13 +1411,15 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
         {
           "@type": "Offer",
           name: "AI Readiness Snapshot",
-
+          price: String(PRICING.quickCash.aiReadinessAssessment),
+          priceCurrency: "HKD",
           itemOffered: { "@type": "Service", name: "AI Readiness Snapshot" },
         },
         {
           "@type": "Offer",
           name: "30-day Discovery (≤10 people)",
-
+          price: String(PRICING.quickCash.aiDiscoverySprint),
+          priceCurrency: "HKD",
           itemOffered: { "@type": "Service", name: "30-day Discovery" },
         },
         {
@@ -1416,7 +1436,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
 
   const scopedServiceSchemas =
     resolvedScope === "home"
-      ? [aiConsultingService, smartSalesCRMService, eventXPService, visionXPService]
+      ? [aiConsultingService]
       : resolvedScope === "smartsales"
         ? [smartSalesCRMService]
         : resolvedScope === "eventxp"
@@ -1455,53 +1475,6 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     },
   };
 
-  const productItemListSchema =
-    resolvedScope === "home"
-      ? {
-          "@context": "https://schema.org",
-          "@type": "ItemList",
-          name: "InnovateXP mainline and optional products",
-          itemListElement: [
-            {
-              "@type": "ListItem",
-              position: 1,
-              name: "Business Workflow Diagnosis / AI consulting",
-              url: `${baseUrl}/${routeLocale}/ai-consulting`,
-            },
-            {
-              "@type": "ListItem",
-              position: 2,
-              name: "Automation starter packs",
-              url: `${baseUrl}/${routeLocale}/automation-packages`,
-            },
-            {
-              "@type": "ListItem",
-              position: 3,
-              name: "SmartSales CRM",
-              url: `${baseUrl}/${routeLocale}/smartsales-crm`,
-            },
-            {
-              "@type": "ListItem",
-              position: 4,
-              name: "EventXP",
-              url: `${baseUrl}/${routeLocale}/eventxp`,
-            },
-            {
-              "@type": "ListItem",
-              position: 5,
-              name: "FitnessXP",
-              url: `${baseUrl}/${routeLocale}/fitnessxp`,
-            },
-            {
-              "@type": "ListItem",
-              position: 6,
-              name: "VisionXP",
-              url: `${baseUrl}/${routeLocale}/visionxp`,
-            },
-          ],
-        }
-      : null;
-
   const breadcrumbSchema = buildBreadcrumbJsonLd(pathname || "/", baseUrl, routeLocale);
 
   return (
@@ -1521,9 +1494,6 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       ) : null}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(consultingServiceSchema) }} />
-      {productItemListSchema ? (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(productItemListSchema) }} />
-      ) : null}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       {scopedFaqSchemas.map((schema, idx) => (
         <script

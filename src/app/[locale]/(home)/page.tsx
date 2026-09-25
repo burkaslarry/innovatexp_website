@@ -14,6 +14,7 @@ import {
 import { trackBookingCtaClick } from "@/lib/analytics";
 import { useLanguage } from "../../LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
+import { PRICING, formatHkd } from "@/content/pricing";
 
 function LandingPage() {
   const { locale } = useLanguage();
@@ -62,7 +63,19 @@ function LandingPage() {
           imageAlt={content.hero.imageAlt}
         />
 
-        <BusinessUpgradeHomepageFunnel locale={locale} bookingHref={bookingHref} />
+        <aside className="mb-16 mt-6 rounded-[var(--card-radius)] border border-[color:var(--brand-primary)]/30 bg-[color:var(--bg-secondary)] px-5 py-4">
+          <p className="text-sm font-semibold leading-7 text-[color:var(--heading-foreground)]">
+            {locale === "en"
+              ? `Transparent starting point: Snapshot ${formatHkd(PRICING.quickCash.aiReadinessAssessment, locale)} · Discovery Sprint ${formatHkd(PRICING.quickCash.aiDiscoverySprint, locale)} for teams up to 10. Diagnose first, then decide whether to proceed.`
+              : `透明入場價：Snapshot 業務聽診 ${formatHkd(PRICING.quickCash.aiReadinessAssessment, locale)} · Discovery Sprint（10 人或以下）${formatHkd(PRICING.quickCash.aiDiscoverySprint, locale)}。先聽診，再決定使唔使落地。`}
+          </p>
+        </aside>
+
+        <BusinessUpgradeHomepageFunnel
+          locale={locale}
+          bookingHref={bookingHref}
+          whatsappHref={whatsappHref}
+        />
       </main>
 
       <footer className="border-t border-[color:var(--border-light)] bg-[color:var(--bg-secondary)] py-10">
@@ -78,7 +91,9 @@ function LandingPage() {
             </a>
             <a href={`mailto:${HOMEPAGE_PLACEHOLDERS.emailAddress}`}>{HOMEPAGE_PLACEHOLDERS.emailAddress}</a>
             <a href={loc("/services")}>{content.nav.services}</a>
-            <a href={loc("/products")}>{content.nav.products}</a>
+            <a href={loc("/products")}>
+              {locale === "en" ? "Post-diagnosis options" : "聽診後落地選項"}
+            </a>
             <a href={loc("/about")}>{content.nav.about}</a>
             <a href={loc("/faq")}>{content.nav.faq}</a>
             <a href={loc("/privacy-policy")}>{content.footer.privacy}</a>

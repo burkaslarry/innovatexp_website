@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { AutomationQualifier } from "@/components/AutomationQualifier";
 import { getAutomationPackagesCopy } from "@/content/automation-packages";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { getFAQPageSchema } from "@/lib/schema";
@@ -61,7 +60,7 @@ export default async function AutomationPackagesPage({
     "@context": "https://schema.org",
     "@type": "ProfessionalService",
     "@id": `${pageUrl}#service`,
-    name: zh ? "InnovateXP 業務聽診＋n8n／ERP 自動化服務" : "InnovateXP diagnosis + n8n/ERP automation",
+    name: zh ? "InnovateXP 業務聽診及流程落地服務" : "InnovateXP workflow diagnosis and implementation",
     description: c.metaDescription,
     provider: {
       "@type": "Person",
@@ -139,49 +138,6 @@ export default async function AutomationPackagesPage({
 
         <section className="mt-16">
           <h2 className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold text-[color:var(--heading-foreground)]">
-            {c.serviceFirstTitle}
-          </h2>
-          <p className="mt-4 max-w-[70ch] text-base leading-8 text-[color:var(--text-secondary)]">
-            {c.serviceFirstBody}
-          </p>
-          <div className="mt-8 grid gap-4 md:grid-cols-2">
-            <article className="ixp-card p-5">
-              <h3 className="text-lg font-semibold text-[color:var(--heading-foreground)]">{c.hermesTitle}</h3>
-              <p className="mt-3 text-sm font-semibold text-[color:var(--secondary-color)]">
-                {zh ? "✅ 適合" : "✅ Fit"}
-              </p>
-              <ul className="mt-2 grid gap-2 text-sm leading-7 text-[color:var(--text-secondary)]">
-                {c.hermesYes.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-              <p className="mt-4 text-sm font-semibold text-[color:var(--pain-accent)]">
-                {zh ? "❌ 唔適合" : "❌ Don’t"}
-              </p>
-              <ul className="mt-2 grid gap-2 text-sm leading-7 text-[color:var(--text-secondary)]">
-                {c.hermesNo.map((item) => (
-                  <li key={item}>• {item}</li>
-                ))}
-              </ul>
-              <p className="mt-4 text-sm leading-7 text-[color:var(--text-primary)]">{c.hermesUncensoredNote}</p>
-            </article>
-            <article className="ixp-card p-5">
-              <h3 className="text-lg font-semibold text-[color:var(--heading-foreground)]">{c.erpTitle}</h3>
-              <p className="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">{c.erpIntro}</p>
-              <ul className="mt-4 grid gap-3">
-                {c.erpOptions.map((opt) => (
-                  <li key={opt.name} className="border-t border-[color:var(--border-light)] pt-3 first:border-0 first:pt-0">
-                    <p className="font-semibold text-[color:var(--heading-foreground)]">{opt.name}</p>
-                    <p className="text-sm text-[color:var(--text-secondary)]">{opt.fit}</p>
-                  </li>
-                ))}
-              </ul>
-            </article>
-          </div>
-        </section>
-
-        <section className="mt-16">
-          <h2 className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold text-[color:var(--heading-foreground)]">
             {c.eeatTitle}
           </h2>
           <div className="mt-6 grid gap-4 sm:grid-cols-2">
@@ -206,7 +162,7 @@ export default async function AutomationPackagesPage({
               <thead className="bg-[color:var(--bg-secondary)] text-[color:var(--heading-foreground)]">
                 <tr>
                   <th className="p-3 font-semibold">{zh ? "方案" : "Package"}</th>
-                  <th className="p-3 font-semibold">Setup</th>
+                  <th className="p-3 font-semibold">{zh ? "起步費用" : "Starting fee"}</th>
                   <th className="p-3 font-semibold">{zh ? "月費" : "Monthly"}</th>
                   <th className="p-3 font-semibold">{zh ? "包含" : "Includes"}</th>
                   <th className="p-3 font-semibold">{zh ? "適合" : "Best for"}</th>
@@ -234,10 +190,6 @@ export default async function AutomationPackagesPage({
           <p className="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">{c.passThrough}</p>
         </section>
 
-        <div className="mt-16">
-          <AutomationQualifier locale={loc} />
-        </div>
-
         <section className="mt-16">
           <h2 className="text-[clamp(1.5rem,3.5vw,2.25rem)] font-bold text-[color:var(--heading-foreground)]">
             {c.faqTitle}
@@ -258,8 +210,8 @@ export default async function AutomationPackagesPage({
           </h2>
           <p className="mt-3 max-w-[65ch] text-base leading-8 text-[color:var(--text-secondary)]">
             {zh
-              ? "預約業務聽診確認卡住收入嘅線，再決定 Lite／Starter／AI API／Private GPU。產品頁只係落地選項，唔取代顧問服務。"
-              : "Book a diagnosis to confirm the revenue-blocking line, then choose Lite / Starter / AI API / Private GPU. Product pages are landing options — not a substitute for advisory."}
+              ? "預約業務聽診，確認卡住收入嘅一條線，再揀合適嘅流程整理、試行、團隊落地或私隱加強方案。"
+              : "Book a diagnosis to confirm the revenue-blocking workflow, then choose the right process cleanup, pilot, team rollout, or privacy-focused path."}
           </p>
           <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <Link

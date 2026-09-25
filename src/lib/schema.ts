@@ -1,5 +1,6 @@
 /* F04: Shared schema builders - Reusable Organization/Product helpers consumed by JSON-LD and tooling. */
 import { AUTHOR, authorSameAs } from "@/lib/author";
+import { PRICING } from "@/content/pricing";
 
 type FAQQuestion = {
   question: string;
@@ -55,7 +56,7 @@ export function getOrganizationSchema() {
       name: AUTHOR.name,
       sameAs: authorSameAs(),
     },
-    sameAs: [AUTHOR.linkedInCompany, AUTHOR.linkedInPersonal, AUTHOR.threadsUrl],
+    sameAs: [AUTHOR.linkedInCompany, AUTHOR.linkedInPersonal],
   };
 }
 
@@ -98,7 +99,7 @@ export function getEventXPProductSchema() {
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
     description:
-      "EventXP is a configurable event and membership operations solution for Hong Kong organisations — from registration, on-site check-in, member and guest management, to live attendance reporting and post-event follow-up. Configured around each organisation's workflow; fees quoted after a workflow diagnosis.",
+      "EventXP is a configurable event and membership operations solution for Hong Kong organisations. Start with a one-event workflow trial at HK$4,000; ongoing care starts at HK$880 per month.",
     featureList: [
       "Event setup and attendee fields",
       "Member, guest and observer records",
@@ -111,9 +112,10 @@ export function getEventXPProductSchema() {
     ],
     offers: {
       "@type": "Offer",
+      price: "4000",
       priceCurrency: "HKD",
       description:
-        "Implementation is configured around the organisation's workflow. Fees are quoted after a workflow diagnosis — no public fixed list price.",
+        "One-event workflow trial. Larger implementation is scoped after diagnosis.",
       url: `${siteUrl}/bookme`,
     },
     url: `${siteUrl}/eventxp`,
@@ -205,7 +207,7 @@ export function getAIConsultingServiceSchema() {
     "@type": "Service",
     name: "AI Business Consultancy — Discovery",
     description:
-      "InnovateXP helps Hong Kong SMEs diagnose one revenue-blocking workflow, validate it, then expand with AI agents or co-run advisory when justified. Consulting fees quoted after diagnosis.",
+      "InnovateXP helps Hong Kong SMEs diagnose one revenue-blocking workflow, validate it, then expand with practical AI support or co-run advisory when justified.",
     provider: {
       "@type": "Organization",
       name: "InnovateXP Limited",
@@ -217,10 +219,13 @@ export function getAIConsultingServiceSchema() {
     },
     url: `${siteUrl}/zh-hk/ai-consulting`,
     offers: {
-      "@type": "Offer",
+      "@type": "AggregateOffer",
       priceCurrency: "HKD",
+      lowPrice: String(PRICING.quickCash.aiReadinessAssessment),
+      highPrice: String(PRICING.consultancy.discoveryWorkshop11To30),
+      offerCount: 3,
       description:
-        "Consulting fees quoted after a 30-minute Business Workflow Diagnosis, based on workflow complexity and scope. No public fixed list price.",
+        "Snapshot HK$3,000; Discovery Sprint HK$6,800 for up to 10 people or HK$13,600 for 11–30. Deeper implementation is scoped after diagnosis.",
       url: `${siteUrl}/zh-hk/bookme`,
     },
   };

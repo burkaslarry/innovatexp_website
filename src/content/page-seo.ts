@@ -35,27 +35,27 @@ const BOOKME: LocalePair = {
   zh: {
     title: "預約業務聽診｜Larry Lo｜InnovateXP",
     description:
-      "預約 AI 商業顧問 Larry Lo／InnovateXP：30 分鐘業務聽診，鎖定漏單、慢報價或交接卡位。聽診後先報價，唔使買系統會直講。",
+      "預約 AI 商業顧問 Larry Lo／InnovateXP：30 分鐘業務聽診，鎖定漏單、慢報價或交接卡位。Snapshot HK$3,000 起；唔使買系統會直講。",
   },
   en: {
     title: "Book Business Workflow Diagnosis | Larry Lo",
     description:
-      "Book a 30-minute Business Workflow Diagnosis with Larry Lo / InnovateXP. Find enquiry leaks before buying tools. Quoted after diagnosis.",
+      "Book a 30-minute Business Workflow Diagnosis with Larry Lo / InnovateXP. Snapshot from HK$3,000; Discovery Sprint HK$6,800 for teams up to 10.",
   },
 };
 
 const SMARTSALES: LocalePair = {
   zh: {
-    title: "SmartSales CRM｜香港WhatsApp銷售跟進｜InnovateXP",
+    title: "銷售跟進流程診斷｜SmartSales 可選落地｜InnovateXP",
     description:
-      "SmartSales CRM：香港 WhatsApp 銷售 pipeline、責任人、AI draft-first。試用 HK$5,000；月費由 HK$880 起。減少 Excel／inbox 漏跟。",
+      "先診斷 WhatsApp 銷售跟進、責任同漏位；流程清楚後，SmartSales 可作落地選項。預約業務聽診，唔使買系統會直講。",
     ogTitle: "SmartSales CRM — 香港 WhatsApp 銷售 CRM",
     ogDescription: "把 WhatsApp 查詢變成可跟進 pipeline。試用 HK$5,000。",
   },
   en: {
-    title: "SmartSales CRM | WhatsApp Pipeline | InnovateXP",
+    title: "Sales Workflow Diagnosis | Optional SmartSales | InnovateXP",
     description:
-      "SmartSales CRM for Hong Kong WhatsApp sales: one pipeline, ownership, AI draft-first replies. Trial HK$5,000; care from HK$880/mo. Stop Excel leakage.",
+      "Diagnose WhatsApp sales follow-up, ownership, and leaks first. SmartSales is an optional implementation after the workflow is clear—not the starting point.",
     ogTitle: "SmartSales CRM — WhatsApp sales for HK SMEs",
     ogDescription: "One pipeline for leads, chat context, and next actions. Trial HK$5,000.",
   },
@@ -78,14 +78,14 @@ const EVENTXP: LocalePair = {
   zh: {
     title: "EventXP｜活動簽到・會員及嘉賓管理・即時報告｜InnovateXP",
     description:
-      "EventXP 將報名、現場 check-in、會員及嘉賓管理、即時報告同活動後跟進集中到一個按你流程配置嘅方案。減少紙張、Excel、WhatsApp 同重複輸入。預約流程診斷再報價。",
+      "EventXP 將報名、check-in、會員記錄、即時報告同跟進集中。單場流程試行 HK$4,000；持續方案 HK$880／月起，較大範圍聽診後報價。",
     ogTitle: "EventXP — 活動簽到・會員及嘉賓管理・即時報告",
     ogDescription: "將散落喺紙張、Excel、WhatsApp 嘅活動流程集中處理。按你流程配置，預約流程診斷再報價。",
   },
   en: {
     title: "EventXP | Check-In, Member & Guest Management, Live Reporting | InnovateXP",
     description:
-      "EventXP consolidates registration, on-site check-in, member and guest management, live attendance reporting and post-event follow-up into one workflow-configured solution for Hong Kong organisations. Book a workflow diagnosis for a scoped quote.",
+      "EventXP consolidates registration, check-in, member records, reporting and follow-up. One-event trial HK$4,000; ongoing plans from HK$880/month.",
     ogTitle: "EventXP — event & membership operations, configured to your workflow",
     ogDescription: "Replace paper, Excel and WhatsApp patchwork with one configured workflow. Diagnosis first, then a scoped quote.",
   },
@@ -251,7 +251,7 @@ const SME_AUTOMATION: LocalePair = {
   en: {
     title: "SME AI Workflow & CRM Consulting | Hong Kong",
     description:
-      "Independent CRM and AI workflow consulting for Hong Kong SMEs. Map quotes and follow-ups first, then automate. Book a free diagnosis with Larry Lo.",
+      "Business Workflow Diagnosis for Hong Kong SMEs. Map quotes and follow-ups first, then add practical AI support only where justified. Entry from HK$3,000.",
   },
 };
 

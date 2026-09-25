@@ -24,7 +24,7 @@
     "trustPoints": [
       "14 年大企業經驗",
       "已服務培訓中心／診所／Fitness／專業服務",
-      "聽診後先決定要唔要落地"
+      "已核實：10 日 → 3 小時 · 約慳 HK$25k／月"
     ],
     "diagnosticInputs": [
       "WhatsApp 查詢",
@@ -60,7 +60,7 @@
   },
   "approach": {
     "eyebrow": "業務聽診方法",
-    "title": "聽診 → AI agents 落地 → 由 0 到 1 陪跑",
+    "title": "聽診 → 實用 AI 助手落地 → 由 0 到 1 陪跑",
     "intro": "用 30 分鐘搵出你公司最痛嗰條流程，講清邊度漏、邊個負責、下一步做咩。確認有用，先落地。",
     "steps": [
       {
@@ -71,8 +71,8 @@
       },
       {
         "label": "Step 2",
-        "title": "AI agents 落地",
-        "body": "借系統設計同開發經驗，善用 AI agents 交付流程圖、責任分工、SOP，同一個團隊真係用到嘅改善點。"
+        "title": "實用 AI 助手落地",
+        "body": "只喺真係有用嘅位置，俾 AI 讀取合適資料、起草下一步或處理重複工作；同時交付流程圖、責任、SOP 同人工覆核位。"
       },
       {
         "label": "Step 3",
@@ -109,15 +109,15 @@
   },
   "consultancy": {
     "eyebrow": "主線方案",
-    "title": "聽診後先報價，再決定陪跑範圍",
-    "intro": "公開主線：業務聽診 → 落地 → 陪跑。工具試用收二級；聽診後先決定要唔要自動化起步包。",
+    "title": "細步開始，再決定陪跑範圍",
+    "intro": "公開主線：業務聽診 → 落地 → 陪跑。Snapshot HK$3,000；10 人或以下 Discovery Sprint HK$6,800。",
     "fitNote": "唔係一開始賣你一套系統。由流程聽診、落地、團隊採用到檢討，幫你將一條卡住收入嘅流程真正行順。唔使買系統我會直講。",
     "startingBadge": "建議起步",
     "plans": [
       {
-        "name": "業務聽診後落地驗證",
-        "priceLabel": "聽診後先報價",
-        "body": "用一段短週期驗證一條最影響收入或營運嘅流程。範圍同報價按流程複雜程度，聽診後提供。",
+        "name": "Snapshot／Discovery Sprint",
+        "priceLabel": "Snapshot HK$3,000 · Discovery HK$6,800（≤10 人）",
+        "body": "用短週期聽清或驗證一條最影響收入／營運嘅流程。11–30 人 Discovery 為 HK$13,600。",
         "deliverables": [
           "流程圖",
           "責任分工",
@@ -258,7 +258,7 @@
       },
       {
         "question": "顧問費用點計？",
-        "answer": "按流程複雜程度同範圍，聽診後提供報價。唔會一開始就推系統。"
+        "answer": "Snapshot HK$3,000；Discovery Sprint 10 人或以下 HK$6,800、11–30 人 HK$13,600。之後落地同陪跑先按流程複雜程度報價，唔會一開始就推系統。"
       },
       {
         "question": "如果我間公司其實唔需要 AI／CRM 呢？",
@@ -479,8 +479,8 @@
     "readiness": {
       "eyebrow": "只作 downsell",
       "title": "AI Readiness Snapshot",
-      "price": "聽診後先報價",
-      "intro": "俾未信、或者未 ready 投入 聽診後先報價 Discovery 嘅團隊，先用較細成本取得一個有根據嘅決定。",
+      "price": "HK$3,000",
+      "intro": "俾未 ready 投入 HK$6,800 Discovery Sprint 嘅團隊，先用較細成本取得一個有根據嘅決定。",
       "points": [
         "60–90 分鐘訪談",
         "一頁 readiness scorecard",
@@ -488,9 +488,9 @@
         "清楚建議：暫時未適合，或者進入 Discovery"
       ],
       "excludes": "不包括 SOP、prototype、implementation scope 或任何 custom build。",
-      "upgrade": "14 個曆日內升級，只需補 聽診後先報價，即可進入總值 聽診後先報價 嘅 Discovery。",
+      "upgrade": "14 個曆日內升級，只需補 HK$3,800，即可進入總值 HK$6,800 嘅 Discovery Sprint。",
       "educationTitle": "可選 1 個月教育 track — 另行報價",
-      "educationIntro": "同一間客戶機構，每星期 1 堂，共 4 堂，每堂 60 分鐘；唔包括喺 聽診後先報價 Snapshot 之內。",
+      "educationIntro": "同一間客戶機構，每星期 1 堂，共 4 堂，每堂 60 分鐘；唔包括喺 HK$3,000 Snapshot 之內。",
       "educationPoints": [
         "不按人頭收教學費；人數以已協議場地或網上平台安全容量為限",
         "第一堂前確認內容；額外備課或加堂另行收費",

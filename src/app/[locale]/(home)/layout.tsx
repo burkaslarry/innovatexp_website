@@ -34,7 +34,6 @@ export async function generateMetadata({
       title: seo.title,
       description: seo.description,
       images: [OG_IMAGE.url],
-      creator: "@innovatexp",
     },
   };
 }

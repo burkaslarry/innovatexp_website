@@ -24,7 +24,7 @@
     "trustPoints": [
       "14 years in large enterprises",
       "Served training centres, clinics, fitness & professional services",
-      "Decide what to build only after diagnosis"
+      "Verified: 10 days → 3 hours · ~HK$25k/month saved"
     ],
     "diagnosticInputs": [
       "WhatsApp enquiries",
@@ -60,7 +60,7 @@
   },
   "approach": {
     "eyebrow": "The method",
-    "title": "Diagnose → land AI agents → co-run from 0 to 1",
+    "title": "Diagnose → put the right support to work → co-run from 0 to 1",
     "intro": "In 30 minutes we find your most painful workflow, clarify leaks, ownership, and next steps. We only implement when it helps.",
     "steps": [
       {
@@ -71,8 +71,8 @@
       },
       {
         "label": "Step 2",
-        "title": "Land AI agents",
-        "body": "Using system design experience, we deliver a process map, ownership, SOPs, and one improvement the team can actually use."
+        "title": "Put practical AI support to work",
+        "body": "Where it genuinely helps, AI can read the right context, draft a next step, and trigger routine work. You still get a process map, clear ownership, SOPs, and human review."
       },
       {
         "label": "Step 3",
@@ -109,15 +109,15 @@
   },
   "consultancy": {
     "eyebrow": "Mainline",
-    "title": "Quote after diagnosis — then decide the co-run scope",
-    "intro": "Mainline: diagnosis → land → co-run. Tool trials are secondary; we decide after diagnosis.",
+    "title": "Start small, then decide the co-run scope",
+    "intro": "Mainline: diagnosis → land → co-run. The public entry points are Snapshot HK$3,000 and Discovery Sprint HK$6,800 for teams up to 10.",
     "fitNote": "We don't sell a system first. Diagnose, land, adopt, review — I'll say so if you shouldn't buy.",
     "startingBadge": "Suggested start",
     "plans": [
       {
-        "name": "Post-diagnosis validation",
-        "priceLabel": "Quoted after diagnosis",
-        "body": "用一段短週期驗證一條最影響收入或營運嘅流程。範圍同報價按流程複雜程度，聽診後提供。",
+        "name": "Snapshot or Discovery Sprint",
+        "priceLabel": "HK$3,000 Snapshot · HK$6,800 Discovery (≤10)",
+        "body": "Use a short cycle to diagnose or validate one workflow that most affects revenue or operations. Discovery for teams of 11–30 is HK$13,600.",
         "deliverables": [
           "流程圖",
           "責任分工",
@@ -258,7 +258,7 @@
       },
       {
         "question": "How are consulting fees calculated?",
-        "answer": "By workflow complexity and scope — quoted after diagnosis. We don't push a system at the start."
+        "answer": "Snapshot is HK$3,000. Discovery Sprint is HK$6,800 for teams up to 10, or HK$13,600 for 11–30. Deeper implementation and co-run work is scoped after diagnosis; we don't push a system at the start."
       },
       {
         "question": "What if we don't actually need AI or a CRM?",
@@ -479,8 +479,8 @@
     "readiness": {
       "eyebrow": "Downsell only",
       "title": "AI Readiness Snapshot",
-      "price": "Quoted after diagnosis",
-      "intro": "For a team that is not yet ready to commit Quoted after diagnosis to Discovery and needs a smaller evidence-based decision first.",
+      "price": "HK$3,000",
+      "intro": "For a team not yet ready to commit to the HK$6,800 Discovery Sprint and needing a smaller evidence-based decision first.",
       "points": [
         "60–90 minute interview",
         "One-page readiness scorecard",
@@ -488,9 +488,9 @@
         "Clear recommendation: not ready yet or proceed to Discovery"
       ],
       "excludes": "Does not include an SOP, prototype, implementation scope or custom build.",
-      "upgrade": "Upgrade within 14 calendar days: pay Quoted after diagnosis more to enter the Quoted after diagnosis Discovery.",
+      "upgrade": "Upgrade within 14 calendar days: top up HK$3,800 to enter the HK$6,800 Discovery Sprint.",
       "educationTitle": "Optional 1-month education track — scoped separately",
-      "educationIntro": "Four 60-minute sessions, one per week, for the same client organization. This is not included in the Quoted after diagnosis Snapshot.",
+      "educationIntro": "Four 60-minute sessions, one per week, for the same client organization. This is not included in the HK$3,000 Snapshot.",
       "educationPoints": [
         "No per-head teaching fee; attendance is limited by the agreed room or online-platform capacity",
         "Content is agreed before the first session; extra preparation or sessions are separate",

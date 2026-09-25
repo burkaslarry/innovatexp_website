@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { notFound } from "next/navigation";
+import { notFound, permanentRedirect } from "next/navigation";
 import { getServicePage } from "@/content/service-pages";
-import { ServiceLandingPage } from "@/features/marketing/ServiceLandingPage";
 import { localeAlternates } from "@/lib/alternate-metadata";
-import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
-import { buildServicePageJsonLd } from "@/lib/seo/service-page-schema";
+import { isValidLocale } from "@/lib/i18n-routing";
 import { getSiteUrl } from "@/lib/site-url";
 
 const PATH = "/sme-ai-workflow";
@@ -25,7 +23,11 @@ export async function generateMetadata({
   return {
     title: content.metaTitle,
     description: content.metaDescription,
-    alternates,
+    alternates: {
+      ...alternates,
+      canonical: `${getSiteUrl()}/${locale}/ai-consulting`,
+    },
+    robots: { index: false, follow: true },
     openGraph: {
       title: content.metaTitle,
       description: content.metaDescription,
@@ -49,17 +51,5 @@ export default async function SmeAiWorkflowPage({
 }) {
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
-  const loc = locale as AppLocale;
-  const content = getServicePage(SLUG, loc);
-  const jsonLd = buildServicePageJsonLd({ locale: loc, content });
-
-  return (
-    <>
-      <script
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
-      />
-      <ServiceLandingPage locale={loc} content={content} />
-    </>
-  );
+  permanentRedirect(`/${locale}/ai-consulting`);
 }

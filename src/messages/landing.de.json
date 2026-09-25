@@ -479,8 +479,8 @@
     "readiness": {
       "eyebrow": "Nur Downsell",
       "title": "AI Readiness Snapshot",
-      "price": "Quoted after diagnosis",
-      "intro": "Für Teams, die Quoted after diagnosis Discovery noch nicht buchen wollen und zuerst eine kleinere, belegte Entscheidung brauchen.",
+      "price": "HK$3.000",
+      "intro": "Für Teams, die den HK$6.800 Discovery Sprint noch nicht buchen wollen und zuerst eine kleinere, belegte Entscheidung brauchen.",
       "points": [
         "60–90 Minuten Interview",
         "Einseitige Readiness-Scorecard",
@@ -488,9 +488,9 @@
         "Klare Empfehlung: noch nicht bereit oder weiter zu Discovery"
       ],
       "excludes": "Kein SOP, kein Prototype, kein Implementation-Scope, kein Custom Build.",
-      "upgrade": "Upgrade innerhalb von 14 Kalendertagen: zusätzlich Quoted after diagnosis zahlen und in das Quoted after diagnosis Discovery einsteigen.",
+      "upgrade": "Upgrade innerhalb von 14 Kalendertagen: HK$3.800 aufzahlen und in den HK$6.800 Discovery Sprint einsteigen.",
       "educationTitle": "Optionaler 1-Monats-Education-Track — separat anbieten",
-      "educationIntro": "Vier 60-Minuten-Sessions, eine pro Woche, für dieselbe Kundenorganisation. Nicht im Quoted after diagnosis Snapshot enthalten.",
+      "educationIntro": "Vier 60-Minuten-Sessions, eine pro Woche, für dieselbe Kundenorganisation. Nicht im HK$3.000 Snapshot enthalten.",
       "educationPoints": [
         "Keine Kopfpauschale; Teilnehmerzahl begrenzt durch den vereinbarten Raum oder die Online-Plattform",
         "Inhalt vor der ersten Session vereinbart; Extra-Vorbereitung oder Extra-Sessions separat",

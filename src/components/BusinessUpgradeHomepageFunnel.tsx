@@ -4,6 +4,7 @@ import { BookingCtaButton } from "@/components/BookingCtaButton";
 import { SectionHeader } from "@/components/ui/SectionHeader";
 import { getHomepageContent } from "@/content/homepage";
 import { primaryCtaLabel } from "@/content/cta-config";
+import { secondaryWhatsAppLabel } from "@/content/cta-config";
 import type { AppLocale } from "@/lib/i18n-routing";
 import { withLocale } from "@/lib/i18n-routing";
 
@@ -30,9 +31,11 @@ function SectionShell({
 export function BusinessUpgradeHomepageFunnel({
   locale,
   bookingHref,
+  whatsappHref,
 }: {
   locale: AppLocale;
   bookingHref: string;
+  whatsappHref: string;
 }) {
   const c = getHomepageContent(locale);
   const ctaLabel = primaryCtaLabel(locale);
@@ -221,10 +224,16 @@ export function BusinessUpgradeHomepageFunnel({
               {c.finalCta.body}
             </p>
           ) : null}
-          <div className="mt-6">
+          <div className="mt-6 flex flex-col gap-3 sm:flex-row">
             <BookingCtaButton href={bookingHref} placement="final_cta" className="px-6">
               {ctaLabel}
             </BookingCtaButton>
+            <a
+              href={whatsappHref}
+              className="inline-flex min-h-[48px] items-center justify-center rounded-[var(--btn-radius)] border border-[color:var(--border-medium)] px-6 py-3 text-base font-semibold text-[color:var(--heading-foreground)]"
+            >
+              {secondaryWhatsAppLabel(locale)}
+            </a>
           </div>
         </div>
       </SectionShell>

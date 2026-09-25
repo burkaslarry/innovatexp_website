@@ -3,6 +3,7 @@ import { CheckCircle2, XCircle, ArrowRight, ClipboardList, Users, QrCode, BarCha
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { BookingCtaButton } from "@/components/BookingCtaButton";
 import type { AppLocale } from "@/lib/i18n-routing";
+import { PRICING, formatHkd } from "@/content/pricing";
 
 type Faq = { question: string; answer: string };
 
@@ -19,6 +20,8 @@ export function EventXpSections({
   const scopingHref = `/${locale}/eventxp-scoping`;
   const primaryLabel = zh ? "預約 EventXP 流程診斷" : "Book an EventXP workflow diagnosis";
   const secondaryLabel = zh ? "索取初步方案及報價" : "Get a scoped proposal & quote";
+  const trialPrice = formatHkd(PRICING.quickCash.eventXpTrial, locale);
+  const monthlyFrom = formatHkd(PRICING.tools.eventXp.maintenanceStarterMonthly, locale);
 
   return (
     <>
@@ -50,8 +53,8 @@ export function EventXpSections({
         </div>
         <p className="mt-3 text-xs text-[color:var(--text-tertiary)]">
           {zh
-            ? "唔刊固定價。流程診斷後先畀初步方案同報價，唔使買我會直講。"
-            : "No fixed price. A scoped proposal and quote come after a workflow diagnosis — if you don't need it, we'll say so."}
+            ? `單場流程試行 ${trialPrice}；持續方案由 ${monthlyFrom}／月起。較大範圍聽診後報價，唔使買我會直講。`
+            : `One-event workflow trial ${trialPrice}; ongoing plans from ${monthlyFrom}/month. Larger scopes are quoted after diagnosis — if you don't need it, we'll say so.`}
         </p>
       </section>
 

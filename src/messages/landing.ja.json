@@ -479,8 +479,8 @@
     "readiness": {
       "eyebrow": "Downsell のみ",
       "title": "AI Readiness Snapshot",
-      "price": "Quoted after diagnosis",
-      "intro": "まだ Quoted after diagnosis の Discovery に踏み切れないチーム向け。小さいコストで根拠ある判断を先に取る。",
+      "price": "HK$3,000",
+      "intro": "まだ HK$6,800 の Discovery Sprint に踏み切れないチーム向け。小さいコストで根拠ある判断を先に取る。",
       "points": [
         "60–90分インタビュー",
         "1ページの readiness scorecard",
@@ -488,9 +488,9 @@
         "未準備か Discovery へ進むかの明確な推奨"
       ],
       "excludes": "SOP、prototype、implementation scope、custom build は含みません。",
-      "upgrade": "14暦日以内のアップグレードは追加 Quoted after diagnosis で、合計 Quoted after diagnosis の Discovery に入れます。",
+      "upgrade": "14暦日以内のアップグレードは HK$3,800 を追加し、合計 HK$6,800 の Discovery Sprint に入れます。",
       "educationTitle": "任意の 1か月 education track — 別見積",
-      "educationIntro": "同一顧客組織向け。週1回×4回、各60分。Quoted after diagnosis Snapshot には含まれません。",
+      "educationIntro": "同一顧客組織向け。週1回×4回、各60分。HK$3,000 Snapshot には含まれません。",
       "educationPoints": [
         "人数課金なし。参加人数は合意した会場またはオンライン基盤の安全定員まで",
         "第1回前に内容を確定。追加準備や追加セッションは別料金",

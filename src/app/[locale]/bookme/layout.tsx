@@ -94,8 +94,8 @@ export default async function BookMeLayout({
       <div className="sr-only" aria-hidden={false}>
         <p>
           {zh
-            ? "預約香港 AI 顧問 Larry Lo／InnovateXP 免費 30 分鐘流程診斷。釐清漏單、慢報價、WhatsApp 跟進或私有 AI 需求，再決定 Discovery Sprint、SmartSales CRM、EventXP 或培訓。電郵 info@innovatexp.co。"
-            : "Book a free 30-minute workflow diagnosis with Hong Kong AI consultant Larry Lo / InnovateXP. Clarify enquiry leaks, slow quotes, WhatsApp follow-up, or private AI needs—then decide on Discovery Sprint, SmartSales CRM, EventXP, or training. Email info@innovatexp.co."}
+            ? "預約香港 AI 顧問 Larry Lo／InnovateXP 30 分鐘業務聽診。釐清漏單、慢報價或 WhatsApp 跟進，再決定 Snapshot、Discovery Sprint 或暫時唔買系統。電郵 info@innovatexp.co。"
+            : "Book a 30-minute Business Workflow Diagnosis with Hong Kong AI consultant Larry Lo / InnovateXP. Clarify enquiry leaks, slow quotes, or WhatsApp follow-up, then decide on Snapshot, Discovery Sprint, or no system yet. Email info@innovatexp.co."}
         </p>
         <ul>
           {faqs.map((f) => (
