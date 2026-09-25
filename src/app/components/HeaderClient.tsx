@@ -11,7 +11,7 @@ import { useLocalizedHref } from '@/hooks/useLocalizedHref';
 import { HeaderCartButton } from '@/components/inquiry-cart/HeaderCartButton';
 import { trackBookingCtaClick } from '@/lib/analytics';
 
-const LOGO_ALT = 'InnovateXP Limited - AI CRM and Event Management Solutions Hong Kong';
+const LOGO_ALT = 'Larry Lo | InnovateXP — Business Workflow Diagnosis, Hong Kong';
 
 export default function HeaderClient({
   variant,

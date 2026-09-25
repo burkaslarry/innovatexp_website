@@ -119,45 +119,45 @@
         "priceLabel": "HK$3,000 Snapshot · HK$6,800 Discovery (≤10)",
         "body": "Use a short cycle to diagnose or validate one workflow that most affects revenue or operations. Discovery for teams of 11–30 is HK$13,600.",
         "deliverables": [
-          "流程圖",
-          "責任分工",
-          "SOP／跟進節點",
-          "簡單 KPI",
-          "一個即時改善點"
+          "Workflow map",
+          "Clear ownership",
+          "SOP and follow-up checkpoints",
+          "Simple KPI baseline",
+          "One immediate improvement"
         ],
         "cta": "Book a diagnosis"
       },
       {
         "name": "3-month co-run",
         "priceLabel": "Quoted by workflow complexity",
-        "body": "1–2 條流程落地、SOP 初版、每月檢討、一次團隊培訓。",
+        "body": "Implement 1–2 workflows with an initial SOP, monthly reviews, and one team training session.",
         "deliverables": [
-          "1–2 條流程",
-          "SOP 初版",
-          "每月檢討",
-          "1 次團隊培訓"
+          "1–2 workflows",
+          "Initial SOP",
+          "Monthly reviews",
+          "One team training session"
         ],
         "cta": "Book a diagnosis"
       },
       {
         "name": "6-month co-run",
         "priceLabel": "Quoted by workflow complexity",
-        "body": "一個部門／3–4 條流程、採用追蹤、最多兩次工作坊。",
+        "body": "Support one department or 3–4 workflows with adoption tracking and up to two workshops.",
         "deliverables": [
-          "3–4 條流程",
-          "採用追蹤",
-          "最多 2 次工作坊"
+          "3–4 workflows",
+          "Adoption tracking",
+          "Up to two workshops"
         ],
         "cta": "Book a diagnosis"
       },
       {
         "name": "12-month co-run",
         "priceLabel": "Quoted by workflow complexity",
-        "body": "年度路線圖、流程管治、管理層檢討。",
+        "body": "Build an annual roadmap, workflow governance, and management review rhythm.",
         "deliverables": [
-          "年度路線圖",
-          "流程管治",
-          "管理層檢討"
+          "Annual roadmap",
+          "Workflow governance",
+          "Management reviews"
         ],
         "cta": "Book a diagnosis"
       }

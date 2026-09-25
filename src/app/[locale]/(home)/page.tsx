@@ -90,7 +90,7 @@ function LandingPage() {
               LinkedIn
             </a>
             <a href={`mailto:${HOMEPAGE_PLACEHOLDERS.emailAddress}`}>{HOMEPAGE_PLACEHOLDERS.emailAddress}</a>
-            <a href={loc("/services")}>{content.nav.services}</a>
+            <a href={loc("/services")}>{content.nav.plans}</a>
             <a href={loc("/products")}>
               {locale === "en" ? "Post-diagnosis options" : "聽診後落地選項"}
             </a>
