@@ -1476,6 +1476,33 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
   };
 
   const breadcrumbSchema = buildBreadcrumbJsonLd(pathname || "/", baseUrl, routeLocale);
+  const diagnosisMethodSchema =
+    resolvedScope === "home"
+      ? {
+          "@context": "https://schema.org",
+          "@type": "ItemList",
+          name: localeUsesChineseCopy(routeLocale)
+            ? "InnovateXP 業務聽診方法"
+            : "InnovateXP Business Workflow Diagnosis method",
+          itemListElement: [
+            {
+              "@type": "ListItem",
+              position: 1,
+              name: localeUsesChineseCopy(routeLocale) ? "業務聽診" : "Business Workflow Diagnosis",
+            },
+            {
+              "@type": "ListItem",
+              position: 2,
+              name: localeUsesChineseCopy(routeLocale) ? "實用支援落地" : "Practical implementation",
+            },
+            {
+              "@type": "ListItem",
+              position: 3,
+              name: localeUsesChineseCopy(routeLocale) ? "由 0 到 1 陪跑" : "0-to-1 co-running",
+            },
+          ],
+        }
+      : null;
 
   return (
     <>
@@ -1494,6 +1521,9 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       ) : null}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(consultingServiceSchema) }} />
+      {diagnosisMethodSchema ? (
+        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(diagnosisMethodSchema) }} />
+      ) : null}
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
       {scopedFaqSchemas.map((schema, idx) => (
         <script
