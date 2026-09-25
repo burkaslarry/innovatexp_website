@@ -82,22 +82,22 @@ const zh: Copy = {
   lead:
     "我係 AI 商業顧問 Larry Lo／InnovateXP。入口係業務聽診，再按你嘅流程、團隊同私隱需要，揀細步試行或完整落地。現有工具用得返就保留，唔會為賣系統逼你重做。",
   brandPromise: "先執順流程，再落地 AI。如果你唔需要買系統，我會直講。",
-  serviceFirstTitle: "點解唔一開始推 Hermes／大模型？",
+  serviceFirstTitle: "點解唔一開始推最複雜嘅 AI？",
   serviceFirstBody:
-    "Hermes 係 AI agent（大腦），唔係 ERP。多數香港 SME 用 n8n＋自選 ERP＋Cloud API 已經夠。本地 35B 級模型要 24GB+ VRAM、私隱需求同高用量先划算；Uncensored 模型唔作預設商用腦。",
-  eeatTitle: "點解可以信呢個建議（E-E-A-T）",
+    "AI 助手係幫手，唔係你嘅公司系統。多數香港中小企先執順現有表格同跟進流程就夠。只有私隱要求高、每日用量大，先需要私有環境。一般商用會用可追蹤、可覆核嘅做法，唔會用難審計嘅模型。",
+  eeatTitle: "點解可以信呢個建議",
   eeat: [
     {
-      label: "Experience（經驗）",
-      body: "創辦人主導交付：由聽診、workflow 落地到 Day 30／60／90 採用檢討，唔係交報告就走。",
+      label: "經驗",
+      body: "創辦人主導交付：由聽診、流程落地到第 30／60／90 日採用檢討，唔係交報告就走。",
     },
     {
-      label: "Expertise（專業）",
-      body: "14 年 IT 交付；熟悉 WhatsApp／Excel 營運、流程設計、AI 助手同私隱部署取捨。",
+      label: "專業",
+      body: "14 年 IT 交付；熟悉 WhatsApp／Excel 營運、流程設計、AI 助手同私隱安排。",
     },
     {
-      label: "Authoritativeness（權威）",
-      body: "InnovateXP Limited（香港）；公開頁、llms.txt、案例頁同 LinkedIn 一致引用「AI 商業顧問 Larry Lo／InnovateXP」。",
+      label: "權威",
+      body: "InnovateXP Limited（香港）；公開頁、案例頁同 LinkedIn 一致引用「AI 商業顧問 Larry Lo／InnovateXP」。",
     },
     {
       label: "Trustworthiness（信任）",
@@ -106,31 +106,31 @@ const zh: Copy = {
   ],
   spectrumTitle: "由細步試行到完整落地",
   spectrumIntro: "所有方案都由業務聽診開始。公開價係決策參考；最後範圍按流程、資料同團隊採用需要確認。",
-  hermesTitle: "Hermes＋本地大模型：幾時先值得",
+  hermesTitle: "幾時先值得用私有 AI 環境",
   hermesYes: [
-    "有 GPU（約 24GB+ VRAM）或願意租 RunPod／dedicated",
-    "要私隱／數據唔出街（法律、醫療、金融向）",
-    "每日查詢量大，Cloud API 費高過养 GPU",
-    "有人維護（你 managed 或對方 DevOps）",
+    "資料不能離開指定環境（法律、醫療、金融向）",
+    "每日查詢量大，公開雲端用量費會高過自備環境",
+    "有人長期維護（我哋代管，或你團隊有負責人）",
+    "願意為私隱同穩定性付較高月費",
   ],
   hermesNo: [
-    "只有細 VPS（例如 2GB RAM）——改用 Cloud API",
-    "只係 form→database——純 n8n 夠",
-    "要穩定 SLA、零維護——用 managed API",
-    "SME 細、query 少——API model 平過养 GPU",
-    "要嚴謹 audit——唔好預設 Uncensored 模型",
+    "現有主機好細——改用受管雲端服務",
+    "只係表格、通知、資料同步——規則流程已夠",
+    "想少維護、要穩定服務——用受管服務",
+    "公司細、查詢少——受管服務更划算",
+    "要嚴謹紀錄——唔用難以追蹤嘅模型",
   ],
   hermesUncensoredNote:
-    "HauhauCS 類 Uncensored 只適合內部 R&D 或客人明確要求並簽 waiver。商用預設：官方 Qwen／tool-calling 成熟模型＋logging。",
-  erpTitle: "ERP 後端：客人揀，唔綁 Notion",
-  erpIntro: "「ERP 後端你揀，我幫你接 n8n（同可選 AI agent）。Notion 只係其中一個 option。」",
+    "難以追蹤、未經審核嘅模型只適合內部試驗，或客人書面確認風險。商用預設用有紀錄、可覆核嘅穩定做法。",
+  erpTitle: "工作工具你揀，唔綁死單一平台",
+  erpIntro: "「現有表格或管理工具用得返就保留。我幫你接好流程，需要時先加 AI 助手。Notion 只係其中一個選擇。」",
   erpOptions: [
     { name: "Google Sheets", fit: "超細公司、熟 Excel" },
-    { name: "Airtable", fit: "輕 CRM＋inventory" },
-    { name: "Baserow／NocoDB", fit: "要 self-host、唔想俾 SaaS 錢" },
-    { name: "Notion", fit: "非 technical 團隊、要靚 UI" },
-    { name: "ERPNext", fit: "真庫存／會計／PO" },
-    { name: "PostgreSQL＋Admin UI", fit: "完全客製" },
+    { name: "Airtable", fit: "輕量客戶跟進同庫存" },
+    { name: "自管資料表", fit: "想自己保管資料、少付月費" },
+    { name: "Notion", fit: "非技術團隊、想介面清楚" },
+    { name: "庫存同會計系統", fit: "真庫存、會計、採購單" },
+    { name: "度身訂造", fit: "現有工具都唔夠用" },
   ],
   packages: [
     {
@@ -156,9 +156,9 @@ const zh: Copy = {
       name: "團隊落地 Starter",
       setup: "HK$12,800",
       monthly: "HK$1,800",
-      includes: "最多 5 條流程、WhatsApp／Email 銜接、SOP、備份",
-      bestFor: "多數香港 SME（聽診後）",
-      avoidWhen: "冇 ops owner；拒絕聽診",
+      includes: "最多 5 條流程、WhatsApp／Email 銜接、操作步驟、備份",
+      bestFor: "多數香港中小企（聽診後）",
+      avoidWhen: "冇營運負責人；拒絕聽診",
     },
     {
       id: "ai_api",
@@ -189,7 +189,7 @@ const zh: Copy = {
     },
   ],
   passThrough: "第三方訊息、AI 用量、網域、雲端或私有環境成本另付；開工前會列明。",
-  faqTitle: "常見問題（SERP／銷售同一套答案）",
+  faqTitle: "常見問題",
   faqs: [
     {
       question: "我哋要唔要先買新系統？",
@@ -253,7 +253,7 @@ const zh: Copy = {
       id: "dataResidency",
       label: "4. 數據可唔可以出公開雲端？",
       options: [
-        { id: "ok", label: "可以（Cloud API OK）" },
+        { id: "ok", label: "可以（資料可放受管雲端）" },
         { id: "private", label: "唔可以／要私有" },
       ],
     },
@@ -263,12 +263,12 @@ const zh: Copy = {
       options: [
         { id: "low", label: "少（試用級）" },
         { id: "mid", label: "中（日常 ops）" },
-        { id: "high", label: "高（API 費會好貴）" },
+        { id: "high", label: "高（用量費會好貴）" },
       ],
     },
     {
       id: "gpu",
-      label: "6. 有冇 GPU（約 24GB+）或願意租？",
+      label: "6. 可唔可以接受私有環境，並有人長期維護？",
       options: [
         { id: "yes", label: "有／願意租" },
         { id: "no", label: "冇" },
@@ -276,7 +276,7 @@ const zh: Copy = {
     },
     {
       id: "erpDepth",
-      label: "7. ERP 要「真庫存會計」定「夠用表」？",
+      label: "7. 要完整庫存同會計，定夠用嘅表同看板？",
       options: [
         { id: "lite", label: "夠用表／看板" },
         { id: "real", label: "真庫存／會計／PO" },
@@ -318,33 +318,33 @@ const zh: Copy = {
       body: "暫時缺少清晰 owner 或範圍。半個鐘聽診先，避免裝錯自動化。",
     },
     lite: {
-      title: "建議：Automation Lite（或 14 日試用）",
-      body: "規則自動化已夠。n8n＋自選 ERP＋2 條 workflow。唔使 Hermes／大模型。",
+      title: "建議：流程整理 Lite（或 14 日試用）",
+      body: "規則流程已夠。保留你而家用嘅表格或系統，先做 2 條日常流程。唔使上大型 AI。",
     },
     trial: {
-      title: "建議：14 日試用 → 再轉 Starter",
+      title: "建議：14 日試用，再轉團隊落地",
       body: "低風險試跑。試用聽診後報價；轉正式有抵扣。",
     },
     starter: {
-      title: "建議：Starter（n8n＋ERP）",
-      body: "多數 SME 主路徑。Prod n8n＋自選 ERP＋最多 5 workflows＋採用陪跑。",
+      title: "建議：團隊落地 Starter",
+      body: "多數中小企主路徑。最多 5 條流程、備份，同採用陪跑。",
     },
     ai_api: {
-      title: "建議：Automation＋AI（Cloud API）",
-      body: "要 AI 讀寫／起草，但無須私有 GPU。Hermes（或同等）接 Cloud LLM。",
+      title: "建議：團隊落地＋AI 助手",
+      body: "要 AI 讀資料同起草回覆，但唔使私有環境。重要決定仍由人覆核。",
     },
     ai_gpu: {
-      title: "建議：Automation＋AI（Private GPU）",
-      body: "私隱＋高用量＋有 GPU 先值得。用官方／tool-calling 穩定模型；Uncensored 唔作預設。",
+      title: "建議：私隱加強 AI 方案",
+      body: "私隱、高用量同長期維護同時成立先值得。商用用可追蹤、可覆核嘅做法。",
     },
   },
   erpHints: {
-    wa_excel: "ERP 建議由 Google Sheets 或 Baserow 起步（熟 Excel／要自管 data）。",
+    wa_excel: "建議由 Google Sheets 或你熟悉嘅表格起步。",
     notion: "可以繼續 Notion；唔使為自動化而逼你換。",
-    sheets: "Sheets／Airtable 很適合 Lite／Starter。",
-    other: "聽診時一齊定 ERP；可選 Baserow／NocoDB／ERPNext。",
-    real: "若要真庫存會計：Starter／AI 之上加購 ERPNext。",
-    lite: "Lite 表／看板已夠——Notion／Baserow／Sheets 任選。",
+    sheets: "Sheets／Airtable 很適合流程整理同團隊落地。",
+    other: "聽診時一齊定用邊套工具；表格、自管資料表或庫存會計系統都可以。",
+    real: "若要真庫存同會計，可在團隊落地或 AI 方案上加購進階模組。",
+    lite: "表同看板已夠——Notion、表格都可以繼續用。",
   },
 };
 
@@ -357,10 +357,10 @@ const en: Copy = {
   lead:
     "I am AI Business Consultant Larry Lo / InnovateXP. Start with diagnosis, then choose a small pilot or full rollout around your workflow, team, and privacy needs. Keep existing tools where they still work.",
   brandPromise: "Diagnose first. If you should not buy a system yet, I will say so.",
-  serviceFirstTitle: "Why not lead with Hermes / a local 35B model?",
+  serviceFirstTitle: "Why not start with the most complex AI?",
   serviceFirstBody:
-    "Hermes is an AI agent (brain), not an ERP. Most Hong Kong SMEs are fine with n8n + chosen ERP + a cloud LLM API. Local 35B-class models need ~24GB+ VRAM, a privacy need, and enough volume. Uncensored models are not the default commercial brain.",
-  eeatTitle: "Why this advice is trustworthy (E-E-A-T)",
+    "An AI assistant is a helper, not your company system. Most Hong Kong SMEs only need their current tables and follow-up rhythm cleaned up. A private environment is for strict privacy and high daily volume. Commercial work uses a traceable, reviewable setup.",
+  eeatTitle: "Why this advice is trustworthy",
   eeat: [
     {
       label: "Experience",
@@ -372,7 +372,7 @@ const en: Copy = {
     },
     {
       label: "Authoritativeness",
-      body: "InnovateXP Limited (Hong Kong) with consistent brand citations across the site, llms.txt, cases, and LinkedIn.",
+      body: "InnovateXP Limited (Hong Kong), with the same positioning on the public site, case studies, and LinkedIn.",
     },
     {
       label: "Trustworthiness",
@@ -381,31 +381,31 @@ const en: Copy = {
   ],
   spectrumTitle: "From a small pilot to full team rollout",
   spectrumIntro: "Every path starts with diagnosis. Published fees guide the decision; final scope reflects workflow, data, and adoption needs.",
-  hermesTitle: "When Hermes + a local model is worth it",
+  hermesTitle: "When a private AI environment is worth it",
   hermesYes: [
-    "GPU ~24GB+ VRAM (or willingness to rent)",
-    "Privacy / data-residency requirement",
-    "High daily volume where API fees exceed GPU cost",
-    "A maintainer (managed by us or their DevOps)",
+    "Data must stay in a specified environment (legal, medical, finance)",
+    "Daily volume is high enough that public-cloud usage fees cost more",
+    "Someone will maintain it (us, or an owner on your team)",
+    "You will pay more each month for privacy and stability",
   ],
   hermesNo: [
-    "Tiny VPS only — use cloud API",
-    "Form→DB only — plain n8n",
-    "Need zero-maintenance SLA — managed API",
-    "Small SME, low queries — API is cheaper",
-    "Strict audit needs — don’t default to uncensored",
+    "The current server is very small — use a managed service",
+    "Only forms, notifications, and data sync — rules are enough",
+    "You want less maintenance and a stable service",
+    "Small team, few enquiries — a managed service costs less",
+    "You need a clear audit trail — skip hard-to-trace models",
   ],
   hermesUncensoredNote:
-    "Uncensored variants are for internal R&D or signed waiver. Commercial default: official Qwen / mature tool-calling models with logging.",
-  erpTitle: "ERP backend: client chooses",
-  erpIntro: "“You pick the ERP backend; I connect n8n (and optional AI). Notion is one option.”",
+    "Hard-to-trace, unreviewed models are only for internal trials, or when the client accepts the risk in writing. Commercial work stays reviewable.",
+  erpTitle: "You choose the tools",
+  erpIntro: "“Keep the spreadsheets or systems that still work. I connect the workflow, and add an AI assistant only if it helps. Notion is one option.”",
   erpOptions: [
     { name: "Google Sheets", fit: "Tiny teams, Excel-native" },
-    { name: "Airtable", fit: "Light CRM + inventory" },
-    { name: "Baserow / NocoDB", fit: "Self-host, avoid SaaS lock-in" },
-    { name: "Notion", fit: "Non-technical teams, polished UI" },
-    { name: "ERPNext", fit: "Real inventory / accounting / PO" },
-    { name: "PostgreSQL + Admin UI", fit: "Fully custom" },
+    { name: "Airtable", fit: "Light customer follow-up and inventory" },
+    { name: "Self-managed tables", fit: "Keep data in-house, lower monthly fees" },
+    { name: "Notion", fit: "Non-technical teams, clear pages" },
+    { name: "Inventory and accounting system", fit: "Real stock, accounts, and purchase orders" },
+    { name: "Built to fit", fit: "Current tools are not enough" },
   ],
   packages: [
     {
@@ -431,9 +431,9 @@ const en: Copy = {
       name: "Team Rollout Starter",
       setup: "HK$12,800",
       monthly: "HK$1,800",
-      includes: "Up to 5 workflows, WhatsApp/email connections, SOP, and backup",
-      bestFor: "Most HK SMEs after diagnosis",
-      avoidWhen: "No ops owner; refuses diagnosis",
+      includes: "Up to 5 workflows, WhatsApp/email connections, written steps, and backup",
+      bestFor: "Most Hong Kong SMEs after diagnosis",
+      avoidWhen: "No operations owner; refuses diagnosis",
     },
     {
       id: "ai_api",
@@ -464,7 +464,7 @@ const en: Copy = {
     },
   ],
   passThrough: "Third-party messaging, AI usage, domain, cloud, or private-environment costs are separate and listed before work starts.",
-  faqTitle: "FAQ (same answers for SERP and sales)",
+  faqTitle: "Common questions",
   faqs: [
     {
       question: "Do we need to buy a new system first?",
@@ -528,7 +528,7 @@ const en: Copy = {
       id: "dataResidency",
       label: "4. Can data use public cloud?",
       options: [
-        { id: "ok", label: "Yes — cloud API OK" },
+        { id: "ok", label: "Yes — a managed cloud service is fine" },
         { id: "private", label: "No — private/residency" },
       ],
     },
@@ -538,12 +538,12 @@ const en: Copy = {
       options: [
         { id: "low", label: "Low" },
         { id: "mid", label: "Medium" },
-        { id: "high", label: "High (API would get expensive)" },
+        { id: "high", label: "High (usage fees would get expensive)" },
       ],
     },
     {
       id: "gpu",
-      label: "6. GPU ~24GB+ or willing to rent?",
+      label: "6. Can you accept a private environment with someone to maintain it?",
       options: [
         { id: "yes", label: "Yes" },
         { id: "no", label: "No" },
@@ -551,7 +551,7 @@ const en: Copy = {
     },
     {
       id: "erpDepth",
-      label: "7. Lite board vs real ERP?",
+      label: "7. Simple tables, or full inventory and accounting?",
       options: [
         { id: "lite", label: "Lite table / board" },
         { id: "real", label: "Real inventory / accounting / PO" },
@@ -593,33 +593,33 @@ const en: Copy = {
       body: "Ownership or scope is unclear. Book a 30-min diagnosis before installing automation.",
     },
     lite: {
-      title: "Recommendation: Automation Lite (or 14-day trial)",
-      body: "Rules automation is enough. n8n + ERP of choice + 2 workflows. No Hermes/local model.",
+      title: "Recommendation: Process Cleanup Lite (or a 14-day trial)",
+      body: "Rule-based workflows are enough. Keep your current tables or system and start with 2 everyday workflows. A large AI setup is not needed.",
     },
     trial: {
-      title: "Recommendation: 14-day trial → Starter",
-      body: "Low-risk pilot. Trial quoted after diagnosis, with credit toward Starter.",
+      title: "Recommendation: 14-day trial, then team rollout",
+      body: "Low-risk pilot. The trial is quoted after diagnosis, with credit toward the team rollout.",
     },
     starter: {
-      title: "Recommendation: Starter (n8n + ERP)",
-      body: "Default SME path. Prod n8n + chosen ERP + up to 5 workflows + adoption support.",
+      title: "Recommendation: Team Rollout Starter",
+      body: "The usual path for SMEs. Up to 5 workflows, backup, and adoption support.",
     },
     ai_api: {
-      title: "Recommendation: Automation + AI (Cloud API)",
-      body: "Need AI drafts/read-write without private GPU. Hermes (or equivalent) on cloud LLM.",
+      title: "Recommendation: Team Rollout + AI Assistant",
+      body: "You need AI to read records and draft replies, without a private environment. People still approve important decisions.",
     },
     ai_gpu: {
-      title: "Recommendation: Automation + AI (Private GPU)",
-      body: "Only when privacy + volume + GPU align. Prefer official/tool-calling models; uncensored is not default.",
+      title: "Recommendation: Privacy-Focused AI",
+      body: "Worth it only when privacy, volume, and ongoing maintenance all apply. Commercial work stays traceable and reviewable.",
     },
   },
   erpHints: {
-    wa_excel: "Start ERP with Google Sheets or Baserow.",
+    wa_excel: "Start with Google Sheets or the spreadsheet your team already knows.",
     notion: "Keep Notion if it already works — no forced migration.",
-    sheets: "Sheets/Airtable fit Lite/Starter well.",
-    other: "Pick ERP in diagnosis — Baserow/NocoDB/ERPNext are options.",
-    real: "For real inventory/accounting, add ERPNext on top of Starter/AI.",
-    lite: "Lite boards are enough — Notion/Baserow/Sheets are fine.",
+    sheets: "Sheets or Airtable fit process cleanup and team rollout well.",
+    other: "Choose the tool during diagnosis: spreadsheets, self-managed tables, or an inventory and accounting system.",
+    real: "For real inventory and accounting, add the advanced module on top of team rollout or AI.",
+    lite: "Tables and boards are enough — Notion or spreadsheets can stay.",
   },
 };
 

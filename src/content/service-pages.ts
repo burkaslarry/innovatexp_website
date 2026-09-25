@@ -156,7 +156,7 @@ const aiCoaching: ServicePageContent = {
   pricing: {
     title: "AI Upgrade Program Pricing",
     intro:
-      `Pricing is scoped around advisory programs first. Quick-cash offers and tool trials (EventXP ${enPrices.eventTrial}, SmartSales ${enPrices.salesTrial}) are separate entry points. Each package assumes one company and 3–5 core working participants. Discovery workshop attendance is ${enPrices.discovery} for up to 10 people, ${enPrices.discovery11To30} for 11–30 people, and quoted separately for 31+. Venue cost is extra. Custom SaaS, CRM, AI agent development, large data migration, API integration, third-party software, AI API, hosting, and subscriptions are separate after the workflow and business case are validated.`,
+      `Pricing is scoped around advisory programs first. Quick-cash offers and tool trials (EventXP ${enPrices.eventTrial}, SmartSales ${enPrices.salesTrial}) are separate entry points. Each package assumes one company and 3–5 core working participants. Discovery workshop attendance is ${enPrices.discovery} for up to 10 people, ${enPrices.discovery11To30} for 11–30 people, and quoted separately for 31+. Venue cost is extra. Custom software, CRM setup, AI assistant development, large data moves, connections to other software, third-party tools, AI usage fees, servers, and subscriptions are quoted separately after the workflow and business case are validated.`,
     plans: [
       {
         name: "30-day AI Upgrade Discovery Sprint",
@@ -204,7 +204,7 @@ const aiCoaching: ServicePageContent = {
       },
     ],
     note:
-      "Not included: workshops of 31+ people (quoted separately), custom SaaS / CRM / AI agent development, large data migration, API integration, daily operations outsourcing, legal/accounting/tax/HR/audit/compliance advice, third-party software, AI API, hosting costs, and guaranteed ROI or revenue outcomes. Extra departments, extra workshops, or extra training sessions are scoped separately by headcount, session count, and preparation work. Venue cost is extra.",
+      "Not included: workshops of 31+ people (quoted separately), custom software / CRM / AI assistant development, large data moves, connections to other software, daily operations outsourcing, legal/accounting/tax/HR/audit/compliance advice, third-party software, AI usage fees, server costs, and guaranteed ROI or revenue outcomes. Extra departments, extra workshops, or extra training sessions are scoped separately by headcount, session count, and preparation work. Venue cost is extra.",
   },
   relatedLinks: commonRelatedLinks,
   cta: {
@@ -326,7 +326,7 @@ const proposalToCash: ServicePageContent = {
     "B2B service companies that send many quotations and need disciplined follow-up.",
     "Sales/admin teams that hand off between proposal, invoice, delivery, and payment collection.",
     "Founder-led SMEs where the owner still chases every quote manually.",
-    "Teams that need a practical AI 工作流 before investing in a full ERP or enterprise CRM.",
+    "Teams that need a practical AI workflow before investing in a full finance system or a large CRM.",
   ],
   painPoints: [
     "Quotes are sent, but follow-up timing depends on memory.",
@@ -503,7 +503,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
     ],
     pricing: {
       title: "AI 陪跑定價",
-      intro: `定價以陪跑計劃 / advisory 為主，不是軟件套裝。每個 package 以 1 間公司、3–5 位核心工作參與者為基準。Discovery workshop：10 人或以下 ${zhPrices.discovery}；11–30 人 ${zhPrices.discovery11To30}；31 人或以上另行報價。場地費用另計。客製化 SaaS、CRM、AI agent、大型 data migration、API integration、第三方軟件、AI API、hosting 和雲端成本，會在 workflow 和 business case 驗證後另行 scope。`,
+      intro: `定價以陪跑計劃 / advisory 為主，不是軟件套裝。每個 package 以 1 間公司、3–5 位核心工作參與者為基準。Discovery workshop：10 人或以下 ${zhPrices.discovery}；11–30 人 ${zhPrices.discovery11To30}；31 人或以上另行報價。場地費用另計。客製軟件、CRM、AI 助手、大型資料搬遷、與其他軟件銜接、第三方軟件、AI 用量費、伺服器同雲端成本，會在流程同商業理據確認後另行報價。`,
       plans: [
         {
           name: "30 日 AI Upgrade Discovery Sprint",
@@ -551,7 +551,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
         },
       ],
       note:
-        "不包括：31 人或以上的 workshop（另行報價）、客製化 SaaS / CRM / AI agent 開發、大型 data migration、API integration、代替日常營運、法律 / 會計 / 稅務 / HR / 審計 / 合規意見、第三方軟件、AI API、hosting 費用，以及保證 ROI 或收入成果。額外部門、workshop 或培訓場次會按人數、場次和準備工作另行報價。場地費用另計。",
+        "不包括：31 人或以上的 workshop（另行報價）、客製軟件 / CRM / AI 助手開發、大型資料搬遷、與其他軟件銜接、代替日常營運、法律 / 會計 / 稅務 / HR / 審計 / 合規意見、第三方軟件、AI 用量費、伺服器費用，以及保證 ROI 或收入成果。額外部門、workshop 或培訓場次會按人數、場次和準備工作另行報價。場地費用另計。",
     },
     cta: {
       ...aiCoaching.cta,
@@ -630,7 +630,7 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
       "大量發送報價、需要更有紀律跟進的 B2B service companies。",
       "需要在 proposal、invoice、delivery 與 payment collection 之間交接的 sales/admin teams。",
       "仍由老闆手動追每份 quotation 的 founder-led SMEs。",
-      "在投資完整 ERP 或 enterprise CRM 前，想先建立 practical AI 工作流的團隊。",
+      "在投資完整會計系統或大型客戶管理系統前，想先建立實用 AI 工作流的團隊。",
     ],
     painPoints: [
       "報價已發出，但 follow-up timing 依賴記憶。",

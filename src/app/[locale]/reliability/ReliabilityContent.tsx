@@ -11,18 +11,18 @@ const content = {
     eyebrow: "InnovateXP Reliability Manifesto",
     title: "Why we don't build AI autopilot hype",
     intro:
-      "We build AI-augmented workflows that survive production: deterministic backbone, LLM at the edges, and human checkpoints before customer-facing actions.",
+      "We build AI-assisted workflows that hold up in daily use: fixed rules for the core process, AI only for narrow steps, and a person checks anything a customer will see.",
     promises: [
-      "Deterministic backbone: check-in, task routing, billing, and reminders stay rule-based.",
-      "LLM at the edges only: AI classifies, extracts, drafts, and suggests within narrow, verifiable steps.",
-      "Human-in-the-loop: people approve before customer-facing actions are sent.",
+      "Fixed core process: check-in, task routing, billing, and reminders stay rule-based.",
+      "AI only for narrow steps: it classifies, extracts, drafts, and suggests where the result can be checked.",
+      "A person approves before anything is sent to a customer.",
     ],
     tableTitle: "Industry vs InnovateXP",
     common: "Common AI hype",
     pragmatic: "InnovateXP pragmatic AI",
     comparison: [
       ["Set a goal and let the agent run", "Every step is predictable, observable, and reversible"],
-      ["Autopilot demos with too many hidden decisions", "Deterministic pipeline + focused LLM steps"],
+      ["Autopilot demos with too many hidden decisions", "Fixed steps, with AI only where the result can be checked"],
       ["Auto-send that feels like a bot", "Draft-first CRM: AI writes, human approves"],
       ["Demo looks good, production breaks", "Demo mirrors production workflow and fallback rules"],
     ],
@@ -56,22 +56,22 @@ const content = {
   },
   zh: {
     eyebrow: "InnovateXP 可靠 AI 原則",
-    title: "點解我哋唔賣 AI 自動駕駛 hype",
+    title: "點解我哋唔賣「AI 自動做晒」",
     intro:
-      "我哋做嘅係落到地、捱到 production 嘅 AI-augmented workflow：核心流程用可控規則，AI 只負責分類、抽取、建議同草稿，出街前一定有人確認。",
+      "我哋做落到日常營運嘅流程：核心步驟用固定規則，AI 只負責分類、抽取、建議同草稿，出街前一定有人確認。",
     promises: [
-      "Deterministic backbone：簽到、任務分配、收費、提醒等核心流程保持 rule-based。",
-      "LLM at the edges only：AI 只做細範圍、可驗證嘅分類、抽取、草稿同建議。",
-      "Human-in-the-loop：所有對客訊息同重要操作，都要真人確認先發出。",
+      "核心流程固定：簽到、任務分配、收費、提醒都按清楚規則行。",
+      "AI 只做邊角步驟：分類、抽取、草稿同建議，而且結果可以核對。",
+      "出街前有人確認：所有對客訊息同重要操作，都要真人確認先發出。",
     ],
-    tableTitle: "一般 AI hype vs InnovateXP 做法",
-    common: "常見 AI hype",
+    tableTitle: "常見講法 vs InnovateXP 做法",
+    common: "常見講法",
     pragmatic: "InnovateXP 實戰做法",
     comparison: [
-      ["Set 個 goal，等 AI 自己跑", "每一步都可預測、可監察、可回滾"],
-      ["Demo 好似好智能，但入面好多黑盒決定", "Deterministic pipeline + 單步 LLM 輔助"],
-      ["自動 send，客人覺得似 bot", "Draft-first CRM：AI 草擬，你確認先發"],
-      ["Demo 靚，production 易死", "Demo 等於 production 流程，有 fallback rule"],
+      ["定個目標，等 AI 自己跑", "每一步都可預測、可監察、可還原"],
+      ["示範好似好智能，但入面好多黑盒決定", "步驟固定，AI 只輔助可以核對嘅一小步"],
+      ["自動發送，客人覺得似機械人", "AI 先草擬，你確認先發"],
+      ["示範靚，正式用就出事", "示範同正式流程一樣，並有後備做法"],
     ],
     examples: [
       {
