@@ -58,8 +58,8 @@ export const PRICING = {
   consultancy: {
     discoverySprint30Day: 6_800,
     discoveryWorkshop11To30: 13_600,
-    foundation3Month: 26_000,
-    accelerator6Month: 50_000,
+    foundation3Month: 29_800,
+    accelerator6Month: 58_000,
     partnership12Month: 98_000,
   },
   /* Line A — retainers. Response time is triage, not a fix SLA. */

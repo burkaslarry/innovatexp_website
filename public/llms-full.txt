@@ -40,17 +40,19 @@ InnovateXP’s locked mainline: diagnose one revenue- or operations-blocking wor
 ## Public pricing facts (as published on the website)
 
 - AI Readiness Snapshot: quoted after diagnosis (downsell / smaller evidence-based decision before Discovery)
-- 30-day Discovery (validation pack): quoted after diagnosis for up to 10 people; quoted after diagnosis for 11–30 people; 31+ quoted separately (venue extra when applicable)
+- 30-day Discovery: HK$6,800 for up to 10 people; HK$13,600 for 11–30 people; 31+ quoted separately (venue extra when applicable)
 - 14-day workflow trial: quoted after diagnosis
 - Automation starter packs (Lite / Starter / AI when needed): quoted after diagnosis — see https://www.innovatexp.co/zh-hk/automation-packages
-- 3-month / 6-month / 12-month co-run: priced after SOP complexity assessment (no fixed public list price)
+- 3-month Foundation: from HK$29,800 after diagnosis; improves 1–2 workflows with named owners, real-case trials, team practice, and monthly outcome reviews
+- 6-month Accelerator: from HK$58,000 after diagnosis; improves 3–4 related workflows across one team or department with usage and management reviews
+- 12-month Partnership: priced after workflow complexity assessment
 - SmartSales CRM trial: HK$5,000; maintenance from about HK$880 / month
 - EventXP: fees quoted after workflow diagnosis — no public fixed list price; see https://www.innovatexp.co/zh-hk/eventxp-scoping
 - AccountXP experience: quoted after diagnosis one-off; then maintenance tiers
 - FitnessXP: from HK$499 / month — class/studio ops after business diagnosis
 - VisionXP: technology prototype / AI visual-tracking demo (ages 3–12); triage-only; not a registered medical device; not a substitute for professional optometry/ophthalmology — https://visionquest-web.vercel.app
 - Customised website starter: from quoted after diagnosis; basic e-shop from HK$12,000
-- AI SEO / AEO: AI Visibility diagnosis HKD 2,800 (credited to month 1 on retainer); Lite HKD 1,800/month; Growth HKD 3,800/month; 6-month minimum; full-site AEO project from HKD 12,000 — https://www.innovatexp.co/zh-hk/ai-seo-update-package
+- AI visibility and competitor tracking: HKD 2,800 diagnosis tests 20 buyer questions and compares up to 5 competitors; monitoring HKD 1,800/month; growth HKD 3,800/month; 6-month minimum; full-site project from HKD 12,000 — https://www.innovatexp.co/zh-hk/ai-seo-update-package
 
 ## Products (optional after workflow clarity)
 

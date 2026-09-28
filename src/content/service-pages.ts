@@ -8,10 +8,16 @@ function consultancyDisplayPrices(locale: "en" | "zh-hk") {
       ? "按流程複雜程度報價，聽診後提供"
       : "Quoted after diagnosis by workflow complexity";
   return {
-    discovery: scoped,
-    discovery11To30: scoped,
-    foundation: scoped,
-    accelerator: scoped,
+    discovery: formatHkd(PRICING.consultancy.discoverySprint30Day, locale),
+    discovery11To30: formatHkd(PRICING.consultancy.discoveryWorkshop11To30, locale),
+    foundation:
+      locale === "zh-hk"
+        ? `${formatHkd(PRICING.consultancy.foundation3Month, locale)} 起（聽診後確認）`
+        : `From ${formatHkd(PRICING.consultancy.foundation3Month, locale)} after diagnosis`,
+    accelerator:
+      locale === "zh-hk"
+        ? `${formatHkd(PRICING.consultancy.accelerator6Month, locale)} 起（聽診後確認）`
+        : `From ${formatHkd(PRICING.consultancy.accelerator6Month, locale)} after diagnosis`,
     partnership: scoped,
     eventTrial: formatHkd(PRICING.quickCash.eventXpTrial, locale),
     salesTrial: formatHkd(PRICING.quickCash.smartSalesTrial, locale),
@@ -163,10 +169,21 @@ const aiCoaching: ServicePageContent = {
         price: `${enPrices.discovery} (up to 10 people)`,
         fit: "Best for a team that wants to validate one workflow before a larger program. Standard price covers up to 10 people. 11–30 people: " + enPrices.discovery11To30 + ". 31+ quoted separately. Venue cost is extra.",
         features: [
-          "3-minute workflow health check and detailed questionnaire",
-          "60-minute kickoff and up to two stakeholder interviews",
-          "One workflow map, SOP / workflow draft, KPI baseline",
-          "One AI / automation quick-win recommendation and 30/60/90-day roadmap",
+          "One current workflow mapped from enquiry or trigger to completed outcome",
+          "Baseline for time, delays, missed follow-up, rework, or other agreed measures",
+          "A written decision on what to fix first and what not to buy yet",
+          "A practical 30/60/90-day action plan",
+        ],
+        method: [
+          "Complete a short questionnaire and agree on one workflow to examine.",
+          "Interview the owner and up to two people who actually do the work.",
+          "Map the current steps, handoffs, delays, repeated work, and decision points.",
+          "Review the findings together and choose the smallest useful next move.",
+        ],
+        effects: [
+          "Management sees where time, enquiries, or responsibility are being lost.",
+          "The team agrees on one priority instead of debating a long tool list.",
+          "You avoid buying software before ownership and success measures are clear.",
         ],
       },
       {
@@ -174,10 +191,21 @@ const aiCoaching: ServicePageContent = {
         price: enPrices.foundation,
         fit: "Best for 3-5 core participants improving 1-2 workflows and building the first reviewable adoption result.",
         features: [
-          "SOP v1, role responsibility, and handoff design",
-          "Monthly planning, checkpoint, and KPI review",
-          "Improvement backlog and AI / automation quick-win trials",
-          "One practical team training and monthly outcome summary",
+          "Clear working steps, named owners, and handoff rules for 1–2 workflows",
+          "Monthly planning, trial, measurement, and adjustment",
+          "One practical team session using real work examples",
+          "Monthly outcome summary with decisions and next actions",
+        ],
+        method: [
+          "Set the starting measure and agree who owns each step.",
+          "Test the revised workflow with a small number of real cases.",
+          "Train the people involved, collect feedback, and fix the parts they avoid using.",
+          "Review results monthly and document a repeatable version the team can keep.",
+        ],
+        effects: [
+          "Less follow-up depends on one person's memory.",
+          "Turnaround and handoffs become more consistent and easier to check.",
+          "The team finishes with a working habit, not only a recommendation report.",
         ],
       },
       {
@@ -185,10 +213,21 @@ const aiCoaching: ServicePageContent = {
         price: enPrices.accelerator,
         fit: "Best for a small core team or department representatives improving 3-4 related workflows that need adoption tracking and management visibility.",
         features: [
-          "Agile checkpoints and KPI / adoption review",
-          "SOP v2, exception handling, and cross-role handoff",
-          "AI workflow, CRM, or automation solution design when justified",
-          "Up to two practical workshops and management roadmap review",
+          "Three to four related workflows across one team or department",
+          "Rules for normal cases, exceptions, approvals, and cross-role handoffs",
+          "Suitable system connections or AI support only where the business case is clear",
+          "Up to two practical workshops and a management progress review",
+        ],
+        method: [
+          "Prioritise the related workflows and set shared measures for the department.",
+          "Run improvements in short cycles, with staff testing each change in real work.",
+          "Connect existing tools only after the operating steps and owners are stable.",
+          "Give management a regular view of usage, delays, exceptions, and next decisions.",
+        ],
+        effects: [
+          "Several roles follow the same process instead of keeping separate versions.",
+          "Management can see whether people are using the new way and where it breaks.",
+          "The business gains evidence for scaling, pausing, or investing in a larger system.",
         ],
       },
       {
@@ -510,10 +549,21 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
           price: `${zhPrices.discovery}（10 人或以下）`,
           fit: `適合想先驗證一條 workflow 再決定是否擴展的 SME。標準價覆蓋 10 人或以下。11–30 人：${zhPrices.discovery11To30}。31 人或以上另行報價。場地費用另計。`,
           features: [
-            "3 分鐘流程健康檢查與詳細 active questionnaire",
-            "60 分鐘 kickoff 與最多 2 次持份者訪談",
-            "1 條 workflow map、SOP / workflow draft、KPI baseline",
-            "1 個 AI / automation quick-win 建議及 30/60/90 日 roadmap",
+            "由查詢或工作開始，到完成結果，畫清一條現有流程",
+            "記錄所需時間、延誤、漏跟進、重做或其他共同確認嘅起始數字",
+            "書面講清楚第一步應該改善咩，以及暫時唔需要買咩",
+            "一份可以照住行嘅 30／60／90 日行動次序",
+          ],
+          method: [
+            "先填短問卷，同你揀一條最值得睇清嘅流程。",
+            "訪問負責人，同最多兩位真正做緊呢項工作嘅同事。",
+            "逐步畫出交接、等候、重做同需要決定嘅位置。",
+            "一齊檢視結果，揀最細但最有用嘅下一步。",
+          ],
+          effects: [
+            "管理層睇到時間、查詢或責任喺邊度流失。",
+            "團隊由討論一堆工具，變成同意先處理一個優先問題。",
+            "未講清負責人同成功標準之前，避免買錯系統。",
           ],
         },
         {
@@ -521,10 +571,21 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
           price: zhPrices.foundation,
           fit: "適合 3-5 位核心參與者改善 1-2 條流程，建立第一個可驗收 adoption 成果。",
           features: [
-            "SOP v1、角色責任與 handoff 設計",
-            "每月 planning、checkpoint 與 KPI review",
-            "Improvement backlog 與 AI / automation quick-win trials",
-            "1 次團隊實戰培訓與月度成果摘要",
+            "為 1–2 條流程定清楚做法、負責人同交接規則",
+            "每月安排試行、量度、檢討同調整",
+            "用真實工作例子做一次團隊實戰",
+            "每月成果摘要、已作決定同下一步",
+          ],
+          method: [
+            "記錄起始數字，講清楚每一步由邊個負責。",
+            "先用少量真實個案試行新做法。",
+            "培訓參與同事，收集意見，修正大家唔願意用嘅部分。",
+            "每月比較結果，整理成團隊可以繼續用嘅版本。",
+          ],
+          effects: [
+            "減少跟進工作只靠一個人記住。",
+            "處理時間同交接方式變得穩定，亦更容易檢查。",
+            "完成時留低一套用得着嘅工作習慣，而唔只係建議報告。",
           ],
         },
         {
@@ -532,10 +593,21 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
           price: zhPrices.accelerator,
           fit: "適合一個小核心團隊或部門代表改善 3-4 條相關流程，需要 adoption tracking 與管理層可視性。",
           features: [
-            "Agile checkpoints 與 KPI / adoption review",
-            "SOP v2、exception handling 與跨角色 handoff",
-            "在有需要時設計 AI workflow、CRM 或 automation solution",
-            "最多 2 次實戰 workshop 與管理層 roadmap review",
+            "處理一個團隊或部門內 3–4 條互相關連嘅流程",
+            "定清楚正常情況、例外、批核同跨角色交接方法",
+            "只有商業理由清楚時，先加入合適工具連接或 AI 協助",
+            "最多 2 次實戰工作坊同管理層進度檢討",
+          ],
+          method: [
+            "排列相關流程優先次序，為部門訂共同量度方法。",
+            "分短週期改善，由員工喺真實工作中試每次改動。",
+            "工作步驟同負責人穩定後，先連接現有工具。",
+            "定期向管理層交代使用情況、延誤、例外同下一個決定。",
+          ],
+          effects: [
+            "不同角色跟同一套流程，減少各自保存不同版本。",
+            "管理層睇到新做法有冇人用，以及喺邊度出問題。",
+            "公司有實際證據決定擴展、暫停，或者投資更大型系統。",
           ],
         },
         {

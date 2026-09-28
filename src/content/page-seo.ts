@@ -140,14 +140,14 @@ const AI_CONSULTING: LocalePair = {
 
 const AI_SEO: LocalePair = {
   zh: {
-    title: "AI SEO／AEO 月費｜AI Visibility 診斷｜InnovateXP",
+    title: "AI 能見度與競爭對手追蹤｜InnovateXP",
     description:
-      "先做 HKD 2,800 AI Visibility 診斷（可抵扣首月），再選 Lite HKD 1,800／月或 Growth HKD 3,800／月（6 個月起）。追蹤 AI 引用、品牌曝光、詢盤。",
+      "HKD 2,800 檢查 20 條買家問題、比較最多 5 個競爭對手，再按月追蹤 AI 提及、網站引用同詢盤。月費 HKD 1,800 起。",
   },
   en: {
-    title: "AI SEO / AEO retainer | AI Visibility diagnosis | InnovateXP",
+    title: "AI visibility and competitor tracking | InnovateXP",
     description:
-      "Start with a HKD 2,800 AI Visibility diagnosis (credited to month 1), then Lite HKD 1,800/mo or Growth HKD 3,800/mo (6-month min). Track citations, brand impressions, enquiries.",
+      "HKD 2,800 diagnosis: test 20 buyer questions and compare up to 5 competitors. Monthly tracking of AI mentions, website citations, and enquiries from HKD 1,800.",
   },
 };
 

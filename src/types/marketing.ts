@@ -40,6 +40,8 @@ export type ServicePageContent = {
       price: string;
       fit: string;
       features: string[];
+      method?: string[];
+      effects?: string[];
     }>;
     note: string;
   };

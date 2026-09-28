@@ -13,6 +13,8 @@ const LABELS: Record<
     outcomes: string;
     modules: string;
     pricing: string;
+    method: string;
+    effects: string;
     proofPoints: string;
     faq: string;
     related: string;
@@ -27,6 +29,8 @@ const LABELS: Record<
     outcomes: "Expected Outcomes",
     modules: "Example Modules",
     pricing: "Pricing & Program Options",
+    method: "How we work",
+    effects: "What should improve",
     proofPoints: "Proof Points",
     faq: "FAQ",
     related: "Related InnovateXP Services",
@@ -40,6 +44,8 @@ const LABELS: Record<
     outcomes: "預期成果",
     modules: "課程／陪跑模組",
     pricing: "定價與計劃選項",
+    method: "點樣做",
+    effects: "預期帶來嘅改變",
     proofPoints: "經驗與 proof points",
     faq: "常見問題",
     related: "相關 InnovateXP 服務",
@@ -53,6 +59,8 @@ const LABELS: Record<
     outcomes: "預期成果",
     modules: "課程／陪跑模組",
     pricing: "定價與計劃選項",
+    method: "執行方式",
+    effects: "預期帶來的改變",
     proofPoints: "經驗與 proof points",
     faq: "常見問題",
     related: "相關 InnovateXP 服務",
@@ -66,6 +74,8 @@ const LABELS: Record<
     outcomes: "期待できる成果",
     modules: "モジュール例",
     pricing: "料金・プログラム",
+    method: "進め方",
+    effects: "期待できる変化",
     proofPoints: "実績・根拠",
     faq: "FAQ",
     related: "関連サービス",
@@ -79,6 +89,8 @@ const LABELS: Record<
     outcomes: "Erwartete Ergebnisse",
     modules: "Beispielmodule",
     pricing: "Preise & Programme",
+    method: "Vorgehen",
+    effects: "Erwartete Wirkung",
     proofPoints: "Proof Points",
     faq: "FAQ",
     related: "Verwandte InnovateXP-Services",
@@ -196,6 +208,32 @@ export function ServiceLandingPage({
                       </li>
                     ))}
                   </ul>
+                  {plan.method?.length ? (
+                    <div className="mt-5 border-t border-slate-200 pt-4 dark:border-slate-700">
+                      <h4 className="text-sm font-bold text-gray-900 dark:text-white">{labels.method}</h4>
+                      <ol className="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        {plan.method.map((step, index) => (
+                          <li key={step} className="flex gap-2 leading-relaxed">
+                            <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{index + 1}.</span>
+                            <span>{step}</span>
+                          </li>
+                        ))}
+                      </ol>
+                    </div>
+                  ) : null}
+                  {plan.effects?.length ? (
+                    <div className="mt-5 rounded-xl bg-emerald-50 p-4 dark:bg-emerald-950/30">
+                      <h4 className="text-sm font-bold text-gray-900 dark:text-white">{labels.effects}</h4>
+                      <ul className="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
+                        {plan.effects.map((effect) => (
+                          <li key={effect} className="flex gap-2 leading-relaxed">
+                            <span className="font-bold text-emerald-700 dark:text-emerald-300">→</span>
+                            <span>{effect}</span>
+                          </li>
+                        ))}
+                      </ul>
+                    </div>
+                  ) : null}
                 </article>
               ))}
             </div>

@@ -51,101 +51,109 @@ type Copy = {
   exclude: string[];
   whyTitle: string;
   whyBody: string;
+  toolNoteTitle: string;
+  toolNote: string;
   cta: string;
 };
 
 const ZH: Copy = {
-  eyebrow: "InnovateXP · AI SEO / AEO",
-  h1: "AI 搜尋時代，客戶問 AI 之前唔會見到你",
-  lead: "InnovateXP AI SEO / AEO 月費服務：每月幫你維護結構化資料、更新 answer-first 文案，並提供 AI 引用追蹤報告，令你嘅網站被 ChatGPT、Google AI Overview 引用。",
-  fit: "適合：已有網站、想長期被 AI 搜尋引用嘅香港中小企。",
-  unfit: "唔適合：只想一次性改幾隻字、唔追蹤成效。",
+  eyebrow: "InnovateXP · AI 能見度與競爭對手追蹤",
+  h1: "當客戶問 AI 推薦供應商，你有冇出現？",
+  lead: "每月檢查 ChatGPT、Google AI 搜尋同 Perplexity 點樣描述你同競爭對手，再用清楚、可引用嘅網站內容補回差距。",
+  fit: "適合：已有網站、想知道自己點解冇被 AI 提及，以及下一步應該改邊度嘅香港中小企。",
+  unfit: "唔適合：只想一次性改幾隻字、之後唔再量度成效。",
   updated: "套餐更新：2026 年 9 月",
-  stepLabel: "第一步（入門鈎）",
-  diagnosisName: "AI Visibility 診斷",
+  stepLabel: "第一步",
+  diagnosisName: "AI 能見度與競爭對手診斷",
   diagnosisPrice: "HKD 2,800",
-  diagnosisNote: "簽 6 個月起 retainer 可全額抵扣首月。",
+  diagnosisNote: "開始 6 個月持續追蹤，可全額抵扣首月。",
   diagnosisItems: [
-    "你被 ChatGPT / Google AI Overview / Perplexity 引用嘅現況報告",
-    "問題清單 + 3 個立即可執行 quick wins",
-    "12 個月 AEO 路線圖",
+    "用 20 條真實買家問題，檢查你喺主要 AI 搜尋嘅出現情況",
+    "比較最多 5 個競爭對手：定位、價格、被引用來源同內容空位",
+    "3 個可以立即執行嘅改善，以及 90 日優先次序",
   ],
-  retainersLabel: "之後先係月費（持續戰）",
-  minTerm: "月費最低約期 6 個月。SEO／AEO 唔會一星期見到穩定成效；約期係為咗真係量到數字，而唔係改完就散。",
-  liteName: "Lite 月費",
+  retainersLabel: "持續追蹤方案",
+  minTerm: "月費最低約期 6 個月。AI 搜尋能見度唔會一星期穩定改變；六個月先足夠比較前後數字。",
+  liteName: "監察月費",
   litePrice: "HKD 1,800／月",
-  liteItems: ["每月 schema 維護", "1–2 個核心頁優化", "月報：3 個可見數字"],
-  growthName: "Growth 月費",
+  liteItems: ["每月重查 10 條買家問題", "改善 1–2 個核心頁", "一頁月報：提及、引用、詢盤"],
+  growthName: "增長月費",
   growthPrice: "HKD 3,800／月",
-  growthItems: ["每月 4–6 項內容／結構更新", "AI 引用追蹤 + 競爭對手比對", "月報會議"],
-  projectName: "Project（一次性）",
+  growthItems: ["每月重查 25 條買家問題", "追蹤最多 3 個競爭對手", "4–6 項內容改善 + 月度檢討"],
+  projectName: "全站重整（一次性）",
   projectPrice: "HKD 12,000 起",
-  projectItems: ["全站 AEO 重整", "適合新網站或從未做過結構化資料"],
+  projectItems: ["全站內容與網站資料重整", "適合新網站，或從未為 AI 搜尋整理過嘅網站"],
   metricsTitle: "月費一定有客戶睇得到嘅數字",
-  metrics: ["AI 答案引用次數", "品牌關鍵字曝光", "網站詢盤數"],
+  metrics: ["你同競爭對手被提及嘅比例", "引用你網站嘅答案數量", "由搜尋帶來嘅網站詢盤"],
   deliverTitle: "每月實際做什麼",
   deliver: [
-    "結構化資料維護（Organization / Service / FAQ；唔會把示範頁標成購物商品）",
-    "Answer-first 文案：標題、描述、AI 可引用嘅一句答案",
-    "Search Console + Bing：收錄、sitemap、需要時申請索引",
-    "llms.txt／引用簡報：俾答案引擎一份可引用事實",
-    "月報對住三個指標，唔用「改動次數」交差",
+    "保持公司、服務同常見問題資料一致",
+    "把核心頁改成先回答、後解釋，方便客戶同 AI 理解",
+    "檢查 Google 與 Bing 有冇正常收錄重要頁面",
+    "維護一份清楚、可核實嘅公司與服務事實摘要",
+    "月報對住提及、引用、詢盤三個指標",
   ],
   excludeTitle: "不包含",
   exclude: [
     "保證 Google 第 1 名或 AI 一定提到你",
     "無限改版、代寫所有社交帖",
-    "購買付費 SEO 工具戶口給你",
+    "代購第三方付費追蹤工具",
   ],
   whyTitle: "點解唔係一次改 3 個位？",
   whyBody:
-    "AI 模型、schema 規則同對手內容成日變。一次性改完無法驗證成效，客戶亦唔會覺得值。先診斷、再 retainer，先有數字可以續約。",
-  cta: "預約 AI Visibility 診斷",
+    "AI 答案同對手內容會持續改變。先做基準診斷，再按月重查同改善，先可以知道邊啲改動真係令你更常被提及。",
+  toolNoteTitle: "追蹤工具點安排",
+  toolNote:
+    "基本診斷會用即時搜尋同有紀錄嘅人工核對。客戶已有 Finseo 或其他追蹤帳戶時，可以接入做持續報告；未有帳戶亦可以先完成診斷，唔需要為買工具而買工具。",
+  cta: "預約 AI 能見度診斷",
 };
 
 const EN: Copy = {
-  eyebrow: "InnovateXP · AI SEO / AEO",
-  h1: "In the AI-search era, buyers ask an AI before they ever see you",
-  lead: "Monthly AI SEO / AEO: we maintain schema, update answer-first copy, and send an AI-citation report so ChatGPT and Google AI Overviews can cite your site.",
-  fit: "For: Hong Kong SMEs with a live site who want to be cited in AI search over time.",
+  eyebrow: "InnovateXP · AI visibility and competitor tracking",
+  h1: "When buyers ask AI for a supplier, does your company appear?",
+  lead: "Each month, we check how ChatGPT, Google AI search, and Perplexity describe you and your competitors, then close the gaps with clear, citable website content.",
+  fit: "For: Hong Kong SMEs with a live site that want to know why they are missing from AI answers and what to improve next.",
   unfit: "Not for: a one-off copy tweak with no measurement.",
   updated: "Updated: September 2026",
-  stepLabel: "Step 1 — entry hook",
-  diagnosisName: "AI Visibility diagnosis",
+  stepLabel: "Step 1",
+  diagnosisName: "AI visibility and competitor diagnosis",
   diagnosisPrice: "HKD 2,800",
-  diagnosisNote: "Fully credited to month 1 if you start a 6-month retainer.",
+  diagnosisNote: "Fully credited to month 1 if you start 6 months of ongoing tracking.",
   diagnosisItems: [
-    "Where you are cited in ChatGPT / Google AI Overviews / Perplexity",
-    "Issue list + 3 executable quick wins",
-    "12-month AEO roadmap",
+    "Test 20 real buyer questions across major AI search services",
+    "Compare up to 5 competitors: position, pricing, cited sources, and content gaps",
+    "3 immediate improvements and a 90-day priority plan",
   ],
-  retainersLabel: "Then the retainer (ongoing)",
-  minTerm: "Retainers are 6 months minimum. SEO/AEO does not stabilize in a week; the term exists so we can measure, not so we can vanish after three edits.",
-  liteName: "Lite monthly",
+  retainersLabel: "Ongoing tracking plans",
+  minTerm: "Monthly plans run for at least 6 months because AI-search visibility does not stabilise in a week. Six months gives us a meaningful before-and-after comparison.",
+  liteName: "Monitoring monthly",
   litePrice: "HKD 1,800 / month",
-  liteItems: ["Monthly schema upkeep", "1–2 core-page updates", "Monthly report on 3 visible metrics"],
+  liteItems: ["Recheck 10 buyer questions monthly", "Improve 1–2 core pages", "One-page report: mentions, citations, enquiries"],
   growthName: "Growth monthly",
   growthPrice: "HKD 3,800 / month",
-  growthItems: ["4–6 content/structure updates per month", "AI citation tracking + competitor compare", "Monthly review call"],
+  growthItems: ["Recheck 25 buyer questions monthly", "Track up to 3 competitors", "4–6 content improvements + monthly review"],
   projectName: "Project (one-off)",
   projectPrice: "From HKD 12,000",
-  projectItems: ["Full-site AEO rebuild", "Best for new sites or sites with no schema yet"],
-  metricsTitle: "Every retainer ships numbers you can see",
-  metrics: ["AI-answer citation count", "Brand-keyword impressions", "Site enquiries"],
+  projectItems: ["Full-site content and business-fact rebuild", "Best for new sites or sites never prepared for AI search"],
+  metricsTitle: "Every monthly plan reports numbers you can see",
+  metrics: ["Your mention share versus competitors", "Answers that cite your website", "Website enquiries from search"],
   deliverTitle: "What we actually do each month",
   deliver: [
-    "Schema upkeep (Organization / Service / FAQ — demos are not marked as shop products)",
-    "Answer-first titles, descriptions, and a citeable one-line answer",
-    "Search Console + Bing: coverage, sitemap, index requests when needed",
-    "llms.txt citation brief for answer engines",
-    "Monthly report against three metrics — not a “revision count”",
+    "Keep company, service, and common-question facts consistent",
+    "Rewrite core pages to answer first and explain second",
+    "Check that Google and Bing can find the important pages",
+    "Maintain a clear, verifiable summary of company and service facts",
+    "Report against mentions, citations, and enquiries",
   ],
   excludeTitle: "Not included",
-  exclude: ["Guaranteed #1 or guaranteed AI mentions", "Unlimited redesigns or all social posts", "Paid SEO tool licences in your name"],
+  exclude: ["Guaranteed #1 or guaranteed AI mentions", "Unlimited redesigns or all social posts", "Purchasing third-party tracking licences for you"],
   whyTitle: "Why not three one-off edits?",
   whyBody:
-    "Models, schema rules, and competitor copy keep changing. A one-shot change cannot prove impact. Diagnosis then retainer is how we get numbers you can renew on.",
-  cta: "Book an AI Visibility diagnosis",
+    "AI answers and competitor content keep changing. A baseline diagnosis followed by monthly checks shows which changes actually make your company appear more often.",
+  toolNoteTitle: "How tracking tools fit",
+  toolNote:
+    "The base diagnosis uses live search with documented manual checks. If you already have Finseo or another tracking account, we can connect it for ongoing reports. You can complete the diagnosis without buying another tool first.",
+  cta: "Book an AI visibility diagnosis",
 };
 
 export default async function AiSeoUpdatePackagePage({
@@ -229,6 +237,8 @@ export default async function AiSeoUpdatePackagePage({
         </ul>
         <h2 className="mt-8 text-xl font-bold">{c.whyTitle}</h2>
         <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{c.whyBody}</p>
+        <h2 className="mt-8 text-xl font-bold">{c.toolNoteTitle}</h2>
+        <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{c.toolNote}</p>
         <div className="mt-6">
           <Link
             href={`/${loc}/bookme#quotation-wizard`}
