@@ -56,12 +56,12 @@ export function ProductsAndServicesIntro({ locale }: { locale: AppLocale }) {
           </h3>
           <p className="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">
             {zh
-              ? "用 3 條買家問題睇品牌喺 AI 答案點樣出現，收到一頁重點摘要。"
-              : "See how your brand appears for 3 buyer questions, with a one-page summary."}
+              ? "17/10 活動即場登記；之後用 3 條買家問題做檢查，3 個工作天內交一頁摘要。"
+              : "Register at the 17 October event; we check 3 buyer questions afterwards and deliver a one-page summary within 3 working days."}
           </p>
         </div>
-        <Link href={withLocale(locale, "/ai-seo-update-package#mini-check")} className="inline-flex shrink-0 items-center justify-center rounded-[var(--btn-radius)] bg-[color:var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white">
-          {zh ? "睇免費體驗內容" : "See what's included"}
+        <Link href={withLocale(locale, "/ai-visibility-mini-check")} className="inline-flex shrink-0 items-center justify-center rounded-[var(--btn-radius)] bg-[color:var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white">
+          {zh ? "睇登記頁" : "View registration page"}
         </Link>
       </div>
     </section>

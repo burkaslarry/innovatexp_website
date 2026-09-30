@@ -4,7 +4,6 @@ import { BackToHomeControl } from "@/components/BackToHomeControl";
 import { isValidLocale, type AppLocale, localeUsesChineseCopy } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { aiSeoPackageSeo } from "@/content/page-seo";
-import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
 
 export async function generateMetadata({
   params,
@@ -194,17 +193,15 @@ export default async function AiSeoUpdatePackagePage({
         </p>
         <p className="mt-3 text-xs leading-6 text-slate-500 dark:text-slate-400">
           {localeUsesChineseCopy(loc)
-            ? "每間公司一次；先到先得，名額以確認回覆為準。不包括競爭對手分析、網站修改或持續追蹤；完整 20 條問題診斷另有收費。"
-            : "One per company; places are confirmed by reply. Excludes competitor analysis, website edits and ongoing tracking. The full 20-question diagnosis is a separate paid service."}
+            ? "17/10 活動即場登記，每間公司一次；首 6 位成功提交會即時收到確認。檢查於會後進行，3 個工作天內經 Email／WhatsApp 交付。不包括競爭對手分析、網站修改或持續追蹤；完整 20 條問題診斷另有收費。"
+            : "Register at the 17 October event, one per company. The first 6 successful submissions are confirmed on screen. The check is completed after the event and delivered by email/WhatsApp within 3 working days. Excludes competitor analysis, website edits and ongoing tracking; the full 20-question diagnosis is a separate paid service."}
         </p>
-        <a
-          href={buildWhatsAppHref(localeUsesChineseCopy(loc)
-            ? "你好，我想申請 AI Visibility 免費迷你檢查。公司名稱：　網站：　主要服務："
-            : "Hi, I'd like to request the free AI Visibility Mini Check. Company:  Website:  Main service: ")}
+        <Link
+          href={`/${loc}/ai-visibility-mini-check`}
           className="mt-5 inline-flex min-h-[44px] items-center justify-center btn-brand px-6 py-3 text-sm font-bold"
         >
-          {localeUsesChineseCopy(loc) ? "WhatsApp 申請免費名額" : "Request a free place on WhatsApp"}
-        </a>
+          {localeUsesChineseCopy(loc) ? "查看活動登記頁" : "View the event registration page"}
+        </Link>
       </section>
 
       <section className="mb-6 rounded-2xl border-2 border-brand-primary/30 bg-white p-8 dark:border-brand-primary/40 dark:bg-slate-900">
