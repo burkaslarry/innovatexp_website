@@ -52,7 +52,7 @@ export function ProductsAndServicesIntro({ locale }: { locale: AppLocale }) {
       <div className="mt-6 flex flex-col gap-4 rounded-[var(--card-radius)] border border-[color:var(--brand-primary)]/35 bg-[color:var(--bg-secondary)] p-5 sm:flex-row sm:items-center sm:justify-between md:p-6">
         <div>
           <h3 className="text-lg font-semibold text-[color:var(--heading-foreground)]">
-            {zh ? "免費 AI Visibility 迷你檢查 · 首輪 5 個名額" : "Free AI Visibility Mini Check · first 5 places"}
+            {zh ? "免費 AI Visibility 迷你檢查 · 首輪 6 個名額" : "Free AI Visibility Mini Check · first 6 places"}
           </h3>
           <p className="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">
             {zh

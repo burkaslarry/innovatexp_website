@@ -182,7 +182,7 @@ export default async function AiSeoUpdatePackagePage({
 
       <section id="mini-check" className="mb-6 scroll-mt-24 rounded-2xl border-2 border-brand-primary/40 bg-white p-8 dark:bg-slate-900">
         <p className="text-xs font-semibold uppercase tracking-wider text-brand-primary">
-          {localeUsesChineseCopy(loc) ? "免費入門體驗 · 首輪 5 個名額" : "Free starter experience · first 5 places"}
+          {localeUsesChineseCopy(loc) ? "免費入門體驗 · 首輪 6 個名額" : "Free starter experience · first 6 places"}
         </p>
         <h2 className="mt-2 text-2xl font-bold">
           {localeUsesChineseCopy(loc) ? "AI Visibility 迷你檢查" : "AI Visibility Mini Check"}
