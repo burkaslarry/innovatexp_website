@@ -2,6 +2,7 @@ import { BriefcaseBusiness, ChevronRight, Clock3, MessagesSquare } from "lucide-
 import { FaqAccordion } from "@/components/FaqAccordion";
 import { BookingCtaButton } from "@/components/BookingCtaButton";
 import { SectionHeader } from "@/components/ui/SectionHeader";
+import { ProductsAndServicesIntro } from "@/components/ProductsAndServicesIntro";
 import { getHomepageContent } from "@/content/homepage";
 import { primaryCtaLabel } from "@/content/cta-config";
 import { secondaryWhatsAppLabel } from "@/content/cta-config";
@@ -25,8 +26,7 @@ function SectionShell({
 }
 
 /**
- * Conversion homepage: exactly 6 sections after Hero.
- * 1 Hero (parent) · 2 Pain · 3 Method · 4 Case · 5 Why me · 6 FAQ + final CTA
+ * Conversion homepage: pain, method, offerings, case, trust and final CTA.
  */
 export function BusinessUpgradeHomepageFunnel({
   locale,
@@ -107,6 +107,8 @@ export function BusinessUpgradeHomepageFunnel({
           ))}
         </ol>
       </SectionShell>
+
+      <ProductsAndServicesIntro locale={locale} />
 
       {/* Section 4 — 一個真實案例 + 情境參考 */}
       <SectionShell id="case-study">

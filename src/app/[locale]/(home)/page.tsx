@@ -30,6 +30,7 @@ function LandingPage() {
       { label: content.nav.home, href: "#top" },
       { label: content.nav.diagnosis, href: "#pain-points" },
       { label: content.nav.services, href: "#method" },
+      { label: `${content.nav.products} / ${content.nav.plans}`, href: "#products-services" },
       { label: content.nav.cases, href: "#case-study" },
       { label: content.nav.about, href: "#why-me" },
       { label: content.nav.faq, href: "#faq" },

@@ -4,6 +4,7 @@ import { BackToHomeControl } from "@/components/BackToHomeControl";
 import { isValidLocale, type AppLocale, localeUsesChineseCopy } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { aiSeoPackageSeo } from "@/content/page-seo";
+import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
 
 export async function generateMetadata({
   params,
@@ -177,6 +178,33 @@ export default async function AiSeoUpdatePackagePage({
         <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">{c.fit}</p>
         <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{c.unfit}</p>
         <p className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">{c.updated}</p>
+      </section>
+
+      <section id="mini-check" className="mb-6 scroll-mt-24 rounded-2xl border-2 border-brand-primary/40 bg-white p-8 dark:bg-slate-900">
+        <p className="text-xs font-semibold uppercase tracking-wider text-brand-primary">
+          {localeUsesChineseCopy(loc) ? "免費入門體驗 · 首輪 5 個名額" : "Free starter experience · first 5 places"}
+        </p>
+        <h2 className="mt-2 text-2xl font-bold">
+          {localeUsesChineseCopy(loc) ? "AI Visibility 迷你檢查" : "AI Visibility Mini Check"}
+        </h2>
+        <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+          {localeUsesChineseCopy(loc)
+            ? "提供你嘅網站同主要服務，我哋用 3 條買家問題做一次基礎檢查，交一頁摘要：品牌有冇出現、答案引用咗乜嘢來源，同一個可先做嘅改善方向。"
+            : "Share your website and main service. We check 3 buyer questions once and send a one-page summary: whether your brand appears, which sources are cited, and one practical next step."}
+        </p>
+        <p className="mt-3 text-xs leading-6 text-slate-500 dark:text-slate-400">
+          {localeUsesChineseCopy(loc)
+            ? "每間公司一次；先到先得，名額以確認回覆為準。不包括競爭對手分析、網站修改或持續追蹤；完整 20 條問題診斷另有收費。"
+            : "One per company; places are confirmed by reply. Excludes competitor analysis, website edits and ongoing tracking. The full 20-question diagnosis is a separate paid service."}
+        </p>
+        <a
+          href={buildWhatsAppHref(localeUsesChineseCopy(loc)
+            ? "你好，我想申請 AI Visibility 免費迷你檢查。公司名稱：　網站：　主要服務："
+            : "Hi, I'd like to request the free AI Visibility Mini Check. Company:  Website:  Main service: ")}
+          className="mt-5 inline-flex min-h-[44px] items-center justify-center btn-brand px-6 py-3 text-sm font-bold"
+        >
+          {localeUsesChineseCopy(loc) ? "WhatsApp 申請免費名額" : "Request a free place on WhatsApp"}
+        </a>
       </section>
 
       <section className="mb-6 rounded-2xl border-2 border-brand-primary/30 bg-white p-8 dark:border-brand-primary/40 dark:bg-slate-900">
