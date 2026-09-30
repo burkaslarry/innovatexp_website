@@ -807,7 +807,7 @@ export const translations = {
     'nav.premium_offer': 'Premium consulting',
     'ai_seo_cta.title': 'Want to be cited in AI search?',
     'ai_seo_cta.description':
-      'Start with an AI Visibility diagnosis, then a 6-month retainer: schema upkeep, answer-first copy, and a monthly report on citations, brand impressions, and enquiries.',
+      'Start with an AI Visibility diagnosis. Monthly plans of 3 months or more receive 20% off: schema upkeep, answer-first copy, and a monthly report on citations, brand impressions, and enquiries.',
     'ai_seo_cta.button': 'View AI SEO / AEO retainers',
     
     // Footer
@@ -1755,7 +1755,7 @@ export const translations = {
     'nav.ai_quality': 'AI 時代品質工程',
     'nav.premium_offer': '高票價顧問',
     'ai_seo_cta.title': '想被 AI 搜尋引用？',
-    'ai_seo_cta.description': '先做 AI Visibility 診斷，再簽 6 個月起月費：schema 維護、answer-first 文案，以及 AI 引用／品牌曝光／詢盤月報。',
+    'ai_seo_cta.description': '先做 AI Visibility 診斷；月費訂 3 個月或以上享 8 折，包括 schema 維護、answer-first 文案，以及 AI 引用／品牌曝光／詢盤月報。',
     'ai_seo_cta.button': '查看 AI SEO／AEO 月費',
     
     // Footer
