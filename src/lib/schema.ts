@@ -181,29 +181,6 @@ export function getFitnessXPProductSchema() {
   };
 }
 
-export function getVisionXPProductSchema() {
-  return {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "VisionXP",
-    applicationCategory: "EducationalApplication",
-    operatingSystem: "Web",
-    inLanguage: ["zh-HK", "en"],
-    isAccessibleForFree: true,
-    description:
-      "VisionXP is InnovateXP’s technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12). Frontend-only public demo — no login, no patient data. Not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination.",
-    featureList: [
-      "Parent portal: daily tasks, progress, streaks",
-      "Optometrist portal: prescriptions, compliance, reports",
-      "Ages 3–12; daily 15–20 minute sessions",
-      "Cantonese / English UI",
-      "Frontend-only demo; no login; no patient data stored",
-    ],
-    sameAs: ["https://visionquest-web.vercel.app"],
-    url: `${siteUrl}/visionxp`,
-  };
-}
-
 export function getHowToSchema({
   name,
   description,

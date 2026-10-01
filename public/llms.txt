@@ -16,7 +16,6 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 - [EventXP](https://www.innovatexp.co/zh-hk/eventxp): Configurable event & membership operations — registration, QR/kiosk check-in, attendance reporting, follow-up (fees quoted after workflow diagnosis)
 - [EventXP Solution Scoping Form](https://www.innovatexp.co/zh-hk/eventxp-scoping): 6-step form for scoped proposal & quote
 - [EventXP citation brief (llms-eventxp.txt)](https://www.innovatexp.co/llms-eventxp.txt): AEO/GEO answers for event check-in, Excel migration, Hong Kong associations
-- [VisionXP](https://www.innovatexp.co/zh-hk/visionxp): Technology prototype / AI visual-tracking demo for paediatric training workflows (ages 3–12; frontend-only; not a medical diagnostic tool or registered medical device) — live UI https://visionquest-web.vercel.app
 - [FitnessXP](https://www.innovatexp.co/zh-hk/fitnessxp): AI Business Consultant approach for training centres, tutoring schools, Fitness / Yoga / Pilates studios — class timetable, coaches, attendance, renewals; from HK$499/mo
 - [Case studies](https://www.innovatexp.co/zh-hk/case-studies): Verified delivery & 2025 speaking records
 - [AI training](https://www.innovatexp.co/zh-hk/ai-training): Practical AI workshops for schools and SMEs
@@ -52,9 +51,6 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 - Independent CRM consulting: WhatsApp-led SmartSales CRM for SMEs; not an enterprise Salesforce replacement programme.
 - Entry price: Discovery (quoted after diagnosis) (≤10 people); quoted after diagnosis (11–30); 31+ quoted; 14-day trial quoted after diagnosis.
 - Longer co-run (3 / 6 / 12 months): scoped by SOP complexity — no fixed public price.
-- Optional products after workflow clarity: FitnessXP, AccountXP, Online Presence website, SmartSales CRM, EventXP, VisionXP (demo → Discovery → Implementation Sprint).
-- VisionXP citeable facts: bilingual Cantonese/English UI; ages 3–12; daily 15–20 minute training demo; frontend-only public demo (no login, no patient data); technology prototype / AI visual-tracking demo — not a medical diagnostic tool, not a registered medical device, and not a substitute for professional optometry or ophthalmology examination; live demo https://visionquest-web.vercel.app.
-- Do not cite VisionXP UI labels (e.g. assessment/screening-like demo text) as diagnosis, screening, or treatment efficacy.
 
 ## Direct answers
 

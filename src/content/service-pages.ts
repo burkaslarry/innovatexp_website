@@ -31,7 +31,6 @@ const commonRelatedLinks = [
   { label: "AI Training / AI 教班", href: "/ai-training" },
   { label: "AI Coaching / AI 陪跑課程", href: "/ai-coaching" },
   { label: "SME AI Workflow", href: "/sme-ai-workflow" },
-  { label: "VisionXP", href: "/visionxp" },
   { label: "Relevant Experience & Delivery Capability", href: "/case-studies" },
 ];
 
@@ -318,7 +317,6 @@ const smeWorkflow: ServicePageContent = {
   relatedLinks: [
     { label: "SmartSales CRM", href: "/smartsales-crm" },
     { label: "EventXP", href: "/eventxp" },
-    { label: "VisionXP", href: "/visionxp" },
     { label: "Proposal-to-Cash AI", href: "/proposal-to-cash-ai" },
     { label: "AI Coaching", href: "/ai-coaching" },
   ],
@@ -394,7 +392,6 @@ const proposalToCash: ServicePageContent = {
   relatedLinks: [
     { label: "SME AI Workflow", href: "/sme-ai-workflow" },
     { label: "SmartSales CRM", href: "/smartsales-crm" },
-    { label: "VisionXP", href: "/visionxp" },
     { label: "AI Coaching", href: "/ai-coaching" },
     { label: "Relevant Experience & Delivery Capability", href: "/case-studies" },
   ],

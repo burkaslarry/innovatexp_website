@@ -217,7 +217,6 @@ export default async function AiConsultingPage({
           <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Related pages</h2>
           <div className="flex flex-wrap gap-3">
             {[
-              { href: "/visionxp", label: "VisionXP" },
               { href: "/eventxp", label: "EventXP" },
               { href: "/smartsales-crm", label: "SmartSales CRM" },
               { href: "/sme-ai-workflow", label: "SME AI Workflow" },

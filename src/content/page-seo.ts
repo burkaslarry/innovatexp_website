@@ -61,19 +61,6 @@ const SMARTSALES: LocalePair = {
   },
 };
 
-const VISIONXP: LocalePair = {
-  zh: {
-    title: "VisionXP｜AI視覺追蹤技術Demo｜InnovateXP",
-    description:
-      "VisionXP 技術原型：AI 視覺追蹤示範（3–12 歲訓練流程）。純前端、無病人資料。並非醫療診斷工具或註冊醫療器械。立即試 Demo。",
-  },
-  en: {
-    title: "VisionXP | AI Visual-Tracking Demo | InnovateXP",
-    description:
-      "VisionXP tech demo: AI visual-tracking for ages 3–12 training workflows. Frontend-only, no patient data. Not a medical device. Try the live demo.",
-  },
-};
-
 const EVENTXP: LocalePair = {
   zh: {
     title: "EventXP｜活動簽到・會員及嘉賓管理・即時報告｜InnovateXP",
@@ -272,9 +259,6 @@ export function eventXpScopingSeo(locale: AppLocale): PageSeo {
 }
 export function fitnessXpSeo(locale: AppLocale): PageSeo {
   return pick(locale, FITNESSXP);
-}
-export function visionXpSeo(locale: AppLocale): PageSeo {
-  return pick(locale, VISIONXP);
 }
 export function aiConsultingSeo(locale: AppLocale): PageSeo {
   return pick(locale, AI_CONSULTING);

@@ -15,40 +15,6 @@ type SectionItem = {
   body: string;
 };
 
-export type VisionXpCopy = {
-  eyebrow: string;
-  title: string;
-  tagline: string;
-  intro: string;
-  price: string;
-  points: string[];
-  portals: { name: string; body: string }[];
-  demoCta: string;
-  pageCta: string;
-  note: string;
-  /** Legal / compliance block — required on every VisionXP surface */
-  compliance: {
-    title: string;
-    lead: string;
-    items: { title: string; body: string }[];
-  };
-  page: {
-    whatTitle: string;
-    whatBody: string;
-    whoTitle: string;
-    whoItems: string[];
-    notTitle: string;
-    notItems: string[];
-    howTitle: string;
-    howItems: { name: string; text: string }[];
-    faqTitle: string;
-    faqs: { question: string; answer: string }[];
-    relatedTitle: string;
-    ctaTitle: string;
-    ctaBody: string;
-  };
-};
-
 type CaseStudy = {
   industry: string;
   title: string;
@@ -122,7 +88,6 @@ export type HomepageContent = {
     services: string;
     plans: string;
     products: string;
-    visionXp: string;
     cases: string;
     partnership: string;
     about: string;
@@ -176,7 +141,6 @@ export type HomepageContent = {
     }[];
   };
   products: ProductPackagesCopy;
-  visionXp: VisionXpCopy;
   cases: {
     eyebrow: string;
     title: string;
