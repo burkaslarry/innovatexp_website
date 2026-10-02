@@ -4,8 +4,8 @@
 Restructure innovatexp.co homepage so every section serves exactly one of: credibility, clarity of offer, or the single conversion action「預約 30 分鐘業務聽診」. Hide all consulting list prices.
 
 ## What was removed from the homepage
-- Hero scare line「你每個月漏緊唔止 HK$25,000」(HK$25,000 now appears only inside the verified Agilizing case)
-- Pain-point banner quote repeating the HK$25,000 claim
+- Hero scare line with the outdated monthly-savings figure（Agilizing 案例現已採用已核實嘅「至少 HK$50,000／月」節省數字）
+- Pain-point banner quote repeating the outdated monthly-savings claim
 - Consultancy plans grid (`#service-plans` / `ConsultancyMainlineSection`)
 - Automation starter-pack teaser with public Snapshot / Discovery / trial figures
 - Five service-module cards
@@ -51,7 +51,7 @@ Quiet partner logo strip remains near the bottom (no headline).
 - `src/app/LanguageContext.tsx` + `src/messages/homepage.*.json` — AI consulting / wizard / FAQ strings
 - `public/llms.txt`, `llms.zh-hk.txt`, `llms-full.txt` — citation briefs
 
-**Kept (allowed):** Agilizing case HK$25,000/mo; product SaaS prices on `/products` (e.g. FitnessXP, SmartSales, EventXP, AccountXP, website packages). Internal `src/content/pricing.ts` numeric constants remain for quote tooling but are not surfaced as consulting list prices in public homepage/consulting UI.
+**Kept (allowed):** Agilizing case savings of at least HK$50,000/month; product SaaS prices on `/products` (e.g. FitnessXP, SmartSales, EventXP, AccountXP, website packages). Internal `src/content/pricing.ts` numeric constants remain for quote tooling but are not surfaced as consulting list prices in public homepage/consulting UI.
 
 ## New routes
 - `/[locale]/services`
