@@ -174,11 +174,11 @@
     "items": [
       {
         "industry": "Corporate training | Agilizing Limited",
-        "title": "Courseware from 10 days to 3 hours — ~HK$25,000/mo saved",
+        "title": "Courseware from 10 days to 3 hours — at least HK$50,000/month saved",
         "before": "Each corporate training pack (PPT + digital-human video) took one assistant ~10 days. Costly, slow, hard to scale.",
         "sprint": "In one month we built an automated production flow, cutting PPT + digital-human courseware from 10 days to 3 hours.",
-        "after": "About HK$25,000/mo in full-time assistant cost saved. Capacity to expand into social welfare and Cathay-type institutional clients.",
-        "metric": "Production: 10 days → 3 hours. ~HK$25,000/mo assistant cost saved. New segments: social welfare, Cathay."
+        "after": "At least HK$50,000/month in full-time assistant cost saved. Capacity to expand into social welfare and Cathay-type institutional clients.",
+        "metric": "Production: 10 days → 3 hours. At least HK$50,000/month in assistant cost saved. New segments: social welfare, Cathay."
       },
       {
         "industry": "Training / courses | Scenario",
@@ -280,12 +280,6 @@
     "title": "Partner, mit denen ich wirklich gearbeitet habe",
     "intro": "Nicht nur Logos an der Wand. Das sind Partner, mit denen ich gemeinsam geliefert und echte Empfehlungen ausgetauscht habe.",
     "items": [
-      {
-        "name": "Zomate Fitness Limited",
-        "desc": "Fitness class management system partner",
-        "logo": "/partners/zomate-fitness-logo.png",
-        "href": "https://zoesportdiary.com/"
-      },
       {
         "name": "Agilizing Education Center",
         "desc": "Corporate training material automation case",
@@ -526,7 +520,7 @@
       },
       {
         "question": "Who does InnovateXP partner with?",
-        "answer": "Partners we've delivered with or exchanged referrals with include Flower Nice Day, Agilizing, BNI Anchor, Dr Steven Cheung Dental Surgery, Mentalok, digidumpling, Zomate Fitness, OL International, and LinkedInLocal Asia."
+        "answer": "Partners we've delivered with or exchanged referrals with include Flower Nice Day, Agilizing, BNI Anchor, Dr Steven Cheung Dental Surgery, Mentalok, digidumpling, OL International, and LinkedInLocal Asia."
       }
     ]
   }

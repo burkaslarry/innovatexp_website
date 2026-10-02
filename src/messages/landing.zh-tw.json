@@ -174,11 +174,11 @@
     "items": [
       {
         "industry": "企業培訓｜Agilizing Limited",
-        "title": "教材製作由 10 日壓到 3 個鐘，慳約 HK$25,000／月",
+        "title": "教材製作由 10 日壓到 3 個鐘，至少慳 HK$50,000／月",
         "before": "每套企業培訓教材（PPT + 數字人講解影片）靠一位助手全人手做，10 日先出一套。成本高、產量慢，冇法快速拓展新客源。",
         "sprint": "用一個月建立自動化製作流程，將 PPT 同數字人教材製作時間由 10 日壓縮到 3 小時。",
-        "after": "直接慳咗約 HK$25,000／月全職助理聘請開支，有能力短時間內拓展新客源，成功伸展到社福界同國泰等機構型客戶。",
-        "metric": "製作時間：10 日 → 3 小時。慳約 HK$25,000／月助理開支。新客源：社福界、國泰。"
+        "after": "直接至少慳咗 HK$50,000／月全職助理聘請開支，有能力短時間內拓展新客源，成功伸展到社福界同國泰等機構型客戶。",
+        "metric": "製作時間：10 日 → 3 小時。至少慳 HK$50,000／月助理開支。新客源：社福界、國泰。"
       },
       {
         "industry": "培訓／課程｜情境參考",
@@ -280,12 +280,6 @@
     "title": "真正一起做過事的夥伴",
     "intro": "不是掛 logo 而已。這些是一起交付過、互相轉介過客戶的夥伴。",
     "items": [
-      {
-        "name": "Zomate Fitness Limited",
-        "desc": "Fitness 課堂管理系統合作夥伴",
-        "logo": "/partners/zomate-fitness-logo.png",
-        "href": "https://zoesportdiary.com/"
-      },
       {
         "name": "善敏教育中心 Agilizing",
         "desc": "企業培訓教材自動化案例",
@@ -526,7 +520,7 @@
       },
       {
         "question": "InnovateXP 有邊啲合作夥伴？",
-        "answer": "包括 Flower Nice Day 販賣美好、善敏教育中心 Agilizing、BNI Anchor、Dr Steven Cheung Dental Surgery、Mentalok、digidumpling、Zomate Fitness、OL International、LinkedInLocal Asia 等真係一齊做過嘢或互相轉介過客嘅夥伴。"
+        "answer": "包括 Flower Nice Day 販賣美好、善敏教育中心 Agilizing、BNI Anchor、Dr Steven Cheung Dental Surgery、Mentalok、digidumpling、OL International、LinkedInLocal Asia 等真係一齊做過嘢或互相轉介過客嘅夥伴。"
       }
     ]
   }
