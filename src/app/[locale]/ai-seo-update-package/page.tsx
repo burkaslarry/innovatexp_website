@@ -4,6 +4,8 @@ import { BackToHomeControl } from "@/components/BackToHomeControl";
 import { isValidLocale, type AppLocale, localeUsesChineseCopy } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { aiSeoPackageSeo } from "@/content/page-seo";
+import { getFAQPageSchema } from "@/lib/schema";
+import { getSiteUrl } from "@/lib/site-url";
 
 export async function generateMetadata({
   params,
@@ -164,9 +166,84 @@ export default async function AiSeoUpdatePackagePage({
   const { locale } = await params;
   const loc = (isValidLocale(locale) ? locale : "zh-hk") as AppLocale;
   const c = localeUsesChineseCopy(loc) ? ZH : EN;
+  const zh = localeUsesChineseCopy(loc);
+  const siteUrl = getSiteUrl();
+  const pageUrl = `${siteUrl}/${locale}/ai-seo-update-package`;
+
+  const faqs = zh
+    ? [
+        {
+          question: "AI 能見度診斷同一般 SEO 有咩分別？",
+          answer:
+            "一般 SEO 針對傳統搜尋引擎排名；AI 能見度診斷針對 AI 答案引擎（ChatGPT、Perplexity、Google AI Overviews）點樣提及同引用你。診斷用 20 條真實買家問題檢查你嘅出現情況，比較最多 5 個競爭對手，再畀可執行嘅改善方向。費用 HKD 2,800。",
+        },
+        {
+          question: "月費同一次性全站重整點揀？",
+          answer:
+            "已有網站、想持續量度同改善嘅團隊適合月費（監察 HKD 1,800/月或增長 HKD 3,800/月，6 個月起）。新網站或從未為 AI 搜尋整理過嘅網站適合一次性全站重整（HKD 12,000 起）。可以先做診斷再決定邊條路線。",
+        },
+        {
+          question: "會保證 AI 一定提到我嗎？",
+          answer:
+            "唔會。唔包含保證 Google 第 1 名或 AI 一定提到你、無限改版、代寫所有社交帖、或代購第三方付費追蹤工具。AI 答案同對手內容會持續改變，先做基準診斷再按月重查先知道邊啲改動真係令你更常被提及。",
+        },
+        {
+          question: "每個月會量度咩數字？",
+          answer:
+            "三個指標：你同競爭對手被提及嘅比例、引用你網站嘅答案數量、同埋由搜尋帶嚟嘅網站詢盤。月報會對住呢三個指標報告。",
+        },
+        {
+          question: "要唔要自己買追蹤工具？",
+          answer:
+            "唔使。基本診斷用即時搜尋同有紀錄嘅人工核對。客戶已有 Finseo 或其他追蹤帳戶時可以接入做持續報告；未有帳戶亦可以先完成診斷，唔需要為買工具而買工具。",
+        },
+        {
+          question: "AI Visibility Mini Check 係咩？",
+          answer:
+            "Mini Check 係免費入門體驗：提供網站同主要服務，我哋用 3 條買家問題做一次基礎檢查，交一頁摘要。唔包括競爭對手分析、網站修改或持續追蹤；完整 20 條問題診斷係另一個收費服務。",
+        },
+      ]
+    : [
+        {
+          question: "How is AI visibility diagnosis different from regular SEO?",
+          answer:
+            "Regular SEO targets traditional search rankings; AI visibility diagnosis targets how AI answer engines (ChatGPT, Perplexity, Google AI Overviews) mention and cite you. The diagnosis tests 20 real buyer questions, compares up to 5 competitors, and gives actionable improvements. Fee HKD 2,800.",
+        },
+        {
+          question: "How do I choose between the monthly retainer and a one-off full-site rebuild?",
+          answer:
+            "Teams with an existing site that want ongoing measurement fit the monthly retainer (Monitoring HKD 1,800/mo or Growth HKD 3,800/mo, 6-month minimum). New sites or sites never prepared for AI search fit the one-off full-site rebuild (from HKD 12,000). You can start with the diagnosis and then choose.",
+        },
+        {
+          question: "Do you guarantee AI will mention me?",
+          answer:
+            "No. Not included: guaranteed #1 rankings or guaranteed AI mentions, unlimited redesigns, all social posts, or purchasing third-party tracking licences for you. AI answers and competitor content keep changing; a baseline diagnosis followed by monthly rechecks shows which changes actually make you appear more often.",
+        },
+        {
+          question: "What numbers are measured each month?",
+          answer:
+            "Three metrics: your mention share versus competitors, the number of answers that cite your website, and website enquiries from search. The monthly report reports against these three.",
+        },
+        {
+          question: "Do I need to buy a tracking tool myself?",
+          answer:
+            "No. The base diagnosis uses live search with documented manual checks. If you already have Finseo or another tracking account, we can connect it for ongoing reports. You can complete the diagnosis without buying another tool first.",
+        },
+        {
+          question: "What is the AI Visibility Mini Check?",
+          answer:
+            "The Mini Check is a free starter experience: share your website and main service, we check 3 buyer questions once and send a one-page summary. It excludes competitor analysis, website edits, and ongoing tracking; the full 20-question diagnosis is a separate paid service.",
+        },
+      ];
+
+  const jsonLd = [getFAQPageSchema({ url: pageUrl, questions: faqs })];
 
   return (
     <main className="mx-auto min-h-screen max-w-5xl px-6 py-12 text-slate-900 dark:text-slate-100">
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
+      />
       <BackToHomeControl />
       <section className="mb-8 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
         <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-[color:var(--primary-hover)]">
@@ -272,6 +349,18 @@ export default async function AiSeoUpdatePackagePage({
             {c.cta}
           </Link>
         </div>
+      </section>
+
+      <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-8 dark:border-slate-700 dark:bg-slate-900">
+        <h2 className="text-2xl font-bold">{zh ? "常見問題" : "FAQ"}</h2>
+        <dl className="mt-6 space-y-6">
+          {faqs.map((f) => (
+            <div key={f.question}>
+              <dt className="text-lg font-semibold text-slate-900 dark:text-slate-100">{f.question}</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{f.answer}</dd>
+            </div>
+          ))}
+        </dl>
       </section>
     </main>
   );

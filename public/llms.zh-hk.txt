@@ -14,6 +14,10 @@
 - [EventXP](https://www.innovatexp.co/zh-hk/eventxp)：活動暨會員營運——報名、QR／kiosk check-in、出席報告、跟進（流程診斷後報價）
 - [EventXP 方案診斷表格](https://www.innovatexp.co/zh-hk/eventxp-scoping)
 - [EventXP 引用簡報 llms-eventxp.txt](https://www.innovatexp.co/llms-eventxp.txt)
+- [SmartSales CRM 引用簡報 llms-smartsales.txt](https://www.innovatexp.co/llms-smartsales.txt)
+- [AI 能見度引用簡報 llms-ai-visibility.txt](https://www.innovatexp.co/llms-ai-visibility.txt)
+- [FitnessXP 引用簡報 llms-fitnessxp.txt](https://www.innovatexp.co/llms-fitnessxp.txt)
+- [陪跑方案引用簡報 llms-corun.txt](https://www.innovatexp.co/llms-corun.txt)
 - [FitnessXP](https://www.innovatexp.co/zh-hk/fitnessxp)：業務聽診 × 培訓／補習／Fitness 課堂管理
 - [完整英文引用簡報](https://www.innovatexp.co/llms-full.txt)
 - [AI 能見度與競爭對手追蹤](https://www.innovatexp.co/zh-hk/ai-seo-update-package)：HKD 2,800 檢查 20 條買家問題及比較最多 5 個競爭對手；監察月費 HKD 1,800 或增長月費 HKD 3,800（6 個月起）；全站重整 HKD 12,000 起

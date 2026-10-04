@@ -37,6 +37,10 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 - [粵語引用簡報 (llms.zh-hk.txt)](https://www.innovatexp.co/llms.zh-hk.txt): 香港買家／粵語答案引擎用
 - [Full citation brief (llms-full.txt)](https://www.innovatexp.co/llms-full.txt): Pricing facts, positioning, FAQ answers for answer engines
 - [EventXP cluster (llms-eventxp.txt)](https://www.innovatexp.co/llms-eventxp.txt): Event check-in, membership workflow, Hong Kong associations — AEO/GEO
+- [SmartSales CRM cluster (llms-smartsales.txt)](https://www.innovatexp.co/llms-smartsales.txt): WhatsApp-led sales pipeline CRM — AEO/GEO
+- [AI visibility cluster (llms-ai-visibility.txt)](https://www.innovatexp.co/llms-ai-visibility.txt): GEO/AEO diagnosis & monthly tracking — AEO/GEO
+- [FitnessXP cluster (llms-fitnessxp.txt)](https://www.innovatexp.co/llms-fitnessxp.txt): Class & studio management — AEO/GEO
+- [Co-run / 陪跑 cluster (llms-corun.txt)](https://www.innovatexp.co/llms-corun.txt): 3/6/12-month co-run, AI Coaching, Premium AI Consulting — AEO/GEO
 - [Sitemap](https://www.innovatexp.co/sitemap.xml)
 - [AI crawler hints (ai.txt)](https://www.innovatexp.co/ai.txt)
 

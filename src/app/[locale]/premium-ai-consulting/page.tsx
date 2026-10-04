@@ -10,6 +10,7 @@ import {
   type AppLocale,
 } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
+import { AUTHOR, authorSameAs } from "@/lib/author";
 
 const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
@@ -71,12 +72,16 @@ export default async function PremiumAiConsultingPage({
     dateModified: "2026-05-18",
     author: {
       "@type": "Person",
-      name: "InnovateXP founder",
-      url: "https://www.linkedin.com/in/innovatexp/",
+      "@id": `${siteUrl}/#founder`,
+      name: AUTHOR.name,
+      jobTitle: AUTHOR.jobTitle,
+      url: siteUrl,
+      sameAs: authorSameAs(),
     },
     publisher: {
       "@type": "Organization",
-      name: "InnovateXP Limited",
+      "@id": `${siteUrl}/#organization`,
+      name: AUTHOR.organization,
       url: siteUrl,
       logo: {
         "@type": "ImageObject",

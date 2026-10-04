@@ -108,6 +108,30 @@ export function buildLocalizedSitemap(): MetadataRoute.Sitemap {
       priority: 0.45,
       changeFrequency: "monthly",
     },
+    {
+      url: `${siteUrl}/llms-smartsales.txt`,
+      lastModified: modified,
+      priority: 0.45,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${siteUrl}/llms-ai-visibility.txt`,
+      lastModified: modified,
+      priority: 0.45,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${siteUrl}/llms-fitnessxp.txt`,
+      lastModified: modified,
+      priority: 0.45,
+      changeFrequency: "monthly",
+    },
+    {
+      url: `${siteUrl}/llms-corun.txt`,
+      lastModified: modified,
+      priority: 0.45,
+      changeFrequency: "monthly",
+    },
   );
 
   return entries;

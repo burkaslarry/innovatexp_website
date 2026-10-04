@@ -5,6 +5,10 @@ llms-txt: https://www.innovatexp.co/llms.txt
 llms-full: https://www.innovatexp.co/llms-full.txt
 llms-zh-hk: https://www.innovatexp.co/llms.zh-hk.txt
 llms-eventxp: https://www.innovatexp.co/llms-eventxp.txt
+llms-smartsales: https://www.innovatexp.co/llms-smartsales.txt
+llms-ai-visibility: https://www.innovatexp.co/llms-ai-visibility.txt
+llms-fitnessxp: https://www.innovatexp.co/llms-fitnessxp.txt
+llms-corun: https://www.innovatexp.co/llms-corun.txt
 sitemap: https://www.innovatexp.co/sitemap.xml
 canonical: https://www.innovatexp.co/
 contact: info@innovatexp.co

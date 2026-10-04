@@ -38,6 +38,10 @@ export default function RootLayout({
         <link rel="alternate" type="text/plain" title="InnovateXP full citation brief" href={`${siteUrl}/llms-full.txt`} />
         <link rel="alternate" type="text/plain" title="InnovateXP 粵語引用簡報" href={`${siteUrl}/llms.zh-hk.txt`} />
         <link rel="alternate" type="text/plain" title="InnovateXP EventXP citation brief" href={`${siteUrl}/llms-eventxp.txt`} />
+        <link rel="alternate" type="text/plain" title="InnovateXP SmartSales CRM citation brief" href={`${siteUrl}/llms-smartsales.txt`} />
+        <link rel="alternate" type="text/plain" title="InnovateXP AI visibility citation brief" href={`${siteUrl}/llms-ai-visibility.txt`} />
+        <link rel="alternate" type="text/plain" title="InnovateXP FitnessXP citation brief" href={`${siteUrl}/llms-fitnessxp.txt`} />
+        <link rel="alternate" type="text/plain" title="InnovateXP co-run programmes citation brief" href={`${siteUrl}/llms-corun.txt`} />
         <link rel="alternate" type="text/plain" title="InnovateXP AI crawler hints" href={`${siteUrl}/ai.txt`} />
         <script
           dangerouslySetInnerHTML={{
