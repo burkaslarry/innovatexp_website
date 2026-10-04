@@ -46,6 +46,10 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
   { path: "/zomate-system/privacy-policy", priority: 0.5, changeFrequency: "yearly" },
   { path: "/zomate-system/data-deletion", priority: 0.5, changeFrequency: "yearly" },
   { path: "/zomate-system/terms-of-service", priority: 0.5, changeFrequency: "yearly" },
+  { path: "/whatsapp-agent/privacy-policy", priority: 0.5, changeFrequency: "yearly" },
+  { path: "/whatsapp-agent/terms", priority: 0.5, changeFrequency: "yearly" },
+  { path: "/whatsapp-agent/data-policy", priority: 0.5, changeFrequency: "yearly" },
+  { path: "/whatsapp-agent/data-deletion", priority: 0.5, changeFrequency: "yearly" },
 ]);
 
 export function buildLocalizedSitemap(): MetadataRoute.Sitemap {
