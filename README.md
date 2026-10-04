@@ -97,3 +97,8 @@ Production releases may be tagged (e.g. `prod/10.0`) for traceability.
 
 - [Next.js Documentation](https://nextjs.org/docs)
 - [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying)
+
+<!--
+Repository maintenance: GitHub remotes use the burkaslarry-GitHub SSH alias,
+which selects this account's SSH key and connects over port 443.
+-->
