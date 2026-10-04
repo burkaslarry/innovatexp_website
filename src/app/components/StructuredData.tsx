@@ -1387,25 +1387,45 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     resolvedScope === "home"
       ? {
           "@context": "https://schema.org",
-          "@type": "ItemList",
+          "@type": "HowTo",
+          "@id": `${baseUrl}/#diagnosis-method`,
           name: localeUsesChineseCopy(routeLocale)
             ? "InnovateXP 業務聽診方法"
             : "InnovateXP Business Workflow Diagnosis method",
-          itemListElement: [
+          description: localeUsesChineseCopy(routeLocale)
+            ? "三步：業務聽診 → 實用支援落地 → 由 0 到 1 陪跑。先診斷一條卡住營收或營運嘅流程，再決定使唔使落地工具。"
+            : "Three steps: Business Workflow Diagnosis → practical implementation → 0-to-1 co-running. Diagnose one revenue- or operations-blocking workflow first, then decide whether a tool is justified.",
+          inLanguage: localeToHtmlLang(routeLocale),
+          totalTime: "PT30M",
+          estimatedCost: {
+            "@type": "MonetaryAmount",
+            currency: "HKD",
+            value: String(PRICING.quickCash.aiReadinessAssessment),
+          },
+          step: [
             {
-              "@type": "ListItem",
+              "@type": "HowToStep",
               position: 1,
               name: localeUsesChineseCopy(routeLocale) ? "業務聽診" : "Business Workflow Diagnosis",
+              text: localeUsesChineseCopy(routeLocale)
+                ? "30 分鐘業務聽診：聚焦一條卡住營收或營運嘅流程，搵出漏點同未清晰嘅擁有權，判斷值得先修邊一段（Snapshot、Discovery、自動化起步或暫唔買系統）。"
+                : "30-minute Business Workflow Diagnosis: focus on one stuck workflow, find leakage and unclear ownership, and identify what is worth fixing first (Snapshot, Discovery, automation starter, or no system yet).",
             },
             {
-              "@type": "ListItem",
+              "@type": "HowToStep",
               position: 2,
               name: localeUsesChineseCopy(routeLocale) ? "實用支援落地" : "Practical implementation",
+              text: localeUsesChineseCopy(routeLocale)
+                ? "喺診斷後落地 AI agents 或工具（例如 SmartSales CRM、EventXP、FitnessXP），以試點證明價值再擴展；控制風險，能量化就先量化。"
+                : "Land AI agents or tools after diagnosis (e.g. SmartSales CRM, EventXP, FitnessXP); prove value in a pilot window before expanding. Controlled risk, measurable outcomes.",
             },
             {
-              "@type": "ListItem",
+              "@type": "HowToStep",
               position: 3,
               name: localeUsesChineseCopy(routeLocale) ? "由 0 到 1 陪跑" : "0-to-1 co-running",
+              text: localeUsesChineseCopy(routeLocale)
+                ? "3 / 6 / 12 個月陪跑：建立團隊採用節奏同管理覆核，令一條流程嘅改善可以保留同延續。"
+                : "3 / 6 / 12-month co-run: establish team adoption cadence and management review so the workflow improvement is retained and extended.",
             },
           ],
         }

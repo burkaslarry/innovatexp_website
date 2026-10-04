@@ -4,6 +4,7 @@ import { notFound } from "next/navigation";
 import { blogPosts } from "@/content/blog-posts";
 import { LOCALES, isValidLocale, localeToHtmlLang, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
+import { AUTHOR, authorSameAs } from "@/lib/author";
 
 const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
@@ -68,12 +69,16 @@ export default async function BlogPostPage({ params }: Props) {
     inLanguage: localeToHtmlLang(loc),
     author: {
       "@type": "Person",
-      name: "InnovateXP founder",
-      url: "https://www.linkedin.com/in/innovatexp/",
+      "@id": `${siteUrlMeta}/#founder`,
+      name: AUTHOR.name,
+      jobTitle: AUTHOR.jobTitle,
+      url: siteUrlMeta,
+      sameAs: authorSameAs(),
     },
     publisher: {
       "@type": "Organization",
-      name: "InnovateXP Limited",
+      "@id": `${siteUrlMeta}/#organization`,
+      name: AUTHOR.organization,
       url: siteUrlMeta,
       logo: {
         "@type": "ImageObject",

@@ -33,6 +33,12 @@ export default function RootLayout({
   return (
     <html lang="zh-HK" suppressHydrationWarning>
       <head>
+        {/* GEO / AEO citation-brief discovery — point AI answer engines to the llms.txt cluster. */}
+        <link rel="alternate" type="text/plain" title="InnovateXP llms.txt" href={`${siteUrl}/llms.txt`} />
+        <link rel="alternate" type="text/plain" title="InnovateXP full citation brief" href={`${siteUrl}/llms-full.txt`} />
+        <link rel="alternate" type="text/plain" title="InnovateXP 粵語引用簡報" href={`${siteUrl}/llms.zh-hk.txt`} />
+        <link rel="alternate" type="text/plain" title="InnovateXP EventXP citation brief" href={`${siteUrl}/llms-eventxp.txt`} />
+        <link rel="alternate" type="text/plain" title="InnovateXP AI crawler hints" href={`${siteUrl}/ai.txt`} />
         <script
           dangerouslySetInnerHTML={{
             __html: `

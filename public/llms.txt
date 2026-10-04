@@ -26,6 +26,11 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 - [Compare SmartSales vs Salesforce](https://www.innovatexp.co/zh-hk/compare/smartsales-vs-salesforce)
 - [Compare EventXP vs Eventbrite](https://www.innovatexp.co/zh-hk/compare/eventxp-vs-eventbrite)
 - [AI visibility and competitor tracking](https://www.innovatexp.co/zh-hk/ai-seo-update-package): HKD 2,800 diagnosis tests 20 buyer questions and compares up to 5 competitors; monitoring HKD 1,800/month or growth HKD 3,800/month (6-month minimum); full-site project from HKD 12,000
+- [AI-era quality engineering](https://www.innovatexp.co/zh-hk/ai-era-quality): Evals, regression guardrails, and human review gates for AI-powered features
+- [Premium AI consulting](https://www.innovatexp.co/zh-hk/premium-ai-consulting): Founder-led, scope-bound programmes with pilot metrics and a fixed review cadence
+- [Proposal-to-Cash AI](https://www.innovatexp.co/zh-hk/proposal-to-cash-ai): Quote → follow-up → cash collection in one workflow
+- [Customer experience consulting](https://www.innovatexp.co/zh-hk/customer-experience-consulting): Diagnosis-first CX — map the real journey, fix handoff leakage, then configure tools
+- [Reliability stance](https://www.innovatexp.co/zh-hk/reliability): Diagnose one workflow, prove a pilot, scale only what survives human review
 
 ## Optional detail
 
