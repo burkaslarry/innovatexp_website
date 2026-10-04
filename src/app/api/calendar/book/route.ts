@@ -1,9 +1,10 @@
+import { enforceFormSubmissionLimit } from "@/lib/form-submission-limit";
 /* F07: Calendar booking API - POST handler: validates input, writes Notion, emails ICS/Web3Forms confirmations. */
 import { NextResponse } from 'next/server';
 import { notion, CALENDAR_DB_ID } from '@/lib/notion';
 import { createEvents, EventAttributes } from 'ics';
 import { format, parseISO } from 'date-fns';
-import { submitToWeb3FormsServer } from '@/lib/web3forms-submit';
+import { sendFormNotification } from '@/lib/form-notification';
 import { buildBookingConfirmationWeb3Fields } from '@/lib/build-booking-web3forms-fields';
 
 interface TimeSlot {
@@ -33,6 +34,9 @@ export async function POST(req: Request) {
     if (isNaN(startDateTime.getTime()) || isNaN(endDateTime.getTime())) {
       return NextResponse.json({ error: 'Invalid date/time slot format.' }, { status: 400 });
     }
+
+    const blocked = await enforceFormSubmissionLimit(req);
+    if (blocked) return blocked;
 
     const eventTitle = `業務拜訪 - ${visitorName}`;
 
@@ -181,7 +185,7 @@ export async function POST(req: Request) {
       console.log('✅ ICS calendar file generated successfully, length:', icsContent.length);
     });
 
-    // 4. Web3Forms confirmation (server). Often blocked for server-side IPs; client sends backup — see QuotationWizard.
+    // 4. Server-side confirmation. All notifications stay behind the shared submission quota.
     let emailSuccess = false;
     const web3Fields = buildBookingConfirmationWeb3Fields({
       visitorName,
@@ -211,13 +215,13 @@ export async function POST(req: Request) {
         });
       }
 
-      const emailResult = await submitToWeb3FormsServer(web3Fields);
+      const emailResult = await sendFormNotification(web3Fields);
       emailSuccess = emailResult.success;
 
       if (emailResult.success) {
         console.log('✅ Confirmation email sent via Web3Forms (server)');
       } else {
-        console.warn('[calendar/book] Web3Forms server path failed — client may retry', {
+        console.warn('[calendar/book] Web3Forms server notification failed', {
           responseOk: emailResult.ok,
           apiMessage: emailResult.message ?? '(none)',
         });

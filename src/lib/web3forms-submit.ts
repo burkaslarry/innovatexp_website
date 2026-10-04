@@ -85,6 +85,13 @@ export type Web3FormsSubmitResult = {
 export async function submitToWeb3FormsContact(
   fields: Record<string, string>
 ): Promise<Web3FormsSubmitResult & { detail?: string }> {
+  if (typeof window !== "undefined") {
+    const response = await fetch("/api/contact", {
+      method: "POST", headers: { "Content-Type": "application/json" }, body: JSON.stringify(fields),
+    });
+    const data = await response.json();
+    return { success: response.ok && data.success === true, allSucceeded: data.allSucceeded === true, detail: data.error || data.detail };
+  }
   const keys = getWeb3FormsAccessKeysForContact();
   const rest = { ...fields };
   delete rest.access_key;

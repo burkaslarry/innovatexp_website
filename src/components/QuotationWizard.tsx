@@ -20,8 +20,6 @@ import { formatHkd } from "@/content/pricing";
 import { WebsiteQuoteBuilder } from "@/components/WebsiteQuoteBuilder";
 import { normalizeWhatsappE164 } from "@/lib/normalize-whatsapp";
 import { PHONE_DIAL_CUSTOM, PHONE_DIAL_OPTIONS } from "@/lib/phone-dial-codes";
-import { buildBookingConfirmationWeb3Fields } from "@/lib/build-booking-web3forms-fields";
-import { submitToWeb3FormsContact } from "@/lib/web3forms-submit";
 import { useLanguage } from "@/app/LanguageContext";
 import { getWizardProgress, type WizardStepId } from "@/lib/wizard-progress";
 import { uiStrings } from "@/content/ui-strings";
@@ -35,7 +33,7 @@ import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
  * 3) flowx_identity: name, email, WhatsApp (country + local), company.
  * 4) submitFlowX → POST /api/calendar/book (Notion + optional server Web3Forms).
  *    One team email only (InnovateXP Limited): booking confirm includes 留言 = slot summary + QA.
- *    If server did not send email, browser calls submitToWeb3FormsContact (Web3Forms disallows server IP).
+ *    Notifications stay server-side so browser retries cannot bypass the submission quota.
  * ---------------------------------------------------------------------------
  */
 type StepId =
@@ -321,27 +319,9 @@ export default function QuotationWizard({
         return;
       }
 
-      const combinedMessage = [formatAppointmentDetail(), "", formattedQa].filter(Boolean).join("\n\n");
-      const slot = selectedTimeSlot!;
-
-      /* 2a) Booking confirmation email — browser path (Web3Forms blocks most server IPs). */
-      if (bookData.emailSuccess !== true) {
-        const confirm = await submitToWeb3FormsContact(
-          buildBookingConfirmationWeb3Fields({
-            visitorName,
-            visitorEmail: email,
-            visitorPhone: wa,
-            visitorCompany: company,
-            message: combinedMessage,
-            slotStartIso: slot.start,
-            slotEndIso: slot.end,
-          }),
-        );
-        if (!confirm.success) {
-          setFxErr(t("wizard.flowx.submit_fail"));
-          setFxBusy(false);
-          return;
-        }
+      if (bookData.emailSuccess !== true && bookData.notionSuccess !== true) {
+        setFxErr(t("wizard.flowx.submit_fail"));
+        return;
       }
 
       onEnquirySubmitted?.({

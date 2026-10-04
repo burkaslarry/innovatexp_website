@@ -49,7 +49,7 @@ export default function MuiContactForm() {
       if (result.success) {
         setIsSubmitSuccessful(true);
       } else {
-        setSubmitError("Could not send. Please try again.");
+        setSubmitError(result.detail || "Could not send. Please try again.");
       }
     } catch {
       setSubmitError("Network error. Please try again.");

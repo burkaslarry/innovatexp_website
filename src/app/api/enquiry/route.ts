@@ -1,5 +1,6 @@
+import { enforceFormSubmissionLimit } from "@/lib/form-submission-limit";
 import { NextResponse } from "next/server";
-import { submitToWeb3FormsServer } from "@/lib/web3forms-submit";
+import { sendFormNotification } from "@/lib/form-notification";
 
 type ProductInterest = "EventXP" | "SmartSales" | "AI Consulting" | "Bundle";
 type Urgency = "Within 1 month" | "1–3 months" | "Just exploring";
@@ -81,11 +82,14 @@ export async function POST(req: Request) {
       return NextResponse.json({ ok: false, error: "Missing quiz answers." }, { status: 400 });
     }
 
+    const blocked = await enforceFormSubmissionLimit(req);
+    if (blocked) return blocked;
+
     // Email notification via Web3Forms (best effort)
     let emailSuccess = false;
     try {
       const emailBody = buildEmailBody(payload);
-      const result = await submitToWeb3FormsServer({
+      const result = await sendFormNotification({
         subject: `Quotation enquiry — ${payload.productInterest} — ${payload.name}`,
         from_name: "InnovateXP Website",
         name: payload.name,

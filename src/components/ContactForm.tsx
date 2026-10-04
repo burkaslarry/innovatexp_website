@@ -74,7 +74,7 @@ export function ContactForm({
         setSuccess(true);
         setFormData({ senderName: "", email: "", message: initialMessage });
       } else {
-        setSubmitError("Could not send. Please try again or email us directly.");
+        setSubmitError(result.detail || "Could not send. Please try again or email us directly.");
       }
     } catch {
       setSubmitError("Network error. Please try again.");
