@@ -10,11 +10,11 @@ const DATE = "4 October 2026";
 
 export const whatsappAgentPrivacy: LegalDocumentContent = {
   slug: "whatsapp-agent-privacy",
-  metaTitle: "WhatsApp Agent Privacy Policy | InnovateXP",
+  metaTitle: "InnovateXP Limited Privacy Policy",
   metaDescription:
     "How InnovateXP Limited collects, uses, and deletes personal data when you message the InnovateXP WhatsApp reply agent or use the related Meta app.",
   breadcrumb: "WhatsApp Agent Privacy Policy",
-  title: "Privacy Policy — InnovateXP WhatsApp Reply Agent",
+  title: "InnovateXP Limited — Privacy Policy",
   effectiveDate: DATE,
   lastUpdated: DATE,
   intro: [
@@ -127,11 +127,11 @@ export const whatsappAgentPrivacy: LegalDocumentContent = {
 
 export const whatsappAgentTerms: LegalDocumentContent = {
   slug: "whatsapp-agent-terms",
-  metaTitle: "WhatsApp Agent Terms and Conditions | InnovateXP",
+  metaTitle: "InnovateXP Limited Terms and Conditions",
   metaDescription:
     "Terms for using the InnovateXP WhatsApp reply agent and the related Meta app. English is the official version.",
   breadcrumb: "WhatsApp Agent Terms",
-  title: "Terms and Conditions — InnovateXP WhatsApp Reply Agent",
+  title: "InnovateXP Limited — Terms and Conditions",
   effectiveDate: DATE,
   lastUpdated: DATE,
   intro: [
@@ -216,11 +216,11 @@ export const whatsappAgentTerms: LegalDocumentContent = {
 
 export const whatsappAgentDataPolicy: LegalDocumentContent = {
   slug: "whatsapp-agent-data-policy",
-  metaTitle: "WhatsApp Agent Data Policy | InnovateXP",
+  metaTitle: "InnovateXP Limited Data Policy",
   metaDescription:
     "What data the InnovateXP WhatsApp reply agent and Meta app use, why, who receives it, and how long it is kept.",
   breadcrumb: "WhatsApp Agent Data Policy",
-  title: "Data Policy — InnovateXP WhatsApp Reply Agent",
+  title: "InnovateXP Limited — Data Policy",
   effectiveDate: DATE,
   lastUpdated: DATE,
   intro: [
@@ -281,11 +281,11 @@ export const whatsappAgentDataPolicy: LegalDocumentContent = {
 
 export const whatsappAgentDeletion: LegalDocumentContent = {
   slug: "whatsapp-agent-data-deletion",
-  metaTitle: "WhatsApp Agent Data Deletion | InnovateXP",
+  metaTitle: "InnovateXP Limited Data Deletion",
   metaDescription:
     "How to ask InnovateXP Limited to delete personal data collected by the WhatsApp reply agent and the related Meta app.",
   breadcrumb: "WhatsApp Agent Data Deletion",
-  title: "User Data Deletion — InnovateXP WhatsApp Reply Agent",
+  title: "InnovateXP Limited — Data Deletion",
   effectiveDate: DATE,
   lastUpdated: DATE,
   intro: [

@@ -83,8 +83,15 @@ function LandingPage() {
         <div className="mx-auto flex max-w-[1280px] flex-col gap-6 px-4 sm:px-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="text-lg font-semibold text-[color:var(--heading-foreground)]">{content.footer.title}</p>
+            <p className="mt-1 text-sm font-semibold text-[color:var(--heading-foreground)]">InnovateXP Limited</p>
             <p className="mt-1 text-sm text-[color:var(--text-secondary)]">{content.footer.role}</p>
             <p className="mt-3 text-sm text-[color:var(--text-secondary)]">{content.footer.tagline}</p>
+            <nav className="mt-4 flex flex-wrap gap-x-4 gap-y-2 text-sm text-[color:var(--text-secondary)]" aria-label="InnovateXP Limited policies">
+              <a className="underline" href={loc("/whatsapp-agent/terms")}>Terms and Conditions</a>
+              <a className="underline" href={loc("/whatsapp-agent/privacy-policy")}>Privacy Policy</a>
+              <a className="underline" href={loc("/whatsapp-agent/data-deletion")}>Data Deletion</a>
+              <a className="underline" href={loc("/whatsapp-agent/data-policy")}>Data Policy</a>
+            </nav>
           </div>
           <div className="flex flex-wrap gap-4 text-sm text-[color:var(--text-secondary)]">
             <a href={HOMEPAGE_PLACEHOLDERS.linkedinUrl} target="_blank" rel="noopener noreferrer">
