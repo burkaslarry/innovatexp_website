@@ -1,4 +1,5 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { BackToHomeControl } from "@/components/BackToHomeControl";
 import { isValidLocale, type AppLocale, localeUsesChineseCopy } from "@/lib/i18n-routing";
@@ -34,6 +35,13 @@ type Copy = {
   diagnosisPrice: string;
   diagnosisNote: string;
   diagnosisItems: string[];
+  methodTitle: string;
+  methodIntro: string;
+  methodSteps: string[];
+  methodExample: string;
+  improvementTitle: string;
+  improvementIntro: string;
+  improvementMonths: { name: string; body: string }[];
   retainersLabel: string;
   minTerm: string;
   liteName: string;
@@ -64,7 +72,7 @@ const ZH: Copy = {
   lead: "每月檢查 ChatGPT、Google AI 搜尋同 Perplexity 點樣描述你同競爭對手，再用清楚、可引用嘅網站內容補回差距。",
   fit: "適合：已有網站、想知道自己點解冇被 AI 提及，以及下一步應該改邊度嘅香港中小企。",
   unfit: "唔適合：只想一次性改幾隻字、之後唔再量度成效。",
-  updated: "套餐更新：2026 年 9 月",
+  updated: "資料更新：2026 年 10 月",
   stepLabel: "第一步",
   diagnosisName: "AI 能見度與競爭對手診斷",
   diagnosisPrice: "HKD 2,800",
@@ -73,6 +81,21 @@ const ZH: Copy = {
     "用 20 條真實買家問題，檢查你喺主要 AI 搜尋嘅出現情況",
     "比較最多 5 個競爭對手：定位、價格、被引用來源同內容空位",
     "3 個可以立即執行嘅改善，以及 90 日優先次序",
+  ],
+  methodTitle: "點樣做 AI 能見度診斷？",
+  methodIntro: "先同你定義客戶真會問嘅問題，再逐條留低檢查紀錄，避免只憑一張截圖判斷成效。",
+  methodSteps: [
+    "記錄問題、檢查日期、平台同地區，保留可重查嘅基準。",
+    "分開記品牌有冇被提及、答案有冇引用你網站，以及引用咗邊個頁面。",
+    "比對同行同你網站嘅內容空位，按影響同可行性排出 90 日優先次序。",
+  ],
+  methodExample: "問題例子：『香港活動報名同現場簽到可以點串起？』實際診斷會按你嘅行業同買家語言定題。",
+  improvementTitle: "3 個月網站改善會點做？",
+  improvementIntro: "完成基準診斷後，按所選月費方案逐月改進；3 個月係執行周期，六個月較適合比較能見度趨勢。",
+  improvementMonths: [
+    { name: "第 1 個月 · 基準與核心頁", body: "整理服務對象、公司事實、主要頁面答案同收錄狀態，記錄原有 AI 提及及引用。" },
+    { name: "第 2 個月 · 買家問題與證據", body: "按真實買家問題補清楚做法、價格範圍同可信案例，改善相關頁面內部連結。" },
+    { name: "第 3 個月 · 重查與下一步", body: "用相同問題重查提及同引用，對照詢盤，交付改動紀錄同之後優先次序。" },
   ],
   retainersLabel: "持續追蹤方案",
   minTerm: "月費訂 3 個月或以上享有 20% 折扣。AI 搜尋能見度唔會一星期穩定改變；六個月先足夠比較前後數字。",
@@ -116,7 +139,7 @@ const EN: Copy = {
   lead: "Each month, we check how ChatGPT, Google AI search, and Perplexity describe you and your competitors, then close the gaps with clear, citable website content.",
   fit: "For: Hong Kong SMEs with a live site that want to know why they are missing from AI answers and what to improve next.",
   unfit: "Not for: a one-off copy tweak with no measurement.",
-  updated: "Updated: September 2026",
+  updated: "Updated: October 2026",
   stepLabel: "Step 1",
   diagnosisName: "AI visibility and competitor diagnosis",
   diagnosisPrice: "HKD 2,800",
@@ -125,6 +148,21 @@ const EN: Copy = {
     "Test 20 real buyer questions across major AI search services",
     "Compare up to 5 competitors: position, pricing, cited sources, and content gaps",
     "3 immediate improvements and a 90-day priority plan",
+  ],
+  methodTitle: "How is AI visibility checked?",
+  methodIntro: "We agree on questions your buyers actually ask, then keep a repeatable record for each check rather than judging a single screenshot.",
+  methodSteps: [
+    "Record the question, date, platform and location to establish a baseline.",
+    "Separately note brand mentions, citations to your site and the exact pages cited.",
+    "Compare competitor answers with your content gaps, then prioritise a 90-day action plan.",
+  ],
+  methodExample: "Example question: ‘How can a Hong Kong event team connect registration and on-site check-in?’ Your diagnosis uses questions specific to your buyers.",
+  improvementTitle: "What happens in a 3-month website improvement cycle?",
+  improvementIntro: "After the baseline diagnosis, improvements follow your chosen monthly plan. Three months provides an execution cycle; six months is better for comparing visibility trends.",
+  improvementMonths: [
+    { name: "Month 1 · Baseline and core pages", body: "Clarify audience, company facts, answer-first service pages and indexing; record existing AI mentions and citations." },
+    { name: "Month 2 · Buyer questions and evidence", body: "Add clear methods, price ranges and verifiable examples to relevant pages, then strengthen internal links." },
+    { name: "Month 3 · Recheck and prioritise", body: "Recheck the same questions, compare citations and enquiries, and deliver a change log with next priorities." },
   ],
   retainersLabel: "Ongoing tracking plans",
   minTerm: "Subscribe to a monthly plan for 3 months or more and receive 20% off. AI-search visibility does not stabilise in a week; six months gives us a meaningful before-and-after comparison.",
@@ -180,7 +218,7 @@ export default async function AiSeoUpdatePackagePage({
         {
           question: "月費同一次性全站重整點揀？",
           answer:
-            "已有網站、想持續量度同改善嘅團隊適合月費（監察 HKD 1,800/月或增長 HKD 3,800/月，6 個月起）。新網站或從未為 AI 搜尋整理過嘅網站適合一次性全站重整（HKD 12,000 起）。可以先做診斷再決定邊條路線。",
+            "已有網站、想持續量度同改善嘅團隊適合月費（監察 HKD 1,800/月或增長 HKD 3,800/月；訂 3 個月或以上享 20% 折扣）。六個月較適合比較前後數字。新網站或從未為 AI 搜尋整理過嘅網站適合一次性全站重整（HKD 12,000 起）。可以先做診斷再決定邊條路線。",
         },
         {
           question: "會保證 AI 一定提到我嗎？",
@@ -202,6 +240,10 @@ export default async function AiSeoUpdatePackagePage({
           answer:
             "Mini Check 係免費入門體驗：提供網站同主要服務，我哋用 3 條買家問題做一次基礎檢查，交一頁摘要。唔包括競爭對手分析、網站修改或持續追蹤；完整 20 條問題診斷係另一個收費服務。",
         },
+        {
+          question: "3 個月網站改善會包括咩？",
+          answer: "第 1 個月做基準同核心頁，第 2 個月按買家問題補方法、價錢範圍同證據，第 3 個月用相同問題重查並交改動紀錄。工作量按監察或增長月費方案確認；訂 3 個月或以上享 20% 折扣。",
+        },
       ]
     : [
         {
@@ -212,7 +254,7 @@ export default async function AiSeoUpdatePackagePage({
         {
           question: "How do I choose between the monthly retainer and a one-off full-site rebuild?",
           answer:
-            "Teams with an existing site that want ongoing measurement fit the monthly retainer (Monitoring HKD 1,800/mo or Growth HKD 3,800/mo, 6-month minimum). New sites or sites never prepared for AI search fit the one-off full-site rebuild (from HKD 12,000). You can start with the diagnosis and then choose.",
+            "Teams with an existing site that want ongoing measurement fit the monthly plan (Monitoring HKD 1,800/mo or Growth HKD 3,800/mo; 20% off plans of 3 months or more). Six months is better for a before-and-after comparison. New sites or sites never prepared for AI search fit the one-off full-site rebuild (from HKD 12,000). You can start with the diagnosis and then choose.",
         },
         {
           question: "Do you guarantee AI will mention me?",
@@ -233,6 +275,10 @@ export default async function AiSeoUpdatePackagePage({
           question: "What is the AI Visibility Mini Check?",
           answer:
             "The Mini Check is a free starter experience: share your website and main service, we check 3 buyer questions once and send a one-page summary. It excludes competitor analysis, website edits, and ongoing tracking; the full 20-question diagnosis is a separate paid service.",
+        },
+        {
+          question: "What is included in a 3-month website improvement cycle?",
+          answer: "Month 1 establishes a baseline and fixes core pages; month 2 adds buyer-question answers, methods, price ranges and evidence; month 3 repeats the checks and delivers a change log. The workload follows the chosen Monitoring or Growth plan, with 20% off plans of 3 months or more.",
         },
       ];
 
@@ -295,6 +341,27 @@ export default async function AiSeoUpdatePackagePage({
         </ul>
       </section>
 
+      <section className="mb-8 grid gap-6 rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900 md:grid-cols-[minmax(0,1fr)_240px] md:p-8">
+        <div>
+          <h2 className="text-2xl font-bold">{c.methodTitle}</h2>
+          <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{c.methodIntro}</p>
+          <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-7 text-slate-600 dark:text-slate-300">
+            {c.methodSteps.map((step) => <li key={step}>{step}</li>)}
+          </ol>
+          <p className="mt-4 rounded-xl bg-slate-50 p-4 text-sm leading-7 text-slate-700 dark:bg-slate-800 dark:text-slate-200">{c.methodExample}</p>
+        </div>
+        {zh ? (
+          <Image
+            src="/posters/zh-hk/ai-visibility-package-2026-10-02.png"
+            alt="InnovateXP AI 能見度診斷：檢查品牌提及、答案引用來源同網站內容改善"
+            width={1122}
+            height={1402}
+            className="h-auto w-full rounded-xl"
+            sizes="(max-width: 768px) 100vw, 240px"
+          />
+        ) : null}
+      </section>
+
       <p className="mb-4 text-sm font-semibold text-slate-700 dark:text-slate-200">{c.retainersLabel}</p>
       <section className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {[
@@ -317,6 +384,19 @@ export default async function AiSeoUpdatePackagePage({
         ))}
       </section>
       <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{c.minTerm}</p>
+
+      <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900 md:p-8">
+        <h2 className="text-2xl font-bold">{c.improvementTitle}</h2>
+        <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{c.improvementIntro}</p>
+        <ol className="mt-5 grid gap-4 md:grid-cols-3">
+          {c.improvementMonths.map((month) => (
+            <li key={month.name} className="rounded-xl bg-slate-50 p-5 dark:bg-slate-800">
+              <h3 className="font-semibold">{month.name}</h3>
+              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">{month.body}</p>
+            </li>
+          ))}
+        </ol>
+      </section>
 
       <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
         <h2 className="text-xl font-bold">{c.metricsTitle}</h2>

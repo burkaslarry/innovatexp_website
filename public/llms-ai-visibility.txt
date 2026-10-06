@@ -16,7 +16,7 @@ Q: AI 能見度診斷係做咩？
 A: 用 20 條真實買家問題，檢查你喺 ChatGPT、Google AI 搜尋同 Perplexity 嘅出現情況，比較最多 5 個競爭對手（定位、價格、被引用來源同內容空位），再畀 3 個可以立即執行嘅改善同 90 日優先次序。費用 HKD 2,800。
 
 Q: GEO 同 SEO 有咩分別？
-A: SEO 針對傳統搜尋引擎排名；GEO（Generative Engine Optimization）針對 AI 答案引擎（ChatGPT、Perplexity、Google AI Overviews）點樣提及同引用你。GEO 重視可引用嘅事實內容、結構化資料同埋 llms.txt 等答案引擎專用檔案。
+A: SEO 針對傳統搜尋引擎排名；GEO（Generative Engine Optimization）針對 AI 答案引擎（ChatGPT、Perplexity、Google AI Overviews）點樣提及同引用你。AI 搜尋同傳統搜尋都需要可被收錄、對用戶有用同可核實嘅網頁內容；結構化資料要同可見內容一致，唔保證獲得引用。
 
 Q: 持續追蹤月費包括咩？
 A: 監察月費 HKD 1,800/月：每月重查 10 條買家問題、改善 1–2 個核心頁、一頁月報。增長月費 HKD 3,800/月：每月重查 25 條問題、追蹤最多 3 個競爭對手、4–6 項內容改善同月度檢討。月費訂 3 個月或以上享 20% 折扣；6 個月先足夠比較前後數字。

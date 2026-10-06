@@ -14,7 +14,7 @@ const requiredTokens = [
   "On-Premise",
   "AI Training",
   "AggregateOffer",
-  '"@type": "ItemList"',
+  '"@type": "HowTo"',
   '"@type": "WebPage"',
 ];
 

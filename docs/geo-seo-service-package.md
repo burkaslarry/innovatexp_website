@@ -2,8 +2,8 @@
 
 > 用途：貼上 innovatexp.co／`/zh-hk/ai-seo-update-package` 或報價頁。  
 > 定位：香港 3–30 人中小企。聽診先——唔使買系統我會直講。  
-> 漏斗：一次性診斷 → 月費 retainer（6 個月起）。唔一開口就賣月費。  
-> 最後更新：2026-09-20
+> 漏斗：一次性診斷 → 月費 retainer（訂 3 個月或以上享 20% 折扣；建議以六個月比較前後數字）。唔一開口就賣月費。
+> 最後更新：2026-10-06
 
 ---
 
@@ -23,9 +23,9 @@ InnovateXP 每月幫你維護結構化資料、更新 answer-first 文案，並�
 
 | 層級 | 定位 | 建議價 |
 | --- | --- | --- |
-| AI Visibility 診斷（入門鈎） | 一次性報告：ChatGPT / Google AI Overview / Perplexity 被引用情況 + 問題清單 + 3 個 quick wins + 12 個月 AEO 路線圖 | HKD 2,800（簽 retainer 可全額抵扣首月） |
-| Lite 月費 | 每月 schema 維護 + 1–2 個核心頁優化 + 月報 | HKD 1,800／月（6 個月起） |
-| Growth 月費 | 每月 4–6 項內容／結構更新 + AI 引用追蹤 + 競爭對手比對 + 月報會議 | HKD 3,800／月（6 個月起） |
+| AI Visibility 診斷（入門鈎） | 一次性報告：ChatGPT / Google AI Overview / Perplexity 被引用情況 + 問題清單 + 3 個 quick wins + 90 日改善優先次序 | HKD 2,800（簽 6 個月 retainer 可全額抵扣首月） |
+| Lite 月費 | 每月 schema 維護 + 1–2 個核心頁優化 + 月報 | HKD 1,800／月（訂 3 個月或以上享 20% 折扣） |
+| Growth 月費 | 每月 4–6 項內容／結構更新 + AI 引用追蹤 + 競爭對手比對 + 月報會議 | HKD 3,800／月（訂 3 個月或以上享 20% 折扣） |
 | Project（一次性） | 全站 AEO 重整（適合新網站） | HKD 12,000 起 |
 
 月費一定要有「客戶睇得到嘅數字」，否則續約唔住。追蹤三個指標：
@@ -36,7 +36,7 @@ InnovateXP 每月幫你維護結構化資料、更新 answer-first 文案，並�
 
 唔再用「改動次數：3 次／10 次」交差。改成「每月處理項目 + 成效報告」。
 
-最低約期 6 個月，因為 SEO／AEO 成效唔會一星期見到——亦解釋點解貴過 300 蚊一次過改字。
+訂 3 個月或以上享 20% 折扣；AI 搜尋能見度唔會一星期穩定改變，建議以六個月比較前後數字。
 
 ---
 
@@ -53,7 +53,7 @@ InnovateXP AI SEO / AEO 月費服務：每月幫你維護結構化資料、更�
 
 - 你被 AI 引用嘅現況報告
 - 3 個立即可執行 quick wins
-- 12 個月 AEO 路線圖
+- 90 日改善優先次序
 
 ---
 
@@ -76,7 +76,7 @@ InnovateXP AI SEO / AEO 月費服務：每月幫你維護結構化資料、更�
 
 ## 怎麼開始
 
-先預約 AI Visibility 診斷，確認而家被 AI 引用到邊、值不值得簽 6 個月。不急我會直說。
+先預約 AI Visibility 診斷，確認而家被 AI 引用到邊、值不值得做持續追蹤。不急我會直說。
 
 預約：https://www.innovatexp.co/zh-hk/bookme  
 套餐頁：https://www.innovatexp.co/zh-hk/ai-seo-update-package  

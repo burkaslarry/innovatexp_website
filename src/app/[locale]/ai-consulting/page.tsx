@@ -1,28 +1,22 @@
 import type { Metadata } from "next";
+import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import ChineseOverlay from "../../components/ChineseOverlay";
 import { getFAQPageSchema } from "@/lib/schema";
 import { isValidLocale, localeUsesChineseCopy, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { aiConsultingSeo } from "@/content/page-seo";
-
-const siteUrlMeta =
-  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
+import { PRICING, formatHkd } from "@/content/pricing";
+import { getSiteUrl } from "@/lib/site-url";
 
 const OG_IMAGE = "/opengraph-image" as const;
 
-export async function generateMetadata({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}): Promise<Metadata> {
+export async function generateMetadata({ params }: { params: Promise<{ locale: string }> }): Promise<Metadata> {
   const { locale } = await params;
   if (!isValidLocale(locale)) return {};
   const m = aiConsultingSeo(locale as AppLocale);
   const alternates = localeAlternates(locale, "/ai-consulting");
-  const ogUrl =
-    typeof alternates?.canonical === "string" ? alternates.canonical : `${siteUrlMeta}/${locale}/ai-consulting`;
+  const ogUrl = `${getSiteUrl()}/${locale}/ai-consulting`;
   return {
     title: m.title,
     description: m.description,
@@ -43,211 +37,172 @@ export async function generateMetadata({
   };
 }
 
-export default async function AiConsultingPage({
-  params,
-}: {
-  params: Promise<{ locale: string }>;
-}) {
+export default async function AiConsultingPage({ params }: { params: Promise<{ locale: string }> }) {
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
   const loc = locale as AppLocale;
+  const zh = localeUsesChineseCopy(loc);
+  const moneyLocale = zh ? "zh-hk" : "en";
+  const snapshot = formatHkd(PRICING.quickCash.aiReadinessAssessment, moneyLocale);
+  const discovery = formatHkd(PRICING.consultancy.discoverySprint30Day, moneyLocale);
+  const foundation = formatHkd(PRICING.consultancy.foundation3Month, moneyLocale);
+  const accelerator = formatHkd(PRICING.consultancy.accelerator6Month, moneyLocale);
+  const local = (path: string) => `/${loc}${path}`;
 
-  const siteUrl =
-    process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
-
-  const faqQuestions = localeUsesChineseCopy(loc)
+  const faqs = zh
     ? [
         {
-          question: "香港中小企適合用咩？",
-          answer:
-            "適合需要落地指引同清晰優先級嘅 SME——唔係堆概念，而係聚焦一到兩條 workflow 試點再擴展。",
+          question: "香港中小企幾時需要 AI 商業顧問？",
+          answer: "當 WhatsApp 查詢、Excel 記錄或人手交接令銷售同營運卡住，可以先做業務聽診。InnovateXP 會揀一條最值得改善嘅流程，定清負責人、起始數字同下一步，之後先決定需唔需要 AI 或系統。",
         },
         {
-          question: "一定要有技術團隊先開始得？",
-          answer:
-            "唔一定要。可以由流程梳理同行為資料整理開始，再按需要加深整合與部署。",
+          question: "30 分鐘業務聽診會做咩？",
+          answer: "同 Larry Lo 聚焦一條銷售或營運流程，找出漏位、交接責任同可以量度嘅結果。需要書面診斷、流程圖或落地方案時，再按範圍選 Snapshot 或 Discovery。",
         },
         {
-          question: "Premium 模式係點？",
-          answer:
-            "Premium 項目會白紙黑字界定範圍、試點指標同修訂節奏；創辦人主導交付，並可按需要支援 SmartSales CRM／EventXP 或旁路自動化。",
+          question: "一定要買 AI 或 CRM 系統？",
+          answer: "唔一定。現有工具夠用就先執流程同責任。只有當試行證明需要，先建議自動化、SmartSales CRM、EventXP 或其他工具。",
         },
         {
-          question: "遠程／混合／上门都得？",
-          answer:
-            "多數混合進行（香港時區 remote），必要時可安排工作坊或現場環節。",
+          question: "由診斷到落地有咩選擇？",
+          answer: `Snapshot 由 ${snapshot} 起；10 人或以下嘅 30 日 Discovery 由 ${discovery} 起。之後如需陪團隊建立穩定做法，3 個月 Foundation 由 ${foundation} 起；6 個月 Accelerator 由 ${accelerator} 起。實際範圍聽診後確認。`,
         },
       ]
     : [
         {
-          question: "Is this AI consulting service suitable for Hong Kong SMEs?",
-          answer:
-            "Yes. The service is designed for SMEs that need practical implementation guidance with clear operational priorities.",
+          question: "When should a Hong Kong SME speak to an AI business consultant?",
+          answer: "When WhatsApp enquiries, spreadsheets or handoffs slow sales and operations, start with one Business Workflow Diagnosis. InnovateXP identifies ownership, a baseline metric and a practical next step before recommending AI or software.",
         },
         {
-          question: "Do we need a technical team before starting?",
-          answer:
-            "No. Engagement can begin with process mapping and phased rollout planning, then scale technical depth as needed.",
+          question: "What happens in the 30-minute diagnosis?",
+          answer: "Larry Lo focuses on one sales or operations workflow, identifies leakage and handoff gaps, and agrees on a measurable result. A written diagnosis, process map or implementation plan can follow as a scoped Snapshot or Discovery engagement.",
         },
         {
-          question: "How does the premium engagement model work?",
-          answer:
-            "Premium programmes define explicit scope boundaries, pilot metrics, and a weekly/bi-weekly review cadence. Delivery is founder-led with hands-on implementation support across adjacent workflows where SmartSales CRM or EventXP fits.",
+          question: "Must we buy AI or a CRM system?",
+          answer: "No. If your current tools are enough, clarify the workflow and responsibilities first. Automation, SmartSales CRM or EventXP is considered only when a trial shows it is useful.",
         },
         {
-          question: "Hybrid delivery?",
-          answer:
-            "Most work is hybrid with Hong Kong timezone coverage; workshops can be scheduled when helpful.",
+          question: "What does the next stage cost?",
+          answer: `Snapshot starts at ${snapshot}; a 30-day Discovery for up to 10 people starts at ${discovery}. For ongoing adoption, a 3-month Foundation starts at ${foundation} and a 6-month Accelerator at ${accelerator}. The scope is confirmed after diagnosis.`,
         },
       ];
 
-  const pageUrl = `${siteUrl}/${locale}/ai-consulting`;
-  const jsonLd = [getFAQPageSchema({ url: pageUrl, questions: faqQuestions })];
+  const stages = zh
+    ? [
+        { title: "1. 聽診一條流程", body: "例如 WhatsApp 查詢到報價、活動報名到會後跟進，或課堂出席到續期；先搵出最易漏同最慢嘅一步。" },
+        { title: "2. 定清責任同數字", body: "畫出目前交接、負責人同起始指標；用真實個案確認邊個改動值得先試。" },
+        { title: "3. 細步試行同陪跑", body: "需要時先加 AI、自動化或產品，教團隊使用，並按使用情況同結果逐月檢討。" },
+      ]
+    : [
+        { title: "1. Diagnose one workflow", body: "Start with a real path such as WhatsApp enquiry to quote, event registration to follow-up, or class attendance to renewal." },
+        { title: "2. Name owners and measures", body: "Map handoffs, assign ownership and record a baseline. Test one change with real cases before widening the scope." },
+        { title: "3. Pilot and co-run", body: "Add AI, automation or a product only where useful. Help the team adopt it and review usage and outcomes together." },
+      ];
 
-  const premiumHref = `/${locale}/premium-ai-consulting`;
+  const packages = zh
+    ? [
+        { name: "Snapshot", price: snapshot, detail: "書面診斷與下一步；適合想先睇清一條流程。" },
+        { name: "30 日 Discovery", price: `${discovery} 起`, detail: "10 人或以下：流程、負責人、基準數字同 30／60／90 日行動。" },
+        { name: "3 個月 Foundation", price: `${foundation} 起`, detail: "改善 1–2 條流程，團隊用真實個案試行，每月檢討。" },
+        { name: "6 個月 Accelerator", price: `${accelerator} 起`, detail: "改善一個團隊內 3–4 條相關流程，追蹤採用同管理層進度。" },
+      ]
+    : [
+        { name: "Snapshot", price: snapshot, detail: "A written diagnosis and next step for one workflow." },
+        { name: "30-day Discovery", price: `From ${discovery}`, detail: "For up to 10 people: workflow, owners, baseline and a 30/60/90-day plan." },
+        { name: "3-month Foundation", price: `From ${foundation}`, detail: "Improve 1–2 workflows with real-case team practice and monthly reviews." },
+        { name: "6-month Accelerator", price: `From ${accelerator}`, detail: "Improve 3–4 related workflows in one team, with adoption and management reviews." },
+      ];
+
+  const jsonLd = getFAQPageSchema({ url: `${getSiteUrl()}/${loc}/ai-consulting`, questions: faqs });
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900">
-      <div className="container mx-auto max-w-4xl px-4 py-16">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c"),
-          }}
-        />
-        <h1 className="mb-6 text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
-          {localeUsesChineseCopy(loc)
-            ? "好多 AI 項目頭三週就走歪——我哋用試點同清晰範疇拉住結果。"
-            : "Every AI project that fails does so in the first 3 weeks — here is why."}
+    <main className="mx-auto min-h-screen max-w-5xl px-4 py-12 text-slate-900 dark:text-slate-100 sm:px-6">
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
+      <header className="rounded-2xl bg-slate-950 px-6 py-10 text-white md:px-10">
+        <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">InnovateXP · {zh ? "AI 商業顧問" : "AI business consulting"}</p>
+        <h1 className="mt-4 text-3xl font-bold leading-tight md:text-5xl">
+          {zh ? "香港 AI 商業顧問：先執順流程，再落地 AI" : "AI business consulting in Hong Kong: clarify the workflow, then apply AI"}
         </h1>
-        <p className="mb-10 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-          {localeUsesChineseCopy(loc)
-            ? "好多中小企揀錯工具、範疇太大、未見到結果就已經無動力。InnovateXP 由一條 workflow 開始，先用試點證明價值再擴展——控制風險，能量化就先量化。"
-            : "Most SMEs pick the wrong tool, scope too broadly, and lose momentum before seeing results. InnovateXP consulting starts with one workflow, proves ROI in a pilot window, then expands — controlled risk, measurable outcomes."}
+        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-200">
+          {zh
+            ? "Larry Lo／InnovateXP 幫 3–30 人中小企由一條銷售或營運流程開始，找出漏客、慢報價同交接卡位。先定負責人同量度方法，再決定需唔需要 AI、CRM 或自動化。"
+            : "Larry Lo / InnovateXP helps Hong Kong SMEs of 3–30 people fix one sales or operations workflow: lost enquiries, slow quotes or unclear handoffs. We assign ownership and a measurable baseline before choosing AI, CRM or automation."}
         </p>
-        <ChineseOverlay section="ai-consulting-hero" />
-
-        <section className="mb-10 rounded-xl border border-brand-primary/25 bg-gradient-to-r from-cyan-50 via-white to-amber-50 p-6 dark:border-teal-500/30 dark:from-slate-900 dark:via-slate-900 dark:to-gray-900">
-          <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">
-            {localeUsesChineseCopy(loc) ? "Premium 落地（清晰報價範疇）" : "Premium done-with-you engagements"}
-          </h2>
-          <p className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
-            {localeUsesChineseCopy(loc)
-              ? "如果你需要創辦人級別嘅問責、固定決策節奏同修訂边界，可以看 → Premium AI／CRM 顧問頁了解商業形態同適合對象。"
-              : "If you need founder accountability, explicit boundaries, and a reliable decision cadence—not slide theatre—see how we scope premium programmes."}
-          </p>
-          <Link
-            href={premiumHref}
-            className="inline-flex btn-brand px-5 py-2.5 text-sm font-bold transition-colors hover:brightness-105 "
-          >
-            {localeUsesChineseCopy(loc) ? "了解 Premium 方案" : "Explore premium programmes"}
+        <div className="mt-7 flex flex-wrap gap-3">
+          <Link href={local("/bookme")} className="inline-flex min-h-11 items-center rounded-lg bg-cyan-300 px-5 py-3 text-sm font-bold text-slate-950 hover:bg-cyan-200">
+            {zh ? "預約 30 分鐘業務聽診" : "Book a 30-minute diagnosis"}
           </Link>
-        </section>
+          <Link href={local("/case-studies")} className="inline-flex min-h-11 items-center rounded-lg border border-slate-500 px-5 py-3 text-sm font-semibold text-white hover:border-white">
+            {zh ? "睇交付經驗" : "See delivery experience"}
+          </Link>
+        </div>
+      </header>
 
-        <section className="mb-10">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">What it is</h2>
-          <p className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
-            This is an implementation-oriented consulting service for organizations that need to apply AI in sales, customer operations, and business workflow management.
-          </p>
-          <p className="mb-4 leading-relaxed text-gray-700 dark:text-gray-300">
-            We help Hong Kong teams define realistic adoption scope, sequence priorities, and establish governance so automation supports business outcomes instead of creating operational noise.
-          </p>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">Who it is for</h2>
-          <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
-            <li>You have tried ChatGPT but it is not connected to anything in your business.</li>
-            <li>You want to automate follow-ups, reporting, or scheduling — but do not know which tool fits your stack.</li>
-            <li>You have been quoted $200,000 for an AI project and want a reality check.</li>
-            <li>You need someone who will actually build it, not only slide-deck it.</li>
-          </ul>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">How it works</h2>
-          <ol className="list-inside list-decimal space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Discovery workshop to map current workflows, pain points, and business goals.</li>
-            <li>Prioritization of high-impact use cases for phased implementation.</li>
-            <li>System and process design aligned with your existing tools and team structure.</li>
-            <li>Pilot setup with practical onboarding and operational documentation.</li>
-            <li>Team enablement and manager review cadence for adoption quality.</li>
-            <li>Ongoing optimization based on usage signals and business feedback.</li>
+      <section className="mt-10 grid gap-8 lg:grid-cols-[minmax(0,1fr)_300px]">
+        <div>
+          <h2 className="text-2xl font-bold">{zh ? "業務聽診到落地：三步" : "From diagnosis to adoption in three steps"}</h2>
+          <ol className="mt-5 space-y-4">
+            {stages.map((stage) => (
+              <li key={stage.title} className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
+                <h3 className="text-lg font-semibold">{stage.title}</h3>
+                <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">{stage.body}</p>
+              </li>
+            ))}
           </ol>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">Features</h2>
-          <ul className="list-inside list-disc space-y-3 text-gray-700 dark:text-gray-300">
-            <li>AI readiness assessment that identifies realistic quick wins for Hong Kong SME operations.</li>
-            <li>Workflow blueprinting for sales, follow-up, and operational coordination scenarios.</li>
-            <li>Integration planning across common tools used by local founder-led and SME teams.</li>
-            <li>Prompt and process playbooks to improve consistency in daily execution.</li>
-            <li>Team training support with bilingual operating context in mind.</li>
-            <li>Ongoing advisory sessions for optimization and change management.</li>
-          </ul>
-        </section>
-
-        <section className="mb-10">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">Pricing</h2>
-          <p className="mb-3 text-gray-700 dark:text-gray-300">
-            We offer simple project-based and retainer-friendly engagement models based on implementation scope.
+          <p className="mt-5 text-sm leading-7 text-slate-600 dark:text-slate-300">
+            {zh ? "常見切入點：" : "Common starting points: "}
+            <Link href={local("/smartsales-crm")} className="font-semibold text-brand-primary underline">{zh ? "銷售跟進" : "sales follow-up"}</Link>{" · "}
+            <Link href={local("/eventxp")} className="font-semibold text-brand-primary underline">{zh ? "活動流程" : "event operations"}</Link>{" · "}
+            <Link href={local("/fitnessxp")} className="font-semibold text-brand-primary underline">{zh ? "課堂營運" : "class operations"}</Link>。
           </p>
-          <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
-            <li>Starter: discovery and readiness audit for initial implementation planning.</li>
-            <li>Growth: pilot build and workflow rollout for selected team functions.</li>
-            <li>Enterprise: multi-team implementation and ongoing optimization support.</li>
-          </ul>
-          <p className="mt-3 text-gray-700 dark:text-gray-300">Contact us for a custom quote for your Hong Kong team.</p>
-        </section>
+        </div>
+        <div>
+          <Image
+            src={zh ? "/posters/zh-hk/product-06-ai-consultancy-plans-v2.png" : "/posters/en/product-06-ai-consultancy-plans.png"}
+            alt={zh ? "InnovateXP AI 商業升級陪跑：30 日睇清問題、3 個月建立穩定做法、6 個月擴展到部門" : "InnovateXP AI consultancy programmes from diagnosis to team adoption"}
+            width={zh ? 1122 : 787}
+            height={zh ? 1402 : 1400}
+            className="h-auto w-full rounded-xl"
+            sizes="(max-width: 1024px) 100vw, 300px"
+          />
+        </div>
+      </section>
 
-        <section className="mb-12">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">FAQ</h2>
-          <dl className="space-y-6">
-            {faqQuestions.map((f) => (
-              <div key={f.question}>
-                <dt className="text-xl font-semibold text-gray-900 dark:text-white">{f.question}</dt>
-                <dd className="mt-2 text-gray-700 dark:text-gray-300">{f.answer}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
+      <section className="mt-12">
+        <h2 className="text-2xl font-bold">{zh ? "服務入口同交付範圍" : "Engagement options and deliverables"}</h2>
+        <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+          {zh ? "先做 30 分鐘業務聽診，再按問題複雜程度確認付費範圍。以下係公開起步價；正式報價會寫清交付、時間同責任。" : "Start with a 30-minute diagnosis, then scope paid work by the complexity of the workflow. These are published starting prices; a proposal specifies deliverables, timing and ownership."}
+        </p>
+        <div className="mt-5 grid gap-4 sm:grid-cols-2">
+          {packages.map((item) => (
+            <article key={item.name} className="rounded-xl border border-slate-200 bg-white p-5 dark:border-slate-700 dark:bg-slate-900">
+              <h3 className="text-lg font-semibold">{item.name}</h3>
+              <p className="mt-2 text-xl font-bold text-brand-primary">{item.price}</p>
+              <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{item.detail}</p>
+            </article>
+          ))}
+        </div>
+      </section>
 
-        <section className="mb-10 rounded-xl border border-slate-200 bg-slate-50 p-5 dark:border-gray-700 dark:bg-gray-800">
-          <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">Related pages</h2>
-          <div className="flex flex-wrap gap-3">
-            {[
-              { href: "/eventxp", label: "EventXP" },
-              { href: "/smartsales-crm", label: "SmartSales CRM" },
-              { href: "/sme-ai-workflow", label: "SME AI Workflow" },
-              { href: "/case-studies", label: "Delivery Capability" },
-            ].map((item) => (
-              <Link
-                key={item.href}
-                href={`/${locale}${item.href}`}
-                className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-600 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
-              >
-                {item.label}
-              </Link>
-            ))}
-          </div>
-        </section>
-
-        <section className="rounded-xl border border-slate-200 bg-slate-50 p-6 dark:border-gray-700 dark:bg-gray-800">
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
-            Ready to implement AI in Hong Kong with less trial and error?
-          </h2>
-          <p className="mb-4 text-gray-700 dark:text-gray-300">
-            Book a consultation to define your first practical implementation phase.
-          </p>
-          <Link
-            href={`/${locale}/bookme`}
-            className="inline-block btn-brand px-6 py-3 font-semibold transition hover:brightness-105 "
-          >
-            Book a free consultation
+      <section className="mt-12 rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900 md:p-8">
+        <h2 className="text-2xl font-bold">{zh ? "常見問題" : "Frequently asked questions"}</h2>
+        <dl className="mt-6 space-y-6">
+          {faqs.map((faq) => (
+            <div key={faq.question}>
+              <dt className="text-lg font-semibold">{faq.question}</dt>
+              <dd className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">{faq.answer}</dd>
+            </div>
+          ))}
+        </dl>
+        <div className="mt-8 flex flex-wrap gap-3">
+          <Link href={local("/bookme")} className="inline-flex min-h-11 items-center rounded-lg bg-brand-primary px-5 py-3 text-sm font-bold text-white hover:brightness-110">
+            {zh ? "預約業務聽診" : "Book a workflow diagnosis"}
           </Link>
-        </section>
-      </div>
+          <Link href={local("/about")} className="inline-flex min-h-11 items-center rounded-lg border border-slate-300 px-5 py-3 text-sm font-semibold dark:border-slate-600">
+            {zh ? "認識 Larry Lo" : "About Larry Lo"}
+          </Link>
+        </div>
+      </section>
     </main>
   );
 }

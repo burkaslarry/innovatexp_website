@@ -110,31 +110,31 @@ const FITNESSXP: LocalePair = {
 
 const AI_CONSULTING: LocalePair = {
   zh: {
-    title: "AI商業顧問｜業務聽診｜InnovateXP",
+    title: "香港 AI 商業顧問｜業務聽診與流程落地｜InnovateXP",
     description:
-      "我係 AI 商業顧問 Larry Lo／InnovateXP：業務聽診 → AI agents → 陪跑。唔使買系統我會直講。",
-    ogTitle: "AI 商業顧問｜業務聽診｜InnovateXP",
+      "Larry Lo／InnovateXP 幫香港中小企先執順銷售或營運流程，再按需要落地 AI、CRM 同自動化。30 分鐘業務聽診；Snapshot HK$3,000 起，30 日 Discovery HK$6,800 起。",
+    ogTitle: "香港 AI 商業顧問｜先執順流程，再落地 AI",
     ogDescription: "聽診、Discovery、陪跑。適合要實務落地嘅香港中小企。",
   },
   en: {
-    title: "AI Business Consultant | Diagnosis | InnovateXP",
+    title: "AI Business Consultant in Hong Kong | InnovateXP",
     description:
-      "Larry Lo / InnovateXP: diagnosis → AI agents → co-run. Book a diagnosis — not a tool pitch.",
-    ogTitle: "AI Business Consultant HK — diagnosis first",
+      "Larry Lo / InnovateXP helps Hong Kong SMEs fix one sales or operations workflow before choosing AI. Book a 30-minute diagnosis; Snapshot from HK$3,000 and 30-day Discovery from HK$6,800.",
+    ogTitle: "AI Business Consultant Hong Kong — workflow first",
     ogDescription: "Business Workflow Diagnosis, co-run advisory for SMEs.",
   },
 };
 
 const AI_SEO: LocalePair = {
   zh: {
-    title: "AI 能見度與競爭對手追蹤｜InnovateXP",
+    title: "AI 搜尋能見度診斷與 GEO／AEO 追蹤｜InnovateXP",
     description:
-      "HKD 2,800 檢查 20 條買家問題、比較最多 5 個競爭對手，再按月追蹤 AI 提及、網站引用同詢盤。月費 HKD 1,800 起。",
+      "香港中小企 AI 搜尋能見度診斷：HKD 2,800 測試 20 條買家問題、比較最多 5 個競爭對手。按月追蹤提及、引用同詢盤；月費 HKD 1,800 起，訂 3 個月或以上享 20% 折扣。",
   },
   en: {
-    title: "AI visibility and competitor tracking | InnovateXP",
+    title: "AI Visibility Diagnosis & GEO/AEO for HK SMEs | InnovateXP",
     description:
-      "HKD 2,800 diagnosis: test 20 buyer questions and compare up to 5 competitors. Monthly tracking of AI mentions, website citations, and enquiries from HKD 1,800.",
+      "HKD 2,800 AI visibility diagnosis tests 20 buyer questions and up to 5 competitors. Track mentions, citations and enquiries from HKD 1,800/month; 20% off plans of 3 months or more.",
   },
 };
 

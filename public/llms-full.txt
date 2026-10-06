@@ -51,7 +51,7 @@ InnovateXP’s locked mainline: diagnose one revenue- or operations-blocking wor
 - AccountXP experience: quoted after diagnosis one-off; then maintenance tiers
 - FitnessXP: from HK$499 / month — class/studio ops after business diagnosis
 - Customised website starter: from quoted after diagnosis; basic e-shop from HK$12,000
-- AI visibility and competitor tracking: HKD 2,800 diagnosis tests 20 buyer questions and compares up to 5 competitors; monitoring HKD 1,800/month; growth HKD 3,800/month; 6-month minimum; full-site project from HKD 12,000 — https://www.innovatexp.co/zh-hk/ai-seo-update-package
+- AI visibility and competitor tracking: HKD 2,800 diagnosis tests 20 buyer questions and compares up to 5 competitors; monitoring HKD 1,800/month; growth HKD 3,800/month; 20% off plans of 3 months or more; six months recommended for comparison; full-site project from HKD 12,000 — https://www.innovatexp.co/zh-hk/ai-seo-update-package
 
 ## Products (optional after workflow clarity)
 
@@ -89,7 +89,7 @@ Q: What is EventXP?
 A: EventXP is InnovateXP’s event operations tool for Hong Kong teams: QR check-in, lead scoring, live reporting, and post-event follow-up. Trial is HK$4,000 per event; maintenance from about HK$880 per month.
 
 Q: What is the AI visibility and competitor tracking service?
-A: A GEO/AEO diagnosis (HKD 2,800) tests 20 real buyer questions across AI answer engines and compares up to 5 competitors; monitoring is HKD 1,800/month or growth HKD 3,800/month (6-month minimum); full-site GEO rebuild from HKD 12,000. See https://www.innovatexp.co/zh-hk/ai-seo-update-package
+A: A GEO/AEO diagnosis (HKD 2,800) tests 20 real buyer questions across AI answer engines and compares up to 5 competitors; monitoring is HKD 1,800/month or growth HKD 3,800/month (20% off plans of 3 months or more; six months recommended for comparison); full-site GEO rebuild from HKD 12,000. See https://www.innovatexp.co/zh-hk/ai-seo-update-package
 
 Q: What is the AI-era quality engineering service?
 A: AI-era quality engineering is InnovateXP’s testing and reliability practice for AI-powered features: evals, regression guardrails, prompt and pipeline quality, and human review gates so AI output stays trustworthy in production. See https://www.innovatexp.co/zh-hk/ai-era-quality
@@ -118,7 +118,7 @@ Q: 起步幾錢？
 A: Discovery (quoted after diagnosis)；14 日流程試用：聽診後報價
 
 Q: AI 可見度同競爭對手追蹤係咩？
-A: GEO/AEO 診斷 HKD 2,800，測 20 條真實買家問題同比較最多 5 個競爭對手；監察 HKD 1,800/月或增長 HKD 3,800/月（最少 6 個月）；全站 GEO 改建由 HKD 12,000 起。見 https://www.innovatexp.co/zh-hk/ai-seo-update-package
+A: GEO/AEO 診斷 HKD 2,800，測 20 條真實買家問題同比較最多 5 個競爭對手；監察 HKD 1,800/月或增長 HKD 3,800/月（訂 3 個月或以上享 20% 折扣；建議以六個月比較前後數字）；全站 GEO 改建由 HKD 12,000 起。見 https://www.innovatexp.co/zh-hk/ai-seo-update-package
 
 Q: AI 時代品質工程係做咩？
 A: 係 InnovateXP 對 AI 功能嘅測試同可靠性實踐：evals、回歸守門、prompt 同 pipeline 質素，加人手覆核閘，令 AI 輸出喺生產環境保持可信。見 https://www.innovatexp.co/zh-hk/ai-era-quality

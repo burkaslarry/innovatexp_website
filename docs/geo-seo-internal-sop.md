@@ -1,7 +1,7 @@
 # GEO／SEO 可見度 — 內部 SOP（Larry 用）
 
 > 給自己跟單、交付、以及把自己網站做完。不要公開。  
-> 最後更新：2026-09-20
+> 最後更新：2026-10-06
 
 ---
 
@@ -9,11 +9,11 @@
 
 唔一開口就賣月費。先 AI Visibility 診斷（HKD 2,800，簽 6 個月 retainer 可全額抵扣首月），再用三個數字證明值唔值得續。
 
-| 層級 | 價 | 最低約期 |
+| 層級 | 價 | 折扣 |
 | --- | --- | --- |
 | AI Visibility 診斷 | HKD 2,800 | 一次性；可抵扣首月 |
-| Lite | HKD 1,800／月 | 6 個月 |
-| Growth | HKD 3,800／月 | 6 個月 |
+| Lite | HKD 1,800／月 | 訂 3 個月或以上享 20% 折扣 |
+| Growth | HKD 3,800／月 | 訂 3 個月或以上享 20% 折扣 |
 | Project 全站 AEO | HKD 12,000 起 | 一次性（新站） |
 
 每月報告必寫（續約靠呢三樣，唔寫改動次數）：
@@ -22,7 +22,7 @@
 2. 品牌關鍵字曝光（GSC 品牌查詢 impressions）
 3. 網站詢盤數（表單／WhatsApp／預約，對齊 GA4 或人手記）
 
-點解貴過 300 蚊：AEO 係持續戰；一次改 3 個位無法驗證成效。6 個月先有曲線。
+點解貴過 300 蚊：AEO 係持續戰；一次改 3 個位無法驗證成效。建議以六個月比較前後數字。
 
 ---
 
@@ -42,7 +42,7 @@ Bing 已登入 `innovatexp.co/`，畫面寫「資料處理中，最多 48 小時
 
 Google 側：
 
-5. VisionXP 已拆 Product／$0 Offer 並已上過線。每次 schema／套餐頁改完，用 Rich Results Test 測 `https://www.innovatexp.co/zh-hk` — 期望不再出現 Merchant listings invalid。
+5. VisionXP 已從官網落架。每次 schema／套餐頁改完，用 Rich Results Test 測 `https://www.innovatexp.co/zh-hk`，並確認已下架產品不再出現在公開結構化資料。
 6. 套餐頁上線後 Search Console → URL 檢查 → `/zh-hk/ai-seo-update-package` Request indexing **一次**。
 7. 3–7 日後再查 `/zh-hk/bookme` 是否已由「Discovered – currently not indexed」變成 indexed。未變就等，不要連撳。
 
@@ -65,7 +65,7 @@ Google 側：
 
 - 你被 AI 引用嘅現況報告
 - 問題清單 + 3 個立即可執行 quick wins
-- 12 個月 AEO 路線圖
+- 90 日改善優先次序
 - 建議 Lite 定 Growth（或只做 Project）
 
 簽 6 個月 retainer：2,800 全額抵扣首月。
@@ -128,5 +128,5 @@ Google 側：
 - 為加快而 `npm audit fix --force` 或跳過 build 就 deploy
 - 對未索引頁一日 request 十次
 - 對外承諾「一定上 AI Overview」
-- 把 VisionXP demo 再標回 Product／價錢 0（Google 會當購物）
+- 把已下架 VisionXP demo 再加回產品頁或結構化資料
 - 用「改動次數」賣 AEO

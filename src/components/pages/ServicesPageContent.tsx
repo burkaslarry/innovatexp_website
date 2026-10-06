@@ -1,8 +1,10 @@
 "use client";
 
+import Link from "next/link";
 import { SitePageShell } from "@/components/SitePageShell";
 import { getHomepageContent } from "@/content/homepage";
 import { useLanguage } from "@/app/LanguageContext";
+import { withLocale, localeUsesChineseCopy } from "@/lib/i18n-routing";
 
 export function ServicesPageContent() {
   const { locale } = useLanguage();
@@ -40,6 +42,14 @@ export function ServicesPageContent() {
           ))}
         </div>
       </section>
+      <div className="mt-10 flex flex-wrap gap-3">
+        <Link href={withLocale(locale, "/ai-consulting")} className="inline-flex min-h-11 items-center rounded-lg bg-[color:var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white">
+          {localeUsesChineseCopy(locale) ? "AI 商業顧問：點樣由業務聽診開始" : "AI consulting: start with workflow diagnosis"}
+        </Link>
+        <Link href={withLocale(locale, "/case-studies")} className="inline-flex min-h-11 items-center rounded-lg border border-[color:var(--brand-primary)] px-5 py-3 text-sm font-semibold text-[color:var(--brand-primary)]">
+          {localeUsesChineseCopy(locale) ? "睇交付經驗" : "See delivery experience"}
+        </Link>
+      </div>
     </SitePageShell>
   );
 }

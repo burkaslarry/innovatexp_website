@@ -21,10 +21,12 @@ export function ProductsAndServicesIntro({ locale }: { locale: AppLocale }) {
       ];
   const services: Offering[] = zh
     ? [
+        { name: "AI 商業顧問", description: "先用業務聽診搵出銷售或營運樽頸，再定責任、試行同陪團隊落地。", href: "/ai-consulting" },
         { name: "流程診斷與自動化", description: "先搵出樽頸，再設計活動流程、銷售跟進同日常營運嘅自動化。", href: "/services" },
         { name: "AI Visibility", description: "檢查品牌喺 AI 搜尋答案中嘅能見度，再改善網站內容同引用資訊。", href: "/ai-seo-update-package" },
       ]
     : [
+        { name: "AI business consulting", description: "Diagnose one sales or operations bottleneck, assign ownership, pilot a change and help the team adopt it.", href: "/ai-consulting" },
         { name: "Workflow diagnosis & automation", description: "Find bottlenecks, then design event, sales and operations workflows that your team can use.", href: "/services" },
         { name: "AI Visibility", description: "Check how your brand appears in AI answers, then improve citable website content.", href: "/ai-seo-update-package" },
       ];

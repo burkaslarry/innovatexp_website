@@ -63,11 +63,11 @@ const SCHEMA_AI_SEO_NAME: Record<AppLocale, string> = {
 };
 
 const SCHEMA_AI_SEO_DESCRIPTION: Record<AppLocale, string> = {
-  en: "Diagnosis then retainer: AI Visibility report, monthly schema and answer-first copy, plus citation / brand-impression / enquiry reporting for Hong Kong SMEs. Six-month minimum on retainers.",
-  "zh-hk": "先 AI Visibility 診斷，再月費維護結構化資料同 answer-first 文案，並報告 AI 引用、品牌曝光、詢盤。月費最低 6 個月。",
-  "zh-tw": "先 AI Visibility 診斷，再月費維護結構化資料與 answer-first 文案，並報告 AI 引用、品牌曝光、詢盤。月費最低 6 個月。",
-  ja: "まず AI Visibility 診断、その後リテーナーで schema と answer-first 文を維持し、引用・ブランド露出・問い合わせを報告。リテーナーは最短 6 か月。",
-  de: "Zuerst AI-Visibility-Diagnose, dann Retainer für Schema und Answer-first-Texte plus Bericht zu Zitaten, Markenimpressionen und Anfragen. Retainer mindestens 6 Monate.",
+  en: "AI Visibility diagnosis followed by optional monthly content improvements and citation, brand-impression and enquiry reporting. Monthly plans of 3 months or more receive 20% off; six months allows a more meaningful comparison.",
+  "zh-hk": "先做 AI Visibility 診斷，再按月改善網站內容同追蹤提及、引用、詢盤。月費訂 3 個月或以上享 20% 折扣；六個月較適合比較前後數字。",
+  "zh-tw": "先做 AI Visibility 診斷，再按月改善網站內容並追蹤提及、引用、詢盤。月費訂 3 個月或以上享 20% 折扣；六個月較適合比較前後數字。",
+  ja: "AI Visibility 診断後、必要に応じて月次でサイト内容と引用・ブランド露出・問い合わせを追跡。3か月以上の月額契約は20%割引。前後比較には6か月を推奨。",
+  de: "Nach der AI-Visibility-Diagnose können monatliche Inhaltsverbesserungen und Berichte zu Erwähnungen, Zitaten und Anfragen folgen. Ab 3 Monaten gibt es 20% Rabatt; 6 Monate erlauben einen aussagekräftigeren Vergleich.",
 };
 
 const SCHEMA_WEBSITE_DESCRIPTION: Record<AppLocale, string> = {
@@ -664,76 +664,6 @@ function homeFaqMainEntity(locale: AppLocale): FaqMainEntity {
   }
 }
 
-const AI_SEO_FAQ_EN: FaqMainEntity = [
-  {
-    "@type": "Question",
-    name: "How does InnovateXP AI SEO / AEO pricing work?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "Start with a HKD 2,800 AI Visibility diagnosis (credited to month 1 if you take a retainer). Lite is HKD 1,800 per month; Growth is HKD 3,800 per month; both 6 months minimum. A one-off full-site AEO rebuild starts at HKD 12,000. Monthly reports track AI citations, brand-keyword impressions, and site enquiries — not a revision count.",
-    },
-  },
-];
-
-const AI_SEO_FAQ_ZH_HK: FaqMainEntity = [
-  {
-    "@type": "Question",
-    name: "InnovateXP AI SEO／AEO 點計費？",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "第一步係 HKD 2,800 AI Visibility 診斷（簽 retainer 可全額抵扣首月）。Lite 每月 HKD 1,800、Growth 每月 HKD 3,800，最低約期 6 個月。全站 AEO 重整由 HKD 12,000 起。月報追蹤 AI 引用、品牌關鍵字曝光、網站詢盤，唔用改動次數交差。",
-    },
-  },
-];
-
-const AI_SEO_FAQ_ZH_TW: FaqMainEntity = [
-  {
-    "@type": "Question",
-    name: "InnovateXP AI SEO／AEO 如何計費？",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "第一步為 HKD 2,800 AI Visibility 診斷（簽 retainer 可全額抵扣首月）。Lite 每月 HKD 1,800、Growth 每月 HKD 3,800，最低約期 6 個月。全站 AEO 重整由 HKD 12,000 起。月報追蹤 AI 引用、品牌關鍵字曝光、網站詢盤。",
-    },
-  },
-];
-
-const AI_SEO_FAQ_JA: FaqMainEntity = [
-  {
-    "@type": "Question",
-    name: "InnovateXP の AI SEO／AEO の料金は？",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "まず HKD 2,800 の AI Visibility 診断（リテーナー契約時は初月に全額充当）。Lite は月額 HKD 1,800、Growth は月額 HKD 3,800、最短 6 か月。サイト全体の AEO 再構築は HKD 12,000 から。月次レポートは引用・ブランド露出・問い合わせを追い、修正回数では測りません。",
-    },
-  },
-];
-
-const AI_SEO_FAQ_DE: FaqMainEntity = [
-  {
-    "@type": "Question",
-    name: "Wie ist die AI-SEO/AEO-Preisstruktur bei InnovateXP?",
-    acceptedAnswer: {
-      "@type": "Answer",
-      text: "Zuerst AI-Visibility-Diagnose für HKD 2.800 (voll auf Monat 1 anrechenbar bei Retainer). Lite HKD 1.800/Monat, Growth HKD 3.800/Monat, Mindestlaufzeit 6 Monate. Einmaliger AEO-Relaunch ab HKD 12.000. Monatsberichte: KI-Zitate, Markenimpressionen, Anfragen — keine Revisionszählung.",
-    },
-  },
-];
-
-function aiSeoFaqMainEntity(locale: AppLocale): FaqMainEntity {
-  switch (locale) {
-    case "en":
-      return AI_SEO_FAQ_EN;
-    case "zh-hk":
-      return AI_SEO_FAQ_ZH_HK;
-    case "zh-tw":
-      return AI_SEO_FAQ_ZH_TW;
-    case "ja":
-      return AI_SEO_FAQ_JA;
-    case "de":
-      return AI_SEO_FAQ_DE;
-  }
-}
-
 function buildBreadcrumbJsonLd(pathname: string, baseUrl: string, labelLocale: AppLocale) {
   const clean = ((pathname || "/").split("?")[0] || "/").replace(/\/$/, "") || "/";
   const lower = clean.toLowerCase();
@@ -1245,21 +1175,21 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
           name: "AI Visibility diagnosis",
           price: "2800",
           priceCurrency: "HKD",
-          description: "Citation report, 3 quick wins, 12-month AEO roadmap. Credited to month 1 on a 6-month retainer.",
+          description: "Citation report, 3 quick wins and a 90-day priority plan. Credited to month 1 on a 6-month retainer.",
         },
         {
           "@type": "Offer",
           name: "Lite AEO retainer",
           price: "1800",
           priceCurrency: "HKD",
-          description: "Monthly schema upkeep, 1–2 core pages, monthly metrics report. 6-month minimum.",
+          description: "1–2 core pages and monthly metrics report. Plans of 3 months or more receive 20% off.",
         },
         {
           "@type": "Offer",
           name: "Growth AEO retainer",
           price: "3800",
           priceCurrency: "HKD",
-          description: "4–6 monthly updates, AI citation tracking, competitor compare, review call. 6-month minimum.",
+          description: "4–6 monthly improvements, AI citation tracking, competitor comparison and review call. Plans of 3 months or more receive 20% off.",
         },
         {
           "@type": "Offer",
@@ -1270,19 +1200,13 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
         },
       ],
     },
-    url: `${baseUrl}/ai-seo-update-package`,
+    url: `${baseUrl}/${routeLocale}/ai-seo-update-package`,
   };
 
   const homeFaqPageSchema = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
     mainEntity: homeFaqMainEntity(routeLocale),
-  };
-
-  const aiSeoUpdateFaqPageSchema = {
-    "@context": "https://schema.org",
-    "@type": "FAQPage",
-    mainEntity: aiSeoFaqMainEntity(routeLocale),
   };
 
   const websiteSchema = {
@@ -1359,8 +1283,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
                 : [];
 
   /** Product/detail pages expose richer FAQPage JSON-LD locally — avoid duplicate/conflicting FAQ here. */
-  const scopedFaqSchemas =
-    resolvedScope === "home" ? [homeFaqPageSchema] : resolvedScope === "ai-seo-package" ? [aiSeoUpdateFaqPageSchema] : [];
+  const scopedFaqSchemas = resolvedScope === "home" ? [homeFaqPageSchema] : [];
 
   const pageUrl = `${baseUrl}/${routeLocale}${pathWithoutLocale === "/" ? "" : pathWithoutLocale}`;
   const webPageSchema = {
