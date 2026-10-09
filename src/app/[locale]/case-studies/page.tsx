@@ -35,7 +35,7 @@ const CASE_STUDY_META: Record<AppLocale, { title: string; description: string }>
   de: {
     title: "Agilizing-Fall | Kursmaterial von 10 Tagen auf 3 Stunden",
     description:
-      "Belegt: Agilizing verkürzte die Kursmaterial-Produktion von 10 Tagen auf 3 Stunden und spart mindestens HK$50.000 Assistentenkosten pro Monat. InnovateXP, KI-Berater Larry Lo in Hongkong.",
+      "Vom Inhaber bestätigt: Agilizing Limited verkürzte die Produktion von Schulungsmaterial von 10 Tagen auf 3 Stunden. InnovateXP, KI-Berater Larry Lo in Hongkong.",
   },
 };
 

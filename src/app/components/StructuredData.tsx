@@ -898,12 +898,6 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
             ? "三步：業務聽診 → 實用支援落地 → 由 0 到 1 陪跑。先診斷一條卡住營收或營運嘅流程，再決定使唔使落地工具。"
             : "Three steps: Business Workflow Diagnosis → practical implementation → 0-to-1 co-running. Diagnose one revenue- or operations-blocking workflow first, then decide whether a tool is justified.",
           inLanguage: localeToHtmlLang(routeLocale),
-          totalTime: "PT30M",
-          estimatedCost: {
-            "@type": "MonetaryAmount",
-            currency: "HKD",
-            value: String(PRICING.quickCash.aiReadinessAssessment),
-          },
           step: [
             {
               "@type": "HowToStep",

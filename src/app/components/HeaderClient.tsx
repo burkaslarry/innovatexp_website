@@ -175,9 +175,7 @@ export default function HeaderClient({
                   <p className="truncate text-lg font-bold text-[color:var(--heading-foreground)]">{title}</p>
                   <p className="truncate text-sm text-[color:var(--text-secondary)]">{subtitle}</p>
                 </div>
-                <div className="sm:hidden">
-                  <p className="text-lg font-bold text-[color:var(--heading-foreground)]">{title}</p>
-                </div>
+                <div className="sr-only sm:hidden">{title}</div>
               </>
             ) : (
               <div className="hidden sm:block">

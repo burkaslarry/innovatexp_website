@@ -22,8 +22,7 @@
     "secondaryCta": "Ask on WhatsApp",
     "trustPoints": [
       "14 years in large enterprises",
-      "Served training centres, clinics, fitness & professional services",
-      "Verified: 10 days → 3 hours · at least HK$50,000/month saved"
+      "Agilizing Limited: training materials from 10 days to 3 hours"
     ],
     "diagnosticInputs": [
       "WhatsApp enquiries",
@@ -165,20 +164,20 @@
   "cases": {
     "eyebrow": "Verified case",
     "title": "One real case: Agilizing Education Center",
-    "intro": "Numbers below are client-verified. Other industries are scenario references only.",
+    "intro": "The Agilizing Limited owner confirmed the production-time result below. Other scenarios are illustrative.",
     "beforeLabel": "Before",
     "sprintLabel": "What we did",
     "afterLabel": "After",
     "metricLabel": "Measured results",
-    "scenarioLabel": "Scenario references (not verified cases)",
+    "scenarioLabel": "Illustrative workflow scenarios",
     "items": [
       {
         "industry": "Corporate training | Agilizing Limited",
-        "title": "Courseware from 10 days to 3 hours — at least HK$50,000/month saved",
-        "before": "Each corporate training pack (PPT + digital-human video) took one assistant ~10 days. Costly, slow, hard to scale.",
-        "sprint": "In one month we built an automated production flow, cutting PPT + digital-human courseware from 10 days to 3 hours.",
-        "after": "At least HK$50,000/month in full-time assistant cost saved. Capacity to expand into social welfare and Cathay-type institutional clients.",
-        "metric": "Production: 10 days → 3 hours. At least HK$50,000/month in assistant cost saved. New segments: social welfare, Cathay."
+        "title": "Training materials: 10 days to 3 hours",
+        "before": "Production of slide decks and AI digital-human short videos for a training client.",
+        "sprint": "We improved the production workflow.",
+        "after": "Production time on this project fell from 10 days to 3 hours, confirmed by the owner of Agilizing Limited.",
+        "metric": "Production time: 10 days → 3 hours."
       },
       {
         "industry": "Training / courses | Scenario",

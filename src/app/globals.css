@@ -267,30 +267,25 @@ body {
   font-family: var(--font-main);
 }
 
-/* ====================================
-   Locale-specific font pairing
-   EN  : Bodoni Moda (headings) + Inter (body)
-   ZH  : Noto Serif TC (headings) + Noto Sans TC (body)
-   JA  : Shippori Mincho (headings) + Noto Sans JP (body)
-   ==================================== */
+/* One type family per locale, with system fallbacks only when the web font fails. */
 [data-locale] {
   font-family: var(--font-main);
 }
 
 [data-locale="en"] {
   --font-heading: var(--font-bodoni-moda), Georgia, "Times New Roman", serif;
-  --font-main: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-main: var(--font-heading);
 }
 
 [data-locale="zh-hk"],
 [data-locale="zh-tw"] {
-  --font-heading: var(--font-noto-serif-tc), var(--font-noto-sans-hk), "PingFang TC", serif;
-  --font-main: var(--font-noto-sans-tc), var(--font-noto-sans-hk), "PingFang TC", "Microsoft JhengHei", sans-serif;
+  --font-heading: var(--font-noto-serif-tc), "Songti TC", serif;
+  --font-main: var(--font-heading);
 }
 
 [data-locale="ja"] {
-  --font-heading: var(--font-shippori-mincho), var(--font-noto-sans-hk), "Hiragino Mincho ProN", serif;
-  --font-main: var(--font-noto-sans-jp), "Hiragino Sans", "Yu Gothic", sans-serif;
+  --font-heading: var(--font-shippori-mincho), "Hiragino Mincho ProN", serif;
+  --font-main: var(--font-heading);
 }
 
 [data-locale="zh-hk"] :is(h1, h2, h3),
@@ -308,8 +303,20 @@ body {
 
 [data-locale="de"] {
   --font-heading: var(--font-bodoni-moda), Georgia, "Times New Roman", serif;
-  --font-main: var(--font-inter), system-ui, -apple-system, sans-serif;
+  --font-main: var(--font-heading);
 }
+
+/* Editorial homepage: restrained ink, ivory and brass across light/dark settings. */
+.atelier-home {
+  --text-primary: #251f19;
+  --text-secondary: #51483e;
+  --heading-foreground: #251f19;
+  --bg-primary: #f7f4ee;
+  color: #251f19;
+}
+.atelier-home :is(h1, h2, h3) { font-family: var(--font-main); }
+[data-locale] .atelier-home :is(h1, h2, h3) { font-weight: 400; }
+.atelier-home a:focus-visible { outline-color: #8b6b43; }
 
 button,
 input,

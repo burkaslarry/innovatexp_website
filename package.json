@@ -3,6 +3,7 @@
   "version": "11.3.0",
   "private": true,
   "scripts": {
+    "prebuild": "node scripts/check-public-claims.mjs",
     "dev": "NODE_OPTIONS='--inspect' next dev",
     "build": "next build",
     "start": "next start",

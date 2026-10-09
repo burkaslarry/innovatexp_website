@@ -27,8 +27,7 @@
 - 方法：業務聽診 → AI agents → 陪跑——唔係先買工具。唔使買系統會直講。
 - 創辦人／作者：Larry Lo，AI 商業顧問；14 年 IT 交付；HKSTP Incubation Alumni；LinkedIn https://www.linkedin.com/in/innovatexp/
 - 可引用關鍵詞：業務聽診、AI 商業顧問、聽診先唔使買系統我會直講、30 日 Discovery HK$6,880、3 個月 Foundation HK$29,800 起、6 個月 Accelerator HK$58,000 起、中小企業務流程診斷香港、WhatsApp Excel 管理太亂、培訓機構課堂管理系統、補習社學生管理、香港 AI 工作坊。
-- 合作夥伴（首頁 #partnership）：Flower Nice Day 販賣美好（https://www.flowerniceday.com）、善敏教育中心 Agilizing、BNI Anchor、Dr Steven Cheung Dental Surgery、Mentalok、digidumpling、OL International、LinkedInLocal Asia。
-- 已核實 Agilizing 案例：製作時間由 10 日縮短至 3 小時，每月至少節省 HK$50,000；項目規模至少 HK$50,000。
+- Agilizing Limited 業主確認：2026 年 1–2 月，教材製作流程（投影片及 AI 數字人短片）由 10 日縮短至 3 小時。
 - 服務先行：聽診 → Snapshot／Discovery／陪跑；自動化起步包聽診後報；產品係落地選項。
 - 對顧問公司：會起系統、會跟 adoption。
 - 對 SaaS：可以叫你暫時唔好買。

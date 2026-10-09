@@ -51,7 +51,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "慳到嘅時間同多接嘅客，點樣先至數得到？",
             paragraphs: [
               "慳到可核實嘅時間，先叫節流。覆客快、跟進準、少漏單，先有機會開源。兩件事都要有前後對比，唔好用別人嘅口號代替你自己嘅數字。",
-              "善敏教育中心 Agilizing 嘅教材製作，由一位助手人手做、一套要 10 日，壓縮到 3 小時，並教材時間縮短，其後先拓展到社福界同國泰相關工作。呢個係業主確認的個案，唔代表每間公司都有同一筆數。你要先量自己條流程嘅工時同出錯次數。",
+              "Agilizing Limited 教材製作由 10 日縮到 3 小時，包括投影片同 AI 數字人短片。呢個係業主確認嘅項目結果，唔代表每間公司都會有同樣數字。你要先量自己條流程嘅工時同出錯次數。",
             ],
           },
           {
@@ -101,7 +101,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "節流和開源，如何才不是口號？",
             paragraphs: [
               "省下可核實的時間才叫節流。回覆快、跟進準、少漏單，才有機會開源。兩者都要有前後對比。",
-              "善敏教育中心 Agilizing 的教材由 10 日縮至 3 小時，其後才擴到社福界與國泰相關工作。這是業主確認的個案，不代表每家公司都有同一筆數字。",
+              "Agilizing Limited 教材製作由 10 日縮至 3 小時，包括簡報與 AI 數位人短片。這是業主確認的項目結果，不代表其他公司也有同樣成果。",
             ],
           },
         ],
@@ -135,7 +135,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "How do time saved and revenue show up without a slogan?",
             paragraphs: [
               "Time you can recount is the saving. Faster replies and fewer dropped follow-ups are what create room for revenue. Both need a before-and-after on your own work.",
-              "At Agilizing, a training centre, producing a set of materials fell from 10 days to 3 hours, before the same pattern reached social-service work and Cathay-related work. That figure is verified for that engagement. It is not a promise for yours.",
+              "At Agilizing Limited, training-material production fell from 10 days to 3 hours. The client owner confirmed that project result. It is not a forecast for yours.",
             ],
           },
         ],
@@ -153,7 +153,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "香港のAI企業は大きく3種類ですか？", paragraphs: ["既製品を売る会社、仕様どおりに開発する会社、今の仕事のやり方を聞いてからソフトが要るかを決める顧問です。3〜30人の会社が失敗しやすいのは、流れを描く前に開発契約を結ぶことです。専属のAI企業顧問が渡すべきものは、フロー図、次の担当、チームが追える手順、実際に使う助手か下書きです。"] },
           { heading: "売り込みと顧問を分ける7つの質問は？", paragraphs: ["近い業種で確認できる事例、開始価格と含まれないもの、ソフトの手数料、最初の月に渡すもの、会議に出る人、データの場所と書き出し、買わなくてよいときにそう言うか。ボトルネックは最新モデルの不足ではなく、問い合わせの放置、見積の待ち、記憶による引き継ぎであることが多いです。Free Process Assessment は、いちばん乱れた業務を1つ持ってくる最初の会話です。"] },
-          { heading: "時間削減と売上はスローガンなしでどう見るか？", paragraphs: ["数えられる時間だけが削減です。返信が速く、フォローが漏れないことが売上の余地です。Agilizing（善敏教育中心）では教材が10日から3時間になり、し、その後に福祉分野とキャセイ関連の仕事へ広がりました。確認済みの事例であり、御社への約束ではありません。"] },
+          { heading: "時間削減と売上はスローガンなしでどう見るか？", paragraphs: ["数えられる時間だけが削減です。返信が速く、フォローが漏れないことが売上の余地です。Agilizing Limitedの教材制作は10日から3時間へ短縮。顧客オーナーが確認した案件結果であり、御社への予測ではありません。"] },
         ],
         faqs: [
           { question: "AI顧問の起点料金は？", answer: "SnapshotはHK$3,880。10人以下のDiscovery SprintはHK$6,880から。11〜30人はHK$13,600。その後は診断のあとで見積もります。" },
@@ -169,7 +169,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "Welche drei Arten von KI-Firmen gibt es in Hongkong?", paragraphs: ["Manche verkaufen ein fertiges Werkzeug, manche bauen nach Spezifikation, manche beraten: sie lernen den heutigen Ablauf und entscheiden dann, ob Software nötig ist. Firmen mit 3–30 Personen kaufen oft den Bau, bevor der Weg gezeichnet ist. Ein zugeordneter KI-Berater hinterlässt eine Ablaufkarte, einen Verantwortlichen, eine nachvollziehbare Arbeitsweise und einen Assistenten oder Entwurf, den das Team nutzt."] },
           { heading: "Welche sieben Fragen trennen Verkauf und Beratung?", paragraphs: ["Prüfbarer Fall, Startpreis und Ausschlüsse, Softwareprovision, Lieferung im ersten Monat, wer in den Terminen sitzt, Speicherort und Export, und ob man vom Kauf abrät. Der Engpass ist oft eine Anfrage ohne Besitzer, ein wartendes Angebot oder eine Übergabe im Gedächtnis. Ein Free Process Assessment ist das erste Gespräch mit einem unübersichtlichen Ablauf."] },
-          { heading: "Wie zeigen sich Zeit und Umsatz ohne Slogan?", paragraphs: ["Nur nachzählbare Zeit ist eine Ersparnis. Schnellere Antworten und weniger verlorene Nachfassen schaffen Raum für Umsatz. Bei Agilizing sank die Materialerstellung von 10 Tagen auf 3 Stunden und sparte mindestens HK$50.000 im Monat, bevor das Muster in die Sozialarbeit und Cathay-bezogene Arbeit ging. Belegt für diesen Fall, kein Versprechen für Ihren."] },
+          { heading: "Wie zeigen sich Zeit und Umsatz ohne Slogan?", paragraphs: ["Nur nachzählbare Zeit ist eine Ersparnis. Schnellere Antworten und weniger verlorene Nachfassen schaffen Raum für Umsatz. Bei Agilizing Limited sank die Produktion von Schulungsmaterial von 10 Tagen auf 3 Stunden. Der Kundeninhaber bestätigte das Ergebnis; es ist keine Prognose für Ihr Projekt."] },
         ],
         faqs: [
           { question: "Was kostet der Einstieg?", answer: "Snapshot HK$3.880. Discovery Sprint ab HK$6.880 für bis zu 10 Personen, HK$13.600 für 11–30. Danach nach Diagnose." },
@@ -250,7 +250,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "Which five workflows do SMEs usually start with?", paragraphs: ["Quotes, order entry, WhatsApp enquiries, class or event follow-up, and a monthly admin check. They are familiar, errors are countable, and you do not replace every system first. A low-threshold setup uses the WhatsApp, spreadsheet, and form you already have, plus one draft or classification step. People still confirm amounts, promises, and anything sent outside."] },
           { heading: "How do you diagnose, build, and launch within 30 days?", paragraphs: ["Week one draws the current path. Week two picks one change, an owner, and a review point. Week three tries real cases. Week four compares time, dropped items, and rework. That is our own 30-day sequence. AI-powered business process automation goes unused when three workflows launch at once or nobody owns the output. Custom software waits until the light version proves a missing capability."] },
-          { heading: "Can a grant sit beside the first step?", paragraphs: ["Teams ask about BUD or TVP. Names, eligibility, and deadlines change — verify the official text before you apply. Agilizing’s drop from 10 days to 3 hours, came from narrowing to how one set of materials is produced, not from replacing the whole department in a month."] },
+          { heading: "Can a grant sit beside the first step?", paragraphs: ["Teams ask about BUD or TVP. Names, eligibility, and deadlines change — verify the official text before you apply. Agilizing’s drop from 10 days to 3 hours came from narrowing to how one set of materials is produced, not from replacing the whole department in a month."] },
         ],
         faqs: [
           { question: "Can we start without an IT colleague?", answer: "Yes. The first step usually adds an AI draft or sort to WhatsApp, a spreadsheet, and a form. People still confirm important fields." },
@@ -266,7 +266,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "最初の5つの業務は何ですか？", paragraphs: ["見積、受注、WhatsAppの問い合わせ、講座やイベントのフォロー、毎月の事務照合です。手順が慣れ、誤りが数えられ、全システムを先に替えません。低い入口は、今のWhatsApp、表、フォームに下書きか分類を足すことです。金額、約束、外部送信は人が確認します。"] },
           { heading: "30日で診断し、作り、公開するには？", paragraphs: ["1週目は現状、2週目は一つの変更と担当と確認点、3週目は実例、4週目は時間・漏れ・やり直しの比較です。これが私たちの30日の順序です。AI-powered business process automation が使われないのは、一度に3本上げるか、出力の責任者がいないときです。カスタムは、軽い案では足りないと分かってからです。"] },
-          { heading: "助成金は一緒に考えられますか？", paragraphs: ["BUDやTVPは名称、資格、期限が変わります。申請前に公式文書を確認してください（公開前に核实）。Agilizingは10日から3時間、月あたり少なくともHK$50,000の削減を、教材1セットの作り方に絞った結果として得ました。"] },
+          { heading: "助成金は一緒に考えられますか？", paragraphs: ["BUDやTVPは名称、資格、期限が変わります。申請前に公式文書を確認してください（公開前に核实）。Agilizing Limitedの教材制作は10日から3時間へ短縮。顧客オーナーが確認しています。"] },
         ],
         faqs: [
           { question: "IT担当がいなくてもできますか？", answer: "できます。最初は今の道具に下書きか分類を足し、重要項目は人が確認します。" },
@@ -282,7 +282,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "Mit welchen fünf Abläufen starten KMU?", paragraphs: ["Angebot, Auftragserfassung, WhatsApp-Anfragen, Kurs- oder Event-Follow-up und ein monatlicher Admin-Abgleich. Sie sind vertraut, Fehler sind zählbar, und nicht jedes System wird zuerst ersetzt. Ein niedriger Einstieg nutzt vorhandenes WhatsApp, eine Tabelle und ein Formular plus einen Entwurf oder eine Sortierung. Beträge, Zusagen und Versand bleiben beim Menschen."] },
           { heading: "Wie diagnostiziert, baut und startet man in 30 Tagen?", paragraphs: ["Woche eins zeichnet den Ist-Weg. Woche zwei wählt eine Änderung, einen Verantwortlichen und einen Prüfpunkt. Woche drei nutzt echte Fälle. Woche vier vergleicht Zeit, Verluste und Nacharbeit. Das ist unsere eigene 30-Tage-Folge. AI-powered business process automation bleibt ungenutzt, wenn drei Abläufe zugleich starten oder niemand die Ausgabe verantwortet. Individuelle Software wartet, bis die leichte Fassung eine fehlende Fähigkeit belegt."] },
-          { heading: "Kann eine Förderung daneben stehen?", paragraphs: ["BUD und TVP ändern Namen, Anspruch und Fristen. Prüfen Sie den amtlichen Text vor dem Antrag. Agilizings Weg von 10 Tagen auf 3 Stunden und mindestens HK$50.000 im Monat kam vom Verengen auf einen Materialsatz, nicht vom Austausch der ganzen Abteilung."] },
+          { heading: "Kann eine Förderung daneben stehen?", paragraphs: ["BUD und TVP ändern Namen, Anspruch und Fristen. Prüfen Sie den amtlichen Text vor dem Antrag. Agilizing Limiteds Produktionszeit für Schulungsmaterial sank von 10 Tagen auf 3 Stunden; der Kundeninhaber bestätigte das Ergebnis."] },
         ],
         faqs: [
           { question: "Geht es ohne IT-Kollegen?", answer: "Ja. Der erste Schritt ergänzt vorhandene Werkzeuge um Entwurf oder Sortierung. Wichtige Felder prüft ein Mensch." },
@@ -363,7 +363,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "Why does usage fall after AI training?", paragraphs: ["The class uses public examples. The office has your files, client names, and deadlines. If nobody names the first workflow, the session stays a session. Practical generative AI has to be tied to a deliverable someone must send. Half a day for the idea, half a day on one workflow per team."] },
           { heading: "How does a public AI-coach programme relate, without becoming our name?", paragraphs: ["The Hong Kong Productivity Council promotes enterprise AI use, including an arrangement titled 「一企業一 AI Coach」. That is the programme’s name. Cite it only. It is not an InnovateXP service name. Verify the official wording before you rely on it. Our own sequence is AI training people can explain, an AI workshop on your documents, then AI integration into the sheet and the channel you already use."] },
-          { heading: "What does an industry upgrade look like for three kinds of teams?", paragraphs: ["A training centre drafts a module; the trainer still corrects facts. A social-service team drafts notices and case summaries after sensitive fields are masked. A professional firm turns notes into tasks and leaves money and promises with a person. Agilizing’s 10 days to 3 hours,, was that materials path, not a generic class. Grants such as TVP need an official check before you apply."] },
+          { heading: "What does an industry upgrade look like for three kinds of teams?", paragraphs: ["A training centre drafts a module; the trainer still corrects facts. A social-service team drafts notices and case summaries after sensitive fields are masked. A professional firm turns notes into tasks and leaves money and promises with a person. Agilizing’s 10 days to 3 hours was that materials path, not a generic class. Grants such as TVP need an official check before you apply."] },
         ],
         faqs: [
           { question: "How many people do we need?", answer: "Three to thirty. A small team decides faster, so Tuesday’s work is more likely to use Monday’s result." },
@@ -379,7 +379,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "研修後に使用率が落ちるのはなぜですか？", paragraphs: ["教室は公開例、会社は自社ファイルと顧客名と期限です。最初の業務が指名されないと、授業で終わります。半日は概念、半日は部門ごとに1本の実案件です。"] },
           { heading: "公的なAIコーチ計画と、私たちの伴走はどう違いますか？", paragraphs: ["香港生産力促進局は企業のAI活用を推進し、「一企業一 AI Coach」という名称の仕組みがあります。これは計画の名前であり、InnovateXPのサービス名ではありません。公式文言は依拠前に確認してください。私たちの順序は、説明できるAI training、自社文書でのAI workshop、今の表と連絡手段へのAI integrationです。"] },
-          { heading: "3種類の会社の第一歩は？", paragraphs: ["研修センターは教材の下書き、講師が事実を直す。福祉は通知と事例要約の下書き、機微情報は先に隠す。専門サービスは議事をタスクにし、金額と約束は人に残す。Agilizingの10日から3時間、月あたり少なくともHK$50,000は教材の一本であり、汎用授業ではありません。TVPなどの助成は申請前に公式確認です。"] },
+          { heading: "3種類の会社の第一歩は？", paragraphs: ["研修センターは教材の下書き、講師が事実を直す。福祉は通知と事例要約の下書き、機微情報は先に隠す。専門サービスは議事をタスクにし、金額と約束は人に残す。Agilizing Limitedの教材制作時間10日から3時間は、顧客オーナーが確認した案件固有の結果です。TVPなどの助成は申請前に公式確認です。"] },
         ],
         faqs: [
           { question: "何人からできますか？", answer: "3〜30人です。小さいチームの方が翌日に使いやすいです。" },
@@ -395,7 +395,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "Warum fällt die Nutzung nach der Schulung?", paragraphs: ["Der Kurs nutzt öffentliche Beispiele. Das Büro hat Ihre Dateien, Kundennamen und Fristen. Ohne einen benannten ersten Ablauf bleibt es ein Kurs. Ein halber Tag Idee, ein halber Tag ein Ablauf pro Team."] },
           { heading: "Wie hängt ein öffentliches KI-Coach-Programm zusammen, ohne unser Name zu werden?", paragraphs: ["Der Hong Kong Productivity Council fördert KI in Unternehmen, einschließlich einer Anordnung mit dem Namen 「一企業一 AI Coach」. Das ist der Programmname. Nur zitieren. Es ist kein InnovateXP-Dienst. Offiziellen Wortlaut prüfen, bevor Sie sich darauf stützen. Unsere Folge: AI training, das man erklären kann, ein AI workshop an Ihren Unterlagen, dann AI integration in Tabelle und Kanal, die Sie schon nutzen."] },
-          { heading: "Wie sieht der Einstieg für drei Arten von Teams aus?", paragraphs: ["Ein Schulungszentrum entwirft ein Modul, die Lehrperson korrigiert Fakten. Ein sozialer Träger entwirft Hinweise und Fallzusammenfassungen nach Maskierung. Eine Kanzlei macht aus Notizen Aufgaben und lässt Beträge bei einem Menschen. Agilizings 10 Tage auf 3 Stunden und mindestens HK$50.000 im Monat war dieser Materialweg, kein allgemeiner Kurs. TVP vor dem Antrag amtlich prüfen."] },
+          { heading: "Wie sieht der Einstieg für drei Arten von Teams aus?", paragraphs: ["Ein Schulungszentrum entwirft ein Modul, die Lehrperson korrigiert Fakten. Ein sozialer Träger entwirft Hinweise und Fallzusammenfassungen nach Maskierung. Eine Kanzlei macht aus Notizen Aufgaben und lässt Beträge bei einem Menschen. Agilizing Limiteds 10 Tage auf 3 Stunden betreffen die Produktion von Schulungsmaterial in einem vom Kundeninhaber bestätigten Projekt. TVP vor dem Antrag amtlich prüfen."] },
         ],
         faqs: [
           { question: "Wie viele Personen brauchen wir?", answer: "Drei bis dreißig. Ein kleines Team entscheidet schneller, der nächste Tag nutzt das Ergebnis eher." },
@@ -452,7 +452,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "生成式引擎優化（GEO）是讓 ChatGPT、Google AI 摘要等答案引用或推薦你。每頁開頭直接回答，加上 FAQ 與 schema，統一公司名與服務描述，並在第三方被提及。",
         sections: [
           { heading: "SEO、GEO 與 AEO 有什麼差別？", paragraphs: ["SEO 爭搜尋排名。GEO 爭 AI 答案中的引用。AEO 把頁面寫成可摘錄的直接答案。三者疊加。中小企業五步：開篇直接答、問句小標、FAQ 與 FAQPage、各頁名稱一致、商會與目錄出現正確名稱。"] },
-          { heading: "如何用自己的網站看前後？", paragraphs: ["用 Search Console 看查詢。改完直接答案與 FAQ 後，用同一組買家問題再問，記錄有沒有引用網址或公司名。Agilizing 由 10 日縮至 3 小時 可以寫，因為已核實。未核實百分比不要寫成事實。免費 AI Visibility 迷你檢查是起點，不是排名保證。"] },
+          { heading: "如何用自己的網站看前後？", paragraphs: ["用 Search Console 看查詢。改完直接答案與 FAQ 後，用同一組買家問題再問，記錄有沒有引用網址或公司名。Agilizing Limited 教材製作由 10 日縮至 3 小時可以寫，因為業主確認咗呢個項目結果。未核實百分比不要寫成事實。免費 AI Visibility 迷你檢查是起點，不是排名保證。"] },
         ],
         faqs: [
           { question: "做 GEO 要放棄 SEO 嗎？", answer: "不用。GEO 建基於找得到、標題清楚、內容回答問題。" },
@@ -467,7 +467,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "Generative engine optimization (GEO) is how ChatGPT, Google AI summaries, and similar answers cite or recommend you. Open each page with a direct answer, add FAQs and schema, keep the company name and service description consistent, and be mentioned on third-party sites.",
         sections: [
           { heading: "How do SEO, GEO, and AEO differ?", paragraphs: ["SEO competes for ranked links. GEO competes for a citation inside an AI answer. AEO writes the page as an answer an extractor can lift. You stack them. Five steps a small firm can do: a short opening that says what you do, who you help, and which result is verified; question headings; an FAQ with FAQPage; the same name and service line on every page; and correct mentions in chambers, press, and directories."] },
-          { heading: "How do you compare your own site instead of guessing?", paragraphs: ["Search Console shows queries, impressions, and clicks. After you change the opening and the FAQ, ask the same buyer questions again and record whether your URL or name appears. Wait weeks, not a day. Agilizing’s 10 days to 3 hours can be stated because it is verified. An unverified percentage should not be written as fact; an answer engine will repeat it. A free AI Visibility mini check shows how AI introduces you now. It does not guarantee rank."] },
+          { heading: "How do you compare your own site instead of guessing?", paragraphs: ["Search Console shows queries, impressions, and clicks. After you change the opening and the FAQ, ask the same buyer questions again and record whether your URL or name appears. Wait weeks, not a day. Agilizing Limited’s 10 days to 3 hours can be stated because the client owner confirmed this project result. An unverified percentage should not be written as fact; an answer engine will repeat it. A free AI Visibility mini check shows how AI introduces you now. It does not guarantee rank."] },
         ],
         faqs: [
           { question: "Do we drop SEO to do GEO?", answer: "No. GEO sits on pages that can be found, with clear titles and answers." },
@@ -482,7 +482,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "生成エンジン最適化（GEO）は、ChatGPTやGoogleのAI要約があなたを引用または推薦するようにすることです。各ページの冒頭で答え、FAQとschemaを足し、社名とサービス説明を揃え、第三者サイトで言及されます。",
         sections: [
           { heading: "SEO、GEO、AEOの違いは？", paragraphs: ["SEOは順位、GEOはAI回答内の引用、AEOは抜き出せる直接回答です。三つは重ねます。小さな会社の5歩は、何をするか・誰を助けるか・確認済みの結果を短く書く、見出しを質問にする、FAQとFAQPage、各ページで名称を揃える、商工会や名簿に正しい名前を出すことです。"] },
-          { heading: "自社サイトで前後を見るには？", paragraphs: ["Search Consoleでクエリを見ます。冒頭とFAQを変えたあと、同じ買い手の質問で再確認し、URLや社名が出るかを記録します。数週間空けます。Agilizingの10日から3時間、月あたり少なくともHK$50,000は確認済みなので書けます。未確認の割合は事実にしないでください。無料のAI Visibilityミニチェックは、今AIがどう紹介するかを見る起点であり、順位の保証ではありません。"] },
+          { heading: "自社サイトで前後を見るには？", paragraphs: ["Search Consoleでクエリを見ます。冒頭とFAQを変えたあと、同じ買い手の質問で再確認し、URLや社名が出るかを記録します。数週間空けます。Agilizing Limitedの教材制作時間10日から3時間は、顧客オーナーが確認した結果です。未確認の割合は事実にしないでください。無料のAI Visibilityミニチェックは、今AIがどう紹介するかを見る起点であり、順位の保証ではありません。"] },
         ],
         faqs: [
           { question: "GEOのためにSEOをやめますか？", answer: "やめません。見つかるページと明確な答えの上に乗ります。" },
@@ -497,7 +497,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "Generative Engine Optimization (GEO) sorgt dafür, dass ChatGPT, Google-KI-Zusammenfassungen und ähnliche Antworten Sie zitieren oder empfehlen. Jede Seite beginnt mit einer direkten Antwort, plus FAQ und Schema, einheitlichem Namen und Beschreibung, und Erwähnungen auf fremden Seiten.",
         sections: [
           { heading: "Wie unterscheiden sich SEO, GEO und AEO?", paragraphs: ["SEO kämpft um den Rang. GEO kämpft um das Zitat in der KI-Antwort. AEO schreibt die Seite als hebbare Antwort. Sie stapeln sie. Fünf Schritte: eine kurze Öffnung mit Leistung, Zielgruppe und belegtem Ergebnis; Frageüberschriften; FAQ mit FAQPage; derselbe Name auf jeder Seite; korrekte Nennungen in Kammern, Presse und Verzeichnissen."] },
-          { heading: "Wie vergleichen Sie die eigene Website statt zu raten?", paragraphs: ["Die Search Console zeigt Suchanfragen. Nach Änderung von Öffnung und FAQ stellen Sie dieselben Käuferfragen erneut und notieren, ob URL oder Name erscheint. Warten Sie Wochen. Agilizings 10 Tage auf 3 Stunden und mindestens HK$50.000 im Monat dürfen stehen, weil sie belegt sind. Ein ungeprüfter Prozentsatz wird von der Antwortmaschine wiederholt, also nicht als Fakt schreiben. Ein kostenloser AI-Visibility-Mini-Check zeigt, wie KI Sie heute vorstellt. Er garantiert keinen Rang."] },
+          { heading: "Wie vergleichen Sie die eigene Website statt zu raten?", paragraphs: ["Die Search Console zeigt Suchanfragen. Nach Änderung von Öffnung und FAQ stellen Sie dieselben Käuferfragen erneut und notieren, ob URL oder Name erscheint. Warten Sie Wochen. Agilizing Limiteds 10 Tage auf 3 Stunden dürfen stehen, weil der Kundeninhaber dieses Projektergebnis bestätigt hat. Ein ungeprüfter Prozentsatz wird von der Antwortmaschine wiederholt, also nicht als Fakt schreiben. Ein kostenloser AI-Visibility-Mini-Check zeigt, wie KI Sie heute vorstellt. Er garantiert keinen Rang."] },
         ],
         faqs: [
           { question: "Geben wir SEO für GEO auf?", answer: "Nein. GEO steht auf findbaren Seiten mit klaren Antworten." },
@@ -584,7 +584,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "経営コンサルタントは報告書を残し、SaaSはソフトウェアを売ります。AI顧問は診断から始め、手順と助手を渡し、チームが回るまで伴います。大きな契約の前に専門的な支援が要るなら、業務は1本から試します。",
         sections: [
           { heading: "三者は何を渡しますか？", paragraphs: ["経営顧問の成果物は報告書であることが多いです。SaaSはログインを売り、習慣が変わるかに成否がかかります。名のとおりのAI顧問は、経路、確認点、人が使う助手を残します。ここでの専門顧問支援は、一本の線を一緒に変えることで、日常運用の代行ではありません。AI Automation Consulting と一般的なIT外注の違いは、外注が仕様どおりに渡し、顧問はその仕様が今のボトルネックかを先に問うことです。"] },
-          { heading: "どの場合にどれを選びますか？", paragraphs: ["足りない機能が分かっているなら開発かSaaS。道具か責任か分からないなら先に診断。落地ではなく取締役向けの独立意見なら経営顧問。Agilizingの10日から3時間、月あたり少なくともHK$50,000は教材1本の前後であり、プラットフォーム購入後に自動で出る数字ではありません。"] },
+          { heading: "どの場合にどれを選びますか？", paragraphs: ["足りない機能が分かっているなら開発かSaaS。道具か責任か分からないなら先に診断。落地ではなく取締役向けの独立意見なら経営顧問。Agilizing Limitedの教材制作時間10日から3時間は、その案件の結果であり、他社への予測ではありません。"] },
         ],
         faqs: [
           { question: "AI顧問は経営顧問を置き換えますか？", answer: "置き換えません。独立評価と組織設計は経営顧問、一本を落地して採用まで伴うのはAI顧問です。" },
@@ -599,7 +599,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "Ein Managementberater lässt meist einen Bericht. Ein SaaS-Anbieter verkauft Software. Ein KI-Berater beginnt mit der Diagnose, setzt Ablauf und Assistent um und bleibt, bis das Team ihn trägt. Wer fachliche Unterstützung ohne Großvertrag will, startet mit einem Ablauf.",
         sections: [
           { heading: "Was übergibt jede Seite?", paragraphs: ["Managementberatung ist stark in Diagnose und Rat; das Artefakt ist oft ein Bericht. SaaS verkauft einen Login; Erfolg hängt an geänderten Gewohnheiten. Ein KI-Berater, der den Namen trägt, lässt einen Weg, einen Prüfpunkt und einen genutzten Assistenten. Fachliche Unterstützung heißt hier, eine Linie mit Ihnen zu ändern, nicht den ganzen Betrieb zu führen. AI Automation Consulting unterscheidet sich von gewöhnlichem IT-Outsourcing: Outsourcing liefert nach Spezifikation; Beratung fragt zuerst, ob diese Spezifikation der Engpass ist."] },
-          { heading: "Wann wählen Sie wen?", paragraphs: ["Kennen Sie die fehlende Funktion, sprechen Sie mit Bau oder SaaS. Können Sie Werkzeug und Verantwortung nicht trennen, diagnostizieren Sie zuerst. Braucht der Vorstand eine unabhängige Meinung und keinen gesetzten Ablauf, nehmen Sie Managementberatung. Agilizings 10 Tage auf 3 Stunden und mindestens HK$50.000 im Monat ist das Vorher-nachher eines Materialwegs, keine Zahl, die nach einem Plattformkauf erscheint, und nicht Ihre Prognose."] },
+          { heading: "Wann wählen Sie wen?", paragraphs: ["Kennen Sie die fehlende Funktion, sprechen Sie mit Bau oder SaaS. Können Sie Werkzeug und Verantwortung nicht trennen, diagnostizieren Sie zuerst. Braucht der Vorstand eine unabhängige Meinung und keinen gesetzten Ablauf, nehmen Sie Managementberatung. Agilizing Limiteds 10 Tage auf 3 Stunden sind das vom Kundeninhaber bestätigte Vorher-nachher der Materialproduktion, keine Prognose für Ihr Team."] },
         ],
         faqs: [
           { question: "Ersetzt der KI-Berater den Managementberater?", answer: "Nein. Unabhängige Bewertung und Organisationsdesign bleiben Managementberatung. Einen Ablauf setzen und bei der Annahme bleiben ist KI-Beratung." },

@@ -91,7 +91,7 @@ const PAGE_COPY: Record<
     eyebrow: "プロジェクト事例と proof points",
     title: "Agilizing：教材が10日から3時間に",
     intro:
-      "確認済み：Agilizing の教材制作を10日から3時間に短縮し、アシスタント費用を月あたり少なくとも HK$50,000 削減しました。他の提供実績と2025年の公開登壇も、公開証拠と自社陳述を分けて記載します。",
+      "Agilizing Limited のオーナー確認：教材制作を10日から3時間に短縮しました。他の記載は公開情報と自社の説明を区別しています。",
     vision: "創業者の Vision",
     targetAudience: "対象",
     challenge: "課題",
@@ -111,7 +111,7 @@ const PAGE_COPY: Record<
     eyebrow: "Projektbeispiele und Proof Points",
     title: "Agilizing: Kursmaterial von 10 Tagen auf 3 Stunden",
     intro:
-      "Belegt: Agilizing verkürzte die Produktion von Kursmaterial von 10 Tagen auf 3 Stunden und spart mindestens HK$50.000 Assistentenkosten pro Monat. Weitere Lieferungen und öffentliche Auftritte 2025 stehen darunter, mit getrennter öffentlicher Evidenz und eigenen Angaben.",
+      "Vom Inhaber von Agilizing Limited bestätigt: Die Produktion von Schulungsmaterial sank von 10 Tagen auf 3 Stunden. Weitere Angaben sind nach öffentlichen Quellen und eigenen Aussagen getrennt.",
     vision: "Founder Vision",
     targetAudience: "Zielgruppe",
     challenge: "Herausforderung",

@@ -22,8 +22,7 @@
     "secondaryCta": "WhatsApp 直接問",
     "trustPoints": [
       "14 年大企業經驗",
-      "已服務培訓中心／診所／Fitness／專業服務",
-      "先診斷，再決定要不要落地"
+      "Agilizing Limited：教材製作由 10 日縮到 3 小時"
     ],
     "diagnosticInputs": [
       "WhatsApp 查詢",
@@ -165,20 +164,20 @@
   "cases": {
     "eyebrow": "真實案例",
     "title": "一個真實案例：善敏教育中心 Agilizing",
-    "intro": "以下數字經客戶核實。其他行業只提供情境參考，唔當已驗證案例。",
+    "intro": "Agilizing Limited 業主確認以下教材製作時間。其他情境只作說明。",
     "beforeLabel": "Before",
     "sprintLabel": "做法",
     "afterLabel": "After",
     "metricLabel": "可量度結果",
-    "scenarioLabel": "情境參考（非已核實案例）",
+    "scenarioLabel": "業務情境參考",
     "items": [
       {
         "industry": "企業培訓｜Agilizing Limited",
-        "title": "教材製作由 10 日壓到 3 個鐘",
-        "before": "每套企業培訓教材（PPT + 數字人講解影片）靠一位助手全人手做，10 日先出一套。成本高、產量慢，冇法快速拓展新客源。",
-        "sprint": "用一個月建立自動化製作流程，將 PPT 同數字人教材製作時間由 10 日壓縮到 3 小時。",
-        "after": "直接至少慳咗 HK$50,000／月全職助理聘請開支，有能力短時間內拓展新客源，成功伸展到社福界同國泰等機構型客戶。",
-        "metric": "製作時間：10 日 → 3 小時。教材時間縮短助理開支。新客源：社福界、國泰。"
+        "title": "教材製作由 10 日縮到 3 小時",
+        "before": "培訓教材製作，包括投影片同 AI 數字人短片。",
+        "sprint": "整理教材製作流程。",
+        "after": "該項目教材製作時間由 10 日縮到 3 小時；由 Agilizing Limited 業主確認。",
+        "metric": "教材製作時間：10 日 → 3 小時。"
       },
       {
         "industry": "培訓／課程｜情境參考",

@@ -56,7 +56,7 @@ const COPY: Record<AppLocale, Copy> = {
     weeksTitle: "四週點交？",
     weeks: ["第 1 週：揀一套要出嘅教材，收齊現有大綱同禁止貼上嘅資料。", "第 2 週：AI 培訓加工作坊，出第一版草稿。", "第 3 週：講師改事實，學員或同事試用。", "第 4 週：比較工時同返工，決定第二套使唔使做。"],
     caseTitle: "Agilizing",
-    caseBody: "善敏教育中心教材製作由 10 日壓縮到 3 小時，其後先拓展到社福界同國泰相關工作。呢個係業主確認的個案，唔係未開波嘅承諾。",
+    caseBody: "Agilizing Limited 教材製作由 10 日縮到 3 小時，包括投影片同 AI 數字人短片。呢個係業主確認嘅項目結果，唔係其他公司嘅預測。",
     note: "香港生產力促進局推動企業應用 AI，當中有名為「一企業一 AI Coach」的計劃。呢個係機構計劃名稱，只可引用，唔係 InnovateXP 嘅服務名。計劃用字發布前核實。",
     faqs: [
       { question: "係咪取代講師？", answer: "唔係。草稿由 AI 出，事實、例子同語氣由講師改完先用。" },
@@ -78,7 +78,7 @@ const COPY: Record<AppLocale, Copy> = {
     weeksTitle: "四週如何交付？",
     weeks: ["第 1 週：選定一套教材，收齊大綱與禁止貼上的資料。", "第 2 週：培訓加工作坊，出第一版草稿。", "第 3 週：講師改事實，同事試用。", "第 4 週：比較工時與返工，再決定第二套。"],
     caseTitle: "Agilizing",
-    caseBody: "善敏教育中心由 10 日縮至 3 小時，其後才擴到社福界與國泰相關工作。業主確認的個案，不是未開始的承諾。",
+    caseBody: "Agilizing Limited 教材製作由 10 日縮至 3 小時，包括簡報與 AI 數位人短片。業主確認的項目結果，不是其他公司的預測。",
     note: "香港生產力促進局推動企業應用 AI，其中有「一企業一 AI Coach」計劃。這是機構名稱，只可引用，不是 InnovateXP 的服務名。用字發布前核實。",
     faqs: [
       { question: "會取代講師嗎？", answer: "不會。草稿由 AI 出，事實與語氣由講師改完才用。" },
@@ -100,7 +100,7 @@ const COPY: Record<AppLocale, Copy> = {
     weeksTitle: "Four-week delivery",
     weeks: ["Week 1: choose one module and list what must not be pasted.", "Week 2: AI training plus workshop, first draft.", "Week 3: the trainer corrects facts; colleagues try it.", "Week 4: compare hours and rework before a second module."],
     caseTitle: "Agilizing",
-    caseBody: "Agilizing cut a training-material set from 10 days to 3 hours, before the pattern reached social-service work and Cathay-related work. Verified for that engagement, not a promise before we start.",
+    caseBody: "Agilizing Limited cut training-material production from 10 days to 3 hours, confirmed by the client owner. This project result is not a forecast for another team.",
     note: "The Hong Kong Productivity Council promotes enterprise AI use, including a programme named 「一企業一 AI Coach」. That name is theirs. Cite it only. It is not an InnovateXP service. Verify the official wording before you rely on it.",
     faqs: [
       { question: "Does this replace the trainer?", answer: "No. AI drafts. The trainer corrects facts, examples, and tone before anything is used." },
@@ -122,7 +122,7 @@ const COPY: Record<AppLocale, Copy> = {
     weeksTitle: "4週の渡し方",
     weeks: ["1週目：1教材と、貼ってはいけない資料。", "2週目：研修とワークショップで初稿。", "3週目：講師が事実を直し、試す。", "4週目：時間とやり直しを比べ、次を決める。"],
     caseTitle: "Agilizing",
-    caseBody: "善敏教育中心は10日から3時間、し、その後に福祉とキャセイ関連の仕事へ広がりました。確認済みであり、開始前の約束ではありません。",
+    caseBody: "Agilizing Limitedの教材制作は10日から3時間へ短縮。顧客オーナーが確認した案件結果であり、他社への予測ではありません。",
     note: "香港生産力促進局は企業のAI活用を推進し、「一企業一 AI Coach」という計画名があります。これは機関の名称です。引用のみ。InnovateXPのサービス名ではありません。公式文言は依拠前に確認してください。",
     faqs: [
       { question: "講師の代わりですか？", answer: "いいえ。下書きはAI、事実と口調は講師が直してから使います。" },
@@ -144,7 +144,7 @@ const COPY: Record<AppLocale, Copy> = {
     weeksTitle: "Lieferung in vier Wochen",
     weeks: ["Woche 1: ein Modul und was nicht eingefügt werden darf.", "Woche 2: Schulung plus Workshop, erster Entwurf.", "Woche 3: Faktenkorrektur und Probe.", "Woche 4: Stunden und Nacharbeit, dann das zweite Modul."],
     caseTitle: "Agilizing",
-    caseBody: "Agilizing verkürzte ein Materialset von 10 Tagen auf 3 Stunden und sparte, bevor das Muster in die Sozialarbeit und Cathay-bezogene Arbeit ging. Belegt, kein Versprechen vor dem Start.",
+    caseBody: "Agilizing Limited verkürzte die Produktion von Schulungsmaterial von 10 Tagen auf 3 Stunden, bestätigt vom Kundeninhaber. Kein Versprechen für andere Projekte.",
     note: "Der Hong Kong Productivity Council fördert KI in Unternehmen, einschließlich eines Programms namens 「一企業一 AI Coach」. Das ist dessen Name. Nur zitieren. Kein InnovateXP-Dienst. Offiziellen Wortlaut prüfen.",
     faqs: [
       { question: "Ersetzt das die Lehrperson?", answer: "Nein. KI entwirft. Fakten, Beispiele und Ton korrigiert die Lehrperson." },
