@@ -22,12 +22,12 @@ const HOME: LocalePair = {
   zh: {
     title: "AI專業顧問服務｜香港中小企業務聽診｜InnovateXP",
     description:
-      "InnovateXP 由 Larry Lo 創立，幫香港 3–30 人中小企先執順流程再落地 AI。Agilizing 教材由 10 日縮至 3 小時，每月至少慳 HK$50,000。",
+      "InnovateXP 由 Larry Lo 創立，幫香港 3–30 人中小企先聽診再落地。Agilizing 教材由 10 日縮到 3 小時。唔使買系統會直講。",
   },
   en: {
     title: "AI Automation Consulting | Hong Kong SMEs | InnovateXP",
     description:
-      "Larry Lo helps Hong Kong SMEs of 3–30 fix the workflow first, then put AI to work. Agilizing: 10 days to 3 hours, at least HK$50,000 a month saved.",
+      "Larry Lo helps Hong Kong SMEs of 3–30 diagnose the workflow first. Agilizing: training materials from 10 days to 3 hours. He says so if you should not buy.",
   },
 };
 
@@ -264,17 +264,17 @@ const HOME_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
     title: "AI專業顧問服務｜香港中小企業流程診斷｜InnovateXP",
     description:
-      "InnovateXP 由 Larry Lo 創立，協助香港 3–30 人中小企業先整理流程再落地 AI。Agilizing 教材由 10 日縮至 3 小時，每月至少節省 HK$50,000。",
+      "InnovateXP 由 Larry Lo 創立，協助香港 3–30 人中小企業先聽診再落地。Agilizing 教材由 10 日縮到 3 小時。不必買系統會直說。",
   },
   ja: {
     title: "香港SME向けAI自動化コンサル｜InnovateXP",
     description:
-      "Larry Lo は香港の3〜30人企業の業務を整えてからAIを入れます。Agilizingは教材を10日から3時間へ短縮し、月あたり少なくともHK$50,000を削減。",
+      "Larry Lo は香港の3〜30人企業を先に診断します。Agilizingの教材は10日から3時間。買わなくてよいときはそう言います。",
   },
   de: {
     title: "KI-Automatisierung für Hongkonger KMU | InnovateXP",
     description:
-      "Larry Lo richtet den Ablauf zuerst, dann KI. Agilizing: Schulungsmaterial von 10 Tagen auf 3 Stunden, mindestens HK$50.000 im Monat gespart.",
+      "Larry Lo diagnostiziert zuerst. Agilizing: Schulungsmaterial von 10 Tagen auf 3 Stunden. Er sagt, wenn Sie nicht kaufen sollten.",
   },
 };
 

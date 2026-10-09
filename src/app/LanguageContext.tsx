@@ -108,10 +108,10 @@ export const translations = {
     'bookme.header.title': 'InnovateXP Limited',
     'bookme.header.subtitle': 'AI Business Consultancy',
     'bookme.header.back': '← Back to Home',
-    'bookme.success.title': 'Your business consultation booking has been successful! Added to Notion calendar.',
+    'bookme.success.title': 'Your business consultation is booked. We have saved the time and sent confirmation.',
     'bookme.success.subtitle': 'Your business consultation booking was not successful! Please contact InnovateXP Limited ASAP: info@innovatexp.co',
     'bookme.whatsapp.title': '📱 Send WhatsApp Confirmation Message',
-    'bookme.whatsapp.message': 'Your booking has been successfully added to Notion calendar! Click the button below to send confirmation message to WhatsApp.',
+    'bookme.whatsapp.message': 'Your booking is saved. Click the button below to send a confirmation message on WhatsApp.',
     'bookme.whatsapp.button': 'Open WhatsApp to Send',
     'bookme.whatsapp.later': 'Later',
     'bookme.wizard.prompt':
@@ -128,7 +128,7 @@ export const translations = {
     'bookme.info.confirmation': '• After successful booking, you will receive confirmation email and calendar invitation',
     'bookme.info.cancel': '• For cancellation or changes, please notify 24 hours in advance',
     'bookme.info.online': '• Consultation can choose online meeting or in-person visit',
-    'bookme.info.notion': '• Available slots sync with our team calendar — existing appointments on that day are automatically blocked',
+    'bookme.info.notion': '• Times already booked on this site are blocked automatically',
     'bookme.info.show_details': 'Show all booking details',
     'bookme.info.hide_details': 'Hide extra details',
     'bookme.date.label': '📅 Select Date',
@@ -366,7 +366,7 @@ export const translations = {
     'wizard.flowx.lead_fail_after_book':
       'Your time was saved, but the lead email did not send. Please contact info@innovatexp.co.',
     'wizard.flowx.notion_warn':
-      'Note: calendar database (Notion) may not have synced — check Notion env on the server.',
+      'The time was saved. If you do not receive email, write to info@innovatexp.co.',
     'wizard.flowx.error': 'Please check your email and WhatsApp number.',
     'wizard.flowx.submit_fail': 'Could not send — email info@innovatexp.co or use WhatsApp.',
     'wizard.whatsapp.dm_intro':
@@ -1099,7 +1099,7 @@ export const translations = {
     'bookme.info.confirmation': '• 預約成功後，您將收到確認郵件及日曆邀請',
     'bookme.info.cancel': '• 如需取消或更改預約，請提前 24 小時通知',
     'bookme.info.online': '• 諮詢可選擇線上會議或實體拜訪',
-    'bookme.info.notion': '• 可預約時段與團隊行事曆同步，當日已有行程會自動占用該時段',
+    'bookme.info.notion': '• 本網站已預約嘅時段會自動占用，避免撞期',
     'bookme.info.show_details': '顯示全部預約須知',
     'bookme.info.hide_details': '收起其他須知',
     'bookme.date.label': '📅 選擇日期',
@@ -1333,7 +1333,7 @@ export const translations = {
     'wizard.flowx.lead_fail_after_book':
       '預約時間已記低，但通知電郵未能送出。請聯絡 info@innovatexp.co。',
     'wizard.flowx.notion_warn':
-      '提示：日曆資料庫（Notion）可能未同步，請檢查伺服器 Notion 設定。',
+      '時間已記低。如果收唔到電郵，請寫信到 info@innovatexp.co。',
     'wizard.flowx.error': '請檢查電郵同電話。',
     'wizard.flowx.submit_fail': '無法送出 — 請電郵 info@innovatexp.co 或用 WhatsApp。',
     'wizard.whatsapp.dm_intro': '你好 InnovateXP，我啱啱完成網上診斷，以下係摘要：',

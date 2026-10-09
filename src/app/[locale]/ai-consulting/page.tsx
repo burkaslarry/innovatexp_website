@@ -67,6 +67,14 @@ export default async function AiConsultingPage({ params }: { params: Promise<{ l
           question: "由診斷到落地有咩選擇？",
           answer: `Snapshot 由 ${snapshot} 起；10 人或以下嘅 30 日 Discovery 由 ${discovery} 起。之後如需陪團隊建立穩定做法，3 個月 Foundation 由 ${foundation} 起；6 個月 Accelerator 由 ${accelerator} 起。實際範圍聽診後確認。`,
         },
+        {
+          question: "AI 專業顧問服務同賣軟件有咩分別？",
+          answer: "賣軟件由產品開始。AI 專業顧問服務由一條卡住嘅流程開始。唔需要系統會直講。專業顧問支援可以先試一條線。",
+        },
+        {
+          question: "Agilizing 嘅結果可唔可以當我哋嘅預測？",
+          answer: "教材由 10 日縮至 3 小時，係善敏教育中心業主確認嘅結果。未聽你條流程之前，我哋唔承諾同一回報。",
+        },
       ]
     : [
         {
@@ -85,6 +93,14 @@ export default async function AiConsultingPage({ params }: { params: Promise<{ l
           question: "What does the next stage cost?",
           answer: `Snapshot starts at ${snapshot}; a 30-day Discovery for up to 10 people starts at ${discovery}. For ongoing adoption, a 3-month Foundation starts at ${foundation} and a 6-month Accelerator at ${accelerator}. The scope is confirmed after diagnosis.`,
         },
+        {
+          question: "How is AI Automation Consulting different from buying software?",
+          answer: "Software starts from a product. Consulting starts from one stuck workflow. If you should not buy yet, Larry says so. You can trial one line before a large contract.",
+        },
+        {
+          question: "Can we treat the Agilizing saving as our forecast?",
+          answer: "Training materials fell from 10 days to 3 hours at Agilizing. That figure is verified for that centre. It is not a promise before we see your workflow.",
+        },
       ];
 
   const stages = zh
@@ -95,8 +111,8 @@ export default async function AiConsultingPage({ params }: { params: Promise<{ l
       ]
     : [
         { title: "1. Diagnose one workflow", body: "Start with a real path such as WhatsApp enquiry to quote, event registration to follow-up, or class attendance to renewal." },
-        { title: "2. Name owners and measures", body: "Map handoffs, assign ownership and record a baseline. Test one change with real cases before widening the scope." },
-        { title: "3. Pilot and co-run", body: "Add AI, automation or a product only where useful. Help the team adopt it and review usage and outcomes together." },
+        { title: "2. Build the working version", body: "Name the owner, the review point, and the one change worth trying on real cases." },
+        { title: "3. Launch within 30 days", body: "Put AI integration only where the team will use it, then review before a second workflow." },
       ];
 
   const packages = zh
@@ -121,12 +137,26 @@ export default async function AiConsultingPage({ params }: { params: Promise<{ l
       <header className="rounded-2xl bg-slate-950 px-6 py-10 text-white md:px-10">
         <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">InnovateXP · {zh ? "AI 商業顧問" : "AI business consulting"}</p>
         <h1 className="mt-4 text-3xl font-bold leading-tight md:text-5xl">
-          {zh ? `香港 AI 顧問收費：30 分鐘業務聽診，${snapshot} 起` : `Hong Kong AI consultant fees: 30-minute diagnosis from ${snapshot}`}
+          {loc === "ja"
+            ? `香港SMEの専属AI顧問：30分の診断、${snapshot}から`
+            : loc === "de"
+              ? `KI-Berater für Hongkonger KMU: 30-Minuten-Diagnose ab ${snapshot}`
+              : loc === "zh-tw"
+                ? `專屬 AI 企業顧問：30 分鐘業務診斷，${snapshot} 起`
+                : zh
+                  ? `專屬 AI 企業顧問：30 分鐘業務聽診，${snapshot} 起`
+                  : `AI Automation Consulting: 30-minute diagnosis from ${snapshot}`}
         </h1>
         <p className="mt-5 max-w-3xl text-base font-medium leading-8 text-white" data-geo-answer>
-          {zh
-            ? `業務聽診係一個 30 分鐘對話，只睇一條卡住嘅流程。Snapshot ${snapshot} 起，30 日 Discovery ${discovery} 起；唔使買系統會直講。`
-            : `A Business Workflow Diagnosis is a 30-minute call on one stuck workflow. Snapshot from ${snapshot}; 30-day Discovery from ${discovery}. If you should not buy a system yet, Larry says so.`}
+          {loc === "ja"
+            ? `InnovateXPは香港の3〜30人企業のボトルネックを整え、その後AIを入れます。Agilizingの教材は10日から3時間、月あたり少なくとも5万香港ドルの削減です。`
+            : loc === "de"
+              ? `InnovateXP richtet bei Hongkonger KMU mit 3–30 Personen zuerst den Engpass, dann die KI. Bei Agilizing: 10 Tage auf 3 Stunden,.`
+              : loc === "zh-tw"
+                ? "InnovateXP 協助香港 3–30 人中小企業處理業務瓶頸，先整理流程再落地 AI。善敏教材由 10 日縮至 3 小時，時間縮短。"
+                : zh
+                  ? "InnovateXP 幫香港 3–30 人中小企處理業務樽頸，先執流程再落地 AI。善敏教材 10 日縮至 3 小時，時間縮短。"
+                  : "InnovateXP helps Hong Kong SMEs of 3 to 30 fix one bottleneck, then put AI to work. Agilizing cut training materials from 10 days to 3 hours. Larry says so if you should not buy a system yet."}
         </p>
         <p className="mt-4 max-w-3xl text-base leading-8 text-slate-200">
           {zh

@@ -22,7 +22,7 @@ export default function WhatsAppModal({ isOpen, onClose, whatsappUrl }: WhatsApp
                 📱 發送 WhatsApp 確認訊息
               </h3>
               <p className="text-emerald-100 leading-relaxed mb-4">
-                您的預約已成功添加到 Notion 日曆！點擊下方按鈕發送確認訊息到 WhatsApp。
+                您的預約已記錄。點擊下方按鈕發送確認訊息到 WhatsApp。
               </p>
               <div className="flex gap-3">
                 <a

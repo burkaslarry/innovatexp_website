@@ -23,6 +23,7 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
   { path: "/private-ai-solutions", priority: 0.8, changeFrequency: "monthly" },
   { path: "/customer-experience-consulting", priority: 0.78, changeFrequency: "monthly" },
   { path: "/ai-training", priority: 0.84, changeFrequency: "monthly" },
+  { path: "/ai-training-materials", priority: 0.84, changeFrequency: "monthly" },
   { path: "/ai-coaching", priority: 0.84, changeFrequency: "monthly" },
   { path: "/sme-ai-workflow", priority: 0.86, changeFrequency: "monthly" },
   { path: "/proposal-to-cash-ai", priority: 0.8, changeFrequency: "monthly" },

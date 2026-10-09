@@ -43,6 +43,9 @@ export function ServicesPageContent() {
         </div>
       </section>
       <div className="mt-10 flex flex-wrap gap-3">
+        <Link href={withLocale(locale, "/ai-training-materials")} className="inline-flex min-h-11 items-center rounded-lg border border-[color:var(--brand-primary)] px-5 py-3 text-sm font-semibold text-[color:var(--brand-primary)]">
+          {localeUsesChineseCopy(locale) ? "培訓教材 AI 製作" : locale === "ja" ? "研修教材のAI制作" : locale === "de" ? "KI-Schulungsmaterial" : "AI training materials"}
+        </Link>
         <Link href={withLocale(locale, "/ai-consulting")} className="inline-flex min-h-11 items-center rounded-lg bg-[color:var(--brand-primary)] px-5 py-3 text-sm font-semibold text-white">
           {localeUsesChineseCopy(locale) ? "AI 商業顧問：點樣由業務聽診開始" : "AI consulting: start with workflow diagnosis"}
         </Link>

@@ -51,7 +51,7 @@ const PAGE_COPY: Record<
     eyebrow: "相關經驗與交付能力",
     title: "Agilizing：教材由 10 日變成 3 小時",
     intro:
-      "已核實案例：善敏教育中心教材製作由 10 日縮到 3 小時，至少慳 HK$50,000／月助理開支。以下亦列出 Larry Lo 其他交付同 2025 公開分享，並分開公開證據同第一方陳述。",
+      "業主確認：Agilizing Limited 教材製作由 10 日縮到 3 小時。以下亦列出 Larry Lo 其他交付同 2025 公開分享，並分開公開證據同第一方陳述。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",
@@ -71,7 +71,7 @@ const PAGE_COPY: Record<
     eyebrow: "相關經驗與交付能力",
     title: "Agilizing：教材由 10 天變成 3 小時",
     intro:
-      "已核實案例：善敏教育中心教材製作由 10 天縮到 3 小時，每月至少節省 HK$50,000 助理開支。以下亦列出其他交付與 2025 公開分享，並分開公開證據與第一方陳述。",
+      "業主確認：Agilizing Limited 教材製作由 10 天縮到 3 小時。以下亦列出其他交付與 2025 公開分享，並分開公開證據與第一方陳述。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",

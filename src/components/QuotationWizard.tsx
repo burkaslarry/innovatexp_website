@@ -29,9 +29,9 @@ import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
  * InnovateXP Quotation Wizard — conversion flow
  * ---------------------------------------------------------------------------
  * 1) User completes path questions (or uses ExpertShortcut → same booking path).
- * 2) flowx_booking: pick date + slot from /api/calendar/slots (no Notion book yet).
+ * 2) flowx_booking: pick date + slot from /api/calendar/slots.
  * 3) flowx_identity: name, email, WhatsApp (country + local), company.
- * 4) submitFlowX → POST /api/calendar/book (Notion + optional server Web3Forms).
+ * 4) submitFlowX → POST /api/calendar/book.
  *    One team email only (InnovateXP Limited): booking confirm includes 留言 = slot summary + QA.
  *    Notifications stay server-side so browser retries cannot bypass the submission quota.
  * ---------------------------------------------------------------------------
@@ -259,7 +259,7 @@ export default function QuotationWizard({
   }
 
   /*
-   * Final submit: calendar + identity valid → /api/calendar/book (Notion + optional server email).
+   * Final submit: calendar + identity valid → /api/calendar/book.
    * Email copy is always 「業務拜訪預約確認」from_name InnovateXP Limited; 留言 = slot summary + QA.
    * Browser Web3Forms only when server email did not send (emailSuccess !== true).
    */
@@ -294,7 +294,7 @@ export default function QuotationWizard({
       const formattedQa = diagnosticText || formatDiagnosticAnswersOnly(path || "consulting", answers, t);
       const visitorName = (fxName.trim() || company).trim() || "-";
 
-      /* 1) Persist slot to Notion + team notifications via existing calendar API */
+      /* 1) Persist the slot and notify the team via the calendar API. */
       const bookRes = await fetch("/api/calendar/book", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
@@ -310,7 +310,7 @@ export default function QuotationWizard({
       });
       const bookData = (await bookRes.json().catch(() => ({}))) as {
         error?: string;
-        notionSuccess?: boolean;
+        saved?: boolean;
         emailSuccess?: boolean;
       };
       if (!bookRes.ok) {
@@ -319,7 +319,7 @@ export default function QuotationWizard({
         return;
       }
 
-      if (bookData.emailSuccess !== true && bookData.notionSuccess !== true) {
+      if (bookData.emailSuccess !== true && bookData.saved !== true) {
         setFxErr(t("wizard.flowx.submit_fail"));
         return;
       }
@@ -331,10 +331,7 @@ export default function QuotationWizard({
         company,
         contactName: visitorName,
       });
-      const baseOk = t("wizard.flowx.submit_success");
-      setBookingSuccess(
-        bookData.notionSuccess === false ? `${baseOk}\n\n${t("wizard.flowx.notion_warn")}` : baseOk,
-      );
+      setBookingSuccess(t("wizard.flowx.submit_success"));
     } catch {
       setFxErr(t("wizard.flowx.submit_fail"));
     } finally {

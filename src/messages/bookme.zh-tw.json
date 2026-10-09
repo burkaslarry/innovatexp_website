@@ -13,7 +13,7 @@
   "bookme.info.cancel": "• 如需取消或更改預約，請提前 24 小時通知",
   "bookme.info.confirmation": "• 預約成功後，您將收到確認信與行事曆邀請",
   "bookme.info.monday_friday": "• 預約時間為週一至週五，上午 9:00 至下午 5:00",
-  "bookme.info.notion": "• 可預約時段與團隊行事曆同步，當日已有行程會自動占用該時段",
+  "bookme.info.notion": "• 本網站已預約的時段會自動占用，避免撞期",
   "bookme.info.online": "• 諮詢可選線上會議或實體會面",
   "bookme.info.one_hour": "• 每個時段為 1 小時一對一諮詢",
   "bookme.info.title": "📋 預約須知",
@@ -24,7 +24,7 @@
   "bookme.submit.processing": "處理中…",
   "bookme.subtitle": "AI 商業升級流程診斷 — 先揀一條流程、釐清卡位，再決定下一步；未了解 workflow 前不會直接 quote 產品。",
   "bookme.success.subtitle": "您的預約未能完成！請盡快聯絡 InnovateXP Limited：info@innovatexp.co",
-  "bookme.success.title": "您的商務諮詢預約已成功！已加入 Notion 行事曆。",
+  "bookme.success.title": "您的商務諮詢已預約。時間已記錄，並會寄出確認。",
   "bookme.time.hour": "* 每個時段為 1 小時一對一諮詢",
   "bookme.time.label": "⏰ 選擇時間（1 小時）",
   "bookme.time.loading": "載入中…",
@@ -44,7 +44,7 @@
   "bookme.visitor.title": "👤 來賓資料",
   "bookme.whatsapp.button": "開啟 WhatsApp 傳送",
   "bookme.whatsapp.later": "稍後再說",
-  "bookme.whatsapp.message": "您的預約已成功加入 Notion 行事曆！點選下方按鈕以 WhatsApp 傳送確認訊息。",
+  "bookme.whatsapp.message": "您的預約已記錄。點選下方按鈕以 WhatsApp 傳送確認訊息。",
   "bookme.whatsapp.title": "📱 傳送 WhatsApp 確認訊息",
   "bookme.wizard.prompt": "請先完成上方流程診斷。最後一步可以預約 30 分鐘 review；未了解你的 workflow 前，不會直接 quote 產品或系統。"
 }

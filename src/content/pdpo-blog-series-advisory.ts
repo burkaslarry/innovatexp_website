@@ -51,7 +51,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "慳到嘅時間同多接嘅客，點樣先至數得到？",
             paragraphs: [
               "慳到可核實嘅時間，先叫節流。覆客快、跟進準、少漏單，先有機會開源。兩件事都要有前後對比，唔好用別人嘅口號代替你自己嘅數字。",
-              "善敏教育中心 Agilizing 嘅教材製作，由一位助手人手做、一套要 10 日，壓縮到 3 小時，並至少慳 HK$50,000／月，其後先拓展到社福界同國泰相關工作。呢個係已核實個案，唔代表每間公司都有同一筆數。你要先量自己條流程嘅工時同出錯次數。",
+              "善敏教育中心 Agilizing 嘅教材製作，由一位助手人手做、一套要 10 日，壓縮到 3 小時，並教材時間縮短，其後先拓展到社福界同國泰相關工作。呢個係業主確認的個案，唔代表每間公司都有同一筆數。你要先量自己條流程嘅工時同出錯次數。",
             ],
           },
           {
@@ -101,7 +101,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "節流和開源，如何才不是口號？",
             paragraphs: [
               "省下可核實的時間才叫節流。回覆快、跟進準、少漏單，才有機會開源。兩者都要有前後對比。",
-              "善敏教育中心 Agilizing 的教材由 10 日縮至 3 小時，每月至少節省 HK$50,000，其後才擴到社福界與國泰相關工作。這是已核實個案，不代表每家公司都有同一筆數字。",
+              "善敏教育中心 Agilizing 的教材由 10 日縮至 3 小時，其後才擴到社福界與國泰相關工作。這是業主確認的個案，不代表每家公司都有同一筆數字。",
             ],
           },
         ],
@@ -135,7 +135,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "How do time saved and revenue show up without a slogan?",
             paragraphs: [
               "Time you can recount is the saving. Faster replies and fewer dropped follow-ups are what create room for revenue. Both need a before-and-after on your own work.",
-              "At Agilizing, a training centre, producing a set of materials fell from 10 days to 3 hours and saved at least HK$50,000 a month, before the same pattern reached social-service work and Cathay-related work. That figure is verified for that engagement. It is not a promise for yours.",
+              "At Agilizing, a training centre, producing a set of materials fell from 10 days to 3 hours, before the same pattern reached social-service work and Cathay-related work. That figure is verified for that engagement. It is not a promise for yours.",
             ],
           },
         ],
@@ -153,7 +153,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "香港のAI企業は大きく3種類ですか？", paragraphs: ["既製品を売る会社、仕様どおりに開発する会社、今の仕事のやり方を聞いてからソフトが要るかを決める顧問です。3〜30人の会社が失敗しやすいのは、流れを描く前に開発契約を結ぶことです。専属のAI企業顧問が渡すべきものは、フロー図、次の担当、チームが追える手順、実際に使う助手か下書きです。"] },
           { heading: "売り込みと顧問を分ける7つの質問は？", paragraphs: ["近い業種で確認できる事例、開始価格と含まれないもの、ソフトの手数料、最初の月に渡すもの、会議に出る人、データの場所と書き出し、買わなくてよいときにそう言うか。ボトルネックは最新モデルの不足ではなく、問い合わせの放置、見積の待ち、記憶による引き継ぎであることが多いです。Free Process Assessment は、いちばん乱れた業務を1つ持ってくる最初の会話です。"] },
-          { heading: "時間削減と売上はスローガンなしでどう見るか？", paragraphs: ["数えられる時間だけが削減です。返信が速く、フォローが漏れないことが売上の余地です。Agilizing（善敏教育中心）では教材が10日から3時間になり、月あたり少なくともHK$50,000を削減し、その後に福祉分野とキャセイ関連の仕事へ広がりました。確認済みの事例であり、御社への約束ではありません。"] },
+          { heading: "時間削減と売上はスローガンなしでどう見るか？", paragraphs: ["数えられる時間だけが削減です。返信が速く、フォローが漏れないことが売上の余地です。Agilizing（善敏教育中心）では教材が10日から3時間になり、し、その後に福祉分野とキャセイ関連の仕事へ広がりました。確認済みの事例であり、御社への約束ではありません。"] },
         ],
         faqs: [
           { question: "AI顧問の起点料金は？", answer: "SnapshotはHK$3,880。10人以下のDiscovery SprintはHK$6,880から。11〜30人はHK$13,600。その後は診断のあとで見積もります。" },
@@ -208,7 +208,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "政府資助可唔可以一併考慮？",
             paragraphs: [
               "香港中小企有時會問 BUD、TVP 一類資助可唔可以補貼數碼轉型。計劃名稱、資格同截止日期會變，發布前核實官方文本，唔好憑文章申請。",
-              "Agilizing 教材由 10 日縮至 3 小時、每月至少慳 HK$50,000，係先收窄到「一套教材點出」呢一條流程，而唔係一次過換晒製作部門。你嘅低成本第一步都應該窄到一個月內睇到前後。",
+              "Agilizing 教材由 10 日縮至 3 小時，係先收窄到「一套教材點出」呢一條流程，而唔係一次過換晒製作部門。你嘅低成本第一步都應該窄到一個月內睇到前後。",
             ],
           },
           {
@@ -216,7 +216,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             paragraphs: [
               "上線之前寫三行：邊個每日打開、邊個改錯、邊個先可以發送。少咗任何一行，自動化就會停喺創辦人部機。試點只用真實單，示範數據會令第四週嘅對比失真。",
               "三十日結束時只留一個決定：繼續、收窄，或者停。停都係結果。數碼轉型失敗，好多時係因為冇人被允許停一條冇人用嘅線，於是第二條、第三條疊上去。香港中小企 AI 自動化值得做，係因為你可以先用一個月證明一條線。",
-              "預算可以細到：現有帳號嘅用量，加一次業務聽診。Snapshot 係 HK$3,880。十人或以下 Discovery Sprint 由 HK$6,880 起。呢個先係低成本第一步嘅價，而唔係未試點就簽年度大系統。輕量化同低門檻 AI 方案都係指範圍，唔係指可以跳過覆核。同事如果要學新畫面，先教一個動作：打開、改一句、送去覆核。多過一個動作，第四週就會冇人開。報價、入單、查詢、報名跟進、月結核對，五條裡面只准揀一條做第一個月。第二條要等第一條有人可以示範。示範時用真單，唔好用練習檔。停得到，先算你控制到呢條線。",
+              "預算可以細到：現有帳號嘅用量，加一次業務聽診。Snapshot 係 HK$3,880。十人或以下 Discovery Sprint 由 HK$6,880 起。呢個先係低成本第一步嘅價，而唔係未試點就簽年度大系統。輕量化同低門檻 AI 方案都係指範圍，唔係指可以跳過覆核。同事如果要學新畫面，先教一個動作：打開、改一句、送去覆核。多過一個動作，第四週就會冇人開。報價、入單、查詢、報名跟進、月結核對，五條裡面只准揀一條做第一個月。第二條要等第一條有人可以示範。示範時用真單，唔好用練習檔。停得到，先算你控制到呢條線。控制唔到就未算自動化。",
             ],
           },
         ],
@@ -234,7 +234,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "中小企 AI 通常從哪五條流程開始？", paragraphs: ["報價、入單、WhatsApp 查詢、課程或活動報名跟進、每月重複的行政核對。共同點是步驟熟、出錯可數、不必先更換全公司系統。低門檻 AI 方案多用既有的 WhatsApp、試算表與表單，加上草稿或分類。金額、承諾與對外發送仍由人確認。"] },
           { heading: "30 日內如何先診斷、再建立、再上線？", paragraphs: ["第一週畫出現況，第二週選一個改動並寫下責任與覆核，第三週用真實單據試，第四週比較時間、漏單與返工。這是我們自己的三十日做法。AI-powered business process automation 變成沒人用，常常是因為一次上三條流程，或輸出沒人負責改。定制系統留到輕量化方案證明不夠用。"] },
-          { heading: "政府資助可以一併考慮嗎？", paragraphs: ["BUD、TVP 等計劃的名稱、資格與截止日期會變，發布前核實官方文本。Agilizing 由 10 日縮至 3 小時、每月至少節省 HK$50,000，是先收窄到一套教材如何產出，而不是一次換掉整個製作部門。"] },
+          { heading: "政府資助可以一併考慮嗎？", paragraphs: ["BUD、TVP 等計劃的名稱、資格與截止日期會變，發布前核實官方文本。Agilizing 由 10 日縮至 3 小時，是先收窄到一套教材如何產出，而不是一次換掉整個製作部門。"] },
         ],
         faqs: [
           { question: "沒有 IT 同事做得到嗎？", answer: "做得到。第一步多用現有 WhatsApp、試算表與表單，重要欄位仍由人確認。" },
@@ -250,7 +250,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "Which five workflows do SMEs usually start with?", paragraphs: ["Quotes, order entry, WhatsApp enquiries, class or event follow-up, and a monthly admin check. They are familiar, errors are countable, and you do not replace every system first. A low-threshold setup uses the WhatsApp, spreadsheet, and form you already have, plus one draft or classification step. People still confirm amounts, promises, and anything sent outside."] },
           { heading: "How do you diagnose, build, and launch within 30 days?", paragraphs: ["Week one draws the current path. Week two picks one change, an owner, and a review point. Week three tries real cases. Week four compares time, dropped items, and rework. That is our own 30-day sequence. AI-powered business process automation goes unused when three workflows launch at once or nobody owns the output. Custom software waits until the light version proves a missing capability."] },
-          { heading: "Can a grant sit beside the first step?", paragraphs: ["Teams ask about BUD or TVP. Names, eligibility, and deadlines change — verify the official text before you apply. Agilizing’s drop from 10 days to 3 hours, saving at least HK$50,000 a month, came from narrowing to how one set of materials is produced, not from replacing the whole department in a month."] },
+          { heading: "Can a grant sit beside the first step?", paragraphs: ["Teams ask about BUD or TVP. Names, eligibility, and deadlines change — verify the official text before you apply. Agilizing’s drop from 10 days to 3 hours, came from narrowing to how one set of materials is produced, not from replacing the whole department in a month."] },
         ],
         faqs: [
           { question: "Can we start without an IT colleague?", answer: "Yes. The first step usually adds an AI draft or sort to WhatsApp, a spreadsheet, and a form. People still confirm important fields." },
@@ -321,7 +321,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "AI+行業升級，三類公司可以點起步？",
             paragraphs: [
               "培訓中心：一套教材嘅大綱、投影片同講稿草稿，講師仍改事實同例子。社福機構：活動通知同個案摘要草稿，敏感資料先遮，對外發送仍由人確認。專業服務：會議紀錄變做待辦，金額同承諾留人手。",
-              "Agilizing 由 10 日縮至 3 小時、每月至少慳 HK$50,000，就係培訓教材呢一條，而唔係上完一堂通用 AI 課。資助例如 TVP 可唔可以補貼，視乎當期計劃，發布前核實。",
+              "Agilizing 由 10 日縮至 3 小時，就係培訓教材呢一條，而唔係上完一堂通用 AI 課。資助例如 TVP 可唔可以補貼，視乎當期計劃，發布前核實。",
             ],
           },
           {
@@ -329,7 +329,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             paragraphs: [
               "第二日有人用昨日嘅草稿做真工作，先算用咗。如果淨係收藏提示詞，使用率會喺一週內跌返零。陪跑要睇嘅係：邊一份輸出被改完發送、邊一份被棄用、棄用原因係事實錯定係冇人負責。",
               "細團隊唔使等齊三十人先開班。三個人可以即日揀一條線。AI+行業升級唔係換行業名，而係把生成式 AI 應用實務嵌進你而家交貨嘅方式。InnovateXP 唔用任何公營計劃名稱做自己嘅服務名。",
-              "陪跑每週只睇三件事：邊一份草稿被改完送出、邊一份被棄、棄係因為事實錯定係冇主人。三十日結束先決定第二條流程。一次過教五個部門，通常五個都停。AI 專案實戰工作坊嘅價值，在於房入面已經有一份要交嘅作業，而唔係一套新詞彙。生成式 AI 應用實務要包含「邊類資料唔貼進公開工具」，否則堂上教完，同事第二日就會把客戶名貼去個人帳戶。工作坊結束前，每人交一張紙：明日用邊份草稿、邊個覆核、邊類資料禁止貼上。冇呢張紙，就當堂未完。陪跑第一週只收呢張紙嘅結果，唔收新題目。新題目留到第二個月。",
+              "陪跑每週只睇三件事：邊一份草稿被改完送出、邊一份被棄、棄係因為事實錯定係冇主人。三十日結束先決定第二條流程。一次過教五個部門，通常五個都停。AI 專案實戰工作坊嘅價值，在於房入面已經有一份要交嘅作業，而唔係一套新詞彙。生成式 AI 應用實務要包含「邊類資料唔貼進公開工具」，否則堂上教完，同事第二日就會把客戶名貼去個人帳戶。工作坊結束前，每人交一張紙：明日用邊份草稿、邊個覆核、邊類資料禁止貼上。冇呢張紙，就當堂未完。陪跑第一週只收呢張紙嘅結果，唔收新題目。新題目留到第二個月。第一個月只收一張紙，唔收第二條流程。第二個月先再開題。未用完第一張紙，唔好開新班。",
             ],
           },
         ],
@@ -347,7 +347,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "為什麼 AI 培訓之後使用率會掉？", paragraphs: ["課堂用公開例子，回到公司就碰到自己的檔案、客戶名與交期。沒有人指定第一條流程，員工就當課上完了。生成式 AI 應用實務要綁一份真的要交的作業。半日教概念，半日做真專案，每個部門只選一條流程。"] },
           { heading: "生產力局推動企業 AI 應用，和陪跑有什麼關係？", paragraphs: ["香港生產力促進局推動企業應用 AI，其中有名為「一企業一 AI Coach」的安排。這是機構計劃名稱，只可引用，不是 InnovateXP 的服務名。詳情發布前核實官方文本。我們的做法是 AI training 教得懂，AI workshop 用你的單據，AI integration 才接到現有的表與通訊工具。"] },
-          { heading: "AI+行業升級，三類公司如何起步？", paragraphs: ["培訓中心做教材草稿，講師仍改事實。社福機構做活動通知與個案摘要草稿，敏感資料先遮。專業服務把會議紀錄變成待辦，金額與承諾留人。Agilizing 由 10 日縮至 3 小時、每月至少節省 HK$50,000，是教材這一條，不是一堂通用課。TVP 等資助發布前核實。"] },
+          { heading: "AI+行業升級，三類公司如何起步？", paragraphs: ["培訓中心做教材草稿，講師仍改事實。社福機構做活動通知與個案摘要草稿，敏感資料先遮。專業服務把會議紀錄變成待辦，金額與承諾留人。Agilizing 由 10 日縮至 3 小時，是教材這一條，不是一堂通用課。TVP 等資助發布前核實。"] },
         ],
         faqs: [
           { question: "培訓要多少人？", answer: "3–30 人都可以。小團隊決策短，更容易把成果用到第二天。" },
@@ -363,7 +363,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         sections: [
           { heading: "Why does usage fall after AI training?", paragraphs: ["The class uses public examples. The office has your files, client names, and deadlines. If nobody names the first workflow, the session stays a session. Practical generative AI has to be tied to a deliverable someone must send. Half a day for the idea, half a day on one workflow per team."] },
           { heading: "How does a public AI-coach programme relate, without becoming our name?", paragraphs: ["The Hong Kong Productivity Council promotes enterprise AI use, including an arrangement titled 「一企業一 AI Coach」. That is the programme’s name. Cite it only. It is not an InnovateXP service name. Verify the official wording before you rely on it. Our own sequence is AI training people can explain, an AI workshop on your documents, then AI integration into the sheet and the channel you already use."] },
-          { heading: "What does an industry upgrade look like for three kinds of teams?", paragraphs: ["A training centre drafts a module; the trainer still corrects facts. A social-service team drafts notices and case summaries after sensitive fields are masked. A professional firm turns notes into tasks and leaves money and promises with a person. Agilizing’s 10 days to 3 hours, at least HK$50,000 a month, was that materials path, not a generic class. Grants such as TVP need an official check before you apply."] },
+          { heading: "What does an industry upgrade look like for three kinds of teams?", paragraphs: ["A training centre drafts a module; the trainer still corrects facts. A social-service team drafts notices and case summaries after sensitive fields are masked. A professional firm turns notes into tasks and leaves money and promises with a person. Agilizing’s 10 days to 3 hours,, was that materials path, not a generic class. Grants such as TVP need an official check before you apply."] },
         ],
         faqs: [
           { question: "How many people do we need?", answer: "Three to thirty. A small team decides faster, so Tuesday’s work is more likely to use Monday’s result." },
@@ -420,14 +420,14 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "SEO、GEO 同 AEO 有咩分別？",
             paragraphs: [
               "SEO 爭搜尋結果排名。GEO 爭 AI 答案入面嘅引用同推薦。AEO 係把頁面寫成問題嘅直接答案，等摘錄引擎拎到一句完整回覆。三樣疊加，唔係二揀一。",
-              "中小企做得到嘅五步：一，每頁第一段用四十至六十字答「你做咩、幫邊個、有咩已核實結果」。二，小題用問句。三，頁尾 FAQ 配 FAQPage。四，公司名、人名稱謂、服務描述各頁一致。五，商會、媒體、目錄有你嘅正確名。",
+              "中小企做得到嘅五步：一，每頁第一段用四十至六十字答「你做咩、幫邊個、有咩業主確認結果」。二，小題用問句。三，頁尾 FAQ 配 FAQPage。四，公司名、人名稱謂、服務描述各頁一致。五，商會、媒體、目錄有你嘅正確名。",
             ],
           },
           {
             heading: "點樣用自己網站睇前後，而唔係估？",
             paragraphs: [
               "Search Console 睇邊條查詢帶來展示同點擊。改完直接答案同 FAQ 之後，用同一組買家問題再問 ChatGPT 同搜尋摘要，記錄有冇引用你嘅網址或公司名。前後至少隔幾個星期，唔好第二日就宣布成功。",
-              "Agilizing 由 10 日縮至 3 小時、每月至少慳 HK$50,000，可以寫進案例頁，因為係已核實數字。未核實嘅百分比唔好寫成事實，AI 會照引。免費 AI Visibility 迷你檢查係一個起點，用來睇 AI 而家點介紹你，而唔係保證排名。",
+              "Agilizing 由 10 日縮至 3 小時，可以寫進案例頁，因為係業主確認數字。未核實嘅百分比唔好寫成事實，AI 會照引。免費 AI Visibility 迷你檢查係一個起點，用來睇 AI 而家點介紹你，而唔係保證排名。",
             ],
           },
           {
@@ -435,7 +435,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             paragraphs: [
               "同一組五條買家問題，改頁前後各問一次，記下：有冇提到 InnovateXP 或你公司名、有冇引用網址、答案同你網站第一段一唔一致。不一致就改第一段，而唔係再寫一篇空泛文章。",
               "第三方提及要同你網站用同一個服務描述。商會簡介寫「賣軟件」，網站寫「先執流程」，AI 就會揀其中一句，而且多數揀錯。生成式引擎優化 GEO 係把你已經做緊嘅事講清楚，唔係製造你未做過嘅成果。",
-              "每頁只答一個問題。顧問頁答點樣開始，私人 AI 頁答資料點樣留低，案例頁答已核實數字。混埋一頁，摘錄就會取錯句。schema 要同可見文字一致，唔好喺 JSON-LD 寫一個網站冇寫嘅承諾。改完用同一組問題再問，先至知道有冇引用。目錄、商會同媒體嘅名稱要同網站一樣，包括「InnovateXP」同服務一句話。多一個別名，AI 就會當成兩間公司。生成式引擎優化 GEO 唔取代你同客人傾偈，只係令已經寫清楚嘅答案可以被引用。問句小標要係客人真係會打嘅問題，唔好用內部專案代號。答不到嘅問題，寧願唔開小標。引用出現之後，核對佢引嘅係邊一段，再收窄該段，而唔係再加一千字。生成式引擎優化 GEO 獎勵清楚，唔獎勵長。一頁一個問題就夠。",
+              "每頁只答一個問題。顧問頁答點樣開始，私人 AI 頁答資料點樣留低，案例頁答已核實數字。混埋一頁，摘錄就會取錯句。schema 要同可見文字一致，唔好喺 JSON-LD 寫一個網站冇寫嘅承諾。改完用同一組問題再問，先至知道有冇引用。目錄、商會同媒體嘅名稱要同網站一樣，包括「InnovateXP」同服務一句話。多一個別名，AI 就會當成兩間公司。生成式引擎優化 GEO 唔取代你同客人傾偈，只係令已經寫清楚嘅答案可以被引用。問句小標要係客人真係會打嘅問題，唔好用內部專案代號。答不到嘅問題，寧願唔開小標。引用出現之後，核對佢引嘅係邊一段，再收窄該段，而唔係再加一千字。生成式引擎優化 GEO 獎勵清楚，唔獎勵長。一頁一個問題就夠。多過一個，摘錄就會揀錯句，再改要由頭計。同日改、同日判，睇唔到分別。至少隔兩個星期再問同一組問題，先記低有冇引用。",
             ],
           },
         ],
@@ -452,7 +452,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "生成式引擎優化（GEO）是讓 ChatGPT、Google AI 摘要等答案引用或推薦你。每頁開頭直接回答，加上 FAQ 與 schema，統一公司名與服務描述，並在第三方被提及。",
         sections: [
           { heading: "SEO、GEO 與 AEO 有什麼差別？", paragraphs: ["SEO 爭搜尋排名。GEO 爭 AI 答案中的引用。AEO 把頁面寫成可摘錄的直接答案。三者疊加。中小企業五步：開篇直接答、問句小標、FAQ 與 FAQPage、各頁名稱一致、商會與目錄出現正確名稱。"] },
-          { heading: "如何用自己的網站看前後？", paragraphs: ["用 Search Console 看查詢。改完直接答案與 FAQ 後，用同一組買家問題再問，記錄有沒有引用網址或公司名。Agilizing 由 10 日縮至 3 小時、每月至少節省 HK$50,000 可以寫，因為已核實。未核實百分比不要寫成事實。免費 AI Visibility 迷你檢查是起點，不是排名保證。"] },
+          { heading: "如何用自己的網站看前後？", paragraphs: ["用 Search Console 看查詢。改完直接答案與 FAQ 後，用同一組買家問題再問，記錄有沒有引用網址或公司名。Agilizing 由 10 日縮至 3 小時 可以寫，因為已核實。未核實百分比不要寫成事實。免費 AI Visibility 迷你檢查是起點，不是排名保證。"] },
         ],
         faqs: [
           { question: "做 GEO 要放棄 SEO 嗎？", answer: "不用。GEO 建基於找得到、標題清楚、內容回答問題。" },
@@ -467,7 +467,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "Generative engine optimization (GEO) is how ChatGPT, Google AI summaries, and similar answers cite or recommend you. Open each page with a direct answer, add FAQs and schema, keep the company name and service description consistent, and be mentioned on third-party sites.",
         sections: [
           { heading: "How do SEO, GEO, and AEO differ?", paragraphs: ["SEO competes for ranked links. GEO competes for a citation inside an AI answer. AEO writes the page as an answer an extractor can lift. You stack them. Five steps a small firm can do: a short opening that says what you do, who you help, and which result is verified; question headings; an FAQ with FAQPage; the same name and service line on every page; and correct mentions in chambers, press, and directories."] },
-          { heading: "How do you compare your own site instead of guessing?", paragraphs: ["Search Console shows queries, impressions, and clicks. After you change the opening and the FAQ, ask the same buyer questions again and record whether your URL or name appears. Wait weeks, not a day. Agilizing’s 10 days to 3 hours and at least HK$50,000 a month can be stated because it is verified. An unverified percentage should not be written as fact; an answer engine will repeat it. A free AI Visibility mini check shows how AI introduces you now. It does not guarantee rank."] },
+          { heading: "How do you compare your own site instead of guessing?", paragraphs: ["Search Console shows queries, impressions, and clicks. After you change the opening and the FAQ, ask the same buyer questions again and record whether your URL or name appears. Wait weeks, not a day. Agilizing’s 10 days to 3 hours can be stated because it is verified. An unverified percentage should not be written as fact; an answer engine will repeat it. A free AI Visibility mini check shows how AI introduces you now. It does not guarantee rank."] },
         ],
         faqs: [
           { question: "Do we drop SEO to do GEO?", answer: "No. GEO sits on pages that can be found, with clear titles and answers." },
@@ -529,7 +529,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             heading: "邊種情況揀邊類？",
             paragraphs: [
               "你已經知道要邊個功能、只差人寫，先搵開發或 SaaS。你未知道問題係工具定係責任，先做聽診。你要董事會一份獨立意見、而唔係落地，先搵管理顧問。三樣可以先後做，唔使同一日簽齊。",
-              "Agilizing 由 10 日縮至 3 小時、每月至少慳 HK$50,000，係一條教材流程嘅前後，唔係買一套平台之後自動出現。未睇你條線之前，唔會把呢個數字寫成你嘅預測。",
+              "Agilizing 由 10 日縮至 3 小時，係一條教材流程嘅前後，唔係買一套平台之後自動出現。未睇你條線之前，唔會把呢個數字寫成你嘅預測。",
             ],
           },
           {
@@ -537,7 +537,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
             paragraphs: [
               "用四欄就夠：誰負責診斷、一個月內交咩、邊個擁有數據、停約之後你仲有咩。報告、登入、流程圖係三種唔同嘅交付。如果你需要嘅係流程圖同人用得落，就唔好用軟件名單代替。",
               "專業顧問支援可以同 SaaS 先後發生。先聽診，證明缺一個現成功能，先至買。AI Automation Consulting 喺呢個順序入面係中間嗰段：把規格問清楚，再決定外判定係用現有工具。大項目留到一條線已經行順。",
-              "問外判三句：停約之後流程圖歸邊個、數據可唔可以匯出、邊個負責同事第二日仍然用。三句答唔到，就未到簽開發嘅時候。管理顧問報告可以幫你對董事會解釋，但解釋完仍然要有人落地。三類人可以合作，次序先係聽診，再係工具。專業顧問支援嘅檢驗好簡單：一個月後，除咗顧問之外，有冇同事可以示範條流程。示範唔到，就係報告或者登入，未算落地。AI Automation Consulting 要交到呢個示範，而唔係再加一個未有人用嘅帳號。如果三方同時提案，先要求各用同一條流程寫：一個月交咩、邊個擁有數據、停約剩低咩。冇共同題目，比較表就只係廣告並列。專業顧問支援唔等於最長嘅建議書。最短而答到三句嘅，先值得進入下一步。答唔到就繼續聽，唔好簽。",
+              "問外判三句：停約之後流程圖歸邊個、數據可唔可以匯出、邊個負責同事第二日仍然用。三句答唔到，就未到簽開發嘅時候。管理顧問報告可以幫你對董事會解釋，但解釋完仍然要有人落地。三類人可以合作，次序先係聽診，再係工具。專業顧問支援嘅檢驗好簡單：一個月後，除咗顧問之外，有冇同事可以示範條流程。示範唔到，就係報告或者登入，未算落地。AI Automation Consulting 要交到呢個示範，而唔係再加一個未有人用嘅帳號。如果三方同時提案，先要求各用同一條流程寫：一個月交咩、邊個擁有數據、停約剩低咩。冇共同題目，比較表就只係廣告並列。專業顧問支援唔等於最長嘅建議書。最短而答到三句嘅，先值得進入下一步。答唔到就繼續聽，唔好簽。簽完先問，已經遲。比較要喺簽約之前，而且要用同一條流程。題目唔同，表就冇用。先統一題目，再比價錢，唔好靠估。",
             ],
           },
         ],
@@ -554,7 +554,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "管理顧問多數交報告，SaaS 供應商賣軟件。AI 顧問由診斷開始，親手落地流程與助手，再陪團隊用到順。想要專業顧問支援又不想一開始簽大專案，可以由一條流程試起。",
         sections: [
           { heading: "三類供應者交出的東西有何不同？", paragraphs: ["管理顧問的成果常常是報告。SaaS 賣一個登入，成敗在團隊肯不肯改習慣。名實相符的 AI 顧問留下流程、覆核位和用得上的助手。專業顧問支援是有人跟你改一條線，不是代做日常營運。AI Automation Consulting 與一般 IT 外包的差別：外包按規格交系統；顧問先問這個規格是不是現在的瓶頸。"] },
-          { heading: "什麼情況選哪一類？", paragraphs: ["已經知道要哪個功能，才找開發或 SaaS。還不知道是工具還是責任，先診斷。要一份獨立意見而不是落地，才找管理顧問。Agilizing 由 10 日縮至 3 小時、每月至少節省 HK$50,000，是一條教材流程的前後，不是買平台後自動出現。"] },
+          { heading: "什麼情況選哪一類？", paragraphs: ["已經知道要哪個功能，才找開發或 SaaS。還不知道是工具還是責任，先診斷。要一份獨立意見而不是落地，才找管理顧問。Agilizing 由 10 日縮至 3 小時，是一條教材流程的前後，不是買平台後自動出現。"] },
         ],
         faqs: [
           { question: "AI 顧問會取代管理顧問嗎？", answer: "不會。管理顧問仍適合獨立評估與組織設計。AI 顧問適合要親手改一條流程並陪團隊用順。" },
@@ -569,7 +569,7 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
           "A management consultant usually leaves a report. A SaaS vendor sells software. An AI consultant starts with a diagnosis, lands the workflow and the assistant, and stays until the team runs it. If you want professional support without a large contract first, start with one workflow.",
         sections: [
           { heading: "What does each party actually hand over?", paragraphs: ["Management consulting is strong at diagnosis and advice; the artefact is often a report. SaaS sells a login; success depends on whether habits change. An AI consultant who matches the name leaves a path, a review point, and an assistant people use. Professional support here means someone changes one line with you, not someone who runs your whole operation. AI Automation Consulting differs from ordinary IT outsourcing: outsourcing delivers to a specification; consulting first asks whether that specification is the bottleneck."] },
-          { heading: "When do you choose which?", paragraphs: ["If you already know the missing feature, talk to a builder or a SaaS vendor. If you cannot tell tool from ownership, diagnose first. If you need an independent opinion for a board and not a landed workflow, use a management consultant. You can sequence them. Agilizing’s 10 days to 3 hours and at least HK$50,000 a month is the before-and-after of one materials path, not a number that appears after buying a platform. It is not your forecast."] },
+          { heading: "When do you choose which?", paragraphs: ["If you already know the missing feature, talk to a builder or a SaaS vendor. If you cannot tell tool from ownership, diagnose first. If you need an independent opinion for a board and not a landed workflow, use a management consultant. You can sequence them. Agilizing’s 10 days to 3 hours is the before-and-after of one materials path, not a number that appears after buying a platform. It is not your forecast."] },
         ],
         faqs: [
           { question: "Does an AI consultant replace a management consultant?", answer: "No. Management consulting still fits independent assessment and organisation design. AI consulting fits landing one workflow and staying for adoption." },

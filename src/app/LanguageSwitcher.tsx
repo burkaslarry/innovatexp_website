@@ -21,7 +21,7 @@ const LABELS: Record<AppLocale, string> = {
 /**
  * Locale selector — navigates between hreflang-aligned URL prefixes (`/en`, `/zh-hk`, …).
  */
-export default function LanguageSwitcher() {
+export default function LanguageSwitcher({ className }: { className?: string }) {
   const pathname = usePathname() || "/";
   const router = useRouter();
   const current = getLocaleFromPathname(pathname);
@@ -41,7 +41,7 @@ export default function LanguageSwitcher() {
         id="ixp-locale-select"
         value={current}
         onChange={onChange}
-        className="max-w-[11rem] cursor-pointer rounded-full border border-slate-200/90 bg-slate-100/80 px-2.5 py-1 text-xs font-semibold text-slate-800 shadow-sm dark:border-slate-600 dark:bg-slate-800/90 dark:text-slate-100 sm:max-w-none sm:px-3 sm:text-sm"
+        className={className ?? "max-w-[11rem] cursor-pointer rounded-full border border-slate-200/90 bg-slate-100/80 px-2.5 py-1 text-xs font-semibold text-slate-800 shadow-sm dark:border-slate-600 dark:bg-slate-800/90 dark:text-slate-100 sm:max-w-none sm:px-3 sm:text-sm"}
       >
         {LOCALES.map((loc) => (
           <option key={loc} value={loc}>

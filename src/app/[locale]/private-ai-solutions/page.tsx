@@ -1,10 +1,12 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
-import { getFAQPageSchema } from "@/lib/schema";
-import { isValidLocale, localeUsesChineseCopy, type AppLocale } from "@/lib/i18n-routing";
-import { localeAlternates } from "@/lib/alternate-metadata";
+import { EditorialCta, EditorialSection, ServiceEditorial } from "@/components/editorial/ServiceEditorial";
+import { PRIVATE_AI_COPY } from "@/content/private-ai-copy";
 import { privateAiSeo } from "@/content/page-seo";
+import { localeAlternates } from "@/lib/alternate-metadata";
+import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
+import { getFAQPageSchema } from "@/lib/schema";
 import { getSiteUrl } from "@/lib/site-url";
 
 export async function generateMetadata({
@@ -37,214 +39,78 @@ export default async function PrivateAiSolutionsPage({
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
   const loc = locale as AppLocale;
-  const zh = localeUsesChineseCopy(loc);
-  const hero =
-    loc === "ja"
-      ? {
-          h1: "Private AI Solutions：プライベートクラウド、オンプレ、暗号化保存",
-          lead: "Private AI solution は、契約・請求書・領収書・銀行明細・顧客ファイルを公開チャットボットに置かない仕組みです。InnovateXP はまずデータの境界を決めます。何をモデルに入れないか、何を暗号化して保管するか、誰が出力を確認するか。そのあとでプライベートクラウド、オンプレ、または両方を選びます。香港のチームにも、データの所在を管理したい組織にも使えます。",
-        }
-      : loc === "de"
-        ? {
-            h1: "Private AI Solutions: Private Cloud, On-Prem und verschlüsselte Speicherung",
-            lead: "Eine Private-AI-Solution hält Verträge, Rechnungen, Belege, Kontoauszüge und Kundendateien aus öffentlichen Chatbots. InnovateXP zieht zuerst die Datengrenze: was nie in ein Modell darf, was verschlüsselt liegen darf, und wer eine Ausgabe freigibt. Danach wählen wir einen Private-Cloud-Endpunkt, On-Prem oder beides. Das gilt für Teams in Hongkong und für jede Organisation mit kontrolliertem Datenstandort.",
-          }
-        : loc === "zh-tw"
-          ? {
-              h1: "Private AI Solutions：私有雲、On-Prem、加密儲存",
-              lead: "Private AI solution 是合約、發票、收據、銀行月結和客戶檔不進入公開 chatbot。InnovateXP 先畫資料邊界：哪些永遠不進模型、哪些可以加密存放、誰可以覆核輸出。然後才選私有雲端點、on-prem，或兩者並用。適合香港團隊，也適合任何需要控制資料所在地的企業。",
-            }
-          : null;
-  const siteUrl = getSiteUrl();
-  const pageUrl = `${siteUrl}/${locale}/private-ai-solutions`;
-
-  const faqs = zh
-    ? [
-        {
-          question: "私有 AI 同公開 ChatGPT 有咩分別？",
-          answer:
-            "私有 AI 強調資料可控：入庫加密、存取權限、部署環境（私有雲／On-Premise）按你公司 data policy 設計，而唔係把敏感單據直接丟去公用模型。",
-        },
-        {
-          question: "邊類公司最需要 private AI solutions／企業 private AI？",
-          answer:
-            "會計、金融、專業服務、有客戶機密或銀行單據／收據流程嘅團隊——任何對資料外洩零容忍嘅香港企業場景。",
-        },
-        {
-          question: "會唔會一開始就建完整私有堆疊？",
-          answer:
-            "唔會。InnovateXP 先驗證 workflow 同 KPI，再決定雲、私有雲定 On-Premise。工具係引流；顧問陪跑先係落地實體。",
-        },
-        {
-          question: "香港企業 private AI 通常由邊度起步？",
-          answer:
-            "多數由一條可量度流程起步——例如收據分類、月結單摘要、或內部知識庫問答——並設定人工覆核關卡，再擴展到更多部門。",
-        },
-      ]
-    : [
-        {
-          question: "How is private AI different from public ChatGPT?",
-          answer:
-            "Private AI prioritizes controlled data: encrypted storage, access controls, and deployment (private cloud / on-prem) aligned to your data policy—not dumping sensitive documents into a public model.",
-        },
-        {
-          question: "Who needs private AI solutions?",
-          answer:
-            "Accounting, finance, professional services, and any Hong Kong team handling confidential receipts, bank statements, or client data with zero tolerance for leakage.",
-        },
-        {
-          question: "Do you build a full private stack on day one?",
-          answer:
-            "No. InnovateXP validates workflow and KPIs first, then chooses cloud, private cloud, or on-prem. Tools lead acquisition; advisory programs deliver the real service.",
-        },
-        {
-          question: "Where do Hong Kong enterprise private AI projects usually start?",
-          answer:
-            "Most start with one measurable workflow—receipt classification, statement summarisation, or internal knowledge Q&A—with human review gates before expanding to more teams.",
-        },
-      ];
-
-  const jsonLd = getFAQPageSchema({ url: pageUrl, questions: faqs });
+  const copy = PRIVATE_AI_COPY[loc];
+  const pageUrl = `${getSiteUrl()}/${locale}/private-ai-solutions`;
+  const jsonLd = getFAQPageSchema({ url: pageUrl, questions: copy.faqs });
 
   return (
-    <main className="min-h-screen bg-white dark:bg-gray-900">
-      <div className="container mx-auto max-w-4xl px-4 py-16">
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
-        />
-        <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
-          Private AI Solutions
-        </p>
-        <h1 className="mb-6 text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
-          {hero?.h1 ??
-            (zh
-              ? "Private AI Solutions：私有雲、On-Prem、加密入庫"
-              : "Private AI solutions: private cloud, on-prem, and encrypted storage")}
-        </h1>
-        <p className="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300" data-geo-answer>
-          {hero?.lead ??
-            (zh
-              ? "Private AI solution 即係合約、發票、收據、銀行月結同客戶檔唔會丟去公開 chatbot。InnovateXP 先畫資料邊界：邊啲永遠唔入模型、邊啲可以加密存放、邊個先可以覆核輸出。然後先揀私有雲端點、on-prem，或者兩者並用。香港團隊同任何要控制資料所在地嘅企業都適用。"
-              : "A private AI solution keeps contracts, invoices, receipts, bank statements, and client files off public chatbots. InnovateXP first draws the data boundary: what never enters a model, what may be stored encrypted, and who may approve an output. Then we choose a private cloud endpoint, on-prem, or both. That fits Hong Kong teams and any organisation that needs controlled data residency.")}
-        </p>
-        <p className="mb-8 leading-relaxed text-gray-700 dark:text-gray-300">
-          {zh
-            ? "私有 AI 唔等於一開始就買齊伺服器。多數香港中小企同專業服務團隊，會先喺可控雲端（例如 Azure OpenAI 私有端點）驗證一個可量度試點，確認人工覆核同權限模型可行，先至考慮更嚴格嘅 On-Premise。InnovateXP 會同你對齊：邊啲資料永遠唔入模型、邊啲可以入庫加密、邊個角色可以覆核輸出。"
-            : "Private AI does not mean buying servers on day one. Most Hong Kong SMEs and professional-services teams validate one measurable pilot on a controlled cloud endpoint (for example Azure OpenAI private endpoints), prove human review and access models, then decide whether stricter on-prem is required. InnovateXP aligns what never enters a model, what may be encrypted at rest, and who may approve outputs."}
-        </p>
+    <ServiceEditorial eyebrow={copy.eyebrow} title={copy.h1} answer={copy.answer}>
+      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
+      <p className="max-w-2xl text-lg leading-8 text-[color:var(--text-secondary)]">{copy.support}</p>
 
-        <section className="mb-10">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
-            {zh ? "香港企業點樣用 private AI" : "How Hong Kong enterprises use private AI"}
-          </h2>
-          <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
-            <li>
-              {zh
-                ? "會計／財務：收據 OCR、費用分類、月結摘要——敏感欄位留喺可控環境。"
-                : "Accounting/finance: receipt OCR, expense classification, statement summaries—sensitive fields stay controlled."}
-            </li>
-            <li>
-              {zh
-                ? "專業服務：客戶合約／會議紀錄摘要，配合權限同審計軌跡。"
-                : "Professional services: client contract and meeting summaries with permissions and audit trails."}
-            </li>
-            <li>
-              {zh
-                ? "內部知識庫：只服務員工嘅問答，唔對公眾開放模型。"
-                : "Internal knowledge bases: employee-only Q&A—not a public-facing model."}
-            </li>
-          </ul>
-        </section>
+      <EditorialSection title={copy.tableTitle}>
+        <div className="grid gap-4 md:grid-cols-3">
+          {copy.rows.map((row) => (
+            <article key={row[0]} className="ixp-card flex flex-col gap-4 p-6">
+              <h3 className="font-[family-name:var(--font-heading)] text-2xl tracking-tight">{row[0]}</h3>
+              <dl className="space-y-3 text-sm leading-6 text-[color:var(--text-secondary)]">
+                {row.slice(1).map((cell, index) => (
+                  <div key={copy.columns[index + 1]}>
+                    <dt className="text-[0.68rem] font-semibold uppercase tracking-[0.16em] text-[color:var(--text-tertiary)]">{copy.columns[index + 1]}</dt>
+                    <dd className="mt-1 text-[color:var(--text-primary)]">{cell}</dd>
+                  </div>
+                ))}
+              </dl>
+            </article>
+          ))}
+        </div>
+      </EditorialSection>
 
-        <section className="mb-10">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
-            {zh ? "點解公開模型唔夠" : "Why public models are not enough"}
-          </h2>
-          <ul className="list-inside list-disc space-y-2 text-gray-700 dark:text-gray-300">
-            <li>
-              {zh
-                ? "會計／銀行單據含帳戶、金額、客戶身份——外洩成本極高。"
-                : "Accounting and bank documents contain accounts, amounts, and identities—leakage cost is high."}
-            </li>
-            <li>
-              {zh
-                ? "政策要求：入庫要加密、存取要可稽核、部署位置要可控。"
-                : "Policy requires encryption at rest, auditable access, and controllable residency."}
-            </li>
-            <li>
-              {zh
-                ? "圖片 OCR 同文字抽取要喺可控環境做功課，唔係一鍵丟雲端。"
-                : "Image OCR and text extraction need controlled environments—not a one-click public upload."}
-            </li>
-          </ul>
-        </section>
+      <EditorialSection title={copy.fitTitle}>
+        <ul className="grid gap-3 md:grid-cols-2">
+          {copy.fit.map((item) => (
+            <li key={item} className="surface-section px-5 py-4 leading-7">{item}</li>
+          ))}
+        </ul>
+      </EditorialSection>
 
-        <section className="mb-10">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">
-            {zh ? "我哋點落地" : "How we deliver"}
-          </h2>
-          <ol className="list-inside list-decimal space-y-2 text-gray-700 dark:text-gray-300">
-            <li>
-              {zh
-                ? "Workflow 診斷：邊啲資料可入 AI、邊啲必須人工覆核。"
-                : "Workflow diagnosis: what data may enter AI, what must stay human-reviewed."}
+      <EditorialSection title={copy.stepsTitle}>
+        <ol className="grid gap-4 md:grid-cols-3">
+          {copy.steps.map((step, index) => (
+            <li key={step.title} className="ixp-card p-6">
+              <p className="text-[0.72rem] font-semibold tracking-[0.2em] text-[color:var(--pain-accent)]">0{index + 1}</p>
+              <h3 className="mt-3 text-xl font-semibold">{step.title}</h3>
+              <p className="mt-3 leading-7 text-[color:var(--text-secondary)]">{step.body}</p>
             </li>
-            <li>
-              {zh
-                ? "架構選項：Azure OpenAI／多雲、私有雲、或 On-Premise。"
-                : "Architecture options: Azure OpenAI / multi-cloud, private cloud, or on-premise."}
-            </li>
-            <li>
-              {zh
-                ? "試點：例如 Accounting Chatbot（收據 upload → 分類 → 每週報告）。"
-                : "Pilot: e.g. Accounting Chatbot (receipt upload → classify → weekly report)."}
-            </li>
-            <li>
-              {zh
-                ? "安全錨點：建議引入 IT security／IT audit 角色把關（人嘅問題同技術同樣重要）。"
-                : "Security anchor: involve IT security / IT audit stakeholders—people and process matter as much as tech."}
-            </li>
-          </ol>
-        </section>
+          ))}
+        </ol>
+      </EditorialSection>
 
-        <section className="mb-10">
-          <h2 className="mb-4 text-3xl font-bold text-gray-900 dark:text-white">FAQ</h2>
-          <dl className="space-y-6">
-            {faqs.map((f) => (
-              <div key={f.question}>
-                <dt className="text-xl font-semibold text-gray-900 dark:text-white">{f.question}</dt>
-                <dd className="mt-2 text-gray-700 dark:text-gray-300">{f.answer}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
+      <p className="max-w-2xl text-sm leading-7 text-[color:var(--text-tertiary)]">{copy.legal}</p>
+      <p className="max-w-2xl text-sm font-semibold leading-7">{copy.disclaimer}</p>
 
-        <section className="rounded-xl border border-slate-200 bg-slate-50 p-6 dark:border-gray-700 dark:bg-gray-800">
-          <h2 className="mb-2 text-2xl font-bold text-gray-900 dark:text-white">
-            {zh ? "下一步" : "Next step"}
-          </h2>
-          <p className="mb-4 text-gray-700 dark:text-gray-300">
-            {zh
-              ? "預約 30 分鐘診斷，釐清資料邊界同第一個私有 AI 試點。"
-              : "Book a 30-minute diagnosis to clarify data boundaries and your first private AI pilot."}
-          </p>
-          <div className="flex flex-wrap gap-3">
-            <Link
-              href={`/${locale}/bookme`}
-              className="inline-block btn-brand px-6 py-3 font-semibold "
-            >
-              {zh ? "預約諮詢" : "Book a consultation"}
-            </Link>
-            <Link
-              href={`/${locale}/ai-consulting`}
-              className="inline-block rounded-full border-2 border-brand-primary px-6 py-3 font-semibold text-brand-primary dark:border-brand-primary dark:text-[color:var(--primary-hover)]"
-            >
-              {zh ? "AI 顧問服務" : "AI consulting"}
-            </Link>
-          </div>
-        </section>
-      </div>
-    </main>
+      <EditorialSection title={copy.faqTitle}>
+        <dl className="divide-y divide-[color:var(--border-light)] border-y border-[color:var(--border-light)]">
+          {copy.faqs.map((faq) => (
+            <div key={faq.question} className="py-6">
+              <dt className="text-xl font-semibold">{faq.question}</dt>
+              <dd className="mt-2 max-w-3xl leading-7 text-[color:var(--text-secondary)]">{faq.answer}</dd>
+            </div>
+          ))}
+        </dl>
+      </EditorialSection>
+
+      <EditorialSection title={copy.linksTitle}>
+        <ul className="flex flex-col gap-3">
+          {copy.links.map((item) => (
+            <li key={item.href}>
+              <Link href={`/${locale}${item.href}`} className="text-lg font-semibold text-[color:var(--brand-green)] underline decoration-[color:var(--pain-accent)] underline-offset-4">{item.label}</Link>
+            </li>
+          ))}
+        </ul>
+      </EditorialSection>
+
+      <EditorialCta href={`/${locale}/bookme`} title={copy.ctaTitle} body={copy.ctaBody} label={copy.cta} />
+    </ServiceEditorial>
   );
 }

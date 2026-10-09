@@ -27,38 +27,38 @@ import InfoIcon from '@mui/icons-material/Info';
 
 interface ErrorModalProps {
   open: boolean;
-  errorType: 'notion-api-error' | 'network-error' | 'validation-error' | 'server-error';
+  errorType: 'storage-error' | 'network-error' | 'validation-error' | 'server-error';
   onClose: () => void;
 }
 
 export default function ErrorModal({ open, errorType, onClose }: ErrorModalProps) {
   const getErrorContent = () => {
     switch (errorType) {
-      case 'notion-api-error':
+      case 'storage-error':
         return {
           title: '📅 Booking System Connection Error',
           icon: ErrorIcon,
           severity: 'error' as const,
           message:
-            'We are currently unable to fetch available booking times from your calendar. This may be due to Notion API integration issues.',
+            'We are currently unable to read booked times. The booking store may be unavailable.',
           troubleshootingSteps: [
             {
               icon: CheckCircleIcon,
-              title: 'Verify Notion API Key',
+              title: 'Verify the database connection',
               description:
-                'Ensure your NOTION_TOKEN environment variable is set correctly in your .env.local file',
+                'Ensure DATABASE_URL is set for the environment that serves this site',
             },
             {
               icon: CheckCircleIcon,
-              title: 'Check Database Access',
+              title: 'Check the booking table',
               description:
-                'Verify that your Notion integration has been granted access to your calendar database',
+                'Confirm the site can read and write calendar bookings in the database',
             },
             {
               icon: CheckCircleIcon,
-              title: 'Validate Database ID',
+              title: 'Retry the request',
               description:
-                'Ensure NOTION_CALENDAR_DB_ID in your environment is correct (find it in your Notion database URL)',
+                'A temporary database error can block the slot list until the next successful read',
             },
             {
               icon: CheckCircleIcon,
