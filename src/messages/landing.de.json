@@ -15,9 +15,9 @@
   },
   "hero": {
     "eyebrow": "AI Business Consultant Larry Lo | InnovateXP",
-    "title": "AI business consultant for Hong Kong teams of 3–30",
-    "description": "Fix the workflow first, then land AI. In a 30-minute diagnosis, we find the process that leaks leads, runs slowest, or depends on one person. I'll say so if you shouldn't buy a system.",
-    "fitAudience": "",
+    "title": "KI-Berater für Hongkonger Teams mit 3–30 Personen",
+    "description": "InnovateXP richtet bei Hongkonger KMU mit 3 bis 30 Personen zuerst den Ablauf, dann die KI. Bei Agilizing sank die Materialerstellung von 10 Tagen auf 3 Stunden und sparte mindestens 50.000 HK$ im Monat.",
+    "fitAudience": "Für Schulungszentren, soziale Träger, professionelle Dienstleister und Onlineshops, die KI-Automatisierungsberatung wollen, bevor sie ein weiteres Tool kaufen.",
     "primaryCta": "Book a 30-min diagnosis",
     "secondaryCta": "Ask on WhatsApp",
     "trustPoints": [
@@ -59,8 +59,8 @@
   },
   "approach": {
     "eyebrow": "The method",
-    "title": "Diagnose → land AI agents → co-run from 0 to 1",
-    "intro": "In 30 minutes we find your most painful workflow, clarify leaks, ownership, and next steps. We only implement when it helps.",
+    "title": "Diagnostizieren, bauen, innerhalb von 30 Tagen starten",
+    "intro": "KI-gestützte Prozessautomatisierung beginnt mit einem wiederholten Ablauf. Wir diagnostizieren ihn, bauen eine nutzbare Fassung und starten innerhalb von 30 Tagen.",
     "steps": [
       {
         "label": "Step 1",
@@ -248,24 +248,28 @@
     "title": "FAQ",
     "items": [
       {
-        "question": "What is a Business Workflow Diagnosis — and how is it different?",
-        "answer": "About 30 minutes to lock one revenue- or ops-critical workflow, clarify leaks, ownership, and next steps. Unlike report-only consultants, we can land and co-run so the team actually uses it."
+        "question": "Was umfasst die KI-Automatisierungsberatung?",
+        "answer": "Wir diagnostizieren einen stockenden Ablauf und bauen eine Fassung, die das Team selbst betreibt. Software empfehlen wir erst, wenn der Versuch zeigt, dass sie hilft."
       },
       {
-        "question": "How much time do I need — and what should I prepare?",
-        "answer": "About 30 minutes. Bring your messiest line (e.g. WhatsApp sign-ups or quotes) and a concrete pain example. No polished deck required."
+        "question": "Was bringen wir zum ersten Gespräch mit?",
+        "answer": "Etwa 30 Minuten. Bringen Sie den unübersichtlichsten Ablauf, zum Beispiel WhatsApp-Anmeldungen oder Angebote, und ein konkretes Beispiel. Keine Präsentation nötig."
       },
       {
-        "question": "How are consulting fees calculated?",
-        "answer": "By workflow complexity and scope — quoted after diagnosis. We don't push a system at the start."
+        "question": "Welche Einstiegspreise sind veröffentlicht?",
+        "answer": "Snapshot kostet HK$3.880. Discovery Sprint kostet HK$6.880 für bis zu 10 Personen und HK$13.600 für 11–30. Weiteres wird nach der Diagnose festgelegt."
       },
       {
-        "question": "What if we don't actually need AI or a CRM?",
-        "answer": "I'll say so. Often the issue is unclear ownership and follow-up rhythm, not missing tools. Fixing the process may be enough."
+        "question": "Was, wenn wir keine KI und kein CRM brauchen?",
+        "answer": "Dann sagt Larry das. Oft fehlen Zuständigkeit und Follow-up-Rhythmus, nicht ein Tool. Den Ablauf zu richten kann reichen."
       },
       {
-        "question": "Will our data and processes stay confidential?",
-        "answer": "Yes. Operational details, customer data, and internal workflows shared in diagnosis or delivery are only used to serve you — never disclosed or published as a case without written consent."
+        "question": "Können wir dieselbe Ersparnis wie Agilizing erwarten?",
+        "answer": "Agilizing verkürzte Schulungsmaterial von 10 Tagen auf 3 Stunden und sparte mindestens HK$50.000 im Monat. Das ist für dieses Zentrum belegt. Dieselbe Rendite versprechen wir nicht, bevor wir Ihren Ablauf gesehen haben."
+      },
+      {
+        "question": "Bleiben unsere Daten vertraulich?",
+        "answer": "Ja. Betriebsdetails und Kundendaten aus Diagnose oder Umsetzung dienen nur Ihrer Betreuung und werden ohne schriftliche Zustimmung nicht veröffentlicht."
       }
     ]
   },

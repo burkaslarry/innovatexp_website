@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { BLOG_CHROME } from "@/content/blog-chrome";
 import { BLOG_POST_SLUGS, getBlogView, listSeries, seriesNeighbors, seriesTotal } from "@/content/blog-catalog";
-import { LOCALES, isValidLocale, localeToHtmlLang, type AppLocale } from "@/lib/i18n-routing";
+import { LOCALES, isValidLocale, localeToHtmlLang, localeUsesChineseCopy, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { BlogFrame } from "@/components/BlogFrame";
 import { AUTHOR, authorSameAs } from "@/lib/author";
@@ -73,8 +73,8 @@ export default async function BlogPostPage({ params }: Props) {
     author: {
       "@type": "Person",
       "@id": `${siteUrlMeta}/#founder`,
-      name: AUTHOR.name,
-      jobTitle: AUTHOR.jobTitle,
+      name: localeUsesChineseCopy(loc) ? `${AUTHOR.jobTitleZh} ${AUTHOR.name}` : `${AUTHOR.jobTitle} ${AUTHOR.name}`,
+      jobTitle: localeUsesChineseCopy(loc) ? AUTHOR.jobTitleZh : AUTHOR.jobTitle,
       url: siteUrlMeta,
       sameAs: authorSameAs(),
     },

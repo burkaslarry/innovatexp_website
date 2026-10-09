@@ -20,14 +20,14 @@ function pick(locale: AppLocale, pair: LocalePair): PageSeo {
 
 const HOME: LocalePair = {
   zh: {
-    title: "業務聽診｜AI商業顧問Larry Lo｜InnovateXP",
+    title: "AI專業顧問服務｜香港中小企業務聽診｜InnovateXP",
     description:
-      "我係 AI 商業顧問 Larry Lo／InnovateXP。先執順流程，再落地 AI。30 分鐘業務聽診搵出最漏客、最慢嗰條流程。唔使買系統我會直講。",
+      "InnovateXP 由 Larry Lo 創立，幫香港 3–30 人中小企先執順流程再落地 AI。Agilizing 教材由 10 日縮至 3 小時，每月至少慳 HK$50,000。",
   },
   en: {
-    title: "Business Workflow Diagnosis | Larry Lo | InnovateXP",
+    title: "AI Automation Consulting | Hong Kong SMEs | InnovateXP",
     description:
-      "AI Business Consultant Larry Lo / InnovateXP: fix the workflow first, then land AI. 30-minute diagnosis. I'll say so if you shouldn't buy a system.",
+      "Larry Lo helps Hong Kong SMEs of 3–30 fix the workflow first, then put AI to work. Agilizing: 10 days to 3 hours, at least HK$50,000 a month saved.",
   },
 };
 
@@ -110,18 +110,18 @@ const FITNESSXP: LocalePair = {
 
 const AI_CONSULTING: LocalePair = {
   zh: {
-    title: "香港 AI 顧問收費｜30 分鐘業務聽診，HK$3,880 起",
+    title: "專屬AI企業顧問｜香港中小企業務聽診｜InnovateXP",
     description:
-      "香港中小企 AI 顧問 Larry Lo：30 分鐘業務聽診先搵出一條卡住嘅流程。Snapshot HK$3,880 起，30 日 Discovery HK$6,880 起。唔使買系統會直講。",
-    ogTitle: "香港 AI 顧問收費｜30 分鐘業務聽診，HK$3,880 起",
-    ogDescription: "先聽診一條流程，再決定 AI、CRM 定暫時唔買。Snapshot HK$3,880 起。",
+      "AI 商業顧問 Larry Lo 幫 3–30 人公司先處理業務樽頸。Agilizing 教材由 10 日縮至 3 小時。聽診 HK$3,880 起，Discovery HK$6,880 起。",
+    ogTitle: "專屬AI企業顧問｜香港中小企業務聽診｜InnovateXP",
+    ogDescription: "先聽診一條流程，再決定使唔使落地 AI。Snapshot HK$3,880 起。",
   },
   en: {
-    title: "Hong Kong AI Consultant Fees | 30-min Diagnosis from HK$3,880",
+    title: "AI Automation Consulting for Hong Kong SMEs | InnovateXP",
     description:
-      "What does a Hong Kong AI consultant cost? Larry Lo diagnoses one stuck SME workflow in 30 minutes. Snapshot from HK$3,880; 30-day Discovery from HK$6,880. He will say so if you should not buy a system yet.",
-    ogTitle: "Hong Kong AI consultant fees — 30-min diagnosis from HK$3,880",
-    ogDescription: "One workflow first. Snapshot from HK$3,880; Discovery from HK$6,880.",
+      "Larry Lo helps Hong Kong SMEs fix one bottleneck, then put AI to work. Agilizing: 10 days to 3 hours. Snapshot HK$3,880; Discovery from HK$6,880.",
+    ogTitle: "AI Automation Consulting for Hong Kong SMEs | InnovateXP",
+    ogDescription: "One workflow first. Snapshot HK$3,880; Discovery from HK$6,880.",
   },
 };
 
@@ -155,12 +155,12 @@ const BLOG: LocalePair = {
   zh: {
     title: "PDPO・跨境資料・企業私人 AI｜InnovateXP",
     description:
-      "十篇香港中小企筆記：PDPO 六項原則、員工 ChatGPT、跨境、大灣區合同、私人 AI 同 WhatsApp 促銷。一般資訊，並非法律意見。",
+      "十五篇香港中小企筆記：PDPO、私人 AI、AI 顧問同培訓。一般資訊，並非法律意見。",
   },
   en: {
     title: "PDPO, Cross-Border Data & Private AI | InnovateXP",
     description:
-      "Ten notes for Hong Kong SMEs: PDPO principles, staff ChatGPT, cross-border data, private AI, and WhatsApp marketing. General information, not legal advice.",
+      "Fifteen notes for Hong Kong SMEs: PDPO, private AI, choosing an AI consultant, and training. General information, not legal advice.",
   },
 };
 
@@ -168,30 +168,30 @@ const BLOG_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
     title: "PDPO、跨境資料、企業私人 AI｜InnovateXP",
     description:
-      "十篇香港中小企業筆記：PDPO 六項原則、員工 ChatGPT、跨境、大灣區合同、私人 AI 與 WhatsApp 促銷。一般資訊，並非法律意見。",
+      "十五篇香港中小企業筆記：PDPO、私人 AI、AI 顧問與培訓。一般資訊，並非法律意見。",
   },
   ja: {
     title: "PDPO・越境データ・プライベートAI｜InnovateXP",
     description:
-      "香港の中小企業向け10本。PDPOの6原則、従業員のChatGPT、越境、プライベートAI、WhatsApp販促。一般情報であり法律意見ではありません。",
+      "香港の中小企業向け15本。PDPO、プライベートAI、AI顧問の選び方、研修。一般情報であり法律意見ではありません。",
   },
   de: {
     title: "PDPO, Datentransfer & Private KI | InnovateXP",
     description:
-      "Zehn Beiträge für Hongkonger KMU: PDPO, ChatGPT im Team, Datentransfer, private KI und WhatsApp-Werbung. Allgemeine Information, keine Rechtsberatung.",
+      "Fünfzehn Beiträge für Hongkonger KMU: PDPO, private KI, KI-Berater und Schulung. Allgemeine Information, keine Rechtsberatung.",
   },
 };
 
 const PRIVATE_AI: LocalePair = {
   zh: {
-    title: "Private AI Solutions｜私有雲、On-Prem、加密入庫｜InnovateXP",
+    title: "香港PDPO合規私人AI｜3–30人公司｜InnovateXP",
     description:
-      "Private AI solution 即係合約、發票、收據同客戶檔唔丟去公開 chatbot。先畫資料邊界，再選私有雲端點、加密儲存或 on-prem，輸出要人手覆核。香港同要控資料跨境嘅企業都適用。",
+      "為 3–30 人公司而設的私人 AI：企業版、私有雲或本地伺服器。先聽診再試點。本頁只作一般資訊，並非法律意見。",
   },
   en: {
-    title: "Private AI Solutions | Private Cloud & On-Prem | InnovateXP",
+    title: "Private AI Solution Hong Kong | PDPO-minded | InnovateXP",
     description:
-      "A private AI solution keeps contracts, invoices, receipts and client files off public chatbots. Map the data boundary, then use a private cloud endpoint, encrypted storage or on-prem, with human review. For Hong Kong firms and any team that needs controlled residency.",
+      "Private AI for Hong Kong firms of 3–30: enterprise SaaS, private cloud, or on-prem. Diagnose, then pilot. Not legal advice.",
   },
 };
 
@@ -249,19 +249,37 @@ const COFFEE_MAP: LocalePair = {
 
 const SME_AUTOMATION: LocalePair = {
   zh: {
-    title: "中小企AI工作流顧問｜香港流程自動化｜InnovateXP",
+    title: "香港中小企AI自動化｜低成本第一步｜InnovateXP",
     description:
-      "香港中小企 AI 工作流顧問：先畫清報價、跟進、行政，再自動化。獨立 CRM／AI 顧問，唔由亂買工具開始。預約診斷。",
+      "香港中小企 AI 自動化的低成本第一步：先診斷一條重複流程，30 日內建立再上線。Agilizing 教材由 10 日縮至 3 小時。",
   },
   en: {
-    title: "SME AI Workflow & CRM Consulting | Hong Kong",
+    title: "AI-powered Process Automation | Hong Kong SMEs",
     description:
-      "Business Workflow Diagnosis for Hong Kong SMEs. Map quotes and follow-ups first, then add practical AI support only where justified. Entry from HK$3,880.",
+      "Hong Kong SMEs start AI-powered business process automation on one repeated workflow, then launch within 30 days. Snapshot from HK$3,880.",
+  },
+};
+
+const HOME_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
+  "zh-tw": {
+    title: "AI專業顧問服務｜香港中小企業流程診斷｜InnovateXP",
+    description:
+      "InnovateXP 由 Larry Lo 創立，協助香港 3–30 人中小企業先整理流程再落地 AI。Agilizing 教材由 10 日縮至 3 小時，每月至少節省 HK$50,000。",
+  },
+  ja: {
+    title: "香港SME向けAI自動化コンサル｜InnovateXP",
+    description:
+      "Larry Lo は香港の3〜30人企業の業務を整えてからAIを入れます。Agilizingは教材を10日から3時間へ短縮し、月あたり少なくともHK$50,000を削減。",
+  },
+  de: {
+    title: "KI-Automatisierung für Hongkonger KMU | InnovateXP",
+    description:
+      "Larry Lo richtet den Ablauf zuerst, dann KI. Agilizing: Schulungsmaterial von 10 Tagen auf 3 Stunden, mindestens HK$50.000 im Monat gespart.",
   },
 };
 
 export function homeSeo(locale: AppLocale): PageSeo {
-  return pick(locale, HOME);
+  return HOME_LOCALE[locale] ?? pick(locale, HOME);
 }
 export function bookmeSeo(locale: AppLocale): PageSeo {
   return pick(locale, BOOKME);
@@ -280,19 +298,19 @@ export function fitnessXpSeo(locale: AppLocale): PageSeo {
 }
 const AI_CONSULTING_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
-    title: "香港 AI 顧問收費｜30 分鐘業務診斷，HK$3,880 起",
+    title: "專屬AI企業顧問｜香港中小企業流程診斷｜InnovateXP",
     description:
-      "香港中小企業 AI 顧問 Larry Lo：30 分鐘業務診斷先找出一條卡住的流程。Snapshot HK$3,880 起，30 日 Discovery HK$6,880 起。不需要買系統會直說。",
+      "AI 商業顧問 Larry Lo 協助 3–30 人公司處理業務瓶頸。Agilizing 教材由 10 日縮至 3 小時。診斷 HK$3,880 起，Discovery HK$6,880 起。",
   },
   ja: {
-    title: "香港のAI顧問料金｜30分の業務診断、HK$3,880から",
+    title: "香港SMEの専属AI顧問｜業務診断｜InnovateXP",
     description:
-      "香港の中小企業向け AI 顧問 Larry Lo。30分で止っている業務を1つ診断します。Snapshot は HK$3,880 から、30日 Discovery は HK$6,880 から。まだシステムを買うべきでないときは、そう言います。",
+      "Larry Lo は3〜30人企業のボトルネックを先に見ます。Agilizingは教材を10日から3時間へ。診断はHK$3,880から、DiscoveryはHK$6,880から。",
   },
   de: {
-    title: "KI-Berater Hongkong | 30-Minuten-Diagnose ab HK$3.880",
+    title: "KI-Berater für Hongkonger KMU | InnovateXP",
     description:
-      "Was kostet ein KI-Berater in Hongkong? Larry Lo prüft in 30 Minuten einen stockenden KMU-Workflow. Snapshot ab HK$3.880; 30-Tage-Discovery ab HK$6.880. Wenn noch kein System nötig ist, sagt er das.",
+      "Larry Lo prüft zuerst einen Engpass bei Firmen mit 3–30 Personen. Agilizing: 10 Tage auf 3 Stunden. Snapshot HK$3.880; Discovery ab HK$6.880.",
   },
 };
 
@@ -310,19 +328,19 @@ export function blogSeo(locale: AppLocale): PageSeo {
 }
 const PRIVATE_AI_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
-    title: "Private AI Solutions｜私有雲、On-Prem、加密儲存｜InnovateXP",
+    title: "香港PDPO合規私人AI｜3–30人公司｜InnovateXP",
     description:
-      "Private AI solution 是合約、發票、收據和客戶檔不進入公開 chatbot。先畫資料邊界，再選私有雲端點、加密儲存或 on-prem，輸出要人工覆核。適合香港以及需要控制資料跨境的企業。",
+      "為 3–30 人公司而設的私人 AI：企業版、私有雲或本地伺服器。先診斷再試點。本頁只作一般資訊，並非法律意見。",
   },
   ja: {
-    title: "Private AI Solutions｜プライベートクラウドとオンプレ｜InnovateXP",
+    title: "香港PDPOを意識した私人AI｜3–30人｜InnovateXP",
     description:
-      "Private AI solution は、契約・請求書・領収書・顧客ファイルを公開チャットボットに置かない仕組みです。データの境界を決めてから、プライベートクラウド、暗号化保存、またはオンプレを選び、出力は人が確認します。香港と、データの所在を管理したいチーム向け。",
+      "3〜30人の会社向け私人AI。企業版SaaS、プライベートクラウド、またはオンプレ。まず診断、次に試行。法律意見ではありません。",
   },
   de: {
-    title: "Private AI Solutions | Private Cloud & On-Prem | InnovateXP",
+    title: "Private KI für Hongkong | PDPO | InnovateXP",
     description:
-      "Eine Private-AI-Solution hält Verträge, Rechnungen, Belege und Kundendateien aus öffentlichen Chatbots. Zuerst die Datengrenze, dann Private-Cloud-Endpunkt, verschlüsselte Speicherung oder On-Prem, mit menschlicher Prüfung. Für Hongkong und Teams mit kontrolliertem Datenstandort.",
+      "Private KI für Firmen mit 3–30 Personen: Enterprise-SaaS, Private Cloud oder lokal. Erst Diagnose, dann Pilot. Keine Rechtsberatung.",
   },
 };
 
@@ -332,8 +350,26 @@ export function privateAiSeo(locale: AppLocale): PageSeo {
 export function cxConsultingSeo(locale: AppLocale): PageSeo {
   return pick(locale, CX_CONSULTING);
 }
+const SME_AUTOMATION_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
+  "zh-tw": {
+    title: "香港中小企AI自動化｜低成本第一步｜InnovateXP",
+    description:
+      "香港中小企業 AI 自動化的低成本第一步：先診斷一條重複流程，30 日內建立再上線。Agilizing 教材由 10 日縮至 3 小時。",
+  },
+  ja: {
+    title: "香港SMEのAI自動化｜最初の一歩｜InnovateXP",
+    description:
+      "香港の中小企業は、繰り返す業務を1つ診断し、30日で作って公開します。Agilizingは教材を10日から3時間へ短縮しました。",
+  },
+  de: {
+    title: "KI-Automatisierung für Hongkonger KMU | InnovateXP",
+    description:
+      "Der günstige erste Schritt: einen wiederholten Ablauf diagnostizieren und in 30 Tagen live bringen. Agilizing: 10 Tage auf 3 Stunden.",
+  },
+};
+
 export function smeAutomationSeo(locale: AppLocale): PageSeo {
-  return pick(locale, SME_AUTOMATION);
+  return SME_AUTOMATION_LOCALE[locale] ?? pick(locale, SME_AUTOMATION);
 }
 export function artkalBeadSeo(locale: AppLocale): PageSeo {
   return pick(locale, ARTKAL_BEAD);

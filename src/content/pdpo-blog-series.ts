@@ -1,5 +1,6 @@
 import type { AppLocale } from "@/lib/i18n-routing";
 import type { BlogLocaleCopy, PdpoPost } from "@/content/blog-types";
+import { PDPO_BLOG_ADVISORY } from "@/content/pdpo-blog-series-advisory";
 import { PDPO_BLOG_REST } from "@/content/pdpo-blog-series-rest";
 
 const DISCLAIMER: Record<AppLocale, string> = {
@@ -192,4 +193,4 @@ const PDPO_BLOG_HEAD: PdpoPost[] = [
   },
 ];
 
-export const PDPO_BLOG_SERIES: PdpoPost[] = [...PDPO_BLOG_HEAD, ...PDPO_BLOG_REST];
+export const PDPO_BLOG_SERIES: PdpoPost[] = [...PDPO_BLOG_HEAD, ...PDPO_BLOG_REST, ...PDPO_BLOG_ADVISORY];

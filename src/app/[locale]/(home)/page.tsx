@@ -64,11 +64,17 @@ function LandingPage() {
           imageAlt={content.hero.imageAlt}
         />
 
-        <aside className="mb-16 mt-6 rounded-[var(--card-radius)] border border-[color:var(--brand-primary)]/30 bg-[color:var(--bg-secondary)] px-5 py-4">
-          <p className="text-sm font-semibold leading-7 text-[color:var(--heading-foreground)]">
-            {locale === "en"
-              ? `Transparent starting point: Snapshot ${formatHkd(PRICING.quickCash.aiReadinessAssessment, locale)} · Discovery Sprint ${formatHkd(PRICING.quickCash.aiDiscoverySprint, locale)} for teams up to 10. Diagnose first, then decide whether to proceed.`
-              : `透明入場價：Snapshot 業務聽診 ${formatHkd(PRICING.quickCash.aiReadinessAssessment, locale)} · Discovery Sprint（10 人或以下）${formatHkd(PRICING.quickCash.aiDiscoverySprint, locale)}。先聽診，再決定使唔使落地。`}
+        <aside className="mb-16 mt-2 max-w-[40rem] border-t border-[color:var(--border-light)] pt-5">
+          <p className="text-sm leading-7 text-[color:var(--text-secondary)]">
+            {locale === "zh-hk"
+              ? `透明入場價：Snapshot 業務聽診 ${formatHkd(PRICING.quickCash.aiReadinessAssessment, locale)} · Discovery Sprint（10 人或以下）${formatHkd(PRICING.quickCash.aiDiscoverySprint, locale)}。先聽診，再決定使唔使落地。`
+              : locale === "zh-tw"
+                ? `公開起步價：Snapshot ${formatHkd(PRICING.quickCash.aiReadinessAssessment, locale)} · Discovery Sprint（10 人以下）${formatHkd(PRICING.quickCash.aiDiscoverySprint, locale)}。先診斷，再決定要不要落地。`
+                : locale === "ja"
+                  ? `公開の起点：Snapshot ${formatHkd(PRICING.quickCash.aiReadinessAssessment, locale)} · 10人以下の Discovery Sprint ${formatHkd(PRICING.quickCash.aiDiscoverySprint, locale)}。先に診断します。`
+                  : locale === "de"
+                    ? `Einstieg: Snapshot ${formatHkd(PRICING.quickCash.aiReadinessAssessment, locale)} · Discovery Sprint bis 10 Personen ${formatHkd(PRICING.quickCash.aiDiscoverySprint, locale)}. Zuerst diagnostizieren.`
+                    : `Transparent starting point: Snapshot ${formatHkd(PRICING.quickCash.aiReadinessAssessment, locale)} · Discovery Sprint ${formatHkd(PRICING.quickCash.aiDiscoverySprint, locale)} for teams up to 10. Diagnose first, then decide whether to proceed.`}
           </p>
         </aside>
 

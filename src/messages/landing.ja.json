@@ -15,9 +15,9 @@
   },
   "hero": {
     "eyebrow": "AI Business Consultant Larry Lo | InnovateXP",
-    "title": "AI business consultant for Hong Kong teams of 3–30",
-    "description": "Fix the workflow first, then land AI. In a 30-minute diagnosis, we find the process that leaks leads, runs slowest, or depends on one person. I'll say so if you shouldn't buy a system.",
-    "fitAudience": "",
+    "title": "香港の3〜30人チーム向けAIビジネスコンサルタント",
+    "description": "InnovateXPは香港の3〜30人の中小企業の業務を整えてからAIを入れます。Agilizingの教材は10日から3時間になり、月あたり少なくとも5万香港ドルを削減しました。",
+    "fitAudience": "研修センター、福祉団体、専門サービス、ネットショップ向け。ツールを先に買うのではなく、専属のAI顧問から始めたい会社に向きます。",
     "primaryCta": "Book a 30-min diagnosis",
     "secondaryCta": "Ask on WhatsApp",
     "trustPoints": [
@@ -59,8 +59,8 @@
   },
   "approach": {
     "eyebrow": "The method",
-    "title": "Diagnose → land AI agents → co-run from 0 to 1",
-    "intro": "In 30 minutes we find your most painful workflow, clarify leaks, ownership, and next steps. We only implement when it helps.",
+    "title": "診断し、作り、30日以内に公開する",
+    "intro": "AIによる業務プロセス自動化は、繰り返す業務を1つ選ぶところから始まります。診断し、動く形を作り、30日以内に公開します。",
     "steps": [
       {
         "label": "Step 1",
@@ -248,24 +248,28 @@
     "title": "FAQ",
     "items": [
       {
-        "question": "What is a Business Workflow Diagnosis — and how is it different?",
-        "answer": "About 30 minutes to lock one revenue- or ops-critical workflow, clarify leaks, ownership, and next steps. Unlike report-only consultants, we can land and co-run so the team actually uses it."
+        "question": "AI自動化コンサルは何をしますか？",
+        "answer": "止っている業務を1つ診断し、チームが回せる形を作ります。試して必要だと分かってから、ソフトを勧めます。"
       },
       {
-        "question": "How much time do I need — and what should I prepare?",
-        "answer": "About 30 minutes. Bring your messiest line (e.g. WhatsApp sign-ups or quotes) and a concrete pain example. No polished deck required."
+        "question": "初回には何を持っていきますか？",
+        "answer": "約30分です。一番乱れている流れ（WhatsAppの申込や見積など）と、具体例を1つ持ってきてください。資料は不要です。"
       },
       {
-        "question": "How are consulting fees calculated?",
-        "answer": "By workflow complexity and scope — quoted after diagnosis. We don't push a system at the start."
+        "question": "公開されている起点の料金は？",
+        "answer": "SnapshotはHK$3,880。Discovery Sprintは10人以下でHK$6,880、11〜30人でHK$13,600。その後は診断のあとで範囲を決めます。"
       },
       {
-        "question": "What if we don't actually need AI or a CRM?",
-        "answer": "I'll say so. Often the issue is unclear ownership and follow-up rhythm, not missing tools. Fixing the process may be enough."
+        "question": "AIやCRMが不要な場合は？",
+        "answer": "そのときはそう言います。原因はツール不足ではなく、担当とフォローのリズムであることが多いです。"
       },
       {
-        "question": "Will our data and processes stay confidential?",
-        "answer": "Yes. Operational details, customer data, and internal workflows shared in diagnosis or delivery are only used to serve you — never disclosed or published as a case without written consent."
+        "question": "Agilizingと同じ削減を約束できますか？",
+        "answer": "Agilizingは教材を10日から3時間にし、月あたり少なくともHK$50,000を削減しました。これはそのセンターで確認済みの結果です。御社の数字は、業務を見る前には約束しません。"
+      },
+      {
+        "question": "データは守秘されますか？",
+        "answer": "はい。診断と導入で共有された業務と顧客データは、サービスのためだけに使い、書面の同意なしに事例公開しません。"
       }
     ]
   },

@@ -23,6 +23,21 @@ export interface HeroProps {
   visual?: ReactNode;
 }
 
+function HeroTitle({ title }: { title: string }) {
+  const marker = "AI 商業顧問";
+  const at = title.indexOf(marker);
+  if (at > 0) {
+    return (
+      <>
+        {title.slice(0, at).trim()}
+        <br />
+        {marker}
+      </>
+    );
+  }
+  return title;
+}
+
 const primaryBtnClass =
   "btn-brand inline-flex min-h-[48px] items-center justify-center px-6 py-3 text-base font-semibold shadow-card transition hover:-translate-y-px hover:shadow-card-hover";
 
@@ -47,23 +62,20 @@ export function Hero({
   const isHashPrimary = primaryHref.startsWith("#");
 
   return (
-    <section role="banner" className="ixp-card mb-12 p-6 sm:p-8 md:mb-16 md:p-10 lg:p-12">
-      <div className="mx-auto grid max-w-6xl items-center gap-8 lg:grid-cols-[minmax(0,1fr)_minmax(0,420px)] lg:gap-14">
-        <div className="min-w-0 text-center lg:text-left">
+    <section role="banner" className="hero-stage mb-14 md:mb-20">
+      <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.8fr)] lg:gap-16">
+        <div className="hero-copy min-w-0 text-left">
           {eyebrow ? (
-            <p className="mb-4 text-sm font-semibold tracking-[0.06em] text-[color:var(--secondary-color)]">
+            <p className="mb-5 text-[0.78rem] font-medium uppercase tracking-[0.16em] text-[color:var(--secondary-color)]">
               {eyebrow}
             </p>
           ) : null}
-          <h1
-            className="mx-auto max-w-[18ch] text-[clamp(1.75rem,6vw,3.25rem)] font-bold leading-[1.15] tracking-[-0.025em] text-[color:var(--heading-foreground)] lg:mx-0"
-            style={{ textWrap: "balance" }}
-          >
-            {title}
+          <h1 className="max-w-[16em] font-[family-name:var(--font-heading)] text-[clamp(2.35rem,5.4vw,4.6rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-[color:var(--heading-foreground)]">
+            <HeroTitle title={title} />
           </h1>
           {tagline?.trim() ? (
             <p
-              className="mx-auto mt-4 max-w-[36rem] text-lg font-semibold leading-snug text-[color:var(--secondary-color)] lg:mx-0"
+              className="mt-4 max-w-[36rem] text-lg font-semibold leading-snug text-[color:var(--secondary-color)]"
               style={{ textWrap: "pretty" }}
             >
               {tagline}
@@ -71,18 +83,19 @@ export function Hero({
           ) : null}
           {description?.trim() ? (
             <p
-              className="mx-auto mt-6 max-w-[42rem] text-base leading-8 text-[color:var(--text-secondary)] md:text-lg lg:mx-0"
+              data-geo-answer=""
+              className="mt-6 max-w-[38rem] text-base leading-8 text-[color:var(--text-secondary)] md:text-lg"
               style={{ textWrap: "pretty" }}
             >
               {description}
             </p>
           ) : null}
           {fitAudience?.trim() ? (
-            <p className="mx-auto mt-4 max-w-[42rem] text-sm font-semibold leading-7 text-[color:var(--heading-foreground)] lg:mx-0">
+            <p className="mt-4 max-w-[38rem] text-sm font-semibold leading-7 text-[color:var(--heading-foreground)]">
               {fitAudience}
             </p>
           ) : null}
-          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-center lg:justify-start">
+          <div className="mt-8 flex flex-col items-stretch gap-3 sm:flex-row sm:items-center sm:justify-start">
             {isHashPrimary || isExternalPrimary ? (
               <a
                 href={primaryHref}
@@ -115,23 +128,18 @@ export function Hero({
             ) : null}
           </div>
           {trustBadges.length > 0 ? (
-            <ul className="mx-auto mt-6 grid max-w-[42rem] gap-3 text-sm font-medium text-[color:var(--text-primary)] sm:grid-cols-3 lg:mx-0">
+            <ul className="mt-8 flex max-w-[40rem] flex-col gap-2 border-t border-[color:var(--border-light)] pt-5 text-sm leading-6 text-[color:var(--text-primary)]">
               {trustBadges.map((badge) => (
-                <li
-                  key={badge}
-                  className="rounded-[var(--radius-md)] border border-[color:var(--border-light)] bg-[color:var(--bg-secondary)] px-3 py-2 text-center lg:text-left"
-                >
-                  {badge}
-                </li>
+                <li key={badge}>{badge}</li>
               ))}
             </ul>
           ) : null}
         </div>
-        <div className="relative mx-auto w-full max-w-[420px] lg:mx-0">
+        <div className="hero-portrait relative mx-auto w-full max-w-[440px] lg:mx-0 lg:justify-self-end">
           {visual ? (
             visual
           ) : imageSrc ? (
-            <div className="relative aspect-[4/5] overflow-hidden rounded-[var(--radius-md)]">
+            <div className="relative aspect-[4/5] overflow-hidden rounded-[2px]">
               <Image
                 src={imageSrc}
                 alt={imageAlt || ""}

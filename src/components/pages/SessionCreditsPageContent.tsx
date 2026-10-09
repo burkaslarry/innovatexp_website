@@ -23,30 +23,21 @@ export function SessionCreditsPageContent() {
       <p className="mt-4 text-sm font-semibold text-[color:var(--heading-foreground)]">{copy.sessionRule}</p>
       <p className="mt-2 max-w-[42rem] text-sm leading-7 text-[color:var(--text-secondary)]">{copy.buyRule}</p>
 
-      <div className="mt-8 grid items-stretch gap-4 md:grid-cols-3">
+      <div className="mt-10 grid items-stretch gap-px border border-[color:var(--border-light)] bg-[color:var(--border-light)] md:grid-cols-3">
         {packs.map((pack) => (
           <article
             key={pack.id}
-            className={`relative flex flex-col rounded-2xl border bg-[color:var(--bg-secondary)] p-5 ${
-              pack.recommended
-                ? "order-first border-2 border-[color:var(--brand-accent-teal)] shadow-[var(--card-shadow)] md:order-none md:-translate-y-2"
-                : "border-[color:var(--border-light)]"
-            }`}
+            className="flex flex-col bg-[color:var(--bg-primary)] p-6"
           >
-            {pack.recommended ? (
-              <p className="absolute -top-3 left-5 rounded-full bg-[color:var(--brand-primary)] px-3 py-1 text-xs font-bold text-[color:var(--bg-primary)]">
-                {copy.recommended}
-              </p>
-            ) : null}
             <div className="flex items-baseline justify-between gap-3">
-              <h2 className="text-lg text-[color:var(--heading-foreground)]">
+              <h2 className="font-[family-name:var(--font-heading)] text-2xl text-[color:var(--heading-foreground)]">
                 {pack.credits.toLocaleString(locale === "de" ? "de-DE" : "en-HK")}
               </h2>
-              {pack.bestRate ? (
-                <span className="text-xs font-semibold text-[color:var(--brand-accent-teal)]">{copy.bestRate}</span>
+              {pack.recommended ? (
+                <span className="text-xs font-medium tracking-[0.08em] text-[color:var(--text-tertiary)]">{copy.recommended}</span>
               ) : null}
             </div>
-            <p className="mt-3 text-4xl font-bold tracking-tight text-[color:var(--heading-foreground)]">{pack.priceLabel}</p>
+            <p className="mt-4 font-[family-name:var(--font-heading)] text-[clamp(2rem,4vw,2.75rem)] font-semibold tracking-[-0.03em] text-[color:var(--heading-foreground)]">{pack.priceLabel}</p>
             <p className="mt-1 text-xs uppercase tracking-[0.14em] text-[color:var(--text-tertiary)]">{copy.prepaid}</p>
             <p className="mt-4 text-sm font-semibold text-[color:var(--heading-foreground)]">
               {pack.bonusCredits > 0 ? copy.bonus(pack.bonusCredits) : copy.noBonus}
@@ -57,7 +48,7 @@ export function SessionCreditsPageContent() {
             <p className="mt-3 flex-1 text-sm leading-6 text-[color:var(--text-secondary)]">
               {copy.sessions(pack.sessions, pack.hours, pack.remainder)}
             </p>
-            <p className="mt-3 text-sm text-[color:var(--text-tertiary)]">{copy.unit(pack.unitLabel)}</p>
+            <p className="mt-3 text-sm text-[color:var(--text-tertiary)]">{copy.unit(pack.listHourlyLabel)}</p>
             <div className="mt-5">
               <AddToInquiryButton itemId={pack.id as InquiryCatalogItemId} />
             </div>

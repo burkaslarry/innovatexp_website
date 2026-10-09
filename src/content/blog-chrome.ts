@@ -22,7 +22,7 @@ export const BLOG_CHROME: Record<AppLocale, BlogChrome> = {
   "zh-hk": {
     seriesTitle: "PDPO・跨境資料\n企業私人 AI",
     seriesLead:
-      "十篇給香港 3 至 30 人團隊。每篇先答一句，再講可以即刻做嘅步驟。全部只係一般資訊，並非法律意見。",
+      "十五篇給香港 3 至 30 人團隊。每篇先答一句，再講可以即刻做嘅步驟。全部只係一般資訊，並非法律意見。",
     indexKicker: "閱讀系列",
     archiveTitle: "較早的英文筆記",
     archiveNote: "CRM、活動同課堂營運。呢幾篇暫以英文刊登。",
@@ -40,7 +40,7 @@ export const BLOG_CHROME: Record<AppLocale, BlogChrome> = {
   "zh-tw": {
     seriesTitle: "PDPO、跨境資料\n企業私人 AI",
     seriesLead:
-      "十篇給香港 3 到 30 人的團隊。每篇先答一句，再寫可以立刻做的步驟。全部只是一般資訊，並非法律意見。",
+      "十五篇給香港 3 到 30 人的團隊。每篇先答一句，再寫可以立刻做的步驟。全部只是一般資訊，並非法律意見。",
     indexKicker: "閱讀系列",
     archiveTitle: "較早的英文筆記",
     archiveNote: "CRM、活動與課堂營運。這幾篇目前以英文刊登。",
@@ -58,7 +58,7 @@ export const BLOG_CHROME: Record<AppLocale, BlogChrome> = {
   en: {
     seriesTitle: "PDPO, cross-border data,\nand private AI",
     seriesLead:
-      "Ten notes for Hong Kong teams of 3 to 30 people. Each one opens with a direct answer, then the steps you can take this week. General information, not legal advice.",
+      "Fifteen notes for Hong Kong teams of 3 to 30 people. Each one opens with a direct answer, then the steps you can take this week. General information, not legal advice.",
     indexKicker: "A reading series",
     archiveTitle: "Earlier notes",
     archiveNote: "CRM, events, and class operations.",
@@ -76,7 +76,7 @@ export const BLOG_CHROME: Record<AppLocale, BlogChrome> = {
   ja: {
     seriesTitle: "PDPO・越境データ\n企業プライベートAI",
     seriesLead:
-      "香港の3〜30人チーム向け、10本。各本は最初に一文で答え、その週にできる手順を書きます。一般情報であり、法律意見ではありません。",
+      "香港の3〜30人チーム向け、15本。各本は最初に一文で答え、その週にできる手順を書きます。一般情報であり、法律意見ではありません。",
     indexKicker: "読み物シリーズ",
     archiveTitle: "以前の英語ノート",
     archiveNote: "CRM、イベント、クラス運営。これらは現在英語です。",
@@ -94,7 +94,7 @@ export const BLOG_CHROME: Record<AppLocale, BlogChrome> = {
   de: {
     seriesTitle: "PDPO, Datentransfer\nund private KI",
     seriesLead:
-      "Zehn Beiträge für Hongkonger Teams mit 3 bis 30 Personen. Jeder beginnt mit einer direkten Antwort, danach die Schritte für diese Woche. Allgemeine Information, keine Rechtsberatung.",
+      "Fünfzehn Beiträge für Hongkonger Teams mit 3 bis 30 Personen. Jeder beginnt mit einer direkten Antwort, danach die Schritte für diese Woche. Allgemeine Information, keine Rechtsberatung.",
     indexKicker: "Eine Lesereihe",
     archiveTitle: "Frühere Notizen",
     archiveNote: "CRM, Events und Kursbetrieb. Diese Texte sind auf Englisch.",

@@ -16,8 +16,8 @@
   "hero": {
     "eyebrow": "AI Business Consultant Larry Lo | InnovateXP",
     "title": "AI business consultant for Hong Kong teams of 3–30",
-    "description": "Fix the workflow first, then land AI. In a 30-minute diagnosis, we find the process that leaks leads, runs slowest, or depends on one person. I'll say so if you shouldn't buy a system.",
-    "fitAudience": "",
+    "description": "InnovateXP helps Hong Kong SMEs of 3 to 30 people fix the workflow first, then put AI to work. Agilizing cut training materials from 10 days to 3 hours, saving at least HK$50,000 a month. If you should not buy a system yet, Larry Lo says so.",
+    "fitAudience": "For training centres, social-service organisations, professional firms, and online shops that want AI Automation Consulting before they buy another tool.",
     "primaryCta": "Book a 30-min diagnosis",
     "secondaryCta": "Ask on WhatsApp",
     "trustPoints": [
@@ -59,8 +59,8 @@
   },
   "approach": {
     "eyebrow": "The method",
-    "title": "Diagnose → put the right support to work → co-run from 0 to 1",
-    "intro": "In 30 minutes we find your most painful workflow, clarify leaks, ownership, and next steps. We only implement when it helps.",
+    "title": "Diagnose, then build, then launch within 30 days",
+    "intro": "AI-powered business process automation starts with one repeated workflow. We diagnose it, build the working version, and launch within 30 days. AI integration comes only where the team will actually use it.",
     "steps": [
       {
         "label": "Step 1",
@@ -97,8 +97,8 @@
         "body": "Use AI to assist output while preserving the founder's unique voice and warmth — not getting homogenised into generic AI content."
       },
       {
-        "title": "Workflow diagnosis",
-        "body": "30 minutes to find where you leak leads, slow quotes, and lose handoffs. Where the money goes, you'll know."
+        "title": "AI training and an AI workshop on one real task",
+        "body": "An AI workshop teaches the team on work they already do. AI training sticks when those same people use it the next morning."
       },
       {
         "title": "WhatsApp CRM + event follow-up",
@@ -109,7 +109,7 @@
   "consultancy": {
     "eyebrow": "Mainline",
     "title": "Start small, then decide the co-run scope",
-    "intro": "Mainline: diagnosis → land → co-run. The public entry points are Snapshot HK$3,880 and Discovery Sprint HK$6,880 for teams up to 10.",
+    "intro": "Start with a Free Process Assessment conversation, then a paid Snapshot at HK$3,880 or a Discovery Sprint at HK$6,880 for teams up to 10.",
     "fitNote": "We don't sell a system first. Diagnose, land, adopt, review — I'll say so if you shouldn't buy.",
     "startingBadge": "Suggested start",
     "plans": [
@@ -248,24 +248,28 @@
     "title": "FAQ",
     "items": [
       {
-        "question": "What is a Business Workflow Diagnosis — and how is it different?",
-        "answer": "About 30 minutes to lock one revenue- or ops-critical workflow, clarify leaks, ownership, and next steps. Unlike report-only consultants, we can land and co-run so the team actually uses it."
+        "question": "What does AI Automation Consulting include?",
+        "answer": "We diagnose one stuck workflow, then build a working version the team can run. Software is recommended only when that trial shows it is useful."
       },
       {
-        "question": "How much time do I need — and what should I prepare?",
-        "answer": "About 30 minutes. Bring your messiest line (e.g. WhatsApp sign-ups or quotes) and a concrete pain example. No polished deck required."
+        "question": "What should we bring to the first conversation?",
+        "answer": "About 30 minutes. Bring the messiest line, such as WhatsApp sign-ups or quotes, and one concrete example. No polished deck."
       },
       {
-        "question": "How are consulting fees calculated?",
-        "answer": "Snapshot is HK$3,880. Discovery Sprint is HK$6,880 for teams up to 10, or HK$13,600 for 11–30. Deeper implementation and co-run work is scoped after diagnosis; we don't push a system at the start."
+        "question": "What are the published starting fees?",
+        "answer": "Snapshot is HK$3,880. Discovery Sprint is HK$6,880 for teams up to 10, or HK$13,600 for 11–30. Later work is scoped after diagnosis."
       },
       {
-        "question": "What if we don't actually need AI or a CRM?",
-        "answer": "I'll say so. Often the issue is unclear ownership and follow-up rhythm, not missing tools. Fixing the process may be enough."
+        "question": "What if we do not need AI or a CRM?",
+        "answer": "Larry says so. Unclear ownership and follow-up rhythm are often the real issue. Fixing the process can be enough."
       },
       {
-        "question": "Will our data and processes stay confidential?",
-        "answer": "Yes. Operational details, customer data, and internal workflows shared in diagnosis or delivery are only used to serve you — never disclosed or published as a case without written consent."
+        "question": "Can we expect the same saving as Agilizing?",
+        "answer": "Agilizing cut training-material production from 10 days to 3 hours and saved at least HK$50,000 a month. That result is verified for that centre. We do not promise the same return before we see your workflow."
+      },
+      {
+        "question": "Will our data stay confidential?",
+        "answer": "Yes. Operational detail and customer data shared in diagnosis or delivery are used only to serve you, and are not published without written consent."
       }
     ]
   },
