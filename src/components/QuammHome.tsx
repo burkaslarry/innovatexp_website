@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import LanguageSwitcher from "@/app/LanguageSwitcher";
+import Header from "@/app/components/Header";
 import { useLanguage } from "@/app/LanguageContext";
 import { getHomepageContent, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
 import { PRICING, formatHkd } from "@/content/pricing";
@@ -157,74 +157,60 @@ export function QuammHome() {
             : `Snapshot ${snapshot}。10 人或以下 Discovery Sprint ${discovery}。`;
 
   return (
-    <div className="quamm-frame min-h-screen bg-[#9a9b94] text-[#272727]">
-      <header className="flex items-center justify-between gap-4 px-5 py-5 md:px-10">
-        <Link href={loc("/")} className={`${linkClass} font-[family-name:var(--font-heading)] text-lg tracking-[0.18em]`}>
-          INNOVATEXP
-        </Link>
-        <nav className="flex items-center gap-4 text-sm md:gap-7" aria-label="InnovateXP">
-          <Link className={`${linkClass} hidden sm:inline`} href="#pain">
-            {content.nav.diagnosis}
-          </Link>
-          <Link className={`${linkClass} hidden md:inline`} href="#work">
-            {content.nav.services}
-          </Link>
-          <Link className={`${linkClass} hidden lg:inline`} href="#products">
-            {content.nav.products}
-          </Link>
-          <Link className={`${linkClass} hidden sm:inline`} href="#case">
-            {content.nav.cases}
-          </Link>
-          <Link className={linkClass} href={loc("/blog")}>
-            {locale === "en" ? "Journal" : locale === "ja" ? "記事" : locale === "de" ? "Journal" : "文章"}
-          </Link>
-          <LanguageSwitcher className="max-w-[7.5rem] cursor-pointer border border-[#272727]/30 bg-transparent px-2 py-1 text-xs text-[#272727] sm:max-w-none" />
+    <div className="min-h-screen bg-canvas text-fg">
+      <Header
+        variant="main"
+        title={content.brandTitle}
+        subtitle={content.brandSubtitle}
+        navItems={[
+          { label: content.nav.home, href: loc("/") },
+          { label: content.nav.plans, href: loc("/services") },
+          { label: content.nav.products, href: loc("/products") },
+          { label: locale === "en" ? "Blog" : locale === "ja" ? "記事" : locale === "de" ? "Blog" : "文章", href: loc("/blog") },
+          { label: content.nav.about, href: loc("/about") },
+          { label: content.nav.faq, href: loc("/faq") },
+        ]}
+        ctaLabel={copy.book}
+        ctaHref={bookingHref}
+      />
+      <main>
+        <section className="mx-auto max-w-3xl px-5 pb-14 pt-14 md:px-8 md:pt-20">
+          <p className="text-sm leading-6 text-[color:var(--text-secondary)] md:text-base">{copy.kicker}</p>
+          <h1 className="mt-4 text-4xl leading-[1.2] tracking-normal text-[color:var(--text-primary)] md:text-6xl">
+            {h1Name}
+          </h1>
+          <p className="mt-6 max-w-[42rem] text-lg leading-8 text-[color:var(--text-secondary)]">{copy.aside}</p>
           <Link
             href={bookingHref}
-            onClick={() => trackBookingCtaClick("header")}
-            className={`${linkClass} font-semibold`}
+            onClick={() => trackBookingCtaClick("hero")}
+            className="mt-8 inline-flex min-h-12 items-center rounded-[var(--btn-radius)] bg-[color:var(--brand-primary)] px-5 text-sm font-semibold text-white"
           >
-            {locale === "en" || locale === "de" ? "Book" : locale === "ja" ? "予約" : "預約"}
+            {copy.book}
           </Link>
-        </nav>
-      </header>
+        </section>
 
-      <main>
-        <section className="px-5 pb-16 pt-8 md:px-10 md:pb-24 md:pt-14">
-          <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-16">
-            <div>
-              <p className="text-sm leading-6 md:text-base">{copy.kicker}</p>
-              <h1 className="mt-4 max-w-[12ch] font-[family-name:var(--font-heading)] text-[clamp(2.75rem,6vw,5.25rem)] font-normal leading-[1.08] tracking-normal">
-                {h1Name}
-              </h1>
-              <p className="mt-6 max-w-xl font-[family-name:var(--font-heading)] text-[clamp(1.65rem,3vw,2.4rem)] font-normal leading-[1.25] tracking-normal">
-                {locale === "zh-hk" || locale === "zh-tw"
-                  ? `${copy.line1}${copy.line2}，${copy.line3}。`
-                  : locale === "ja"
-                    ? `${copy.line1}${copy.line2}、${copy.line3}。`
-                    : `${copy.line1} ${copy.line2} ${copy.line3}.`}
-              </p>
-              <p className="mt-5 max-w-xl text-lg leading-8">{copy.aside}</p>
-              <Link
-                href={bookingHref}
-                onClick={() => trackBookingCtaClick("hero")}
-                className="quamm-book mt-8 inline-flex min-h-12 items-center px-6 text-base font-semibold"
-              >
-                {copy.book}
-              </Link>
-            </div>
-            <Image
-              src="/hero-larry.webp"
-              alt={locale === "en" || locale === "de" || locale === "ja" ? "Larry Lo speaking with a microphone" : "Larry Lo 拿住麥克風講緊嘢"}
-              width={471}
-              height={567}
-              priority
-              className="h-auto w-full max-w-[220px] object-cover"
-            />
+        <section className="relative min-h-[68vh] w-full">
+          <Image
+            src="/hero-larry.webp"
+            alt=""
+            fill
+            priority
+            sizes="100vw"
+            className="object-cover object-[center_20%]"
+          />
+          <div className="absolute inset-0" style={{ backgroundColor: "rgba(15, 42, 71, 0.55)" }} aria-hidden="true" />
+          <div className="relative flex min-h-[68vh] items-end px-5 pb-12 md:px-10 md:pb-16">
+            <p className="max-w-4xl text-3xl leading-snug md:text-5xl" style={{ color: "#fff" }}>
+              {locale === "zh-hk" || locale === "zh-tw"
+                ? `${copy.line1}${copy.line2}，${copy.line3}。`
+                : locale === "ja"
+                  ? `${copy.line1}${copy.line2}、${copy.line3}。`
+                  : `${copy.line1} ${copy.line2} ${copy.line3}.`}
+            </p>
           </div>
         </section>
 
-        <section id="pain" className="border-t border-[#272727]/20 px-5 py-16 md:px-10 md:py-24">
+        <section id="pain" className="border-t border-[color:var(--border-light)] px-5 py-16 md:px-10 md:py-24">
           <h2 className="max-w-[16ch] font-[family-name:var(--font-heading)] text-4xl leading-[1.05] font-normal md:text-6xl">{content.problem.title}</h2>
           <ul className="mt-12 grid gap-8 md:grid-cols-2">
             {content.problem.items.map((item) => (
@@ -236,9 +222,9 @@ export function QuammHome() {
           </ul>
         </section>
 
-        <section id="work" className="border-t border-[#272727]/20 px-5 py-16 md:px-10 md:py-24">
+        <section id="work" className="border-t border-[color:var(--border-light)] px-5 py-16 md:px-10 md:py-24">
           <h2 className="font-[family-name:var(--font-heading)] text-5xl font-normal leading-none md:text-7xl">{content.approach.title}</h2>
-          <ol className="mt-12 divide-y divide-[#272727]/20 border-y border-[#272727]/20">
+          <ol className="mt-12 divide-y divide-[color:var(--border-light)] border-y border-[color:var(--border-light)]">
             {content.approach.steps.map((step, index) => (
               <li key={step.title} className="grid gap-3 py-8 md:grid-cols-[8rem_minmax(0,1fr)_minmax(0,1.2fr)] md:items-baseline md:gap-8">
                 <p className="text-xs tracking-[0.2em]">0{index + 1}</p>
@@ -249,7 +235,7 @@ export function QuammHome() {
           </ol>
         </section>
 
-        <section id="products" className="border-t border-[#272727]/20 px-5 py-16 md:px-10 md:py-24">
+        <section id="products" className="border-t border-[color:var(--border-light)] px-5 py-16 md:px-10 md:py-24">
           <h2 className="font-[family-name:var(--font-heading)] text-4xl font-normal leading-none md:text-6xl">{content.products.title}</h2>
           <ul className="mt-12 grid gap-8 md:grid-cols-2">
             {content.products.items.map((item) => (
@@ -268,7 +254,7 @@ export function QuammHome() {
           <p className="mt-8 max-w-xl text-base leading-7 md:text-lg md:leading-8">{copy.why}</p>
         </section>
 
-        <section className="border-t border-[#272727]/20 px-5 py-16 md:px-10 md:py-24">
+        <section className="border-t border-[color:var(--border-light)] px-5 py-16 md:px-10 md:py-24">
           <h2 className="max-w-[12ch] font-[family-name:var(--font-heading)] text-5xl leading-[0.95] md:text-7xl">{copy.book}</h2>
           <p className="mt-6 text-sm leading-6">{priceLine}</p>
           <div className="mt-8 flex flex-wrap items-center gap-6 text-lg">
@@ -282,7 +268,7 @@ export function QuammHome() {
         </section>
       </main>
 
-      <footer className="border-t border-[#272727]/20 px-5 py-10 text-sm leading-6 md:px-10">
+      <footer className="border-t border-[color:var(--border-light)] px-5 py-10 text-sm leading-6 md:px-10">
         <div className="flex flex-col gap-6 md:flex-row md:items-end md:justify-between">
           <div>
             <p className="font-[family-name:var(--font-heading)] text-2xl">InnovateXP Limited</p>
