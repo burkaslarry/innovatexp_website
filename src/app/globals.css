@@ -317,6 +317,21 @@ body {
 .atelier-home :is(h1, h2, h3) { font-family: var(--font-main); }
 [data-locale] .atelier-home :is(h1, h2, h3) { font-weight: 400; }
 .atelier-home a:focus-visible { outline-color: #8b6b43; }
+.atelier-home header nav,
+.atelier-site header nav { background: transparent; border-bottom: 0; }
+.atelier-home #case-study[data-case-tone="dark"] {
+  --text-primary: #f5f1e8;
+  --text-secondary: #d6d0c4;
+  --heading-foreground: #f5f1e8;
+}
+.atelier-home #case-study[data-case-tone="light"] {
+  --text-primary: #251f19;
+  --text-secondary: #51483d;
+  --heading-foreground: #251f19;
+}
+.atelier-home #case-study[data-case-tone="dark"] .case-kicker { color: #d7b88c; }
+.atelier-home #case-study[data-case-tone="light"] .case-kicker { color: #8b6b43; }
+.atelier-home section[id] { scroll-margin-top: calc(var(--header-offset) + 12px); }
 .atelier-site {
   --bg-primary: #f7f4ee;
   --bg-secondary: #fffdfa;

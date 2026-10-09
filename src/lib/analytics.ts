@@ -36,3 +36,18 @@ export function trackBookingCtaClick(placement: BookingCtaPlacement): void {
     /* ignore analytics errors */
   }
 }
+
+/** Count a completed calendar reservation as the conversion for future headline tests. */
+export function trackBookingConfirmed(): void {
+  if (typeof window === "undefined") return;
+  try {
+    window.gtag?.("event", "booking_confirmed", { event_category: "conversion" });
+  } catch {
+    /* ignore analytics errors */
+  }
+  try {
+    window.plausible?.("booking_confirmed");
+  } catch {
+    /* ignore analytics errors */
+  }
+}

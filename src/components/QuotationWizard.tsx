@@ -24,6 +24,7 @@ import { useLanguage } from "@/app/LanguageContext";
 import { getWizardProgress, type WizardStepId } from "@/lib/wizard-progress";
 import { uiStrings } from "@/content/ui-strings";
 import { buildWhatsAppHref } from "@/lib/whatsapp-contact";
+import { trackBookingConfirmed } from "@/lib/analytics";
 
 /*
  * InnovateXP Quotation Wizard — conversion flow
@@ -331,6 +332,7 @@ export default function QuotationWizard({
         company,
         contactName: visitorName,
       });
+      trackBookingConfirmed();
       setBookingSuccess(t("wizard.flowx.submit_success"));
     } catch {
       setFxErr(t("wizard.flowx.submit_fail"));

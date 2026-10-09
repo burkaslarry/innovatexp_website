@@ -11,7 +11,7 @@ import { useLocalizedHref } from '@/hooks/useLocalizedHref';
 import { HeaderCartButton } from '@/components/inquiry-cart/HeaderCartButton';
 import { trackBookingCtaClick } from '@/lib/analytics';
 
-const LOGO_ALT = 'InnovateXP Limited - AI CRM and Event Management Solutions Hong Kong';
+const LOGO_ALT = 'InnovateXP';
 
 export default function HeaderClient({
   variant,
@@ -131,14 +131,12 @@ export default function HeaderClient({
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-[color:var(--border-light)] bg-surface/95 backdrop-blur-md transition-[background-color,box-shadow,border-color] duration-300 ${
-        scrolled ? 'shadow-md' : 'shadow-sm'
-      }`}
+      className={`sticky top-0 z-50 border-b border-[color:var(--border-light)] bg-surface/95 backdrop-blur-md transition-[background-color,border-color] duration-300 ${scrolled ? 'border-[color:var(--border-strong)]' : ''}`}
       id={isMain ? 'main-header' : undefined}
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
-      <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-3 px-4 py-3 sm:px-6 sm:py-4">
-        <div className="flex min-w-0 flex-1 items-center gap-3">
+      <div className="mx-auto flex min-h-[72px] max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+        <div className="flex min-w-0 shrink-0 items-center gap-3">
           {variant === 'booking' && (
             <button
               onClick={() => router.push(loc('/'))}
@@ -150,7 +148,7 @@ export default function HeaderClient({
               </svg>
             </button>
           )}
-          <div className={`flex min-w-0 flex-1 items-center gap-3 ${variant === 'booking' ? 'mx-4' : ''}`}>
+          <div className={`flex min-w-0 items-center gap-3 ${variant === 'booking' ? 'mx-4' : ''}`}>
             {isMain ? (
               <Link href={loc('/')} className="shrink-0 rounded-lg focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-brand-primary">
                 <Image
@@ -170,7 +168,9 @@ export default function HeaderClient({
                 className="shrink-0 dark:invert"
               />
             )}
-            {subtitle !== undefined ? (
+            {isMain ? (
+              <span className="hidden text-lg font-semibold text-[color:var(--heading-foreground)] sm:block">InnovateXP</span>
+            ) : subtitle !== undefined ? (
               <>
                 <div className="hidden min-w-0 sm:block">
                   <p className="truncate text-lg font-bold text-[color:var(--heading-foreground)]">{title}</p>
@@ -186,6 +186,21 @@ export default function HeaderClient({
           </div>
         </div>
 
+        {showNav && (
+          <nav className="hidden min-w-0 flex-1 items-center justify-center gap-1 xl:flex" aria-label="Main navigation">
+            {navItems.map((item) => (
+              <a
+                key={item.href}
+                href={item.href}
+                className={navLinkClass(item.href, 'whitespace-nowrap px-2 py-2 text-sm text-[color:var(--text-secondary)] transition-colors hover:text-brand-primary')}
+                onClick={(e) => handleNavClick(e, item.href)}
+              >
+                {item.label}
+              </a>
+            ))}
+          </nav>
+        )}
+
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
           {!isHomepageRoot && !isBookingPage ? <HeaderCartButton /> : null}
           <ThemeToggle />
@@ -195,7 +210,7 @@ export default function HeaderClient({
               {ctaLabel && ctaHref ? (
                 <a
                   href={ctaHref}
-                  className="hidden min-h-[44px] items-center rounded-[var(--btn-radius)] bg-[color:var(--brand-primary)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[color:var(--brand-primary-hover)] md:inline-flex"
+                  className="hidden min-h-[44px] items-center rounded-[var(--btn-radius)] bg-[color:var(--brand-primary)] px-4 py-2 text-sm font-semibold text-white transition hover:bg-[color:var(--brand-primary-hover)] xl:inline-flex"
                   data-cta="book-diagnosis"
                   data-cta-placement="header"
                   onClick={() => trackBookingCtaClick('header')}
@@ -204,7 +219,7 @@ export default function HeaderClient({
                 </a>
               ) : null}
               <button
-                className="rounded-lg border border-[color:var(--border-light)] bg-surface-secondary p-2 transition-colors hover:bg-surface md:hidden"
+                className="rounded-lg border border-[color:var(--border-light)] bg-surface-secondary p-2 transition-colors hover:bg-surface xl:hidden"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle navigation menu"
                 aria-expanded={mobileMenuOpen}
@@ -227,14 +242,14 @@ export default function HeaderClient({
         <>
           <button
             type="button"
-            className="fixed inset-0 z-40 bg-slate-950/20 md:hidden"
+            className="fixed inset-0 z-40 bg-slate-950/20 xl:hidden"
             aria-label="Close navigation menu"
             onClick={() => setMobileMenuOpen(false)}
           />
           <nav
             id="mobile-site-nav"
             ref={mobileMenuRef}
-            className="animate-in slide-in-from-top-2 relative z-50 border-t border-[color:var(--border-light)] bg-surface-secondary md:hidden"
+            className="animate-in slide-in-from-top-2 relative z-50 border-t border-[color:var(--border-light)] bg-surface-secondary xl:hidden"
           >
             <div className="mx-auto max-w-[1280px] px-6 py-4">
               <div className="flex flex-col items-stretch gap-3">
@@ -271,27 +286,6 @@ export default function HeaderClient({
         </>
       )}
 
-      {showNav && (
-        <nav className="hidden border-t border-[color:var(--border-light)] bg-surface-secondary md:block">
-          <div className="mx-auto max-w-[1280px] px-4 py-2 sm:px-6">
-            <div className="flex flex-wrap items-center justify-center gap-1 sm:gap-2">
-              {navItems.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className={navLinkClass(
-                    item.href,
-                    'rounded-[var(--radius-md)] px-3 py-2 text-sm font-medium text-[color:var(--text-secondary)] transition-colors hover:bg-surface hover:text-brand-primary sm:px-4 sm:text-[15px]',
-                  )}
-                  onClick={(e) => handleNavClick(e, item.href)}
-                >
-                  {item.label}
-                </a>
-              ))}
-            </div>
-          </div>
-        </nav>
-      )}
     </header>
   );
 }

@@ -10,3 +10,4 @@ Do not write 「已核實」 unless this file records who verified it and how.
 | C2 | 至少慳 HK$50,000／月 | — | — | No source provided | UNVERIFIED — do not ship |
 | C3 | 14 年大企業經驗 | — | 2012–2026 | Career span | VERIFIED |
 | C4 | 已服務培訓中心／診所／Fitness／專業服務 | — | — | Needs one named project per sector | UNVERIFIED — ask human before shipping |
+| C5 | 為 Flower Nice Day 改版網店，讓顧客查看商品及鮮花販賣機位置地圖 | Flower Nice Day | — | Storefront revamp and presentation of the existing public vending-machine map | VERIFIED (InnovateXP owner Larry Lo confirmed the work in chat on 2026-10-09; public shop and embedded map inspected at flowerniceday.com/pages/flower-kiosk). No conversion or sales result claimed. |
