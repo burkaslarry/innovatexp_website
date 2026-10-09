@@ -66,6 +66,7 @@ type Props = {
   handoffOnSubmit?: boolean;
   /** Override success primary CTA label (e.g. continue to pick a time). */
   successPrimaryLabel?: string;
+  embedded?: boolean;
 };
 
 function labelFor(q: QuestionField, value: string): string {
@@ -116,6 +117,7 @@ export function M3QuestionnaireForm({
   onSubmittedAnswers,
   handoffOnSubmit = false,
   successPrimaryLabel,
+  embedded = false,
 }: Props) {
   const stepDefs = useMemo(() => {
     if (steps?.length) return steps;
@@ -276,10 +278,10 @@ export function M3QuestionnaireForm({
   };
 
   const shellSx = {
-    p: { xs: 3, md: 5 },
-    border: "1px solid",
+    p: embedded ? 0 : { xs: 3, md: 5 },
+    border: embedded ? 0 : "1px solid",
     borderColor: "divider",
-    bgcolor: "background.paper",
+    bgcolor: embedded ? "transparent" : "background.paper",
     color: "text.primary",
   } as const;
 
@@ -354,7 +356,7 @@ export function M3QuestionnaireForm({
         <Typography variant="overline" color="primary" fontWeight={800}>
           {eyebrow}
         </Typography>
-        <Typography component="h1" variant="h4" sx={{ mb: 1.5 }}>
+        <Typography component={embedded ? "h2" : "h1"} variant="h4" sx={{ mb: 1.5 }}>
           {title}
         </Typography>
         <Typography color="text.secondary" sx={{ mb: 2, lineHeight: 1.7 }}>

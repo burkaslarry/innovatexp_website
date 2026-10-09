@@ -14,7 +14,7 @@ import { listBusyIntervals } from "@/lib/site-records";
 
 const WORK_START_HOUR = 10;
 const WORK_END_HOUR = 20;
-const SLOT_DURATION_MINUTES = 60;
+const SLOT_DURATION_MINUTES = 30;
 
 export async function GET(request: Request) {
   const { searchParams } = new URL(request.url);

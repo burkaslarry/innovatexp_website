@@ -317,6 +317,24 @@ body {
 .atelier-home :is(h1, h2, h3) { font-family: var(--font-main); }
 [data-locale] .atelier-home :is(h1, h2, h3) { font-weight: 400; }
 .atelier-home a:focus-visible { outline-color: #8b6b43; }
+.atelier-site {
+  --bg-primary: #f7f4ee;
+  --bg-secondary: #fffdfa;
+  --bg-surface: #fffdfa;
+  --heading-foreground: #251f19;
+  --text-secondary: #51483d;
+  --brand-primary: #6f5436;
+  --border-light: #d8cfc2;
+}
+.atelier-site :is(h1, h2, h3) { font-family: var(--font-main); }
+.atelier-site .ixp-card {
+  border-radius: 0;
+  border: 1px solid #d8cfc2;
+  background: #fffdfa;
+  box-shadow: none;
+}
+.atelier-site .ixp-card::before { display: none; }
+.atelier-site a:focus-visible { outline-color: #8b6b43; }
 
 button,
 input,

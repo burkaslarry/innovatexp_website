@@ -12,6 +12,7 @@ export function AiConsultationQuestionnaire({
   handoffOnSubmit,
   onSubmittedAnswers,
   successPrimaryLabel,
+  embedded,
 }: {
   locale: AppLocale;
   bookingHref?: string;
@@ -19,6 +20,7 @@ export function AiConsultationQuestionnaire({
   handoffOnSubmit?: boolean;
   onSubmittedAnswers?: (payload: { answers: Answers; formattedQa: string }) => void;
   successPrimaryLabel?: string;
+  embedded?: boolean;
 }) {
   const c = getConsultationCopy(locale);
 
@@ -41,6 +43,7 @@ export function AiConsultationQuestionnaire({
       handoffOnSubmit={handoffOnSubmit}
       onSubmittedAnswers={onSubmittedAnswers}
       successPrimaryLabel={successPrimaryLabel}
+      embedded={embedded}
       isHighIntent={isHighIntent}
       copy={{
         next: c.next,

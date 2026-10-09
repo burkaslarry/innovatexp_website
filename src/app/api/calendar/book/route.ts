@@ -45,6 +45,10 @@ export async function POST(req: Request) {
       endsAt: endDateTime.toISOString(),
       message: typeof message === "string" ? message : "",
     });
+    if (!saved.ok) {
+      console.error("Calendar booking could not be saved:", saved.error || "unknown error");
+      return NextResponse.json({ error: "預約未能儲存，請稍後再試。" }, { status: 503 });
+    }
 
     const event: EventAttributes = {
       start: [

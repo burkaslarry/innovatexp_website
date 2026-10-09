@@ -30,6 +30,7 @@ export default function HeaderClient({
   const mobileMenuRef = useRef<HTMLDivElement | null>(null);
   const isMain = variant === 'main';
   const isHomepageRoot = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)$/.test(pathname));
+  const isBookingPage = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)\/bookme\/?$/.test(pathname));
   const showNav = isMain && navItems.length > 0;
 
   const anchorIds = useMemo(
@@ -186,7 +187,7 @@ export default function HeaderClient({
         </div>
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {!isHomepageRoot ? <HeaderCartButton /> : null}
+          {!isHomepageRoot && !isBookingPage ? <HeaderCartButton /> : null}
           <ThemeToggle />
           {variant === 'booking' && <LanguageSwitcher />}
           {isMain && (

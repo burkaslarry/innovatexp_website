@@ -1,10 +1,10 @@
-/* F06: Bookme page - Diagnosis intake (same as questionnaire) then calendar booking. */
+/* Diagnosis intake followed by a 30-minute calendar booking. */
 'use client';
 
 import { useMemo, useState } from 'react';
 import { useLanguage } from '../../LanguageContext';
-import { uiStrings } from '@/content/ui-strings';
-import { getLocaleFromPathname, localeUsesChineseCopy } from '@/lib/i18n-routing';
+import { getLocaleFromPathname } from '@/lib/i18n-routing';
+import type { AppLocale } from '@/lib/i18n-routing';
 import { usePathname } from 'next/navigation';
 import Header from '../../components/Header';
 import QuotationWizard from '@/components/QuotationWizard';
@@ -14,26 +14,91 @@ import { buildWhatsAppHref } from '@/lib/whatsapp-contact';
 
 type IntakePayload = { answers: Answers; formattedQa: string };
 
+type BookingCopy = {
+  eyebrow: string;
+  heading: string;
+  intro: string;
+  steps: [string, string];
+  stepDetail: [string, string];
+  contact: string;
+  skip: string;
+  back: string;
+  information: string;
+  whatsappMessage: string;
+};
+
+const BOOKING_COPY: Record<AppLocale, BookingCopy> = {
+  'zh-hk': {
+    eyebrow: 'InnovateXP / 業務聽診',
+    heading: '預約 30 分鐘業務聽診',
+    intro: '帶你最亂嗰條流程嚟。先填簡短問卷，等我了解情況；之後揀時段。已填過問卷可以直接揀時間。',
+    steps: ['講清問題', '揀時間'],
+    stepDetail: ['約 2 分鐘問卷', '30 分鐘對話'],
+    contact: '有問題？直接電郵',
+    skip: '已填過問卷？直接揀時間 →',
+    back: '← 返回問卷',
+    information: '預約詳情',
+    whatsappMessage: '你好，我想預約 30 分鐘業務聽診。',
+  },
+  'zh-tw': {
+    eyebrow: 'InnovateXP / 業務診斷',
+    heading: '預約 30 分鐘業務診斷',
+    intro: '帶來你最混亂的一條流程。先填簡短問卷，讓我了解情況，再選擇時段。已填過問卷可直接選時間。',
+    steps: ['釐清問題', '選擇時間'],
+    stepDetail: ['約 2 分鐘問卷', '30 分鐘對話'],
+    contact: '有問題？請寄信至',
+    skip: '已填過問卷？直接選時間 →',
+    back: '← 返回問卷',
+    information: '預約詳情',
+    whatsappMessage: '你好，我想預約 30 分鐘業務診斷。',
+  },
+  en: {
+    eyebrow: 'InnovateXP / Business diagnosis',
+    heading: 'Book a 30-minute workflow diagnosis',
+    intro: 'Bring the workflow that keeps getting stuck. A short form helps me prepare; then choose a time. If you already completed it, go straight to the calendar.',
+    steps: ['Describe the issue', 'Choose a time'],
+    stepDetail: ['About 2 minutes', '30-minute conversation'],
+    contact: 'Questions? Email',
+    skip: 'Already completed the form? Pick a time →',
+    back: '← Back to the form',
+    information: 'Booking details',
+    whatsappMessage: 'Hi — I would like to book a 30-minute Business Workflow Diagnosis.',
+  },
+  ja: {
+    eyebrow: 'InnovateXP / 業務診断',
+    heading: '30分の業務診断を予約',
+    intro: '一番困っている業務をお持ちください。短い事前フォームで状況を共有し、日時を選びます。記入済みなら日時選択へ進めます。',
+    steps: ['課題を共有', '日時を選択'],
+    stepDetail: ['約2分のフォーム', '30分の対話'],
+    contact: 'お問い合わせ',
+    skip: '記入済みですか？日時を選択 →',
+    back: '← フォームに戻る',
+    information: '予約について',
+    whatsappMessage: 'こんにちは。30分の業務診断を予約したいです。',
+  },
+  de: {
+    eyebrow: 'InnovateXP / Ablaufdiagnose',
+    heading: '30-minütige Ablaufdiagnose buchen',
+    intro: 'Bringen Sie den Ablauf mit, der immer wieder stockt. Ein kurzes Formular hilft bei der Vorbereitung; danach wählen Sie einen Termin. Bereits ausgefüllt? Gehen Sie direkt zum Kalender.',
+    steps: ['Problem beschreiben', 'Termin wählen'],
+    stepDetail: ['Etwa 2 Minuten', '30 Minuten Gespräch'],
+    contact: 'Fragen? Schreiben Sie an',
+    skip: 'Formular schon ausgefüllt? Termin wählen →',
+    back: '← Zurück zum Formular',
+    information: 'Buchungsdetails',
+    whatsappMessage: 'Hallo, ich möchte eine 30-minütige Ablaufdiagnose buchen.',
+  },
+};
+
 export default function BookVisitPage() {
   const { t } = useLanguage();
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
-  const ui = uiStrings(locale);
-  const zh = localeUsesChineseCopy(locale);
-  const [showGuidelines, setShowGuidelines] = useState(false);
+  const copy = BOOKING_COPY[locale];
   const [phase, setPhase] = useState<'intake' | 'booking'>('intake');
   const [intake, setIntake] = useState<IntakePayload | null>(null);
 
-  const whatsappHref = useMemo(
-    () =>
-      buildWhatsAppHref(
-        zh
-          ? '你好，我想預約 30 分鐘業務聽診。'
-          : 'Hi — I would like to book a 30-minute Business Workflow Diagnosis.',
-      ),
-    [zh],
-  );
-
+  const whatsappHref = useMemo(() => buildWhatsAppHref(copy.whatsappMessage), [copy.whatsappMessage]);
   const prefill = useMemo(() => {
     if (!intake) return undefined;
     const a = intake.answers;
@@ -46,133 +111,81 @@ export default function BookVisitPage() {
   }, [intake]);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-slate-50 to-white dark:from-gray-900 dark:to-gray-950">
-      <Header variant="booking" title={t('bookme.header.title')} subtitle={t('bookme.header.subtitle')} />
+    <div className="atelier-booking min-h-screen bg-[#f7f4ee] text-[#251f19]">
+      <Header variant="booking" title="InnovateXP Limited" subtitle={copy.eyebrow} />
+      <main className="mx-auto max-w-7xl px-5 pb-20 pt-10 md:px-10 md:pb-28 md:pt-20">
+        <div className="grid gap-10 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-start md:gap-16">
+          <div className="md:sticky md:top-32">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8b6b43]">{copy.eyebrow}</p>
+            <h1 className="mt-5 max-w-[15ch] text-[clamp(2.3rem,4.5vw,4.8rem)] font-normal leading-[1.16] tracking-[-0.035em]">{copy.heading}</h1>
+            <p className="mt-6 max-w-[47ch] text-base leading-8 md:text-lg">{copy.intro}</p>
+            <ol className="mt-8 grid grid-cols-2 border-y border-[#c8bba9] py-5">
+              {copy.steps.map((label, index) => (
+                <li key={label} className="pr-3">
+                  <span className="text-xs font-semibold text-[#8b6b43]">0{index + 1}</span>
+                  <p className="mt-2 text-base font-semibold text-[#251f19]">{label}</p>
+                  <p className="mt-1 text-sm">{copy.stepDetail[index]}</p>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-6 text-sm leading-7">{copy.contact} <a className="border-b border-[#8b6b43] font-semibold text-[#251f19]" href="mailto:info@innovatexp.co">info@innovatexp.co</a></p>
+          </div>
 
-      <main className="pt-24">
-        <div className="mx-auto max-w-5xl px-3 sm:px-5 md:px-6">
-          <div className="mx-auto max-w-4xl py-8 md:px-6 md:py-10">
-            <div className="rounded-3xl border border-slate-200 bg-white/90 p-4 shadow-xl backdrop-blur dark:border-slate-700 dark:bg-slate-900/60 sm:p-6 md:p-10">
-              <h1 className="text-2xl font-extrabold text-slate-900 dark:text-white md:text-3xl">
-                {t('bookme.title')}
-              </h1>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300 md:text-base">
-                {zh
-                  ? '先填業務聽診前小問卷（同諮詢問卷同一套），再揀 30 分鐘時段。唔硬推產品。'
-                  : 'Complete the same pre-diagnosis mini form first, then pick a 30-minute slot. No hard sell.'}
-              </p>
-              <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">
-                Email:{' '}
-                <a
-                  href="mailto:info@innovatexp.co"
-                  className="font-semibold text-brand-primary underline decoration-brand-primary/40 underline-offset-2 hover:text-brand-primary-hover dark:text-[color:var(--primary-hover)]"
-                >
-                  info@innovatexp.co
-                </a>
-              </p>
-
-              <div className="mt-6 rounded-2xl border border-slate-200 bg-slate-50 p-4 dark:border-slate-700 dark:bg-slate-950/40 sm:p-5 md:p-5">
-                <p className="text-sm font-bold text-slate-900 dark:text-white">{t('bookme.info.title')}</p>
-                <ul className="mt-3 grid gap-2 text-sm text-slate-700 dark:text-slate-300 sm:grid-cols-3">
-                  <li className="flex items-start gap-2 rounded-lg bg-white px-3 py-2 dark:bg-slate-900/60">
-                    <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
-                    <span>{t('bookme.info.monday_friday')}</span>
-                  </li>
-                  <li className="flex items-start gap-2 rounded-lg bg-white px-3 py-2 dark:bg-slate-900/60">
-                    <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
-                    <span>{t('bookme.info.one_hour')}</span>
-                  </li>
-                  <li className="flex items-start gap-2 rounded-lg bg-white px-3 py-2 dark:bg-slate-900/60">
-                    <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
-                    <span>{t('bookme.info.confirmation')}</span>
-                  </li>
-                </ul>
+          <div className="border border-[#d8cfc2] bg-[#fffdfa] p-4 sm:p-7 md:p-9">
+            {phase === 'intake' ? (
+              <div className="space-y-5">
+                <AiConsultationQuestionnaire
+                  locale={locale}
+                  whatsappHref={whatsappHref}
+                  handoffOnSubmit
+                  embedded
+                  onSubmittedAnswers={(payload) => {
+                    setIntake(payload);
+                    setPhase('booking');
+                  }}
+                />
                 <button
                   type="button"
-                  onClick={() => setShowGuidelines((v) => !v)}
-                  className="mt-4 flex w-full items-center justify-between gap-3 text-left text-sm font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]"
+                  onClick={() => {
+                    setIntake(null);
+                    setPhase('booking');
+                  }}
+                  className="inline-flex min-h-11 items-center border-b border-[#8b6b43] text-sm font-semibold text-[#251f19] hover:text-[#8b6b43] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
                 >
-                  <span>{showGuidelines ? ui.bookme.hideDetails : ui.bookme.showDetails}</span>
-                  <svg
-                    className={`h-5 w-5 transition-transform ${showGuidelines ? 'rotate-180' : ''}`}
-                    fill="none"
-                    viewBox="0 0 24 24"
-                    stroke="currentColor"
-                    aria-hidden
-                  >
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                  </svg>
+                  {copy.skip}
                 </button>
-
-                {showGuidelines ? (
-                  <div className="mt-3 rounded-xl border border-gray-200 bg-white p-5 text-sm text-gray-700 dark:border-gray-700 dark:bg-gray-800 dark:text-gray-300">
-                    <ul className="space-y-2">
-                      <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
-                        <span>{t('bookme.info.cancel')}</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
-                        <span>{t('bookme.info.online')}</span>
-                      </li>
-                      <li className="flex items-start gap-2">
-                        <span className="mt-0.5 text-brand-primary dark:text-[color:var(--primary-hover)]">•</span>
-                        <span>{t('bookme.info.notion')}</span>
-                      </li>
-                    </ul>
-                  </div>
-                ) : null}
               </div>
-
-              <div className="mt-8">
-                {phase === 'intake' ? (
-                  <div className="space-y-4">
-                    <AiConsultationQuestionnaire
-                      locale={locale}
-                      whatsappHref={whatsappHref}
-                      handoffOnSubmit
-                      onSubmittedAnswers={(payload) => {
-                        setIntake(payload);
-                        setPhase('booking');
-                      }}
-                    />
-                    <div className="text-center">
-                      <button
-                        type="button"
-                        onClick={() => {
-                          setIntake(null);
-                          setPhase('booking');
-                        }}
-                        className="text-sm font-semibold text-slate-600 underline-offset-2 hover:underline dark:text-slate-300"
-                      >
-                        {zh ? '已填過／直接揀時間' : 'Already done / skip to pick a time'}
-                      </button>
-                    </div>
-                  </div>
-                ) : (
-                  <div className="space-y-4">
-                    <button
-                      type="button"
-                      onClick={() => setPhase('intake')}
-                      className="text-sm font-semibold text-brand-primary underline-offset-2 hover:underline"
-                    >
-                      {zh ? '← 返回聽診前問卷' : '← Back to pre-diagnosis form'}
-                    </button>
-                    <QuotationWizard
-                      bookingOnly
-                      diagnosticQaOverride={intake?.formattedQa}
-                      prefillIdentity={prefill}
-                    />
-                  </div>
-                )}
+            ) : (
+              <div className="space-y-5">
+                <button
+                  type="button"
+                  onClick={() => setPhase('intake')}
+                  className="inline-flex min-h-11 items-center border-b border-[#8b6b43] text-sm font-semibold text-[#251f19] hover:text-[#8b6b43]"
+                >
+                  {copy.back}
+                </button>
+                <QuotationWizard bookingOnly diagnosticQaOverride={intake?.formattedQa} prefillIdentity={prefill} />
               </div>
-            </div>
+            )}
           </div>
         </div>
-      </main>
 
-      <footer className="border-t border-slate-700 bg-gray-900 py-6 text-center dark:bg-gray-950">
-        <p className="text-slate-400">{t('footer.copyright')}</p>
+        <details className="mt-12 max-w-3xl border-t border-[#c8bba9] pt-5 text-sm">
+          <summary className="cursor-pointer font-semibold text-[#251f19]">{copy.information}</summary>
+          <ul className="mt-4 space-y-2 leading-7">
+            <li>{t('bookme.info.monday_friday')}</li>
+            <li>{t('bookme.info.one_hour')}</li>
+            <li>{t('bookme.info.confirmation')}</li>
+            <li>{t('bookme.info.cancel')}</li>
+            <li>{t('bookme.info.online')}</li>
+          </ul>
+        </details>
+      </main>
+      <footer className="border-t border-[#d8cfc2] px-5 py-8 md:px-10">
+        <div className="mx-auto flex max-w-7xl flex-wrap justify-between gap-4 text-sm">
+          <span>InnovateXP Limited</span>
+          <span>{t('footer.copyright')}</span>
+        </div>
       </footer>
     </div>
   );

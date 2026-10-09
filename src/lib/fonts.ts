@@ -59,4 +59,4 @@ export const rootFontClassName = [
  * Locale-specific heading/body stacks are defined in globals.css via [data-locale].
  */
 export const FONT_STACK =
-  'var(--font-noto-sans-hk), system-ui, "PingFang TC", "Microsoft JhengHei", sans-serif';
+  'var(--font-main), system-ui, "PingFang TC", "Microsoft JhengHei", sans-serif';

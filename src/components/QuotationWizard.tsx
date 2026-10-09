@@ -319,7 +319,7 @@ export default function QuotationWizard({
         return;
       }
 
-      if (bookData.emailSuccess !== true && bookData.saved !== true) {
+      if (bookData.saved !== true) {
         setFxErr(t("wizard.flowx.submit_fail"));
         return;
       }
