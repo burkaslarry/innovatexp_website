@@ -62,6 +62,23 @@ export const PRICING = {
     accelerator6Month: 58_000,
     partnership12Month: 98_000,
   },
+  /*
+   * Prepaid session credits for clients who already have a live project,
+   * workflow, system, or shop upgrade. Not the AI implementation funnel.
+   * One session = 2 hours = 300 credits. Selling rate is HK$400/hour (markup).
+   * Price is that rate on credits purchased. 1,000 has no bonus.
+   * 2,000 includes 200 bonus credits; 4,000 includes 400.
+   */
+  sessionCredits: {
+    creditsPerSession: 300,
+    hoursPerSession: 2,
+    hourlyRateHkd: 400,
+    packs: [
+      { id: "sessionCredits1000", credits: 1_000, bonusCredits: 0 },
+      { id: "sessionCredits2000", credits: 2_000, bonusCredits: 200 },
+      { id: "sessionCredits4000", credits: 4_000, bonusCredits: 400 },
+    ],
+  },
   /* Line A — retainers. Response time is triage, not a fix SLA. */
   systemCare: {
     essentialMonthly: 4_000,
@@ -182,6 +199,13 @@ export function getConsultancyPlans(locale: PricingLocale) {
     { key: "accelerator6Month" as const, price: scoped },
     { key: "partnership12Month" as const, price: scoped },
   ];
+}
+
+/** List price for credits purchased, at the HK$400/hour markup. Bonus credits are free. */
+export function sessionCreditListPriceHkd(credits: number): number {
+  const { hourlyRateHkd, creditsPerSession, hoursPerSession } = PRICING.sessionCredits;
+  const creditsPerHour = creditsPerSession / hoursPerSession;
+  return Math.round((credits * hourlyRateHkd) / creditsPerHour);
 }
 
 export function getQuickCashOffers(locale: PricingLocale) {

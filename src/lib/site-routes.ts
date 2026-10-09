@@ -29,6 +29,7 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
   { path: "/case-studies", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services", priority: 0.86, changeFrequency: "weekly" },
   { path: "/products", priority: 0.84, changeFrequency: "weekly" },
+  { path: "/session-credits", priority: 0.8, changeFrequency: "monthly" },
   { path: "/faq", priority: 0.8, changeFrequency: "monthly" },
   { path: "/about", priority: 0.82, changeFrequency: "monthly" },
   { path: "/ai-era-quality", priority: 0.78, changeFrequency: "monthly" },

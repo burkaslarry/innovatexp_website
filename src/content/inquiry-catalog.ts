@@ -1,4 +1,4 @@
-import { CONSULTANCY_PLAN_KEYS, PRICING, formatHkd, type PricingLocale } from "@/content/pricing";
+import { CONSULTANCY_PLAN_KEYS, PRICING, formatHkd, sessionCreditListPriceHkd, type PricingLocale } from "@/content/pricing";
 
 export type InquiryCatalogItemId =
   | "eventXpTrial"
@@ -15,7 +15,10 @@ export type InquiryCatalogItemId =
   | "systemCareEssential"
   | "systemCareGrowth"
   | "systemCarePriority"
-  | "educationTrack";
+  | "educationTrack"
+  | "sessionCredits1000"
+  | "sessionCredits2000"
+  | "sessionCredits4000";
 
 export type InquiryCatalogItem = {
   id: InquiryCatalogItemId;
@@ -24,7 +27,7 @@ export type InquiryCatalogItem = {
   titleZh: string;
   blurbEn: string;
   blurbZh: string;
-  layer: "quickCash" | "toolTrial" | "consultancy";
+  layer: "quickCash" | "toolTrial" | "consultancy" | "sessionCredits";
   /** When true, public UI omits HKD amounts (quote on enquiry). */
   hidePublicPrice?: boolean;
 };
@@ -38,6 +41,7 @@ export const INQUIRY_CATALOG: InquiryCatalogItem[] = [
   ...downsellAndTrainingItems(),
   ...discoveryAndAdvisoryItems(),
   ...systemCareItems(),
+  ...sessionCreditItems(),
 ];
 
 export function getInquiryCatalogItem(id: string): InquiryCatalogItem | undefined {
@@ -240,6 +244,43 @@ function systemCareItems(): InquiryCatalogItem[] {
       blurbEn: "HK$12,000 / month. Response within 4 business hours. No unlimited changes.",
       blurbZh: "每月 HK$12,000。4 個工作小時內回應。不設 unlimited changes。",
       layer: "consultancy",
+    },
+  ];
+}
+
+/*
+ * Prepaid credits for a live project, workflow, system, or shop upgrade.
+ * Not Snapshot, Discovery, or an AI implementation package.
+ */
+function sessionCreditItems(): InquiryCatalogItem[] {
+  const packs = PRICING.sessionCredits.packs;
+  return [
+    {
+      id: "sessionCredits1000",
+      amountHkd: sessionCreditListPriceHkd(packs[0].credits),
+      titleEn: "Session credits 1,000",
+      titleZh: "即時問診點數 1,000",
+      blurbEn: "1,000 credits, no bonus, at HK$400 per hour. For a project, workflow, system, or shop that is already running. Not an AI implementation package.",
+      blurbZh: "1,000 點，冇贈送，每小時 HK$400。只限已上線嘅項目、流程、系統或網店。唔係 AI 導入方案。",
+      layer: "sessionCredits",
+    },
+    {
+      id: "sessionCredits2000",
+      amountHkd: sessionCreditListPriceHkd(packs[1].credits),
+      titleEn: "Session credits 2,000",
+      titleZh: "即時問診點數 2,000",
+      blurbEn: "2,000 credits plus 200 bonus. For a project, workflow, system, or shop that is already running. Not an AI implementation package.",
+      blurbZh: "2,000 點再送 200 點。只限已上線嘅項目、流程、系統或網店。唔係 AI 導入方案。",
+      layer: "sessionCredits",
+    },
+    {
+      id: "sessionCredits4000",
+      amountHkd: sessionCreditListPriceHkd(packs[2].credits),
+      titleEn: "Session credits 4,000",
+      titleZh: "即時問診點數 4,000",
+      blurbEn: "4,000 credits plus 400 bonus. For a project, workflow, system, or shop that is already running. Not an AI implementation package.",
+      blurbZh: "4,000 點再送 400 點。只限已上線嘅項目、流程、系統或網店。唔係 AI 導入方案。",
+      layer: "sessionCredits",
     },
   ];
 }
