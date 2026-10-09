@@ -49,9 +49,9 @@ const PAGE_COPY: Record<
     home: "首頁",
     crumb: "相關經驗與交付能力",
     eyebrow: "相關經驗與交付能力",
-    title: "相關經驗與交付能力",
+    title: "Agilizing：教材由 10 日變成 3 小時",
     intro:
-      "以下案例講清楚 Larry Lo 同 InnovateXP 可以帶來咩效果：由 iOS／Android products，到維修、資產、跨部門交接同 AI 工作流程。每個案例會清楚分開公開證據同第一方交付陳述，唔加未核實百分比或保證成果。",
+      "已核實案例：善敏教育中心教材製作由 10 日縮到 3 小時，至少慳 HK$50,000／月助理開支。以下亦列出 Larry Lo 其他交付同 2025 公開分享，並分開公開證據同第一方陳述。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",
@@ -69,9 +69,9 @@ const PAGE_COPY: Record<
     home: "首頁",
     crumb: "相關經驗與交付能力",
     eyebrow: "相關經驗與交付能力",
-    title: "相關經驗與交付能力",
+    title: "Agilizing：教材由 10 天變成 3 小時",
     intro:
-      "以下例子展示 InnovateXP 可交付的工作：AI training / AI 教班、AI 陪跑課程、workflow mapping、dashboards、booking flows、internal tools 與系統交付。現階段以相關經驗與能力描述，不包裝成正式 client outcome stories 或保證成果。",
+      "已核實案例：善敏教育中心教材製作由 10 天縮到 3 小時，每月至少節省 HK$50,000 助理開支。以下亦列出其他交付與 2025 公開分享，並分開公開證據與第一方陳述。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",
@@ -89,9 +89,9 @@ const PAGE_COPY: Record<
     home: "ホーム",
     crumb: "ケーススタディ",
     eyebrow: "プロジェクト事例と proof points",
-    title: "InnovateXP 事例：AI ワークフロー、研修、CRM、イベント intelligence",
+    title: "Agilizing：教材が10日から3時間に",
     intro:
-      "以下は InnovateXP が提供する仕事の例です：EventXP、SmartSales CRM、AI training / AI 教班、AI 陪跑課程、社内ツール、ダッシュボード、予約フロー、システム救済、クリーンアーキテクチャ改善。成果を誇張せず、経験と提供能力として記載しています。",
+      "確認済み：Agilizing の教材制作を10日から3時間に短縮し、アシスタント費用を月あたり少なくとも HK$50,000 削減しました。他の提供実績と2025年の公開登壇も、公開証拠と自社陳述を分けて記載します。",
     vision: "創業者の Vision",
     targetAudience: "対象",
     challenge: "課題",
@@ -109,9 +109,9 @@ const PAGE_COPY: Record<
     home: "Start",
     crumb: "Fallstudien",
     eyebrow: "Projektbeispiele und Proof Points",
-    title: "InnovateXP Projektbeispiele: AI-Workflows, Training, CRM und Event Intelligence",
+    title: "Agilizing: Kursmaterial von 10 Tagen auf 3 Stunden",
     intro:
-      "Diese Beispiele zeigen, welche Arbeit InnovateXP liefert: EventXP, SmartSales CRM, AI training / AI 教班, AI 陪跑課程, interne Tools, Dashboards, Buchungsflows, System Rescue und Clean-Architecture-Refactor. Proof Points werden als Erfahrung und Fähigkeit formuliert, nicht als überzogene Garantie.",
+      "Belegt: Agilizing verkürzte die Produktion von Kursmaterial von 10 Tagen auf 3 Stunden und spart mindestens HK$50.000 Assistentenkosten pro Monat. Weitere Lieferungen und öffentliche Auftritte 2025 stehen darunter, mit getrennter öffentlicher Evidenz und eigenen Angaben.",
     vision: "Founder Vision",
     targetAudience: "Zielgruppe",
     challenge: "Herausforderung",
@@ -179,7 +179,7 @@ export function CaseStudiesPage({
           <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-gray-950 dark:text-white md:text-5xl">
             {copy.title}
           </h1>
-          <p className="max-w-4xl text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          <p className="max-w-4xl text-lg leading-relaxed text-gray-700 dark:text-gray-300" data-geo-answer>
             {copy.intro}
           </p>
         </section>

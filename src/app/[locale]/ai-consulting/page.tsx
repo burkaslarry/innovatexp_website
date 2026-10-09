@@ -121,9 +121,14 @@ export default async function AiConsultingPage({ params }: { params: Promise<{ l
       <header className="rounded-2xl bg-slate-950 px-6 py-10 text-white md:px-10">
         <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">InnovateXP · {zh ? "AI 商業顧問" : "AI business consulting"}</p>
         <h1 className="mt-4 text-3xl font-bold leading-tight md:text-5xl">
-          {zh ? "香港 AI 商業顧問：先執順流程，再落地 AI" : "AI business consulting in Hong Kong: clarify the workflow, then apply AI"}
+          {zh ? `香港 AI 顧問收費：30 分鐘業務聽診，${snapshot} 起` : `Hong Kong AI consultant fees: 30-minute diagnosis from ${snapshot}`}
         </h1>
-        <p className="mt-5 max-w-3xl text-base leading-8 text-slate-200">
+        <p className="mt-5 max-w-3xl text-base font-medium leading-8 text-white" data-geo-answer>
+          {zh
+            ? `業務聽診係一個 30 分鐘對話，只睇一條卡住嘅流程。Snapshot ${snapshot} 起，30 日 Discovery ${discovery} 起；唔使買系統會直講。`
+            : `A Business Workflow Diagnosis is a 30-minute call on one stuck workflow. Snapshot from ${snapshot}; 30-day Discovery from ${discovery}. If you should not buy a system yet, Larry says so.`}
+        </p>
+        <p className="mt-4 max-w-3xl text-base leading-8 text-slate-200">
           {zh
             ? "Larry Lo／InnovateXP 幫 3–30 人中小企由一條銷售或營運流程開始，找出漏客、慢報價同交接卡位。先定負責人同量度方法，再決定需唔需要 AI、CRM 或自動化。"
             : "Larry Lo / InnovateXP helps Hong Kong SMEs of 3–30 people fix one sales or operations workflow: lost enquiries, slow quotes or unclear handoffs. We assign ownership and a measurable baseline before choosing AI, CRM or automation."}

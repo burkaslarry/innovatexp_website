@@ -6,7 +6,7 @@
  *   C  Implementation  quoted after Discovery (Starter / Pro)
  *   D  Vertical product  demo → Discovery → Sprint
  *
- * Snapshot (HK$3,000) is a downsell into B, not a fifth line.
+ * Snapshot (HK$3,880) is a downsell into B, not a fifth line.
  * Aligned with Notion「定價政策 — Quick Cash Funnel（2026-07）」.
  * Pages must read these values. Do not hard-code amounts elsewhere.
  */
@@ -29,9 +29,9 @@ export const PRICING = {
     /** Prompt 實戰訓練營 — 1 day（新手體驗／限時價） */
     promptTrainingDay: 2_500,
     /** AI 準備度評估 */
-    aiReadinessAssessment: 3_000,
-    /** Top-up when AI Readiness Snapshot upgrades to HK$6,800 Discovery within 14 days. */
-    aiReadinessDiscoveryTopUp: 3_800,
+    aiReadinessAssessment: 3_880,
+    /** Top-up when Snapshot HK$3,880 upgrades to Discovery HK$6,880 within 14 days. */
+    aiReadinessDiscoveryTopUp: 3_000,
     /** 14-day automation / workflow trial (customer-language starter path). */
     automationTrial14Day: 3_800,
     /** EventXP 試用 — 1 場活動 */
@@ -48,7 +48,7 @@ export const PRICING = {
     /** @deprecated Use accountXpExperience */
     accountingChatbotTrialMonth: 3_000,
     /** AI Discovery Sprint — custom workflow entry (1–2 weeks) */
-    aiDiscoverySprint: 6_800,
+    aiDiscoverySprint: 6_880,
     /** Customised Website Starter — basic company site (poster Online Presence) */
     websiteStarter: 3_000,
     /** Basic e-shop package (or sales commission model) */
@@ -56,7 +56,7 @@ export const PRICING = {
   },
   /* Line B — Discovery list price plus scoped longer programs. */
   consultancy: {
-    discoverySprint30Day: 6_800,
+    discoverySprint30Day: 6_880,
     discoveryWorkshop11To30: 13_600,
     foundation3Month: 29_800,
     accelerator6Month: 58_000,
@@ -136,7 +136,7 @@ function formatNumber(amount: number, locale: PricingLocale): string {
   return amount.toLocaleString("en-HK");
 }
 
-/** e.g. HK$6,800 or HKD 6,800 */
+/** e.g. HK$6,880 or HKD 6,880 */
 export function formatHkd(amount: number, locale: PricingLocale = "en", prefix: "HK$" | "HKD" = "HK$"): string {
   const n = formatNumber(amount, locale);
   if (prefix === "HKD") {

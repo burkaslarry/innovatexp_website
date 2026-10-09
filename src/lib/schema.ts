@@ -231,7 +231,7 @@ export function getAIConsultingServiceSchema() {
       highPrice: String(PRICING.consultancy.discoveryWorkshop11To30),
       offerCount: 3,
       description:
-        "Snapshot HK$3,000; Discovery Sprint HK$6,800 for up to 10 people or HK$13,600 for 11–30. Deeper implementation is scoped after diagnosis.",
+        "Snapshot HK$3,880; Discovery Sprint HK$6,880 for up to 10 people or HK$13,600 for 11–30. Deeper implementation is scoped after diagnosis.",
       url: `${siteUrl}/zh-hk/bookme`,
     },
   };

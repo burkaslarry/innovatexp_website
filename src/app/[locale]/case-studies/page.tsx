@@ -18,24 +18,24 @@ const CASE_STUDY_META: Record<AppLocale, { title: string; description: string }>
       "Larry Lo delivery cases: Real Messenger apps, transport maintenance, EMSD monitoring, HKMC Annuity IT assets, plus verified 2025 speaking records.",
   },
   "zh-hk": {
-    title: "企業案例及公開分享紀錄｜InnovateXP",
+    title: "Agilizing 案例｜教材 10 日變 3 小時，慳 HK$50,000／月",
     description:
-      "Larry Lo 企業交付案例：Real Messenger apps、公共交通維修、EMSD 升降機監控、HKMC Annuity IT 資產，以及已核實 2025 公開分享紀錄。",
+      "已核實：善敏教育中心教材製作由 10 日縮到 3 小時，至少慳 HK$50,000／月助理開支。InnovateXP Larry Lo，香港 AI 商業顧問。",
   },
   "zh-tw": {
-    title: "相關經驗與交付能力｜InnovateXP",
+    title: "Agilizing 案例｜教材 10 天變成 3 小時，每月節省 HK$50,000",
     description:
-      "InnovateXP 相關經驗：AI 培訓、陪跑課程、中小企業 workflow、dashboard、booking flows、internal tools 與系統交付能力說明。",
+      "已核實：善敏教育中心教材製作由 10 天縮到 3 小時，每月至少節省 HK$50,000 助理開支。InnovateXP Larry Lo，香港 AI 商業顧問。",
   },
   ja: {
-    title: "ケーススタディ｜AI研修・CRM｜InnovateXP",
+    title: "Agilizing事例｜教材が10日から3時間、月HK$50,000以上を削減",
     description:
-      "InnovateXP の事例：EventXP、SmartSales CRM、AI トレーニング、AI コーチング、Proposal-to-Cash AI、ダッシュボード、社内ツール。",
+      "確認済み：Agilizing の教材制作を10日から3時間に短縮し、アシスタント費用を月あたり少なくとも HK$50,000 削減。InnovateXP、香港の AI ビジネス顧問 Larry Lo。",
   },
   de: {
-    title: "Fallstudien | AI-Training & CRM | InnovateXP",
+    title: "Agilizing-Fall | Kursmaterial von 10 Tagen auf 3 Stunden",
     description:
-      "Projektbeispiele für InnovateXP: EventXP, SmartSales CRM, AI-Training, AI-Coaching, Proposal-to-Cash AI, Dashboards und interne Tools.",
+      "Belegt: Agilizing verkürzte die Kursmaterial-Produktion von 10 Tagen auf 3 Stunden und spart mindestens HK$50.000 Assistentenkosten pro Monat. InnovateXP, KI-Berater Larry Lo in Hongkong.",
   },
 };
 

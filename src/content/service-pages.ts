@@ -115,13 +115,13 @@ const aiTraining: ServicePageContent = {
 const aiCoaching: ServicePageContent = {
   slug: "ai-coaching",
   schemaKind: "ProfessionalService",
-  title: "AI Business Upgrade Programs / AI 陪跑課程 for Hong Kong SMEs",
-  metaTitle: "AI 陪跑課程 Hong Kong | Consultancy | InnovateXP",
+  title: "What is AI co-run for a Hong Kong SME?",
+  metaTitle: "What is AI co-run for Hong Kong SMEs? | InnovateXP",
   metaDescription:
-    "AI Business Upgrade for Hong Kong SMEs: Discovery Sprint, Foundation, Accelerator—SOPs, KPIs, workflow trials, and AI adoption with InnovateXP.",
+    "AI co-run means Larry Lo stays with your team after a 30-minute diagnosis: one workflow, SOPs, and a pilot. 30-day Discovery from HK$6,880; 3-month Foundation from HK$29,800 after diagnosis.",
   eyebrow: "AI Business Upgrade programs",
   intro:
-    "AI 陪跑課程 is for SMEs that want structured business upgrade support, not another one-off AI class and not a software-first project. InnovateXP helps your team clarify SOPs, define KPIs, run practical AI trials, and decide whether automation, CRM, or SaaS is actually needed after the workflow is validated.",
+    "AI co-run means Larry Lo stays with your team after a 30-minute diagnosis and lands one workflow — not a slide deck. 30-day Discovery from HK$6,880; 3-month Foundation from HK$29,800 after diagnosis.",
   audience: [
     "SME owners who want to adopt AI but do not know which workflow should come first.",
     "Operations, sales, marketing, and admin teams that need hands-on support after training.",
@@ -352,13 +352,13 @@ const smeWorkflow: ServicePageContent = {
 const proposalToCash: ServicePageContent = {
   slug: "proposal-to-cash-ai",
   schemaKind: "ProfessionalService",
-  title: "Proposal-to-Cash AI Workflow for B2B Teams",
-  metaTitle: "Proposal-to-Cash AI | B2B Quote Follow-Up | InnovateXP",
+  title: "Quotes sent, but nobody follows up?",
+  metaTitle: "Quotes sent but nobody follows up? | Hong Kong B2B | InnovateXP",
   metaDescription:
-    "AI-assisted B2B quotation, proposal follow-up, invoice/payment tracking, and management visibility for Hong Kong SMEs—without enterprise CRM bloat.",
+    "Proposal-to-Cash connects quotation, WhatsApp follow-up, invoices, and payment for Hong Kong B2B SMEs. Diagnosis first — not an enterprise CRM.",
   eyebrow: "B2B quotation to payment workflow",
   intro:
-    "Proposal-to-Cash AI helps B2B teams connect quotation, proposal follow-up, invoice status, and payment tracking into one clearer workflow. Instead of losing deals between WhatsApp, email, spreadsheets, and accounting reminders, your team gets structured next actions, draft follow-ups, and visibility from first proposal to collected cash.",
+    "Proposal-to-Cash puts Hong Kong B2B quotation, WhatsApp follow-up, invoices, and payment in one workflow, so a sent quote has an owner. Diagnosis first — not an enterprise CRM.",
   audience: [
     "B2B service companies that send many quotations and need disciplined follow-up.",
     "Sales/admin teams that hand off between proposal, invoice, delivery, and payment collection.",
@@ -499,13 +499,13 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
   },
   "ai-coaching": {
     ...aiCoaching,
-    title: "AI 商業升級陪跑課程：香港中小企 SOP、KPI 與 AI adoption",
-    metaTitle: "AI 陪跑課程｜AI 商業顧問｜香港中小企 AI 顧問｜InnovateXP",
+    title: "香港 AI 陪跑係咩？聽診之後一齊落地一條流程",
+    metaTitle: "香港 AI 陪跑係咩？｜聽診後 3 個月由 HK$29,800 起",
     metaDescription:
-      "InnovateXP 為香港中小企提供 AI 商業升級陪跑：30 日 Discovery Sprint、3 個月 Foundation、6 個月 Accelerator，協助梳理 SOP、設定 KPI、試行 AI 並改善團隊採用。",
+      "AI 陪跑即係聽診之後，Larry Lo 同團隊一齊落地一條流程，而唔係交一份 slide。30 日 Discovery HK$6,880 起；3 個月 Foundation HK$29,800 起（聽診後確認）。",
     eyebrow: "AI 商業升級陪跑",
     intro:
-      "AI 陪跑課程適合想先執順流程、再落地 AI 的香港中小企。InnovateXP 不會一開始叫你重做系統，而是先透過問卷、訪談、SOP mapping、KPI baseline 和 review checkpoint，陪團隊試行最值得改善的一條 workflow；確認 business case 後，才另行建議 automation、CRM 或 SaaS。",
+      "AI 陪跑即係 30 分鐘業務聽診之後，Larry Lo 同團隊一齊落地一條流程，而唔係交一份 slide。30 日 Discovery HK$6,880 起；3 個月 Foundation HK$29,800 起（聽診後確認）。唔會一開始叫你重做系統。",
     audience: [
       "想導入 AI、但不知道第一條流程該從哪裡開始的中小企業主。",
       "培訓後需要 hands-on support 的營運、銷售、行銷與行政團隊。",
@@ -688,13 +688,13 @@ const servicePagesZhTw: Record<ServicePageSlug, ServicePageContent> = {
   },
   "proposal-to-cash-ai": {
     ...proposalToCash,
-    title: "Proposal-to-Cash AI：B2B 報價到收款工作流",
-    metaTitle: "Proposal-to-Cash AI｜B2B 報價跟進與收款流程自動化｜InnovateXP",
+    title: "報價發出之後，邊個負責追？",
+    metaTitle: "報價發出冇人追？｜香港 B2B 報價到收款｜InnovateXP",
     metaDescription:
-      "為中小企業設計的 AI-assisted workflow：B2B 報價、proposal follow-up、invoice/payment tracking 與管理可視性。",
+      "Proposal-to-Cash 把報價、WhatsApp 跟進、發票同收款放喺一條流程。適合香港 B2B 中小企。先做業務聽診再配置，唔係先買 CRM。",
     eyebrow: "B2B quotation to payment workflow",
     intro:
-      "Proposal-to-Cash AI 協助 B2B 團隊把報價、proposal follow-up、invoice status 與 payment tracking 串成更清晰的流程。與其讓 deals 掉在 WhatsApp、email、spreadsheets 與 accounting reminders 之間，團隊可以得到 structured next actions、AI draft follow-ups，以及由 proposal 到 collected cash 的可視性。",
+      "Proposal-to-Cash 把香港 B2B 團隊嘅報價、WhatsApp 跟進、發票同收款放喺一條流程，避免報價發出之後無人追。先做業務聽診再配置，唔係先買 CRM。",
     audience: [
       "大量發送報價、需要更有紀律跟進的 B2B service companies。",
       "需要在 proposal、invoice、delivery 與 payment collection 之間交接的 sales/admin teams。",
@@ -778,13 +778,13 @@ const servicePagesJa: Record<ServicePageSlug, ServicePageContent> = {
   },
   "ai-coaching": {
     ...aiCoaching,
-    title: "中小企業向け AI 実装コーチング",
-    metaTitle: "AI伴走プログラム | SME向けAI導入スプリント | InnovateXP",
+    title: "香港のAI伴走とは？診断のあと、1つの業務を一緒に定着させる",
+    metaTitle: "香港のAI伴走とは？診断後3ヶ月 HK$29,800から",
     metaDescription:
-      "1つの業務フローを選び、初版を作り、チームで試し、改善するための実践型 AI 実装コーチング。香港の中小企業向け伴走支援。",
+      "AI伴走は30分の業務診断のあと、Larry Lo がチームと1つの業務を定着させます。スライド納品ではありません。30日 Discovery は HK$6,880 から。3ヶ月 Foundation は診断後 HK$29,800 から。",
     eyebrow: "伴走型 AI 実装コーチング",
     intro:
-      "AI コーチングは、講座を聞くだけでなく実装まで進めたいチーム向けです。InnovateXP は SME が1つの業務フローを選び、初版を設計し、チームでテストし、毎週のコーチングで改善できるよう支援します。",
+      "AI伴走とは、30分の業務診断のあと Larry Lo がチームと一緒に1つの業務を定着させることです。スライドを渡して終わりではありません。30日 Discovery は HK$6,880 から。3ヶ月 Foundation は診断後 HK$29,800 から。",
     audience: [
       "AI を導入したいが、最初の業務フローが決まっていない SME 経営者。",
       "研修後に実践支援を必要とする業務、営業、マーケ、管理チーム。",
@@ -845,13 +845,13 @@ const servicePagesJa: Record<ServicePageSlug, ServicePageContent> = {
   },
   "proposal-to-cash-ai": {
     ...proposalToCash,
-    title: "Proposal-to-Cash AI：B2B 見積もりから回収までのワークフロー",
-    metaTitle: "Proposal-to-Cash AI | B2B見積フォロー | InnovateXP",
+    title: "見積もりを送ったあと、誰が追うのか？",
+    metaTitle: "見積後のフォローがない？｜香港B2Bの入金まで｜InnovateXP",
     metaDescription:
-      "B2B 見積もり、提案フォロー、請求／入金状況、管理可視性をつなぐ AI 支援ワークフロー。香港の中小企業向けに設計。",
+      "Proposal-to-Cash は香港の B2B チームの見積、WhatsApp フォロー、請求、入金を1つの流れにします。CRM を先に買うのではなく、業務診断のあとで設定します。",
     eyebrow: "B2B quotation to payment workflow",
     intro:
-      "Proposal-to-Cash AI は、見積もり、提案フォロー、請求状況、入金確認を1つの見える業務フローにつなげます。WhatsApp、メール、スプレッドシート、会計リマインダーの間で案件を失わないよう、次アクション、AI 下書き、回収までの可視性を整えます。",
+      "Proposal-to-Cash は、送った見積もりに担当者がつくよう、見積・WhatsApp フォロー・請求・入金を1つの流れにします。先に CRM を買うのではなく、業務診断のあとで設定します。",
     cta: {
       ...proposalToCash.cta,
       label: "Proposal-to-Cash ワークフローを相談する",
@@ -903,13 +903,13 @@ const servicePagesDe: Record<ServicePageSlug, ServicePageContent> = {
   },
   "ai-coaching": {
     ...aiCoaching,
-    title: "AI-Coaching für KMU-Implementierung",
-    metaTitle: "AI-Coaching Hongkong | KI-Sprint für KMUs | InnovateXP",
+    title: "Was ist AI-Co-Run für Hongkong-KMU?",
+    metaTitle: "Was ist AI-Co-Run? | Nach der Diagnose ab HK$29.800",
     metaDescription:
-      "Begleitetes AI-Coaching für KMUs: einen Workflow wählen, erste Version bauen, Team trainieren und Adoption Schritt für Schritt verbessern.",
+      "AI-Co-Run heißt: nach einer 30-minütigen Diagnose setzt Larry Lo einen Workflow mit dem Team um — kein Foliensatz. 30-Tage-Discovery ab HK$6.880; 3-Monats-Foundation ab HK$29.800 nach der Diagnose.",
     eyebrow: "Done-with-you Implementation Coaching",
     intro:
-      "AI-Coaching ist für Teams, die Umsetzung statt nur Inspiration suchen. InnovateXP hilft KMUs, einen Workflow auszuwählen, die erste Version zu entwerfen, mit dem Team zu testen und in wöchentlichen Coachings zu verbessern.",
+      "AI-Co-Run bedeutet: nach einer 30-minütigen Diagnose setzt Larry Lo einen Workflow gemeinsam mit dem Team um, statt nur Folien abzugeben. 30-Tage-Discovery ab HK$6.880; 3-Monats-Foundation ab HK$29.800 nach der Diagnose.",
     audience: [
       "KMU-Inhaber, die AI einsetzen wollen, aber den ersten Workflow noch nicht kennen.",
       "Operations-, Sales-, Marketing- und Admin-Teams, die nach Training praktische Unterstützung brauchen.",
@@ -958,13 +958,13 @@ const servicePagesDe: Record<ServicePageSlug, ServicePageContent> = {
   },
   "proposal-to-cash-ai": {
     ...proposalToCash,
-    title: "Proposal-to-Cash AI Workflow für B2B-Teams",
-    metaTitle: "Proposal-to-Cash AI | B2B Follow-up | InnovateXP",
+    title: "Angebot raus — und niemand hakt nach?",
+    metaTitle: "Angebot ohne Follow-up? | Hongkong B2B bis Zahlung | InnovateXP",
     metaDescription:
-      "AI-gestützter Workflow für B2B-Angebote, Proposal Follow-up, Rechnung/Zahlungsstatus und Management-Transparenz.",
+      "Proposal-to-Cash legt Angebot, WhatsApp-Follow-up, Rechnung und Zahlung in einen Ablauf. Für Hongkonger B2B-KMU. Erst die Diagnose, nicht zuerst ein CRM.",
     eyebrow: "B2B-Angebot bis Zahlung",
     intro:
-      "Proposal-to-Cash AI verbindet Angebot, Proposal Follow-up, Rechnungsstatus und Zahlungstracking in einem klareren Workflow. Statt Deals zwischen WhatsApp, E-Mail, Tabellen und Accounting-Remindern zu verlieren, erhält das Team strukturierte nächste Schritte, AI-Entwürfe und Sichtbarkeit bis zum Zahlungseingang.",
+      "Proposal-to-Cash legt Angebot, WhatsApp-Follow-up, Rechnung und Zahlung in einen Ablauf, damit ein gesendetes Angebot einen Verantwortlichen hat. Erst die Diagnose — nicht zuerst ein Enterprise-CRM.",
     cta: {
       ...proposalToCash.cta,
       label: "Proposal-to-Cash Workflow besprechen",

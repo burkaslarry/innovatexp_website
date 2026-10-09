@@ -31,6 +31,7 @@ export async function generateMetadata({
       "perler alternative",
     ],
     alternates: localeAlternates(locale, "/creative-studio/artkal-bead-pattern"),
+    robots: { index: false, follow: true },
   };
 }
 

@@ -35,12 +35,12 @@ const BOOKME: LocalePair = {
   zh: {
     title: "預約業務聽診｜Larry Lo｜InnovateXP",
     description:
-      "預約 AI 商業顧問 Larry Lo／InnovateXP：30 分鐘業務聽診，鎖定漏單、慢報價或交接卡位。Snapshot HK$3,000 起；唔使買系統會直講。",
+      "預約 AI 商業顧問 Larry Lo／InnovateXP：30 分鐘業務聽診，鎖定漏單、慢報價或交接卡位。Snapshot HK$3,880 起；唔使買系統會直講。",
   },
   en: {
     title: "Book Business Workflow Diagnosis | Larry Lo",
     description:
-      "Book a 30-minute Business Workflow Diagnosis with Larry Lo / InnovateXP. Snapshot from HK$3,000; Discovery Sprint HK$6,800 for teams up to 10.",
+      "Book a 30-minute Business Workflow Diagnosis with Larry Lo / InnovateXP. Snapshot from HK$3,880; Discovery Sprint HK$6,880 for teams up to 10.",
   },
 };
 
@@ -110,18 +110,18 @@ const FITNESSXP: LocalePair = {
 
 const AI_CONSULTING: LocalePair = {
   zh: {
-    title: "香港 AI 商業顧問｜業務聽診與流程落地｜InnovateXP",
+    title: "香港 AI 顧問收費｜30 分鐘業務聽診，HK$3,880 起",
     description:
-      "Larry Lo／InnovateXP 幫香港中小企先執順銷售或營運流程，再按需要落地 AI、CRM 同自動化。30 分鐘業務聽診；Snapshot HK$3,000 起，30 日 Discovery HK$6,800 起。",
-    ogTitle: "香港 AI 商業顧問｜先執順流程，再落地 AI",
-    ogDescription: "聽診、Discovery、陪跑。適合要實務落地嘅香港中小企。",
+      "香港中小企 AI 顧問 Larry Lo：30 分鐘業務聽診先搵出一條卡住嘅流程。Snapshot HK$3,880 起，30 日 Discovery HK$6,880 起。唔使買系統會直講。",
+    ogTitle: "香港 AI 顧問收費｜30 分鐘業務聽診，HK$3,880 起",
+    ogDescription: "先聽診一條流程，再決定 AI、CRM 定暫時唔買。Snapshot HK$3,880 起。",
   },
   en: {
-    title: "AI Business Consultant in Hong Kong | InnovateXP",
+    title: "Hong Kong AI Consultant Fees | 30-min Diagnosis from HK$3,880",
     description:
-      "Larry Lo / InnovateXP helps Hong Kong SMEs fix one sales or operations workflow before choosing AI. Book a 30-minute diagnosis; Snapshot from HK$3,000 and 30-day Discovery from HK$6,800.",
-    ogTitle: "AI Business Consultant Hong Kong — workflow first",
-    ogDescription: "Business Workflow Diagnosis, co-run advisory for SMEs.",
+      "What does a Hong Kong AI consultant cost? Larry Lo diagnoses one stuck SME workflow in 30 minutes. Snapshot from HK$3,880; 30-day Discovery from HK$6,880. He will say so if you should not buy a system yet.",
+    ogTitle: "Hong Kong AI consultant fees — 30-min diagnosis from HK$3,880",
+    ogDescription: "One workflow first. Snapshot from HK$3,880; Discovery from HK$6,880.",
   },
 };
 
@@ -166,14 +166,14 @@ const BLOG: LocalePair = {
 
 const PRIVATE_AI: LocalePair = {
   zh: {
-    title: "企業Private AI方案｜香港私有雲／On-Prem｜InnovateXP",
+    title: "Private AI Solutions｜私有雲、On-Prem、加密入庫｜InnovateXP",
     description:
-      "企業 private AI solutions：資料可控、加密入庫、私有雲或 On-Premise。適合香港會計、金融與專業服務。預約 Larry Lo 診斷。",
+      "Private AI solution 即係合約、發票、收據同客戶檔唔丟去公開 chatbot。先畫資料邊界，再選私有雲端點、加密儲存或 on-prem，輸出要人手覆核。香港同要控資料跨境嘅企業都適用。",
   },
   en: {
-    title: "Private AI Solutions Hong Kong | InnovateXP",
+    title: "Private AI Solutions | Private Cloud & On-Prem | InnovateXP",
     description:
-      "Enterprise private AI for Hong Kong: on-prem or private cloud, encrypted storage, controlled residency. For finance and professional services. Book a diagnosis.",
+      "A private AI solution keeps contracts, invoices, receipts and client files off public chatbots. Map the data boundary, then use a private cloud endpoint, encrypted storage or on-prem, with human review. For Hong Kong firms and any team that needs controlled residency.",
   },
 };
 
@@ -238,7 +238,7 @@ const SME_AUTOMATION: LocalePair = {
   en: {
     title: "SME AI Workflow & CRM Consulting | Hong Kong",
     description:
-      "Business Workflow Diagnosis for Hong Kong SMEs. Map quotes and follow-ups first, then add practical AI support only where justified. Entry from HK$3,000.",
+      "Business Workflow Diagnosis for Hong Kong SMEs. Map quotes and follow-ups first, then add practical AI support only where justified. Entry from HK$3,880.",
   },
 };
 
@@ -260,8 +260,26 @@ export function eventXpScopingSeo(locale: AppLocale): PageSeo {
 export function fitnessXpSeo(locale: AppLocale): PageSeo {
   return pick(locale, FITNESSXP);
 }
+const AI_CONSULTING_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
+  "zh-tw": {
+    title: "香港 AI 顧問收費｜30 分鐘業務診斷，HK$3,880 起",
+    description:
+      "香港中小企業 AI 顧問 Larry Lo：30 分鐘業務診斷先找出一條卡住的流程。Snapshot HK$3,880 起，30 日 Discovery HK$6,880 起。不需要買系統會直說。",
+  },
+  ja: {
+    title: "香港のAI顧問料金｜30分の業務診断、HK$3,880から",
+    description:
+      "香港の中小企業向け AI 顧問 Larry Lo。30分で止っている業務を1つ診断します。Snapshot は HK$3,880 から、30日 Discovery は HK$6,880 から。まだシステムを買うべきでないときは、そう言います。",
+  },
+  de: {
+    title: "KI-Berater Hongkong | 30-Minuten-Diagnose ab HK$3.880",
+    description:
+      "Was kostet ein KI-Berater in Hongkong? Larry Lo prüft in 30 Minuten einen stockenden KMU-Workflow. Snapshot ab HK$3.880; 30-Tage-Discovery ab HK$6.880. Wenn noch kein System nötig ist, sagt er das.",
+  },
+};
+
 export function aiConsultingSeo(locale: AppLocale): PageSeo {
-  return pick(locale, AI_CONSULTING);
+  return AI_CONSULTING_LOCALE[locale] ?? pick(locale, AI_CONSULTING);
 }
 export function aiSeoPackageSeo(locale: AppLocale): PageSeo {
   return pick(locale, AI_SEO);
@@ -272,8 +290,26 @@ export function pitchDecksSeo(locale: AppLocale): PageSeo {
 export function blogSeo(locale: AppLocale): PageSeo {
   return pick(locale, BLOG);
 }
+const PRIVATE_AI_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
+  "zh-tw": {
+    title: "Private AI Solutions｜私有雲、On-Prem、加密儲存｜InnovateXP",
+    description:
+      "Private AI solution 是合約、發票、收據和客戶檔不進入公開 chatbot。先畫資料邊界，再選私有雲端點、加密儲存或 on-prem，輸出要人工覆核。適合香港以及需要控制資料跨境的企業。",
+  },
+  ja: {
+    title: "Private AI Solutions｜プライベートクラウドとオンプレ｜InnovateXP",
+    description:
+      "Private AI solution は、契約・請求書・領収書・顧客ファイルを公開チャットボットに置かない仕組みです。データの境界を決めてから、プライベートクラウド、暗号化保存、またはオンプレを選び、出力は人が確認します。香港と、データの所在を管理したいチーム向け。",
+  },
+  de: {
+    title: "Private AI Solutions | Private Cloud & On-Prem | InnovateXP",
+    description:
+      "Eine Private-AI-Solution hält Verträge, Rechnungen, Belege und Kundendateien aus öffentlichen Chatbots. Zuerst die Datengrenze, dann Private-Cloud-Endpunkt, verschlüsselte Speicherung oder On-Prem, mit menschlicher Prüfung. Für Hongkong und Teams mit kontrolliertem Datenstandort.",
+  },
+};
+
 export function privateAiSeo(locale: AppLocale): PageSeo {
-  return pick(locale, PRIVATE_AI);
+  return PRIVATE_AI_LOCALE[locale] ?? pick(locale, PRIVATE_AI);
 }
 export function cxConsultingSeo(locale: AppLocale): PageSeo {
   return pick(locale, CX_CONSULTING);

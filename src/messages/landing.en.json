@@ -109,13 +109,13 @@
   "consultancy": {
     "eyebrow": "Mainline",
     "title": "Start small, then decide the co-run scope",
-    "intro": "Mainline: diagnosis → land → co-run. The public entry points are Snapshot HK$3,000 and Discovery Sprint HK$6,800 for teams up to 10.",
+    "intro": "Mainline: diagnosis → land → co-run. The public entry points are Snapshot HK$3,880 and Discovery Sprint HK$6,880 for teams up to 10.",
     "fitNote": "We don't sell a system first. Diagnose, land, adopt, review — I'll say so if you shouldn't buy.",
     "startingBadge": "Suggested start",
     "plans": [
       {
         "name": "Snapshot or Discovery Sprint",
-        "priceLabel": "HK$3,000 Snapshot · HK$6,800 Discovery (≤10)",
+        "priceLabel": "HK$3,880 Snapshot · HK$6,880 Discovery (≤10)",
         "body": "Use a short cycle to diagnose or validate one workflow that most affects revenue or operations. Discovery for teams of 11–30 is HK$13,600.",
         "deliverables": [
           "流程圖",
@@ -257,7 +257,7 @@
       },
       {
         "question": "How are consulting fees calculated?",
-        "answer": "Snapshot is HK$3,000. Discovery Sprint is HK$6,800 for teams up to 10, or HK$13,600 for 11–30. Deeper implementation and co-run work is scoped after diagnosis; we don't push a system at the start."
+        "answer": "Snapshot is HK$3,880. Discovery Sprint is HK$6,880 for teams up to 10, or HK$13,600 for 11–30. Deeper implementation and co-run work is scoped after diagnosis; we don't push a system at the start."
       },
       {
         "question": "What if we don't actually need AI or a CRM?",
@@ -472,8 +472,8 @@
     "readiness": {
       "eyebrow": "Downsell only",
       "title": "AI Readiness Snapshot",
-      "price": "HK$3,000",
-      "intro": "For a team not yet ready to commit to the HK$6,800 Discovery Sprint and needing a smaller evidence-based decision first.",
+      "price": "HK$3,880",
+      "intro": "For a team not yet ready to commit to the HK$6,880 Discovery Sprint and needing a smaller evidence-based decision first.",
       "points": [
         "60–90 minute interview",
         "One-page readiness scorecard",
@@ -481,9 +481,9 @@
         "Clear recommendation: not ready yet or proceed to Discovery"
       ],
       "excludes": "Does not include an SOP, prototype, implementation scope or custom build.",
-      "upgrade": "Upgrade within 14 calendar days: top up HK$3,800 to enter the HK$6,800 Discovery Sprint.",
+      "upgrade": "Upgrade within 14 calendar days: top up HK$3,000 to enter the HK$6,880 Discovery Sprint.",
       "educationTitle": "Optional 1-month education track — scoped separately",
-      "educationIntro": "Four 60-minute sessions, one per week, for the same client organization. This is not included in the HK$3,000 Snapshot.",
+      "educationIntro": "Four 60-minute sessions, one per week, for the same client organization. This is not included in the HK$3,880 Snapshot.",
       "educationPoints": [
         "No per-head teaching fee; attendance is limited by the agreed room or online-platform capacity",
         "Content is agreed before the first session; extra preparation or sessions are separate",

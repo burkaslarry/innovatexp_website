@@ -19,6 +19,7 @@ export async function generateMetadata({
     title: seo.title,
     description: seo.description,
     alternates: localeAlternates(locale, "/creative-studio"),
+    robots: { index: false, follow: true },
   };
 }
 

@@ -1901,7 +1901,7 @@ export const translations = {
     'pricing.models.col3': '中小企業使用情境',
     'pricing.models.discovery.title': '盤點／準備度評估',
     'pricing.models.discovery.price': '聽診後報價',
-    'pricing.models.discovery.desc': '以較低風險先釐清範圍、優先次序與導入路線圖。31 人或以上另行報價。場地另計。AI Readiness Snapshot（HKD 3,000）只作 downsell。',
+    'pricing.models.discovery.desc': '以較低風險先釐清範圍、優先次序與導入路線圖。31 人或以上另行報價。場地另計。AI Readiness Snapshot（HKD 3,880）只作 downsell。',
     'pricing.models.pilot.title': '試點項目（固定範圍）',
     'pricing.models.pilot.price': 'Discovery Sprint 後固定實施報價',
     'pricing.models.pilot.desc': '先驗證一條流程端到端價值，再決定是否全面擴展。',

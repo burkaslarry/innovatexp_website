@@ -59,6 +59,7 @@ export function buildLocalizedSitemap(): MetadataRoute.Sitemap {
 
   for (const locale of LOCALES as unknown as AppLocale[]) {
     for (const row of STATIC_LOCALIZED_PATHS) {
+      if (row.path === "/creative-studio" || row.path.startsWith("/creative-studio/")) continue;
       const suffix = row.path === "/" ? "" : row.path;
       entries.push({
         url: `${siteUrl}/${locale}${suffix}`,

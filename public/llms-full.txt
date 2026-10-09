@@ -39,8 +39,8 @@ InnovateXP’s locked mainline: diagnose one revenue- or operations-blocking wor
 
 ## Public pricing facts (as published on the website)
 
-- AI Readiness Snapshot: quoted after diagnosis (downsell / smaller evidence-based decision before Discovery)
-- 30-day Discovery: HK$6,800 for up to 10 people; HK$13,600 for 11–30 people; 31+ quoted separately (venue extra when applicable)
+- AI Readiness Snapshot: HK$3,880 (downsell before Discovery)
+- 30-day Discovery: HK$6,880 for up to 10 people; HK$13,600 for 11–30 people; 31+ quoted separately (venue extra when applicable)
 - 14-day workflow trial: quoted after diagnosis
 - Automation starter packs (Lite / Starter / AI when needed): quoted after diagnosis — see https://www.innovatexp.co/zh-hk/automation-packages
 - 3-month Foundation: from HK$29,800 after diagnosis; improves 1–2 workflows with named owners, real-case trials, team practice, and monthly outcome reviews

@@ -28,6 +28,7 @@ export async function generateMetadata({
       "cafe map",
     ],
     alternates: localeAlternates(locale, "/creative-studio/coffee-map"),
+    robots: { index: false, follow: true },
   };
 }
 

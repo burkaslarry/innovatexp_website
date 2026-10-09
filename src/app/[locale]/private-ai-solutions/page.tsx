@@ -36,7 +36,25 @@ export default async function PrivateAiSolutionsPage({
 }) {
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
-  const zh = localeUsesChineseCopy(locale as AppLocale);
+  const loc = locale as AppLocale;
+  const zh = localeUsesChineseCopy(loc);
+  const hero =
+    loc === "ja"
+      ? {
+          h1: "Private AI Solutions：プライベートクラウド、オンプレ、暗号化保存",
+          lead: "Private AI solution は、契約・請求書・領収書・銀行明細・顧客ファイルを公開チャットボットに置かない仕組みです。InnovateXP はまずデータの境界を決めます。何をモデルに入れないか、何を暗号化して保管するか、誰が出力を確認するか。そのあとでプライベートクラウド、オンプレ、または両方を選びます。香港のチームにも、データの所在を管理したい組織にも使えます。",
+        }
+      : loc === "de"
+        ? {
+            h1: "Private AI Solutions: Private Cloud, On-Prem und verschlüsselte Speicherung",
+            lead: "Eine Private-AI-Solution hält Verträge, Rechnungen, Belege, Kontoauszüge und Kundendateien aus öffentlichen Chatbots. InnovateXP zieht zuerst die Datengrenze: was nie in ein Modell darf, was verschlüsselt liegen darf, und wer eine Ausgabe freigibt. Danach wählen wir einen Private-Cloud-Endpunkt, On-Prem oder beides. Das gilt für Teams in Hongkong und für jede Organisation mit kontrolliertem Datenstandort.",
+          }
+        : loc === "zh-tw"
+          ? {
+              h1: "Private AI Solutions：私有雲、On-Prem、加密儲存",
+              lead: "Private AI solution 是合約、發票、收據、銀行月結和客戶檔不進入公開 chatbot。InnovateXP 先畫資料邊界：哪些永遠不進模型、哪些可以加密存放、誰可以覆核輸出。然後才選私有雲端點、on-prem，或兩者並用。適合香港團隊，也適合任何需要控制資料所在地的企業。",
+            }
+          : null;
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}/${locale}/private-ai-solutions`;
 
@@ -99,14 +117,16 @@ export default async function PrivateAiSolutionsPage({
           Private AI Solutions
         </p>
         <h1 className="mb-6 text-4xl font-bold text-gray-900 dark:text-white md:text-5xl">
-          {zh
-            ? "企業 Private AI 方案：資料可控，再談自動化"
-            : "Private AI solutions for Hong Kong enterprises"}
+          {hero?.h1 ??
+            (zh
+              ? "Private AI Solutions：私有雲、On-Prem、加密入庫"
+              : "Private AI solutions: private cloud, on-prem, and encrypted storage")}
         </h1>
-        <p className="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300">
-          {zh
-            ? "搜尋「private AI solutions」或「企業 private AI」嘅團隊通常唔係想再買一個 chatbot——而係要喺嚴格 data policy 下，用 AI 處理收據、銀行月結單、客戶文件。香港 AI 顧問 Larry Lo／InnovateXP 以流程診斷定位：先畫清風險邊界，再設計私有雲／On-Premise／加密入庫方案。"
-            : "Teams searching for private AI solutions or enterprise private AI rarely need another public chatbot—they need AI that can touch receipts, bank statements, and client files under a strict data policy. Hong Kong AI consultant Larry Lo / InnovateXP maps the risk boundary first, then designs private-cloud, on-prem, or encrypted-storage options."}
+        <p className="mb-6 text-lg leading-relaxed text-gray-700 dark:text-gray-300" data-geo-answer>
+          {hero?.lead ??
+            (zh
+              ? "Private AI solution 即係合約、發票、收據、銀行月結同客戶檔唔會丟去公開 chatbot。InnovateXP 先畫資料邊界：邊啲永遠唔入模型、邊啲可以加密存放、邊個先可以覆核輸出。然後先揀私有雲端點、on-prem，或者兩者並用。香港團隊同任何要控制資料所在地嘅企業都適用。"
+              : "A private AI solution keeps contracts, invoices, receipts, bank statements, and client files off public chatbots. InnovateXP first draws the data boundary: what never enters a model, what may be stored encrypted, and who may approve an output. Then we choose a private cloud endpoint, on-prem, or both. That fits Hong Kong teams and any organisation that needs controlled data residency.")}
         </p>
         <p className="mb-8 leading-relaxed text-gray-700 dark:text-gray-300">
           {zh

@@ -1105,8 +1105,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
             "@type": "Service",
             name: "30-day Discovery validation pack",
             description: localeUsesChineseCopy(routeLocale)
-              ? "30 日驗證一條卡住收入／營運嘅流程；10 人或以下公開價 HK$6,800。"
-              : "Validate one revenue- or operations-blocking workflow in 30 days; HK$6,800 for teams up to 10.",
+              ? "30 日驗證一條卡住收入／營運嘅流程；10 人或以下公開價 HK$6,880。"
+              : "Validate one revenue- or operations-blocking workflow in 30 days; HK$6,880 for teams up to 10.",
           },
         },
         {

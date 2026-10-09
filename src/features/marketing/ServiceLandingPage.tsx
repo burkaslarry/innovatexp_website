@@ -147,7 +147,7 @@ export function ServiceLandingPage({
           <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-gray-950 dark:text-white md:text-5xl">
             {content.title}
           </h1>
-          <p className="max-w-4xl text-lg leading-relaxed text-gray-700 dark:text-gray-300">
+          <p className="max-w-4xl text-lg leading-relaxed text-gray-700 dark:text-gray-300" data-geo-answer>
             {content.intro}
           </p>
           <div className="mt-8 flex flex-wrap gap-3">
