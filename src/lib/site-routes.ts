@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { BLOG_POST_SLUGS } from "@/content/blog-posts";
+import { BLOG_POST_SLUGS } from "@/content/blog-catalog";
 import type { AppLocale } from "@/lib/i18n-routing";
 import { LOCALES } from "@/lib/i18n-routing";
 import { getSiteUrl } from "@/lib/site-url";

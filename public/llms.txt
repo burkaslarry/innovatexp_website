@@ -21,6 +21,7 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 - [AI training](https://www.innovatexp.co/zh-hk/ai-training): Practical AI workshops for schools and SMEs
 - [AI coaching](https://www.innovatexp.co/zh-hk/ai-coaching): Implementation sprint / 陪跑
 - [Private AI](https://www.innovatexp.co/zh-hk/private-ai-solutions): On-prem / private-cloud AI options
+- [Blog series: PDPO, cross-border data, private AI](https://www.innovatexp.co/zh-hk/blog): Ten general-information notes (not legal advice). PDPO six principles, staff use of public chat tools, section 33 not in force, GBA standard contract, private AI vs public chat, contracts and invoices, WhatsApp direct marketing. Book a 1-hour diagnosis from each note.
 - [BNI Power Team](https://www.innovatexp.co/zh-hk/bni-power-team): Referral upstream/downstream mapping tool for BNI members
 - [Proposal-to-Cash AI](https://www.innovatexp.co/zh-hk/proposal-to-cash-ai): Quote → follow-up → cash workflow
 - [Compare SmartSales vs Salesforce](https://www.innovatexp.co/zh-hk/compare/smartsales-vs-salesforce)

@@ -153,14 +153,32 @@ const PITCH_DECKS: LocalePair = {
 
 const BLOG: LocalePair = {
   zh: {
-    title: "Blog｜AI、CRM與中小企自動化｜InnovateXP",
+    title: "PDPO・跨境資料・企業私人 AI｜InnovateXP",
     description:
-      "InnovateXP Blog：香港 AI 顧問、CRM、活動營運與工作流落地筆記。實用可執行，唔係空談趨勢。",
+      "十篇香港中小企筆記：PDPO 六項原則、員工 ChatGPT、跨境、大灣區合同、私人 AI 同 WhatsApp 促銷。一般資訊，並非法律意見。",
   },
   en: {
-    title: "Blog | AI, CRM & SME Automation | InnovateXP",
+    title: "PDPO, Cross-Border Data & Private AI | InnovateXP",
     description:
-      "Practical notes on AI consulting, CRM, event ops, and workflow implementation from InnovateXP. Actionable guidance—not hype.",
+      "Ten notes for Hong Kong SMEs: PDPO principles, staff ChatGPT, cross-border data, private AI, and WhatsApp marketing. General information, not legal advice.",
+  },
+};
+
+const BLOG_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
+  "zh-tw": {
+    title: "PDPO、跨境資料、企業私人 AI｜InnovateXP",
+    description:
+      "十篇香港中小企業筆記：PDPO 六項原則、員工 ChatGPT、跨境、大灣區合同、私人 AI 與 WhatsApp 促銷。一般資訊，並非法律意見。",
+  },
+  ja: {
+    title: "PDPO・越境データ・プライベートAI｜InnovateXP",
+    description:
+      "香港の中小企業向け10本。PDPOの6原則、従業員のChatGPT、越境、プライベートAI、WhatsApp販促。一般情報であり法律意見ではありません。",
+  },
+  de: {
+    title: "PDPO, Datentransfer & Private KI | InnovateXP",
+    description:
+      "Zehn Beiträge für Hongkonger KMU: PDPO, ChatGPT im Team, Datentransfer, private KI und WhatsApp-Werbung. Allgemeine Information, keine Rechtsberatung.",
   },
 };
 
@@ -288,7 +306,7 @@ export function pitchDecksSeo(locale: AppLocale): PageSeo {
   return pick(locale, PITCH_DECKS);
 }
 export function blogSeo(locale: AppLocale): PageSeo {
-  return pick(locale, BLOG);
+  return BLOG_LOCALE[locale] ?? pick(locale, BLOG);
 }
 const PRIVATE_AI_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
