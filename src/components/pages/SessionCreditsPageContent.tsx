@@ -2,11 +2,9 @@
 
 import Link from "next/link";
 import { SitePageShell } from "@/components/SitePageShell";
-import { AddToInquiryButton } from "@/components/inquiry-cart/AddToInquiryButton";
-import { getSessionCreditsCopy, sessionCreditPacks } from "@/content/session-credits";
+import { getSessionCreditsCopy, sessionCreditPacks, sessionCreditWhatsAppHref } from "@/content/session-credits";
 import { useLanguage } from "@/app/LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
-import type { InquiryCatalogItemId } from "@/content/inquiry-catalog";
 import type { PricingLocale } from "@/content/pricing";
 
 export function SessionCreditsPageContent() {
@@ -22,6 +20,19 @@ export function SessionCreditsPageContent() {
       </p>
       <p className="mt-4 text-sm font-semibold text-[color:var(--heading-foreground)]">{copy.sessionRule}</p>
       <p className="mt-2 max-w-[42rem] text-sm leading-7 text-[color:var(--text-secondary)]">{copy.buyRule}</p>
+
+      <section className="mt-10 max-w-[42rem]">
+        <h2 className="font-[family-name:var(--font-heading)] text-2xl text-[color:var(--heading-foreground)]">
+          {copy.seriesHeading}
+        </h2>
+        <p className="mt-3 text-base leading-7 text-[color:var(--text-secondary)]">{copy.seriesIntro}</p>
+        <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-7 text-[color:var(--text-secondary)]">
+          {copy.steps.map((step) => (
+            <li key={step}>{step}</li>
+          ))}
+        </ol>
+        <p className="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">{copy.sameLine}</p>
+      </section>
 
       <div className="mt-10 grid items-stretch gap-px border border-[color:var(--border-light)] bg-[color:var(--border-light)] md:grid-cols-3">
         {packs.map((pack) => (
@@ -50,7 +61,16 @@ export function SessionCreditsPageContent() {
             </p>
             <p className="mt-3 text-sm text-[color:var(--text-tertiary)]">{copy.unit(pack.listHourlyLabel)}</p>
             <div className="mt-5">
-              <AddToInquiryButton itemId={pack.id as InquiryCatalogItemId} />
+              <a
+                href={sessionCreditWhatsAppHref(
+                  copy.whatsappPrefill(pack.credits.toLocaleString(locale === "de" ? "de-DE" : "en-HK"), pack.priceLabel),
+                )}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-brand inline-flex min-h-[44px] w-full items-center justify-center px-6 text-sm font-bold"
+              >
+                {copy.whatsappLabel}
+              </a>
             </div>
           </article>
         ))}

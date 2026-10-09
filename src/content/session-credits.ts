@@ -19,6 +19,12 @@ export type SessionCreditsCopy = {
   unit: (price: string) => string;
   prepaid: string;
   ctaNote: string;
+  seriesHeading: string;
+  seriesIntro: string;
+  steps: string[];
+  sameLine: string;
+  whatsappLabel: string;
+  whatsappPrefill: (credits: string, price: string) => string;
   notThis: string;
   diagnosisLink: string;
   productsLink: string;
@@ -46,7 +52,20 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
         : `${sessions} 節 · ${hours} 小時`,
     unit: (price) => `每小時 ${price}`,
     prepaid: "一次買入，唔係月費",
-    ctaNote: "放入查詢後，我哋會確認你嘅項目已經上線，先至開通點數。",
+    ctaNote:
+      "撳按鈕會開 WhatsApp 去 9310 3031。我哋確認條線已經上線，你先用 FPS 或銀行轉帳付該包價錢。入帳之後先開點數同預約。",
+    seriesHeading: "一節做咩",
+    seriesIntro:
+      "帶一條已經喺度行緊嘅線，四選一：教材、報價、WhatsApp 跟進、收據分類。一節唔會四條一齊做。",
+    steps: [
+      "一齊寫低咩算做完、咩算錯。",
+      "AI 先出一版，你按嗰啲例子指出漏咗咩。",
+      "嗰一條意見寫進下一輪規則，唔會喺評論再寫一次。",
+    ],
+    sameLine: "卡上嘅節數用喺同一條線。1,000 點夠 3 節，餘 100 點留下一節。換另一條線就當新一輪。",
+    whatsappLabel: "用 WhatsApp 發送",
+    whatsappPrefill: (credits, price) =>
+      `我想買即時問診點數 ${credits}（${price}）。已上線、只做一條：教材／報價／WhatsApp 跟進／收據分類。`,
     notThis: "呢頁唔係 AI 導入收費。",
     diagnosisLink: "未有上線項目，去業務聽診",
     productsLink: "已上線項目的即時問診點數",
@@ -72,7 +91,20 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
         : `${sessions} 節 · ${hours} 小時`,
     unit: (price) => `每小時 ${price}`,
     prepaid: "一次買入，不是月費",
-    ctaNote: "放入查詢後，我們會確認你的專案已經上線，才開通點數。",
+    ctaNote:
+      "按鈕會開啟 WhatsApp 到 9310 3031。我們確認該條線已經上線後，請用 FPS 或銀行轉帳支付該方案。入帳後才開通點數與預約。",
+    seriesHeading: "一節做什麼",
+    seriesIntro:
+      "帶一條已經在跑的線，四選一：教材、報價、WhatsApp 跟進、收據分類。一節不會四條一起做。",
+    steps: [
+      "一起寫下什麼算做完、什麼算錯。",
+      "AI 先出一版，你按那些例子指出漏了什麼。",
+      "那一條意見寫進下一輪規則，不會在評論裡再寫一次。",
+    ],
+    sameLine: "卡片上的節數用在同一條線。1,000 點夠 3 節，餘 100 點留到下一節。換另一條線就當作新的一輪。",
+    whatsappLabel: "用 WhatsApp 發送",
+    whatsappPrefill: (credits, price) =>
+      `我想買即時問診點數 ${credits}（${price}）。已上線、只做一條：教材／報價／WhatsApp 跟進／收據分類。`,
     notThis: "本頁不是 AI 導入收費。",
     diagnosisLink: "還沒有上線專案，前往業務診斷",
     productsLink: "已上線專案的即時問診點數",
@@ -98,7 +130,21 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
         : `${sessions} sessions · ${hours} hours`,
     unit: (price) => `${price} per hour`,
     prepaid: "Prepaid pack, not a monthly fee",
-    ctaNote: "After you add a pack to the enquiry, we confirm the project is already live before the credits open.",
+    ctaNote:
+      "The button opens WhatsApp to 9310 3031. After we confirm the line is already live, pay that pack by FPS or bank transfer. Credits and the booking open after the payment arrives.",
+    seriesHeading: "What one session does",
+    seriesIntro:
+      "Bring one line that is already running. Choose one: courseware, a quotation, WhatsApp follow-up, or receipt sorting. One session does not cover all four.",
+    steps: [
+      "We write down what counts as done and what counts as wrong.",
+      "AI drafts one version. You mark what it missed against those examples.",
+      "That comment is written into the rule for the next round. It is not repeated as another comment.",
+    ],
+    sameLine:
+      "The sessions on a pack stay on that same line. 1,000 credits cover 3 sessions, with 100 credits left. A different line starts a new round.",
+    whatsappLabel: "Send on WhatsApp",
+    whatsappPrefill: (credits, price) =>
+      `I want session credits ${credits} (${price}). The live line is one of: courseware, quotation, WhatsApp follow-up, or receipt sorting.`,
     notThis: "This page is not AI implementation pricing.",
     diagnosisLink: "No live project yet — book a diagnosis",
     productsLink: "Session credits for a live project",
@@ -124,7 +170,21 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
         : `${sessions} セッション · ${hours} 時間`,
     unit: (price) => `1時間 ${price}`,
     prepaid: "前払い。月額ではありません",
-    ctaNote: "問い合わせに入れたあと、案件が稼働中であることを確認してからクレジットを開きます。",
+    ctaNote:
+      "ボタンは WhatsApp 9310 3031 を開きます。その業務が稼働中だと確認したあと、FPS または銀行振込でそのパックを支払います。着金後にクレジットと予約を開きます。",
+    seriesHeading: "1セッションですること",
+    seriesIntro:
+      "すでに動いている業務を一つ持ってきます。教材、見積、WhatsApp のフォロー、領収書の分類から一つ。1セッションで四つは扱いません。",
+    steps: [
+      "何が完了で、何が誤りかを一緒に書きます。",
+      "AI が下書きを一つ出します。その例に照らして、抜けを指摘します。",
+      "その指摘は次のルールに書き込みます。コメントとしてもう一度は書きません。",
+    ],
+    sameLine:
+      "パックのセッション数は同じ業務に使います。1,000 クレジットで 3 セッション、残り 100 は次回へ。別の業務は新しい回です。",
+    whatsappLabel: "WhatsApp で送る",
+    whatsappPrefill: (credits, price) =>
+      `セッションクレジット ${credits}（${price}）を希望します。稼働中の業務は一つ：教材／見積／WhatsAppフォロー／領収書の分類。`,
     notThis: "このページは AI 導入の料金ではありません。",
     diagnosisLink: "まだ稼働前なら、業務診断へ",
     productsLink: "稼働中案件のセッションクレジット",
@@ -150,7 +210,21 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
         : `${sessions} Sessions · ${hours} Stunden`,
     unit: (price) => `${price} pro Stunde`,
     prepaid: "Einmalig vorausbezahlt, keine Monatsgebühr",
-    ctaNote: "Nach der Anfrage prüfen wir, dass das Projekt schon läuft, bevor das Guthaben offen ist.",
+    ctaNote:
+      "Der Button öffnet WhatsApp an 9310 3031. Nach der Bestätigung, dass die Linie schon läuft, zahlen Sie das Paket per FPS oder Überweisung. Guthaben und Termin öffnen sich nach Zahlungseingang.",
+    seriesHeading: "Was eine Session leistet",
+    seriesIntro:
+      "Bringen Sie eine Linie mit, die schon läuft. Eine von vier: Kursmaterial, Angebot, WhatsApp-Nachfassen oder Belegsortierung. Eine Session deckt nicht alle vier ab.",
+    steps: [
+      "Wir schreiben auf, was fertig ist und was falsch ist.",
+      "Die KI erstellt einen Entwurf. Sie markieren, was daran fehlt.",
+      "Dieser Hinweis wird zur Regel für die nächste Runde. Er wird nicht noch einmal als Kommentar geschrieben.",
+    ],
+    sameLine:
+      "Die Sessions eines Pakets bleiben auf derselben Linie. 1.000 Credits reichen für 3 Sessions, 100 Credits bleiben. Eine andere Linie ist eine neue Runde.",
+    whatsappLabel: "Per WhatsApp senden",
+    whatsappPrefill: (credits, price) =>
+      `Ich möchte Session-Credits ${credits} (${price}). Die laufende Linie ist eine: Kursmaterial / Angebot / WhatsApp-Nachfassen / Belegsortierung.`,
     notThis: "Diese Seite ist nicht die KI-Einführung.",
     diagnosisLink: "Noch kein laufendes Projekt — Diagnose buchen",
     productsLink: "Session-Guthaben für ein laufendes Projekt",
@@ -159,6 +233,12 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
 
 export function getSessionCreditsCopy(locale: AppLocale): SessionCreditsCopy {
   return COPY[locale];
+}
+
+const SESSION_CREDIT_WHATSAPP = "85293103031";
+
+export function sessionCreditWhatsAppHref(text: string): string {
+  return `https://wa.me/${SESSION_CREDIT_WHATSAPP}?text=${encodeURIComponent(text)}`;
 }
 
 export function sessionCreditPacks(locale: PricingLocale) {
