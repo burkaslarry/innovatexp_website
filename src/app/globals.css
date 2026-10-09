@@ -271,8 +271,12 @@ body {
    Locale-specific font pairing
    EN  : Bodoni Moda (headings) + Inter (body)
    ZH  : Noto Serif TC (headings) + Noto Sans TC (body)
-   JA  : Shippori Mincho (headings) + Noto Sans TC (body)
+   JA  : Shippori Mincho (headings) + Noto Sans JP (body)
    ==================================== */
+[data-locale] {
+  font-family: var(--font-main);
+}
+
 [data-locale="en"] {
   --font-heading: var(--font-bodoni-moda), Georgia, "Times New Roman", serif;
   --font-main: var(--font-inter), system-ui, -apple-system, sans-serif;
@@ -286,7 +290,20 @@ body {
 
 [data-locale="ja"] {
   --font-heading: var(--font-shippori-mincho), var(--font-noto-sans-hk), "Hiragino Mincho ProN", serif;
-  --font-main: var(--font-noto-sans-tc), var(--font-noto-sans-hk), "Hiragino Sans", sans-serif;
+  --font-main: var(--font-noto-sans-jp), "Hiragino Sans", "Yu Gothic", sans-serif;
+}
+
+[data-locale="zh-hk"] :is(h1, h2, h3),
+[data-locale="zh-tw"] :is(h1, h2, h3),
+[data-locale="ja"] :is(h1, h2, h3) {
+  font-weight: 600;
+  letter-spacing: 0;
+}
+
+[data-locale="en"] .ixp-eyebrow,
+[data-locale="de"] .ixp-eyebrow {
+  letter-spacing: 0.16em;
+  text-transform: uppercase;
 }
 
 [data-locale="de"] {
@@ -328,7 +345,7 @@ h1, h2, h3 {
   color: var(--text-primary);
   line-height: 1.2;
   font-family: var(--font-heading);
-  font-weight: 700;
+  font-weight: 600;
 }
 
 p, span {

@@ -20,12 +20,12 @@ function pick(locale: AppLocale, pair: LocalePair): PageSeo {
 
 const HOME: LocalePair = {
   zh: {
-    title: "AI專業顧問服務｜香港中小企業務聽診｜InnovateXP",
+    title: "AI 商業顧問｜香港中小企業務聽診｜InnovateXP",
     description:
       "InnovateXP 由 Larry Lo 創立，幫香港 3–30 人中小企先聽診再落地。Agilizing 教材由 10 日縮到 3 小時。唔使買系統會直講。",
   },
   en: {
-    title: "AI Automation Consulting | Hong Kong SMEs | InnovateXP",
+    title: "AI business consultant | Hong Kong SMEs | InnovateXP",
     description:
       "Larry Lo helps Hong Kong SMEs of 3–30 diagnose the workflow first. Agilizing: training materials from 10 days to 3 hours. He says so if you should not buy.",
   },
@@ -110,14 +110,14 @@ const FITNESSXP: LocalePair = {
 
 const AI_CONSULTING: LocalePair = {
   zh: {
-    title: "專屬AI企業顧問｜香港中小企業務聽診｜InnovateXP",
+    title: "AI 商業顧問｜30 分鐘業務聽診｜InnovateXP",
     description:
       "AI 商業顧問 Larry Lo 幫 3–30 人公司先處理業務樽頸。Agilizing 教材由 10 日縮至 3 小時。聽診 HK$3,880 起，Discovery HK$6,880 起。",
-    ogTitle: "專屬AI企業顧問｜香港中小企業務聽診｜InnovateXP",
+    ogTitle: "AI 商業顧問｜30 分鐘業務聽診｜InnovateXP",
     ogDescription: "先聽診一條流程，再決定使唔使落地 AI。Snapshot HK$3,880 起。",
   },
   en: {
-    title: "AI Automation Consulting for Hong Kong SMEs | InnovateXP",
+    title: "AI business consultant | Hong Kong SMEs | InnovateXP",
     description:
       "Larry Lo helps Hong Kong SMEs fix one bottleneck, then put AI to work. Agilizing: 10 days to 3 hours. Snapshot HK$3,880; Discovery from HK$6,880.",
     ogTitle: "AI Automation Consulting for Hong Kong SMEs | InnovateXP",
@@ -262,7 +262,7 @@ const SME_AUTOMATION: LocalePair = {
 
 const HOME_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
-    title: "AI專業顧問服務｜香港中小企業流程診斷｜InnovateXP",
+    title: "AI 商業顧問｜香港中小企業流程診斷｜InnovateXP",
     description:
       "InnovateXP 由 Larry Lo 創立，協助香港 3–30 人中小企業先聽診再落地。Agilizing 教材由 10 日縮到 3 小時。不必買系統會直說。",
   },

@@ -17,6 +17,7 @@ export function EditorialChrome({ children }: { children: ReactNode }) {
     { label: content.nav.home, href: loc("/") },
     { label: content.nav.plans, href: loc("/services") },
     { label: content.nav.products, href: loc("/products") },
+    { label: locale === "en" ? "Journal" : locale === "ja" ? "記事" : locale === "de" ? "Journal" : "文章", href: loc("/blog") },
     { label: content.nav.about, href: loc("/about") },
     { label: content.nav.faq, href: loc("/faq") },
   ];

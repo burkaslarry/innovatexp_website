@@ -3,6 +3,7 @@ import {
   Geist_Mono,
   Inter,
   Noto_Sans_HK,
+  Noto_Sans_JP,
   Noto_Sans_TC,
   Noto_Serif_TC,
   Shippori_Mincho,
@@ -12,7 +13,7 @@ import {
  * Locale-specific font pairing.
  * EN  : Bodoni Moda (headings) + Inter (body)
  * ZH  : Noto Serif TC (headings) + Noto Sans TC (body)
- * JA  : Shippori Mincho (headings) + Noto Sans TC (body)
+ * JA  : Shippori Mincho (headings) + Noto Sans JP (body)
  * Fallback for all: Noto Sans HK (already covers Latin + CJK).
  */
 
@@ -49,6 +50,14 @@ export const notoSansTC = Noto_Sans_TC({
 });
 
 // --- Japanese ---
+export const notoSansJp = Noto_Sans_JP({
+  variable: "--font-noto-sans-jp",
+  subsets: ["latin"],
+  weight: ["400", "500", "700"],
+  display: "swap",
+  preload: false,
+});
+
 export const shipporiMincho = Shippori_Mincho({
   variable: "--font-shippori-mincho",
   subsets: ["latin"],
@@ -77,6 +86,7 @@ export const rootFontClassName = [
   inter.variable,
   notoSerifTC.variable,
   notoSansTC.variable,
+  notoSansJp.variable,
   shipporiMincho.variable,
   notoSansHk.variable,
   geistMono.variable,

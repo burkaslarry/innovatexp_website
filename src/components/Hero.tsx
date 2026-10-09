@@ -66,11 +66,11 @@ export function Hero({
       <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(260px,0.8fr)] lg:gap-16">
         <div className="hero-copy min-w-0 text-left">
           {eyebrow ? (
-            <p className="mb-5 text-[0.78rem] font-medium uppercase tracking-[0.16em] text-[color:var(--secondary-color)]">
+            <p className="ixp-eyebrow mb-5 text-[0.78rem] font-medium text-[color:var(--secondary-color)]">
               {eyebrow}
             </p>
           ) : null}
-          <h1 className="max-w-[16em] font-[family-name:var(--font-heading)] text-[clamp(2.35rem,5.4vw,4.6rem)] font-semibold leading-[1.08] tracking-[-0.03em] text-[color:var(--heading-foreground)]">
+          <h1 className="max-w-[16em] font-[family-name:var(--font-heading)] text-[clamp(2.35rem,5.4vw,4.6rem)] font-normal leading-[1.08] tracking-normal text-[color:var(--heading-foreground)]">
             <HeroTitle title={title} />
           </h1>
           {tagline?.trim() ? (

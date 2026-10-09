@@ -4,7 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import LanguageSwitcher from "@/app/LanguageSwitcher";
 import { useLanguage } from "@/app/LanguageContext";
-import { HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
+import { getHomepageContent, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
 import { PRICING, formatHkd } from "@/content/pricing";
 import { getBookingHref, getWhatsAppHref } from "@/content/cta-config";
 import { trackBookingCtaClick } from "@/lib/analytics";
@@ -131,7 +131,17 @@ const linkClass =
 export function QuammHome() {
   const { locale } = useLanguage();
   const loc = useLocalizedHref();
+  const content = getHomepageContent(locale);
   const copy = COPY[locale];
+  const cjk = locale === "zh-hk" || locale === "zh-tw" || locale === "ja";
+  const h1Name =
+    locale === "en"
+      ? "AI business consultant"
+      : locale === "ja"
+        ? "AIビジネスコンサルタント"
+        : locale === "de"
+          ? "KI-Berater"
+          : "AI 商業顧問";
   const bookingHref = getBookingHref(locale);
   const whatsappHref = getWhatsAppHref(locale);
   const snapshot = formatHkd(PRICING.quickCash.aiReadinessAssessment, locale === "zh-tw" ? "zh-hk" : locale);
@@ -154,13 +164,19 @@ export function QuammHome() {
           INNOVATEXP
         </Link>
         <nav className="flex items-center gap-4 text-sm md:gap-7" aria-label="InnovateXP">
-          <Link className={`${linkClass} hidden sm:inline`} href="#work">
-            {copy.workTitle}
+          <Link className={`${linkClass} hidden sm:inline`} href="#pain">
+            {content.nav.diagnosis}
+          </Link>
+          <Link className={`${linkClass} hidden md:inline`} href="#work">
+            {content.nav.services}
+          </Link>
+          <Link className={`${linkClass} hidden lg:inline`} href="#products">
+            {content.nav.products}
           </Link>
           <Link className={`${linkClass} hidden sm:inline`} href="#case">
-            {locale === "en" ? "Work" : locale === "ja" ? "事例" : locale === "de" ? "Arbeit" : "案例"}
+            {content.nav.cases}
           </Link>
-          <Link className={`${linkClass} hidden md:inline`} href={loc("/blog")}>
+          <Link className={linkClass} href={loc("/blog")}>
             {locale === "en" ? "Journal" : locale === "ja" ? "記事" : locale === "de" ? "Journal" : "文章"}
           </Link>
           <LanguageSwitcher className="max-w-[7.5rem] cursor-pointer border border-[#272727]/30 bg-transparent px-2 py-1 text-xs text-[#272727] sm:max-w-none" />
@@ -177,7 +193,10 @@ export function QuammHome() {
       <main>
         <section className="overflow-hidden px-4 pb-16 pt-6 md:px-8 md:pb-28 md:pt-10">
           <p className="mb-6 text-center text-sm leading-6 md:text-base">{copy.kicker}</p>
-          <h1 className="font-[family-name:var(--font-heading)] text-[clamp(4.5rem,16vw,11rem)] font-normal leading-[0.82] tracking-[-0.04em]">
+          <h1 className={`font-[family-name:var(--font-heading)] font-normal leading-[0.82] ${cjk ? "tracking-normal" : "tracking-[-0.04em]"} text-[clamp(4.5rem,16vw,11rem)]`}>
+            <span className="ixp-eyebrow mb-8 block text-center font-[family-name:var(--font-main)] text-base font-normal leading-7 tracking-normal md:text-lg">
+              {h1Name}
+            </span>
             <span className="block">{copy.line1}</span>
             <span className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-4">
               <span>{copy.line2}</span>
@@ -199,17 +218,41 @@ export function QuammHome() {
           </h1>
         </section>
 
+        <section id="pain" className="border-t border-[#272727]/20 px-5 py-16 md:px-10 md:py-24">
+          <h2 className="max-w-[16ch] font-[family-name:var(--font-heading)] text-4xl leading-[1.05] font-normal md:text-6xl">{content.problem.title}</h2>
+          <ul className="mt-12 grid gap-8 md:grid-cols-2">
+            {content.problem.items.map((item) => (
+              <li key={item.title}>
+                <h3 className="font-[family-name:var(--font-heading)] text-3xl font-normal">{item.title}</h3>
+                <p className="mt-3 max-w-md text-base leading-7">{item.body}</p>
+              </li>
+            ))}
+          </ul>
+        </section>
+
         <section id="work" className="border-t border-[#272727]/20 px-5 py-16 md:px-10 md:py-24">
-          <h2 className="font-[family-name:var(--font-heading)] text-5xl leading-none md:text-7xl">{copy.workTitle}</h2>
+          <h2 className="font-[family-name:var(--font-heading)] text-5xl font-normal leading-none md:text-7xl">{content.approach.title}</h2>
           <ol className="mt-12 divide-y divide-[#272727]/20 border-y border-[#272727]/20">
-            {copy.steps.map((step, index) => (
+            {content.approach.steps.map((step, index) => (
               <li key={step.title} className="grid gap-3 py-8 md:grid-cols-[8rem_minmax(0,1fr)_minmax(0,1.2fr)] md:items-baseline md:gap-8">
                 <p className="text-xs tracking-[0.2em]">0{index + 1}</p>
-                <h3 className="font-[family-name:var(--font-heading)] text-4xl leading-none md:text-6xl">{step.title}</h3>
+                <h3 className="font-[family-name:var(--font-heading)] text-4xl font-normal leading-none md:text-6xl">{step.title}</h3>
                 <p className="max-w-md text-base leading-7 md:text-lg md:leading-8">{step.body}</p>
               </li>
             ))}
           </ol>
+        </section>
+
+        <section id="products" className="border-t border-[#272727]/20 px-5 py-16 md:px-10 md:py-24">
+          <h2 className="font-[family-name:var(--font-heading)] text-4xl font-normal leading-none md:text-6xl">{content.products.title}</h2>
+          <ul className="mt-12 grid gap-8 md:grid-cols-2">
+            {content.products.items.map((item) => (
+              <li key={item.id}>
+                <h3 className="font-[family-name:var(--font-heading)] text-3xl font-normal">{item.name}</h3>
+                <p className="mt-3 max-w-md text-base leading-7">{item.body}</p>
+              </li>
+            ))}
+          </ul>
         </section>
 
         <section id="case" className="px-5 py-16 md:px-10 md:py-24">

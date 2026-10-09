@@ -135,23 +135,23 @@ export default async function AiConsultingPage({ params }: { params: Promise<{ l
     <main className="mx-auto min-h-screen max-w-5xl px-4 py-12 text-slate-900 dark:text-slate-100 sm:px-6">
       <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }} />
       <header className="rounded-2xl bg-slate-950 px-6 py-10 text-white md:px-10">
-        <p className="text-sm font-semibold uppercase tracking-wider text-cyan-300">InnovateXP · {zh ? "AI 商業顧問" : "AI business consulting"}</p>
-        <h1 className="mt-4 text-3xl font-bold leading-tight md:text-5xl">
+        <p className="ixp-eyebrow text-sm font-semibold text-cyan-300">InnovateXP · {locale === "en" ? "AI business consultant" : locale === "ja" ? "AIビジネスコンサルタント" : locale === "de" ? "KI-Berater" : "AI 商業顧問"}</p>
+        <h1 className="mt-4 text-3xl font-normal leading-tight md:text-5xl">
           {loc === "ja"
-            ? `香港SMEの専属AI顧問：30分の診断、${snapshot}から`
+            ? `AIビジネスコンサルタント：30分の診断、${snapshot}から`
             : loc === "de"
               ? `KI-Berater für Hongkonger KMU: 30-Minuten-Diagnose ab ${snapshot}`
               : loc === "zh-tw"
-                ? `專屬 AI 企業顧問：30 分鐘業務診斷，${snapshot} 起`
+                ? `AI 商業顧問：30 分鐘業務診斷，${snapshot} 起`
                 : zh
-                  ? `專屬 AI 企業顧問：30 分鐘業務聽診，${snapshot} 起`
-                  : `AI Automation Consulting: 30-minute diagnosis from ${snapshot}`}
+                  ? `AI 商業顧問：30 分鐘業務聽診，${snapshot} 起`
+                  : `AI business consultant: 30-minute diagnosis from ${snapshot}`}
         </h1>
         <p className="mt-5 max-w-3xl text-base font-medium leading-8 text-white" data-geo-answer>
           {loc === "ja"
-            ? `InnovateXPは香港の3〜30人企業のボトルネックを整え、その後AIを入れます。Agilizingの教材は10日から3時間、月あたり少なくとも5万香港ドルの削減です。`
+            ? `InnovateXPは香港の3〜30人企業のボトルネックを整え、その後AIを入れます。Agilizingの教材は10日から3時間です。`
             : loc === "de"
-              ? `InnovateXP richtet bei Hongkonger KMU mit 3–30 Personen zuerst den Engpass, dann die KI. Bei Agilizing: 10 Tage auf 3 Stunden,.`
+              ? `InnovateXP richtet bei Hongkonger KMU mit 3–30 Personen zuerst den Engpass, dann die KI. Bei Agilizing: 10 Tage auf 3 Stunden.`
               : loc === "zh-tw"
                 ? "InnovateXP 協助香港 3–30 人中小企業處理業務瓶頸，先整理流程再落地 AI。善敏教材由 10 日縮至 3 小時，時間縮短。"
                 : zh
