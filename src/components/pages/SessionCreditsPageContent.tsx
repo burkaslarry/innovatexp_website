@@ -59,7 +59,6 @@ export function SessionCreditsPageContent() {
             <p className="mt-3 flex-1 text-sm leading-6 text-[color:var(--text-secondary)]">
               {copy.sessions(pack.sessions, pack.hours, pack.remainder)}
             </p>
-            <p className="mt-3 text-sm text-[color:var(--text-tertiary)]">{copy.unit(pack.listHourlyLabel)}</p>
             <div className="mt-5">
               <a
                 href={sessionCreditWhatsAppHref(

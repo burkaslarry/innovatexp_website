@@ -65,18 +65,16 @@ export const PRICING = {
   /*
    * Prepaid session credits for clients who already have a live project,
    * workflow, system, or shop upgrade. Not the AI implementation funnel.
-   * One session = 2 hours = 300 credits. Selling rate is HK$400/hour (markup).
-   * Price is that rate on credits purchased. 1,000 has no bonus.
-   * 2,000 includes 200 bonus credits; 4,000 includes 400.
+   * One session = 2 hours = 300 credits. Pack price is the amount charged.
+   * 1,000 has no bonus. 2,000 includes 200 bonus credits; 4,000 includes 400.
    */
   sessionCredits: {
     creditsPerSession: 300,
     hoursPerSession: 2,
-    hourlyRateHkd: 400,
     packs: [
-      { id: "sessionCredits1000", credits: 1_000, bonusCredits: 0 },
-      { id: "sessionCredits2000", credits: 2_000, bonusCredits: 200 },
-      { id: "sessionCredits4000", credits: 4_000, bonusCredits: 400 },
+      { id: "sessionCredits1000", credits: 1_000, bonusCredits: 0, priceHkd: 3_000 },
+      { id: "sessionCredits2000", credits: 2_000, bonusCredits: 200, priceHkd: 5_600 },
+      { id: "sessionCredits4000", credits: 4_000, bonusCredits: 400, priceHkd: 10_000 },
     ],
   },
   /* Line A — retainers. Response time is triage, not a fix SLA. */
@@ -201,11 +199,11 @@ export function getConsultancyPlans(locale: PricingLocale) {
   ];
 }
 
-/** List price for credits purchased, at the HK$400/hour markup. Bonus credits are free. */
+/** Amount charged for a credit pack. Bonus credits are free and are not in `credits`. */
 export function sessionCreditListPriceHkd(credits: number): number {
-  const { hourlyRateHkd, creditsPerSession, hoursPerSession } = PRICING.sessionCredits;
-  const creditsPerHour = creditsPerSession / hoursPerSession;
-  return Math.round((credits * hourlyRateHkd) / creditsPerHour);
+  const pack = PRICING.sessionCredits.packs.find((item) => item.credits === credits);
+  if (!pack) throw new Error(`No session credit price for ${credits} credits`);
+  return pack.priceHkd;
 }
 
 export function getQuickCashOffers(locale: PricingLocale) {

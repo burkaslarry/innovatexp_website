@@ -34,13 +34,13 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
   "zh-hk": {
     metaTitle: "即時問診點數｜已上線項目｜InnovateXP",
     metaDescription:
-      "只限已展示項目同流程、系統或網店升級嘅客戶。定價每小時 HK$400。1,000 點冇贈送；2,000 送 200 點；4,000 送 400 點。唔係 AI 導入方案。",
+      "只限已展示項目同流程、系統或網店升級嘅客戶。1,000 點 HK$3,000，冇贈送；2,000 點 HK$5,600，送 200 點；4,000 點 HK$10,000，送 400 點。唔係 AI 導入方案。",
     kicker: "已上線項目",
     title: "即時問診點數",
     lead: "你已經同我哋展示過項目同流程，系統或者網店升級亦已經喺度行緊。一節兩小時，用 300 點，席上問、席上解決。呢個計劃同 AI 導入方案無關。",
     boundary: "未有上線項目、流程、系統或網店，唔可以買呢組點數。新流程要先做業務聽診，唔好用點數代替導入。",
     sessionRule: "1 節 = 2 小時 = 300 點",
-    buyRule: "定價每小時 HK$400。只可以買 1,000、2,000 或 4,000 點。1,000 點冇贈送。2,000 送 200 點；4,000 送 400 點。",
+    buyRule: "只可以買 1,000、2,000 或 4,000 點。1,000 點冇贈送。2,000 送 200 點；4,000 送 400 點。",
     recommended: "最常揀",
     bestRate: "每小時最抵",
     bonus: (n) => `送 ${n.toLocaleString("en-HK")} 點`,
@@ -73,13 +73,13 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
   "zh-tw": {
     metaTitle: "即時問診點數｜已上線專案｜InnovateXP",
     metaDescription:
-      "只限已展示專案與流程、系統或網店升級的客戶。定價每小時 HK$400。1,000 點沒有加送；2,000 加送 200 點；4,000 加送 400 點。不是 AI 導入方案。",
+      "只限已展示專案與流程、系統或網店升級的客戶。1,000 點 HK$3,000，沒有加送；2,000 點 HK$5,600，加送 200 點；4,000 點 HK$10,000，加送 400 點。不是 AI 導入方案。",
     kicker: "已上線專案",
     title: "即時問診點數",
     lead: "你已經向我們展示過專案與流程，系統或網店升級也已經在運行。一節兩小時，使用 300 點，當場問、當場解決。這個計劃與 AI 導入方案無關。",
     boundary: "還沒有上線專案、流程、系統或網店，不能購買這組點數。新流程要先做業務診斷，不要用點數代替導入。",
     sessionRule: "1 節 = 2 小時 = 300 點",
-    buyRule: "定價每小時 HK$400。只能購買 1,000、2,000 或 4,000 點。1,000 點沒有加送。2,000 加送 200 點；4,000 加送 400 點。",
+    buyRule: "只能購買 1,000、2,000 或 4,000 點。1,000 點沒有加送。2,000 加送 200 點；4,000 加送 400 點。",
     recommended: "最常選",
     bestRate: "每小時最划算",
     bonus: (n) => `加送 ${n.toLocaleString("en-HK")} 點`,
@@ -112,13 +112,13 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
   en: {
     metaTitle: "Session credits for live projects | InnovateXP",
     metaDescription:
-      "Only after a live project and workflow, system, or shop upgrade. Rate is HK$400 per hour. 1,000 credits include no bonus; 2,000 include 200; 4,000 include 400. Not an AI implementation package.",
+      "Only after a live project and workflow, system, or shop upgrade. 1,000 credits HK$3,000 with no bonus; 2,000 credits HK$5,600 plus 200; 4,000 credits HK$10,000 plus 400. Not an AI implementation package.",
     kicker: "Already live",
     title: "Session credits",
     lead: "You have already shown us the project and the workflow, and the system or shop upgrade is already running. One session is two hours and 300 credits. We diagnose it and resolve it in that session. This plan is not an AI implementation package.",
     boundary: "If the project, workflow, system, or shop is not already live, you cannot buy these credits. A new workflow starts with a business diagnosis, not with this balance.",
     sessionRule: "1 session = 2 hours = 300 credits",
-    buyRule: "The rate is HK$400 per hour. You can buy only 1,000, 2,000, or 4,000 credits. The 1,000 pack has no bonus. The 2,000 pack includes 200 bonus credits. The 4,000 pack includes 400.",
+    buyRule: "You can buy only 1,000, 2,000, or 4,000 credits. The 1,000 pack has no bonus. The 2,000 pack includes 200 bonus credits. The 4,000 pack includes 400.",
     recommended: "Most chosen",
     bestRate: "Lowest rate",
     bonus: (n) => `+${n.toLocaleString("en-HK")} bonus`,
@@ -152,13 +152,13 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
   ja: {
     metaTitle: "稼働中案件のセッションクレジット｜InnovateXP",
     metaDescription:
-      "すでに稼働中のプロジェクト向け。料金は1時間 HK$400。1,000クレジットに追加なし。2,000は200追加、4,000は400追加。AI導入パッケージではありません。",
+      "すでに稼働中のプロジェクト向け。1,000クレジット HK$3,000（追加なし）。2,000は HK$5,600 で 200 追加。4,000は HK$10,000 で 400 追加。AI導入パッケージではありません。",
     kicker: "すでに稼働中",
     title: "セッションクレジット",
     lead: "プロジェクトと業務フローをすでに提示し、システムまたはネットショップのアップグレードが動いている方向けです。1セッションは2時間、300クレジット。その場で診断し、その場で解決します。AI導入パッケージとは別です。",
     boundary: "稼働中のプロジェクト、フロー、システム、ネットショップがない場合は購入できません。新しい業務は業務診断から始め、この残高では代替しません。",
     sessionRule: "1セッション = 2時間 = 300クレジット",
-    buyRule: "料金は1時間 HK$400。購入できるのは 1,000、2,000、4,000 クレジットだけです。1,000 に追加はありません。2,000 は 200 追加。4,000 は 400 追加。",
+    buyRule: "購入できるのは 1,000、2,000、4,000 クレジットだけです。1,000 に追加はありません。2,000 は 200 追加。4,000 は 400 追加。",
     recommended: "いちばん選ばれる",
     bestRate: "1クレジット最安",
     bonus: (n) => `+${n.toLocaleString("en-HK")} 追加`,
@@ -192,13 +192,13 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
   de: {
     metaTitle: "Session-Guthaben für laufende Projekte | InnovateXP",
     metaDescription:
-      "Nur bei laufendem Projekt und Ablauf, System oder Shop. Satz: HK$400 pro Stunde. 1.000 Credits ohne Bonus; 2.000 plus 200; 4.000 plus 400. Kein KI-Einführungspaket.",
+      "Nur bei laufendem Projekt und Ablauf, System oder Shop. 1.000 Credits HK$3.000 ohne Bonus; 2.000 Credits HK$5.600 plus 200; 4.000 Credits HK$10.000 plus 400. Kein KI-Einführungspaket.",
     kicker: "Bereits live",
     title: "Session-Guthaben",
     lead: "Sie haben Projekt und Ablauf schon gezeigt, und das System oder Shop-Upgrade läuft bereits. Eine Session dauert zwei Stunden und kostet 300 Credits. Diagnose und Lösung passieren in dieser Session. Das ist kein KI-Einführungspaket.",
     boundary: "Ohne laufendes Projekt, Ablauf, System oder Shop können Sie dieses Guthaben nicht kaufen. Ein neuer Ablauf beginnt mit einer Geschäftsdiagnose, nicht mit diesem Kontostand.",
     sessionRule: "1 Session = 2 Stunden = 300 Credits",
-    buyRule: "Der Satz ist HK$400 pro Stunde. Sie können nur 1.000, 2.000 oder 4.000 Credits kaufen. 1.000 enthält keinen Bonus. 2.000 enthalten 200 Bonus-Credits. 4.000 enthalten 400.",
+    buyRule: "Sie können nur 1.000, 2.000 oder 4.000 Credits kaufen. 1.000 enthält keinen Bonus. 2.000 enthalten 200 Bonus-Credits. 4.000 enthalten 400.",
     recommended: "Am häufigsten gewählt",
     bestRate: "Niedrigster Satz",
     bonus: (n) => `+${n.toLocaleString("de-DE")} Bonus`,
@@ -242,7 +242,7 @@ export function sessionCreditWhatsAppHref(text: string): string {
 }
 
 export function sessionCreditPacks(locale: PricingLocale) {
-  const { creditsPerSession, hoursPerSession, hourlyRateHkd, packs } = PRICING.sessionCredits;
+  const { creditsPerSession, hoursPerSession, packs } = PRICING.sessionCredits;
   const creditsPerHour = creditsPerSession / hoursPerSession;
   const priced = packs.map((pack) => {
     const total = pack.credits + pack.bonusCredits;
@@ -265,7 +265,6 @@ export function sessionCreditPacks(locale: PricingLocale) {
       hours: row.sessions * hoursPerSession,
       priceLabel: formatHkd(row.priceHkd, locale),
       unitLabel: formatHkd(hourlyAmount, locale),
-      listHourlyLabel: formatHkd(hourlyRateHkd, locale),
       recommended: index === 1,
       bestRate: row.hourly === lowestHourly && tiedForLowest.length === 1,
     };

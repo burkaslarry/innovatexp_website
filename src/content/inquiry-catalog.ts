@@ -260,8 +260,8 @@ function sessionCreditItems(): InquiryCatalogItem[] {
       amountHkd: sessionCreditListPriceHkd(packs[0].credits),
       titleEn: "Session credits 1,000",
       titleZh: "即時問診點數 1,000",
-      blurbEn: "1,000 credits, no bonus, at HK$400 per hour. For a project, workflow, system, or shop that is already running. Not an AI implementation package.",
-      blurbZh: "1,000 點，冇贈送，每小時 HK$400。只限已上線嘅項目、流程、系統或網店。唔係 AI 導入方案。",
+      blurbEn: "1,000 credits, no bonus, HK$3,000. For a project, workflow, system, or shop that is already running. Not an AI implementation package.",
+      blurbZh: "1,000 點，冇贈送，HK$3,000。只限已上線嘅項目、流程、系統或網店。唔係 AI 導入方案。",
       layer: "sessionCredits",
     },
     {
