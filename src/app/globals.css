@@ -598,12 +598,14 @@ header, nav {
   border-bottom: 0;
 }
 
-.quamm-frame h1,
-.quamm-frame h2,
-.quamm-frame h3,
-.quamm-frame p,
-.quamm-frame a {
+.quamm-frame :is(h1, h2, h3, p, a, span, li) {
   color: #272727;
+}
+
+.quamm-frame a.quamm-book,
+.quamm-frame a.quamm-book:hover {
+  background: #272727;
+  color: #f4f1ea;
 }
 
 /* ====================================

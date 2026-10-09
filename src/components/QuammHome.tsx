@@ -133,7 +133,6 @@ export function QuammHome() {
   const loc = useLocalizedHref();
   const content = getHomepageContent(locale);
   const copy = COPY[locale];
-  const cjk = locale === "zh-hk" || locale === "zh-tw" || locale === "ja";
   const h1Name =
     locale === "en"
       ? "AI business consultant"
@@ -191,31 +190,38 @@ export function QuammHome() {
       </header>
 
       <main>
-        <section className="overflow-hidden px-4 pb-16 pt-6 md:px-8 md:pb-28 md:pt-10">
-          <p className="mb-6 text-center text-sm leading-6 md:text-base">{copy.kicker}</p>
-          <h1 className={`font-[family-name:var(--font-heading)] font-normal leading-[0.82] ${cjk ? "tracking-normal" : "tracking-[-0.04em]"} text-[clamp(4.5rem,16vw,11rem)]`}>
-            <span className="ixp-eyebrow mb-8 block text-center font-[family-name:var(--font-main)] text-base font-normal leading-7 tracking-normal md:text-lg">
-              {h1Name}
-            </span>
-            <span className="block">{copy.line1}</span>
-            <span className="mt-2 flex flex-wrap items-center gap-x-6 gap-y-4">
-              <span>{copy.line2}</span>
-              <Image
-                src="/hero-larry.webp"
-                alt={locale === "en" || locale === "de" || locale === "ja" ? "Larry Lo speaking with a microphone" : "Larry Lo 拿住麥克風講緊嘢"}
-                width={471}
-                height={567}
-                priority
-                className="h-auto w-[min(42vw,220px)] object-cover"
-              />
-            </span>
-            <span className="mt-2 flex flex-col gap-8 pr-2 md:pr-6">
-              <span>{copy.line3}</span>
-              <span className="max-w-[18rem] font-[family-name:var(--font-main)] text-base font-normal leading-7 tracking-normal md:text-lg md:leading-8">
-                {copy.aside}
-              </span>
-            </span>
-          </h1>
+        <section className="px-5 pb-16 pt-8 md:px-10 md:pb-24 md:pt-14">
+          <div className="grid items-end gap-10 lg:grid-cols-[minmax(0,1fr)_220px] lg:gap-16">
+            <div>
+              <p className="text-sm leading-6 md:text-base">{copy.kicker}</p>
+              <h1 className="mt-4 max-w-[12ch] font-[family-name:var(--font-heading)] text-[clamp(2.75rem,6vw,5.25rem)] font-normal leading-[1.08] tracking-normal">
+                {h1Name}
+              </h1>
+              <p className="mt-6 max-w-xl font-[family-name:var(--font-heading)] text-[clamp(1.65rem,3vw,2.4rem)] font-normal leading-[1.25] tracking-normal">
+                {locale === "zh-hk" || locale === "zh-tw"
+                  ? `${copy.line1}${copy.line2}，${copy.line3}。`
+                  : locale === "ja"
+                    ? `${copy.line1}${copy.line2}、${copy.line3}。`
+                    : `${copy.line1} ${copy.line2} ${copy.line3}.`}
+              </p>
+              <p className="mt-5 max-w-xl text-lg leading-8">{copy.aside}</p>
+              <Link
+                href={bookingHref}
+                onClick={() => trackBookingCtaClick("hero")}
+                className="quamm-book mt-8 inline-flex min-h-12 items-center px-6 text-base font-semibold"
+              >
+                {copy.book}
+              </Link>
+            </div>
+            <Image
+              src="/hero-larry.webp"
+              alt={locale === "en" || locale === "de" || locale === "ja" ? "Larry Lo speaking with a microphone" : "Larry Lo 拿住麥克風講緊嘢"}
+              width={471}
+              height={567}
+              priority
+              className="h-auto w-full max-w-[220px] object-cover"
+            />
+          </div>
         </section>
 
         <section id="pain" className="border-t border-[#272727]/20 px-5 py-16 md:px-10 md:py-24">
