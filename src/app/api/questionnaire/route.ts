@@ -1,168 +1,36 @@
 import { NextResponse } from "next/server";
-import { sendQuestionnaireResendEmail } from "@/lib/resend-mail";
 import { insertQuestionnaireLead } from "@/lib/questionnaire-db";
-import { submitToWeb3FormsContact } from "@/lib/web3forms-submit";
-
-export type QuestionnaireApiBody = {
-  pathId?: string;
-  questionnaireType?: string;
-  subject?: string;
-  name?: string;
-  company?: string;
-  profession?: string;
-  email?: string;
-  phone?: string;
-  industry?: string;
-  urgency?: string;
-  interest?: string;
-  formattedQa?: string;
-  answers?: Record<string, string | string[]>;
-};
-
-function safeTrim(v: unknown) {
-  return typeof v === "string" ? v.trim() : "";
-}
-
-function labelFromAnswers(answers: Record<string, string | string[]> | undefined, key: string): string {
-  if (!answers) return "";
-  const v = answers[key];
-  if (Array.isArray(v)) return v.join(", ");
-  return typeof v === "string" ? v : "";
-}
+import { validateQuestionnaire } from "@/lib/questionnaire-validation";
+import { notifyQuestionnaireLead } from "@/lib/questionnaire-notifications";
+import { enforceFormSubmissionLimit } from "@/lib/form-submission-limit";
 
 export async function POST(req: Request) {
   try {
-    const body = (await req.json()) as QuestionnaireApiBody;
-
-    const pathId = safeTrim(body.pathId) || "questionnaire";
-    const questionnaireType =
-      safeTrim(body.questionnaireType) ||
-      (pathId.includes("feedback") ? "AI Feedback Questionnaire" : "AI Consultation Questionnaire");
-
-    const name = safeTrim(body.name) || labelFromAnswers(body.answers, "name") || "-";
-    const company =
-      safeTrim(body.company) || labelFromAnswers(body.answers, "company") || "—";
-    const profession =
-      safeTrim(body.profession) ||
-      labelFromAnswers(body.answers, "role") ||
-      labelFromAnswers(body.answers, "profession") ||
-      "—";
-    const email = safeTrim(body.email) || labelFromAnswers(body.answers, "email");
-    const phone =
-      safeTrim(body.phone) ||
-      labelFromAnswers(body.answers, "phone") ||
-      labelFromAnswers(body.answers, "whatsapp") ||
-      "—";
-    const industry = safeTrim(body.industry) || labelFromAnswers(body.answers, "industry");
-    const urgency =
-      safeTrim(body.urgency) ||
-      labelFromAnswers(body.answers, "startWhen") ||
-      labelFromAnswers(body.answers, "urgency");
-    const interest =
-      safeTrim(body.interest) ||
-      labelFromAnswers(body.answers, "afterDiagnosis") ||
-      labelFromAnswers(body.answers, "interest");
-    const formattedQa = safeTrim(body.formattedQa) || JSON.stringify(body.answers ?? {}, null, 2);
-    const subject =
-      safeTrim(body.subject) || `${questionnaireType} — ${company !== "—" ? company : name}`;
-
-    const isFeedback = pathId.includes("feedback") || questionnaireType.toLowerCase().includes("feedback");
-
-    if (!isFeedback) {
-      const emailOk = Boolean(email && /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email));
-      const phoneOk = Boolean(phone && phone !== "—");
-      if (!emailOk && !phoneOk) {
-        return NextResponse.json(
-          { ok: false, error: "WhatsApp number or valid email is required." },
-          { status: 400 },
-        );
-      }
-      if (!company || company === "—") {
-        return NextResponse.json({ ok: false, error: "Company is required." }, { status: 400 });
-      }
-    }
-
-    const notifyEmail = email && email.includes("@") ? email : "noreply@innovatexp.co";
-
-    const [resendResult, dbResult] = await Promise.all([
-      sendQuestionnaireResendEmail({
-        subject,
-        questionnaireType,
-        name,
-        company,
-        profession,
-        email: notifyEmail,
-        phone,
-        industry,
-        urgency,
-        interest,
-        formattedQa,
-      }),
-      insertQuestionnaireLead({
-        pathId,
-        questionnaireType,
-        name,
-        company,
-        profession,
-        email: notifyEmail,
-        phone,
-        industry,
-        urgency,
-        interest,
-        formattedQa,
-        answers: body.answers,
-      }),
-    ]);
-
-    // Fallback: if Resend missing/failed, keep Web3Forms so leads are not lost
-    let web3: { success: boolean; detail?: string } | null = null;
-    if (!resendResult.ok) {
-      web3 = await submitToWeb3FormsContact({
-        subject,
-        from_name: "InnovateXP Limited",
-        name,
-        email: notifyEmail,
-        replyto: notifyEmail,
-        message: [
-          phone,
-          `Type: ${questionnaireType}`,
-          `Profession: ${profession}`,
-          `Company: ${company}`,
-          "",
-          formattedQa,
-          "",
-          company,
-        ].join("\n"),
-      });
-    }
-
-    const emailOk = resendResult.ok || Boolean(web3?.success);
-    const dbOk = dbResult.ok;
-
-    if (!emailOk || !dbOk) {
-      return NextResponse.json(
-        {
-          ok: false,
-          error: "Could not save lead and/or send email. Check DATABASE_URL / RESEND_API_KEY.",
-          resend: resendResult,
-          db: dbResult,
-          web3,
-        },
-        { status: 502 },
-      );
-    }
-
-    return NextResponse.json({
-      ok: true,
-      email: {
-        provider: resendResult.ok ? "resend" : web3?.success ? "web3forms" : "none",
-        resend: resendResult,
-        web3,
-      },
-      db: dbResult,
+    const raw = await req.text();
+    if (raw.length > 32000) return NextResponse.json({ ok: false, error: "Request too large" }, { status: 413 });
+    let body;
+    try { body = JSON.parse(raw); } catch { return NextResponse.json({ ok: false, error: "Invalid form" }, { status: 400 }); }
+    const error = validateQuestionnaire(body);
+    if (error) return NextResponse.json({ ok: false, error }, { status: 400 });
+    const text = (v: unknown) => typeof v === "string" ? v.trim() : "";
+    const feedback = body.pathId === "ai-feedback-questionnaire";
+    const email = text(body.email);
+    const phone = text(body.phone);
+    if ((!feedback && (!text(body.company) || !text(body.name) || (!phone && !email))) ||
+      (email && !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email)) || phone.length > 64) return NextResponse.json({ ok: false, error: "Invalid contact details" }, { status: 400 });
+    const blocked = await enforceFormSubmissionLimit(req); if (blocked) return blocked;
+    const saved = await insertQuestionnaireLead({
+      submissionId: body.submissionId, pathId: body.pathId, questionnaireType: feedback ? "AI Feedback Questionnaire" : "AI Consultation Questionnaire",
+      name: text(body.name) || "—", company: text(body.company) || "Feedback", profession: text(body.profession), email, phone,
+      industry: text(body.industry), urgency: text(body.urgency), interest: text(body.interest),
+      formattedQa: text(body.formattedQa) || JSON.stringify(body.answers), answers: body.answers,
     });
-  } catch (e) {
-    console.error("questionnaire API:", e);
-    return NextResponse.json({ ok: false, error: "Server error" }, { status: 500 });
+    if (!saved.ok || !saved.id) return NextResponse.json({ ok: false, error: "Submission temporarily unavailable" }, { status: 503 });
+    // A saved lead is successful even if notification delivery needs retry.
+    try { await notifyQuestionnaireLead(saved.id); } catch { /* Stored pending notification is retried by the job. */ }
+    return NextResponse.json({ ok: true }, { headers: { "Cache-Control": "no-store" } });
+  } catch {
+    console.error("Questionnaire submission failed");
+    return NextResponse.json({ ok: false, error: "Submission temporarily unavailable" }, { status: 503 });
   }
 }

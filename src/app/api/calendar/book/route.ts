@@ -1,7 +1,9 @@
 import { enforceFormSubmissionLimit } from "@/lib/form-submission-limit";
 import { NextResponse } from "next/server";
 import { createEvents, type EventAttributes } from "ics";
-import { format, parseISO } from "date-fns";
+import { parseISO } from "date-fns";
+import { validBookingSlot, validTimezone, slotLabel, PROVIDER_TIMEZONE } from "@/lib/booking-slots";
+import { isValidLocale } from "@/lib/i18n-routing";
 import { sendFormNotification } from "@/lib/form-notification";
 import { buildBookingConfirmationWeb3Fields } from "@/lib/build-booking-web3forms-fields";
 import { insertCalendarBooking } from "@/lib/site-records";
@@ -14,28 +16,37 @@ interface TimeSlot {
 
 export async function POST(req: Request) {
   try {
-    const { visitorName, visitorEmail, visitorPhone, visitorCompany, selectedDate, selectedTimeSlot, message } =
+    const { visitorName, visitorEmail, visitorPhone, visitorCompany, selectedDate, selectedTimeSlot, message, locale: requestedLocale, timezone: requestedTimezone } =
       await req.json();
 
     if (!visitorName || !visitorEmail || !selectedDate || !selectedTimeSlot) {
       return NextResponse.json({ error: "Missing required fields." }, { status: 400 });
     }
-    if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(visitorEmail)) {
+    if (typeof visitorName !== "string" || visitorName.length > 255 || typeof visitorEmail !== "string" || visitorEmail.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(visitorEmail)) {
       return NextResponse.json({ error: "Invalid email format." }, { status: 400 });
     }
 
     const timeSlot = selectedTimeSlot as TimeSlot;
+    if (!validBookingSlot(selectedDate, timeSlot.start, timeSlot.end) ||
+      (requestedTimezone !== undefined && !validTimezone(requestedTimezone)) ||
+      (typeof visitorPhone === "string" && visitorPhone.length > 64) ||
+      (typeof visitorCompany === "string" && visitorCompany.length > 255) ||
+      (typeof message === "string" && message.length > 4000)) {
+      return NextResponse.json({ error: "Invalid booking details" }, { status: 400 });
+    }
     const startDateTime = parseISO(timeSlot.start);
     const endDateTime = parseISO(timeSlot.end);
 
-    if (Number.isNaN(startDateTime.getTime()) || Number.isNaN(endDateTime.getTime())) {
+    if (!validBookingSlot(selectedDate, timeSlot.start, timeSlot.end)) {
       return NextResponse.json({ error: "Invalid date/time slot format." }, { status: 400 });
     }
 
     const blocked = await enforceFormSubmissionLimit(req);
     if (blocked) return blocked;
 
-    const eventTitle = `業務拜訪 - ${visitorName}`;
+    const locale = isValidLocale(requestedLocale) ? requestedLocale : "zh-hk";
+    const timezone = validTimezone(requestedTimezone) ? requestedTimezone : PROVIDER_TIMEZONE;
+    const eventTitle = `${locale.startsWith("zh") ? "業務聽診" : "Workflow diagnosis"} - ${visitorName}`;
     const saved = await insertCalendarBooking({
       name: String(visitorName),
       email: String(visitorEmail),
@@ -46,29 +57,31 @@ export async function POST(req: Request) {
       message: typeof message === "string" ? message : "",
     });
     if (!saved.ok) {
+      if (saved.conflict) return NextResponse.json({ error: "This slot has just been booked. Please choose another time." }, { status: 409 });
       console.error("Calendar booking could not be saved:", saved.error || "unknown error");
       return NextResponse.json({ error: "預約未能儲存，請稍後再試。" }, { status: 503 });
     }
 
     const event: EventAttributes = {
       start: [
-        startDateTime.getFullYear(),
-        startDateTime.getMonth() + 1,
-        startDateTime.getDate(),
-        startDateTime.getHours(),
-        startDateTime.getMinutes(),
+        startDateTime.getUTCFullYear(),
+        startDateTime.getUTCMonth() + 1,
+        startDateTime.getUTCDate(),
+        startDateTime.getUTCHours(),
+        startDateTime.getUTCMinutes(),
       ],
       end: [
-        endDateTime.getFullYear(),
-        endDateTime.getMonth() + 1,
-        endDateTime.getDate(),
-        endDateTime.getHours(),
-        endDateTime.getMinutes(),
+        endDateTime.getUTCFullYear(),
+        endDateTime.getUTCMonth() + 1,
+        endDateTime.getUTCDate(),
+        endDateTime.getUTCHours(),
+        endDateTime.getUTCMinutes(),
       ],
+      startInputType: "utc", endInputType: "utc", startOutputType: "utc", endOutputType: "utc",
       title: eventTitle,
       description: `訪客: ${visitorName}\n電子郵件: ${visitorEmail}\n留言: ${message || "無留言"}`,
       location: "InnovateXP Limited Office / Online Meeting",
-      url: `${process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co"}/zh-hk/bookme`,
+      url: `${process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co"}/${locale}/bookme`,
       organizer: {
         name: "InnovateXP Limited",
         email: process.env.SENDER_EMAIL || "noreply@innovatexp.com",
@@ -99,11 +112,11 @@ export async function POST(req: Request) {
       visitorCompany: typeof visitorCompany === "string" ? visitorCompany : "",
       message: typeof message === "string" ? message : "",
       slotStartIso: timeSlot.start,
-      slotEndIso: timeSlot.end,
+      slotEndIso: timeSlot.end, locale, timezone,
     });
 
     try {
-      const emailResult = await sendFormNotification(web3Fields);
+      const emailResult = saved.duplicate ? { success: true } : await sendFormNotification(web3Fields);
       emailSuccess = emailResult.success;
     } catch (emailError) {
       console.error("Error sending booking email:", emailError);
@@ -117,8 +130,7 @@ export async function POST(req: Request) {
             `電子郵件: ${visitorEmail}\n` +
             `${visitorPhone ? `電話: ${visitorPhone}\n` : ""}` +
             `${visitorCompany ? `公司: ${visitorCompany}\n` : ""}` +
-            `日期: ${format(startDateTime, "yyyy年MM月dd日")}\n` +
-            `時間: ${format(startDateTime, "HH:mm")} - ${format(endDateTime, "HH:mm")}\n` +
+            `Time: ${slotLabel(timeSlot.start, timeSlot.end, timezone)}\n` +
             `${message ? `留言: ${message}\n` : ""}` +
             `\n✅ 已記錄到 InnovateXP 預約`,
         )

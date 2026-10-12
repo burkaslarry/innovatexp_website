@@ -473,7 +473,7 @@
       "boundary": "不設 unlimited changes。支援時間為星期一至五 09:00–18:00（香港時間，公眾假期除外）。大型新功能、data migration、第三方費用、非辦公時間事故及合約系統以外工作，全部另行報價。"
     },
     "readiness": {
-      "eyebrow": "只作 downsell",
+      "eyebrow": "固定範圍診斷",
       "title": "AI Readiness Snapshot",
       "price": "HK$3,880",
       "intro": "俾未 ready 投入 HK$6,880 Discovery Sprint 嘅團隊，先用較細成本取得一個有根據嘅決定。",

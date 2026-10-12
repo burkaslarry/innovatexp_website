@@ -11,6 +11,7 @@ import { getBookingHref, getWhatsAppHref } from "@/content/cta-config";
 import { trackBookingCtaClick } from "@/lib/analytics";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
 import type { AppLocale } from "@/lib/i18n-routing";
+import { commerceCopy } from "@/content/commerce";
 
 type HomeCopy = {
   eyebrow: string;
@@ -195,6 +196,7 @@ export function QuammHome() {
   const loc = useLocalizedHref();
   const content = getHomepageContent(locale);
   const copy = COPY[locale];
+  const commerce = commerceCopy(locale);
   const bookingHref = getBookingHref(locale);
   const whatsappHref = getWhatsAppHref(locale);
   const snapshot = formatHkd(PRICING.quickCash.aiReadinessAssessment, locale === "zh-tw" ? "zh-hk" : locale);
@@ -235,6 +237,7 @@ export function QuammHome() {
               <Link href={bookingHref} onClick={() => trackBookingCtaClick("hero")} className="inline-flex min-h-12 items-center justify-center bg-[#252019] px-7 text-sm font-semibold text-[#f7f4ee] transition hover:bg-[#654b32] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4">{copy.book}</Link>
               <a href={whatsappHref} className={textLinkClass}>{copy.whatsapp}</a>
             </div>
+            <Link href={loc("/services/snapshot")} className={`${textLinkClass} mt-4`}>{commerce.detail}</Link>
             <a href="#case-study" className="mt-7 block max-w-[55ch] border-t border-[#c8bba9] pt-4 text-sm leading-6 text-[#51483d] underline-offset-4 hover:underline">{copy.proof}</a>
           </div>
           <figure className="relative aspect-[4/5] w-full overflow-hidden bg-[#d9d0c2] md:aspect-[5/6]">
@@ -356,6 +359,7 @@ export function QuammHome() {
             <h2 id="contact-title" className={titleClass}>{copy.closingTitle}</h2>
             <p className="mt-6 max-w-[60ch] text-lg leading-8">{copy.closingBody}</p>
             <p className="mt-3 text-sm leading-7">{priceLine}</p>
+            <Link href={loc("/services/snapshot")} className={`${textLinkClass} mt-3`}>{commerce.detail}</Link>
             <div className="mt-8 flex flex-wrap items-center gap-6">
               <Link href={bookingHref} onClick={() => trackBookingCtaClick("final_cta")} className="inline-flex min-h-12 items-center justify-center bg-[#252019] px-7 text-sm font-semibold text-[#f7f4ee] transition hover:bg-[#654b32]">{copy.book}</Link>
               <a href={whatsappHref} className={textLinkClass}>{copy.whatsapp}</a>

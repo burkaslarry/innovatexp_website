@@ -11,15 +11,19 @@ import { useLocalizedHref } from "@/hooks/useLocalizedHref";
 export function SitePageShell({
   title,
   children,
+  actionLabel,
+  actionHref,
 }: {
   title: string;
   children: ReactNode;
+  actionLabel?: string;
+  actionHref?: string;
 }) {
   const { locale } = useLanguage();
   const loc = useLocalizedHref();
   const content = getHomepageContent(locale);
-  const bookingHref = getBookingHref(locale);
-  const ctaLabel = primaryCtaLabel(locale);
+  const bookingHref = actionHref || getBookingHref(locale);
+  const ctaLabel = actionLabel || primaryCtaLabel(locale);
 
   const navItems = [
     { label: content.nav.home, href: loc("/") },
@@ -57,6 +61,7 @@ export function SitePageShell({
           <a href={loc("/")}>{content.nav.home}</a>
           <a href={`mailto:${HOMEPAGE_PLACEHOLDERS.emailAddress}`}>{HOMEPAGE_PLACEHOLDERS.emailAddress}</a>
           <a href={loc("/privacy-policy")}>{content.footer.privacy}</a>
+          <a href={loc("/purchase-terms")}>{locale.startsWith("zh") ? "購買及退款條款" : "Purchase and refund terms"}</a>
         </div>
       </footer>
     </div>

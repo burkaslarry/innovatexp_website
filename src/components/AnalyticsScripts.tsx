@@ -1,4 +1,6 @@
+"use client";
 import Script from "next/script";
+import { usePathname } from "next/navigation";
 
 /** InnovateXP website GA4 Measurement ID (from Google tag). */
 export const GA4_MEASUREMENT_ID = "G-35CKSF1L7P";
@@ -9,6 +11,9 @@ export const GA4_MEASUREMENT_ID = "G-35CKSF1L7P";
  * Plausible: set NEXT_PUBLIC_PLAUSIBLE_DOMAIN=innovatexp.co
  */
 export function AnalyticsScripts() {
+  const pathname = usePathname();
+  // Private order screens must not send access tokens or customer context to analytics.
+  if (/\/(checkout|intake)(\/|$)/.test(pathname || "")) return null;
   const gaId = (process.env.NEXT_PUBLIC_GA4_MEASUREMENT_ID?.trim() || GA4_MEASUREMENT_ID).trim();
   const plausibleDomain = process.env.NEXT_PUBLIC_PLAUSIBLE_DOMAIN?.trim();
 

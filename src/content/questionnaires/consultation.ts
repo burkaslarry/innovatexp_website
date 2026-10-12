@@ -60,7 +60,7 @@ function opts(ids: readonly string[], map: Record<string, string>): QuestionOpti
 }
 
 const ROLE_IDS = ["founder", "ops", "sales", "admin", "other"] as const;
-const TEAM_IDS = ["1-2", "3-10", "11-30", "31+"] as const;
+const TEAM_IDS = ["1-2", "3-10", "11-30", "31-60", "61+", "unknown"] as const;
 const INDUSTRY_IDS = ["training", "clinic", "fitness", "pro", "retail", "other"] as const;
 const PAIN_IDS = [
   "lead_scatter",
@@ -249,6 +249,11 @@ function buildQuestions(l: L): QuestionField[] {
 function pack(locale: AppLocale, l: L): LocaleBlock {
   const zh = locale === "zh-hk" || locale === "zh-tw";
   const questions = buildQuestions(l);
+  questions.splice(6, 0,
+    { id: "country", label: zh ? "主要營運國家／地區" : locale === "ja" ? "主な事業国・地域" : locale === "de" ? "Land / Betriebsregion" : "Main operating country / region", type: "text", required: true },
+    { id: "timezone", label: zh ? "營運時區（例如 Asia/Hong_Kong、Europe/Berlin）" : locale === "ja" ? "タイムゾーン（例：Asia/Tokyo）" : locale === "de" ? "Zeitzone (z. B. Europe/Berlin)" : "Operating timezone (e.g. Asia/Singapore, Europe/London)", type: "text", required: true }
+  );
+  questions.find((q) => q.id === "teamSize")!.options!.find((o) => o.id === "unknown")!.label = zh ? "暫時不確定" : locale === "ja" ? "不明" : locale === "de" ? "Noch unklar" : "Not sure yet";
   return {
     eyebrow: zh ? "業務聽診入口" : locale === "ja" ? "業務診断入口" : locale === "de" ? "Diagnose-Einstieg" : "Diagnosis intake",
     title: l.shell.title,
@@ -297,13 +302,13 @@ function pack(locale: AppLocale, l: L): LocaleBlock {
     consent: l.shell.consent,
     questions,
     notices: [
-      { when: { fieldId: "teamSize", optionId: "31+" }, message: l.notice31 },
+      { when: { fieldId: "teamSize", optionId: "61+" }, message: l.notice31 },
       { when: { fieldId: "painLine", optionId: "event_followup" }, message: l.noticeEvent },
     ],
     steps: [
       {
         title: l.shell.sectionA,
-        questionIds: ["name", "company", "role", "phone", "email", "teamSize", "industry", "industryOther"],
+        questionIds: ["name", "company", "role", "phone", "email", "teamSize", "country", "timezone", "industry", "industryOther"],
       },
       {
         title: l.shell.sectionB,
@@ -332,7 +337,7 @@ function pack(locale: AppLocale, l: L): LocaleBlock {
 
 const zhHk: L = {
   role: { founder: "創辦人", ops: "營運", sales: "銷售", admin: "Admin", other: "其他" },
-  team: { "1-2": "1–2", "3-10": "3–10", "11-30": "11–30", "31+": "31+" },
+  team: { "1-2": "1–2", "3-10": "3–10", "11-30": "11–30", "31-60": "31–60", "61+": "61+", unknown: "?" },
   industry: {
     training: "培訓／教育",
     clinic: "診所",
@@ -433,7 +438,7 @@ const zhHk: L = {
     toolsOther: "請註明",
     notes: "可選",
   },
-  notice31: "我哋主力服務 3–30 人團隊；仍可約聽診，但範圍可能不同。",
+  notice31: "我哋主力服務 3–60 人團隊；仍可約聽診，但範圍可能不同。",
   noticeEvent: "聽診後可能方案之一：活動後跟進流程（EventXP 只係選項，唔會硬推）。",
   shell: {
     eyebrow: "業務聽診入口",
@@ -537,7 +542,7 @@ const zhTw: L = {
     weekday_eve: "平日晚上",
     weekend: "週末",
   },
-  notice31: "我們主力服務 3–30 人團隊；仍可約聽診，但範圍可能不同。",
+  notice31: "我們主力服務 3–60 人團隊；仍可約聽診，但範圍可能不同。",
   noticeEvent: "聽診後可能方案之一：活動後跟進流程（EventXP 只是選項，不會硬推）。",
   shell: {
     ...zhHk.shell,
@@ -558,7 +563,7 @@ const zhTw: L = {
 
 const en: L = {
   role: { founder: "Founder", ops: "Operations", sales: "Sales", admin: "Admin", other: "Other" },
-  team: { "1-2": "1–2", "3-10": "3–10", "11-30": "11–30", "31+": "31+" },
+  team: { "1-2": "1–2", "3-10": "3–10", "11-30": "11–30", "31-60": "31–60", "61+": "61+", unknown: "?" },
   industry: {
     training: "Training / education",
     clinic: "Clinic",
@@ -659,7 +664,7 @@ const en: L = {
     toolsOther: "Please specify",
     notes: "Optional",
   },
-  notice31: "We mainly serve teams of 3–30. You can still book a diagnosis; scope may differ.",
+  notice31: "We mainly serve teams of 3–60. You can still book a diagnosis; scope may differ.",
   noticeEvent: "After diagnosis, one possible option is post-event follow-up (EventXP is optional — not a hard sell).",
   shell: {
     eyebrow: "Diagnosis intake",
@@ -694,7 +699,7 @@ const ja: L = {
     retail: "小売",
     other: "その他",
   },
-  notice31: "主に3–30名チーム向けです。診断は可能ですが、範囲が異なる場合があります。",
+  notice31: "主に3–60名チーム向けです。診断は可能ですが、範囲が異なる場合があります。",
   noticeEvent: "診断後の選択肢の一つにイベント後フォローがあります（EventXPは任意・押し売りしません）。",
   shell: {
     ...en.shell,
@@ -735,7 +740,7 @@ const ja: L = {
 const de: L = {
   ...en,
   role: { founder: "Gründer/in", ops: "Operations", sales: "Sales", admin: "Admin", other: "Sonstiges" },
-  notice31: "Wir betreuen vor allem Teams mit 3–30 Personen. Diagnose ist möglich; der Umfang kann abweichen.",
+  notice31: "Wir betreuen vor allem Teams mit 3–60 Personen. Diagnose ist möglich; der Umfang kann abweichen.",
   noticeEvent: "Nach der Diagnose kann Event-Follow-up eine Option sein (EventXP optional — kein Hard-Sell).",
   shell: {
     ...en.shell,

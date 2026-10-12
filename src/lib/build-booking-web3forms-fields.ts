@@ -1,4 +1,4 @@
-import { format, parseISO } from "date-fns";
+import { slotLabel, PROVIDER_TIMEZONE } from "@/lib/booking-slots";
 
 export type BookingWeb3Input = {
   visitorName: string;
@@ -8,20 +8,21 @@ export type BookingWeb3Input = {
   message?: string;
   slotStartIso: string;
   slotEndIso: string;
+  locale?: string;
+  timezone?: string;
 };
 
 /** Plain fields for Web3Forms (no access_key). Shared by /api/calendar/book and client fallback. */
 export function buildBookingConfirmationWeb3Fields(input: BookingWeb3Input): Record<string, string> {
-  const startDateTime = parseISO(input.slotStartIso);
-  const endDateTime = parseISO(input.slotEndIso);
+  const zh = !input.locale || input.locale.startsWith("zh");
   const visitorName = input.visitorName;
-  const eventTitle = `業務拜訪 - ${visitorName}`;
+  const eventTitle = `${zh ? "業務聽診" : "Workflow diagnosis"} - ${visitorName}`;
   const visitorEmail = input.visitorEmail;
   const visitorPhone = input.visitorPhone?.trim();
   const visitorCompany = input.visitorCompany?.trim();
   const message = input.message?.trim() ?? "";
 
-  const confirmationBody = `
+  const confirmationBody = zh ? `
 業務拜訪預約確認
 
 親愛的 ${visitorName}， 公司 ${visitorCompany}
@@ -30,8 +31,7 @@ export function buildBookingConfirmationWeb3Fields(input: BookingWeb3Input): Rec
 
 預約詳情：
 - 主題: ${eventTitle}
-- 日期: ${format(startDateTime, "yyyy年MM月dd日")}
-- 時間: ${format(startDateTime, "HH:mm")} - ${format(endDateTime, "HH:mm")}
+- 時間: ${slotLabel(input.slotStartIso, input.slotEndIso, input.timezone || PROVIDER_TIMEZONE, "zh-HK")}
 ${visitorPhone ? `- 電話: ${visitorPhone}` : ""}
 ${visitorCompany ? `- 公司: ${visitorCompany}` : ""}
 ${message ? `- 留言: ${message}` : ""}
@@ -44,10 +44,10 @@ ${message ? `- 留言: ${message}` : ""}
 此致，
 InnovateXP Limited
 AI整合、企業培訓、軟件解決方案專家
-  `.trim();
+  `.trim() : `Workflow diagnosis confirmed\n\n${visitorName}\nCompany: ${visitorCompany || "—"}\nTime: ${slotLabel(input.slotStartIso, input.slotEndIso, input.timezone || PROVIDER_TIMEZONE)}\n${message}\n\nInnovateXP Limited`;
 
   return {
-    subject: `客戶查詢確認 - ${eventTitle}`,
+    subject: `${zh ? "預約確認" : "Booking confirmation"} - ${eventTitle}`,
     from_name: "Client Inquiry Confirmation",
     name: visitorName,
     email: visitorEmail,

@@ -1,4 +1,5 @@
 {
+  "git": { "deploymentEnabled": { "codex/conversion-stripe-payments": false } },
   "installCommand": "npm ci",
   "redirects": [
     {

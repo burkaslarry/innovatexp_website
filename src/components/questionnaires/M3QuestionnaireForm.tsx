@@ -1,6 +1,7 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useEffect, useMemo, useState } from "react";
+import { trackConversion } from "@/lib/analytics";
 import {
   Box,
   Button,
@@ -42,6 +43,7 @@ type ShellCopy = {
 };
 
 type Props = {
+  locale: import("@/lib/i18n-routing").AppLocale;
   eyebrow: string;
   title: string;
   intro: string;
@@ -98,6 +100,7 @@ function isVisible(q: QuestionField, answers: Answers): boolean {
 }
 
 export function M3QuestionnaireForm({
+  locale,
   eyebrow,
   title,
   intro,
@@ -126,9 +129,14 @@ export function M3QuestionnaireForm({
 
   const [stepIndex, setStepIndex] = useState(0);
   const [answers, setAnswers] = useState<Answers>({});
+  const [submissionId, setSubmissionId] = useState("");
   const [consent, setConsent] = useState(false);
   const [error, setError] = useState("");
   const [status, setStatus] = useState<"idle" | "sending" | "success" | "error">("idle");
+  useEffect(() => {
+    setAnswers((current) => ({ ...current, timezone: current.timezone || Intl.DateTimeFormat().resolvedOptions().timeZone }));
+    trackConversion("questionnaire_started", { locale, path: pathId });
+  }, [locale, pathId]);
   const theme = useInnovateXpM3Theme();
 
   const progress = ((stepIndex + 1) / stepDefs.length) * 100;
@@ -213,6 +221,8 @@ export function M3QuestionnaireForm({
     }
     setError("");
     setStatus("sending");
+    const reference = submissionId || crypto.randomUUID();
+    setSubmissionId(reference);
 
     const name = String(answers.name || "").trim() || "-";
     const company = String(answers.company || "").trim() || (requireContact ? "" : "Feedback (no company)");
@@ -249,6 +259,7 @@ export function M3QuestionnaireForm({
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({
+          submissionId: reference, consent, locale,
           pathId,
           questionnaireType: subjectPrefix,
           subject: `${subjectPrefix} — ${company || name}`,
@@ -265,6 +276,7 @@ export function M3QuestionnaireForm({
         }),
       });
       if (!response.ok) throw new Error("fail");
+      trackConversion("questionnaire_submitted", { path: pathId, locale });
       onSubmittedAnswers?.({ answers, formattedQa });
       if (handoffOnSubmit && onSubmittedAnswers) {
         setStatus("idle");

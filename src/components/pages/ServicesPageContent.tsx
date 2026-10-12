@@ -5,6 +5,7 @@ import { SitePageShell } from "@/components/SitePageShell";
 import { getHomepageContent } from "@/content/homepage";
 import { useLanguage } from "@/app/LanguageContext";
 import { withLocale, localeUsesChineseCopy } from "@/lib/i18n-routing";
+import { OfferJourney } from "@/components/commerce/OfferJourney";
 
 export function ServicesPageContent() {
   const { locale } = useLanguage();
@@ -15,6 +16,7 @@ export function ServicesPageContent() {
   return (
     <SitePageShell title={title}>
       <p className="text-base leading-8 text-[color:var(--text-secondary)]">{c.services.title}</p>
+      <OfferJourney locale={locale} />
       <div className="mt-8 grid gap-4">
         {c.services.items.map((item) => (
           <article key={item.title} className="ixp-card p-5 md:p-6">
@@ -41,6 +43,12 @@ export function ServicesPageContent() {
             </article>
           ))}
         </div>
+      </section>
+      <section className="mt-12 border-t border-[#c8bba9] pt-8">
+        <p className="text-xs uppercase tracking-widest text-[#8b6b43]">{localeUsesChineseCopy(locale) ? "獨立製作委託" : "Production commissions"}</p>
+        <h2 className="mt-3 text-2xl">{localeUsesChineseCopy(locale) ? "AI 品牌短片／TVC 製作" : "AI brand films / TVC production"}</h2>
+        <p className="mt-3 text-base leading-8">{localeUsesChineseCopy(locale) ? "分鏡、keyframe、逐鏡生成、剪接同字幕。先確認 brief，再按鏡數及交付要求報價。" : "Storyboards, keyframes, shot generation, editing and subtitles. Agree a brief, then quote by production scope."}</p>
+        <Link href={withLocale(locale, "/ai-video-production")} className="mt-4 inline-flex min-h-11 items-center border-b border-[#8b6b43] text-sm font-semibold">{localeUsesChineseCopy(locale) ? "查看製作流程及驗收方式 →" : "View production and acceptance process →"}</Link>
       </section>
       <div className="mt-10 flex flex-wrap gap-3">
         <Link href={withLocale(locale, "/ai-training-materials")} className="inline-flex min-h-11 items-center rounded-lg border border-[color:var(--brand-primary)] px-5 py-3 text-sm font-semibold text-[color:var(--brand-primary)]">

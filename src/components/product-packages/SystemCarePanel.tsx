@@ -1,6 +1,8 @@
 import { AddToInquiryButton } from "@/components/inquiry-cart/AddToInquiryButton";
 import type { InquiryCatalogItemId } from "@/content/inquiry-catalog";
 import type { SystemCareCopy } from "@/content/homepage";
+import Link from "next/link";
+import type { AppLocale } from "@/lib/i18n-routing";
 
 const SYSTEM_CARE_INQUIRY_IDS = [
   "systemCareEssential",
@@ -12,12 +14,14 @@ const SYSTEM_CARE_INQUIRY_IDS = [
  * Revenue line A — care for systems already in production.
  * Response time is acknowledgement and triage, not a promised fix.
  */
-export function SystemCarePanel({ copy }: { copy: SystemCareCopy }) {
+export function SystemCarePanel({ copy, locale }: { copy: SystemCareCopy; locale: AppLocale }) {
   return (
     <section className="ixp-card p-5 md:p-7">
       <p className="text-xs font-bold uppercase tracking-[0.12em] text-[color:var(--secondary-color)]">
         {copy.eyebrow}
       </p>
+      <p className="mt-4 text-sm leading-7">{locale.startsWith("zh") ? "訂閱前須完成 Technical Audit 並通過系統評估；確認存取權限、支援系統、使用量、回應時段及排除項目。回應時間不等於修復保證。" : "Subscription requires a completed and accepted Technical Audit: agree access, supported systems, usage, response windows and exclusions. Response time is not a repair guarantee."}</p>
+      <Link href={`/${locale}/bookme?interest=system-care-audit`} className="mt-3 inline-flex min-h-11 items-center border-b border-[#8b6b43] font-semibold">{locale.startsWith("zh") ? "安排技術審核" : "Arrange a Technical Audit"}</Link>
       <h2 className="mt-2 text-2xl font-bold text-[color:var(--heading-foreground)]">{copy.title}</h2>
       <p className="mt-3 leading-7 text-[color:var(--text-secondary)]">{copy.intro}</p>
       <div className="mt-5 grid gap-4 md:grid-cols-3">

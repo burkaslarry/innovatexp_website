@@ -306,6 +306,7 @@ export default function QuotationWizard({
           visitorCompany: company,
           selectedDate: format(selectedDate, "yyyy-MM-dd"),
           selectedTimeSlot,
+          locale, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
           message: [formatAppointmentDetail(), "", formattedQa].filter(Boolean).join("\n\n"),
         }),
       });
@@ -351,7 +352,7 @@ export default function QuotationWizard({
     setSelectedTimeSlot(null);
     try {
       const formattedDate = format(date, "yyyy-MM-dd");
-      const response = await fetch(`/api/calendar/slots?date=${formattedDate}`);
+      const response = await fetch(`/api/calendar/slots?date=${formattedDate}&timezone=${encodeURIComponent(Intl.DateTimeFormat().resolvedOptions().timeZone)}`);
       if (!response.ok) throw new Error("slots_error");
       const data = (await response.json()) as { slots?: TimeSlot[] };
       setAvailableSlots(data.slots || []);
@@ -1108,6 +1109,7 @@ export default function QuotationWizard({
                 <label className="block text-slate-900 dark:text-white text-base font-bold">
                   📆 {t("bookme.date.label")} <span className="text-red-500">*</span>
                 </label>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{usesChineseUi ? "日期按香港營業日選擇；可用時段會標示你的時區。" : "Select the Hong Kong business date; available times show your timezone."}</p>
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-900/40">
                   <div className="flex justify-center">
                     <DayPicker

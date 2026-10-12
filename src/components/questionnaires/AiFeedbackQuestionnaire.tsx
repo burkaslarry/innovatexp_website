@@ -14,6 +14,7 @@ export function AiFeedbackQuestionnaire({ locale }: { locale: AppLocale }) {
 
   return (
     <M3QuestionnaireForm
+      locale={locale}
       eyebrow={c.eyebrow}
       title={c.title}
       intro={c.intro}

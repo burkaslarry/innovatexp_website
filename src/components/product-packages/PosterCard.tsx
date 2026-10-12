@@ -17,7 +17,8 @@ export function PosterCard({
   posterDir: string;
   locale: AppLocale;
 }) {
-  const detailHref = item.href ? withLocale(locale, item.href) : null;
+  const paths: Record<string, string> = { accountxp: "/products#accounting-tools-demo", smartsales: "/smartsales-crm", eventxp: "/eventxp", consultancy: "/ai-consulting" };
+  const detailHref = withLocale(locale, item.href || paths[item.id] || `/bookme?interest=${encodeURIComponent(item.id)}`);
 
   return (
     <article className="ixp-card overflow-hidden">

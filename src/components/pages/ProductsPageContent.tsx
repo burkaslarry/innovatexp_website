@@ -7,6 +7,8 @@ import { getHomepageContent } from "@/content/homepage";
 import { getSessionCreditsCopy } from "@/content/session-credits";
 import { useLanguage } from "@/app/LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
+import { OfferJourney } from "@/components/commerce/OfferJourney";
+import { AccountXpDemo } from "@/components/commerce/AccountXpDemo";
 
 export function ProductsPageContent() {
   const { locale } = useLanguage();
@@ -24,7 +26,9 @@ export function ProductsPageContent() {
           {credits.productsLink}
         </Link>
       </p>
+      <OfferJourney locale={locale} />
       <ProductPackagesSection locale={locale} content={c.products} />
+      <AccountXpDemo locale={locale} />
     </SitePageShell>
   );
 }

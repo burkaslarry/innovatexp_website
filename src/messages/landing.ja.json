@@ -473,7 +473,7 @@
       "boundary": "無制限の改修はありません。サポート時間は月–金 09:00–18:00（香港時間、祝日除く）。大型新機能、data migration、第三者費用、時間外インシデント、契約対象外の作業はすべて別見積です。"
     },
     "readiness": {
-      "eyebrow": "Downsell のみ",
+      "eyebrow": "範囲を定めた診断",
       "title": "AI Readiness Snapshot",
       "price": "HK$3,880",
       "intro": "まだ HK$6,880 の Discovery Sprint に踏み切れないチーム向け。小さいコストで根拠ある判断を先に取る。",

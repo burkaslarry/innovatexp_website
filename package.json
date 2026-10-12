@@ -11,7 +11,10 @@
     "seo:check": "node seo-diagnostics/seo-check.mjs",
     "seo:validate-schema": "node scripts/validate-schema.mjs",
     "analyze": "ANALYZE=true next build",
-    "predeploy:sraa": "npm audit fix && npm audit && npm run build"
+    "predeploy:sraa": "npm audit --audit-level=high && npm audit --omit=dev --audit-level=high && npm run lint && npm run typecheck && npm test && npm run build",
+    "test": "tsx --test tests/*.test.ts",
+    "typecheck": "tsc --noEmit",
+    "commerce:admin": "tsx scripts/commerce-admin.ts"
   },
   "proxy": "https://python-mysql-http.onrender.com",
   "dependencies": {
@@ -31,9 +34,11 @@
     "react": "^19.0.0",
     "react-day-picker": "^9.12.0",
     "react-dom": "^19.0.0",
-    "resend": "^4.8.0"
+    "resend": "^4.8.0",
+    "stripe": "^23.0.0"
   },
   "devDependencies": {
+    "@electric-sql/pglite": "^0.5.9",
     "@eslint/eslintrc": "^3",
     "@next/bundle-analyzer": "^16.2.9",
     "@tailwindcss/postcss": "^4.3.3",
@@ -46,6 +51,7 @@
     "playwright": "^1.49.1",
     "postcss": "^8.5.10",
     "tailwindcss": "^4.3.3",
+    "tsx": "^4.23.15",
     "typescript": "^5"
   },
   "overrides": {

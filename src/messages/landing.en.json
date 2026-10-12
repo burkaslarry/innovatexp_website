@@ -473,7 +473,7 @@
       "boundary": "No unlimited changes. Support hours are Monday–Friday, 09:00–18:00 HKT excluding public holidays. Major features, migrations, third-party fees, after-hours incidents and work outside the agreed system are quoted separately."
     },
     "readiness": {
-      "eyebrow": "Downsell only",
+      "eyebrow": "Fixed-scope diagnosis",
       "title": "AI Readiness Snapshot",
       "price": "HK$3,880",
       "intro": "For a team not yet ready to commit to the HK$6,880 Discovery Sprint and needing a smaller evidence-based decision first.",

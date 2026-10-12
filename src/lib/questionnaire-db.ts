@@ -18,6 +18,7 @@ export type QuestionnaireDbPayload = {
   interest?: string;
   formattedQa: string;
   answers?: Record<string, string | string[]>;
+  submissionId: string;
 };
 
 let schemaReady: Promise<void> | null = null;
@@ -48,6 +49,9 @@ async function ensureSchema() {
           interest VARCHAR(255),
           answers_text TEXT NOT NULL,
           answers_json JSONB,
+          submission_id UUID UNIQUE,
+          notification_sent_at TIMESTAMPTZ,
+          notification_locked_until TIMESTAMPTZ,
           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         )
       `;
@@ -85,7 +89,7 @@ export async function insertQuestionnaireLead(
         urgency,
         interest,
         answers_text,
-        answers_json
+        answers_json, submission_id
       ) VALUES (
         ${payload.pathId},
         ${payload.questionnaireType},
@@ -98,8 +102,9 @@ export async function insertQuestionnaireLead(
         ${payload.urgency || null},
         ${payload.interest || null},
         ${payload.formattedQa},
-        ${payload.answers ?? null}
+        ${JSON.stringify(payload.answers ?? null)}::jsonb, ${payload.submissionId}::uuid
       )
+      ON CONFLICT (submission_id) DO UPDATE SET submission_id = EXCLUDED.submission_id
       RETURNING id
     `;
     const id = Number(rows[0]?.id);

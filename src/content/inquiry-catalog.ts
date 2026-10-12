@@ -122,9 +122,9 @@ function downsellAndTrainingItems(): InquiryCatalogItem[] {
       titleEn: "AI Readiness Snapshot",
       titleZh: "AI Readiness Snapshot",
       blurbEn:
-        "Downsell only: 60–90 min interview, one-page scorecard, 3 blockers, go/no-go for Discovery. No SOP, prototype, or implementation. Upgrade within 14 days: pay a scoped top-up.",
+        "Fixed-scope decision: 60–90 min interview, one-page scorecard, 3 blockers, go/no-go for Discovery. No SOP, prototype, or implementation. Upgrade within 14 days: pay HK$3,000 more to reach HK$6,880 Discovery (≤10).",
       blurbZh:
-        "只作 downsell：60–90 分鐘訪談、一頁 scorecard、3 個阻力、決定是否進入 Discovery。不包括 SOP／prototype／實施。14 日內升級只需補 a scoped top-up。",
+        "固定範圍診斷：60–90 分鐘訪談、一頁 scorecard、3 個阻力、決定是否進入 Discovery。不包括 SOP／prototype／實施。14 日內升級補 HK$3,000，升級至 HK$6,880 Discovery（≤10 人）。",
       layer: "quickCash",
     },
     {
@@ -142,9 +142,9 @@ function downsellAndTrainingItems(): InquiryCatalogItem[] {
       titleEn: "1-month education track (quote)",
       titleZh: "1 個月教育 track（另行報價）",
       blurbEn:
-        "Four weekly 60-minute sessions for the same organization. Not included in the the Snapshot path Snapshot. Attendance limited by agreed room/platform capacity.",
+        "Four weekly 60-minute sessions for the same organization. Not included in Snapshot. Attendance limited by agreed room/platform capacity.",
       blurbZh:
-        "同一機構每星期 1 堂、共 4 堂、每堂 60 分鐘。不包括在 the Snapshot path Snapshot 之內。人數以已協議場地或平台容量為限。",
+        "同一機構每星期 1 堂、共 4 堂、每堂 60 分鐘。不包括在 Snapshot 之內。人數以已協議場地或平台容量為限。",
       layer: "quickCash",
       hidePublicPrice: true,
     },
@@ -163,9 +163,9 @@ function discoveryAndAdvisoryItems(): InquiryCatalogItem[] {
       titleEn: "AI Discovery Sprint",
       titleZh: "AI Discovery Sprint",
       blurbEn:
-        "a scoped quote for up to 10 people. 11–30 people: a scoped quote. 31+ quoted separately. Venue extra. Map + priority list + fixed implementation quote.",
+        "HK$6,880 for up to 10 people. 11–30 people: HK$13,600. 31+ quoted separately. Venue extra. Map + priority list + fixed implementation quote.",
       blurbZh:
-        "10 人或以下 a scoped quote；11–30 人 a scoped quote；31 人或以上另行報價。場地另計。流程圖 + 優先序 + 固定實施報價。",
+        "10 人或以下 HK$6,880；11–30 人 HK$13,600；31 人或以上另行報價。場地另計。流程圖 + 優先序 + 固定實施報價。",
       layer: "consultancy",
     },
     {
@@ -174,9 +174,9 @@ function discoveryAndAdvisoryItems(): InquiryCatalogItem[] {
       titleEn: "30-day Discovery Sprint",
       titleZh: "30 日 Discovery Sprint",
       blurbEn:
-        "Paid filter for one core workflow. a scoped quote for up to 10 people; a scoped quote for 11–30; 31+ quoted separately. Venue extra.",
+        "Paid filter for one core workflow. HK$6,880 for up to 10 people; HK$13,600 for 11–30; 31+ quoted separately. Venue extra.",
       blurbZh:
-        "付費過濾器：1 個核心流程。10 人或以下 a scoped quote；11–30 人 a scoped quote；31 人或以上另行報價。場地另計。",
+        "付費過濾器：1 個核心流程。10 人或以下 HK$6,880；11–30 人 HK$13,600；31 人或以上另行報價。場地另計。",
       layer: "consultancy",
     },
     {
