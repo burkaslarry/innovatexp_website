@@ -55,6 +55,11 @@ async function ensureSchema() {
           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         )
       `;
+      // Existing installations predate submission deduplication and notification retries.
+      await sql`ALTER TABLE questionnaire_leads ADD COLUMN IF NOT EXISTS submission_id UUID`;
+      await sql`ALTER TABLE questionnaire_leads ADD COLUMN IF NOT EXISTS notification_sent_at TIMESTAMPTZ`;
+      await sql`ALTER TABLE questionnaire_leads ADD COLUMN IF NOT EXISTS notification_locked_until TIMESTAMPTZ`;
+      await sql`CREATE UNIQUE INDEX IF NOT EXISTS questionnaire_submission_id ON questionnaire_leads (submission_id)`;
       await sql`CREATE INDEX IF NOT EXISTS idx_questionnaire_leads_created_at ON questionnaire_leads (created_at DESC)`;
       await sql`CREATE INDEX IF NOT EXISTS idx_questionnaire_leads_email ON questionnaire_leads (email)`;
       await sql`CREATE INDEX IF NOT EXISTS idx_questionnaire_leads_type ON questionnaire_leads (questionnaire_type)`;

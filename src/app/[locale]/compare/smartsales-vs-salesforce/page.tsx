@@ -59,7 +59,7 @@ export default async function SmartSalesVsSalesforcePage({
     {
       question: "Can SmartSales replace Salesforce?",
       answer:
-        "中小企 use case yes。Enterprise 複雜 compliance no。In practice, Hong Kong SME teams can run day-to-day sales on SmartSales; enterprises with heavy policy, integration, and global org requirements typically keep Salesforce or use a hybrid.",
+        "Assess existing workflows, configuration, licences and data access first. Reuse or improve an existing Salesforce setup when it fits; replacement and migration require a separately agreed scope.",
     },
     {
       question: "What is the migration path from Salesforce to SmartSales?",
@@ -69,7 +69,7 @@ export default async function SmartSalesVsSalesforcePage({
     {
       question: "Does Sales Cloud include native WhatsApp Business API?",
       answer:
-        "Salesforce does not treat WhatsApp as a first-class native channel the way a Hong Kong–focused SME stack often requires; teams usually rely on third-party connectors or partner implementations, which adds cost and integration work compared with a natively chat-aligned CRM.",
+        "WhatsApp channel availability depends on the Salesforce edition, licences and integrations. Check the actual account before quoting. SmartSales standard pilot and setup do not include WhatsApp Business API integration or platform usage fees.",
     },
   ];
 
@@ -150,14 +150,14 @@ export default async function SmartSalesVsSalesforcePage({
                   <th className="p-3 font-medium text-gray-900 dark:text-white align-top" scope="row">
                     Setup time
                   </th>
-                  <td className="p-3">1–2 weeks</td>
+                  <td className="p-3">Schedule after scope and input approval</td>
                   <td className="p-3">6–12 weeks</td>
                 </tr>
                 <tr className="border-b border-slate-100 dark:border-gray-800">
                   <th className="p-3 font-medium text-gray-900 dark:text-white align-top" scope="row">
                     Starting price
                   </th>
-                  <td className="p-3">Trial HKD 5,000 (advisor-led setup)</td>
+                  <td className="p-3">Pilot HKD 6,880; production setup from HKD 24,800</td>
                   <td className="p-3">USD 25/user/mo + impl. cost</td>
                 </tr>
                 <tr className="border-b border-slate-100 dark:border-gray-800">

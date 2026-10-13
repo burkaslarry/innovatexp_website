@@ -1,4 +1,5 @@
 "use client";
+import { getSmartSalesProductSchema } from "@/lib/schema";
 /* F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path. */
 import { usePathname } from "next/navigation";
 import type { AppLocale } from "@/lib/i18n-routing";
@@ -38,8 +39,8 @@ const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_SMARTSALES_DESCRIPTION: Record<AppLocale, string> = {
-  en: "AI-powered customer relationship management system with WhatsApp integration, automated follow-ups, and intelligent scheduling for Hong Kong SMEs.",
-  "zh-hk": "AI 驅動的客戶關係管理系統，整合 WhatsApp、自動跟進和智能排程，專為香港中小企業設計。",
+  en: "Scoped sales workflow pilot, production setup and monthly technical care for SMEs. WhatsApp APIs, AI usage, membership rules and custom integrations quoted separately.",
+  "zh-hk": "中小企銷售流程 pilot、正式上線及月費維護分開報價。WhatsApp API、AI 用量、會員制度及客製接駁另報。",
   "zh-tw":
     "以 AI 為核心的客戶關係管理系統，整合 WhatsApp、自動跟進與智慧排程，適合香港與區內中小企業使用。",
   ja: "WhatsApp 連携、自動フォローアップ、インテリジェントな日程調整を備えた AI 型 CRM。香港の中小企業向け。",
@@ -488,64 +489,7 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
       "@type": "AdministrativeArea",
       name: "Hong Kong and Greater Bay Area",
     },
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "SmartSales CRM Pricing",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "SmartSales CRM - Trial",
-          },
-          price: "5000",
-          priceCurrency: "HKD",
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: "5000",
-            priceCurrency: "HKD",
-            unitText: "trial",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "SmartSales CRM - Starter maintenance",
-          },
-          price: "880",
-          priceCurrency: "HKD",
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: "880",
-            priceCurrency: "HKD",
-            unitText: "per month",
-          },
-        },
-        {
-          "@type": "Offer",
-          itemOffered: {
-            "@type": "Service",
-            name: "SmartSales CRM - Growth maintenance",
-          },
-          price: "1280",
-          priceCurrency: "HKD",
-          priceSpecification: {
-            "@type": "UnitPriceSpecification",
-            price: "1280",
-            priceCurrency: "HKD",
-            unitText: "per month",
-          },
-        },
-      ],
-    },
-    offers: {
-      "@type": "AggregateOffer",
-      priceCurrency: "HKD",
-      lowPrice: "5000",
-      highPrice: "18880",
-      offerCount: 3,
-    },
+    offers: getSmartSalesProductSchema().offers,
   };
 
   const eventXPService = {

@@ -83,10 +83,10 @@ function toolTrialItems(): InquiryCatalogItem[] {
     {
       id: "smartSalesTrial",
       amountHkd: PRICING.quickCash.smartSalesTrial,
-      titleEn: "SmartSales CRM trial",
-      titleZh: "SmartSales CRM 試用",
-      blurbEn: "WhatsApp workflow + CRM baseline + one sales process trial.",
-      blurbZh: "WhatsApp workflow + CRM 基礎 + 1 條銷售流程試跑。",
+      titleEn: "SmartSales CRM scoped pilot",
+      titleZh: "SmartSales CRM 限定流程 Pilot",
+      blurbEn: "3 participants, 1 workflow, 50 samples, 14 trial days. Production setup and API integration excluded.",
+      blurbZh: "3 位參與者、1 條流程、50 筆樣本、14 日試跑；正式上線及 API 接駁另報。",
       layer: "toolTrial",
     },
     {

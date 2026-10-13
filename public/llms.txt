@@ -12,7 +12,7 @@ InnovateXP Limited serves Hong Kong and Greater Bay Area teams (typically 3–30
 - [AI consulting](https://www.innovatexp.co/zh-hk/ai-consulting): 業務聽診 → Discovery Sprint HK$6,880（10 人或以下） → co-run advisory
 - [Automation packages](https://www.innovatexp.co/zh-hk/automation-packages): process cleanup, 14-day trial, team rollout, or a privacy-focused path — all quoted after diagnosis
 - [SME AI workflow](https://www.innovatexp.co/zh-hk/sme-ai-workflow): Mid-market process automation consulting
-- [SmartSales CRM](https://www.innovatexp.co/zh-hk/smartsales-crm): WhatsApp-led sales pipeline CRM (trial HK$5,000)
+- [SmartSales CRM](https://www.innovatexp.co/zh-hk/smartsales-crm): Scoped sales workflow CRM (pilot HK$6,880; setup from HK$24,800; technical care from HK$1,880/month; third-party fees separate)
 - [EventXP](https://www.innovatexp.co/zh-hk/eventxp): Configurable event & membership operations — registration, QR/kiosk check-in, attendance reporting, follow-up (fees quoted after workflow diagnosis)
 - [EventXP Solution Scoping Form](https://www.innovatexp.co/zh-hk/eventxp-scoping): 6-step form for scoped proposal & quote
 - [EventXP citation brief (llms-eventxp.txt)](https://www.innovatexp.co/llms-eventxp.txt): AEO/GEO answers for event check-in, Excel migration, Hong Kong associations

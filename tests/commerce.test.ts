@@ -7,7 +7,7 @@ import Stripe from "stripe";
 import { createOrder, getOrder, recordPaymentEvent, saveIntake, createInvitation } from "@/lib/commerce/orders";
 import { orderToken, verifyOrderToken } from "@/lib/commerce/tokens";
 import { nextPaymentState, verifiedSession } from "@/lib/commerce/state";
-import { offerPriceMatches, requirePayments } from "@/lib/commerce/config";
+import { offerPriceMatches, requirePayments, requireOfferPayments } from "@/lib/commerce/config";
 import { POST as webhook } from "@/app/api/stripe/webhook/route";
 import { PURCHASE_POLICY_VERSION } from "@/content/commerce";
 import { reserveCalendarBooking } from "@/lib/site-records";
@@ -142,5 +142,20 @@ test("webhook verifies exact raw bytes and rejects altered or unsigned payloads"
     assert.equal((await webhook(request(payload, signature))).status, 200);
     assert.equal((await webhook(request(payload + " ", signature))).status, 400);
     assert.equal((await webhook(request(payload))).status, 400);
+  } finally { process.env = prior; }
+});
+
+
+test("subscription checkout remains closed independently of Snapshot payments", () => {
+  const prior = { ...process.env };
+  try {
+    process.env.PAYMENTS_ENABLED = "true";
+    process.env.PAYMENT_TERMS_APPROVED = PURCHASE_POLICY_VERSION;
+    process.env.STRIPE_MODE = "test";
+    delete process.env.SUBSCRIPTIONS_ENABLED;
+    assert.equal(requireOfferPayments("snapshot"), "test");
+    assert.throws(() => requireOfferPayments("systemCareEssential"));
+    process.env.SUBSCRIPTIONS_ENABLED = "true";
+    assert.equal(requireOfferPayments("systemCareEssential"), "test");
   } finally { process.env = prior; }
 });

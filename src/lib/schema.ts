@@ -103,20 +103,17 @@ export function getWebSiteSchema() {
 }
 
 export function getSmartSalesProductSchema() {
+  const s = PRICING.tools.smartSales;
   return {
-    "@context": "https://schema.org",
-    "@type": "SoftwareApplication",
-    name: "SmartSales CRM",
-    applicationCategory: "BusinessApplication",
-    operatingSystem: "Web",
-    description:
-      "SmartSales CRM is a WhatsApp-led sales CRM for Hong Kong SMEs: centralize leads, chat context, reminders, and pipeline stages. Trial HK$5,000.",
-    offers: {
-      "@type": "Offer",
-      price: "5000",
-      priceCurrency: "HKD",
-    },
+    "@context": "https://schema.org", "@type": "Service", name: "SmartSales CRM",
+    description: "Scoped CRM workflow pilot, production setup and monthly technical care, priced separately. Third-party licences, WhatsApp APIs, membership rules and custom development are separately scoped.",
     url: `${siteUrl}/smartsales-crm`,
+    provider: { "@type": "Organization", name: "InnovateXP Limited" },
+    offers: [
+      { "@type": "Offer", name: "Bounded workflow pilot", price: s.trial, priceCurrency: "HKD", description: "3 participants, 1 workflow, 50 sample records and 14 trial days. No production integration." },
+      { "@type": "Offer", name: "Starter setup", priceCurrency: "HKD", priceSpecification: { "@type": "PriceSpecification", minPrice: s.setupStarter, priceCurrency: "HKD" }, description: "One-time setup from this amount; up to 5 users and 1 pipeline. Care and licences separate." },
+      { "@type": "Offer", name: "Starter technical care", priceCurrency: "HKD", priceSpecification: { "@type": "UnitPriceSpecification", minPrice: s.maintenanceStarterMonthly, priceCurrency: "HKD", unitText: "per month" }, description: "Post-setup care with 1 remote support hour monthly; not implementation or custom development." },
+    ],
   };
 }
 

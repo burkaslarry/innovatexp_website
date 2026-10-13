@@ -50,14 +50,14 @@ const SMARTSALES: LocalePair = {
     description:
       "先診斷 WhatsApp 銷售跟進、責任同漏位；流程清楚後，SmartSales 可作落地選項。預約業務聽診，唔使買系統會直講。",
     ogTitle: "SmartSales CRM — 香港 WhatsApp 銷售 CRM",
-    ogDescription: "把 WhatsApp 查詢變成可跟進 pipeline。試用 HK$5,000。",
+    ogDescription: "Pilot HK$6,880；標準上線 HK$24,800 起；維護 HK$1,880／月起。流程範圍、授權及客製費分開列。",
   },
   en: {
     title: "Sales Workflow Diagnosis | Optional SmartSales | InnovateXP",
     description:
       "Diagnose WhatsApp sales follow-up, ownership, and leaks first. SmartSales is an optional implementation after the workflow is clear—not the starting point.",
     ogTitle: "SmartSales CRM — WhatsApp sales for HK SMEs",
-    ogDescription: "One pipeline for leads, chat context, and next actions. Trial HK$5,000.",
+    ogDescription: "Pilot HK$6,880; setup from HK$24,800; care from HK$1,880/month. Licences and custom integrations are separate.",
   },
 };
 

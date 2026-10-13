@@ -13,6 +13,13 @@ export function requirePayments() {
   if (!paymentsEnabled()) throw new Error("Payments disabled");
   return paymentMode();
 }
+export function requireOfferPayments(offer: OfferId) {
+  const mode = requirePayments();
+  if (OFFERS[offer].mode === "subscription" && process.env.SUBSCRIPTIONS_ENABLED !== "true") {
+    throw new Error("Subscriptions are not enabled");
+  }
+  return mode;
+}
 export function priceId(offer: OfferId): string {
   const id = process.env[`STRIPE_PRICE_${offer.replace(/([A-Z])/g, "_$1").toUpperCase()}`]?.trim();
   if (!id?.startsWith("price_")) throw new Error("Offer price not configured");

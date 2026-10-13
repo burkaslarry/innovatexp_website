@@ -3,7 +3,7 @@ import { OFFERS, PURCHASE_POLICY_VERSION, isOfferId, type OfferId } from "@/cont
 import { isValidLocale } from "@/lib/i18n-routing";
 import { getSiteUrl } from "@/lib/site-url";
 import { enforceFormSubmissionLimit } from "@/lib/form-submission-limit";
-import { requirePayments, priceId, offerPriceMatches } from "@/lib/commerce/config";
+import { requireOfferPayments, priceId, offerPriceMatches } from "@/lib/commerce/config";
 import { getStripe } from "@/lib/commerce/stripe";
 import { attachSession, createOrder } from "@/lib/commerce/orders";
 import { setOrderCookie } from "@/lib/commerce/access";
@@ -20,7 +20,7 @@ export async function POST(req: Request) {
       typeof b.email !== "string" || b.email.length > 254 || !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(b.email) ||
       typeof b.requestId !== "string" || !/^[a-f0-9-]{36}$/.test(b.requestId)) return NextResponse.json({ error: "Invalid checkout request" }, { status: 400 });
     const offer = b.offer as OfferId;
-    const mode = requirePayments();
+    const mode = requireOfferPayments(offer);
     const blocked = await enforceFormSubmissionLimit(req);
     if (blocked) return blocked;
     const stripe = getStripe();
