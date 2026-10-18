@@ -30,7 +30,7 @@ const PAGE_COPY: Record<
     eyebrow: "Relevant experience and delivery capability",
     title: "Relevant Experience & Delivery Capability",
     intro:
-      "See how Larry Lo and InnovateXP turn operational problems into systems teams can use: iOS and Android products, transport maintenance, lift and escalator monitoring, IT asset visibility, AI workflows, and practical team capability. Each case now separates public evidence from first-party delivery claims.",
+      "Three cases from the introduction deck. Agilizing's owner confirmed training-material production fell from 10 days to 3 hours. ZOmate and Flower Nice Day state what was delivered, and they do not add a result the client has not confirmed.",
     vision: "Founder Vision",
     targetAudience: "Target audience",
     challenge: "Challenge",
@@ -51,7 +51,7 @@ const PAGE_COPY: Record<
     eyebrow: "相關經驗與交付能力",
     title: "Agilizing：教材由 10 日變成 3 小時",
     intro:
-      "業主確認：Agilizing Limited 教材製作由 10 日縮到 3 小時。以下亦列出 Larry Lo 其他交付同 2025 公開分享，並分開公開證據同第一方陳述。",
+      "同簡報一樣三個案例：Agilizing 教材由 10 日縮到 3 小時（業主確認）、ZOmate 課堂會籍同 WhatsApp 提醒、Flower Nice Day 網店同販賣機地圖。未確認嘅成效唔會寫成數字。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",
@@ -71,7 +71,7 @@ const PAGE_COPY: Record<
     eyebrow: "相關經驗與交付能力",
     title: "Agilizing：教材由 10 天變成 3 小時",
     intro:
-      "業主確認：Agilizing Limited 教材製作由 10 天縮到 3 小時。以下亦列出其他交付與 2025 公開分享，並分開公開證據與第一方陳述。",
+      "與簡報相同的三個案例：Agilizing 教材由 10 天縮到 3 小時（業主確認）、ZOmate 課堂會籍與 WhatsApp 提醒、Flower Nice Day 網店與販賣機地圖。未經確認的成效不會寫成數字。",
     vision: "創辦人 Vision",
     targetAudience: "適合對象",
     challenge: "挑戰",
@@ -91,7 +91,7 @@ const PAGE_COPY: Record<
     eyebrow: "プロジェクト事例と proof points",
     title: "Agilizing：教材が10日から3時間に",
     intro:
-      "Agilizing Limited のオーナー確認：教材制作を10日から3時間に短縮しました。他の記載は公開情報と自社の説明を区別しています。",
+      "Agilizing Limited のオーナー確認：教材制作を10日から3時間に短縮しました。ほかの2件は ZOmate の授業・会員・WhatsApp 通知と、Flower Nice Day の店舗と自動販売機マップです。未確認の効果は数字にしません。",
     vision: "創業者の Vision",
     targetAudience: "対象",
     challenge: "課題",
@@ -111,7 +111,7 @@ const PAGE_COPY: Record<
     eyebrow: "Projektbeispiele und Proof Points",
     title: "Agilizing: Kursmaterial von 10 Tagen auf 3 Stunden",
     intro:
-      "Vom Inhaber von Agilizing Limited bestätigt: Die Produktion von Schulungsmaterial sank von 10 Tagen auf 3 Stunden. Weitere Angaben sind nach öffentlichen Quellen und eigenen Aussagen getrennt.",
+      "Drei Fälle wie in der Einführung: Agilizing (10 Tage auf 3 Stunden, vom Inhaber bestätigt), ZOmate (Kurse, Mitgliedschaft, WhatsApp) und Flower Nice Day (Shop und Automatenkarte). Unbestätigte Ergebnisse werden nicht als Kennzahl geschrieben.",
     vision: "Founder Vision",
     targetAudience: "Zielgruppe",
     challenge: "Herausforderung",
