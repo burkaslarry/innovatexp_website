@@ -15,7 +15,7 @@ const CASE_STUDY_META: Record<AppLocale, { title: string; description: string }>
   en: {
     title: "Case Studies & Speaking Record | InnovateXP",
     description:
-      "Larry Lo delivery cases: Real Messenger apps, transport maintenance, EMSD monitoring, HKMC Annuity IT assets, plus verified 2025 speaking records.",
+      "Three client cases from the introduction: Agilizing training materials, ZOmate class and membership reminders, and the Flower Nice Day shop and kiosk map.",
   },
   "zh-hk": {
     title: "Agilizing 案例｜教材 10 日變 3 小時",

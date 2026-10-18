@@ -133,16 +133,14 @@ export function buildCaseStudiesJsonLd({
     "@id": `${pageUrl}#collection`,
     name: "InnovateXP relevant experience and delivery capability",
     description:
-      "Enterprise system delivery and verified public speaking experience covering public transport maintenance, EMSD lift and escalator monitoring, HKMC Annuity IT asset monitoring, AI training, and workflow consulting.",
+      "Client cases from the introduction: Agilizing training materials, ZOmate class and membership reminders, and the Flower Nice Day shop and kiosk map, plus verified 2025 speaking records.",
     inLanguage: localeToHtmlLang(locale),
     url: pageUrl,
     about: [
-      "enterprise system delivery",
-      "public transport maintenance systems",
-      "lift and escalator monitoring",
-      "IT asset monitoring",
-      "AI training",
-      "SME AI workflow consulting",
+      "Agilizing training materials",
+      "ZOmate class and membership reminders",
+      "Flower Nice Day shop and kiosk map",
+      "verified public speaking",
     ],
     mainEntity: cases.map((item) => ({
       "@type": "CreativeWork",
