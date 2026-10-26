@@ -1,7 +1,7 @@
 export type ArtkalSeries = "S" | "A" | "C";
 
 export interface ArtkalColor {
-  brand: "Artkal";
+  brand: "bead";
   series: ArtkalSeries;
   code: string;
   name: string;
@@ -26,7 +26,7 @@ export interface BeadPattern {
   width: number;
   height: number;
   series: ArtkalSeries;
-  /** Row-major grid of Artkal color codes. */
+  /** Row-major grid of bead color codes. */
   cells: string[][];
   usage: ColorUsage[];
   totalBeads: number;

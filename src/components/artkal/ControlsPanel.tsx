@@ -123,7 +123,7 @@ export function ControlsPanel({
 
       <fieldset>
         <legend className="mb-2 text-sm font-semibold text-[color:var(--heading-foreground)]">
-          {zh ? "Artkal 系列" : "Artkal series"}
+          {zh ? "豆系列" : "Bead series"}
         </legend>
         <div className="grid grid-cols-3 gap-2">
           {(

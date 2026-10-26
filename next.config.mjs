@@ -6,6 +6,18 @@ const withBundleAnalyzer = bundleAnalyzer({
 
 /** @type {import('next').NextConfig} */
 const nextConfig = {
+  images: {
+    formats: ["image/webp", "image/avif"],
+  },
+  async redirects() {
+    return [
+      {
+        source: "/:locale/creative-studio/artkal-bead-pattern",
+        destination: "/:locale/creative-studio/bead-pattern",
+        permanent: true,
+      },
+    ];
+  },
   async headers() {
     return [
       { source: "/:locale/checkout/:path*", headers: [{ key: "Referrer-Policy", value: "no-referrer" }, { key: "X-Robots-Tag", value: "noindex, nofollow" }] },

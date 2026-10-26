@@ -1,5 +1,6 @@
 import { BEAD_SIZE_MM } from "@/types/artkal";
 import { contrastInk, renderPatternToCanvas } from "@/utils/canvasRenderer";
+import { ensurePdfUnicodeFont, PDF_UNICODE_FONT } from "@/utils/pdfFont";
 import { getColorByCode } from "@/lib/artkal/palette";
 import type { BeadPattern } from "@/types/artkal";
 
@@ -20,13 +21,15 @@ export async function downloadPatternPdf(
   const autoTable = autoTableModule.default;
   const zh = options.locale === "zh";
   const doc = new jsPDF({ unit: "mm", format: "a4", orientation: "portrait" });
+  // Embed a UTF-8 CJK subset so titles, 色號中文名, and sheet headers render correctly.
+  await ensurePdfUnicodeFont(doc);
   const pageW = doc.internal.pageSize.getWidth();
   const pageH = doc.internal.pageSize.getHeight();
 
-  doc.setFont("helvetica", "bold");
+  doc.setFont(PDF_UNICODE_FONT, "bold");
   doc.setFontSize(16);
-  doc.text(zh ? "Artkal 拼豆圖紙" : "Artkal Bead Pattern Blueprint", 14, 18);
-  doc.setFont("helvetica", "normal");
+  doc.text(zh ? "拼豆圖紙" : "Bead Pattern Blueprint", 14, 18);
+  doc.setFont(PDF_UNICODE_FONT, "normal");
   doc.setFontSize(10);
   doc.text(
     zh
@@ -63,8 +66,8 @@ export async function downloadPatternPdf(
       row.color.hex,
       String(row.count),
     ]),
-    styles: { fontSize: 8, cellPadding: 1.4 },
-    headStyles: { fillColor: [88, 28, 135], textColor: 255 },
+    styles: { font: PDF_UNICODE_FONT, fontStyle: "normal", fontSize: 8, cellPadding: 1.4 },
+    headStyles: { font: PDF_UNICODE_FONT, fontStyle: "bold", fillColor: [88, 28, 135], textColor: 255 },
     didDrawCell: (data) => {
       if (data.section !== "body" || data.column.index !== 0) return;
       const usage = pattern.usage[data.row.index];
@@ -96,7 +99,7 @@ export async function downloadPatternPdf(
       const cols = Math.min(colsPerPage, pattern.width - originX);
       const rows = Math.min(rowsPerPage, pattern.height - originY);
 
-      doc.setFont("helvetica", "bold");
+      doc.setFont(PDF_UNICODE_FONT, "bold");
       doc.setFontSize(11);
       doc.text(
         zh
@@ -105,10 +108,10 @@ export async function downloadPatternPdf(
         margin,
         margin + 4,
       );
-      doc.setFont("helvetica", "normal");
+      doc.setFont(PDF_UNICODE_FONT, "normal");
       doc.setFontSize(8);
       doc.text(
-        zh ? "請以 100% 比例列印。格內色號對應 Artkal 色袋。" : "Print at 100% scale. Cell codes match Artkal bag labels.",
+        zh ? "請以 100% 比例列印。格內色號對應色袋標籤。" : "Print at 100% scale. Cell codes match bead bag labels.",
         margin,
         margin + 9,
       );
@@ -133,6 +136,7 @@ export async function downloadPatternPdf(
           const ink = contrastInk(color.rgb);
           const inkRgb = hexToRgb(ink);
           doc.setTextColor(inkRgb[0], inkRgb[1], inkRgb[2]);
+          doc.setFont(PDF_UNICODE_FONT, "normal");
           doc.setFontSize(fontSize);
           doc.text(code, px + beadMm / 2, py + beadMm / 2 + fontSize * 0.12, { align: "center" });
         }
@@ -140,5 +144,5 @@ export async function downloadPatternPdf(
     }
   }
 
-  doc.save(options.filename ?? "artkal-bead-blueprint.pdf");
+  doc.save(options.filename ?? "bead-blueprint.pdf");
 }

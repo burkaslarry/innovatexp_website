@@ -208,16 +208,16 @@ const CX_CONSULTING: LocalePair = {
   },
 };
 
-const ARTKAL_BEAD: LocalePair = {
+const BEAD_PATTERN: LocalePair = {
   zh: {
-    title: "拼豆圖紙生成器｜Artkal色號對圖｜InnovateXP",
+    title: "拼豆圖紙生成器｜色號對圖｜InnovateXP",
     description:
-      "上傳圖片轉成 Artkal 拼豆圖紙：S01／A2／B13／H5 色號、CIEDE2000 對色、每色粒數統計，以及 1:1 PDF／PNG 圖紙下載。",
+      "上傳圖片轉成拼豆圖紙：S01／A2／B13／H5 色號、CIEDE2000 對色、每色粒數統計，以及 1:1 PDF／PNG 圖紙下載。",
   },
   en: {
-    title: "Artkal Bead Pattern Generator | CIEDE2000 | InnovateXP",
+    title: "Bead Pattern Generator | CIEDE2000 | InnovateXP",
     description:
-      "Turn a photo into an Artkal fuse-bead blueprint: official color codes, CIEDE2000 matching, per-color bead counts, and 1:1 PDF/PNG export.",
+      "Turn a photo into a fuse-bead blueprint: color codes, CIEDE2000 matching, per-color bead counts, and 1:1 PDF/PNG export.",
   },
 };
 
@@ -225,12 +225,12 @@ const CREATIVE_STUDIO: LocalePair = {
   zh: {
     title: "Creative Studio 自由創作｜拼豆・咖啡地圖｜Larry Lo",
     description:
-      "Larry Lo 個人瀏覽器小工房：Artkal 拼豆圖紙生成器、香港咖啡店地圖，陸續有得加。全部喺瀏覽器跑，唔使登入。",
+      "Larry Lo 個人瀏覽器小工房：拼豆圖紙生成器、香港咖啡店地圖，陸續有得加。全部喺瀏覽器跑，唔使登入。",
   },
   en: {
     title: "Creative Studio | Bead Patterns & Coffee Map | Larry Lo",
     description:
-      "Larry Lo's side-project corner: Artkal bead pattern generator and a Hong Kong coffeeshop map. All run in the browser, no login.",
+      "Larry Lo's side-project corner: bead pattern generator and a Hong Kong coffeeshop map. All run in the browser, no login.",
   },
 };
 
@@ -371,8 +371,13 @@ const SME_AUTOMATION_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
 export function smeAutomationSeo(locale: AppLocale): PageSeo {
   return SME_AUTOMATION_LOCALE[locale] ?? pick(locale, SME_AUTOMATION);
 }
+export function beadPatternSeo(locale: AppLocale): PageSeo {
+  return pick(locale, BEAD_PATTERN);
+}
+
+/** @deprecated Use beadPatternSeo */
 export function artkalBeadSeo(locale: AppLocale): PageSeo {
-  return pick(locale, ARTKAL_BEAD);
+  return beadPatternSeo(locale);
 }
 export function creativeStudioSeo(locale: AppLocale): PageSeo {
   return pick(locale, CREATIVE_STUDIO);

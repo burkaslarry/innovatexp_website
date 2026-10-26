@@ -132,3 +132,7 @@ dist
 
 # Local Stripe setup secrets
 .env.stripe.local
+
+# Local next/font build helpers (not shipped)
+.font-cache/
+scripts/next-font-google-mock.cjs
