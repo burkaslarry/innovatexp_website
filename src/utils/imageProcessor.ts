@@ -66,7 +66,7 @@ function remapCells(cells: string[][], fromCode: string, toCode: string): void {
 }
 
 /**
- * Collapse similar shades until `maxColors` distinct Artkal bags remain.
+ * Collapse similar shades until `maxColors` distinct bead bags remain.
  * Closest CIEDE2000 pair is merged; the less-used code is remapped onto the more-used one.
  */
 function limitDistinctColors(
@@ -155,7 +155,7 @@ async function loadImage(file: File): Promise<{ source: CanvasImageSource; width
 export async function processImage(file: File, options: ProcessImageOptions): Promise<BeadPattern> {
   const palette = getPreparedPalette(options.series);
   if (palette.length === 0) {
-    throw new Error(`No Artkal ${options.series}-series colors are loaded.`);
+    throw new Error(`No ${options.series}-series bead colors are loaded.`);
   }
 
   const image = await loadImage(file);

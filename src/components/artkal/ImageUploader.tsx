@@ -43,7 +43,7 @@ export function ImageUploader({ file, onFile, zh }: ImageUploaderProps) {
         onKeyDown={(event) => {
           if (event.key === "Enter" || event.key === " ") {
             event.preventDefault();
-            document.getElementById("artkal-file-input")?.click();
+            document.getElementById("bead-file-input")?.click();
           }
         }}
         onDragOver={(event) => {
@@ -61,10 +61,10 @@ export function ImageUploader({ file, onFile, zh }: ImageUploaderProps) {
             ? "border-brand-primary bg-brand-primary/10"
             : "border-[color:var(--border-medium)] bg-[color:var(--card-bg)]"
         }`}
-        onClick={() => document.getElementById("artkal-file-input")?.click()}
+        onClick={() => document.getElementById("bead-file-input")?.click()}
       >
         <input
-          id="artkal-file-input"
+          id="bead-file-input"
           type="file"
           accept={ACCEPT}
           className="sr-only"

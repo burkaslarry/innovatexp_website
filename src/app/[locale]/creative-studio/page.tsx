@@ -35,12 +35,12 @@ export default async function CreativeStudioPage({
 
   const tools = [
     {
-      href: "/creative-studio/artkal-bead-pattern",
+      href: "/creative-studio/bead-pattern",
       icon: Grid3x3,
-      title: zh ? "Artkal 拼豆圖紙生成器" : "Artkal Bead Pattern Generator",
+      title: zh ? "拼豆圖紙生成器" : "Bead Pattern Generator",
       body: zh
-        ? "上傳相片轉成 Artkal 色號圖紙，CIEDE2000 對色、每色粒數統計、1:1 PDF／PNG 匯出。"
-        : "Turn a photo into an Artkal fuse-bead blueprint with CIEDE2000 matching, bead counts, and 1:1 PDF/PNG export.",
+        ? "上傳相片轉成色號圖紙，CIEDE2000 對色、每色粒數統計、1:1 PDF／PNG 匯出。"
+        : "Turn a photo into a fuse-bead blueprint with CIEDE2000 matching, bead counts, and 1:1 PDF/PNG export.",
     },
     {
       href: "/creative-studio/coffee-map",

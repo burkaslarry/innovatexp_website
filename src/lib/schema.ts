@@ -237,18 +237,18 @@ export function getAIConsultingServiceSchema() {
   };
 }
 
-export function getArtkalBeadPatternSchema(url: string) {
+export function getBeadPatternSchema(url: string) {
   return {
     "@context": "https://schema.org",
     "@type": "WebApplication",
-    name: "Artkal Bead Pattern Generator",
+    name: "Bead Pattern Generator",
     alternateName: "拼豆圖紙生成器",
     applicationCategory: "DesignApplication",
     operatingSystem: "Web",
     isAccessibleForFree: true,
     url,
     description:
-      "Browser tool that converts photos into Artkal fuse-bead blueprints with CIEDE2000 color matching, per-color bead counts, and 1:1 PDF/PNG export.",
+      "Browser tool that converts photos into fuse-bead blueprints with CIEDE2000 color matching, per-color bead counts, and 1:1 PDF/PNG export.",
     provider: {
       "@type": "Organization",
       name: "InnovateXP Limited",
@@ -260,6 +260,11 @@ export function getArtkalBeadPatternSchema(url: string) {
       priceCurrency: "HKD",
     },
   };
+}
+
+/** @deprecated Use getBeadPatternSchema */
+export function getArtkalBeadPatternSchema(url: string) {
+  return getBeadPatternSchema(url);
 }
 
 export function getFAQPageSchema({

@@ -280,7 +280,7 @@ function displayName(raw) {
 function namedColor(series, code, rawName, r, g, b) {
   const name = displayName(rawName);
   return {
-    brand: "Artkal",
+    brand: "bead",
     series,
     code,
     name,
@@ -296,7 +296,7 @@ function familyColor(code, r, g, b) {
   const zhFamily = FAMILY_ZH[letter] || "色系";
   const isSkin = letter === "G" || (letter === "H" && Number(code.slice(1)) <= 2);
   return {
-    brand: "Artkal",
+    brand: "bead",
     series: "A",
     code,
     name: isSkin && letter === "G" ? `Skin ${code}` : `${enFamily} ${code}`,

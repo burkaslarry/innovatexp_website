@@ -39,7 +39,7 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
   { path: "/reliability", priority: 0.74, changeFrequency: "monthly" },
   { path: "/pitch-decks", priority: 0.65, changeFrequency: "monthly" },
   { path: "/creative-studio", priority: 0.6, changeFrequency: "monthly" },
-  { path: "/creative-studio/artkal-bead-pattern", priority: 0.62, changeFrequency: "monthly" },
+  { path: "/creative-studio/bead-pattern", priority: 0.62, changeFrequency: "monthly" },
   { path: "/creative-studio/coffee-map", priority: 0.6, changeFrequency: "monthly" },
   { path: "/blog", priority: 0.58, changeFrequency: "weekly" },
   { path: "/compare/smartsales-vs-salesforce", priority: 0.68, changeFrequency: "monthly" },

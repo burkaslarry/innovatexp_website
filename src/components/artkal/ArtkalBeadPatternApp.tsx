@@ -118,7 +118,7 @@ export function ArtkalBeadPatternApp({ zh }: ArtkalBeadPatternAppProps) {
           {generating ? (
             <div className="flex min-h-[360px] items-center justify-center gap-2 text-[color:var(--text-secondary)]">
               <Loader2 className="h-5 w-5 animate-spin" aria-hidden />
-              {zh ? "正在用 CIEDE2000 對色…" : "Matching Artkal colors with CIEDE2000…"}
+              {zh ? "正在用 CIEDE2000 對色…" : "Matching bead colors with CIEDE2000…"}
             </div>
           ) : pattern ? (
             <BeadCanvas
@@ -131,8 +131,8 @@ export function ArtkalBeadPatternApp({ zh }: ArtkalBeadPatternAppProps) {
           ) : (
             <p className="min-h-[200px] text-sm leading-7 text-[color:var(--text-secondary)]">
               {zh
-                ? "上傳圖片後揀釘板同系列，再按「生成拼豆圖紙」。每格會對應最近嘅 Artkal 色號。"
-                : "Upload an image, pick a pegboard and series, then generate. Each cell maps to the nearest Artkal code."}
+                ? "上傳圖片後揀釘板同系列，再按「生成拼豆圖紙」。每格會對應最近嘅色號。"
+                : "Upload an image, pick a pegboard and series, then generate. Each cell maps to the nearest color code."}
             </p>
           )}
         </div>
