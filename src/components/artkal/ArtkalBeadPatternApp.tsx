@@ -85,7 +85,6 @@ export function ArtkalBeadPatternApp({ zh }: ArtkalBeadPatternAppProps) {
           canGenerate={Boolean(file)}
           generating={generating}
         />
-        {error ? <p className="text-sm text-red-600 dark:text-red-400">{error}</p> : null}
       </aside>
 
       <section className="space-y-6">
@@ -107,7 +106,13 @@ export function ArtkalBeadPatternApp({ zh }: ArtkalBeadPatternAppProps) {
               <button
                 type="button"
                 disabled={!pattern}
-                onClick={() => pattern && void downloadPatternPdf(pattern, { locale: zh ? "zh" : "en" })}
+                onClick={() => {
+                  if (!pattern) return;
+                  setError(null);
+                  void downloadPatternPdf(pattern, { locale: zh ? "zh" : "en" }).catch((err) => {
+                    setError(err instanceof Error ? err.message : zh ? "PDF 匯出失敗。" : "PDF export failed.");
+                  });
+                }}
                 className="btn-brand inline-flex min-h-[44px] items-center gap-2 rounded-full px-4 text-sm font-bold disabled:opacity-40"
               >
                 <FileText className="h-4 w-4" aria-hidden />
@@ -115,6 +120,11 @@ export function ArtkalBeadPatternApp({ zh }: ArtkalBeadPatternAppProps) {
               </button>
             </div>
           </div>
+          {error ? (
+            <p className="mb-4 text-sm text-red-600 dark:text-red-400" role="alert">
+              {error}
+            </p>
+          ) : null}
           {generating ? (
             <div className="flex min-h-[360px] items-center justify-center gap-2 text-[color:var(--text-secondary)]">
               <Loader2 className="h-5 w-5 animate-spin" aria-hidden />
