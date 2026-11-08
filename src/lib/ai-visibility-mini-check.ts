@@ -1,4 +1,4 @@
-import { neon, type NeonQueryFunction } from "@neondatabase/serverless";
+import { sqlFor, type Sql } from "@/lib/db";
 
 export const MINI_CHECK_CAMPAIGN = "workshop-2026-10-17";
 export const MINI_CHECK_CAPACITY = 6;
@@ -17,17 +17,17 @@ export type MiniCheckRegistration = {
 
 let schemaReady: Promise<void> | null = null;
 
-function getSql(): NeonQueryFunction<false, false> {
+function getSql(): Sql {
   const url = process.env.DATABASE_URL?.trim();
   if (!url) throw new Error("DATABASE_URL not configured");
-  return neon(url);
+  return sqlFor(url);
 }
 
-async function ensureSchema(sql: NeonQueryFunction<false, false>) {
+async function ensureSchema(sql: Sql) {
   if (!schemaReady) {
     schemaReady = (async () => {
       await sql`
-        CREATE TABLE IF NOT EXISTS ai_visibility_mini_registrations (
+        CREATE TABLE IF NOT EXISTS innovatexp_website_ai_visibility_mini_registrations (
           id BIGSERIAL PRIMARY KEY,
           campaign TEXT NOT NULL,
           name TEXT NOT NULL,
@@ -44,7 +44,7 @@ async function ensureSchema(sql: NeonQueryFunction<false, false>) {
         )
       `;
       await sql`
-        CREATE OR REPLACE FUNCTION reserve_ai_visibility_mini(
+        CREATE OR REPLACE FUNCTION innovatexp_website_reserve_ai_visibility_mini(
           p_campaign TEXT, p_capacity INTEGER, p_name TEXT, p_company TEXT,
           p_website TEXT, p_website_host TEXT, p_service TEXT,
           p_email TEXT, p_whatsapp TEXT, p_question TEXT, p_locale TEXT
@@ -54,7 +54,7 @@ async function ensureSchema(sql: NeonQueryFunction<false, false>) {
         BEGIN
           PERFORM pg_advisory_xact_lock(hashtextextended(p_campaign, 0));
           SELECT r.id INTO existing_id
-          FROM ai_visibility_mini_registrations r
+          FROM innovatexp_website_ai_visibility_mini_registrations r
           WHERE r.campaign = p_campaign
             AND (r.website_host = p_website_host
               OR (p_email IS NOT NULL AND lower(r.email) = lower(p_email))
@@ -65,12 +65,12 @@ async function ensureSchema(sql: NeonQueryFunction<false, false>) {
             RETURN;
           END IF;
           SELECT count(*)::INTEGER INTO booked
-          FROM ai_visibility_mini_registrations r WHERE r.campaign = p_campaign;
+          FROM innovatexp_website_ai_visibility_mini_registrations r WHERE r.campaign = p_campaign;
           IF booked >= p_capacity THEN
             RETURN QUERY SELECT 'full'::TEXT, NULL::BIGINT, NULL::INTEGER;
             RETURN;
           END IF;
-          INSERT INTO ai_visibility_mini_registrations
+          INSERT INTO innovatexp_website_ai_visibility_mini_registrations
             (campaign, name, company, website, website_host, service, email, whatsapp, buyer_question, locale)
           VALUES
             (p_campaign, p_name, p_company, p_website, p_website_host, p_service,
@@ -91,7 +91,7 @@ export async function reserveMiniCheck(registration: MiniCheckRegistration) {
   const sql = getSql();
   await ensureSchema(sql);
   const rows = await sql`
-    SELECT * FROM reserve_ai_visibility_mini(
+    SELECT * FROM innovatexp_website_reserve_ai_visibility_mini(
       ${MINI_CHECK_CAMPAIGN}, ${MINI_CHECK_CAPACITY}, ${registration.name},
       ${registration.company}, ${registration.website}, ${registration.websiteHost},
       ${registration.service}, ${registration.email || null}, ${registration.whatsapp || null},
@@ -110,7 +110,7 @@ export async function miniCheckCapacity() {
   const sql = getSql();
   await ensureSchema(sql);
   const rows = await sql`
-    SELECT count(*)::INTEGER AS booked FROM ai_visibility_mini_registrations
+    SELECT count(*)::INTEGER AS booked FROM innovatexp_website_ai_visibility_mini_registrations
     WHERE campaign = ${MINI_CHECK_CAMPAIGN}
   `;
   return Math.max(0, MINI_CHECK_CAPACITY - Number(rows[0]?.booked || 0));

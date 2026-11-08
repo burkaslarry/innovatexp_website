@@ -25,15 +25,15 @@ async function main() {
     const order = await getOrder(String(b.orderId));
     if (!order || order.payment_state !== "paid") throw new Error("Paid order required");
     const expires = Date.now() + 30 * 86400_000;
-    await commerceSql()`UPDATE commerce_orders SET access_expires_at = ${new Date(expires).toISOString()}::timestamptz WHERE id = ${order.id}::uuid`;
+    await commerceSql()`UPDATE innovatexp_website_commerce_orders SET access_expires_at = ${new Date(expires).toISOString()}::timestamptz WHERE id = ${order.id}::uuid`;
     console.log(`${getSiteUrl()}/api/commerce/access?token=${encodeURIComponent(orderToken(order.id, expires))}`);
   } else if (b.action === "outcome") {
     if (!["researched", "contacted", "replied", "qualified", "meeting", "proposal", "won", "lost"].includes(b.stage) || typeof b.company !== "string" || b.company.length > 200 || typeof b.note !== "string" || b.note.length > 2000) throw new Error("Invalid outcome");
-    await commerceSql()`INSERT INTO commerce_outcomes(id, company, stage, note) VALUES (${randomUUID()}::uuid, ${b.company}, ${b.stage}, ${b.note})`;
+    await commerceSql()`INSERT INTO innovatexp_website_commerce_outcomes(id, company, stage, note) VALUES (${randomUUID()}::uuid, ${b.company}, ${b.stage}, ${b.note})`;
     console.log({ recorded: true });
   } else if (b.action === "report") {
     console.log(await commerceSql()`SELECT offer, currency, payment_state, count(*)::integer AS orders, sum(amount)::bigint AS amount_minor_units
-      FROM commerce_orders GROUP BY offer, currency, payment_state ORDER BY offer, payment_state`);
+      FROM innovatexp_website_commerce_orders GROUP BY offer, currency, payment_state ORDER BY offer, payment_state`);
   } else throw new Error("Unknown action");
 }
 main().catch(() => { console.error("Commerce operation failed. Check configuration and input; no credentials are printed."); process.exitCode = 1; });

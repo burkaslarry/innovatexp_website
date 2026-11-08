@@ -1,7 +1,7 @@
 import { createHmac, randomUUID, timingSafeEqual } from "node:crypto";
 import { cookies } from "next/headers";
 import { NextResponse } from "next/server";
-import { neon } from "@neondatabase/serverless";
+import { sqlFor } from "@/lib/db";
 
 const COOKIE = "ixp_form_session";
 let schemaReady: Promise<unknown> | undefined;
@@ -30,20 +30,20 @@ export async function enforceFormSubmissionLimit(req: Request): Promise<NextResp
     const ipKey = hash(`ip:${ip}`);
     const sessionKey = hash(`sid:${session}`);
     const day = new Date(Date.now() + 8 * 3600_000).toISOString().slice(0, 10);
-    const sql = neon(databaseUrl);
-    schemaReady ??= sql`CREATE TABLE IF NOT EXISTS form_submission_quota (
+    const sql = sqlFor(databaseUrl);
+    schemaReady ??= sql`CREATE TABLE IF NOT EXISTS innovatexp_website_form_submission_quota (
       day DATE NOT NULL, identity TEXT NOT NULL, submissions INTEGER NOT NULL DEFAULT 0,
       PRIMARY KEY (day, identity)
     )`.catch((error: unknown) => { schemaReady = undefined; throw error; });
     await schemaReady;
-    await sql`DELETE FROM form_submission_quota WHERE day < ${day}::date - 7`;
+    await sql`DELETE FROM innovatexp_website_form_submission_quota WHERE day < ${day}::date - 7`;
     const keys = [ipKey, sessionKey].sort();
     const results = await sql.transaction([
-      sql`INSERT INTO form_submission_quota (day, identity) VALUES (${day}, ${keys[0]}), (${day}, ${keys[1]}) ON CONFLICT DO NOTHING`,
-      sql`SELECT identity FROM form_submission_quota WHERE day = ${day} AND identity IN (${keys[0]}, ${keys[1]}) ORDER BY identity FOR UPDATE`,
-      sql`UPDATE form_submission_quota SET submissions = submissions + 1
+      sql`INSERT INTO innovatexp_website_form_submission_quota (day, identity) VALUES (${day}, ${keys[0]}), (${day}, ${keys[1]}) ON CONFLICT DO NOTHING`,
+      sql`SELECT identity FROM innovatexp_website_form_submission_quota WHERE day = ${day} AND identity IN (${keys[0]}, ${keys[1]}) ORDER BY identity FOR UPDATE`,
+      sql`UPDATE innovatexp_website_form_submission_quota SET submissions = submissions + 1
         WHERE day = ${day} AND identity IN (${keys[0]}, ${keys[1]})
-        AND NOT EXISTS (SELECT 1 FROM form_submission_quota WHERE day = ${day} AND identity IN (${keys[0]}, ${keys[1]}) AND submissions >= 3)
+        AND NOT EXISTS (SELECT 1 FROM innovatexp_website_form_submission_quota WHERE day = ${day} AND identity IN (${keys[0]}, ${keys[1]}) AND submissions >= 3)
         RETURNING submissions`,
     ]);
     if (results[2].length === 2) return null;

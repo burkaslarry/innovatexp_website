@@ -51,12 +51,12 @@ test("payment activation is closed until terms and live payment approval exist",
 test("checkout retry creates one immutable order", async () => {
   const first = await make();
   await make(first.id);
-  assert.equal((await db.query<{ n: number }>("SELECT count(*)::int AS n FROM commerce_orders WHERE id = $1", [first.id])).rows[0].n, 1);
+  assert.equal((await db.query<{ n: number }>("SELECT count(*)::int AS n FROM innovatexp_website_commerce_orders WHERE id = $1", [first.id])).rows[0].n, 1);
   await assert.rejects(createOrder({ id: first.id, offer: "snapshot", email: "other@example.test", locale: "en", live: false }, sql));
 });
 
 test("reservation transaction rejects overlap, accepts adjacent slots and deduplicates retries", async () => {
-  await db.exec(`CREATE TABLE calendar_bookings (id BIGSERIAL PRIMARY KEY, visitor_name TEXT, visitor_email TEXT,
+  await db.exec(`CREATE TABLE innovatexp_website_calendar_bookings (id BIGSERIAL PRIMARY KEY, visitor_name TEXT, visitor_email TEXT,
     visitor_phone TEXT, visitor_company TEXT, starts_at TIMESTAMPTZ, ends_at TIMESTAMPTZ, message TEXT)`);
   const input = { name: "Test", email: "booking@example.test", phone: "", company: "Test", startsAt: "2026-10-14T02:00:00Z", endsAt: "2026-10-14T02:30:00Z", message: "" };
   const first = await reserveCalendarBooking(sql, input);
@@ -83,7 +83,7 @@ test("duplicate paid events create one work item and delayed events cannot undo 
   const order = await make();
   const paid = { eventId: `evt_${randomUUID()}`, type: "checkout.session.completed", created: 1, orderId: order.id, state: "paid" as const };
   await recordPaymentEvent(paid, sql); await recordPaymentEvent(paid, sql);
-  assert.equal((await db.query<{ n: number }>("SELECT count(*)::int AS n FROM commerce_outbox WHERE order_id = $1", [order.id])).rows[0].n, 1);
+  assert.equal((await db.query<{ n: number }>("SELECT count(*)::int AS n FROM innovatexp_website_commerce_outbox WHERE order_id = $1", [order.id])).rows[0].n, 1);
   await recordPaymentEvent({ ...paid, eventId: `evt_${randomUUID()}`, state: "refunded" }, sql);
   await recordPaymentEvent(paid, sql);
   assert.equal((await getOrder(order.id, sql))?.payment_state, "refunded");
@@ -92,12 +92,12 @@ test("duplicate paid events create one work item and delayed events cannot undo 
 test("payment transaction rolls back receipt and status if durable work cannot be inserted", async () => {
   const order = await make();
   const eventId = `evt_${randomUUID()}`;
-  await db.exec("ALTER TABLE commerce_outbox RENAME TO temporarily_unavailable_outbox");
+  await db.exec("ALTER TABLE innovatexp_website_commerce_outbox RENAME TO temporarily_unavailable_outbox");
   try {
     await assert.rejects(recordPaymentEvent({ eventId, type: "checkout.session.completed", created: 1, orderId: order.id, state: "paid" }, sql));
     assert.equal((await getOrder(order.id, sql))?.payment_state, "pending");
-    assert.equal((await db.query<{ n: number }>("SELECT count(*)::int AS n FROM commerce_events WHERE id = $1", [eventId])).rows[0].n, 0);
-  } finally { await db.exec("ALTER TABLE temporarily_unavailable_outbox RENAME TO commerce_outbox"); }
+    assert.equal((await db.query<{ n: number }>("SELECT count(*)::int AS n FROM innovatexp_website_commerce_events WHERE id = $1", [eventId])).rows[0].n, 0);
+  } finally { await db.exec("ALTER TABLE temporarily_unavailable_outbox RENAME TO innovatexp_website_commerce_outbox"); }
 });
 
 test("intake rejects unpaid access and retries preserve the first submission with one notification", async () => {
@@ -108,7 +108,7 @@ test("intake rejects unpaid access and retries preserve the first submission wit
   order = (await getOrder(order.id, sql))!;
   await saveIntake(order, intake, sql); await saveIntake(order, { ...intake, workflow: "Changed" }, sql);
   assert.equal((await getOrder(order.id, sql))?.intake?.workflow, intake.workflow);
-  assert.equal((await db.query<{ n: number }>("SELECT count(*)::int AS n FROM commerce_outbox WHERE order_id = $1 AND kind = 'intake'", [order.id])).rows[0].n, 1);
+  assert.equal((await db.query<{ n: number }>("SELECT count(*)::int AS n FROM innovatexp_website_commerce_outbox WHERE order_id = $1 AND kind = 'intake'", [order.id])).rows[0].n, 1);
 });
 
 test("order tokens reject tampering, expiration and wrong secrets", () => {

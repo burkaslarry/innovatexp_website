@@ -1,9 +1,9 @@
 /**
- * Questionnaire leads → Neon Postgres.
+ * Questionnaire leads → Render Postgres.
  *
- * Env: DATABASE_URL (Neon pooled or direct connection string)
+ * Env: DATABASE_URL (Render Postgres connection string)
  */
-import { neon, type NeonQueryFunction } from "@neondatabase/serverless";
+import { sqlFor, type Sql } from "@/lib/db";
 
 export type QuestionnaireDbPayload = {
   pathId: string;
@@ -23,10 +23,10 @@ export type QuestionnaireDbPayload = {
 
 let schemaReady: Promise<void> | null = null;
 
-function getSql(): NeonQueryFunction<false, false> | null {
+function getSql(): Sql | null {
   const url = process.env.DATABASE_URL?.trim();
   if (!url) return null;
-  return neon(url);
+  return sqlFor(url);
 }
 
 async function ensureSchema() {
@@ -35,7 +35,7 @@ async function ensureSchema() {
   if (!schemaReady) {
     schemaReady = (async () => {
       await sql`
-        CREATE TABLE IF NOT EXISTS questionnaire_leads (
+        CREATE TABLE IF NOT EXISTS innovatexp_website_questionnaire_leads (
           id BIGSERIAL PRIMARY KEY,
           path_id VARCHAR(128) NOT NULL DEFAULT 'questionnaire',
           questionnaire_type VARCHAR(255) NOT NULL,
@@ -56,13 +56,13 @@ async function ensureSchema() {
         )
       `;
       // Existing installations predate submission deduplication and notification retries.
-      await sql`ALTER TABLE questionnaire_leads ADD COLUMN IF NOT EXISTS submission_id UUID`;
-      await sql`ALTER TABLE questionnaire_leads ADD COLUMN IF NOT EXISTS notification_sent_at TIMESTAMPTZ`;
-      await sql`ALTER TABLE questionnaire_leads ADD COLUMN IF NOT EXISTS notification_locked_until TIMESTAMPTZ`;
-      await sql`CREATE UNIQUE INDEX IF NOT EXISTS questionnaire_submission_id ON questionnaire_leads (submission_id)`;
-      await sql`CREATE INDEX IF NOT EXISTS idx_questionnaire_leads_created_at ON questionnaire_leads (created_at DESC)`;
-      await sql`CREATE INDEX IF NOT EXISTS idx_questionnaire_leads_email ON questionnaire_leads (email)`;
-      await sql`CREATE INDEX IF NOT EXISTS idx_questionnaire_leads_type ON questionnaire_leads (questionnaire_type)`;
+      await sql`ALTER TABLE innovatexp_website_questionnaire_leads ADD COLUMN IF NOT EXISTS submission_id UUID`;
+      await sql`ALTER TABLE innovatexp_website_questionnaire_leads ADD COLUMN IF NOT EXISTS notification_sent_at TIMESTAMPTZ`;
+      await sql`ALTER TABLE innovatexp_website_questionnaire_leads ADD COLUMN IF NOT EXISTS notification_locked_until TIMESTAMPTZ`;
+      await sql`CREATE UNIQUE INDEX IF NOT EXISTS innovatexp_website_questionnaire_submission_id ON innovatexp_website_questionnaire_leads (submission_id)`;
+      await sql`CREATE INDEX IF NOT EXISTS idx_innovatexp_website_questionnaire_leads_created_at ON innovatexp_website_questionnaire_leads (created_at DESC)`;
+      await sql`CREATE INDEX IF NOT EXISTS idx_innovatexp_website_questionnaire_leads_email ON innovatexp_website_questionnaire_leads (email)`;
+      await sql`CREATE INDEX IF NOT EXISTS idx_innovatexp_website_questionnaire_leads_type ON innovatexp_website_questionnaire_leads (questionnaire_type)`;
     })().catch((err) => {
       schemaReady = null;
       throw err;
@@ -82,7 +82,7 @@ export async function insertQuestionnaireLead(
   try {
     await ensureSchema();
     const rows = await sql`
-      INSERT INTO questionnaire_leads (
+      INSERT INTO innovatexp_website_questionnaire_leads (
         path_id,
         questionnaire_type,
         name,

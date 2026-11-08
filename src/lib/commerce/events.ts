@@ -112,7 +112,7 @@ async function subscriptionLink(stripe: Stripe, pi: string, live: boolean) {
 export async function reconcileOrder(orderId: string, dependencies: EventDependencies = {}) {
   if (!/^[a-f0-9-]{36}$/.test(orderId)) throw new Error("Order required");
   const rows = await (dependencies.sql ?? commerceSql())`SELECT COALESCE(c.checkout_session, o.checkout_session) AS session
-    FROM commerce_orders o LEFT JOIN commerce_checkouts c ON c.id = o.checkout_id WHERE o.id = ${orderId}::uuid`;
+    FROM innovatexp_website_commerce_orders o LEFT JOIN innovatexp_website_commerce_checkouts c ON c.id = o.checkout_id WHERE o.id = ${orderId}::uuid`;
   const sessionId = rows[0]?.session as string | undefined;
   if (!sessionId) throw new Error("Checkout not found");
   const session = await (dependencies.stripe ?? getStripe()).checkout.sessions.retrieve(sessionId);
@@ -126,7 +126,7 @@ export async function syncSubscription(id: string, eventCreated: number, depende
   if (!orderId) return;
   const order = await getOrder(orderId, dependencies.sql);
   if (!order || sub.livemode !== order.livemode) throw new Error("Subscription mismatch");
-  await (dependencies.sql ?? commerceSql())`UPDATE commerce_orders SET subscription = ${sub.id}, customer = ${idOf(sub.customer)},
+  await (dependencies.sql ?? commerceSql())`UPDATE innovatexp_website_commerce_orders SET subscription = ${sub.id}, customer = ${idOf(sub.customer)},
     subscription_status = CASE WHEN subscription_status = 'canceled' THEN 'canceled' ELSE ${sub.status} END,
     stripe_event_created = ${eventCreated}, updated_at = NOW() WHERE id = ${order.id}::uuid AND stripe_event_created <= ${eventCreated}`;
 }

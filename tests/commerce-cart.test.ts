@@ -4,7 +4,7 @@ import assert from "node:assert/strict";
 import { createHmac, randomUUID } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import { PGlite } from "@electric-sql/pglite";
-import { neonConfig } from "@neondatabase/serverless";
+import { setTestDatabase } from "@/lib/db";
 import type Stripe from "stripe";
 import { NextRequest } from "next/server";
 import { workAsyncStorage } from "next/dist/server/app-render/work-async-storage.external";
@@ -49,24 +49,11 @@ let localDatabaseRequests = 0;
 before(async () => {
   await db.exec(await readFile(new URL("../migrations/20261013-commerce.sql", import.meta.url), "utf8"));
   await db.exec(await readFile(new URL("../migrations/20261109-cart-checkouts.sql", import.meta.url), "utf8"));
-  // Route tests run the real Neon query encoder/decoder against local PGlite, never a remote database.
-  neonConfig.fetchFunction = async (_url: unknown, options?: RequestInit) => {
-    localDatabaseRequests++;
-    const body = JSON.parse(String(options?.body));
-    const execute = async (query: { query: string; params: unknown[] }, client: Pick<PGlite, "query"> = db) => {
-      const result = await client.query<Record<string, unknown>>(query.query, query.params);
-      return { fields: result.fields, rows: result.rows.map((row) => result.fields.map((field) => {
-        const value = row[field.name];
-        return value == null ? null : value instanceof Date ? value.toISOString().replace("T", " ").replace("Z", "+00") : typeof value === "object" ? JSON.stringify(value) :
-          typeof value === "boolean" ? value ? "t" : "f" : String(value);
-      })), rowCount: result.rows.length, command: "SELECT" };
-    };
-    return Response.json(body.queries ? { results: await db.transaction(async (tx) => {
-      const results = [];
-      for (const query of body.queries) results.push(await execute(query, tx));
-      return results;
-    }) } : await execute(body));
-  };
+  // Route tests send every query through the production SQL adapter to local PGlite, never a remote database.
+  setTestDatabase({
+    query: (text, values) => { localDatabaseRequests++; return db.query(text, values); },
+    transaction: (fn) => { localDatabaseRequests++; return db.transaction((tx) => fn(tx)); },
+  });
 });
 beforeEach(() => {
   Object.assign(process.env, {
@@ -79,7 +66,7 @@ beforeEach(() => {
   delete process.env.VERCEL;
   for (const offer of Object.keys(OFFERS)) process.env[`STRIPE_PRICE_${offer.replace(/([A-Z])/g, "_$1").toUpperCase()}`] = prices[offer];
 });
-after(async () => { neonConfig.fetchFunction = undefined; await db.close(); });
+after(async () => { setTestDatabase(null); await db.close(); });
 
 async function group(items?: CartCheckoutItem[]) { return createCart(normal(items), false, prices, sql); }
 async function pair() {
@@ -219,11 +206,11 @@ test("POST enforces origin, JSON, actual streamed size, schema and unavailable g
 });
 
 test("the actual POST shares the existing daily submission limit before contacting Stripe", async () => {
-  await db.exec(`CREATE TABLE IF NOT EXISTS form_submission_quota (
+  await db.exec(`CREATE TABLE IF NOT EXISTS innovatexp_website_form_submission_quota (
     day DATE NOT NULL, identity TEXT NOT NULL, submissions INTEGER NOT NULL DEFAULT 0, PRIMARY KEY(day, identity))`);
   const day = new Date(Date.now() + 8 * 3600_000).toISOString().slice(0, 10);
   const identity = createHmac("sha256", process.env.DATABASE_URL!).update("ip:127.0.0.1").digest("hex");
-  await sql`INSERT INTO form_submission_quota (day, identity, submissions) VALUES (${day}, ${identity}, 3)
+  await sql`INSERT INTO innovatexp_website_form_submission_quota (day, identity, submissions) VALUES (${day}, ${identity}, 3)
     ON CONFLICT (day, identity) DO UPDATE SET submissions = 3`;
   const previous = process.env.NODE_ENV; Object.assign(process.env, { NODE_ENV: "test" });
   try {
@@ -238,16 +225,16 @@ test("the actual POST shares the existing daily submission limit before contacti
 test("an invalid, expired, wrong-email, wrong-offer or used invitation never consumes another item", async () => {
   const valid = await invitation("discovery");
   const expired = await invitation("eventXp");
-  await sql`UPDATE commerce_invitations SET expires_at = NOW() - INTERVAL '1 second' WHERE token_hash = ${tokenHash(expired)}`;
+  await sql`UPDATE innovatexp_website_commerce_invitations SET expires_at = NOW() - INTERVAL '1 second' WHERE token_hash = ${tokenHash(expired)}`;
   const otherEmail = await invitation("eventXp", "other@example.test");
   const otherOffer = await invitation("accountXp");
   const used = await invitation("eventXp");
   await createOrder({ id: randomUUID(), offer: "eventXp", email, locale: "en", live: false, invitation: used }, sql);
-  const groupsBefore = await count("commerce_checkouts"), ordersBefore = await count("commerce_orders");
+  const groupsBefore = await count("innovatexp_website_commerce_checkouts"), ordersBefore = await count("innovatexp_website_commerce_orders");
   for (const invalid of ["0".repeat(64), expired, otherEmail, otherOffer, used]) {
     await assert.rejects(group([{ id: "aiDiscoverySprint", qty: 1, invitation: valid }, { id: "eventXpTrial", qty: 1, invitation: invalid }]), assertCode(403));
-    assert.equal((await sql`SELECT order_id FROM commerce_invitations WHERE token_hash = ${tokenHash(valid)}`)[0].order_id, null);
-    assert.equal(await count("commerce_checkouts"), groupsBefore); assert.equal(await count("commerce_orders"), ordersBefore);
+    assert.equal((await sql`SELECT order_id FROM innovatexp_website_commerce_invitations WHERE token_hash = ${tokenHash(valid)}`)[0].order_id, null);
+    assert.equal(await count("innovatexp_website_commerce_checkouts"), groupsBefore); assert.equal(await count("innovatexp_website_commerce_orders"), ordersBefore);
   }
   const accepted = await group([{ id: "aiDiscoverySprint", qty: 1, invitation: valid }, { id: "eventXpTrial", qty: 1, invitation: await invitation("eventXp") }]);
   assert.equal((await getCartOrders(accepted, sql)).length, 2);
@@ -289,13 +276,13 @@ test("every authoritative Stripe Price is checked before creating any orders or 
   const token = await invitation("discovery");
   const input = normal([{ id: "aiReadinessAssessment", qty: 1 }, { id: "aiDiscoverySprint", qty: 1, invitation: token }]);
   const fake = checkoutStripe();
-  const beforeGroups = await count("commerce_checkouts");
+  const beforeGroups = await count("innovatexp_website_commerce_checkouts");
   for (const invalid of [{ unit_amount: 1 }, { currency: "usd" }, { recurring: { interval: "month", interval_count: 1 } },
     { active: false }, { livemode: true }, { id: "price_other" }, { transform_quantity: { divide_by: 10 } }, { custom_unit_amount: {} }]) {
     fake.overrides.set(prices.snapshot, invalid);
     await assert.rejects(startCartCheckout(input, site, { stripe: fake.stripe, sql }), assertCode(503));
-    assert.equal(await count("commerce_checkouts"), beforeGroups);
-    assert.equal((await sql`SELECT order_id FROM commerce_invitations WHERE token_hash = ${tokenHash(token)}`)[0].order_id, null);
+    assert.equal(await count("innovatexp_website_commerce_checkouts"), beforeGroups);
+    assert.equal((await sql`SELECT order_id FROM innovatexp_website_commerce_invitations WHERE token_hash = ${tokenHash(token)}`)[0].order_id, null);
   }
   assert.equal(fake.calls.length, 0);
   const sub = normal([{ id: "systemCareEssential", qty: 1, invitation: await invitation("systemCareEssential") }]);
@@ -329,7 +316,7 @@ test("Stripe checkout uses server line items and group metadata, attaches only t
 
 test("expired and processed groups are never recreated, including beyond Stripe's idempotency window", async () => {
   const input = normal(); const cart = await createCart(input, false, prices, sql); const fake = checkoutStripe();
-  await sql`UPDATE commerce_checkouts SET created_at = NOW() - INTERVAL '24 hours' WHERE id = ${cart.id}::uuid`;
+  await sql`UPDATE innovatexp_website_commerce_checkouts SET created_at = NOW() - INTERVAL '24 hours' WHERE id = ${cart.id}::uuid`;
   await assert.rejects(startCartCheckout(input, site, { stripe: fake.stripe, sql }), assertCode(409));
   assert.equal(fake.calls.length, 0);
   const fresh = normal(); const result = await startCartCheckout(fresh, site, { stripe: fake.stripe, sql });
@@ -363,12 +350,12 @@ test("group webhook rejects every mismatched line item, pagination, identity, em
     { customer_details: { email: "other@example.test" } }, { customer_details: null, customer_email: null },
     { livemode: true }, { amount_total: cart.amount - 1 }, { currency: "usd" }, { mode: "subscription" },
   ];
-  const beforeEvents = await count("commerce_events"), beforeOutbox = await count("commerce_outbox");
+  const beforeEvents = await count("innovatexp_website_commerce_events"), beforeOutbox = await count("innovatexp_website_commerce_outbox");
   for (const invalid of corruptions) {
     await assert.rejects(dispatch(cart, invalid));
     assert.deepEqual((await getCartOrders(cart, sql)).map((o) => o.payment_state), ["pending", "pending"]);
     assert.equal((await getCart(cart.id, sql))!.checkout_session, null);
-    assert.equal(await count("commerce_events"), beforeEvents); assert.equal(await count("commerce_outbox"), beforeOutbox);
+    assert.equal(await count("innovatexp_website_commerce_events"), beforeEvents); assert.equal(await count("innovatexp_website_commerce_outbox"), beforeOutbox);
   }
   await assert.rejects(dispatch(cart, {}, { ...eventFor(cart), livemode: true }));
   await attachCartSession(cart.id, "cs_other", sql); await assert.rejects(dispatch(cart));
@@ -376,7 +363,7 @@ test("group webhook rejects every mismatched line item, pagination, identity, em
 
 test("group validates every persisted order before paying the first one", async () => {
   const cart = await pair();
-  await sql`UPDATE commerce_orders SET email = 'wrong@example.test' WHERE id = ${cart.items[1].orderId}::uuid`;
+  await sql`UPDATE innovatexp_website_commerce_orders SET email = 'wrong@example.test' WHERE id = ${cart.items[1].orderId}::uuid`;
   await assert.rejects(dispatch(cart));
   assert.equal((await getOrder(cart.items[0].orderId, sql))!.payment_state, "pending");
 });
@@ -384,18 +371,18 @@ test("group validates every persisted order before paying the first one", async 
 test("group paid events retrieve current state and create one receipt with exactly one durable fulfillment per order", async () => {
   const cart = await pair();
   const event = eventFor(cart);
-  const beforeEvents = await count("commerce_events"), beforeOutbox = await count("commerce_outbox");
+  const beforeEvents = await count("innovatexp_website_commerce_events"), beforeOutbox = await count("innovatexp_website_commerce_outbox");
   await dispatch(cart, { line_items: { data: sessionFor(cart).line_items!.data.reverse(), has_more: false } }, event);
   await dispatch(cart, {}, event); await dispatch(cart, {}, eventFor(cart, "checkout.session.async_payment_succeeded"));
   assert.deepEqual((await getCartOrders(cart, sql)).map((o) => o.payment_state), ["paid", "paid"]);
-  assert.equal(await count("commerce_events"), beforeEvents + 2); assert.equal(await count("commerce_outbox"), beforeOutbox + 2);
+  assert.equal(await count("innovatexp_website_commerce_events"), beforeEvents + 2); assert.equal(await count("innovatexp_website_commerce_outbox"), beforeOutbox + 2);
   assert.equal((await getCartStatus(cart, sql)).status, "paid");
   for (const item of (await getCartStatus(cart, sql)).items) assert.ok(item.intakeUrl?.startsWith("/api/commerce/access?token="));
 });
 
 test("a crash between item updates retries safely without falsely reporting paid or losing fulfillment", async () => {
   const cart = await pair(); const event = eventFor(cart);
-  const beforeOutbox = await count("commerce_outbox");
+  const beforeOutbox = await count("innovatexp_website_commerce_outbox");
   let transactions = 0;
   const failing = (...args: Parameters<typeof tag>) => tag(...args);
   failing.transaction = async (queries: Captured[]) => {
@@ -404,10 +391,10 @@ test("a crash between item updates retries safely without falsely reporting paid
   };
   await assert.rejects(processStripeEvent(event, { stripe: webhookStripe(sessionFor(cart)), sql: failing as unknown as typeof sql }), /Simulated/);
   assert.equal((await getCartStatus(cart, sql)).status, "pending");
-  assert.equal(await count("commerce_outbox"), beforeOutbox + 1);
+  assert.equal(await count("innovatexp_website_commerce_outbox"), beforeOutbox + 1);
   await dispatch(cart, {}, event); await dispatch(cart, {}, event);
   assert.equal((await getCartStatus(cart, sql)).status, "paid");
-  assert.equal(await count("commerce_outbox"), beforeOutbox + 2);
+  assert.equal(await count("innovatexp_website_commerce_outbox"), beforeOutbox + 2);
 });
 
 test("unpaid/open sessions and redirect-only status never become paid; failed or expired sessions are failures", async () => {
@@ -431,15 +418,15 @@ async function refund(cart: CartCheckout, amount: number, changes: { charge?: Re
 }
 test("group partial/full refunds mark ALL orders for review, retain one receipt, and cannot be undone by delayed or duplicate events", async () => {
   const cart = await pair(); await dispatch(cart);
-  const beforeEvents = await count("commerce_events"), beforeOutbox = await count("commerce_outbox");
+  const beforeEvents = await count("innovatexp_website_commerce_events"), beforeOutbox = await count("innovatexp_website_commerce_outbox");
   const eventId = `evt_${randomUUID()}`;
   await refund(cart, 1, {}, eventId); await refund(cart, 1, {}, eventId); await dispatch(cart);
   assert.deepEqual((await getCartOrders(cart, sql)).map((o) => o.payment_state), ["partially_refunded", "partially_refunded"]);
   let result = await getCartStatus(cart, sql); assert.equal(result.status, "partially_refunded");
   assert.ok(result.items.every((i) => !i.intakeUrl));
-  assert.equal(await count("commerce_outbox"), beforeOutbox);
-  assert.equal(await count("commerce_events"), beforeEvents + 2); // One refund receipt, one later checkout receipt.
-  for (const row of await sql`SELECT fulfillment_state FROM commerce_orders WHERE checkout_id = ${cart.id}::uuid`) assert.equal(row.fulfillment_state, "review_required");
+  assert.equal(await count("innovatexp_website_commerce_outbox"), beforeOutbox);
+  assert.equal(await count("innovatexp_website_commerce_events"), beforeEvents + 2); // One refund receipt, one later checkout receipt.
+  for (const row of await sql`SELECT fulfillment_state FROM innovatexp_website_commerce_orders WHERE checkout_id = ${cart.id}::uuid`) assert.equal(row.fulfillment_state, "review_required");
   await refund(cart, cart.amount); await dispatch(cart); await refund(cart, 1);
   result = await getCartStatus(cart, sql); assert.equal(result.status, "refunded"); assert.ok(result.items.every((i) => i.status === "refunded" && !i.intakeUrl));
 });
@@ -463,7 +450,7 @@ test("subscription singleton webhook and later lifecycle preserve the individual
   stripe.subscriptions = { retrieve: async () => sub } as unknown as Stripe["subscriptions"];
   await processStripeEvent(eventFor(cart), { stripe, sql });
   assert.equal((await getOrder(cart.items[0].orderId, sql))!.subscription_status, "active");
-  assert.equal((await sql`SELECT payment_intent FROM commerce_orders WHERE id = ${cart.items[0].orderId}::uuid`)[0].payment_intent, null);
+  assert.equal((await sql`SELECT payment_intent FROM innovatexp_website_commerce_orders WHERE id = ${cart.items[0].orderId}::uuid`)[0].payment_intent, null);
   sub = { ...sub, status: "canceled" };
   await processStripeEvent({ ...eventFor(cart), type: "customer.subscription.deleted", created: 3, data: { object: { id: "sub_local" } } } as Stripe.Event, { stripe, sql });
   assert.equal((await getOrder(cart.items[0].orderId, sql))!.subscription_status, "canceled");
@@ -523,7 +510,7 @@ test("private status requires the separate signed cart cookie; no redirect/query
   const paid = body.items.find((i: { status: string }) => i.status === "paid");
   assert.equal(verifyOrderToken(new URL(paid.intakeUrl, site).searchParams.get("token")), first);
   assert.ok(body.items.every((i: Record<string, unknown>) => !i.email && !i.customer && !i.id));
-  await sql`UPDATE commerce_checkouts SET access_expires_at = NOW() - INTERVAL '1 second' WHERE id = ${cart.id}::uuid`;
+  await sql`UPDATE innovatexp_website_commerce_checkouts SET access_expires_at = NOW() - INTERVAL '1 second' WHERE id = ${cart.id}::uuid`;
   assert.equal(await cartForToken(token, sql), null);
   assert.equal((await requestContext(`${CART_COOKIE}=${token}`, status)).status, 403);
 });

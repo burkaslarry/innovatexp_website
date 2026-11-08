@@ -1,6 +1,6 @@
 -- Additive only; apply to an isolated preview database before any production rollout.
 BEGIN;
-CREATE TABLE IF NOT EXISTS commerce_checkouts (
+CREATE TABLE IF NOT EXISTS innovatexp_website_commerce_checkouts (
   id UUID PRIMARY KEY,
   request_id UUID NOT NULL UNIQUE,
   fingerprint TEXT NOT NULL,
@@ -14,6 +14,6 @@ CREATE TABLE IF NOT EXISTS commerce_checkouts (
   created_at TIMESTAMPTZ NOT NULL DEFAULT NOW(), updated_at TIMESTAMPTZ NOT NULL DEFAULT NOW(),
   CHECK (mode <> 'subscription' OR jsonb_array_length(items) = 1)
 );
-ALTER TABLE commerce_orders ADD COLUMN IF NOT EXISTS checkout_id UUID REFERENCES commerce_checkouts(id);
-CREATE INDEX IF NOT EXISTS commerce_orders_checkout_id ON commerce_orders(checkout_id);
+ALTER TABLE innovatexp_website_commerce_orders ADD COLUMN IF NOT EXISTS checkout_id UUID REFERENCES innovatexp_website_commerce_checkouts(id);
+CREATE INDEX IF NOT EXISTS innovatexp_website_commerce_orders_checkout_id ON innovatexp_website_commerce_orders(checkout_id);
 COMMIT;

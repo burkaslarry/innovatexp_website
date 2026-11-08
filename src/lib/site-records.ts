@@ -1,14 +1,14 @@
 /**
- * Website records live in Neon. The site does not use a Notion client.
+ * Website records live in Render Postgres. The site does not use a Notion client.
  */
-import { neon, type NeonQueryFunction } from "@neondatabase/serverless";
+import { sqlFor, type Sql } from "@/lib/db";
 
 let schemaReady: Promise<void> | null = null;
 
-function getSql(): NeonQueryFunction<false, false> | null {
+function getSql(): Sql | null {
   const url = process.env.DATABASE_URL?.trim();
   if (!url) return null;
-  return neon(url);
+  return sqlFor(url);
 }
 
 async function ensureSchema() {
@@ -17,7 +17,7 @@ async function ensureSchema() {
   if (!schemaReady) {
     schemaReady = (async () => {
       await sql`
-        CREATE TABLE IF NOT EXISTS calendar_bookings (
+        CREATE TABLE IF NOT EXISTS innovatexp_website_calendar_bookings (
           id BIGSERIAL PRIMARY KEY,
           visitor_name VARCHAR(255) NOT NULL,
           visitor_email VARCHAR(255) NOT NULL,
@@ -29,9 +29,9 @@ async function ensureSchema() {
           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         )
       `;
-      await sql`CREATE INDEX IF NOT EXISTS idx_calendar_bookings_range ON calendar_bookings (starts_at, ends_at)`;
+      await sql`CREATE INDEX IF NOT EXISTS idx_innovatexp_website_calendar_bookings_range ON innovatexp_website_calendar_bookings (starts_at, ends_at)`;
       await sql`
-        CREATE TABLE IF NOT EXISTS newsletter_subscribers (
+        CREATE TABLE IF NOT EXISTS innovatexp_website_newsletter_subscribers (
           id BIGSERIAL PRIMARY KEY,
           name VARCHAR(255) NOT NULL,
           email VARCHAR(255) NOT NULL,
@@ -39,7 +39,7 @@ async function ensureSchema() {
           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         )
       `;
-      await sql`CREATE INDEX IF NOT EXISTS idx_newsletter_subscribers_email ON newsletter_subscribers (email)`;
+      await sql`CREATE INDEX IF NOT EXISTS idx_innovatexp_website_newsletter_subscribers_email ON innovatexp_website_newsletter_subscribers (email)`;
     })().catch((err) => {
       schemaReady = null;
       throw err;
@@ -56,7 +56,7 @@ export async function listBusyIntervals(dayStartIso: string, dayEndIso: string):
   await ensureSchema();
   const rows = await sql`
     SELECT starts_at, ends_at
-    FROM calendar_bookings
+    FROM innovatexp_website_calendar_bookings
     WHERE starts_at < ${dayEndIso}::timestamptz
       AND ends_at > ${dayStartIso}::timestamptz
   `;
@@ -86,15 +86,15 @@ export async function insertCalendarBooking(input: {
 }
 
 /** Serialize availability recheck and insert; read-committed statements see the previous commit. */
-export async function reserveCalendarBooking(sql: NeonQueryFunction<false, false>, input: {
+export async function reserveCalendarBooking(sql: Sql, input: {
   name: string; email: string; phone: string; company: string; startsAt: string; endsAt: string; message: string;
 }) {
     const results = await sql.transaction([
       sql`SELECT pg_advisory_xact_lock(482113)`,
-      sql`SELECT id FROM calendar_bookings WHERE lower(visitor_email) = ${input.email.toLowerCase()}
+      sql`SELECT id FROM innovatexp_website_calendar_bookings WHERE lower(visitor_email) = ${input.email.toLowerCase()}
         AND starts_at = ${input.startsAt}::timestamptz AND ends_at = ${input.endsAt}::timestamptz`,
       sql`
-      INSERT INTO calendar_bookings (
+      INSERT INTO innovatexp_website_calendar_bookings (
         visitor_name, visitor_email, visitor_phone, visitor_company, starts_at, ends_at, message
       ) SELECT
         ${input.name},
@@ -104,7 +104,7 @@ export async function reserveCalendarBooking(sql: NeonQueryFunction<false, false
         ${input.startsAt}::timestamptz,
         ${input.endsAt}::timestamptz,
         ${input.message || null}
-      WHERE NOT EXISTS (SELECT 1 FROM calendar_bookings WHERE starts_at < ${input.endsAt}::timestamptz AND ends_at > ${input.startsAt}::timestamptz)
+      WHERE NOT EXISTS (SELECT 1 FROM innovatexp_website_calendar_bookings WHERE starts_at < ${input.endsAt}::timestamptz AND ends_at > ${input.startsAt}::timestamptz)
       RETURNING id
     `]);
     if (results[1].length) return { ok: true, id: Number(results[1][0].id), duplicate: true };
@@ -124,7 +124,7 @@ export async function insertNewsletterSubscriber(input: {
   try {
     await ensureSchema();
     await sql`
-      INSERT INTO newsletter_subscribers (name, email, interests)
+      INSERT INTO innovatexp_website_newsletter_subscribers (name, email, interests)
       VALUES (${input.name}, ${input.email}, ${JSON.stringify(input.interests)}::jsonb)
     `;
     return { ok: true };

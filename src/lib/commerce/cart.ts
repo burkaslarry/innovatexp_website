@@ -52,11 +52,11 @@ export function normalizeCartRequest(value: unknown): NormalizedCart {
 }
 
 export async function getCart(id: string, sql = commerceSql()): Promise<CartCheckout | null> {
-  const rows = await sql`SELECT * FROM commerce_checkouts WHERE id = ${id}::uuid`;
+  const rows = await sql`SELECT * FROM innovatexp_website_commerce_checkouts WHERE id = ${id}::uuid`;
   return (rows[0] as unknown as CartCheckout) ?? null;
 }
 async function cartByRequest(id: string, sql: Sql): Promise<CartCheckout | null> {
-  const rows = await sql`SELECT * FROM commerce_checkouts WHERE request_id = ${id}::uuid`;
+  const rows = await sql`SELECT * FROM innovatexp_website_commerce_checkouts WHERE request_id = ${id}::uuid`;
   return (rows[0] as unknown as CartCheckout) ?? null;
 }
 
@@ -81,21 +81,21 @@ export async function createCart(input: NormalizedCart, live: boolean, prices: R
       SELECT * FROM jsonb_to_recordset(${JSON.stringify(resolved)}::jsonb)
         AS x("orderId" uuid, offer text, "priceId" text, amount integer, "invitationHash" text)
     ), eligible AS MATERIALIZED (
-      SELECT i.token_hash FROM commerce_invitations i JOIN requested r ON r."invitationHash" = i.token_hash
+      SELECT i.token_hash FROM innovatexp_website_commerce_invitations i JOIN requested r ON r."invitationHash" = i.token_hash
       WHERE i.offer = r.offer AND lower(i.email) = ${input.email} AND i.expires_at > NOW() AND i.order_id IS NULL
       ORDER BY i.token_hash FOR UPDATE OF i
     ), new_checkout AS (
-      INSERT INTO commerce_checkouts (id, request_id, fingerprint, email, locale, livemode, currency, amount, mode, items, access_expires_at)
+      INSERT INTO innovatexp_website_commerce_checkouts (id, request_id, fingerprint, email, locale, livemode, currency, amount, mode, items, access_expires_at)
       SELECT ${id}::uuid, ${input.requestId}::uuid, ${fingerprint}, ${input.email}, ${input.locale}, ${live}, 'hkd',
         ${resolved.reduce((n, i) => n + i.amount, 0)}, ${input.mode}, ${JSON.stringify(items)}::jsonb, ${expires}::timestamptz
       WHERE (SELECT count(*) FROM eligible) = ${required}
       ON CONFLICT (request_id) DO NOTHING RETURNING id
     ), new_orders AS (
-      INSERT INTO commerce_orders (id, checkout_id, offer, locale, email, amount, policy_version, livemode, access_expires_at)
+      INSERT INTO innovatexp_website_commerce_orders (id, checkout_id, offer, locale, email, amount, policy_version, livemode, access_expires_at)
       SELECT r."orderId", c.id, r.offer, ${input.locale}, ${input.email}, r.amount, ${PURCHASE_POLICY_VERSION}, ${live}, ${expires}::timestamptz
       FROM requested r CROSS JOIN new_checkout c RETURNING id
     )
-    UPDATE commerce_invitations i SET order_id = r."orderId"
+    UPDATE innovatexp_website_commerce_invitations i SET order_id = r."orderId"
     FROM requested r JOIN new_orders o ON o.id = r."orderId"
     WHERE i.token_hash = r."invitationHash" AND i.token_hash IN (SELECT token_hash FROM eligible)
   `;
@@ -105,7 +105,7 @@ export async function createCart(input: NormalizedCart, live: boolean, prices: R
 }
 
 export async function getCartOrders(cart: CartCheckout, sql = commerceSql()): Promise<Order[]> {
-  const rows = await sql`SELECT * FROM commerce_orders WHERE checkout_id = ${cart.id}::uuid`;
+  const rows = await sql`SELECT * FROM innovatexp_website_commerce_orders WHERE checkout_id = ${cart.id}::uuid`;
   const orders = rows as unknown as Order[];
   if (!cart.items.length || cart.items.length > MAX_CART_ITEMS || orders.length !== cart.items.length ||
     new Set(cart.items.map((i) => i.orderId)).size !== cart.items.length || new Set(cart.items.map((i) => i.offer)).size !== cart.items.length ||
@@ -122,7 +122,7 @@ export async function getCartOrders(cart: CartCheckout, sql = commerceSql()): Pr
 }
 
 export async function attachCartSession(id: string, session: string, sql = commerceSql()) {
-  const rows = await sql`UPDATE commerce_checkouts SET checkout_session = ${session}, updated_at = NOW()
+  const rows = await sql`UPDATE innovatexp_website_commerce_checkouts SET checkout_session = ${session}, updated_at = NOW()
     WHERE id = ${id}::uuid AND (checkout_session IS NULL OR checkout_session = ${session}) RETURNING id`;
   if (!rows.length) throw new CartError("Checkout session mismatch", 409);
 }

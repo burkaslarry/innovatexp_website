@@ -11,7 +11,7 @@ export async function GET(req: Request) {
   const locale = isValidLocale(requestedLocale) ? requestedLocale : "zh-hk";
   try {
     if (!/^[a-f0-9]{64}$/.test(token)) throw new Error("Invalid invitation");
-    const rows = await commerceSql()`SELECT offer FROM commerce_invitations WHERE token_hash = ${tokenHash(token)} AND expires_at > NOW()`;
+    const rows = await commerceSql()`SELECT offer FROM innovatexp_website_commerce_invitations WHERE token_hash = ${tokenHash(token)} AND expires_at > NOW()`;
     if (!rows.length) throw new Error("Expired invitation");
     (await cookies()).set("ixp_checkout_invitation", token, { httpOnly: true, secure: process.env.NODE_ENV === "production", sameSite: "lax", path: "/", maxAge: 7 * 86400 });
     return NextResponse.redirect(new URL(`/${locale}/checkout/invitation`, getSiteUrl()));

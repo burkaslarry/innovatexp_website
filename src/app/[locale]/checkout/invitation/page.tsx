@@ -19,7 +19,7 @@ export default async function Page({ params, searchParams }: { params: Promise<{
   const c = commerceCopy(locale);
   let invitation = null;
   if (token && /^[a-f0-9]{64}$/.test(token) && paymentsEnabled()) {
-    try { const rows = await commerceSql()`SELECT offer, scope FROM commerce_invitations WHERE token_hash = ${tokenHash(token)} AND expires_at > NOW()`; invitation = rows[0]; } catch { /* unavailable */ }
+    try { const rows = await commerceSql()`SELECT offer, scope FROM innovatexp_website_commerce_invitations WHERE token_hash = ${tokenHash(token)} AND expires_at > NOW()`; invitation = rows[0]; } catch { /* unavailable */ }
   }
   const offer = invitation && isOfferId(invitation.offer) ? invitation.offer : null;
   return <SitePageShell title={offer ? OFFERS[offer].name : c.failed}>
