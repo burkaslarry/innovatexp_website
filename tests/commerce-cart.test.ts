@@ -176,7 +176,8 @@ test("readiness is config-only, returns canonical offers without price IDs, and 
   for (const key of ["PAYMENTS_ENABLED", "PAYMENT_TERMS_APPROVED", "STRIPE_MODE", "STRIPE_SECRET_KEY", "STRIPE_WEBHOOK_SECRET", "DATABASE_URL", "INTAKE_TOKEN_SECRET"]) {
     const prior = process.env[key]; delete process.env[key]; assert.deepEqual(cartAvailableOffers(), []); process.env[key] = prior;
   }
-  for (const key of ["rk_test_restricted", "sk_live_wrong_mode", " "]) { process.env.STRIPE_SECRET_KEY = key; assert.deepEqual(cartAvailableOffers(), []); }
+  for (const key of ["pk_test_publishable", "rk_live_wrong_mode", "sk_live_wrong_mode", " "]) { process.env.STRIPE_SECRET_KEY = key; assert.deepEqual(cartAvailableOffers(), []); }
+  process.env.STRIPE_SECRET_KEY = "rk_test_restricted"; assert.notDeepEqual(cartAvailableOffers(), []);
   process.env.STRIPE_SECRET_KEY = "sk_test_fixture";
   process.env.INTAKE_TOKEN_SECRET = "short"; assert.deepEqual(cartAvailableOffers(), []);
   process.env.INTAKE_TOKEN_SECRET = "a".repeat(40);

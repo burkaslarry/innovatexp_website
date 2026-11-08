@@ -28,12 +28,16 @@ export function priceId(offer: OfferId): string {
   if (!id?.startsWith("price_")) throw new Error("Offer price not configured");
   return id;
 }
+/** Secret or restricted key for the active mode; publishable keys and cross-mode keys never pass. */
+export function stripeKeyMatchesMode(key: string | undefined, mode: "test" | "live"): key is string {
+  return Boolean(key && (key.startsWith(`sk_${mode}_`) || key.startsWith(`rk_${mode}_`)));
+}
 /** Configuration-only readiness: never contacts Stripe or exposes configured price IDs. */
 export function cartAvailableOffers(): OfferId[] {
   try {
     const mode = requirePayments();
     const key = process.env.STRIPE_SECRET_KEY?.trim();
-    if (!key?.startsWith(mode === "test" ? "sk_test_" : "sk_live_") ||
+    if (!stripeKeyMatchesMode(key, mode) ||
       !process.env.DATABASE_URL?.trim() || (process.env.INTAKE_TOKEN_SECRET?.length ?? 0) < 32 ||
       !process.env.STRIPE_WEBHOOK_SECRET?.trim().startsWith("whsec_")) return [];
     return (Object.keys(OFFERS) as OfferId[]).filter((offer) => {

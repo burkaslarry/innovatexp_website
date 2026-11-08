@@ -33,6 +33,8 @@ async function main() {
   const live = mode === "live";
   const stripe = new Stripe(key, { maxNetworkRetries: 2 });
   const settings: Record<string, string> = {};
+  // Checkout rejects products without a tax code once Stripe Tax is active, even when the account has a default.
+  const taxCode = (await stripe.tax.settings.retrieve()).defaults?.tax_code ?? undefined;
 
   for (const offer of Object.keys(OFFERS) as OfferId[]) {
     const def = OFFERS[offer];
@@ -43,9 +45,10 @@ async function main() {
     const description = offerDescription(offer);
     product ??= await stripe.products.create({ name: def.name, description, metadata: { ixp_offer: offer, ixp_setup: "website" } },
       { idempotencyKey: `ixp-setup-${mode}-product-${offer}-v1` });
-    if (product.name !== def.name || product.description !== description) {
-      product = await stripe.products.update(product.id, { name: def.name, description });
-      console.log(`${offer}: name/description synced with website`);
+    const productTaxCode = typeof product.tax_code === "string" ? product.tax_code : product.tax_code?.id;
+    if (product.name !== def.name || product.description !== description || (taxCode && !productTaxCode)) {
+      product = await stripe.products.update(product.id, { name: def.name, description, ...(taxCode && !productTaxCode ? { tax_code: taxCode } : {}) });
+      console.log(`${offer}: name/description/tax code synced with website`);
     }
     let price: Stripe.Price | undefined;
     const stale: Stripe.Price[] = [];

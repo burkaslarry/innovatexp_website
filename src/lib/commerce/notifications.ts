@@ -20,7 +20,7 @@ export async function drainCommerceOutbox() {
         continue;
       }
       const key = process.env.RESEND_API_KEY;
-      const from = process.env.SENDER_EMAIL;
+      const from = process.env.SENDER_EMAIL?.trim() || process.env.RESEND_FROM_EMAIL?.trim() || process.env.RESEND_FROM?.trim();
       const testRecipient = process.env.COMMERCE_TEST_EMAIL;
       if (!key || !from || (!order.livemode && !testRecipient)) throw new Error("Notification configuration missing");
       const zh = order.locale.startsWith("zh");
