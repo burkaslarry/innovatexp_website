@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="zh-HK">
+<head>
+<meta charset="utf-8">
+<style>
+  @page { size: 1080px 1350px; margin: 0; }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  html, body { width: 1080px; height: 1350px; background: #05070a; }
+  .poster {
+    position: relative; width: 1080px; height: 1350px; overflow: hidden;
+    font-family: "Songti TC", "Songti SC", "STSong", "Times New Roman", serif;
+  }
+  .bg {
+    position: absolute; inset: 0; width: 100%; height: 100%;
+    object-fit: cover; object-position: 78% 50%;
+  }
+  .shade {
+    position: absolute; inset: 0;
+    background:
+      linear-gradient(90deg, rgba(3,5,8,.95) 0%, rgba(3,5,8,.93) 46%, rgba(3,5,8,.74) 60%, rgba(3,5,8,.26) 74%, rgba(3,5,8,0) 92%),
+      linear-gradient(180deg, rgba(3,5,8,.62) 0%, rgba(3,5,8,0) 24%, rgba(3,5,8,0) 74%, rgba(3,5,8,.66) 100%);
+  }
+  .content { position: absolute; inset: 0; padding: 92px 88px; }
+  .title {
+    font-family: "Didot", "Bodoni 72", "Times New Roman", serif;
+    font-size: 104px; line-height: 1.02; letter-spacing: -.012em;
+    background: linear-gradient(170deg, #FFF8EA 0%, #F3DEB4 38%, #DDB97C 72%, #BE9457 100%);
+    -webkit-background-clip: text; background-clip: text;
+    -webkit-text-fill-color: transparent; color: transparent;
+    text-shadow: 0 2px 24px rgba(0,0,0,.5);
+    white-space: nowrap;
+  }
+  .title span { display: block; }
+  .title .line2 { font-size: 84px; letter-spacing: -.02em; margin-top: 6px; }
+  .info { margin-top: 66px; font-size: 35px; line-height: 1.66; color: #E8D2A8; letter-spacing: .01em; }
+  .info .row { display: flex; }
+  .info .k { width: 140px; flex: none; color: #DDC293; }
+  .info .v { color: #F4E9D2; }
+  .en { font-family: "Didot", "Times New Roman", serif; letter-spacing: .01em; }
+  .rule { width: 620px; height: 1px; margin-top: 46px; background: linear-gradient(90deg, rgba(214,176,110,.9), rgba(214,176,110,.12)); }
+  .speaker { margin-top: 32px; display: flex; align-items: baseline; }
+  .speaker .k { width: 140px; flex: none; font-size: 28px; color: #C6AC7F; letter-spacing: .1em; }
+  .speaker .n { font-family: "Didot", "Times New Roman", serif; font-size: 46px; color: #F8EDD6; letter-spacing: .01em; }
+  .role { margin-top: 6px; padding-left: 140px; font-size: 24px; color: #CBB388; letter-spacing: .03em; }
+  .sponsor { margin-top: 34px; display: flex; align-items: baseline; }
+  .sponsor .k { width: 140px; flex: none; font-size: 20px; color: #96835f; letter-spacing: .1em; }
+  .sponsor .v { font-family: "Didot", "Times New Roman", serif; font-size: 23px; color: #A08D6C; letter-spacing: .02em; }
+  .sponsor-link { margin-top: 8px; padding-left: 140px; font-family: "Didot", "Times New Roman", serif; font-size: 17px; color: #8C7A58; letter-spacing: .02em; }
+  .logo { position: absolute; left: 88px; bottom: 70px; width: 190px; }
+  .logo img { width: 100%; display: block; opacity: .95; }
+  .tag {
+    position: absolute; right: 88px; bottom: 84px;
+    font-family: "Didot", "Times New Roman", serif; font-size: 19px; letter-spacing: .34em;
+    color: rgba(214,176,110,.7);
+  }
+</style>
+</head>
+<body>
+  <div class="poster">
+    <img class="bg" src="assets/bg.png" alt="">
+    <div class="shade"></div>
+    <div class="content">
+      <h1 class="title"><span>Vibe Coding 工作坊</span><span class="line2">從0到1，生成拼豆製圖網</span></h1>
+
+      <div class="info">
+        <div class="row"><div class="k">地點：</div><div class="v">佐敦 恆豐中心 3B 23 (MTR Exit E)</div></div>
+        <div class="row"><div class="k">日期：</div><div class="v"><span class="en">12</span>月<span class="en">9</span>日（星期三）</div></div>
+        <div class="row"><div class="k">時間：</div><div class="v"><span class="en">7:00</span> – <span class="en">9:00 pm</span></div></div>
+        <div class="row"><div class="k">收費：</div><div class="v"><span class="en">HK$800</span>（早鳥價 <span class="en">HK$400</span>）</div></div>
+        <div class="row"><div class="k">對象：</div><div class="v">所有需要錢的人</div></div>
+        <div class="row"><div class="k">備註：</div><div class="v">請自備手提電腦</div></div>
+      </div>
+
+      <div class="rule"></div>
+
+      <div class="speaker">
+        <div class="k">講者</div>
+        <div class="n">Larry Lo</div>
+      </div>
+      <div class="role">InnovateXP 創辦人 · AI 商業顧問</div>
+
+      <div class="sponsor">
+        <div class="k">場地贊助</div>
+        <div class="v">香港國際文化館</div>
+      </div>
+      <div class="sponsor-link">facebook.com/profile.php?id=61595430011506</div>
+    </div>
+
+    <div class="logo"><img src="assets/logo.png" alt="InnovateXP"></div>
+    <div class="tag">2026</div>
+  </div>
+</body>
+</html>

@@ -25,6 +25,9 @@ type CoffeeShop = {
   mustOrder: boolean;
   tags: string[];
   notes: string;
+  phone?: string;
+  openingHours?: string[];
+  openrice?: { url: string; checkedAt?: string; fields?: string[] };
 };
 
 const SHOPS = shopsData as CoffeeShop[];
@@ -351,6 +354,17 @@ export function CoffeeShopMap({ zh }: CoffeeShopMapProps) {
                 <AttrBadge icon={Coffee} on={shop.mustOrder} label={shop.mustOrder ? t.mustBuy : t.noNeed} />
               </div>
               <p className="mt-1.5 text-xs leading-5 text-[color:var(--text-secondary)]">{shop.notes}</p>
+              {shop.phone ? <p className="mt-1 text-xs text-[color:var(--text-secondary)]">{zh ? "電話：" : "Phone: "}{shop.phone}</p> : null}
+              {shop.openingHours?.length ? <p className="mt-1 text-xs text-[color:var(--text-secondary)]">{zh ? "營業時間：" : "Opening hours: "}{shop.openingHours.join(" · ")}</p> : null}
+              {shop.openrice ? (
+                <p className="mt-2 text-xs text-[color:var(--text-secondary)]">
+                  <a href={shop.openrice.url} target="_blank" rel="noopener noreferrer" className="inline-flex min-h-[34px] items-center gap-1 text-brand-primary underline underline-offset-2">
+                    {zh ? "OpenRice 店舖資料" : "OpenRice listing"}
+                    <ExternalLink className="h-3 w-3" aria-hidden />
+                  </a>
+                  {shop.openrice.checkedAt ? <span className="ml-2">{zh ? "資料更新：" : "Updated: "}{shop.openrice.checkedAt.slice(0, 10)}</span> : null}
+                </p>
+              ) : null}
             </li>
           ))}
           {filtered.length === 0 ? (

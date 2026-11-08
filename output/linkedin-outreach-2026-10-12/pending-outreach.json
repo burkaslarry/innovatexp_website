@@ -1,0 +1,15 @@
+{
+  "target": 100,
+  "sent": 38,
+  "remaining": 62,
+  "blocker": "LinkedIn: You have reached the limit for starting new conversations with pages. Try again later.",
+  "pending": [
+    {
+      "name": "Private Wealth Management Association (PWMA)",
+      "url": "https://www.linkedin.com/company/private-wealth-management-association-pwma-/",
+      "status": "not sent - page conversation limit",
+      "message": "Hello PWMA team, I saw your professional development programmes and industry events in Hong Kong. I’m Larry at InnovateXP, helping training and service teams simplify programme enquiries, registrations and handovers. From a member enquiry to confirmed participation, is there any repeat admin your team would like to reduce? Happy to share a short workflow checklist if useful."
+    }
+  ],
+  "companySearchUrl": "https://www.linkedin.com/search/results/companies/?keywords=training&origin=FACETED_SEARCH&spellCorrectionEnabled=true&companyHqGeo=%5B%22103291313%22%5D&companySize=%5B%22B%22%2C%22C%22%5D&page=3"
+}
