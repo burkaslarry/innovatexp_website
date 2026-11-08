@@ -20,8 +20,11 @@ export function requireOfferPayments(offer: OfferId) {
   }
   return mode;
 }
+export function priceEnvName(offer: OfferId): string {
+  return `STRIPE_PRICE_${offer.replace(/([A-Z])/g, "_$1").toUpperCase()}`;
+}
 export function priceId(offer: OfferId): string {
-  const id = process.env[`STRIPE_PRICE_${offer.replace(/([A-Z])/g, "_$1").toUpperCase()}`]?.trim();
+  const id = process.env[priceEnvName(offer)]?.trim();
   if (!id?.startsWith("price_")) throw new Error("Offer price not configured");
   return id;
 }

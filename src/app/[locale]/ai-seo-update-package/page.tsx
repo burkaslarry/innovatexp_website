@@ -9,6 +9,10 @@ import { localeAlternates } from "@/lib/alternate-metadata";
 import { aiSeoPackageSeo } from "@/content/page-seo";
 import { getFAQPageSchema } from "@/lib/schema";
 import { getSiteUrl } from "@/lib/site-url";
+import { PRICING, formatHkd } from "@/content/pricing";
+
+const V = PRICING.aiVisibility;
+const hkd = (n: number) => formatHkd(n, "en", "HKD");
 
 export async function generateMetadata({
   params,
@@ -77,7 +81,7 @@ const ZH: Copy = {
   updated: "資料更新：2026 年 10 月",
   stepLabel: "第一步",
   diagnosisName: "AI 能見度與競爭對手診斷",
-  diagnosisPrice: "HKD 2,800",
+  diagnosisPrice: hkd(V.diagnosis),
   diagnosisNote: "開始 6 個月持續追蹤，可全額抵扣首月。",
   diagnosisItems: [
     "用 20 條真實買家問題，檢查你喺主要 AI 搜尋嘅出現情況",
@@ -102,13 +106,13 @@ const ZH: Copy = {
   retainersLabel: "持續追蹤方案",
   minTerm: "月費訂 3 個月或以上享有 20% 折扣。AI 搜尋能見度唔會一星期穩定改變；六個月先足夠比較前後數字。",
   liteName: "監察月費",
-  litePrice: "HKD 1,800／月",
+  litePrice: `${hkd(V.monitorMonthly)}／月`,
   liteItems: ["每月重查 10 條買家問題", "改善 1–2 個核心頁", "一頁月報：提及、引用、詢盤"],
   growthName: "增長月費",
-  growthPrice: "HKD 3,800／月",
+  growthPrice: `${hkd(V.growthMonthly)}／月`,
   growthItems: ["每月重查 25 條買家問題", "追蹤最多 3 個競爭對手", "4–6 項內容改善 + 月度檢討"],
   projectName: "全站重整（一次性）",
-  projectPrice: "HKD 12,000 起",
+  projectPrice: `${hkd(V.fullSiteRebuildFrom)} 起`,
   projectItems: ["全站內容與網站資料重整", "適合新網站，或從未為 AI 搜尋整理過嘅網站"],
   metricsTitle: "月費一定有客戶睇得到嘅數字",
   metrics: ["你同競爭對手被提及嘅比例", "引用你網站嘅答案數量", "由搜尋帶來嘅網站詢盤"],
@@ -144,7 +148,7 @@ const EN: Copy = {
   updated: "Updated: October 2026",
   stepLabel: "Step 1",
   diagnosisName: "AI visibility and competitor diagnosis",
-  diagnosisPrice: "HKD 2,800",
+  diagnosisPrice: hkd(V.diagnosis),
   diagnosisNote: "Fully credited to month 1 if you start 6 months of ongoing tracking.",
   diagnosisItems: [
     "Test 20 real buyer questions across major AI search services",
@@ -169,13 +173,13 @@ const EN: Copy = {
   retainersLabel: "Ongoing tracking plans",
   minTerm: "Subscribe to a monthly plan for 3 months or more and receive 20% off. AI-search visibility does not stabilise in a week; six months gives us a meaningful before-and-after comparison.",
   liteName: "Monitoring monthly",
-  litePrice: "HKD 1,800 / month",
+  litePrice: `${hkd(V.monitorMonthly)} / month`,
   liteItems: ["Recheck 10 buyer questions monthly", "Improve 1–2 core pages", "One-page report: mentions, citations, enquiries"],
   growthName: "Growth monthly",
-  growthPrice: "HKD 3,800 / month",
+  growthPrice: `${hkd(V.growthMonthly)} / month`,
   growthItems: ["Recheck 25 buyer questions monthly", "Track up to 3 competitors", "4–6 content improvements + monthly review"],
   projectName: "Project (one-off)",
-  projectPrice: "From HKD 12,000",
+  projectPrice: `From ${hkd(V.fullSiteRebuildFrom)}`,
   projectItems: ["Full-site content and business-fact rebuild", "Best for new sites or sites never prepared for AI search"],
   metricsTitle: "Every monthly plan reports numbers you can see",
   metrics: ["Your mention share versus competitors", "Answers that cite your website", "Website enquiries from search"],

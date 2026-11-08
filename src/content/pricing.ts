@@ -137,6 +137,27 @@ export const PRICING = {
     brandLogoVisual: 2_500,
     geoSeoSetupPlus3Months: 1_800,
   },
+  /* /automation-packages. Lite and the 14-day trial setup are quoted after diagnosis. */
+  automationPackages: {
+    liteMonthly: 1_200,
+    trialCreditToRollout: 2_000,
+    starterSetup: 12_800,
+    starterMonthly: 1_800,
+    aiAssistantSetupFrom: 12_800,
+    aiAssistantSetupTo: 14_800,
+    aiAssistantMonthly: 2_500,
+    privateAiSetup: 22_800,
+    privateAiMonthly: 4_500,
+    inventoryFinanceAddonSetup: 8_800,
+    inventoryFinanceAddonMonthly: 800,
+  },
+  /* /ai-seo-update-package — AI search visibility. 20% off monthly plans of 3+ months. */
+  aiVisibility: {
+    diagnosis: 2_800,
+    monitorMonthly: 1_800,
+    growthMonthly: 3_800,
+    fullSiteRebuildFrom: 12_000,
+  },
 } as const;
 
 export type WebsiteAddonId = keyof typeof PRICING.websiteAddons;

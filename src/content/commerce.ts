@@ -2,12 +2,20 @@ import { PRICING, formatHkd } from "@/content/pricing";
 import type { AppLocale } from "@/lib/i18n-routing";
 
 export const PURCHASE_POLICY_VERSION = "2026-10-13";
+/* Names match the public catalogue titles; amounts are PRICING in cents. */
+const credits = PRICING.sessionCredits.packs;
 export const OFFERS = {
   snapshot: { name: "AI Readiness Snapshot", amount: PRICING.quickCash.aiReadinessAssessment * 100, mode: "payment", qualification: false },
-  discovery: { name: "30-day Discovery (≤10 people)", amount: PRICING.consultancy.discoverySprint30Day * 100, mode: "payment", qualification: true },
-  discovery11To30: { name: "Discovery (11–30 people)", amount: PRICING.consultancy.discoveryWorkshop11To30 * 100, mode: "payment", qualification: true },
-  accountXp: { name: "AccountXP pilot + first month", amount: PRICING.quickCash.accountXpExperience * 100, mode: "payment", qualification: true },
-  eventXp: { name: "EventXP pilot", amount: PRICING.quickCash.eventXpTrial * 100, mode: "payment", qualification: true },
+  discovery: { name: "30-day Discovery Sprint (≤10 people)", amount: PRICING.consultancy.discoverySprint30Day * 100, mode: "payment", qualification: true },
+  discovery11To30: { name: "30-day Discovery Sprint (11–30 people)", amount: PRICING.consultancy.discoveryWorkshop11To30 * 100, mode: "payment", qualification: true },
+  accountXp: { name: "AccountXP experience", amount: PRICING.quickCash.accountXpExperience * 100, mode: "payment", qualification: true },
+  eventXp: { name: "EventXP trial", amount: PRICING.quickCash.eventXpTrial * 100, mode: "payment", qualification: true },
+  smartSales: { name: "SmartSales CRM scoped pilot", amount: PRICING.quickCash.smartSalesTrial * 100, mode: "payment", qualification: true },
+  websiteStarter: { name: "Website Starter", amount: PRICING.quickCash.websiteStarter * 100, mode: "payment", qualification: true },
+  promptTraining: { name: "Prompt training (1 day)", amount: PRICING.quickCash.promptTrainingDay * 100, mode: "payment", qualification: true },
+  sessionCredits1000: { name: "Session credits 1,000", amount: credits[0].priceHkd * 100, mode: "payment", qualification: true },
+  sessionCredits2000: { name: "Session credits 2,000 (+200 bonus)", amount: credits[1].priceHkd * 100, mode: "payment", qualification: true },
+  sessionCredits4000: { name: "Session credits 4,000 (+400 bonus)", amount: credits[2].priceHkd * 100, mode: "payment", qualification: true },
   systemCareEssential: { name: "System Care Essential", amount: PRICING.systemCare.essentialMonthly * 100, mode: "subscription", qualification: true },
   systemCareGrowth: { name: "System Care Growth", amount: PRICING.systemCare.growthMonthly * 100, mode: "subscription", qualification: true },
   systemCarePriority: { name: "System Care Priority", amount: PRICING.systemCare.priorityMonthly * 100, mode: "subscription", qualification: true },

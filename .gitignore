@@ -132,6 +132,7 @@ dist
 
 # Local Stripe setup secrets
 .env.stripe.local
+.env.stripe.live.local
 
 # Local next/font build helpers (not shipped)
 .font-cache/

@@ -147,12 +147,16 @@ function checkoutStripe() {
 }
 
 test("catalogue mapping only sells approved visible offers; unsupported and hidden items stay quote-only", () => {
-  assert.equal(MAX_CART_ITEMS, Object.keys(OFFERS).length);
+  assert.equal(MAX_CART_ITEMS, 8);
   assert.equal(getCartOffer("aiReadinessAssessment"), "snapshot");
   assert.equal(getCartOffer("aiDiscoverySprint"), "discovery");
   assert.equal(getCartOffer("discoverySprint30Day"), "discovery");
   assert.equal(getCartOffer("accountXpExperience"), "accountXp");
   assert.equal(getCartOffer("eventXpTrial"), "eventXp");
+  assert.equal(getCartOffer("smartSalesTrial"), "smartSales");
+  assert.equal(getCartOffer("websiteStarter"), "websiteStarter");
+  assert.equal(getCartOffer("promptTrainingDay"), "promptTraining");
+  assert.equal(getCartOffer("sessionCredits2000"), "sessionCredits2000");
   for (const item of INQUIRY_CATALOG) if (!(item.id in CART_OFFERS) || item.hidePublicPrice) assert.equal(getCartOffer(item.id), null);
   for (const id of ["snapshot", "discovery11To30", "__proto__", "constructor", null, 1]) assert.equal(getCartOffer(id), null);
 });

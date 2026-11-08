@@ -1,6 +1,7 @@
-import { NextResponse } from "next/server";
+import { after, NextResponse } from "next/server";
 import { getStripe } from "@/lib/commerce/stripe";
 import { processStripeEvent } from "@/lib/commerce/events";
+import { drainCommerceOutbox } from "@/lib/commerce/notifications";
 
 export const runtime = "nodejs";
 export async function POST(req: Request) {
@@ -16,10 +17,15 @@ export async function POST(req: Request) {
   }
   try {
     await processStripeEvent(event);
-    // Email delivery is durable work, retried separately; it cannot fail the payment transaction.
-    return NextResponse.json({ received: true });
   } catch {
     console.error("Stripe event processing failed", event.id, event.type);
     return NextResponse.json({ error: "Retry required" }, { status: 503 });
   }
+  // The event is committed; email delivery must never make Stripe retry it. Cron re-drains missed jobs.
+  try {
+    after(() => drainCommerceOutbox().catch(() => console.error("Commerce outbox drain failed", event.id)));
+  } catch {
+    console.error("Commerce outbox drain not scheduled", event.id);
+  }
+  return NextResponse.json({ received: true });
 }

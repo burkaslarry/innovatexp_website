@@ -75,8 +75,6 @@ export const translations = {
     'why.4.label': 'Understands HK business language',
     'why.4.sub': 'Cantonese, English, and local mixed-language sales context.',
     'product.entry.section_label': 'What are you trying to solve?',
-    'product.entry.eventxp.title':
-      'Spent HKD 50,000 on an event. What happened to the 200 contacts?',
     'product.entry.eventxp.blurb': 'Organize follow-up priority so your team can review the most relevant contacts first.',
     'product.entry.eventxp.cta': 'EventXP trial HKD $4,000',
     'product.entry.smartsales.title':
@@ -86,7 +84,6 @@ export const translations = {
     'product.entry.ai.title': 'Want AI but do not know where to start?',
     'product.entry.ai.blurb': 'Start with one high-impact workflow and prove value in 30 days.',
     'product.entry.ai.cta': 'Free 15-min chat',
-    'eventxp.headline': 'You spent HKD 50,000 on an event. What happened to those 200 contacts?',
     'smartsales.headline': 'Fast follow-up closes more deals. Can your team reply within 2 hours?',
     'mockup.checkin':
       'EventXP live walkthrough: see how check-in turns into a ranked follow-up list.',
@@ -667,8 +664,6 @@ export const translations = {
     'pricing.insight.tier2.feature2': 'Monthly health / usage summary',
     'pricing.insight.tier2.feature3': 'Minor configuration & content tweaks',
     'pricing.insight.tier2.feature4': '2 additional onsite support events',
-    'pricing.insight.tier2.note':
-      'Go-live setup from HKD $8,800 · 3 pilot events · 4-month basic warranty. Prepay 1 year: 10% off · 2 years: 25% off.',
     
     'pricing.insight.tier3.name': 'Enterprise',
     'pricing.insight.tier3.price': 'HKD $1,480',
@@ -678,19 +673,14 @@ export const translations = {
     'pricing.insight.tier3.feature1': 'Growth Maintenance Package included',
     'pricing.insight.tier3.feature2': 'WhatsApp automation support',
     'pricing.insight.tier3.feature3': 'Quarterly optimization review',
-    'pricing.insight.tier3.feature4': 'Integration upkeep (agreed scope) · go-live from HKD $9,800 · 4 pilots · 5-month basic warranty',
     
     'pricing.insight.setup':
       'Verified BNI members receive 30% off advisory and quick-cash services. Tool trials and custom implementation are scoped separately. For details, ',
     'pricing.insight.setup_cta': 'book a consultation',
     'eventxp.golive.heading': 'Go-live packages',
     'eventxp.golive.tier1.name': 'Starter',
-    'eventxp.golive.tier1.desc':
-      'EventXP trial HKD 4,000 · 1 event · check-in + scoring + follow-up setup',
     'eventxp.golive.tier2.name': 'Growth',
-    'eventxp.golive.tier2.desc': 'HKD 8,800 · 3 pilots · 4-month warranty',
     'eventxp.golive.tier3.name': 'Enterprise',
-    'eventxp.golive.tier3.desc': 'HKD 9,800 · 4 pilots · 5-month warranty',
     'eventxp.golive.tier3.badge': 'Enterprise',
     'eventxp.golive.note': 'Monthly maintenance is billed separately.',
     'mockup.pipeline_kanban':
@@ -716,7 +706,6 @@ export const translations = {
     'pricing.crm.feature3.desc': 'Follow-up priority: AI helps organize pipeline context for human review.',
     
     'pricing.crm.tier1.name': 'Starter',
-    'pricing.crm.tier1.price': 'Trial HKD $5,000',
     'pricing.crm.tier1.period': '(advisor-led trial)',
     'pricing.crm.tier1.target': 'Suitable scenario: 1 sales team',
     'pricing.crm.tier1.feature1': 'Omni-channel inbox (selected) + pipeline setup',
@@ -724,7 +713,6 @@ export const translations = {
     'pricing.crm.tier1.feature3': 'Maintenance plan: HKD 880/month · support hours/month: 2 · 6-month warranty',
     
     'pricing.crm.tier2.name': 'Growth',
-    'pricing.crm.tier2.price': 'HKD $18,880',
     'pricing.crm.tier2.period': '(one-time setup)',
     'pricing.crm.tier2.badge': 'Popular',
     'pricing.crm.tier2.target': 'Suitable scenario: 2 sales teams / channels',
@@ -733,7 +721,6 @@ export const translations = {
     'pricing.crm.tier2.feature3': '4 monthly reports/tweaks + 2 strategic AI sessions/year',
     
     'pricing.crm.tier3.name': 'Enterprise',
-    'pricing.crm.tier3.price': 'From HKD $30,000+',
     'pricing.crm.tier3.period': '(quoted by scope)',
     'pricing.crm.tier3.target': 'Suitable scenario: Multi-team / multi-channel ops',
     'pricing.crm.tier3.feature1': 'Tailored setup scope + integrations (agreed scope)',
@@ -834,8 +821,6 @@ export const translations = {
     'faq.eventxp.q3': 'Can EventXP handle multiple simultaneous events?',
     'faq.eventxp.a3': 'Yes. EventXP supports unlimited concurrent events with separate dashboards, real-time attendance tracking, and consolidated reporting across all events.',
     'faq.eventxp.q4': 'What is the cost of EventXP event management system?',
-    'faq.eventxp.a4':
-      'EventXP maintenance plans: HKD 480/month (Starter), HKD 680/month (Growth), and HKD 1,080/month (Enterprise). One-event advisor-led trial starts at HKD 4,000. Verified BNI members: 30% off advisory/quick-cash — book a call for details.',
     
     'faq.aiconsulting.title': 'AI Consulting - Frequently Asked Questions',
     'faq.aiconsulting.q1': 'What is prompt engineering training?',
@@ -845,7 +830,6 @@ export const translations = {
     'faq.aiconsulting.q3': 'What industries do you provide AI consulting for?',
     'faq.aiconsulting.a3': 'We specialize in AI solutions for service-based SMEs including education centers, event organizers, professional services, training providers, and B2B companies in Hong Kong. Our founder has 14 years of tech experience and has managed systems for 2,000+ participants.',
     'faq.aiconsulting.q4': 'How long does custom AI workflow development take?',
-    'faq.aiconsulting.a4': 'Custom AI workflow implementation is scoped after the AI Discovery Sprint (quoted after diagnosis). You receive a fixed implementation quote — we do not publish open-ended custom build pricing on the website.',
     
     // Answer-first content sections
     'eventxp.what.title': 'What is EventXP Event Check-in System?',
@@ -969,7 +953,6 @@ export const translations = {
     'pricing.models.pilot.price': 'Fixed quote after Discovery Sprint',
     'pricing.models.pilot.desc': 'Validate one workflow end-to-end before committing to broader rollout.',
     'pricing.models.impl.title': 'Full Implementation Package',
-    'pricing.models.impl.price': 'Indicative: HKD 80,000+',
     'pricing.models.impl.desc': 'Deploy across multiple teams, systems, and operational processes.',
     'pricing.models.retainer.title': 'Optimization Retainer',
     'pricing.models.retainer.price': 'Monthly / Quarterly',
@@ -1048,7 +1031,6 @@ export const translations = {
     'why.3.sub': 'AI 先草擬，真人睇完先發送。',
     'why.4.label': '廣東話／中英夾雜直接識聽',
     'why.4.sub': '貼近香港 SME 真實銷售語境。',
-    'product.entry.eventxp.title': '花 HKD 50,000 辦活動，200 個聯絡人之後點？',
     'product.entry.eventxp.blurb': '協助整理跟進優先次序，先 review 最相關的名單。',
     'product.entry.eventxp.cta': '免費傾 15 分鐘',
     'product.entry.smartsales.title': '客人 WhatsApp 你，3 日先覆？',
@@ -1058,7 +1040,6 @@ export const translations = {
     'product.entry.ai.blurb': '一個高影響流程先做，30 日內見效。',
     'product.entry.ai.cta': '免費傾 15 分鐘',
     'product.entry.section_label': '你想優先解決哪個問題？',
-    'eventxp.headline': '你花了 HKD 50,000 辦活動，之後那 200 個聯絡人發生了什麼？',
     'smartsales.headline': '跟進速度會影響成交。你團隊可否在 2 小時內回覆？',
     'mockup.checkin': 'EventXP 簽到與儀表板（示意）',
     'mockup.checkin.alt': 'EventXP 後台介面（香港 SME AI 顧問部署）',
@@ -1624,8 +1605,6 @@ export const translations = {
     'pricing.insight.tier2.feature2': '每月健康度／用量摘要',
     'pricing.insight.tier2.feature3': '輕量設定與內容微調',
     'pricing.insight.tier2.feature4': '額外 2 場現場支援',
-    'pricing.insight.tier2.note':
-      '上線組合 HKD $8,800 · 3 場試辦 · 4 個月基本保養。預付 1 年 10% 折扣 · 2 年 25% 折扣。',
     
     'pricing.insight.tier3.name': 'Enterprise',
     'pricing.insight.tier3.price': 'HKD $1,480',
@@ -1635,17 +1614,13 @@ export const translations = {
     'pricing.insight.tier3.feature1': '包含 Growth 維護套裝',
     'pricing.insight.tier3.feature2': 'WhatsApp 自動化支援',
     'pricing.insight.tier3.feature3': '每季優化檢討',
-    'pricing.insight.tier3.feature4': '約定範圍內的整合維護 · 上線 HKD $9,800 起 · 4 場試辦 · 5 個月基本保養',
     
     'pricing.insight.setup': '如經查證為 BNI 會員，advisory 及 quick-cash 服務可享 30% 折扣。工具試用及客製實施另行確認。詳情請',
     'pricing.insight.setup_cta': '預約洽談',
     'eventxp.golive.heading': '上線組合',
     'eventxp.golive.tier1.name': 'Starter',
-    'eventxp.golive.tier1.desc': 'EventXP 試用 HKD 4,000 · 1 場活動 · 簽到 + 評分 + follow-up 設定',
     'eventxp.golive.tier2.name': 'Growth',
-    'eventxp.golive.tier2.desc': 'HKD 8,800、3 場、4 個月',
     'eventxp.golive.tier3.name': 'Enterprise',
-    'eventxp.golive.tier3.desc': 'HKD 9,800、4 場、5 個月',
     'eventxp.golive.tier3.badge': '企業方案',
     'eventxp.golive.note': '月費維護另計。',
     'mockup.pipeline_kanban': 'SmartSales — 管道／看板（畫面示意）',
@@ -1666,7 +1641,6 @@ export const translations = {
     'pricing.crm.feature3.desc': '銷售預測：AI 分析目前的 Pipeline，預測本月營收達標率。',
     
     'pricing.crm.tier1.name': 'Starter',
-    'pricing.crm.tier1.price': 'Trial HKD $5,000',
     'pricing.crm.tier1.period': '(一次性設定費)',
     'pricing.crm.tier1.target': '適用場景：1 個銷售團隊',
     'pricing.crm.tier1.feature1': '多渠道收件匣（指定渠道）＋ pipeline 設定',
@@ -1674,7 +1648,6 @@ export const translations = {
     'pricing.crm.tier1.feature3': '維護方案：HKD 880/月 · 每月支援時數：2 · 6 個月保養',
     
     'pricing.crm.tier2.name': 'Growth',
-    'pricing.crm.tier2.price': 'HKD $18,880',
     'pricing.crm.tier2.period': '(一次性設定費)',
     'pricing.crm.tier2.badge': '常見選擇',
     'pricing.crm.tier2.target': '適用場景：2 個銷售團隊／渠道',
@@ -1683,7 +1656,6 @@ export const translations = {
     'pricing.crm.tier2.feature3': '每月報告／微調 4 次＋每年 2 次策略 AI 諮詢',
     
     'pricing.crm.tier3.name': 'Enterprise',
-    'pricing.crm.tier3.price': '通常 HKD $30,000+ 起',
     'pricing.crm.tier3.period': '(按範圍報價)',
     'pricing.crm.tier3.target': '適用場景：多團隊／多渠道營運',
     'pricing.crm.tier3.feature1': '按業務範圍客製設定＋整合（按同意範圍）',
@@ -1781,8 +1753,6 @@ export const translations = {
     'faq.eventxp.q3': 'EventXP 能否處理多個同時進行的活動？',
     'faq.eventxp.a3': '可以。EventXP 支援無限數量的同步活動，配備獨立儀表板、即時出席追蹤，並可整合所有活動的報告。',
     'faq.eventxp.q4': 'EventXP 活動管理系統的費用是多少？',
-    'faq.eventxp.a4':
-      'EventXP 維護月費：HKD 480（Starter）、HKD 680（Growth）、HKD 1,080（Enterprise）。顧問帶領單場試用由 HKD 4,000 起。BNI 會友 advisory／quick-cash 享 30% 折扣 — 預約確認詳情。',
     
     'faq.aiconsulting.title': 'AI 顧問服務 - 常見問題',
     'faq.aiconsulting.q1': '什麼是 Prompt Engineering 培訓？',
@@ -1792,7 +1762,6 @@ export const translations = {
     'faq.aiconsulting.q3': '你們為哪些行業提供 AI 顧問服務？',
     'faq.aiconsulting.a3': '我們專注為服務型中小企業提供 AI 解決方案，包括教育中心、活動組織者、專業服務、培訓機構和香港的 B2B 公司。我們的創辦人擁有 14 年科技經驗，曾管理 2,000+ 參與者規模的系統。',
     'faq.aiconsulting.q4': '定制 AI workflow 開發需要多長時間？',
-    'faq.aiconsulting.a4': '客製 AI workflow 實施會在 Discovery 完成後提供固定報價（聽診後按範圍報價），網站唔會列出開放式 custom build 價。',
     
     // Answer-first content sections
     'eventxp.what.title': '什麼是 EventXP 活動簽到系統？',
@@ -1905,7 +1874,6 @@ export const translations = {
     'pricing.models.pilot.price': 'Discovery Sprint 後固定實施報價',
     'pricing.models.pilot.desc': '先驗證一條流程端到端價值，再決定是否全面擴展。',
     'pricing.models.impl.title': '完整導入方案',
-    'pricing.models.impl.price': '參考：HKD 80,000+',
     'pricing.models.impl.desc': '跨部門、跨系統的完整部署與營運流程落地。',
     'pricing.models.retainer.title': '持續優化顧問',
     'pricing.models.retainer.price': '按月／按季',

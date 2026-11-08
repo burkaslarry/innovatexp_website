@@ -1,5 +1,10 @@
 import type { AppLocale } from "@/lib/i18n-routing";
 import { localeUsesChineseCopy } from "@/lib/i18n-routing";
+import { PRICING, formatHkd } from "@/content/pricing";
+
+const A = PRICING.automationPackages;
+const hk = (n: number) => formatHkd(n);
+const num = (n: number) => n.toLocaleString("en-HK");
 
 export type AutomationTier = "lite" | "trial" | "starter" | "ai_api" | "ai_gpu" | "diagnosis_first";
 
@@ -137,7 +142,7 @@ const zh: Copy = {
       id: "lite",
       name: "流程整理 Lite",
       setup: "聽診後報價",
-      monthly: "HK$1,200",
+      monthly: hk(A.liteMonthly),
       includes: "2 條日常流程＋1 小時團隊教學",
       bestFor: "表單、通知、資料同步等規則清楚工作",
       avoidWhen: "責任人同流程仍未釐清",
@@ -147,15 +152,15 @@ const zh: Copy = {
       name: "14 日試用",
       setup: "聽診後報價（一次）",
       monthly: "—",
-      includes: "2 條流程試行；轉正式方案可扣 HK$2,000",
+      includes: `2 條流程試行；轉正式方案可扣 ${hk(A.trialCreditToRollout)}`,
       bestFor: "想先試",
       avoidWhen: "第一日就要真會計／庫存",
     },
     {
       id: "starter",
       name: "團隊落地 Starter",
-      setup: "HK$12,800",
-      monthly: "HK$1,800",
+      setup: hk(A.starterSetup),
+      monthly: hk(A.starterMonthly),
       includes: "最多 5 條流程、WhatsApp／Email 銜接、操作步驟、備份",
       bestFor: "多數香港中小企（聽診後）",
       avoidWhen: "冇營運負責人；拒絕聽診",
@@ -163,8 +168,8 @@ const zh: Copy = {
     {
       id: "ai_api",
       name: "團隊落地＋AI 助手",
-      setup: "HK$12,800–14,800",
-      monthly: "HK$2,500",
+      setup: `${hk(A.aiAssistantSetupFrom)}–${num(A.aiAssistantSetupTo)}`,
+      monthly: hk(A.aiAssistantMonthly),
       includes: "Starter＋AI 讀取合適資料、起草回覆、人工覆核",
       bestFor: "要加快日常營運、用量中低",
       avoidWhen: "資料不能使用雲端服務",
@@ -172,8 +177,8 @@ const zh: Copy = {
     {
       id: "ai_gpu",
       name: "私隱加強 AI 方案",
-      setup: "HK$22,800",
-      monthly: "HK$4,500",
+      setup: hk(A.privateAiSetup),
+      monthly: hk(A.privateAiMonthly),
       includes: "私有環境、AI 助手、流程銜接及維護安排",
       bestFor: "有嚴格私隱、數據駐留或高用量要求",
       avoidWhen: "冇內部負責人或長期維護預算",
@@ -181,8 +186,8 @@ const zh: Copy = {
     {
       id: "erpnext",
       name: "庫存／會計流程加購",
-      setup: "+HK$8,800",
-      monthly: "+HK$800",
+      setup: `+${hk(A.inventoryFinanceAddonSetup)}`,
+      monthly: `+${hk(A.inventoryFinanceAddonMonthly)}`,
       includes: "庫存、會計、採購單等進階模組",
       bestFor: "基本資料表已經唔夠用",
       avoidWhen: "仍然 WhatsApp＋Excel 混亂——先聽診",
@@ -412,7 +417,7 @@ const en: Copy = {
       id: "lite",
       name: "Process Cleanup Lite",
       setup: "Scoped after diagnosis",
-      monthly: "HK$1,200",
+      monthly: hk(A.liteMonthly),
       includes: "2 routine workflows + 1 hour of team training",
       bestFor: "Clear form, notification, and data-sync work",
       avoidWhen: "Ownership and the current process are still unclear",
@@ -422,15 +427,15 @@ const en: Copy = {
       name: "14-day Trial",
       setup: "Quoted after diagnosis (once)",
       monthly: "—",
-      includes: "2 workflow pilots; HK$2,000 credit toward team rollout",
+      includes: `2 workflow pilots; ${hk(A.trialCreditToRollout)} credit toward team rollout`,
       bestFor: "Want to try first",
       avoidWhen: "Need real accounting/inventory on day one",
     },
     {
       id: "starter",
       name: "Team Rollout Starter",
-      setup: "HK$12,800",
-      monthly: "HK$1,800",
+      setup: hk(A.starterSetup),
+      monthly: hk(A.starterMonthly),
       includes: "Up to 5 workflows, WhatsApp/email connections, written steps, and backup",
       bestFor: "Most Hong Kong SMEs after diagnosis",
       avoidWhen: "No operations owner; refuses diagnosis",
@@ -438,8 +443,8 @@ const en: Copy = {
     {
       id: "ai_api",
       name: "Team Rollout + AI Assistant",
-      setup: "HK$12,800–14,800",
-      monthly: "HK$2,500",
+      setup: `${hk(A.aiAssistantSetupFrom)}–${num(A.aiAssistantSetupTo)}`,
+      monthly: hk(A.aiAssistantMonthly),
       includes: "Starter plus context-aware drafts and human approval",
       bestFor: "Faster daily operations at low–mid volume",
       avoidWhen: "Data cannot use managed cloud services",
@@ -447,8 +452,8 @@ const en: Copy = {
     {
       id: "ai_gpu",
       name: "Privacy-Focused AI",
-      setup: "HK$22,800",
-      monthly: "HK$4,500",
+      setup: hk(A.privateAiSetup),
+      monthly: hk(A.privateAiMonthly),
       includes: "Private environment, AI assistance, workflow connections, and maintenance plan",
       bestFor: "Strict privacy, residency, or high-volume requirements",
       avoidWhen: "No internal owner or ongoing maintenance budget",
@@ -456,8 +461,8 @@ const en: Copy = {
     {
       id: "erpnext",
       name: "Inventory & Finance Add-on",
-      setup: "+HK$8,800",
-      monthly: "+HK$800",
+      setup: `+${hk(A.inventoryFinanceAddonSetup)}`,
+      monthly: `+${hk(A.inventoryFinanceAddonMonthly)}`,
       includes: "Inventory, accounting, and purchase-order modules",
       bestFor: "Basic tables no longer meet the need",
       avoidWhen: "Still WhatsApp+Excel chaos — diagnose first",

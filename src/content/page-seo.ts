@@ -4,6 +4,10 @@
  */
 import type { AppLocale } from "@/lib/i18n-routing";
 import { localeUsesChineseCopy } from "@/lib/i18n-routing";
+import { PRICING, formatHkd } from "@/content/pricing";
+
+const V = PRICING.aiVisibility;
+const hkd = (n: number) => formatHkd(n, "en", "HKD");
 
 export type PageSeo = {
   title: string;
@@ -139,12 +143,12 @@ const AI_SEO: LocalePair = {
   zh: {
     title: "AI 搜尋能見度診斷與 GEO／AEO 追蹤｜InnovateXP",
     description:
-      "香港中小企 AI 搜尋能見度診斷：HKD 2,800 測試 20 條買家問題、比較最多 5 個競爭對手。按月追蹤提及、引用同詢盤；月費 HKD 1,800 起，訂 3 個月或以上享 20% 折扣。",
+      `香港中小企 AI 搜尋能見度診斷：${hkd(V.diagnosis)} 測試 20 條買家問題、比較最多 5 個競爭對手。按月追蹤提及、引用同詢盤；月費 ${hkd(V.monitorMonthly)} 起，訂 3 個月或以上享 20% 折扣。`,
   },
   en: {
     title: "AI Visibility Diagnosis & GEO/AEO for HK SMEs | InnovateXP",
     description:
-      "HKD 2,800 AI visibility diagnosis tests 20 buyer questions and up to 5 competitors. Track mentions, citations and enquiries from HKD 1,800/month; 20% off plans of 3 months or more.",
+      `${hkd(V.diagnosis)} AI visibility diagnosis tests 20 buyer questions and up to 5 competitors. Track mentions, citations and enquiries from ${hkd(V.monitorMonthly)}/month; 20% off plans of 3 months or more.`,
   },
 };
 
