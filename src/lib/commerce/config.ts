@@ -25,6 +25,20 @@ export function priceId(offer: OfferId): string {
   if (!id?.startsWith("price_")) throw new Error("Offer price not configured");
   return id;
 }
+/** Configuration-only readiness: never contacts Stripe or exposes configured price IDs. */
+export function cartAvailableOffers(): OfferId[] {
+  try {
+    const mode = requirePayments();
+    const key = process.env.STRIPE_SECRET_KEY?.trim();
+    if (!key?.startsWith(mode === "test" ? "sk_test_" : "sk_live_") ||
+      !process.env.DATABASE_URL?.trim() || (process.env.INTAKE_TOKEN_SECRET?.length ?? 0) < 32 ||
+      !process.env.STRIPE_WEBHOOK_SECRET?.trim().startsWith("whsec_")) return [];
+    return (Object.keys(OFFERS) as OfferId[]).filter((offer) => {
+      try { requireOfferPayments(offer); priceId(offer); return true; } catch { return false; }
+    });
+  } catch { return []; }
+}
+
 export function snapshotCheckoutAvailable(): boolean {
   try {
     requirePayments(); priceId("snapshot");

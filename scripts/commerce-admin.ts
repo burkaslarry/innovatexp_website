@@ -2,8 +2,7 @@
 import { randomUUID } from "node:crypto";
 import { isOfferId } from "@/content/commerce";
 import { createInvitation, commerceSql, getOrder } from "@/lib/commerce/orders";
-import { processStripeEvent } from "@/lib/commerce/events";
-import { getStripe } from "@/lib/commerce/stripe";
+import { reconcileOrder } from "@/lib/commerce/events";
 import { drainCommerceOutbox } from "@/lib/commerce/notifications";
 import { retryQuestionnaireNotifications } from "@/lib/questionnaire-notifications";
 import { orderToken } from "@/lib/commerce/tokens";
@@ -20,10 +19,7 @@ async function main() {
     console.log({ commerce: await drainCommerceOutbox(), questionnaire: (await retryQuestionnaireNotifications()).filter(Boolean).length });
   } else if (b.action === "reconcile") {
     if (typeof b.orderId !== "string") throw new Error("Order required");
-    const order = await getOrder(b.orderId);
-    if (!order?.checkout_session) throw new Error("Checkout not found");
-    const session = await getStripe().checkout.sessions.retrieve(order.checkout_session);
-    await processStripeEvent({ id: `reconcile_${session.id}_${Date.now()}`, object: "event", api_version: null, pending_webhooks: 0, request: null, type: "checkout.session.completed", created: Math.floor(Date.now() / 1000), livemode: session.livemode, data: { object: session } });
+    await reconcileOrder(b.orderId);
     console.log({ reconciled: true });
   } else if (b.action === "access") {
     const order = await getOrder(String(b.orderId));

@@ -1,5 +1,6 @@
 import Link from "next/link";
 import { withLocale, type AppLocale } from "@/lib/i18n-routing";
+import { AddToInquiryButton } from "@/components/inquiry-cart/AddToInquiryButton";
 
 type JourneyCopy = { label: string; rows: [string, string, string][] };
 const COPY: Record<AppLocale, JourneyCopy> = {
@@ -40,6 +41,7 @@ export function OfferJourney({ locale }: { locale: AppLocale }) {
           <h2 className="text-lg font-semibold">{title}</h2>
           <p className="mt-3 text-sm leading-7">{text}</p>
           <Link className="mt-4 inline-flex min-h-11 items-center border-b border-[#8b6b43] text-sm font-semibold" href={withLocale(locale, PATHS[index])}>{label}</Link>
+          {index === 0 ? <div className="mt-4"><AddToInquiryButton itemId="aiReadinessAssessment" fullWidth={false} /></div> : null}
         </article>
       ))}
     </section>

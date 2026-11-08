@@ -9,7 +9,7 @@ import {
   getInquiryCatalogItem,
   type InquiryCatalogItemId,
 } from "@/content/inquiry-catalog";
-import { uiStrings } from "@/content/ui-strings";
+import { CART_COPY } from "@/content/cart-copy";
 
 export function AddToInquiryButton({
   itemId,
@@ -23,7 +23,7 @@ export function AddToInquiryButton({
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
   const zh = localeUsesChineseCopy(locale);
-  const ui = uiStrings(locale);
+  const copy = CART_COPY[locale];
   const { addItem } = useInquiryCart();
   const catalog = getInquiryCatalogItem(itemId);
 
@@ -39,12 +39,11 @@ export function AddToInquiryButton({
       onClick={() =>
         addItem(itemId, {
           title: catalogTitle(catalog, zh),
-          amountHkd: catalog.hidePublicPrice ? 0 : catalog.amountHkd,
         })
       }
     >
       <ShoppingCart className="h-4 w-4 shrink-0" aria-hidden />
-      {ui.inquiry.addLabel}
+      {copy.add}
     </button>
   );
 }

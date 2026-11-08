@@ -21,10 +21,9 @@ import { uiStrings } from "@/content/ui-strings";
 import { useInnovateXpM3Theme } from "@/components/questionnaires/useInnovateXpM3Theme";
 import { useInquiryCart } from "@/context/InquiryCartContext";
 import { formatHkd, type PricingLocale } from "@/content/pricing";
-import {
-  catalogBlurb,
-  getInquiryCatalogItem,
-} from "@/content/inquiry-catalog";
+import { catalogBlurb, catalogTitle, getInquiryCatalogItem } from "@/content/inquiry-catalog";
+import { CART_COPY } from "@/content/cart-copy";
+import { CartCheckout } from "@/components/commerce/CartCheckout";
 
 function toPricingLocale(locale: string): PricingLocale {
   if (locale === "zh-hk" || locale === "zh-tw" || locale === "ja" || locale === "de") return locale;
@@ -38,6 +37,7 @@ export function InquiryCheckoutDrawer() {
   const ui = uiStrings(locale);
   const pl = toPricingLocale(locale);
   const theme = useInnovateXpM3Theme();
+  const c = CART_COPY[locale];
   const { items, itemCount, estimatedTotal, drawerOpen, setDrawerOpen, removeItem, setQty, clear } =
     useInquiryCart();
 
@@ -143,15 +143,13 @@ export function InquiryCheckoutDrawer() {
         <Stack direction="row" alignItems="center" justifyContent="space-between">
           <Box>
             <Typography variant="h6" fontWeight={700}>
-              {zh ? "查詢購物車" : "Inquiry cart"}
+              {c.title}
             </Typography>
             <Typography variant="body2" color="text.secondary">
-              {zh
-                ? "揀好服務 → 確認 → 我們會電郵跟進（非即時付款）"
-                : "Shortlist offers → confirm → we email you back (not instant payment)"}
+              {c.intro}
             </Typography>
           </Box>
-          <IconButton aria-label="Close" onClick={() => setDrawerOpen(false)}>
+          <IconButton aria-label={c.close} onClick={() => setDrawerOpen(false)}>
             <CloseIcon />
           </IconButton>
         </Stack>
@@ -177,7 +175,7 @@ export function InquiryCheckoutDrawer() {
           </Alert>
         ) : null}
 
-        <Box sx={{ flex: 1, overflowY: "auto" }}>
+        <Box sx={{ flex: 1, minHeight: 0, overflowY: "auto" }}>
           {items.length === 0 ? (
             <Typography variant="body2" color="text.secondary" sx={{ py: 3 }}>
               {ui.cart.emptyHint}
@@ -198,7 +196,7 @@ export function InquiryCheckoutDrawer() {
                   >
                     <Stack direction="row" justifyContent="space-between" alignItems="flex-start">
                       <Box sx={{ pr: 1 }}>
-                        <Typography fontWeight={700}>{line.title}</Typography>
+                        <Typography fontWeight={700}>{catalog ? catalogTitle(catalog, zh) : line.title}</Typography>
                         {catalog ? (
                           <Typography variant="caption" color="text.secondary">
                             {catalogBlurb(catalog, zh)}
@@ -233,10 +231,10 @@ export function InquiryCheckoutDrawer() {
               })}
             </Stack>
           )}
-        </Box>
 
         <Box
           sx={{
+            mt: 2,
             borderTop: "1px solid",
             borderColor: "divider",
             pt: 2,
@@ -246,11 +244,15 @@ export function InquiryCheckoutDrawer() {
             <Typography fontWeight={700}>
               {zh ? `共 ${itemCount} 項` : `${itemCount} item(s)`}
             </Typography>
-            <Typography fontWeight={800} color="primary">
-              {formatHkd(estimatedTotal, pl)}
-            </Typography>
+            <Box sx={{ textAlign: "right" }}>
+              <Typography variant="body2">{c.oneTime}: {formatHkd(items.filter(line => !line.id.startsWith("systemCare")).reduce((sum, line) => sum + line.amountHkd * line.qty, 0), pl)}</Typography>
+              {items.some(line => line.id.startsWith("systemCare")) ? <Typography variant="body2">{c.monthly}: {formatHkd(items.filter(line => line.id.startsWith("systemCare")).reduce((sum, line) => sum + line.amountHkd * line.qty, 0), pl)} {c.monthlySuffix}</Typography> : null}
+            </Box>
           </Stack>
 
+          {items.length > 0 ? <CartCheckout locale={locale} open={drawerOpen} /> : null}
+          <details>
+          <summary className="mb-4 flex min-h-11 cursor-pointer items-center font-semibold">{c.quote}</summary>
           <Box component="form" onSubmit={onSubmit}>
             <Stack spacing={1.5}>
               <TextField
@@ -315,6 +317,8 @@ export function InquiryCheckoutDrawer() {
               </Typography>
             </Stack>
           </Box>
+          </details>
+        </Box>
         </Box>
       </Drawer>
     </ThemeProvider>

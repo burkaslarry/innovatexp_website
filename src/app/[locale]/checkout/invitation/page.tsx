@@ -3,6 +3,7 @@ import { notFound, redirect } from "next/navigation";
 import { cookies } from "next/headers";
 import { SitePageShell } from "@/components/SitePageShell";
 import { CheckoutForm } from "@/components/commerce/CheckoutForm";
+import { AddApprovedToCart } from "@/components/commerce/AddApprovedToCart";
 import { commerceCopy, isOfferId, OFFERS } from "@/content/commerce";
 import { isValidLocale } from "@/lib/i18n-routing";
 import { commerceSql, tokenHash } from "@/lib/commerce/orders";
@@ -22,6 +23,6 @@ export default async function Page({ params, searchParams }: { params: Promise<{
   }
   const offer = invitation && isOfferId(invitation.offer) ? invitation.offer : null;
   return <SitePageShell title={offer ? OFFERS[offer].name : c.failed}>
-    {offer ? <><p className="text-3xl">HK${OFFERS[offer].amount / 100}{OFFERS[offer].mode === "subscription" ? " / month" : ""}</p><p className="mt-5 whitespace-pre-wrap leading-8">{String(invitation!.scope)}</p><CheckoutForm locale={locale} offer={offer} invitation={token} /></> : <p>{c.invalid}</p>}
+    {offer ? <><p className="text-3xl">HK${OFFERS[offer].amount / 100}{OFFERS[offer].mode === "subscription" ? " / month" : ""}</p><p className="mt-5 whitespace-pre-wrap leading-8">{String(invitation!.scope)}</p><CheckoutForm locale={locale} offer={offer} invitation={token} /><AddApprovedToCart offer={offer} invitation={token!} /></> : <p>{c.invalid}</p>}
   </SitePageShell>;
 }

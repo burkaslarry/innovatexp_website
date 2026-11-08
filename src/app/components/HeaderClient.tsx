@@ -30,7 +30,6 @@ export default function HeaderClient({
   const mobileMenuRef = useRef<HTMLElement | null>(null);
   const mobileToggleRef = useRef<HTMLButtonElement | null>(null);
   const isMain = variant === 'main';
-  const isHomepageRoot = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)$/.test(pathname));
   const isBookingPage = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)\/bookme\/?$/.test(pathname));
   const showNav = isMain && navItems.length > 0;
 
@@ -209,7 +208,7 @@ export default function HeaderClient({
         )}
 
         <div className="flex shrink-0 items-center gap-2 sm:gap-3">
-          {!isHomepageRoot && !isBookingPage ? <HeaderCartButton /> : null}
+          {!isBookingPage ? <HeaderCartButton /> : null}
           <ThemeToggle />
           {variant === 'booking' && <LanguageSwitcher />}
           {isMain && (

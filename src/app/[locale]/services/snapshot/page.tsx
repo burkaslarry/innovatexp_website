@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import Link from "next/link";
 import { SitePageShell } from "@/components/SitePageShell";
 import { CheckoutForm } from "@/components/commerce/CheckoutForm";
+import { AddToInquiryButton } from "@/components/inquiry-cart/AddToInquiryButton";
 import { commerceCopy, OFFERS } from "@/content/commerce";
 import { isValidLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
@@ -43,6 +44,7 @@ export default async function SnapshotPage({ params }: { params: Promise<{ local
       <ul className="mt-4 max-w-3xl list-disc space-y-3 pl-5 leading-8">{d.inputs.map(input => <li key={input}>{input}</li>)}</ul>
     </section>
     {enabled ? <CheckoutForm locale={locale} /> : <Link className="mt-8 inline-flex min-h-11 items-center bg-[#251f19] px-6 py-3 text-white" href={`/${locale}/bookme`}>{c.booking}</Link>}
+    <div className="mt-5"><AddToInquiryButton itemId="aiReadinessAssessment" fullWidth={false} /></div>
     <p className="mt-6 text-sm"><Link className="underline" href={`/${locale}/purchase-terms`}>{c.terms}</Link></p>
     <section className="mt-12 border-t border-[#c8bba9] pt-8">
       <h2 className="text-2xl">{d.faq}</h2>

@@ -9,6 +9,7 @@ import SnapshotPage from "@/app/[locale]/services/snapshot/page";
 import SmartSalesPage from "@/app/[locale]/smartsales-crm/page";
 import VisibilityPage from "@/app/[locale]/ai-seo-update-package/page";
 import { SitePageShell } from "@/components/SitePageShell";
+import { InquiryCartProvider } from "@/context/InquiryCartContext";
 import { ServiceLandingPage } from "@/features/marketing/ServiceLandingPage";
 import { getServicePage } from "@/content/service-pages";
 import { commerceCopy, PURCHASE_POLICY_VERSION } from "@/content/commerce";
@@ -25,7 +26,7 @@ const visible = (html: string) => html.replace(/<script\b[^>]*>[\s\S]*?<\/script
 function renderBody(page: React.ReactElement<{ children: React.ReactNode; title: string }>) {
   assert.equal(page.type, SitePageShell);
   assert.ok(page.props.title);
-  const html = renderToStaticMarkup(page.props.children);
+  const html = renderToStaticMarkup(React.createElement(InquiryCartProvider, null, page.props.children));
   assert.doesNotMatch(html, /<h1\b|<main\b|<header\b/);
   assert.match(html, /data-geo-answer/);
   assert.doesNotMatch(html, /href="(?:tel:|https:\/\/wa\.me\/)/);
