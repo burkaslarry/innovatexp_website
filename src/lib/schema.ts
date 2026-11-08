@@ -1,16 +1,20 @@
 /* F04: Shared schema builders - Reusable Organization/Product helpers consumed by JSON-LD and tooling. */
 import { AUTHOR, authorSameAs } from "@/lib/author";
 import { PRICING } from "@/content/pricing";
+import { getSiteUrl } from "@/lib/site-url";
 
 type FAQQuestion = {
   question: string;
   answer: string;
 };
 
-const siteUrl =
-  process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
+/** Escape HTML delimiters before embedding JSON in a script element. */
+export function serializeJsonLd(value: unknown): string {
+  return JSON.stringify(value).replace(/</g, "\\u003c");
+}
 
 export function getPersonSchema() {
+  const siteUrl = getSiteUrl();
   return {
     "@context": "https://schema.org",
     "@type": "Person",
@@ -21,7 +25,7 @@ export function getPersonSchema() {
     url: siteUrl,
     image: `${siteUrl}/mypresent.jpg`,
     description:
-      "Founder of InnovateXP Limited and AI Business Consultant in Hong Kong. 14 years of IT delivery. Method: Business Workflow Diagnosis — say so if a team should not buy a system yet.",
+      `Founder of InnovateXP Limited and AI Business Consultant in Hong Kong. ${AUTHOR.yearsExperience} years of IT delivery. Method: Business Workflow Diagnosis — say so if a team should not buy a system yet.`,
     sameAs: authorSameAs(),
     worksFor: {
       "@type": "Organization",
@@ -49,14 +53,31 @@ export function getPersonSchema() {
 }
 
 export function getOrganizationSchema() {
+  const siteUrl = getSiteUrl();
   return {
     "@context": "https://schema.org",
-    "@type": "Organization",
+    "@type": ["Organization", "LocalBusiness"],
     "@id": `${siteUrl}/#organization`,
     name: AUTHOR.organization,
-    alternateName: "InnovateXP",
+    alternateName: ["InnovateXP", "IXP"],
+    legalName: AUTHOR.organization,
     url: siteUrl,
     logo: `${siteUrl}/innovatexp_color_no_bg.svg`,
+    image: `${siteUrl}/innovatexp_color_no_bg.svg`,
+    geo: {
+      "@type": "GeoCoordinates",
+      latitude: 22.2908,
+      longitude: 114.195,
+    },
+    priceRange: "$$",
+    openingHoursSpecification: [
+      {
+        "@type": "OpeningHoursSpecification",
+        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
+        opens: "09:00",
+        closes: "18:00",
+      },
+    ],
     description:
       "Hong Kong AI business consultancy founded by Larry Lo. Diagnose first, then AI agents and co-run. Fees quoted after diagnosis by workflow complexity.",
     address: {
@@ -72,13 +93,8 @@ export function getOrganizationSchema() {
       email: AUTHOR.email,
       availableLanguage: ["zh-HK", "en"],
     },
-    founder: {
-      "@type": "Person",
-      "@id": `${siteUrl}/#founder`,
-      name: AUTHOR.name,
-      sameAs: authorSameAs(),
-    },
-    sameAs: [AUTHOR.linkedInCompany, AUTHOR.linkedInPersonal],
+    founder: { "@id": `${siteUrl}/#founder` },
+    sameAs: [AUTHOR.linkedInCompany],
     knowsAbout: [
       "Business Workflow Diagnosis",
       "業務聽診",
@@ -90,9 +106,11 @@ export function getOrganizationSchema() {
 }
 
 export function getWebSiteSchema() {
+  const siteUrl = getSiteUrl();
   return {
     "@context": "https://schema.org",
     "@type": "WebSite",
+    "@id": `${siteUrl}/#website`,
     name: AUTHOR.organization,
     alternateName: "InnovateXP",
     url: siteUrl,
@@ -103,12 +121,18 @@ export function getWebSiteSchema() {
 }
 
 export function getSmartSalesProductSchema() {
+  const siteUrl = getSiteUrl();
   const s = PRICING.tools.smartSales;
   return {
-    "@context": "https://schema.org", "@type": "Service", name: "SmartSales CRM",
-    description: "Scoped CRM workflow pilot, production setup and monthly technical care, priced separately. Third-party licences, WhatsApp APIs, membership rules and custom development are separately scoped.",
+    "@context": "https://schema.org",
+    "@type": "Service",
+    "@id": `${siteUrl}/#smartsales-crm`,
+    name: "SmartSales CRM",
+    serviceType: "CRM workflow implementation and technical care",
+    description: "Scoped CRM workflow pilot, production setup and monthly technical care, priced separately. Third-party licences, WhatsApp APIs, AI usage, membership rules and custom integrations or development are separately scoped.",
     url: `${siteUrl}/smartsales-crm`,
-    provider: { "@type": "Organization", name: "InnovateXP Limited" },
+    provider: { "@id": `${siteUrl}/#organization` },
+    areaServed: { "@type": "AdministrativeArea", name: "Hong Kong and Greater Bay Area" },
     offers: [
       { "@type": "Offer", name: "Bounded workflow pilot", price: s.trial, priceCurrency: "HKD", description: "3 participants, 1 workflow, 50 sample records and 14 trial days. No production integration." },
       { "@type": "Offer", name: "Starter setup", priceCurrency: "HKD", priceSpecification: { "@type": "PriceSpecification", minPrice: s.setupStarter, priceCurrency: "HKD" }, description: "One-time setup from this amount; up to 5 users and 1 pipeline. Care and licences separate." },
@@ -118,9 +142,12 @@ export function getSmartSalesProductSchema() {
 }
 
 export function getEventXPProductSchema() {
+  const siteUrl = getSiteUrl();
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
+    "@id": `${siteUrl}/#eventxp-software`,
+    provider: { "@id": `${siteUrl}/#organization` },
     name: "EventXP",
     applicationCategory: "BusinessApplication",
     operatingSystem: "Web",
@@ -149,6 +176,7 @@ export function getEventXPProductSchema() {
 }
 
 export function getFitnessXPProductSchema() {
+  const siteUrl = getSiteUrl();
   return {
     "@context": "https://schema.org",
     "@type": "SoftwareApplication",
@@ -205,17 +233,15 @@ export function getHowToSchema({
 }
 
 export function getAIConsultingServiceSchema() {
+  const siteUrl = getSiteUrl();
   return {
     "@context": "https://schema.org",
     "@type": "Service",
+    "@id": `${siteUrl}/#ai-consulting`,
     name: "AI Business Consultancy — Discovery",
     description:
       "InnovateXP helps Hong Kong SMEs diagnose one revenue-blocking workflow, validate it, then expand with practical AI support or co-run advisory when justified.",
-    provider: {
-      "@type": "Organization",
-      name: "InnovateXP Limited",
-      url: siteUrl,
-    },
+    provider: { "@id": `${siteUrl}/#organization` },
     areaServed: {
       "@type": "AdministrativeArea",
       name: "Hong Kong",
@@ -235,6 +261,7 @@ export function getAIConsultingServiceSchema() {
 }
 
 export function getBeadPatternSchema(url: string) {
+  const siteUrl = getSiteUrl();
   return {
     "@context": "https://schema.org",
     "@type": "WebApplication",
@@ -246,11 +273,7 @@ export function getBeadPatternSchema(url: string) {
     url,
     description:
       "Browser tool that converts photos into fuse-bead blueprints with CIEDE2000 color matching, per-color bead counts, and 1:1 PDF/PNG export.",
-    provider: {
-      "@type": "Organization",
-      name: "InnovateXP Limited",
-      url: siteUrl,
-    },
+    provider: { "@id": `${siteUrl}/#organization` },
     offers: {
       "@type": "Offer",
       price: "0",

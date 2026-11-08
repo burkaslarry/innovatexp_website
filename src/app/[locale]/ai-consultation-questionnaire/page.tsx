@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import { AiConsultationQuestionnaire } from "@/components/questionnaires/AiConsultationQuestionnaire";
+import { WorkflowReadiness } from "@/components/questionnaires/WorkflowReadiness";
 import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { localeUsesChineseCopy } from "@/lib/i18n-routing";
@@ -42,22 +43,23 @@ export default async function AiConsultationQuestionnairePage({
   );
 
   return (
-    <main className="min-h-screen bg-[#f7f9fc] py-16 text-slate-900 dark:bg-gray-950 dark:text-slate-100">
+    <main className="atelier-site min-h-screen bg-[#f7f4ee] py-16 text-[#251f19]">
       <div className="container mx-auto max-w-3xl px-4">
-        <section className="mb-8 space-y-4 text-base leading-8 text-slate-700 dark:text-slate-300">
+        <div id="workflow-readiness" className="scroll-mt-28"><WorkflowReadiness locale={loc} /></div>
+        <section className="mb-8 space-y-4 border-t border-[#c8bba9] pt-8 text-base leading-8 text-[#51483d]">
           <p>
             {zh
               ? "呢份問卷係 30 分鐘業務聽診嘅入口：篩合資格、收集夠用嘅上下文，又唔硬推產品。填完可以即刻揀時間。"
               : "This form is the entry to a 30-minute Business Workflow Diagnosis: qualify fit, collect enough context, and never hard-sell a product. After submit you can pick a time."}
           </p>
           <nav aria-label={zh ? "相關連結" : "Related links"} className="flex flex-wrap gap-3 text-sm font-semibold">
-            <Link href={`/${loc}/`} className="text-brand-primary underline-offset-2 hover:underline">
+            <Link href={`/${loc}/`} className="inline-flex min-h-11 items-center py-2 text-[#6f5436] underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f5436]">
               {zh ? "首頁" : "Home"}
             </Link>
-            <Link href={`/${loc}/ai-consulting`} className="text-brand-primary underline-offset-2 hover:underline">
+            <Link href={`/${loc}/ai-consulting`} className="inline-flex min-h-11 items-center py-2 text-[#6f5436] underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f5436]">
               {zh ? "AI 顧問服務" : "AI consulting"}
             </Link>
-            <Link href={`/${loc}/bookme`} className="text-brand-primary underline-offset-2 hover:underline">
+            <Link href={`/${loc}/bookme`} className="inline-flex min-h-11 items-center py-2 text-[#6f5436] underline-offset-2 hover:underline focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-[#6f5436]">
               {zh ? "直接預約聽診" : "Book diagnosis directly"}
             </Link>
           </nav>

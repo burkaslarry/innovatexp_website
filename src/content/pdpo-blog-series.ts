@@ -12,11 +12,11 @@ const DISCLAIMER: Record<AppLocale, string> = {
 };
 
 const CTA: Record<AppLocale, string> = {
-  "zh-hk": "想先睇一條真實流程會唔會碰到個人資料？預約 1 小時業務聽診。",
-  "zh-tw": "想先看一條真實流程會不會碰到個人資料？預約 1 小時業務診斷。",
-  en: "Want a first look at whether one real workflow touches personal data? Book a 1-hour business diagnosis.",
-  ja: "実際の1業務が個人情報に触れるか、先に確認しますか。1時間の業務診断を予約できます。",
-  de: "Prüfen Sie zuerst an einem echten Ablauf, ob personenbezogene Daten betroffen sind. Buchen Sie eine einstündige Geschäftsdiagnose.",
+  "zh-hk": "想先睇一條真實流程會唔會碰到個人資料？預約 30 分鐘業務聽診。",
+  "zh-tw": "想先看一條真實流程會不會碰到個人資料？預約 30 分鐘業務診斷。",
+  en: "Want a first look at whether one real workflow touches personal data? Book a 30-minute business diagnosis.",
+  ja: "実際の1業務が個人情報に触れるか、先に確認しますか。30分の業務診断を予約できます。",
+  de: "Prüfen Sie zuerst an einem echten Ablauf, ob personenbezogene Daten betroffen sind. Buchen Sie eine 30-minütige Geschäftsdiagnose.",
 };
 
 function copy(

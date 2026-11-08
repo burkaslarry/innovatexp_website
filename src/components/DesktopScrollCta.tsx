@@ -11,7 +11,7 @@ export function DesktopScrollCta() {
   const pathname = usePathname();
   const isHomepageRoot = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)$/.test(pathname));
   const isBookingPage = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)\/bookme\/?$/.test(pathname));
-  const isEditorialPage = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)\/(services|products|about|faq)\/?$/.test(pathname));
+  const isEditorialPage = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)\/(services(?:\/.*)?|products|about|faq|case-studies|blog(?:\/.*)?|ai-consultation-questionnaire)\/?$/.test(pathname));
   const locale = getLocaleFromPathname(pathname);
   const ui = uiStrings(locale);
   const [visible, setVisible] = useState(false);

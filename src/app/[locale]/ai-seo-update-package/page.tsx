@@ -1,7 +1,9 @@
 import type { Metadata } from "next";
 import Image from "next/image";
 import Link from "next/link";
-import { BackToHomeControl } from "@/components/BackToHomeControl";
+import { SitePageShell } from "@/components/SitePageShell";
+import { AI_VISIBILITY_TECHNICAL_COPY, SERVICE_DECISION_COPY } from "@/content/service-decision-copy";
+import { notFound } from "next/navigation";
 import { isValidLocale, type AppLocale, localeUsesChineseCopy } from "@/lib/i18n-routing";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { aiSeoPackageSeo } from "@/content/page-seo";
@@ -126,7 +128,7 @@ const ZH: Copy = {
   ],
   whyTitle: "點解唔係一次改 3 個位？",
   whyBody:
-    "AI 答案同對手內容會持續改變。先做基準診斷，再按月重查同改善，先可以知道邊啲改動真係令你更常被提及。",
+    "AI 答案同對手內容會持續改變。先做基準診斷，再按月重查同改善，可以比較同一組問題嘅變化；唔能夠單靠前後數字證明某項改動造成成效。",
   toolNoteTitle: "追蹤工具點安排",
   toolNote:
     "基本診斷會用即時搜尋同有紀錄嘅人工核對。客戶已有 Finseo 或其他追蹤帳戶時，可以接入做持續報告；未有帳戶亦可以先完成診斷，唔需要為買工具而買工具。",
@@ -189,7 +191,7 @@ const EN: Copy = {
   exclude: ["Guaranteed #1 or guaranteed AI mentions", "Unlimited redesigns or all social posts", "Purchasing third-party tracking licences for you"],
   whyTitle: "Why not three one-off edits?",
   whyBody:
-    "AI answers and competitor content keep changing. A baseline diagnosis followed by monthly checks shows which changes actually make your company appear more often.",
+    "AI answers and competitor content keep changing. A baseline and monthly checks compare the same question set over time; the before/after figures alone do not prove that an edit caused an improvement.",
   toolNoteTitle: "How tracking tools fit",
   toolNote:
     "The base diagnosis uses live search with documented manual checks. If you already have Finseo or another tracking account, we can connect it for ongoing reports. You can complete the diagnosis without buying another tool first.",
@@ -202,8 +204,11 @@ export default async function AiSeoUpdatePackagePage({
   params: Promise<{ locale: string }>;
 }) {
   const { locale } = await params;
-  const loc = (isValidLocale(locale) ? locale : "zh-hk") as AppLocale;
+  if (!isValidLocale(locale)) notFound();
+  const loc = locale;
   const c = localeUsesChineseCopy(loc) ? ZH : EN;
+  const technical = AI_VISIBILITY_TECHNICAL_COPY[loc];
+  const decision = SERVICE_DECISION_COPY[loc];
   const zh = localeUsesChineseCopy(loc);
   const siteUrl = getSiteUrl();
   const pageUrl = `${siteUrl}/${locale}/ai-seo-update-package`;
@@ -223,7 +228,7 @@ export default async function AiSeoUpdatePackagePage({
         {
           question: "會保證 AI 一定提到我嗎？",
           answer:
-            "唔會。唔包含保證 Google 第 1 名或 AI 一定提到你、無限改版、代寫所有社交帖、或代購第三方付費追蹤工具。AI 答案同對手內容會持續改變，先做基準診斷再按月重查先知道邊啲改動真係令你更常被提及。",
+            "唔會。唔包含保證 Google 第 1 名或 AI 一定提到你、無限改版、代寫所有社交帖、或代購第三方付費追蹤工具。AI 答案同對手內容會持續改變，基準同每月重查只用嚟比較樣本，唔係成效或因果保證。",
         },
         {
           question: "每個月會量度咩數字？",
@@ -259,7 +264,7 @@ export default async function AiSeoUpdatePackagePage({
         {
           question: "Do you guarantee AI will mention me?",
           answer:
-            "No. Not included: guaranteed #1 rankings or guaranteed AI mentions, unlimited redesigns, all social posts, or purchasing third-party tracking licences for you. AI answers and competitor content keep changing; a baseline diagnosis followed by monthly rechecks shows which changes actually make you appear more often.",
+            "No. Not included: guaranteed #1 rankings or guaranteed AI mentions, unlimited redesigns, all social posts, or purchasing third-party tracking licences for you. AI answers and competitor content keep changing; baseline and monthly checks compare a sample, without guaranteeing results or proving causation.",
         },
         {
           question: "What numbers are measured each month?",
@@ -282,39 +287,55 @@ export default async function AiSeoUpdatePackagePage({
         },
       ];
 
+  faqs.push(
+    { question: technical.question, answer: technical.answer },
+    { question: technical.measurementQuestion, answer: technical.measurementAnswer },
+  );
   const jsonLd = [getFAQPageSchema({ url: pageUrl, questions: faqs })];
 
   return (
-    <main className="mx-auto min-h-screen max-w-5xl px-6 py-12 text-slate-900 dark:text-slate-100">
+    <SitePageShell title={c.h1} actionLabel={c.cta} actionHref={`/${loc}/bookme`}>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd).replace(/</g, "\\u003c") }}
       />
-      <BackToHomeControl />
-      <section className="mb-8 rounded-2xl border border-slate-200 bg-white p-8 shadow-sm dark:border-slate-700 dark:bg-slate-900">
-        <p className="text-sm font-semibold uppercase tracking-wider text-brand-primary dark:text-[color:var(--primary-hover)]">
+      <section className="mb-8">
+        <p className="text-sm font-semibold uppercase tracking-wider text-[#6f5436]">
           {c.eyebrow}
         </p>
-        <h1 className="mt-3 text-3xl font-bold md:text-4xl">{c.h1}</h1>
-        <p className="mt-4 text-base leading-relaxed text-slate-600 dark:text-slate-300">{c.lead}</p>
-        <p className="mt-3 text-sm text-slate-600 dark:text-slate-300">{c.fit}</p>
-        <p className="mt-1 text-sm text-slate-500 dark:text-slate-400">{c.unfit}</p>
-        <p className="mt-4 text-sm font-medium text-slate-500 dark:text-slate-400">{c.updated}</p>
+        <p className="mt-4 max-w-3xl text-xl leading-9" data-geo-answer>{c.lead}</p>
+        <p className="mt-3 text-sm text-[#51483d]">{c.fit}</p>
+        <p className="mt-1 text-sm text-[#6f5436]">{c.unfit}</p>
+        <p className="mt-4 text-sm font-medium text-[#6f5436]">{c.updated}</p>
       </section>
 
-      <section id="mini-check" className="mb-6 scroll-mt-24 rounded-2xl border-2 border-brand-primary/40 bg-white p-8 dark:bg-slate-900">
+      <section className="mb-10 border-t border-[#c8bba9] pt-8">
+        <h2 className="text-2xl">{decision.preparation}</h2>
+        <p className="mt-4 max-w-3xl leading-8">{technical.inputs}</p>
+      </section>
+      <section className="mb-10 border-t border-[#c8bba9] pt-8">
+        <h2 className="text-2xl">{technical.title}</h2>
+        <p className="mt-4 max-w-3xl leading-8">{technical.answer}</p>
+        <p className="mt-4 max-w-3xl leading-8">{technical.measurementAnswer}</p>
+        <nav className="mt-4 flex flex-wrap gap-x-6 gap-y-2" aria-label={technical.sources}>
+          <a className="inline-flex min-h-11 items-center underline" href="https://developers.google.com/search/docs/appearance/ai-features">{technical.sources} · AI</a>
+          <a className="inline-flex min-h-11 items-center underline" href="https://developers.google.com/search/updates">{technical.sources} · FAQ / HowTo</a>
+        </nav>
+      </section>
+
+      <section id="mini-check" className="mb-6 scroll-mt-24 border-l-2 border-[#8b6b43] py-4 pl-6">
         <p className="text-xs font-semibold uppercase tracking-wider text-brand-primary">
           {localeUsesChineseCopy(loc) ? "免費入門體驗 · 首輪 6 個名額" : "Free starter experience · first 6 places"}
         </p>
         <h2 className="mt-2 text-2xl font-bold">
           {localeUsesChineseCopy(loc) ? "AI Visibility 迷你檢查" : "AI Visibility Mini Check"}
         </h2>
-        <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">
+        <p className="mt-3 text-sm leading-7 text-[#51483d]">
           {localeUsesChineseCopy(loc)
             ? "提供你嘅網站同主要服務，我哋用 3 條買家問題做一次基礎檢查，交一頁摘要：品牌有冇出現、答案引用咗乜嘢來源，同一個可先做嘅改善方向。"
             : "Share your website and main service. We check 3 buyer questions once and send a one-page summary: whether your brand appears, which sources are cited, and one practical next step."}
         </p>
-        <p className="mt-3 text-xs leading-6 text-slate-500 dark:text-slate-400">
+        <p className="mt-3 text-xs leading-6 text-[#6f5436]">
           {localeUsesChineseCopy(loc)
             ? "17/10 活動即場登記，每間公司一次；首 6 位成功提交會即時收到確認。檢查於會後進行，3 個工作天內經 Email／WhatsApp 交付。不包括競爭對手分析、網站修改或持續追蹤；完整 20 條問題診斷另有收費。"
             : "Register at the 17 October event, one per company. The first 6 successful submissions are confirmed on screen. The check is completed after the event and delivered by email/WhatsApp within 3 working days. Excludes competitor analysis, website edits and ongoing tracking; the full 20-question diagnosis is a separate paid service."}
@@ -327,28 +348,28 @@ export default async function AiSeoUpdatePackagePage({
         </Link>
       </section>
 
-      <section className="mb-6 rounded-2xl border-2 border-brand-primary/30 bg-white p-8 dark:border-brand-primary/40 dark:bg-slate-900">
+      <section className="mb-6 border-t border-[#c8bba9] pt-8">
         <p className="text-xs font-semibold uppercase tracking-wider text-brand-primary">{c.stepLabel}</p>
         <div className="mt-2 flex flex-wrap items-baseline justify-between gap-2">
           <h2 className="text-2xl font-bold">{c.diagnosisName}</h2>
           <p className="text-2xl font-bold text-brand-primary">{c.diagnosisPrice}</p>
         </div>
-        <p className="mt-2 text-sm text-slate-600 dark:text-slate-300">{c.diagnosisNote}</p>
-        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-600 dark:text-slate-300">
+        <p className="mt-2 text-sm text-[#51483d]">{c.diagnosisNote}</p>
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-[#51483d]">
           {c.diagnosisItems.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
       </section>
 
-      <section className="mb-8 grid gap-6 rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900 md:grid-cols-[minmax(0,1fr)_240px] md:p-8">
+      <section className="mb-8 grid gap-6 border-t border-[#c8bba9] pt-8 md:grid-cols-[minmax(0,1fr)_240px] md:p-8">
         <div>
           <h2 className="text-2xl font-bold">{c.methodTitle}</h2>
-          <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{c.methodIntro}</p>
-          <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-7 text-slate-600 dark:text-slate-300">
+          <p className="mt-3 text-sm leading-7 text-[#51483d]">{c.methodIntro}</p>
+          <ol className="mt-4 list-decimal space-y-2 pl-5 text-sm leading-7 text-[#51483d]">
             {c.methodSteps.map((step) => <li key={step}>{step}</li>)}
           </ol>
-          <p className="mt-4 rounded-xl bg-slate-50 p-4 text-sm leading-7 text-slate-700 dark:bg-slate-800 dark:text-slate-200">{c.methodExample}</p>
+          <p className="mt-4 border-l-2 border-[#c8bba9] pl-4 text-sm leading-7 text-[#51483d]">{c.methodExample}</p>
         </div>
         {zh ? (
           <Image
@@ -362,7 +383,7 @@ export default async function AiSeoUpdatePackagePage({
         ) : null}
       </section>
 
-      <p className="mb-4 text-sm font-semibold text-slate-700 dark:text-slate-200">{c.retainersLabel}</p>
+      <p className="mb-4 text-sm font-semibold text-[#51483d]">{c.retainersLabel}</p>
       <section className="grid grid-cols-1 gap-6 md:grid-cols-3">
         {[
           { name: c.liteName, price: c.litePrice, items: c.liteItems },
@@ -371,11 +392,11 @@ export default async function AiSeoUpdatePackagePage({
         ].map((plan) => (
           <article
             key={plan.name}
-            className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-slate-700 dark:bg-slate-900"
+            className="border border-[#c8bba9] p-6"
           >
-            <h2 className="text-xl font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{plan.name}</h2>
+            <h2 className="text-xl font-bold text-[#6f5436]">{plan.name}</h2>
             <p className="mt-3 text-2xl font-bold">{plan.price}</p>
-            <ul className="mt-5 space-y-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">
+            <ul className="mt-5 space-y-2 text-sm leading-relaxed text-[#51483d]">
               {plan.items.map((item) => (
                 <li key={item}>{item}</li>
               ))}
@@ -383,44 +404,44 @@ export default async function AiSeoUpdatePackagePage({
           </article>
         ))}
       </section>
-      <p className="mt-4 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{c.minTerm}</p>
+      <p className="mt-4 text-sm leading-relaxed text-[#51483d]">{c.minTerm}</p>
 
-      <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900 md:p-8">
+      <section className="mt-8 border-t border-[#c8bba9] pt-8 md:p-8">
         <h2 className="text-2xl font-bold">{c.improvementTitle}</h2>
-        <p className="mt-3 text-sm leading-7 text-slate-600 dark:text-slate-300">{c.improvementIntro}</p>
+        <p className="mt-3 text-sm leading-7 text-[#51483d]">{c.improvementIntro}</p>
         <ol className="mt-5 grid gap-4 md:grid-cols-3">
           {c.improvementMonths.map((month) => (
-            <li key={month.name} className="rounded-xl bg-slate-50 p-5 dark:bg-slate-800">
+            <li key={month.name} className="border-l-2 border-[#c8bba9] pl-5">
               <h3 className="font-semibold">{month.name}</h3>
-              <p className="mt-2 text-sm leading-7 text-slate-600 dark:text-slate-300">{month.body}</p>
+              <p className="mt-2 text-sm leading-7 text-[#51483d]">{month.body}</p>
             </li>
           ))}
         </ol>
       </section>
 
-      <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-6 dark:border-slate-700 dark:bg-slate-900">
+      <section className="mt-8 border-t border-[#c8bba9] pt-8">
         <h2 className="text-xl font-bold">{c.metricsTitle}</h2>
-        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-600 dark:text-slate-300">
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-[#51483d]">
           {c.metrics.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
         <h2 className="mt-8 text-xl font-bold">{c.deliverTitle}</h2>
-        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-600 dark:text-slate-300">
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-[#51483d]">
           {c.deliver.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
         <h2 className="mt-8 text-xl font-bold">{c.excludeTitle}</h2>
-        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-slate-600 dark:text-slate-300">
+        <ul className="mt-4 list-disc space-y-2 pl-5 text-sm text-[#51483d]">
           {c.exclude.map((item) => (
             <li key={item}>{item}</li>
           ))}
         </ul>
         <h2 className="mt-8 text-xl font-bold">{c.whyTitle}</h2>
-        <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{c.whyBody}</p>
+        <p className="mt-3 text-sm leading-relaxed text-[#51483d]">{c.whyBody}</p>
         <h2 className="mt-8 text-xl font-bold">{c.toolNoteTitle}</h2>
-        <p className="mt-3 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{c.toolNote}</p>
+        <p className="mt-3 text-sm leading-relaxed text-[#51483d]">{c.toolNote}</p>
         <div className="mt-6">
           <Link
             href={`/${loc}/bookme#quotation-wizard`}
@@ -431,17 +452,21 @@ export default async function AiSeoUpdatePackagePage({
         </div>
       </section>
 
-      <section className="mt-8 rounded-2xl border border-slate-200 bg-white p-8 dark:border-slate-700 dark:bg-slate-900">
+      <section className="mt-8 border-t border-[#c8bba9] pt-8">
         <h2 className="text-2xl font-bold">{zh ? "常見問題" : "FAQ"}</h2>
         <dl className="mt-6 space-y-6">
           {faqs.map((f) => (
             <div key={f.question}>
-              <dt className="text-lg font-semibold text-slate-900 dark:text-slate-100">{f.question}</dt>
-              <dd className="mt-2 text-sm leading-relaxed text-slate-600 dark:text-slate-300">{f.answer}</dd>
+              <dt className="text-lg font-semibold text-[#251f19]">{f.question}</dt>
+              <dd className="mt-2 text-sm leading-relaxed text-[#51483d]">{f.answer}</dd>
             </div>
           ))}
         </dl>
       </section>
-    </main>
+      <nav className="mt-10 flex flex-wrap gap-6 border-t border-[#c8bba9] pt-6" aria-label={decision.services}>
+        <Link className="inline-flex min-h-11 items-center underline" href={`/${loc}/services`}>{decision.services}</Link>
+        <Link className="inline-flex min-h-11 items-center underline" href={`/${loc}/case-studies`}>{decision.cases}</Link>
+      </nav>
+    </SitePageShell>
   );
 }

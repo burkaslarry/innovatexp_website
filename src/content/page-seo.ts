@@ -22,25 +22,35 @@ const HOME: LocalePair = {
   zh: {
     title: "AI 商業顧問｜香港中小企業務聽診｜InnovateXP",
     description:
-      "InnovateXP 由 Larry Lo 創立，幫香港 3–30 人中小企先聽診再落地。Agilizing 教材由 10 日縮到 3 小時。唔使買系統會直講。",
+      "InnovateXP 由 Larry Lo 創立，幫香港 3–30 人中小企理順查詢、報價同交接。先做免費 30 分鐘業務聽診，再按需要落地 AI、CRM 或自動化。",
   },
   en: {
     title: "AI business consultant | Hong Kong SMEs | InnovateXP",
     description:
-      "Larry Lo helps Hong Kong SMEs of 3–30 diagnose the workflow first. Agilizing: training materials from 10 days to 3 hours. He says so if you should not buy.",
+      "Larry Lo helps Hong Kong teams of 3–30 clarify enquiries, quotes and handoffs. Start with a free 30-minute diagnosis before AI, CRM or automation.",
   },
 };
 
-const BOOKME: LocalePair = {
-  zh: {
-    title: "預約業務聽診｜Larry Lo｜InnovateXP",
-    description:
-      "預約 AI 商業顧問 Larry Lo／InnovateXP：30 分鐘業務聽診，鎖定漏單、慢報價或交接卡位。Snapshot HK$3,880 起；唔使買系統會直講。",
+const BOOKME: Record<AppLocale, PageSeo> = {
+  "zh-hk": {
+    title: "預約免費 30 分鐘業務聽診｜Larry Lo｜InnovateXP",
+    description: "帶一條最卡嘅流程，同 Larry Lo 傾 30 分鐘。先填簡短問卷再揀時段；首次聽診免費，付費書面診斷同落地服務另行確認。",
+  },
+  "zh-tw": {
+    title: "預約免費 30 分鐘業務診斷｜Larry Lo｜InnovateXP",
+    description: "帶來最卡關的一條流程，與 Larry Lo 討論 30 分鐘。填寫簡短問卷後選擇時段；初次診斷免費，付費書面診斷與實施服務另行確認。",
   },
   en: {
-    title: "Book Business Workflow Diagnosis | Larry Lo",
-    description:
-      "Book a 30-minute Business Workflow Diagnosis with Larry Lo / InnovateXP. Snapshot from HK$3,880; Discovery Sprint HK$6,880 for teams up to 10.",
+    title: "Book a free 30-minute workflow diagnosis | Larry Lo",
+    description: "Bring one workflow to a free 30-minute conversation with Larry Lo. Complete the short form and choose a time. Written diagnosis and implementation are separate.",
+  },
+  ja: {
+    title: "無料30分の業務診断を予約｜Larry Lo｜InnovateXP",
+    description: "課題のある業務を一つ選び、Larry Lo と無料で30分相談。短いフォームを記入し、日時を選びます。書面による診断と実装は別途ご相談ください。",
+  },
+  de: {
+    title: "Kostenlose 30-Minuten-Ablaufdiagnose | Larry Lo",
+    description: "Besprechen Sie einen Ablauf 30 Minuten kostenlos mit Larry Lo. Kurzformular ausfüllen und Termin wählen. Schriftliche Diagnose und Umsetzung sind separat.",
   },
 };
 
@@ -112,7 +122,7 @@ const AI_CONSULTING: LocalePair = {
   zh: {
     title: "AI 商業顧問｜30 分鐘業務聽診｜InnovateXP",
     description:
-      "AI 商業顧問 Larry Lo 幫 3–30 人公司先處理業務樽頸。Agilizing 教材由 10 日縮至 3 小時。聽診 HK$3,880 起，Discovery HK$6,880 起。",
+      "Larry Lo 幫香港 3–30 人團隊理順流程，再決定 AI、CRM 或自動化。首次 30 分鐘聽診免費；付費 Snapshot HK$3,880，Discovery HK$6,880 起。",
     ogTitle: "AI 商業顧問｜30 分鐘業務聽診｜InnovateXP",
     ogDescription: "先聽診一條流程，再決定使唔使落地 AI。Snapshot HK$3,880 起。",
   },
@@ -153,32 +163,27 @@ const PITCH_DECKS: LocalePair = {
 
 const BLOG: LocalePair = {
   zh: {
-    title: "PDPO・跨境資料・企業私人 AI｜InnovateXP",
-    description:
-      "十五篇香港中小企筆記：PDPO、私人 AI、AI 顧問同培訓。一般資訊，並非法律意見。",
+    title: "流程、CRM 與 AI 實務筆記｜InnovateXP",
+    description: "香港中小企實務筆記：流程診斷、CRM 選擇、自動化試點、活動跟進、SEO／AEO／GEO 衡量同資料私隱。列明做法、限制同來源。",
   },
   en: {
-    title: "PDPO, Cross-Border Data & Private AI | InnovateXP",
-    description:
-      "Fifteen notes for Hong Kong SMEs: PDPO, private AI, choosing an AI consultant, and training. General information, not legal advice.",
+    title: "Workflow, CRM & AI insights for HK SMEs | InnovateXP",
+    description: "Practical notes on workflow diagnosis, CRM, automation pilots, event follow-up, SEO/AEO/GEO measurement and data privacy, with boundaries and sources.",
   },
 };
 
 const BLOG_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
-    title: "PDPO、跨境資料、企業私人 AI｜InnovateXP",
-    description:
-      "十五篇香港中小企業筆記：PDPO、私人 AI、AI 顧問與培訓。一般資訊，並非法律意見。",
+    title: "流程、CRM 與 AI 實務筆記｜InnovateXP",
+    description: "香港中小企業實務筆記：流程診斷、CRM 選擇、自動化試點、活動追蹤、SEO／AEO／GEO 衡量與資料隱私。說明方法、限制與來源。",
   },
   ja: {
-    title: "PDPO・越境データ・プライベートAI｜InnovateXP",
-    description:
-      "香港の中小企業向け15本。PDPO、プライベートAI、AI顧問の選び方、研修。一般情報であり法律意見ではありません。",
+    title: "業務・CRM・AI の実務ノート｜InnovateXP",
+    description: "香港の中小企業向けに、業務診断、CRM、自動化の試行、イベント後の対応、SEO・AEO・GEO の測定、データ保護を解説。手順、限界、出典を明記します。",
   },
   de: {
-    title: "PDPO, Datentransfer & Private KI | InnovateXP",
-    description:
-      "Fünfzehn Beiträge für Hongkonger KMU: PDPO, private KI, KI-Berater und Schulung. Allgemeine Information, keine Rechtsberatung.",
+    title: "Abläufe, CRM und KI: Praxiswissen | InnovateXP",
+    description: "Praxiswissen für Hongkonger KMU: Ablaufdiagnose, CRM, Automatisierung, Event-Nachbereitung, SEO/AEO/GEO-Messung und Datenschutz – mit Grenzen und Quellen.",
   },
 };
 
@@ -264,17 +269,17 @@ const HOME_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
     title: "AI 商業顧問｜香港中小企業流程診斷｜InnovateXP",
     description:
-      "InnovateXP 由 Larry Lo 創立，協助香港 3–30 人中小企業先聽診再落地。Agilizing 教材由 10 日縮到 3 小時。不必買系統會直說。",
+      "InnovateXP 協助香港 3–30 人團隊理順查詢、報價及交接。先與 Larry Lo 進行免費 30 分鐘業務診斷，再按需要導入 AI、CRM 或自動化。",
   },
   ja: {
     title: "香港SME向けAI自動化コンサル｜InnovateXP",
     description:
-      "Larry Lo は香港の3〜30人企業を先に診断します。Agilizingの教材は10日から3時間。買わなくてよいときはそう言います。",
+      "香港の3〜30人チームの問い合わせ、見積もり、引き継ぎを整理。Larry Loとの無料30分診断から始め、必要に応じてAI・CRM・自動化を導入します。",
   },
   de: {
     title: "KI-Automatisierung für Hongkonger KMU | InnovateXP",
     description:
-      "Larry Lo diagnostiziert zuerst. Agilizing: Schulungsmaterial von 10 Tagen auf 3 Stunden. Er sagt, wenn Sie nicht kaufen sollten.",
+      "Larry Lo hilft Hongkonger Teams mit 3–30 Personen bei Anfragen, Angeboten und Übergaben. Kostenlose 30-Minuten-Diagnose vor KI, CRM oder Automatisierung.",
   },
 };
 
@@ -282,7 +287,7 @@ export function homeSeo(locale: AppLocale): PageSeo {
   return HOME_LOCALE[locale] ?? pick(locale, HOME);
 }
 export function bookmeSeo(locale: AppLocale): PageSeo {
-  return pick(locale, BOOKME);
+  return BOOKME[locale];
 }
 export function smartSalesSeo(locale: AppLocale): PageSeo {
   return pick(locale, SMARTSALES);

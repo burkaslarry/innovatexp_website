@@ -265,6 +265,7 @@ export default function QuotationWizard({
    * Browser Web3Forms only when server email did not send (emailSuccess !== true).
    */
   async function submitFlowX() {
+    if (fxBusy || bookingSuccess) return;
     setFxErr(null);
     const email = fxEmail.trim();
     const wa = normalizeWhatsappE164(fxDialSelect, fxWa, fxCustomDial);
@@ -1069,9 +1070,14 @@ export default function QuotationWizard({
                   {fxErr}
                 </p>
               ) : null}
+              {bookingSuccess ? (
+                <div role="status" className="rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-950">
+                  {bookingSuccess}
+                </div>
+              ) : null}
               <button
                 type="button"
-                disabled={fxBusy}
+                disabled={fxBusy || Boolean(bookingSuccess)}
                 onClick={() => void submitFlowX()}
                 className="min-h-[52px] w-full btn-brand px-6 py-3 text-base font-bold transition hover:brightness-105 disabled:opacity-60 "
               >
@@ -1186,12 +1192,6 @@ export default function QuotationWizard({
               {bookingError ? (
                 <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800 dark:border-red-900/50 dark:bg-red-950/30 dark:text-red-200">
                   {bookingError}
-                </div>
-              ) : null}
-
-              {bookingSuccess ? (
-                <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-900 dark:border-emerald-900/40 dark:bg-emerald-950/20 dark:text-emerald-100">
-                  {bookingSuccess}
                 </div>
               ) : null}
 

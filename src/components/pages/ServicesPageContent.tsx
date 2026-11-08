@@ -6,16 +6,21 @@ import { getHomepageContent } from "@/content/homepage";
 import { useLanguage } from "@/app/LanguageContext";
 import { withLocale, localeUsesChineseCopy } from "@/lib/i18n-routing";
 import { OfferJourney } from "@/components/commerce/OfferJourney";
+import { getSiteExperience } from "@/content/site-experience";
+import { WorkflowMethod } from "@/components/WorkflowMethod";
+import { WorkflowReadiness } from "@/components/questionnaires/WorkflowReadiness";
 
 export function ServicesPageContent() {
   const { locale } = useLanguage();
   const c = getHomepageContent(locale);
-  const title =
-    locale === "en" || locale === "de" || locale === "ja" ? "Services" : "服務";
+  const experience = getSiteExperience(locale);
 
   return (
-    <SitePageShell title={title}>
-      <p className="text-base leading-8 text-[color:var(--text-secondary)]">{c.services.title}</p>
+    <SitePageShell title={experience.servicesTitle}>
+      <p data-geo-answer className="max-w-3xl text-lg leading-8 text-[color:var(--text-secondary)]">{experience.servicesIntro}</p>
+      <div className="mt-10 grid gap-8 md:grid-cols-2">
+        {experience.serviceChoices.map(item => <article key={item.href} className="border-t border-[#c8bba9] pt-5"><h2 className="text-2xl">{item.title}</h2><p className="mt-4 leading-8">{item.body}</p><Link href={withLocale(locale, item.href)} className="mt-4 inline-flex min-h-11 items-center border-b border-[#8b6b43] text-sm font-semibold">{item.action} →</Link></article>)}
+      </div>
       <OfferJourney locale={locale} />
       <div className="mt-8 grid gap-4">
         {c.services.items.map((item) => (
@@ -25,25 +30,8 @@ export function ServicesPageContent() {
           </article>
         ))}
       </div>
-      <section className="mt-12">
-        <h2 className="text-2xl font-bold text-[color:var(--heading-foreground)]">{c.consultancy.title}</h2>
-        <p className="mt-3 text-base leading-8 text-[color:var(--text-secondary)]">{c.consultancy.intro}</p>
-        <p className="mt-2 text-sm leading-7 text-[color:var(--text-secondary)]">{c.consultancy.fitNote}</p>
-        <div className="mt-6 grid gap-4 md:grid-cols-2">
-          {c.consultancy.plans.map((plan) => (
-            <article key={plan.name} className="ixp-card p-5">
-              <h3 className="text-lg font-semibold text-[color:var(--heading-foreground)]">{plan.name}</h3>
-              <p className="mt-1 text-sm font-semibold text-[color:var(--brand-primary)]">{plan.priceLabel}</p>
-              <p className="mt-3 text-sm leading-7 text-[color:var(--text-secondary)]">{plan.body}</p>
-              <ul className="mt-3 list-disc space-y-1 pl-5 text-sm text-[color:var(--text-secondary)]">
-                {plan.deliverables.map((d) => (
-                  <li key={d}>{d}</li>
-                ))}
-              </ul>
-            </article>
-          ))}
-        </div>
-      </section>
+      <section className="mt-14"><WorkflowMethod locale={locale} /></section>
+      <div className="mt-14"><WorkflowReadiness locale={locale} /></div>
       <section className="mt-12 border-t border-[#c8bba9] pt-8">
         <p className="text-xs uppercase tracking-widest text-[#8b6b43]">{localeUsesChineseCopy(locale) ? "獨立製作委託" : "Production commissions"}</p>
         <h2 className="mt-3 text-2xl">{localeUsesChineseCopy(locale) ? "AI 品牌短片／TVC 製作" : "AI brand films / TVC production"}</h2>

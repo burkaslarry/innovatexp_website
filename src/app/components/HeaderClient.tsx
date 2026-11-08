@@ -27,7 +27,8 @@ export default function HeaderClient({
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [activeHash, setActiveHash] = useState<string | null>(null);
-  const mobileMenuRef = useRef<HTMLDivElement | null>(null);
+  const mobileMenuRef = useRef<HTMLElement | null>(null);
+  const mobileToggleRef = useRef<HTMLButtonElement | null>(null);
   const isMain = variant === 'main';
   const isHomepageRoot = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)$/.test(pathname));
   const isBookingPage = Boolean(pathname && /^\/(en|zh-hk|zh-tw|ja|de)\/bookme\/?$/.test(pathname));
@@ -60,7 +61,10 @@ export default function HeaderClient({
   useEffect(() => {
     if (!mobileMenuOpen) return;
     const onKeyDown = (event: KeyboardEvent) => {
-      if (event.key === 'Escape') setMobileMenuOpen(false);
+      if (event.key === 'Escape') {
+        setMobileMenuOpen(false);
+        mobileToggleRef.current?.focus();
+      }
     };
     const prevOverflow = document.body.style.overflow;
     document.body.style.overflow = 'hidden';
@@ -124,18 +128,20 @@ export default function HeaderClient({
     }
   };
 
+  const isActiveLink = (href: string) => href.startsWith('#') ? activeHash === href : pathname === href || (href !== loc('/') && pathname?.startsWith(`${href}/`));
+
   const navLinkClass = (href: string, base = '') => {
-    const active = href.startsWith('#') && activeHash === href;
+    const active = isActiveLink(href);
     return `${base} ${active ? 'bg-surface text-brand-primary font-semibold' : ''}`.trim();
   };
 
   return (
     <header
-      className={`sticky top-0 z-50 border-b border-[color:var(--border-light)] bg-surface/95 backdrop-blur-md transition-[background-color,border-color] duration-300 ${scrolled ? 'border-[color:var(--border-strong)]' : ''}`}
+      className={`sticky top-0 z-50 flex max-h-[100dvh] flex-col border-b border-[color:var(--border-light)] bg-surface/95 backdrop-blur-md transition-[background-color,border-color] duration-300 ${scrolled ? 'border-[color:var(--border-strong)]' : ''}`}
       id={isMain ? 'main-header' : undefined}
       style={{ paddingTop: 'env(safe-area-inset-top)' }}
     >
-      <div className="mx-auto flex min-h-[72px] max-w-7xl items-center justify-between gap-4 px-4 py-3 sm:px-6">
+      <div className="mx-auto flex min-h-[72px] w-full max-w-7xl shrink-0 items-center justify-between gap-4 px-4 py-3 sm:px-6">
         <div className="flex min-w-0 shrink-0 items-center gap-3">
           {variant === 'booking' && (
             <button
@@ -192,6 +198,7 @@ export default function HeaderClient({
               <a
                 key={item.href}
                 href={item.href}
+                aria-current={isActiveLink(item.href) ? 'page' : undefined}
                 className={navLinkClass(item.href, 'whitespace-nowrap px-2 py-2 text-sm text-[color:var(--text-secondary)] transition-colors hover:text-brand-primary')}
                 onClick={(e) => handleNavClick(e, item.href)}
               >
@@ -219,6 +226,7 @@ export default function HeaderClient({
                 </a>
               ) : null}
               <button
+                ref={mobileToggleRef}
                 className="rounded-lg border border-[color:var(--border-light)] bg-surface-secondary p-2 transition-colors hover:bg-surface xl:hidden"
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 aria-label="Toggle navigation menu"
@@ -249,7 +257,7 @@ export default function HeaderClient({
           <nav
             id="mobile-site-nav"
             ref={mobileMenuRef}
-            className="animate-in slide-in-from-top-2 relative z-50 border-t border-[color:var(--border-light)] bg-surface-secondary xl:hidden"
+            className="animate-in slide-in-from-top-2 relative z-50 min-h-0 overflow-y-auto overscroll-contain border-t border-[color:var(--border-light)] bg-surface-secondary xl:hidden"
           >
             <div className="mx-auto max-w-[1280px] px-6 py-4">
               <div className="flex flex-col items-stretch gap-3">
@@ -257,6 +265,7 @@ export default function HeaderClient({
                 <a
                   key={item.href}
                   href={item.href}
+                  aria-current={isActiveLink(item.href) ? 'page' : undefined}
                   className={navLinkClass(
                     item.href,
                     'w-full rounded-[var(--radius-md)] px-4 py-4 text-left text-base font-medium text-[color:var(--text-primary)] transition-colors hover:bg-surface hover:text-brand-primary',

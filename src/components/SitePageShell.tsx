@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import Header from "@/app/components/Header";
 import { BookingCtaButton } from "@/components/BookingCtaButton";
-import { getHomepageContent, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
+import { getHomepageContent, getMainNavigation, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
 import { getBookingHref, primaryCtaLabel } from "@/content/cta-config";
 import { useLanguage } from "@/app/LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
@@ -25,14 +25,7 @@ export function SitePageShell({
   const bookingHref = actionHref || getBookingHref(locale);
   const ctaLabel = actionLabel || primaryCtaLabel(locale);
 
-  const navItems = [
-    { label: content.nav.home, href: loc("/") },
-    { label: content.nav.plans, href: loc("/services") },
-    { label: content.nav.products, href: loc("/products") },
-    { label: locale === "en" ? "Journal" : locale === "ja" ? "記事" : locale === "de" ? "Journal" : "文章", href: loc("/blog") },
-    { label: content.nav.about, href: loc("/about") },
-    { label: content.nav.faq, href: loc("/faq") },
-  ];
+  const navItems = getMainNavigation(locale);
 
   return (
     <div className="atelier-site min-h-screen bg-[#f7f4ee] text-[#251f19]">

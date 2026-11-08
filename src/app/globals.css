@@ -306,41 +306,37 @@ body {
   --font-main: var(--font-heading);
 }
 
-/* Editorial homepage: restrained ink, ivory and brass across light/dark settings. */
-.atelier-home {
-  --text-primary: #251f19;
-  --text-secondary: #51483e;
-  --heading-foreground: #251f19;
+/* Editorial surfaces retain their paper palette under the global dark theme. */
+:is(.atelier-home, .atelier-site) {
   --bg-primary: #f7f4ee;
-  color: #251f19;
+  --bg-secondary: #fffdfa;
+  --bg-surface: #fffdfa;
+  --bg-tertiary: #efe9df;
+  --text-primary: #251f19;
+  --text-secondary: #51483d;
+  --heading-foreground: #251f19;
+  --brand-primary: #6f5436;
+  --brand-primary-hover: #251f19;
+  --primary-hover: #251f19;
+  --btn-primary-bg: #251f19;
+  --btn-primary-fg: #fffdfa;
+  --border-light: #d8cfc2;
+  color-scheme: light;
 }
+:is(.atelier-home, .atelier-site) header img { filter: none; }
+:is(.atelier-home, .atelier-site) header button[aria-label="Toggle theme"] svg { color: #6f5436; }
+.atelier-home { color: #251f19; }
 .atelier-home :is(h1, h2, h3) { font-family: var(--font-main); }
 [data-locale] .atelier-home :is(h1, h2, h3) { font-weight: 400; }
 .atelier-home a:focus-visible { outline-color: #8b6b43; }
 .atelier-home header nav,
 .atelier-site header nav { background: transparent; border-bottom: 0; }
-.atelier-home #case-study[data-case-tone="dark"] {
-  --text-primary: #f5f1e8;
-  --text-secondary: #d6d0c4;
-  --heading-foreground: #f5f1e8;
+.atelier-home .case-evidence {
+  --text-primary: #fffdfa;
+  --text-secondary: #e5dccc;
+  --heading-foreground: #fffdfa;
 }
-.atelier-home #case-study[data-case-tone="light"] {
-  --text-primary: #251f19;
-  --text-secondary: #51483d;
-  --heading-foreground: #251f19;
-}
-.atelier-home #case-study[data-case-tone="dark"] .case-kicker { color: #d7b88c; }
-.atelier-home #case-study[data-case-tone="light"] .case-kicker { color: #8b6b43; }
 .atelier-home section[id] { scroll-margin-top: calc(var(--header-offset) + 12px); }
-.atelier-site {
-  --bg-primary: #f7f4ee;
-  --bg-secondary: #fffdfa;
-  --bg-surface: #fffdfa;
-  --heading-foreground: #251f19;
-  --text-secondary: #51483d;
-  --brand-primary: #6f5436;
-  --border-light: #d8cfc2;
-}
 .atelier-site :is(h1, h2, h3) { font-family: var(--font-main); }
 .atelier-site .ixp-card {
   border-radius: 0;
@@ -656,11 +652,11 @@ header, nav {
 }
 
 /* Ensure proper contrast for links in dark mode */
-.dark a:not(.btn-brand) {
+.dark a:not(.btn-brand):not(:where(.atelier-home *, .atelier-site *)) {
   color: var(--accent-secondary);
 }
 
-.dark a:not(.btn-brand):hover {
+.dark a:not(.btn-brand):not(:where(.atelier-home *, .atelier-site *)):hover {
   color: var(--accent-primary);
 }
 

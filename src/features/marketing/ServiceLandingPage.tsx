@@ -1,100 +1,15 @@
 import Link from "next/link";
+import { SitePageShell } from "@/components/SitePageShell";
+import { SERVICE_DECISION_COPY } from "@/content/service-decision-copy";
 import type { AppLocale } from "@/lib/i18n-routing";
 import type { ServicePageContent } from "@/types/marketing";
 
-const LABELS: Record<
-  AppLocale,
-  {
-    home: string;
-    cases: string;
-    audience: string;
-    painPoints: string;
-    deliverables: string;
-    outcomes: string;
-    modules: string;
-    pricing: string;
-    method: string;
-    effects: string;
-    proofPoints: string;
-    faq: string;
-    related: string;
-  }
-> = {
-  en: {
-    home: "Home",
-    cases: "See project cases",
-    audience: "Target Audience",
-    painPoints: "Pain Points",
-    deliverables: "Deliverables",
-    outcomes: "Expected Outcomes",
-    modules: "Example Modules",
-    pricing: "Pricing & Program Options",
-    method: "How we work",
-    effects: "What should improve",
-    proofPoints: "Proof Points",
-    faq: "FAQ",
-    related: "Related InnovateXP Services",
-  },
-  "zh-hk": {
-    home: "首頁",
-    cases: "查看案例",
-    audience: "適合對象",
-    painPoints: "常見痛點",
-    deliverables: "交付內容",
-    outcomes: "預期成果",
-    modules: "課程／陪跑模組",
-    pricing: "定價與計劃選項",
-    method: "點樣做",
-    effects: "預期帶來嘅改變",
-    proofPoints: "經驗與 proof points",
-    faq: "常見問題",
-    related: "相關 InnovateXP 服務",
-  },
-  "zh-tw": {
-    home: "首頁",
-    cases: "查看案例",
-    audience: "適合對象",
-    painPoints: "常見痛點",
-    deliverables: "交付內容",
-    outcomes: "預期成果",
-    modules: "課程／陪跑模組",
-    pricing: "定價與計劃選項",
-    method: "執行方式",
-    effects: "預期帶來的改變",
-    proofPoints: "經驗與 proof points",
-    faq: "常見問題",
-    related: "相關 InnovateXP 服務",
-  },
-  ja: {
-    home: "ホーム",
-    cases: "事例を見る",
-    audience: "対象",
-    painPoints: "よくある課題",
-    deliverables: "提供内容",
-    outcomes: "期待できる成果",
-    modules: "モジュール例",
-    pricing: "料金・プログラム",
-    method: "進め方",
-    effects: "期待できる変化",
-    proofPoints: "実績・根拠",
-    faq: "FAQ",
-    related: "関連サービス",
-  },
-  de: {
-    home: "Start",
-    cases: "Projektbeispiele ansehen",
-    audience: "Zielgruppe",
-    painPoints: "Herausforderungen",
-    deliverables: "Leistungen",
-    outcomes: "Erwartete Ergebnisse",
-    modules: "Beispielmodule",
-    pricing: "Preise & Programme",
-    method: "Vorgehen",
-    effects: "Erwartete Wirkung",
-    proofPoints: "Proof Points",
-    faq: "FAQ",
-    related: "Verwandte InnovateXP-Services",
-  },
+const LABELS: Record<AppLocale, { painPoints: string; outcomes: string; modules: string; pricing: string; proof: string; related: string }> = {
+  en: { painPoints: "Problems to address", outcomes: "Changes to evaluate", modules: "Example modules", pricing: "Pricing and programme options", proof: "Experience and evidence", related: "Related services" },
+  "zh-hk": { painPoints: "要處理嘅問題", outcomes: "要覆核嘅改變", modules: "課程／陪跑模組", pricing: "定價與計劃選項", proof: "經驗與證據", related: "相關服務" },
+  "zh-tw": { painPoints: "需要處理的問題", outcomes: "需要評估的改變", modules: "課程／陪跑模組", pricing: "定價與計畫選項", proof: "經驗與證據", related: "相關服務" },
+  ja: { painPoints: "取り組む課題", outcomes: "確認する変化", modules: "モジュール例", pricing: "料金・プログラム", proof: "経験と根拠", related: "関連サービス" },
+  de: { painPoints: "Zu lösende Probleme", outcomes: "Zu prüfende Veränderungen", modules: "Beispielmodule", pricing: "Preise und Programme", proof: "Erfahrung und Belege", related: "Verwandte Leistungen" },
 };
 
 function localizedHref(locale: AppLocale, href: string) {
@@ -104,183 +19,78 @@ function localizedHref(locale: AppLocale, href: string) {
   return hash ? `/${locale}${normalized}#${hash}` : `/${locale}${normalized}`;
 }
 
+const sectionClass = "mt-12 border-t border-[#c8bba9] pt-8";
+const headingClass = "text-2xl leading-snug md:text-3xl";
+
 function BulletSection({ title, items }: { title: string; items: string[] }) {
-  return (
-    <section className="rounded-2xl border border-slate-200 bg-white p-6 shadow-sm dark:border-gray-700 dark:bg-gray-800">
-      <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{title}</h2>
-      <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-        {items.map((item) => (
-          <li key={item} className="flex gap-3 leading-relaxed">
-            <span className="mt-2 h-2 w-2 flex-none rounded-full bg-brand-primary dark:bg-teal-300" />
-            <span>{item}</span>
-          </li>
-        ))}
-      </ul>
-    </section>
-  );
+  return <section>
+    <h2 className={headingClass}>{title}</h2>
+    <ul className="mt-5 list-disc space-y-3 pl-5 leading-8">{items.map(item => <li key={item}>{item}</li>)}</ul>
+  </section>;
 }
 
-export function ServiceLandingPage({
-  locale,
-  content,
-}: {
-  locale: AppLocale;
-  content: ServicePageContent;
-}) {
+export function ServiceLandingPage({ locale, content }: { locale: AppLocale; content: ServicePageContent }) {
   const labels = LABELS[locale];
+  const decision = SERVICE_DECISION_COPY[locale];
+  const course = content.schemaKind === "Course";
+  const steps = course ? decision.courseSteps : decision.processSteps;
+  const inputs = course ? decision.courseInputs : decision.inputs;
 
   return (
-    <main className="min-h-screen bg-slate-50 text-slate-900 dark:bg-gray-950 dark:text-white">
-      <div className="mx-auto max-w-5xl px-4 py-14 md:py-20">
-        <nav className="mb-8 text-sm text-gray-500 dark:text-gray-400">
-          <Link href={`/${locale}`} className="hover:text-brand-primary dark:hover:text-teal-300">
-            {labels.home}
-          </Link>
-          <span className="mx-2">/</span>
-          <span className="text-gray-700 dark:text-gray-300">{content.title}</span>
-        </nav>
-
-        <section className="mb-10 rounded-3xl border border-brand-primary/20 bg-white p-8 shadow-sm dark:border-teal-400/20 dark:bg-gray-900 md:p-10">
-          <p className="mb-3 text-sm font-bold uppercase tracking-[0.18em] text-brand-primary dark:text-[color:var(--primary-hover)]">
-            {content.eyebrow}
-          </p>
-          <h1 className="mb-6 text-4xl font-extrabold tracking-tight text-gray-950 dark:text-white md:text-5xl">
-            {content.title}
-          </h1>
-          <p className="max-w-4xl text-lg leading-relaxed text-gray-700 dark:text-gray-300" data-geo-answer>
-            {content.intro}
-          </p>
-          <div className="mt-8 flex flex-wrap gap-3">
-            <Link
-              href={localizedHref(locale, content.cta.href)}
-              className="btn-brand px-6 py-3 font-semibold shadow-sm transition-colors hover:bg-brand-primary-hover "
-            >
-              {content.cta.label}
-            </Link>
-            <Link
-              href={localizedHref(locale, "/case-studies")}
-              className="rounded-full border border-slate-300 bg-white px-6 py-3 font-semibold text-slate-900 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-600 dark:bg-slate-900 dark:text-white dark:hover:border-teal-300 dark:hover:text-teal-300"
-            >
-              {labels.cases}
-            </Link>
-          </div>
-          <p className="mt-4 text-sm text-gray-600 dark:text-gray-400">{content.cta.note}</p>
-        </section>
-
-        <div className="grid gap-6 md:grid-cols-2">
-          <BulletSection title={labels.audience} items={content.audience} />
-          <BulletSection title={labels.painPoints} items={content.painPoints} />
-          <BulletSection title={labels.deliverables} items={content.deliverables} />
-          <BulletSection title={labels.outcomes} items={content.expectedOutcomes} />
-        </div>
-
-        {content.modules ? (
-          <section className="mt-6 rounded-2xl border border-cyan-200 bg-cyan-50 p-6 dark:border-teal-500/30 dark:bg-teal-950/20">
-            <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{labels.modules}</h2>
-            <ol className="space-y-3 text-gray-700 dark:text-gray-300">
-              {content.modules.map((item, index) => (
-                <li key={item} className="flex gap-3 leading-relaxed">
-                  <span className="flex h-7 w-7 flex-none items-center justify-center btn-brand text-sm font-bold dark:bg-teal-300 ">
-                    {index + 1}
-                  </span>
-                  <span>{item}</span>
-                </li>
-              ))}
-            </ol>
-          </section>
-        ) : null}
-
-        {content.pricing ? (
-          <section className="mt-6 rounded-2xl border border-brand-primary/25 bg-white p-6 shadow-sm dark:border-teal-500/30 dark:bg-gray-900">
-            <h2 className="mb-3 text-2xl font-bold text-gray-900 dark:text-white">{content.pricing.title || labels.pricing}</h2>
-            <p className="mb-6 leading-relaxed text-gray-700 dark:text-gray-300">{content.pricing.intro}</p>
-            <div className="grid gap-4 md:grid-cols-2">
-              {content.pricing.plans.map((plan) => (
-                <article key={plan.name} className="rounded-2xl border border-slate-200 bg-slate-50 p-5 dark:border-slate-700 dark:bg-slate-800">
-                  <h3 className="text-xl font-bold text-gray-900 dark:text-white">{plan.name}</h3>
-                  <p className="mt-2 font-semibold text-brand-primary dark:text-[color:var(--primary-hover)]">{plan.price}</p>
-                  <p className="mt-2 text-sm leading-relaxed text-gray-700 dark:text-gray-300">{plan.fit}</p>
-                  <ul className="mt-4 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                    {plan.features.map((feature) => (
-                      <li key={feature} className="flex gap-2 leading-relaxed">
-                        <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">✓</span>
-                        <span>{feature}</span>
-                      </li>
-                    ))}
-                  </ul>
-                  {plan.method?.length ? (
-                    <div className="mt-5 border-t border-slate-200 pt-4 dark:border-slate-700">
-                      <h4 className="text-sm font-bold text-gray-900 dark:text-white">{labels.method}</h4>
-                      <ol className="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                        {plan.method.map((step, index) => (
-                          <li key={step} className="flex gap-2 leading-relaxed">
-                            <span className="font-bold text-brand-primary dark:text-[color:var(--primary-hover)]">{index + 1}.</span>
-                            <span>{step}</span>
-                          </li>
-                        ))}
-                      </ol>
-                    </div>
-                  ) : null}
-                  {plan.effects?.length ? (
-                    <div className="mt-5 rounded-xl bg-emerald-50 p-4 dark:bg-emerald-950/30">
-                      <h4 className="text-sm font-bold text-gray-900 dark:text-white">{labels.effects}</h4>
-                      <ul className="mt-2 space-y-2 text-sm text-gray-700 dark:text-gray-300">
-                        {plan.effects.map((effect) => (
-                          <li key={effect} className="flex gap-2 leading-relaxed">
-                            <span className="font-bold text-emerald-700 dark:text-emerald-300">→</span>
-                            <span>{effect}</span>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ) : null}
-                </article>
-              ))}
-            </div>
-            <p className="mt-5 rounded-2xl border border-slate-200 bg-slate-50 p-4 text-sm leading-relaxed text-gray-600 dark:border-slate-700 dark:bg-slate-800 dark:text-gray-300">
-              {content.pricing.note}
-            </p>
-          </section>
-        ) : null}
-
-        <section className="mt-6 rounded-2xl border border-amber-200 bg-amber-50 p-6 dark:border-amber-500/30 dark:bg-amber-950/20">
-          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{labels.proofPoints}</h2>
-          <ul className="space-y-3 text-gray-700 dark:text-gray-300">
-            {content.proofPoints.map((item) => (
-              <li key={item} className="leading-relaxed">
-                {item}
-              </li>
-            ))}
-          </ul>
-        </section>
-
-        <section className="mt-10">
-          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{labels.faq}</h2>
-          <dl className="space-y-5">
-            {content.faqs.map((faq) => (
-              <div key={faq.question} className="rounded-2xl border border-slate-200 bg-white p-5 dark:border-gray-700 dark:bg-gray-800">
-                <dt className="text-lg font-semibold text-gray-900 dark:text-white">{faq.question}</dt>
-                <dd className="mt-2 leading-relaxed text-gray-700 dark:text-gray-300">{faq.answer}</dd>
-              </div>
-            ))}
-          </dl>
-        </section>
-
-        <section className="mt-10 rounded-2xl border border-slate-200 bg-white p-6 dark:border-gray-700 dark:bg-gray-800">
-          <h2 className="mb-4 text-2xl font-bold text-gray-900 dark:text-white">{labels.related}</h2>
-          <div className="flex flex-wrap gap-3">
-            {content.relatedLinks.map((link) => (
-              <Link
-                key={link.href}
-                href={localizedHref(locale, link.href)}
-                className="rounded-full border border-slate-300 px-4 py-2 text-sm font-semibold text-slate-700 transition-colors hover:border-brand-primary hover:text-brand-primary dark:border-slate-600 dark:text-slate-200 dark:hover:border-teal-300 dark:hover:text-teal-300"
-              >
-                {link.label}
-              </Link>
-            ))}
-          </div>
-        </section>
+    <SitePageShell title={content.title} actionLabel={content.cta.label} actionHref={localizedHref(locale, content.cta.href)}>
+      <p className="text-xs font-semibold uppercase tracking-widest text-[#8b6b43]">{content.eyebrow}</p>
+      <p className="mt-4 max-w-3xl text-xl leading-9" data-geo-answer>{content.intro}</p>
+      <div className="mt-6 flex flex-wrap gap-x-6 gap-y-3">
+        <Link href={localizedHref(locale, content.cta.href)} className="inline-flex min-h-11 items-center bg-[#251f19] px-6 py-3 text-[#fffdfa]">{content.cta.label}</Link>
+        <Link href={`/${locale}/case-studies`} className="inline-flex min-h-11 items-center underline underline-offset-4">{decision.cases}</Link>
       </div>
-    </main>
+      <p className="mt-4 max-w-3xl text-sm leading-7 text-[#51483d]">{content.cta.note}</p>
+      <div className={`${sectionClass} grid gap-10 md:grid-cols-2`}>
+        <BulletSection title={decision.fit} items={content.audience} />
+        <BulletSection title={decision.deliverables} items={content.deliverables} />
+      </div>
+      <div className={`${sectionClass} grid gap-10 md:grid-cols-2`}>
+        <section><h2 className={headingClass}>{decision.process}</h2><ol className="mt-5 list-decimal space-y-3 pl-5 leading-8">{steps.map(step => <li key={step}>{step}</li>)}</ol></section>
+        <BulletSection title={decision.preparation} items={inputs} />
+      </div>
+      <section className={sectionClass}>
+        <h2 className={headingClass}>{decision.boundaries}</h2>
+        <p className="mt-4 max-w-3xl leading-8">{course ? decision.courseBoundary : decision.scopeNote}</p>
+      </section>
+      <div className={`${sectionClass} grid gap-10 md:grid-cols-2`}>
+        <BulletSection title={labels.painPoints} items={content.painPoints} />
+        <BulletSection title={labels.outcomes} items={content.expectedOutcomes} />
+      </div>
+      {content.modules?.length ? <section className={sectionClass}>
+        <h2 className={headingClass}>{labels.modules}</h2>
+        <ol className="mt-5 list-decimal space-y-3 pl-5 leading-8">{content.modules.map(item => <li key={item}>{item}</li>)}</ol>
+      </section> : null}
+      {content.pricing ? <section className={sectionClass}>
+        <h2 className={headingClass}>{content.pricing.title || labels.pricing}</h2>
+        <p className="mt-4 max-w-3xl leading-8">{content.pricing.intro}</p>
+        <div className="mt-6 divide-y divide-[#d8cfc2]">{content.pricing.plans.map(plan => <article key={plan.name} className="py-7">
+          <div className="flex flex-wrap items-baseline justify-between gap-3"><h3 className="text-xl font-semibold">{plan.name}</h3><p className="text-xl text-[#6f5436]">{plan.price}</p></div>
+          <p className="mt-3 max-w-3xl leading-8">{plan.fit}</p>
+          <ul className="mt-4 list-disc space-y-2 pl-5 leading-8">{plan.features.map(feature => <li key={feature}>{feature}</li>)}</ul>
+          <div className="mt-6 grid gap-8 md:grid-cols-2">
+            {plan.method?.length ? <div><h4 className="text-lg font-semibold">{decision.process}</h4><ol className="mt-3 list-decimal space-y-2 pl-5 leading-8">{plan.method.map(step => <li key={step}>{step}</li>)}</ol></div> : null}
+            {plan.effects?.length ? <div><h4 className="text-lg font-semibold">{labels.outcomes}</h4><ul className="mt-3 list-disc space-y-2 pl-5 leading-8">{plan.effects.map(effect => <li key={effect}>{effect}</li>)}</ul></div> : null}
+          </div>
+        </article>)}</div>
+        <p className="mt-4 border-l-2 border-[#8b6b43] pl-4 text-sm leading-7">{content.pricing.note}</p>
+      </section> : null}
+      <section className={sectionClass}><h2 className={headingClass}>{labels.proof}</h2><ul className="mt-5 space-y-3 leading-8">{content.proofPoints.map(item => <li key={item}>{item}</li>)}</ul></section>
+      <section className={sectionClass}>
+        <h2 className={headingClass}>{decision.faq}</h2>
+        <dl className="mt-6 space-y-6">{content.faqs.map(faq => <div key={faq.question}><dt className="text-lg font-semibold">{faq.question}</dt><dd className="mt-2 max-w-3xl leading-8">{faq.answer}</dd></div>)}</dl>
+      </section>
+      <nav className={sectionClass} aria-label={labels.related}>
+        <h2 className={headingClass}>{labels.related}</h2>
+        <div className="mt-4 flex flex-wrap gap-x-6 gap-y-2">
+          <Link href={`/${locale}/services`} className="inline-flex min-h-11 items-center underline">{decision.services}</Link>
+          {content.relatedLinks.map(link => <Link key={link.href} href={localizedHref(locale, link.href)} className="inline-flex min-h-11 items-center underline">{link.label}</Link>)}
+        </div>
+      </nav>
+    </SitePageShell>
   );
 }

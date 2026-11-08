@@ -1,10 +1,11 @@
 "use client";
-import { getSmartSalesProductSchema } from "@/lib/schema";
+import { getOrganizationSchema, getPersonSchema, getSmartSalesProductSchema, serializeJsonLd } from "@/lib/schema";
+import { getSiteUrl } from "@/lib/site-url";
+import { AUTHOR } from "@/lib/author";
 /* F03: Route-scoped JSON-LD - Injects Organization, Service, FAQ, and page-specific structured data by path. */
 import { usePathname } from "next/navigation";
 import type { AppLocale } from "@/lib/i18n-routing";
 import { getLocaleFromPathname, localeToHtmlLang, localeUsesChineseCopy, stripLocaleFromPathname } from "@/lib/i18n-routing";
-import { AUTHOR, authorSameAs } from "@/lib/author";
 import { PRICING } from "@/content/pricing";
 import { getHomepageContent } from "@/content/homepage";
 
@@ -30,30 +31,30 @@ const SCHEMA_ORGANIZATION_DESCRIPTION: Record<AppLocale, string> = {
 };
 
 const SCHEMA_PERSON_DESCRIPTION: Record<AppLocale, string> = {
-  en: "I am AI Business Consultant Larry Lo / InnovateXP. Founder of InnovateXP Limited in Hong Kong with 14 years of IT delivery experience. Helps SMEs of 3–30 fix WhatsApp/Excel-heavy operations via Business Workflow Diagnosis before adopting AI.",
-  "zh-hk": "我係 AI 商業顧問 Larry Lo／InnovateXP。InnovateXP Limited 創辦人，駐香港，14 年 IT 交付經驗。專幫 3–30 人中小企先執順 WhatsApp／Excel 流程，再落地 AI。",
+  en: `I am AI Business Consultant Larry Lo / InnovateXP. Founder of InnovateXP Limited in Hong Kong with ${AUTHOR.yearsExperience} years of IT delivery experience. Helps SMEs of 3–30 fix WhatsApp/Excel-heavy operations via Business Workflow Diagnosis before adopting AI.`,
+  "zh-hk": `我係 AI 商業顧問 Larry Lo／InnovateXP。InnovateXP Limited 創辦人，駐香港，${AUTHOR.yearsExperience} 年 IT 交付經驗。專幫 3–30 人中小企先執順 WhatsApp／Excel 流程，再落地 AI。`,
   "zh-tw":
-    "Larry Lo 是 InnovateXP Limited 創辦人，香港 AI 商業顧問，具備 14 年 IT 交付經驗。專協助 3–30 人中小企業先理順 WhatsApp／Excel 流程，再落地 AI。",
-  ja: "Larry Lo は香港の中小企業向け AI ビジネスコンサルティング InnovateXP Limited を率いています。13年以上の IT デリバリー経験に加え、2025年には GDG Hong Kong、PISM Sharing、DevFest Hong Kong で司会・登壇・プロジェクト紹介を行った7件の公開記録があります。",
-  de: "Larry Lo leitet InnovateXP Limited, eine AI Business Consultancy für KMU in Hongkong. Er verfügt über mehr als 13 Jahre IT-Delivery-Erfahrung und sieben datierte öffentliche Auftritte im Jahr 2025 als Gastgeber, Sprecher oder Projektpräsentator bei GDG Hong Kong, PISM Sharing und DevFest Hong Kong.",
+    `Larry Lo 是 InnovateXP Limited 創辦人，香港 AI 商業顧問，具備 ${AUTHOR.yearsExperience} 年 IT 交付經驗。專協助 3–30 人中小企業先理順 WhatsApp／Excel 流程，再落地 AI。`,
+  ja: `Larry Lo は香港の中小企業向け AI ビジネスコンサルティング InnovateXP Limited の創業者です。${AUTHOR.yearsExperience}年の IT デリバリー経験を持ち、3〜30人のチームが AI 導入前に WhatsApp／Excel を使う業務を整理できるよう、業務診断で支援します。2025年には GDG Hong Kong、PISM Sharing、DevFest Hong Kong で司会・登壇・プロジェクト紹介を行った7件の公開記録があります。`,
+  de: `Larry Lo ist Gründer von InnovateXP Limited und AI Business Consultant in Hongkong mit ${AUTHOR.yearsExperience} Jahren IT-Delivery-Erfahrung. Er hilft Teams mit 3–30 Personen, WhatsApp-/Excel-Abläufe durch eine Geschäftsprozessdiagnose vor dem KI-Einsatz zu verbessern. Sieben datierte öffentliche Auftritte im Jahr 2025 dokumentieren seine Rollen als Gastgeber, Sprecher oder Projektpräsentator bei GDG Hong Kong, PISM Sharing und DevFest Hong Kong.`,
 };
 
 const SCHEMA_SMARTSALES_DESCRIPTION: Record<AppLocale, string> = {
   en: "Scoped sales workflow pilot, production setup and monthly technical care for SMEs. WhatsApp APIs, AI usage, membership rules and custom integrations quoted separately.",
   "zh-hk": "中小企銷售流程 pilot、正式上線及月費維護分開報價。WhatsApp API、AI 用量、會員制度及客製接駁另報。",
   "zh-tw":
-    "以 AI 為核心的客戶關係管理系統，整合 WhatsApp、自動跟進與智慧排程，適合香港與區內中小企業使用。",
-  ja: "WhatsApp 連携、自動フォローアップ、インテリジェントな日程調整を備えた AI 型 CRM。香港の中小企業向け。",
-  de: "KI-gestütztes CRM mit WhatsApp-Anbindung, automatisierten Follow-ups und intelligenter Terminplanung für KMUs in Hongkong.",
+    "中小企業銷售流程試行、正式上線與每月技術維護分開報價。WhatsApp API、AI 用量、會員制度與客製整合另行報價。",
+  ja: "中小企業向けの範囲を限定した営業フロー試行、本番導入、月次技術保守はそれぞれ別料金です。WhatsApp API、AI 利用量、会員制度、カスタム連携は別途見積もります。",
+  de: "Begrenzter Vertriebsworkflow-Pilot, Produktiveinrichtung und monatliche technische Wartung für KMU werden separat berechnet. WhatsApp-APIs, KI-Nutzung, Mitgliedschaftsregeln und individuelle Integrationen werden gesondert angeboten.",
 };
 
 const SCHEMA_EVENTXP_DESCRIPTION: Record<AppLocale, string> = {
   en: "Configurable event and membership operations for Hong Kong organisations — registration, QR/kiosk check-in, member and guest records, live attendance reporting, and post-event follow-up. Configured around your workflow; not generic ticketing.",
   "zh-hk": "按機構流程配置嘅活動暨會員營運方案：報名、QR／kiosk check-in、會員及嘉賓記錄、即時出席報告同活動後跟進。唔係通用售票軟件。",
   "zh-tw":
-    "智慧活動報到系統，將出席資料轉為可行动的商業洞察；支援 QRCode 報到、即時報表與 AI 輔助的出席者分析。",
-  ja: "出席データをビジネスインサイトへ変えるインテリジェントなイベントチェックイン。QR 読取、リアルタイムレポート、AI による参加者分析。",
-  de: "Intelligentes Event-Check-in: verwandelt Anwesenheitsdaten in Business-Insights mit QR-Scanning, Echtzeit-Reporting und KI-gestützter Teilnehmeranalyse.",
+    "依香港機構流程配置的活動暨會員營運方案：報名、QR／自助報到、會員與嘉賓記錄、即時出席報告與活動後跟進。並非通用售票軟體。",
+  ja: "香港の組織向けに業務フローに合わせて設定するイベント・会員運営ソリューション。登録、QR／キオスク受付、会員・ゲスト記録、リアルタイム出席レポート、イベント後のフォローアップに対応。汎用チケット販売ソフトではありません。",
+  de: "Für die Abläufe von Organisationen in Hongkong konfigurierter Event- und Mitgliederbetrieb: Anmeldung, QR-/Kiosk-Check-in, Mitglieder- und Gästedaten, Live-Anwesenheitsberichte und Nachbereitung. Keine generische Ticketing-Software.",
 };
 
 const SCHEMA_AI_SEO_NAME: Record<AppLocale, string> = {
@@ -293,9 +294,9 @@ type StructuredDataScope =
   /** Org + WebSite only; no product/FAQ (bookme, blog, reliability, etc.) */
   | "minimal";
 
-export default function StructuredData({ type = "auto" }: { type?: StructuredDataScope }) {
-  const pathname = usePathname();
-  const baseUrl = "https://www.innovatexp.co";
+/** Build the route graph separately so entity identity and scope can be checked without rendering. */
+export function buildStructuredData(pathname: string, type: StructuredDataScope = "auto") {
+  const baseUrl = getSiteUrl();
   const lower = ((pathname || "/").split("?")[0] || "/").toLowerCase();
   const routeLocale = getLocaleFromPathname(lower);
   const pathWithoutLocale = stripLocaleFromPathname(lower);
@@ -316,36 +317,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
                 : "minimal";
 
   const organizationSchema = {
-    "@context": "https://schema.org",
-    "@type": "Organization",
-    "@id": `${baseUrl}/#organization`,
-    name: "InnovateXP Limited",
-    alternateName: "IXP",
-    legalName: "InnovateXP Limited",
-    url: baseUrl,
-    logo: `${baseUrl}/innovatexp_color_no_bg.svg`,
+    ...getOrganizationSchema(),
     description: pickSchema(routeLocale, SCHEMA_ORGANIZATION_DESCRIPTION),
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "North Point",
-      addressRegion: "Hong Kong",
-      addressCountry: "HK",
-    },
-    contactPoint: {
-      "@type": "ContactPoint",
-      contactType: "Customer Service",
-      email: "info@innovatexp.co",
-      availableLanguage: ["English", "Chinese"],
-    },
-    founder: {
-      "@type": "Person",
-      "@id": `${baseUrl}/#founder`,
-      name: "Larry Lo",
-      jobTitle: "AI Business Consultant",
-      url: baseUrl,
-      sameAs: authorSameAs(),
-    },
-    sameAs: [AUTHOR.linkedInCompany, AUTHOR.linkedInPersonal],
     knowsAbout: [
       "AI Business Consultancy Hong Kong",
       "Hong Kong AI consultant",
@@ -389,19 +362,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
   };
 
   const personSchema = {
-    "@context": "https://schema.org",
-    "@type": "Person",
-    "@id": `${baseUrl}/#founder`,
-    name: "Larry Lo",
-    jobTitle: "AI Business Consultant",
+    ...getPersonSchema(),
     description: pickSchema(routeLocale, SCHEMA_PERSON_DESCRIPTION),
-    url: baseUrl,
-    image: `${baseUrl}/mypresent.jpg`,
-    sameAs: authorSameAs(),
-    worksFor: {
-      "@type": "Organization",
-      "@id": `${baseUrl}/#organization`,
-    },
     alumniOf: [
       {
         "@type": "Organization",
@@ -445,51 +407,10 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     ],
   };
 
-  const localBusinessSchema = {
-    "@context": "https://schema.org",
-    "@type": "LocalBusiness",
-    "@id": `${baseUrl}/#localbusiness`,
-    name: "InnovateXP Limited",
-    image: `${baseUrl}/innovatexp_color_no_bg.svg`,
-    address: {
-      "@type": "PostalAddress",
-      addressLocality: "North Point",
-      addressRegion: "Hong Kong",
-      addressCountry: "HK",
-    },
-    geo: {
-      "@type": "GeoCoordinates",
-      latitude: 22.2908,
-      longitude: 114.195,
-    },
-    url: baseUrl,
-    priceRange: "$$",
-    openingHoursSpecification: [
-      {
-        "@type": "OpeningHoursSpecification",
-        dayOfWeek: ["Monday", "Tuesday", "Wednesday", "Thursday", "Friday"],
-        opens: "09:00",
-        closes: "18:00",
-      },
-    ],
-  };
-
   const smartSalesCRMService = {
-    "@context": "https://schema.org",
-    "@type": "Service",
-    "@id": `${baseUrl}/#smartsales-crm`,
-    serviceType: "AI CRM Software",
-    name: "SmartSales CRM",
+    ...getSmartSalesProductSchema(),
     description: pickSchema(routeLocale, SCHEMA_SMARTSALES_DESCRIPTION),
-    provider: {
-      "@type": "Organization",
-      "@id": `${baseUrl}/#organization`,
-    },
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "Hong Kong and Greater Bay Area",
-    },
-    offers: getSmartSalesProductSchema().offers,
+    url: `${baseUrl}/${routeLocale}/smartsales-crm`,
   };
 
   const eventXPService = {
@@ -499,6 +420,8 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     serviceType: "Event Management Software",
     name: "EventXP",
     description: pickSchema(routeLocale, SCHEMA_EVENTXP_DESCRIPTION),
+    url: `${baseUrl}/${routeLocale}/eventxp`,
+    serviceOutput: { "@id": `${baseUrl}/#eventxp-software` },
     provider: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
@@ -580,20 +503,25 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     "@context": "https://schema.org",
     "@type": "Service",
     "@id": `${baseUrl}/#ai-consulting`,
-    serviceType: "AI Business Consultancy",
+    serviceType: "AI Business Consultancy and Advisory",
     name: localeUsesChineseCopy(routeLocale)
       ? "業務聽診 → Discovery → 陪跑（InnovateXP）"
       : "Business Workflow Diagnosis → Discovery → co-run (InnovateXP)",
     description: pickSchema(routeLocale, SCHEMA_CONSULTING_SERVICE_DESCRIPTION),
     url: `${baseUrl}/${routeLocale}/ai-consulting`,
+    isRelatedTo: [
+      { "@type": "Service", "@id": `${baseUrl}/#smartsales-crm`, name: "SmartSales CRM" },
+      { "@type": "Service", "@id": `${baseUrl}/#eventxp`, name: "EventXP" },
+    ],
     provider: {
       "@type": "Organization",
       "@id": `${baseUrl}/#organization`,
     },
-    areaServed: {
-      "@type": "AdministrativeArea",
-      name: "Hong Kong and Greater Bay Area",
-    },
+    areaServed: [
+      { "@type": "AdministrativeArea", name: "Hong Kong and Greater Bay Area" },
+      { "@type": "Country", name: "United States" },
+      { "@type": "Place", name: "Global" },
+    ],
     hasOfferCatalog: {
       "@type": "OfferCatalog",
       name: localeUsesChineseCopy(routeLocale)
@@ -661,7 +589,6 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
               ? "聽診後 14 日流程試用；轉正式可扣部分費用。"
               : "14-day workflow trial after diagnosis; credit toward a formal starter pack.",
           },
-
         },
       ],
     },
@@ -746,52 +673,6 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
     inLanguage: ["en-HK", "zh-HK", "zh-TW", "ja-JP", "de-DE"],
   };
 
-  const consultingServiceSchema = {
-    "@context": "https://schema.org",
-    "@type": "ProfessionalService",
-    "@id": `${baseUrl}/#consulting-service`,
-    name: "InnovateXP Limited",
-    description: pickSchema(routeLocale, SCHEMA_CONSULTING_SERVICE_DESCRIPTION),
-    url: baseUrl,
-    serviceType: "AI Business Consultancy and Advisory",
-    provider: {
-      "@type": "Organization",
-      "@id": `${baseUrl}/#organization`,
-    },
-    areaServed: [
-      { "@type": "Country", name: "Hong Kong" },
-      { "@type": "Country", name: "United States" },
-      { "@type": "Place", name: "Global" },
-    ],
-    hasOfferCatalog: {
-      "@type": "OfferCatalog",
-      name: "Mainline programmes — quoted after diagnosis",
-      itemListElement: [
-        {
-          "@type": "Offer",
-          name: "AI Readiness Snapshot",
-          price: String(PRICING.quickCash.aiReadinessAssessment),
-          priceCurrency: "HKD",
-          itemOffered: { "@type": "Service", name: "AI Readiness Snapshot" },
-        },
-        {
-          "@type": "Offer",
-          name: "30-day Discovery (≤10 people)",
-          price: String(PRICING.quickCash.aiDiscoverySprint),
-          priceCurrency: "HKD",
-          itemOffered: { "@type": "Service", name: "30-day Discovery" },
-        },
-        {
-          "@type": "Offer",
-          name: "14-day automation trial",
-          itemOffered: { "@type": "Service", name: "14-day automation trial" },
-        },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "SmartSales CRM" } },
-        { "@type": "Offer", itemOffered: { "@type": "Service", name: "EventXP" } },
-      ],
-    },
-  };
-
   const scopedServiceSchemas =
     resolvedScope === "home"
       ? [aiConsultingService]
@@ -822,83 +703,26 @@ export default function StructuredData({ type = "auto" }: { type?: StructuredDat
         : resolvedScope === "smartsales"
           ? { "@id": `${baseUrl}/#smartsales-crm` }
           : { "@id": `${baseUrl}/#organization` },
-    speakable: {
-      "@type": "SpeakableSpecification",
-      cssSelector: ["h1", "h2", "[data-geo-answer]"],
-    },
   };
 
   const breadcrumbSchema = buildBreadcrumbJsonLd(pathname || "/", baseUrl, routeLocale);
-  const diagnosisMethodSchema =
-    resolvedScope === "home"
-      ? {
-          "@context": "https://schema.org",
-          "@type": "HowTo",
-          "@id": `${baseUrl}/#diagnosis-method`,
-          name: localeUsesChineseCopy(routeLocale)
-            ? "InnovateXP 業務聽診方法"
-            : "InnovateXP Business Workflow Diagnosis method",
-          description: localeUsesChineseCopy(routeLocale)
-            ? "三步：業務聽診 → 實用支援落地 → 由 0 到 1 陪跑。先診斷一條卡住營收或營運嘅流程，再決定使唔使落地工具。"
-            : "Three steps: Business Workflow Diagnosis → practical implementation → 0-to-1 co-running. Diagnose one revenue- or operations-blocking workflow first, then decide whether a tool is justified.",
-          inLanguage: localeToHtmlLang(routeLocale),
-          step: [
-            {
-              "@type": "HowToStep",
-              position: 1,
-              name: localeUsesChineseCopy(routeLocale) ? "業務聽診" : "Business Workflow Diagnosis",
-              text: localeUsesChineseCopy(routeLocale)
-                ? "30 分鐘業務聽診：聚焦一條卡住營收或營運嘅流程，搵出漏點同未清晰嘅擁有權，判斷值得先修邊一段（Snapshot、Discovery、自動化起步或暫唔買系統）。"
-                : "30-minute Business Workflow Diagnosis: focus on one stuck workflow, find leakage and unclear ownership, and identify what is worth fixing first (Snapshot, Discovery, automation starter, or no system yet).",
-            },
-            {
-              "@type": "HowToStep",
-              position: 2,
-              name: localeUsesChineseCopy(routeLocale) ? "實用支援落地" : "Practical implementation",
-              text: localeUsesChineseCopy(routeLocale)
-                ? "喺診斷後落地 AI agents 或工具（例如 SmartSales CRM、EventXP、FitnessXP），以試點證明價值再擴展；控制風險，能量化就先量化。"
-                : "Land AI agents or tools after diagnosis (e.g. SmartSales CRM, EventXP, FitnessXP); prove value in a pilot window before expanding. Controlled risk, measurable outcomes.",
-            },
-            {
-              "@type": "HowToStep",
-              position: 3,
-              name: localeUsesChineseCopy(routeLocale) ? "由 0 到 1 陪跑" : "0-to-1 co-running",
-              text: localeUsesChineseCopy(routeLocale)
-                ? "3 / 6 / 12 個月陪跑：建立團隊採用節奏同管理覆核，令一條流程嘅改善可以保留同延續。"
-                : "3 / 6 / 12-month co-run: establish team adoption cadence and management review so the workflow improvement is retained and extended.",
-            },
-          ],
-        }
-      : null;
+  return [
+    organizationSchema,
+    personSchema,
+    ...scopedServiceSchemas,
+    ...(breadcrumbSchema ? [breadcrumbSchema] : []),
+    websiteSchema,
+    webPageSchema,
+    ...scopedFaqSchemas,
+  ];
+}
 
+export default function StructuredData({ type = "auto" }: { type?: StructuredDataScope }) {
+  const pathname = usePathname();
   return (
-    <>
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(organizationSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(personSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(localBusinessSchema) }} />
-      {scopedServiceSchemas.map((schema, idx) => (
-        <script
-          key={`service-schema-${idx}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
-      {breadcrumbSchema ? (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbSchema) }} />
-      ) : null}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(websiteSchema) }} />
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(consultingServiceSchema) }} />
-      {diagnosisMethodSchema ? (
-        <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(diagnosisMethodSchema) }} />
-      ) : null}
-      <script type="application/ld+json" dangerouslySetInnerHTML={{ __html: JSON.stringify(webPageSchema) }} />
-      {scopedFaqSchemas.map((schema, idx) => (
-        <script
-          key={`faq-schema-${idx}`}
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(schema) }}
-        />
-      ))}
-    </>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: serializeJsonLd(buildStructuredData(pathname || "/", type)) }}
+    />
   );
 }

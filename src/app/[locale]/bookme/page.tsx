@@ -11,6 +11,7 @@ import QuotationWizard from '@/components/QuotationWizard';
 import { AiConsultationQuestionnaire } from '@/components/questionnaires/AiConsultationQuestionnaire';
 import type { Answers } from '@/components/questionnaires/M3QuestionnaireForm';
 import { buildWhatsAppHref } from '@/lib/whatsapp-contact';
+import { getSiteExperience } from '@/content/site-experience';
 
 type IntakePayload = { answers: Answers; formattedQa: string };
 
@@ -111,27 +112,30 @@ export default function BookVisitPage() {
   }, [intake]);
 
   return (
-    <div className="atelier-booking min-h-screen bg-[#f7f4ee] text-[#251f19]">
+    <div className="atelier-booking min-h-screen bg-[color:var(--bg-primary)] text-[color:var(--text-primary)]">
       <Header variant="booking" title="InnovateXP Limited" subtitle={copy.eyebrow} />
       <main className="mx-auto max-w-7xl px-5 pb-20 pt-10 md:px-10 md:pb-28 md:pt-20">
         <div className="grid gap-10 md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.2fr)] md:items-start md:gap-16">
           <div className="md:sticky md:top-32">
             <p className="text-xs font-semibold uppercase tracking-[0.18em] text-[#8b6b43]">{copy.eyebrow}</p>
             <h1 className="mt-5 max-w-[15ch] text-[clamp(2.3rem,4.5vw,4.8rem)] font-normal leading-[1.16] tracking-[-0.035em]">{copy.heading}</h1>
-            <p className="mt-6 max-w-[47ch] text-base leading-8 md:text-lg">{copy.intro}</p>
+            <p data-geo-answer className="mt-6 max-w-[47ch] text-base leading-8 md:text-lg">{copy.intro}</p>
+            <ul className="mt-6 list-disc space-y-3 pl-5 text-sm leading-7">
+              {getSiteExperience(locale).bookingNotes.map(note => <li key={note}>{note}</li>)}
+            </ul>
             <ol className="mt-8 grid grid-cols-2 border-y border-[#c8bba9] py-5">
               {copy.steps.map((label, index) => (
                 <li key={label} className="pr-3">
                   <span className="text-xs font-semibold text-[#8b6b43]">0{index + 1}</span>
-                  <p className="mt-2 text-base font-semibold text-[#251f19]">{label}</p>
+                  <p className="mt-2 text-base font-semibold text-[color:var(--text-primary)]">{label}</p>
                   <p className="mt-1 text-sm">{copy.stepDetail[index]}</p>
                 </li>
               ))}
             </ol>
-            <p className="mt-6 text-sm leading-7">{copy.contact} <a className="border-b border-[#8b6b43] font-semibold text-[#251f19]" href="mailto:info@innovatexp.co">info@innovatexp.co</a></p>
+            <p className="mt-6 text-sm leading-7">{copy.contact} <a className="border-b border-[#8b6b43] font-semibold text-[color:var(--text-primary)]" href="mailto:info@innovatexp.co">info@innovatexp.co</a></p>
           </div>
 
-          <div className="border border-[#d8cfc2] bg-[#fffdfa] p-4 sm:p-7 md:p-9">
+          <div className="border border-[#d8cfc2] bg-[color:var(--bg-secondary)] p-4 sm:p-7 md:p-9">
             {phase === 'intake' ? (
               <div className="space-y-5">
                 <AiConsultationQuestionnaire
@@ -150,7 +154,7 @@ export default function BookVisitPage() {
                     setIntake(null);
                     setPhase('booking');
                   }}
-                  className="inline-flex min-h-11 items-center border-b border-[#8b6b43] text-sm font-semibold text-[#251f19] hover:text-[#8b6b43] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
+                  className="inline-flex min-h-11 items-center border-b border-[#8b6b43] text-sm font-semibold text-[color:var(--text-primary)] hover:text-[#8b6b43] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-4"
                 >
                   {copy.skip}
                 </button>
@@ -160,7 +164,7 @@ export default function BookVisitPage() {
                 <button
                   type="button"
                   onClick={() => setPhase('intake')}
-                  className="inline-flex min-h-11 items-center border-b border-[#8b6b43] text-sm font-semibold text-[#251f19] hover:text-[#8b6b43]"
+                  className="inline-flex min-h-11 items-center border-b border-[#8b6b43] text-sm font-semibold text-[color:var(--text-primary)] hover:text-[#8b6b43]"
                 >
                   {copy.back}
                 </button>
@@ -171,7 +175,7 @@ export default function BookVisitPage() {
         </div>
 
         <details className="mt-12 max-w-3xl border-t border-[#c8bba9] pt-5 text-sm">
-          <summary className="cursor-pointer font-semibold text-[#251f19]">{copy.information}</summary>
+          <summary className="cursor-pointer font-semibold text-[color:var(--text-primary)]">{copy.information}</summary>
           <ul className="mt-4 space-y-2 leading-7">
             <li>{t('bookme.info.monday_friday')}</li>
             <li>{t('bookme.info.one_hour')}</li>
