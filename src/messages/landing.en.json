@@ -395,12 +395,12 @@
         "eyebrow": "WhatsApp-first CRM",
         "name": "SmartSales CRM",
         "tagline": "Every enquiry has a next step",
-        "price": "From HK$880 / month · Trial HK$5,000",
-        "body": "Turn scattered WhatsApp chats into a trackable sales workflow.",
+        "price": "Pilot HK$6,880 · Setup from HK$24,800 · Care from HK$1,880/month",
+        "body": "Scope one CRM workflow. Setup, care and third-party usage are separate.",
         "points": [
-          "Centralized enquiries",
-          "Ownership & pipeline",
-          "AI draft-first replies"
+          "Pilot: 3 participants, 1 workflow, 50 samples",
+          "Starter setup: up to 5 users",
+          "Loyalty, WhatsApp APIs and external integrations separately quoted"
         ]
       },
       {
@@ -473,7 +473,7 @@
       "boundary": "No unlimited changes. Support hours are Monday–Friday, 09:00–18:00 HKT excluding public holidays. Major features, migrations, third-party fees, after-hours incidents and work outside the agreed system are quoted separately."
     },
     "readiness": {
-      "eyebrow": "Downsell only",
+      "eyebrow": "Fixed-scope diagnosis",
       "title": "AI Readiness Snapshot",
       "price": "HK$3,880",
       "intro": "For a team not yet ready to commit to the HK$6,880 Discovery Sprint and needing a smaller evidence-based decision first.",

@@ -52,7 +52,7 @@ export type BusyInterval = { startsAt: string; endsAt: string };
 
 export async function listBusyIntervals(dayStartIso: string, dayEndIso: string): Promise<BusyInterval[]> {
   const sql = getSql();
-  if (!sql) return [];
+  if (!sql) throw new Error("Booking store unavailable");
   await ensureSchema();
   const rows = await sql`
     SELECT starts_at, ends_at
@@ -74,15 +74,29 @@ export async function insertCalendarBooking(input: {
   startsAt: string;
   endsAt: string;
   message: string;
-}): Promise<{ ok: boolean; id?: number; skipped?: boolean; error?: string }> {
+}): Promise<{ ok: boolean; id?: number; skipped?: boolean; error?: string; conflict?: boolean; duplicate?: boolean }> {
   const sql = getSql();
   if (!sql) return { ok: false, skipped: true, error: "DATABASE_URL not configured" };
   try {
     await ensureSchema();
-    const rows = await sql`
+    return await reserveCalendarBooking(sql, input);
+  } catch (error) {
+    return { ok: false, error: error instanceof Error ? error.message : "Insert failed" };
+  }
+}
+
+/** Serialize availability recheck and insert; read-committed statements see the previous commit. */
+export async function reserveCalendarBooking(sql: NeonQueryFunction<false, false>, input: {
+  name: string; email: string; phone: string; company: string; startsAt: string; endsAt: string; message: string;
+}) {
+    const results = await sql.transaction([
+      sql`SELECT pg_advisory_xact_lock(482113)`,
+      sql`SELECT id FROM calendar_bookings WHERE lower(visitor_email) = ${input.email.toLowerCase()}
+        AND starts_at = ${input.startsAt}::timestamptz AND ends_at = ${input.endsAt}::timestamptz`,
+      sql`
       INSERT INTO calendar_bookings (
         visitor_name, visitor_email, visitor_phone, visitor_company, starts_at, ends_at, message
-      ) VALUES (
+      ) SELECT
         ${input.name},
         ${input.email},
         ${input.phone || null},
@@ -90,14 +104,14 @@ export async function insertCalendarBooking(input: {
         ${input.startsAt}::timestamptz,
         ${input.endsAt}::timestamptz,
         ${input.message || null}
-      )
+      WHERE NOT EXISTS (SELECT 1 FROM calendar_bookings WHERE starts_at < ${input.endsAt}::timestamptz AND ends_at > ${input.startsAt}::timestamptz)
       RETURNING id
-    `;
+    `]);
+    if (results[1].length) return { ok: true, id: Number(results[1][0].id), duplicate: true };
+    const rows = results[2];
+    if (!rows.length) return { ok: false, conflict: true, error: "Slot already booked" };
     const id = Number(rows[0]?.id);
     return { ok: true, id: Number.isFinite(id) ? id : undefined };
-  } catch (error) {
-    return { ok: false, error: error instanceof Error ? error.message : "Insert failed" };
-  }
 }
 
 export async function insertNewsletterSubscriber(input: {

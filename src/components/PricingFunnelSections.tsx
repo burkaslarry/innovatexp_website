@@ -27,7 +27,7 @@ const copy = {
     eventBody: "1 場活動：簽到設定、名單評分、follow-up 自動化設定（唔只係 QR check-in app）。",
     eventCta: "了解 EventXP 試用",
     salesTitle: "SmartSales CRM 試用",
-    salesBody: "WhatsApp workflow 接入、CRM 基礎設定、1 條銷售流程試跑。",
+    salesBody: "3 位參與者、1 條流程、50 筆樣本；正式上線同 WhatsApp API 另報。",
     salesCta: "了解 SmartSales 試用",
     accountingCardTitle: "AccountXP 體驗方案",
     accountingCardBody:
@@ -68,7 +68,7 @@ const copy = {
     eventBody: "One event: check-in, lead scoring, follow-up automation.",
     eventCta: "Explore EventXP trial",
     salesTitle: "SmartSales CRM trial",
-    salesBody: "WhatsApp workflow, CRM baseline, one sales process trial.",
+    salesBody: "3 participants, 1 workflow, 50 samples. Production setup and WhatsApp APIs separately quoted.",
     salesCta: "Explore SmartSales trial",
     accountingCardTitle: "AccountXP experience",
     accountingCardBody:

@@ -3,16 +3,14 @@
 import { ShoppingCart } from "lucide-react";
 import { useInquiryCart } from "@/context/InquiryCartContext";
 import { getLocaleFromPathname } from "@/lib/i18n-routing";
-import { uiStrings } from "@/content/ui-strings";
+import { CART_COPY } from "@/content/cart-copy";
 import { usePathname } from "next/navigation";
 
 export function HeaderCartButton() {
   const pathname = usePathname();
   const locale = getLocaleFromPathname(pathname);
-  const ui = uiStrings(locale);
   const { itemCount, setDrawerOpen } = useInquiryCart();
-
-  const ariaLabel = itemCount > 0 ? ui.mobileBar.cartAria(itemCount) : ui.cart.emptyAria;
+  const ariaLabel = `${CART_COPY[locale].title} (${itemCount})`;
 
   return (
     <button

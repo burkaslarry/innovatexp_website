@@ -265,6 +265,7 @@ export default function QuotationWizard({
    * Browser Web3Forms only when server email did not send (emailSuccess !== true).
    */
   async function submitFlowX() {
+    if (fxBusy || bookingSuccess) return;
     setFxErr(null);
     const email = fxEmail.trim();
     const wa = normalizeWhatsappE164(fxDialSelect, fxWa, fxCustomDial);
@@ -306,6 +307,7 @@ export default function QuotationWizard({
           visitorCompany: company,
           selectedDate: format(selectedDate, "yyyy-MM-dd"),
           selectedTimeSlot,
+          locale, timezone: Intl.DateTimeFormat().resolvedOptions().timeZone,
           message: [formatAppointmentDetail(), "", formattedQa].filter(Boolean).join("\n\n"),
         }),
       });
@@ -351,7 +353,7 @@ export default function QuotationWizard({
     setSelectedTimeSlot(null);
     try {
       const formattedDate = format(date, "yyyy-MM-dd");
-      const response = await fetch(`/api/calendar/slots?date=${formattedDate}`);
+      const response = await fetch(`/api/calendar/slots?date=${formattedDate}&timezone=${encodeURIComponent(Intl.DateTimeFormat().resolvedOptions().timeZone)}`);
       if (!response.ok) throw new Error("slots_error");
       const data = (await response.json()) as { slots?: TimeSlot[] };
       setAvailableSlots(data.slots || []);
@@ -1068,9 +1070,14 @@ export default function QuotationWizard({
                   {fxErr}
                 </p>
               ) : null}
+              {bookingSuccess ? (
+                <div role="status" className="rounded-xl border border-emerald-300 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-950">
+                  {bookingSuccess}
+                </div>
+              ) : null}
               <button
                 type="button"
-                disabled={fxBusy}
+                disabled={fxBusy || Boolean(bookingSuccess)}
                 onClick={() => void submitFlowX()}
                 className="min-h-[52px] w-full btn-brand px-6 py-3 text-base font-bold transition hover:brightness-105 disabled:opacity-60 "
               >
@@ -1108,6 +1115,7 @@ export default function QuotationWizard({
                 <label className="block text-slate-900 dark:text-white text-base font-bold">
                   📆 {t("bookme.date.label")} <span className="text-red-500">*</span>
                 </label>
+                <p className="text-sm text-slate-600 dark:text-slate-400">{usesChineseUi ? "日期按香港營業日選擇；可用時段會標示你的時區。" : "Select the Hong Kong business date; available times show your timezone."}</p>
                 <div className="rounded-xl border border-slate-200 bg-slate-50 p-3 dark:border-slate-700 dark:bg-slate-900/40">
                   <div className="flex justify-center">
                     <DayPicker
@@ -1184,12 +1192,6 @@ export default function QuotationWizard({
               {bookingError ? (
                 <div className="rounded-xl border border-red-200 bg-red-50 px-4 py-3 text-sm font-medium text-red-800 dark:border-red-900/50 dark:bg-red-950/30 dark:text-red-200">
                   {bookingError}
-                </div>
-              ) : null}
-
-              {bookingSuccess ? (
-                <div className="rounded-xl border border-emerald-200 bg-emerald-50 px-4 py-3 text-sm font-semibold text-emerald-900 dark:border-emerald-900/40 dark:bg-emerald-950/20 dark:text-emerald-100">
-                  {bookingSuccess}
                 </div>
               ) : null}
 

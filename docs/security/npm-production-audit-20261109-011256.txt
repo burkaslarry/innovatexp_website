@@ -1,0 +1,21 @@
+# npm audit report
+
+deepmerge  >=4.2.0
+deepmerge mergeObject() allows prototype poisoning of returned objects - https://github.com/advisories/GHSA-gcqx-w48m-w2h4
+fix available via `npm audit fix --force`
+Will install resend@6.37.0, which is a breaking change
+node_modules/deepmerge
+  html-to-text  6.0.0 - 9.0.5
+  Depends on vulnerable versions of deepmerge
+  node_modules/html-to-text
+    @react-email/render  0.0.4 - 2.1.1
+    Depends on vulnerable versions of html-to-text
+    node_modules/@react-email/render
+      resend  0.10.0 - 6.1.1 || 6.2.0-canary.0 - 6.2.0-preview-contacts.0
+      Depends on vulnerable versions of @react-email/render
+      node_modules/resend
+
+4 low severity vulnerabilities
+
+To address all issues (including breaking changes), run:
+  npm audit fix --force

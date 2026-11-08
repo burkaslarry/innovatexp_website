@@ -51,14 +51,13 @@ export function buildServicePageJsonLd({
           description: content.metaDescription,
           inLanguage: localeToHtmlLang(locale),
           provider,
-          educationalCredentialAwarded: "Practical AI workflow capability",
           teaches: content.modules ?? content.deliverables,
           audience: content.audience,
           url: pageUrl,
         }
       : {
           "@context": "https://schema.org",
-          "@type": "ProfessionalService",
+          "@type": "Service",
           "@id": `${pageUrl}#service`,
           name: content.title,
           description: content.metaDescription,
@@ -111,7 +110,7 @@ export function buildServicePageJsonLd({
     })),
   };
 
-  return [serviceOrCourse, faq, breadcrumbFor(locale, path, content.title)];
+  return [serviceOrCourse, ...(content.faqs.length ? [faq] : []), breadcrumbFor(locale, path, content.title)];
 }
 
 export function buildCaseStudiesJsonLd({
@@ -159,6 +158,7 @@ export function buildCaseStudiesJsonLd({
       description: `${item.role}: ${item.topic}`,
       performer: {
         "@type": "Person",
+        "@id": `${siteUrl}/#founder`,
         name: "Larry Lo",
       },
     })),

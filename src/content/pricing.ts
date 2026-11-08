@@ -37,7 +37,7 @@ export const PRICING = {
     /** EventXP 試用 — 1 場活動 */
     eventXpTrial: 4_000,
     /** SmartSales CRM 試用 */
-    smartSalesTrial: 5_000,
+    smartSalesTrial: 6_880,
     /**
      * AccountXP（Accounting Tools）體驗方案 — 一次性
      * 收據擷取 pilot 設定 + 首月正式使用
@@ -95,12 +95,13 @@ export const PRICING = {
       maintenanceEnterpriseMonthly: 1_480,
     },
     smartSales: {
-      trial: 5_000,
-      setupStarter: 10_800,
-      setupGrowth: 18_880,
-      maintenanceStarterMonthly: 880,
-      maintenanceGrowthMonthly: 1_280,
-      maintenanceEnterpriseMonthly: 1_680,
+      trial: 6_880,
+      setupStarter: 24_800,
+      setupGrowth: 48_800,
+      customProjectFrom: 98_000,
+      maintenanceStarterMonthly: 1_880,
+      maintenanceGrowthMonthly: 2_880,
+      maintenanceEnterpriseMonthly: 4_880,
     },
     accountXp: {
       experience: 3_000,

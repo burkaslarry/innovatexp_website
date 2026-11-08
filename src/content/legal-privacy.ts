@@ -530,13 +530,12 @@ const zomateZh: PrivacyPolicyContent = {
 };
 
 export function getInnovatexpPrivacyPolicy(locale: AppLocale): PrivacyPolicyContent {
-  switch (locale) {
-    case "zh-hk":
-    case "zh-tw":
-      return innovatexpZh;
-    default:
-      return innovatexpEn;
-  }
+  const zh = locale === "zh-hk" || locale === "zh-tw";
+  const base = zh ? innovatexpZh : innovatexpEn;
+  return { ...base, lastUpdated: "2026-10-13", sections: [...base.sections, {
+    title: zh ? "付款及付費服務資料" : "Payments and paid-service records",
+    paragraphs: zh ? ["Stripe 處理付款及帳單資料。InnovateXP 保存訂單編號、產品、金額及幣別、付款／退款狀態、聯絡電郵和服務問卷；我們不保存完整卡資料。Neon 用於訂單及問卷儲存，Resend 用於服務通知。", "私人服務連結及存取 Cookie 用於核對訂單權限，並非廣告追蹤。資料按履行服務、法律、會計及爭議處理所需保留；超出所需期限會刪除或匿名化。不要將私人連結轉寄。"] : ["Stripe processes payment and billing data. InnovateXP retains order references, product, amount/currency, payment/refund status, contact email and service intake; we do not store complete card details. Neon stores order and intake records; Resend delivers service notifications.", "Private service links and access cookies authorize an order and are not advertising trackers. Records are retained as needed for service delivery, legal/accounting obligations and disputes, then deleted or anonymised. Do not forward private links."],
+  }] };
 }
 
 export function getZomateSystemPrivacyPolicy(locale: AppLocale): PrivacyPolicyContent {

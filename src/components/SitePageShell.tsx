@@ -3,7 +3,7 @@
 import type { ReactNode } from "react";
 import Header from "@/app/components/Header";
 import { BookingCtaButton } from "@/components/BookingCtaButton";
-import { getHomepageContent, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
+import { getHomepageContent, getMainNavigation, HOMEPAGE_PLACEHOLDERS } from "@/content/homepage";
 import { getBookingHref, primaryCtaLabel } from "@/content/cta-config";
 import { useLanguage } from "@/app/LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
@@ -11,24 +11,21 @@ import { useLocalizedHref } from "@/hooks/useLocalizedHref";
 export function SitePageShell({
   title,
   children,
+  actionLabel,
+  actionHref,
 }: {
   title: string;
   children: ReactNode;
+  actionLabel?: string;
+  actionHref?: string;
 }) {
   const { locale } = useLanguage();
   const loc = useLocalizedHref();
   const content = getHomepageContent(locale);
-  const bookingHref = getBookingHref(locale);
-  const ctaLabel = primaryCtaLabel(locale);
+  const bookingHref = actionHref || getBookingHref(locale);
+  const ctaLabel = actionLabel || primaryCtaLabel(locale);
 
-  const navItems = [
-    { label: content.nav.home, href: loc("/") },
-    { label: content.nav.plans, href: loc("/services") },
-    { label: content.nav.products, href: loc("/products") },
-    { label: locale === "en" ? "Journal" : locale === "ja" ? "記事" : locale === "de" ? "Journal" : "文章", href: loc("/blog") },
-    { label: content.nav.about, href: loc("/about") },
-    { label: content.nav.faq, href: loc("/faq") },
-  ];
+  const navItems = getMainNavigation(locale);
 
   return (
     <div className="atelier-site min-h-screen bg-[#f7f4ee] text-[#251f19]">
@@ -57,6 +54,7 @@ export function SitePageShell({
           <a href={loc("/")}>{content.nav.home}</a>
           <a href={`mailto:${HOMEPAGE_PLACEHOLDERS.emailAddress}`}>{HOMEPAGE_PLACEHOLDERS.emailAddress}</a>
           <a href={loc("/privacy-policy")}>{content.footer.privacy}</a>
+          <a href={loc("/purchase-terms")}>{locale.startsWith("zh") ? "購買及退款條款" : "Purchase and refund terms"}</a>
         </div>
       </footer>
     </div>

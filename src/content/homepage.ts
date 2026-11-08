@@ -1,4 +1,4 @@
-import type { AppLocale } from "@/lib/i18n-routing";
+import { withLocale, type AppLocale } from "@/lib/i18n-routing";
 import landingEn from "@/messages/landing.en.json";
 import landingZhHk from "@/messages/landing.zh-hk.json";
 import landingZhTw from "@/messages/landing.zh-tw.json";
@@ -213,4 +213,19 @@ const byLocale: Record<AppLocale, HomepageContent> = {
 
 export function getHomepageContent(locale: AppLocale): HomepageContent {
   return byLocale[locale] ?? byLocale["zh-hk"];
+}
+
+const NAV_LABELS: Record<AppLocale, readonly string[]> = {
+  "zh-hk": ["首頁", "服務", "解決方案", "案例", "知識文章", "關於 Larry"],
+  "zh-tw": ["首頁", "服務", "解決方案", "案例", "知識文章", "關於 Larry"],
+  en: ["Home", "Services", "Solutions", "Case studies", "Insights", "About Larry"],
+  ja: ["ホーム", "サービス", "ソリューション", "事例", "記事", "Larryについて"],
+  de: ["Start", "Leistungen", "Lösungen", "Fallstudien", "Wissen", "Über Larry"],
+};
+
+export function getMainNavigation(locale: AppLocale) {
+  return ["/", "/services", "/products", "/case-studies", "/blog", "/about"].map((path, index) => ({
+    label: NAV_LABELS[locale][index],
+    href: withLocale(locale, path),
+  }));
 }

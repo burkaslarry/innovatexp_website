@@ -29,7 +29,7 @@ export function ProductPackagesSection({
     <section id="product-packages" className="mb-16 scroll-mt-[var(--header-offset)]">
       <PackagesHeader content={content} />
       <PosterGrid locale={locale} items={content.items} />
-      <CareAndSnapshotRow systemCare={content.systemCare} readiness={content.readiness} />
+      <CareAndSnapshotRow locale={locale} systemCare={content.systemCare} readiness={content.readiness} />
       <SecurityNote title={content.securityTitle} note={content.securityNote} />
     </section>
   );
@@ -50,16 +50,19 @@ function PackagesHeader({ content }: { content: ProductPackagesCopy }) {
 }
 
 function CareAndSnapshotRow({
+  locale,
   systemCare,
   readiness,
 }: {
+  locale: AppLocale;
   systemCare: ProductPackagesCopy["systemCare"];
   readiness: ProductPackagesCopy["readiness"];
 }) {
   return (
     <div className="mt-10 grid gap-6 xl:grid-cols-[1.15fr_0.85fr]">
-      <SystemCarePanel copy={systemCare} />
+      <SystemCarePanel copy={systemCare} locale={locale} />
       <ReadinessPanel copy={readiness} />
+      <a href={`/${locale}/services/snapshot`} className="inline-flex min-h-11 items-center font-semibold underline underline-offset-4">{locale.startsWith("zh") ? "Snapshot 服務範圍及下一步 →" : "Snapshot scope and next steps →"}</a>
     </div>
   );
 }

@@ -10,12 +10,6 @@ import { uiStrings } from "@/content/ui-strings";
 /** Locale-agnostic booking path. */
 export const BOOKING_PATH = "/bookme" as const;
 
-/**
- * Canonical booking URL (required).
- * getBookingHref() injects the active locale: https://innovatexp.co/{locale}/bookme
- */
-export const CANONICAL_BOOKING_URL = "https://innovatexp.co/bookme" as const;
-
 export const PRIMARY_CTA_LABEL_ZH = "預約 30 分鐘業務聽診";
 export const PRIMARY_CTA_LABEL_EN = "Book a 30-min diagnosis";
 export const SECONDARY_WHATSAPP_LABEL_ZH = "WhatsApp 直接問";
@@ -34,18 +28,6 @@ export type BookingCtaPlacement =
   | "other";
 
 export function getBookingHref(locale: AppLocale): string {
-  if (CANONICAL_BOOKING_URL) {
-    try {
-      const url = new URL(CANONICAL_BOOKING_URL);
-      const path = url.pathname.replace(/\/$/, "") || "/";
-      if (path === "/bookme") {
-        url.pathname = `/${locale}/bookme`;
-      }
-      return url.toString();
-    } catch {
-      return CANONICAL_BOOKING_URL;
-    }
-  }
   return withLocale(locale, BOOKING_PATH);
 }
 
@@ -54,13 +36,23 @@ export function getWhatsAppHref(locale: AppLocale): string {
 }
 
 export function primaryCtaLabel(locale: AppLocale): string {
-  return locale === "en" || locale === "de" || locale === "ja"
-    ? PRIMARY_CTA_LABEL_EN
-    : PRIMARY_CTA_LABEL_ZH;
+  const labels: Record<AppLocale, string> = {
+    en: PRIMARY_CTA_LABEL_EN,
+    "zh-hk": PRIMARY_CTA_LABEL_ZH,
+    "zh-tw": "預約 30 分鐘業務診斷",
+    ja: "30分の業務診断を予約",
+    de: "30-Minuten-Diagnose buchen",
+  };
+  return labels[locale];
 }
 
 export function secondaryWhatsAppLabel(locale: AppLocale): string {
-  return locale === "en" || locale === "de" || locale === "ja"
-    ? SECONDARY_WHATSAPP_LABEL_EN
-    : SECONDARY_WHATSAPP_LABEL_ZH;
+  const labels: Record<AppLocale, string> = {
+    en: SECONDARY_WHATSAPP_LABEL_EN,
+    "zh-hk": SECONDARY_WHATSAPP_LABEL_ZH,
+    "zh-tw": "透過 WhatsApp 詢問",
+    ja: "WhatsApp で相談",
+    de: "Über WhatsApp fragen",
+  };
+  return labels[locale];
 }

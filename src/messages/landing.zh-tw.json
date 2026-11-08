@@ -395,12 +395,12 @@
         "eyebrow": "WhatsApp-first CRM",
         "name": "SmartSales CRM",
         "tagline": "每筆詢問都有下一步",
-        "price": "每月 HK$880 起 · 試用 HK$5,000",
-        "body": "將分散的 WhatsApp 對話轉成可追蹤的銷售流程。",
+        "price": "Pilot HK$6,880 · 上線 HK$24,800 起 · 維護 HK$1,880／月起",
+        "body": "一條 CRM 流程先定範圍；上線費、維護費同第三方使用費分開。",
         "points": [
-          "集中詢問",
-          "責任與 pipeline",
-          "AI Draft-first"
+          "Pilot：3 人、1 條流程、50 筆樣本",
+          "Starter 上線：最多 5 位使用者",
+          "會員積分／WhatsApp API／外部接駁另報"
         ]
       },
       {
@@ -473,7 +473,7 @@
       "boundary": "不設 unlimited changes。支援時間為星期一至五 09:00–18:00（香港時間，公眾假期除外）。大型新功能、data migration、第三方費用、非辦公時間事故及合約系統以外工作，全部另行報價。"
     },
     "readiness": {
-      "eyebrow": "只作 downsell",
+      "eyebrow": "固定範圍診斷",
       "title": "AI Readiness Snapshot",
       "price": "HK$3,880",
       "intro": "給尚未準備投入 HK$6,880 Discovery Sprint 的團隊，先用較小成本取得一個有根據的決定。",

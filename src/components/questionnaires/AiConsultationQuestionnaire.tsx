@@ -26,6 +26,7 @@ export function AiConsultationQuestionnaire({
 
   return (
     <M3QuestionnaireForm
+      locale={locale}
       eyebrow={c.eyebrow}
       title={c.title}
       intro={c.intro}

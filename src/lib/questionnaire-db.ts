@@ -18,6 +18,7 @@ export type QuestionnaireDbPayload = {
   interest?: string;
   formattedQa: string;
   answers?: Record<string, string | string[]>;
+  submissionId: string;
 };
 
 let schemaReady: Promise<void> | null = null;
@@ -48,9 +49,17 @@ async function ensureSchema() {
           interest VARCHAR(255),
           answers_text TEXT NOT NULL,
           answers_json JSONB,
+          submission_id UUID UNIQUE,
+          notification_sent_at TIMESTAMPTZ,
+          notification_locked_until TIMESTAMPTZ,
           created_at TIMESTAMPTZ NOT NULL DEFAULT NOW()
         )
       `;
+      // Existing installations predate submission deduplication and notification retries.
+      await sql`ALTER TABLE questionnaire_leads ADD COLUMN IF NOT EXISTS submission_id UUID`;
+      await sql`ALTER TABLE questionnaire_leads ADD COLUMN IF NOT EXISTS notification_sent_at TIMESTAMPTZ`;
+      await sql`ALTER TABLE questionnaire_leads ADD COLUMN IF NOT EXISTS notification_locked_until TIMESTAMPTZ`;
+      await sql`CREATE UNIQUE INDEX IF NOT EXISTS questionnaire_submission_id ON questionnaire_leads (submission_id)`;
       await sql`CREATE INDEX IF NOT EXISTS idx_questionnaire_leads_created_at ON questionnaire_leads (created_at DESC)`;
       await sql`CREATE INDEX IF NOT EXISTS idx_questionnaire_leads_email ON questionnaire_leads (email)`;
       await sql`CREATE INDEX IF NOT EXISTS idx_questionnaire_leads_type ON questionnaire_leads (questionnaire_type)`;
@@ -85,7 +94,7 @@ export async function insertQuestionnaireLead(
         urgency,
         interest,
         answers_text,
-        answers_json
+        answers_json, submission_id
       ) VALUES (
         ${payload.pathId},
         ${payload.questionnaireType},
@@ -98,8 +107,9 @@ export async function insertQuestionnaireLead(
         ${payload.urgency || null},
         ${payload.interest || null},
         ${payload.formattedQa},
-        ${payload.answers ?? null}
+        ${JSON.stringify(payload.answers ?? null)}::jsonb, ${payload.submissionId}::uuid
       )
+      ON CONFLICT (submission_id) DO UPDATE SET submission_id = EXCLUDED.submission_id
       RETURNING id
     `;
     const id = Number(rows[0]?.id);

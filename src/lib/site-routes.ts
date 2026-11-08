@@ -1,6 +1,6 @@
 import type { MetadataRoute } from "next";
 
-import { BLOG_POST_SLUGS } from "@/content/blog-catalog";
+import { BLOG_POST_SLUGS, getBlogView } from "@/content/blog-catalog";
 import type { AppLocale } from "@/lib/i18n-routing";
 import { LOCALES } from "@/lib/i18n-routing";
 import { getSiteUrl } from "@/lib/site-url";
@@ -23,12 +23,15 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
   { path: "/private-ai-solutions", priority: 0.8, changeFrequency: "monthly" },
   { path: "/customer-experience-consulting", priority: 0.78, changeFrequency: "monthly" },
   { path: "/ai-training", priority: 0.84, changeFrequency: "monthly" },
+  { path: "/ai-video-production", priority: 0.75, changeFrequency: "monthly" },
   { path: "/ai-training-materials", priority: 0.84, changeFrequency: "monthly" },
   { path: "/ai-coaching", priority: 0.84, changeFrequency: "monthly" },
   { path: "/sme-ai-workflow", priority: 0.86, changeFrequency: "monthly" },
   { path: "/proposal-to-cash-ai", priority: 0.8, changeFrequency: "monthly" },
   { path: "/case-studies", priority: 0.8, changeFrequency: "monthly" },
   { path: "/services", priority: 0.86, changeFrequency: "weekly" },
+  { path: "/services/snapshot", priority: 0.84, changeFrequency: "monthly" },
+  { path: "/purchase-terms", priority: 0.55, changeFrequency: "yearly" },
   { path: "/products", priority: 0.84, changeFrequency: "weekly" },
   { path: "/session-credits", priority: 0.8, changeFrequency: "monthly" },
   { path: "/faq", priority: 0.8, changeFrequency: "monthly" },
@@ -57,7 +60,6 @@ export const STATIC_LOCALIZED_PATHS = Object.freeze<
 export function buildLocalizedSitemap(): MetadataRoute.Sitemap {
   const siteUrl = getSiteUrl();
   const entries: MetadataRoute.Sitemap = [];
-  const modified = new Date();
 
   for (const locale of LOCALES as unknown as AppLocale[]) {
     for (const row of STATIC_LOCALIZED_PATHS) {
@@ -65,77 +67,22 @@ export function buildLocalizedSitemap(): MetadataRoute.Sitemap {
       const suffix = row.path === "/" ? "" : row.path;
       entries.push({
         url: `${siteUrl}/${locale}${suffix}`,
-        lastModified: modified,
         priority: row.priority,
         changeFrequency: row.changeFrequency,
       });
     }
     for (const slug of BLOG_POST_SLUGS) {
+      const post = getBlogView(slug, locale);
+      const lastModified = post?.modifiedDate ?? post?.date;
       entries.push({
         url: `${siteUrl}/${locale}/blog/${slug}`,
-        lastModified: modified,
+        ...(lastModified ? { lastModified } : {}),
         priority: 0.55,
         changeFrequency: "monthly",
       });
     }
   }
 
-  entries.push(
-    {
-      url: `${siteUrl}/llms.txt`,
-      lastModified: modified,
-      priority: 0.4,
-      changeFrequency: "monthly",
-    },
-    {
-      url: `${siteUrl}/llms-full.txt`,
-      lastModified: modified,
-      priority: 0.35,
-      changeFrequency: "monthly",
-    },
-    {
-      url: `${siteUrl}/llms.zh-hk.txt`,
-      lastModified: modified,
-      priority: 0.4,
-      changeFrequency: "monthly",
-    },
-    {
-      url: `${siteUrl}/ai.txt`,
-      lastModified: modified,
-      priority: 0.3,
-      changeFrequency: "monthly",
-    },
-    {
-      url: `${siteUrl}/llms-eventxp.txt`,
-      lastModified: modified,
-      priority: 0.45,
-      changeFrequency: "monthly",
-    },
-    {
-      url: `${siteUrl}/llms-smartsales.txt`,
-      lastModified: modified,
-      priority: 0.45,
-      changeFrequency: "monthly",
-    },
-    {
-      url: `${siteUrl}/llms-ai-visibility.txt`,
-      lastModified: modified,
-      priority: 0.45,
-      changeFrequency: "monthly",
-    },
-    {
-      url: `${siteUrl}/llms-fitnessxp.txt`,
-      lastModified: modified,
-      priority: 0.45,
-      changeFrequency: "monthly",
-    },
-    {
-      url: `${siteUrl}/llms-corun.txt`,
-      lastModified: modified,
-      priority: 0.45,
-      changeFrequency: "monthly",
-    },
-  );
-
+  // Discovery text files remain available, but are not public page entries.
   return entries;
 }

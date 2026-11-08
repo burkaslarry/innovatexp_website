@@ -1,0 +1,4 @@
+interface:
+  display_name: "InnovateXP Revenue Prospecting"
+  short_description: "Qualify SME leads and manage evidence-based outreach"
+  default_prompt: "Use $innovatexp-revenue-prospecting to find and qualify SMEs in Hong Kong, Southeast Asia and Europe, draft relevant outreach and track commercial outcomes."

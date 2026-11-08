@@ -16,12 +16,9 @@ export const AUTHOR = {
   alumniOf: "Hong Kong Science and Technology Parks Corporation (HKSTP Incubation Alumni)",
 } as const;
 
-/** All verified public profiles for Person / Organization founder sameAs. */
+/** Verified profiles belonging to the person, not the company they founded. */
 export function authorSameAs(): string[] {
-  return [
-    AUTHOR.linkedInPersonal,
-    AUTHOR.linkedInCompany,
-  ];
+  return [AUTHOR.linkedInPersonal];
 }
 
 export function authorCitationLine(locale: "zh" | "en"): string {

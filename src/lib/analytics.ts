@@ -11,6 +11,13 @@ declare global {
   }
 }
 
+/** Non-personal funnel dimensions only. Revenue comes from verified orders. */
+export function trackConversion(event: "product_interest" | "questionnaire_started" | "questionnaire_submitted" | "checkout_started", props: { offer?: string; locale?: string; path?: string } = {}) {
+  if (typeof window === "undefined") return;
+  try { window.gtag?.("event", event, props); } catch { /* Analytics cannot block an action. */ }
+  try { window.plausible?.(event, { props }); } catch { /* No provider is also supported. */ }
+}
+
 /**
  * Fire the primary conversion event to GA4 and/or Plausible when present.
  * Safe no-op if neither script is loaded.
