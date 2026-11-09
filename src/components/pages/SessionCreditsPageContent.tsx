@@ -2,13 +2,20 @@
 
 import Link from "next/link";
 import { SitePageShell } from "@/components/SitePageShell";
+import { CreditCheckoutForm } from "@/components/commerce/CreditCheckoutForm";
 import { getSessionCreditsCopy, sessionCreditPacks, sessionCreditWhatsAppHref } from "@/content/session-credits";
 import { getVibeCodeClinicCopy } from "@/content/vibe-code-clinic";
 import { useLanguage } from "@/app/LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
 import type { PricingLocale } from "@/content/pricing";
 
-export function SessionCreditsPageContent({ variant = "credits" }: { variant?: "credits" | "clinic" } = {}) {
+export function SessionCreditsPageContent({
+  variant = "credits",
+  checkoutEnabled = false,
+}: {
+  variant?: "credits" | "clinic";
+  checkoutEnabled?: boolean;
+} = {}) {
   const { locale } = useLanguage();
   const loc = useLocalizedHref();
   const copy = variant === "clinic" ? getVibeCodeClinicCopy(locale) : getSessionCreditsCopy(locale);
@@ -75,6 +82,8 @@ export function SessionCreditsPageContent({ variant = "credits" }: { variant?: "
           </article>
         ))}
       </div>
+
+      <CreditCheckoutForm locale={locale} packs={packs} enabled={checkoutEnabled} variant={variant} />
 
       <p className="mt-6 text-sm leading-7 text-[color:var(--text-secondary)]">{copy.ctaNote}</p>
       <p className="mt-5 rounded-xl border border-amber-300/70 bg-amber-50 p-4 text-sm leading-7 text-amber-950 dark:border-amber-500/30 dark:bg-amber-950/20 dark:text-amber-100">

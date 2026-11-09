@@ -148,6 +148,21 @@ test("catalogue mapping only sells approved visible offers; unsupported and hidd
   for (const id of ["snapshot", "discovery11To30", "__proto__", "constructor", null, 1]) assert.equal(getCartOffer(id), null);
 });
 
+test("clinic credit packs are purchasable online without an invitation", async () => {
+  for (const offer of ["sessionCredits1000", "sessionCredits2000", "sessionCredits4000"] as const) {
+    assert.equal(OFFERS[offer].qualification, false);
+    assert.ok(cartAvailableOffers().includes(offer));
+  }
+  const input = normalizeCartRequest(payload([{ id: "sessionCredits1000", qty: 1 }]));
+  assert.equal(input.items.length, 1);
+  assert.equal(input.items[0].offer, "sessionCredits1000");
+  assert.equal(input.items[0].invitation, undefined);
+  const order = await createOrder({ id: randomUUID(), offer: "sessionCredits2000", email, locale: "en", live: false }, sql);
+  assert.equal(order.offer, "sessionCredits2000");
+  assert.equal(order.amount, 560_000);
+  assert.equal(order.payment_state, "pending");
+});
+
 test("request validation rejects alias duplicates, quantities, excessive size, mixed modes, and client prices", () => {
   const token = "a".repeat(64);
   const bad = [null, [], {}, { ...payload(), items: [] }, { ...payload(), items: Array(9).fill({ id: "aiReadinessAssessment", qty: 1 }) },

@@ -21,7 +21,7 @@ const CLINIC: Record<AppLocale, ClinicCopy> = {
     buyRule:
       "只可以買 1,000、2,000 或 4,000 點。1,000 點冇贈送；2,000 送 200 點；4,000 送 400 點。點數只喺同一條線用。",
     ctaNote:
-      "撳按鈕會開 WhatsApp 去 9310 3031 掛號：講明邊一條線、想帶走咩，我哋先確認有冇空檔，再開點數同預約時間。即場 walk-in 唔接受。",
+      "可以網上買點數，或撳按鈕去 WhatsApp 9310 3031 掛號。兩種方式都要先講明邊一條線、想帶走咩；我哋確認有冇空檔先安排時間。即場 walk-in 唔接受。",
     careNote: "System Care 月費買嘅係回應時間，唔包門診鐘數；門診按點數另計。Priority 客戶可優先排期。",
     seriesHeading: "一節門診做咩",
     seriesIntro:
@@ -51,7 +51,7 @@ const CLINIC: Record<AppLocale, ClinicCopy> = {
     buyRule:
       "只可以買 1,000、2,000 或 4,000 點。1,000 點沒有贈送；2,000 送 200 點；4,000 送 400 點。點數只用在同一條線。",
     ctaNote:
-      "按下按鈕會開啟 WhatsApp 至 9310 3031 掛號：說明哪一條線、想帶走什麼，我們先確認時段，再開點數與預約時間。不接受現場 walk-in。",
+      "可以在線上購買點數，或按下按鈕前往 WhatsApp 9310 3031 掛號。兩種方式都要先說明哪一條線、想帶走什麼；我們確認時段後才安排。不接受現場 walk-in。",
     careNote: "System Care 月費買的是回應時間，不含門診時數；門診按點數另計。Priority 客戶可優先排期。",
     seriesHeading: "一節門診做什麼",
     seriesIntro:
@@ -81,7 +81,7 @@ const CLINIC: Record<AppLocale, ClinicCopy> = {
     buyRule:
       "Buy 1,000, 2,000, or 4,000 credits only. 1,000 has no bonus; 2,000 includes 200; 4,000 includes 400. Credits stay on one line.",
     ctaNote:
-      "The button opens WhatsApp to 9310 3031: tell us which line and what you want to take away. We confirm a slot first, then activate credits and book the time. No walk-ins.",
+      "Buy credits online, or use the button to reach WhatsApp 9310 3031. Either way, tell us which line and what you want to take away; we confirm a slot before scheduling. No walk-ins.",
     careNote: "System Care buys response time, not clinic hours. Clinic time is billed in credits; Priority clients get first pick of slots.",
     seriesHeading: "What one clinic session covers",
     seriesIntro:
@@ -111,7 +111,7 @@ const CLINIC: Record<AppLocale, ClinicCopy> = {
     buyRule:
       "購入できるのは 1,000、2,000、4,000 クレジットだけです。1,000 に追加なし。2,000 は 200 追加。4,000 は 400 追加。クレジットは同じ業務にのみ使います。",
     ctaNote:
-      "ボタンは WhatsApp 9310 3031 を開きます。どの業務か、何を持ち帰りたいかを伝えてください。空きを確認してから、クレジットと日時を確定します。当日の飛び込みは受け付けません。",
+      "クレジットはオンライン購入も、WhatsApp 9310 3031 での予約もできます。どちらも、どの業務か、何を持ち帰りたいかを先にお知らせください。空きを確認してから日時を決めます。当日の飛び込みは受け付けません。",
     careNote: "System Care は対応時間を買うもので、クリニックの時間は含みません。クリニックはクレジット別会計です。Priority は優先的に枠を確保できます。",
     seriesHeading: "1セッションの内容",
     seriesIntro:
@@ -141,7 +141,7 @@ const CLINIC: Record<AppLocale, ClinicCopy> = {
     buyRule:
       "Kaufbar sind nur 1.000, 2.000 oder 4.000 Credits. 1.000 ohne Bonus; 2.000 mit 200; 4.000 mit 400. Credits gelten nur für dieselbe Linie.",
     ctaNote:
-      "Der Button öffnet WhatsApp an 9310 3031: nennen Sie die Linie und was Sie mitnehmen wollen. Wir bestätigen zuerst einen Termin und schalten danach Credits frei. Ohne Termin keine Teilnahme.",
+      "Credits können online gekauft oder per WhatsApp an 9310 3031 gebucht werden. Nennen Sie in beiden Fällen die Linie und was Sie mitnehmen wollen; wir bestätigen zuerst einen Termin. Ohne Termin keine Teilnahme.",
     careNote: "System Care kauft Reaktionszeit, keine Sprechstunden. Sprechstunden werden in Credits abgerechnet; Priority-Kunden erhalten Termine zuerst.",
     seriesHeading: "Was eine Sitzung umfasst",
     seriesIntro:

@@ -7,6 +7,8 @@ const FILE_EXTENSION = /\.(ico|png|jpg|jpeg|svg|webp|gif|txt|xml|pdf|ttf|otf|wof
 function shouldSkipLocale(pathname: string) {
   return (
     pathname.startsWith("/api") ||
+    pathname === "/admin" ||
+    pathname.startsWith("/admin/") ||
     pathname.startsWith("/_next") ||
     pathname === "/favicon.ico" ||
     pathname === "/robots.txt" ||

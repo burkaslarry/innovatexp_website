@@ -55,7 +55,7 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
     unit: (price) => `每小時 ${price}`,
     prepaid: "一次買入，唔係月費",
     ctaNote:
-      "撳按鈕會開 WhatsApp 去 9310 3031。我哋確認條線已經上線，你先用 FPS 或銀行轉帳付該包價錢。入帳之後先開點數同預約。",
+      "可以信用卡網上付款，或撳按鈕開 WhatsApp 去 9310 3031 用 FPS／銀行轉帳。兩種方式都要先確認條線已經上線；付款後先開點數同預約。",
     seriesHeading: "一節做咩",
     seriesIntro:
       "帶一條已經喺度行緊嘅線，四選一：教材、報價、WhatsApp 跟進、收據分類。一節唔會四條一齊做。",
@@ -94,7 +94,7 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
     unit: (price) => `每小時 ${price}`,
     prepaid: "一次買入，不是月費",
     ctaNote:
-      "按鈕會開啟 WhatsApp 到 9310 3031。我們確認該條線已經上線後，請用 FPS 或銀行轉帳支付該方案。入帳後才開通點數與預約。",
+      "可以用信用卡線上付款，或按按鈕開啟 WhatsApp 至 9310 3031 使用 FPS／銀行轉帳。兩種方式都要先確認該條線已經上線；付款後才開點數與預約。",
     seriesHeading: "一節做什麼",
     seriesIntro:
       "帶一條已經在跑的線，四選一：教材、報價、WhatsApp 跟進、收據分類。一節不會四條一起做。",
@@ -133,7 +133,7 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
     unit: (price) => `${price} per hour`,
     prepaid: "Prepaid pack, not a monthly fee",
     ctaNote:
-      "The button opens WhatsApp to 9310 3031. After we confirm the line is already live, pay that pack by FPS or bank transfer. Credits and the booking open after the payment arrives.",
+      "Pay online by card, or use the button to open WhatsApp 9310 3031 and pay by FPS or bank transfer. Either way, we confirm the line is already live first; credits and the booking open after payment.",
     seriesHeading: "What one session does",
     seriesIntro:
       "Bring one line that is already running. Choose one: courseware, a quotation, WhatsApp follow-up, or receipt sorting. One session does not cover all four.",
@@ -173,7 +173,7 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
     unit: (price) => `1時間 ${price}`,
     prepaid: "前払い。月額ではありません",
     ctaNote:
-      "ボタンは WhatsApp 9310 3031 を開きます。その業務が稼働中だと確認したあと、FPS または銀行振込でそのパックを支払います。着金後にクレジットと予約を開きます。",
+      "カードでオンライン支払い、またはボタンから WhatsApp 9310 3031 を開いて FPS／銀行振込で支払えます。どちらも、その業務が稼働中であることを確認したうえで、入金後にクレジットと予約を開きます。",
     seriesHeading: "1セッションですること",
     seriesIntro:
       "すでに動いている業務を一つ持ってきます。教材、見積、WhatsApp のフォロー、領収書の分類から一つ。1セッションで四つは扱いません。",
@@ -213,7 +213,7 @@ const COPY: Record<AppLocale, SessionCreditsCopy> = {
     unit: (price) => `${price} pro Stunde`,
     prepaid: "Einmalig vorausbezahlt, keine Monatsgebühr",
     ctaNote:
-      "Der Button öffnet WhatsApp an 9310 3031. Nach der Bestätigung, dass die Linie schon läuft, zahlen Sie das Paket per FPS oder Überweisung. Guthaben und Termin öffnen sich nach Zahlungseingang.",
+      "Zahlen Sie online per Karte oder öffnen Sie über den Button WhatsApp 9310 3031 für FPS/Überweisung. In beiden Fällen bestätigen wir zuerst, dass die Linie läuft; Guthaben und Termin öffnen sich nach Zahlungseingang.",
     seriesHeading: "Was eine Session leistet",
     seriesIntro:
       "Bringen Sie eine Linie mit, die schon läuft. Eine von vier: Kursmaterial, Angebot, WhatsApp-Nachfassen oder Belegsortierung. Eine Session deckt nicht alle vier ab.",

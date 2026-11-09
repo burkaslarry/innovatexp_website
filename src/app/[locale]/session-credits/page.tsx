@@ -4,7 +4,9 @@ import { SessionCreditsPageContent } from "@/components/pages/SessionCreditsPage
 import { getSessionCreditsCopy } from "@/content/session-credits";
 import { localeAlternates } from "@/lib/alternate-metadata";
 import { isValidLocale, type AppLocale } from "@/lib/i18n-routing";
+import { cartAvailableOffers } from "@/lib/commerce/config";
 
+export const dynamic = "force-dynamic";
 const OG_IMAGE = "/opengraph-image" as const;
 const siteUrlMeta =
   process.env.NEXT_PUBLIC_SITE_URL || process.env.SITE_URL || "https://www.innovatexp.co";
@@ -43,5 +45,6 @@ export default async function SessionCreditsPage({
 }) {
   const { locale } = await params;
   if (!isValidLocale(locale)) notFound();
-  return <SessionCreditsPageContent key={locale as AppLocale} />;
+  const checkoutEnabled = cartAvailableOffers().includes("sessionCredits1000");
+  return <SessionCreditsPageContent key={locale as AppLocale} checkoutEnabled={checkoutEnabled} />;
 }

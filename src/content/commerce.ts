@@ -13,9 +13,10 @@ export const OFFERS = {
   smartSales: { name: "SmartSales CRM scoped pilot", amount: PRICING.quickCash.smartSalesTrial * 100, mode: "payment", qualification: true },
   websiteStarter: { name: "Website Starter", amount: PRICING.quickCash.websiteStarter * 100, mode: "payment", qualification: true },
   promptTraining: { name: "Prompt training (1 day)", amount: PRICING.quickCash.promptTrainingDay * 100, mode: "payment", qualification: true },
-  sessionCredits1000: { name: "Session credits 1,000", amount: credits[0].priceHkd * 100, mode: "payment", qualification: true },
-  sessionCredits2000: { name: "Session credits 2,000 (+200 bonus)", amount: credits[1].priceHkd * 100, mode: "payment", qualification: true },
-  sessionCredits4000: { name: "Session credits 4,000 (+400 bonus)", amount: credits[2].priceHkd * 100, mode: "payment", qualification: true },
+  /* Prepaid credit packs are sold online for the Vibe Code clinic; no invitation is required. */
+  sessionCredits1000: { name: "Session credits 1,000", amount: credits[0].priceHkd * 100, mode: "payment", qualification: false },
+  sessionCredits2000: { name: "Session credits 2,000 (+200 bonus)", amount: credits[1].priceHkd * 100, mode: "payment", qualification: false },
+  sessionCredits4000: { name: "Session credits 4,000 (+400 bonus)", amount: credits[2].priceHkd * 100, mode: "payment", qualification: false },
   systemCareEssential: { name: "System Care Essential", amount: PRICING.systemCare.essentialMonthly * 100, mode: "subscription", qualification: true },
   systemCareGrowth: { name: "System Care Growth", amount: PRICING.systemCare.growthMonthly * 100, mode: "subscription", qualification: true },
   systemCarePriority: { name: "System Care Priority", amount: PRICING.systemCare.priorityMonthly * 100, mode: "subscription", qualification: true },

@@ -6,6 +6,7 @@ export default function robots(): MetadataRoute.Robots {
 
   const allowAll = {
     allow: "/" as const,
+    disallow: ["/admin", "/admin/"] as string[],
   };
 
   return {
