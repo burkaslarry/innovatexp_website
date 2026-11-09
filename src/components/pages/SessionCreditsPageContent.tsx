@@ -3,14 +3,15 @@
 import Link from "next/link";
 import { SitePageShell } from "@/components/SitePageShell";
 import { getSessionCreditsCopy, sessionCreditPacks, sessionCreditWhatsAppHref } from "@/content/session-credits";
+import { getVibeCodeClinicCopy } from "@/content/vibe-code-clinic";
 import { useLanguage } from "@/app/LanguageContext";
 import { useLocalizedHref } from "@/hooks/useLocalizedHref";
 import type { PricingLocale } from "@/content/pricing";
 
-export function SessionCreditsPageContent() {
+export function SessionCreditsPageContent({ variant = "credits" }: { variant?: "credits" | "clinic" } = {}) {
   const { locale } = useLanguage();
   const loc = useLocalizedHref();
-  const copy = getSessionCreditsCopy(locale);
+  const copy = variant === "clinic" ? getVibeCodeClinicCopy(locale) : getSessionCreditsCopy(locale);
   const packs = sessionCreditPacks(locale as PricingLocale);
 
   return (
@@ -79,6 +80,9 @@ export function SessionCreditsPageContent() {
       <p className="mt-5 rounded-xl border border-amber-300/70 bg-amber-50 p-4 text-sm leading-7 text-amber-950 dark:border-amber-500/30 dark:bg-amber-950/20 dark:text-amber-100">
         {copy.boundary}
       </p>
+      {copy.careNote ? (
+        <p className="mt-4 text-sm leading-7 text-[color:var(--text-secondary)]">{copy.careNote}</p>
+      ) : null}
       <p className="mt-4 text-sm text-[color:var(--text-secondary)]">
         {copy.notThis}{" "}
         <Link href={loc("/bookme")} className="font-semibold text-[color:var(--heading-foreground)] underline underline-offset-4">

@@ -19,6 +19,8 @@ export type SessionCreditsCopy = {
   unit: (price: string) => string;
   prepaid: string;
   ctaNote: string;
+  /** Optional extra boundary line, e.g. how a retainer relates to these hours. */
+  careNote?: string;
   seriesHeading: string;
   seriesIntro: string;
   steps: string[];
