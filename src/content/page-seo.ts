@@ -24,14 +24,14 @@ function pick(locale: AppLocale, pair: LocalePair): PageSeo {
 
 const HOME: LocalePair = {
   zh: {
-    title: "AI 商業顧問｜香港中小企業務聽診｜InnovateXP",
+    title: "香港 AI 顧問｜ai 顧問公司｜InnovateXP",
     description:
-      "InnovateXP 由 Larry Lo 創立，幫香港 3–30 人中小企理順查詢、報價同交接。先做免費 30 分鐘業務聽診，再按需要落地 AI、CRM 或自動化。",
+      "搵香港 AI 顧問／ai 顧問公司？InnovateXP 幫 3–30 人中小企先聽診一條查詢或報價流程。免費 30 分鐘起步；Snapshot／Discovery 再書面落地。預約 bookme。",
   },
   en: {
-    title: "AI business consultant | Hong Kong SMEs | InnovateXP",
+    title: "Hong Kong AI consultant | AI consulting firm | InnovateXP",
     description:
-      "Larry Lo helps Hong Kong teams of 3–30 clarify enquiries, quotes and handoffs. Start with a free 30-minute diagnosis before AI, CRM or automation.",
+      "Looking for a Hong Kong AI consultant or AI consulting firm? InnovateXP diagnoses one enquiry or quote workflow for teams of 3–30. Free 30 minutes; Snapshot/Discovery next. Book at bookme.",
   },
 };
 
@@ -124,18 +124,18 @@ const FITNESSXP: LocalePair = {
 
 const AI_CONSULTING: LocalePair = {
   zh: {
-    title: "AI 商業顧問｜30 分鐘業務聽診｜InnovateXP",
+    title: "香港 AI 顧問公司｜業務聽診｜InnovateXP",
     description:
-      "Larry Lo 幫香港 3–30 人團隊理順流程，再決定 AI、CRM 或自動化。首次 30 分鐘聽診免費；付費 Snapshot HK$3,880，Discovery HK$6,880 起。",
-    ogTitle: "AI 商業顧問｜30 分鐘業務聽診｜InnovateXP",
-    ogDescription: "先聽診一條流程，再決定使唔使落地 AI。Snapshot HK$3,880 起。",
+      "香港 AI 顧問公司 InnovateXP：幫 3–30 人團隊先聽診一條流程，再決定 AI、CRM 或自動化。免費 30 分鐘；Snapshot HK$3,880，Discovery HK$6,880 起。",
+    ogTitle: "香港 AI 顧問公司｜業務聽診｜InnovateXP",
+    ogDescription: "搵 ai 顧問公司？先聽診一條流程。Snapshot／Discovery 分階；預約 bookme。",
   },
   en: {
-    title: "AI business consultant | Hong Kong SMEs | InnovateXP",
+    title: "Hong Kong AI consulting firm | Workflow diagnosis | InnovateXP",
     description:
-      "Larry Lo helps Hong Kong SMEs fix one bottleneck, then put AI to work. Agilizing: 10 days to 3 hours. Snapshot HK$3,880; Discovery from HK$6,880.",
-    ogTitle: "AI Automation Consulting for Hong Kong SMEs | InnovateXP",
-    ogDescription: "One workflow first. Snapshot HK$3,880; Discovery from HK$6,880.",
+      "Hong Kong AI consulting firm InnovateXP: diagnose one workflow for teams of 3–30 before AI, CRM or automation. Free 30 minutes; Snapshot HK$3,880; Discovery from HK$6,880.",
+    ogTitle: "Hong Kong AI consulting firm | InnovateXP",
+    ogDescription: "Need an AI consulting firm? Start with one workflow. Snapshot/Discovery next; book at bookme.",
   },
 };
 
@@ -271,9 +271,9 @@ const SME_AUTOMATION: LocalePair = {
 
 const HOME_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
-    title: "AI 商業顧問｜香港中小企業流程診斷｜InnovateXP",
+    title: "香港 AI 顧問｜AI 顧問公司｜InnovateXP",
     description:
-      "InnovateXP 協助香港 3–30 人團隊理順查詢、報價及交接。先與 Larry Lo 進行免費 30 分鐘業務診斷，再按需要導入 AI、CRM 或自動化。",
+      "找香港 AI 顧問／AI 顧問公司？InnovateXP 協助 3–30 人中小企業先診斷一條查詢或報價流程。免費 30 分鐘起步；Snapshot／Discovery 再書面落地。預約 bookme。",
   },
   ja: {
     title: "香港SME向けAI自動化コンサル｜InnovateXP",
@@ -307,9 +307,9 @@ export function fitnessXpSeo(locale: AppLocale): PageSeo {
 }
 const AI_CONSULTING_LOCALE: Partial<Record<AppLocale, PageSeo>> = {
   "zh-tw": {
-    title: "專屬AI企業顧問｜香港中小企業流程診斷｜InnovateXP",
+    title: "香港 AI 顧問公司｜業務診斷｜InnovateXP",
     description:
-      "AI 商業顧問 Larry Lo 協助 3–30 人公司處理業務瓶頸。Agilizing 教材由 10 日縮至 3 小時。診斷 HK$3,880 起，Discovery HK$6,880 起。",
+      "香港 AI 顧問公司 InnovateXP：協助 3–30 人團隊先診斷一條流程，再決定 AI、CRM 或自動化。免費 30 分鐘；Snapshot HK$3,880，Discovery HK$6,880 起。",
   },
   ja: {
     title: "香港SMEの専属AI顧問｜業務診断｜InnovateXP",

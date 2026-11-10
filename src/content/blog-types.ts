@@ -51,6 +51,8 @@ export type LocalizedBlogPost = {
 export type PdpoPost = {
   slug: string;
   date: string;
+  /** Set only when an editorial revision is actually tracked. */
+  modifiedDate?: string;
   order: number;
   locales: Record<AppLocale, BlogLocaleCopy>;
 };

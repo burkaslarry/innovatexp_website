@@ -14,10 +14,10 @@
     "partnership": "合作夥伴"
   },
   "hero": {
-    "eyebrow": "AI 商業顧問 Larry Lo｜InnovateXP",
-    "title": "香港 3–30 人團隊的 AI 商業顧問",
-    "description": "InnovateXP 協助香港 3–30 人中小企業先整理流程，再落地 AI。善敏教材由 10 日縮至 3 小時，時間縮短。",
-    "fitAudience": "適合培訓中心、社福機構、專業服務與網店。若要專屬 AI 企業顧問，而不是一開始購買系統，可以由業務診斷開始。",
+    "eyebrow": "香港 AI 顧問 Larry Lo｜InnovateXP",
+    "title": "香港 AI 顧問／AI 顧問公司：先診斷一條流程",
+    "description": "找香港 AI 顧問或 AI 顧問公司？InnovateXP 協助 3–30 人中小企業先釐清查詢、報價或交接漏洞，再決定 Snapshot、Discovery 或暫不購買系統。免費 30 分鐘由 bookme 開始。",
+    "fitAudience": "適合培訓中心、健身／工作室、商會會員、專業服務與餐飲零售。若要 AI 顧問而不是一開始購買系統，可由業務診斷開始。",
     "primaryCta": "預約 30 分鐘業務聽診",
     "secondaryCta": "WhatsApp 直接問",
     "trustPoints": [
@@ -32,7 +32,7 @@
     ],
     "diagnosticOutput": "一條看得清、跟得到、有人負責的 workflow",
     "diagnosticCaption": "先看清漏洞，再決定 AI、CRM 或自動化幫不幫得上。",
-    "imageAlt": "Larry Lo｜InnovateXP AI 商業顧問"
+    "imageAlt": "Larry Lo，InnovateXP 香港 AI 顧問"
   },
   "problem": {
     "eyebrow": "你係咪都有呢個問題",

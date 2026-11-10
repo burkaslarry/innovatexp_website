@@ -25,13 +25,14 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
   {
     slug: "how-to-choose-ai-consulting-hong-kong",
     date: "2026-10-16",
+    modifiedDate: "2026-11-10",
     order: 11,
     locales: {
       "zh-hk": copy("zh-hk", {
-        title: "香港 AI 專業顧問服務點揀？中小企 7 條問題",
-        excerpt: "揀 AI 專業顧問服務，先睇會唔會搵業務樽頸，同肯唔肯講你暫時唔使買系統。",
+        title: "點揀香港 AI 顧問／ai 顧問公司？中小企 7 條問題",
+        excerpt: "揀香港 AI 顧問或 ai 顧問公司，先睇會唔會搵業務樽頸，同肯唔肯講你暫時唔使買系統。",
         directAnswer:
-          "揀 AI 專業顧問服務，唔好只睇識幾多工具。要睇對方會唔會先搵業務樽頸，交唔交到可落地流程，同肯唔肯講你暫時唔使買系統。",
+          "揀香港 AI 顧問／ai 顧問公司，唔好只睇識幾多工具。要睇對方會唔會先搵業務樽頸、交唔交到可落地流程、肯唔肯講你暫時唔使買系統。下一步可以係 Snapshot、Discovery，或先去 bookme 做免費 30 分鐘聽診。",
         sections: [
           {
             heading: "香港 AI 人工智能公司大致有邊三類？",
@@ -78,10 +79,10 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         ],
       }),
       "zh-tw": copy("zh-tw", {
-        title: "香港 AI 專業顧問服務怎麼挑？中小企業 7 個問題",
-        excerpt: "挑選 AI 專業顧問服務，先看對方會不會找出業務瓶頸，以及肯不肯說你暫時不必買系統。",
+        title: "怎麼挑香港 AI 顧問／AI 顧問公司？中小企業 7 個問題",
+        excerpt: "挑選香港 AI 顧問或 AI 顧問公司，先看對方會不會找出業務瓶頸，以及肯不肯說你暫時不必買系統。",
         directAnswer:
-          "挑選 AI 專業顧問服務，不要只看對方會用多少工具。要看會不會先找出業務瓶頸、交不交得出可落地的流程，以及肯不肯說你暫時不必買系統。",
+          "挑選香港 AI 顧問／AI 顧問公司，不要只看對方會用多少工具。要看會不會先找出業務瓶頸、交不交得出可落地的流程，以及肯不肯說你暫時不必買系統。下一步可以是 Snapshot、Discovery，或先到 bookme 做免費 30 分鐘診斷。",
         sections: [
           {
             heading: "香港 AI 人工智能公司大致有哪三類？",
@@ -112,10 +113,10 @@ export const PDPO_BLOG_ADVISORY: PdpoPost[] = [
         ],
       }),
       en: copy("en", {
-        title: "How should a Hong Kong SME choose AI consulting?",
-        excerpt: "Choose AI consulting by whether they find the bottleneck and will say if you should not buy a system yet.",
+        title: "How to choose a Hong Kong AI consultant or AI consulting firm",
+        excerpt: "Choose a Hong Kong AI consultant by whether they find the bottleneck and will say if you should not buy a system yet.",
         directAnswer:
-          "Choose an AI consulting service by the bottleneck they find, the workflow they can hand over, and whether they will say you should not buy a system yet. Tool fluency alone is a weak test.",
+          "Choose a Hong Kong AI consultant or AI consulting firm by the bottleneck they find, the workflow they can hand over, and whether they will say you should not buy yet. Next steps can be Snapshot, Discovery, or a free 30-minute start on bookme—not tool fluency alone.",
         sections: [
           {
             heading: "What are the three kinds of Hong Kong AI companies?",

@@ -447,45 +447,58 @@ export const WORKFLOW_BLOG_POSTS: WorkflowBlogPost[] = [
       faqs: [{ question: "Sollten wir unser Enterprise-CRM ersetzen?", answer: "Nicht unbedingt. Konfiguration, Verantwortung und Nutzung zuerst prüfen. Wiederverwendung kann Doppelarbeit vermeiden; niedrigere Kosten sind vor Prüfung nicht zugesagt." }],
     },
   }),
-  post("geo-aeo-seo-measurement-limits", "ai-visibility", ["googleAi", "googleUpdates"], ["visibility"], {
+  (() => {
+    const geo = post("geo-aeo-seo-measurement-limits", "ai-visibility", ["googleAi", "googleUpdates"], ["visibility", "discovery"], {
     "zh-hk": {
-      title: "GEO、AEO、SEO：邊啲量得到，邊啲唔可以保證？",
-      excerpt: "可以改善可讀、可索引同內容證據；唔可以承諾排名、AI 引用或每次答案都出現。",
-      directAnswer: "可以量度索引狀態、搜尋曝光、點擊、相關查詢同查詢轉化，亦可以有紀錄咁抽查 AI 答案；但 GEO、AEO 或 SEO 都唔能夠保證排名或 AI 引用。llms.txt 同 schema 唔係引用入場券。",
-      keyTakeaways: ["先做好可抓取、可索引、有證據嘅正文。", "抽查 AI 答案要記錄日期、問題、地區同來源。", "FAQ 仍可幫讀者，但 Google FAQ 複合式搜尋結果已停止。"],
+      title: "香港 AI 顧問點睇 GEO／AEO？邊啲能量度、點開始",
+      excerpt: "畀想改善搜尋同 AI 可見度嘅香港中小企：能量度嘅係曝光同點擊；唔保證排名或 AI 引用。起步用 Snapshot／Discovery，聯絡去 bookme。",
+      directAnswer: "如果你係香港 3–30 人團隊，想搵 AI 顧問搞清 GEO／AEO／SEO，可以量度索引、曝光、點擊同有紀錄嘅 AI 抽查；唔可以保證排名或引用。先對齊服務頁同作者證據，再決定 Snapshot 或 Discovery；聯絡由 bookme 或／ai-consulting 開始。llms.txt 同 schema 唔係引用入場券。",
+      keyTakeaways: ["先做好可抓取、可索引、有證據嘅正文，再談 GEO。", "抽查 AI 答案要記錄日期、問題、地區同來源。", "下一步係 Snapshot／Discovery 或 bookme，唔係保證上榜。"],
       sections: [
-        section("先分清名詞同可控制嘅工作", "SEO 聚焦搜尋可見度；AEO 常用嚟描述易於回答問題嘅內容；GEO 常用嚟描述生成式答案入面嘅可見度。呢啲名稱唔係認證，亦唔代表有特別排名資格。先確保主要答案、服務範圍、作者同來源以 HTML 正文呈現，唔靠登入或按鈕先見到。", "Google 官方指引話，AI 功能冇額外技術要求，唔需要特別 AI 檔案或 schema。可索引同符合摘要展示要求只係資格，唔等於保證出現。結構化資料要同頁面一致，唔好加未展示或未證實嘅聲明。"),
+        section("呢篇畀邊個、點開始", "適合已經有網站、想改善買家問題可見度，又唔想買「保證 AI 引用」嘅香港中小企。先核對／ai-consulting 服務範圍：一條流程、負責人、可量度基準。免費 30 分鐘聽診用 bookme；需要書面診斷先考慮 Snapshot，要規劃 30／60／90 日先考慮 Discovery。", "SEO 聚焦搜尋可見度；AEO 常用嚟描述易於回答問題嘅內容；GEO 常用嚟描述生成式答案入面嘅可見度。呢啲名稱唔係認證。主要答案、服務範圍、作者同來源要以 HTML 正文呈現。Google 官方指引話 AI 功能冇額外技術要求，唔需要特別 AI 檔案或 schema。"),
         section("一張可重複嘅量度表", "用 Search Console 記錄目標頁面、查詢、日期範圍、曝光同點擊，再用網站分析記錄有意義嘅查詢或預約。Google AI 功能流量包含喺 Web 搜尋報表，唔應將整份報表增長都歸因於 AI。改內容、活動宣傳同季節因素要一齊記低。", "AI 答案抽查固定一組有代表性問題，記錄日期、平台、地區、登入狀態、答案同可點擊來源。一次出現或冇出現只係觀察；不同版本、個人化同隨機性令抽查唔等於市場佔有率。"),
-        section("FAQ 同引用承諾要更新", "截至本文發布，Google 文件更新指出 FAQ 複合式搜尋結果由 2026 年 5 月 7 日停止出現。保留有用 FAQ 可以幫讀者理解，但唔應再用 FAQ rich results 作服務承諾。", "llms.txt 可以作資訊整理，schema 可以描述真實頁面，但兩者都唔保證 AI 引用、排名或流量。服務驗收應寫可交付項目，例如正文修訂、來源核對、索引檢查同量度記錄，而唔係保證出現喺某個答案。"),
+        section("FAQ、引用承諾同點聯絡", "截至本文修訂，Google 文件更新指出 FAQ 複合式搜尋結果由 2026 年 5 月 7 日停止出現。保留有用 FAQ 可以幫讀者，但唔應再用 FAQ rich results 作服務承諾。llms.txt 同 schema 可以整理真實頁面，但唔保證引用、排名或流量。", "驗收應寫可交付項目：正文修訂、來源核對、索引檢查同量度記錄。想帶一條真實流程傾，去 bookme；想對照顧問範圍，睇／ai-consulting。"),
       ],
       limitations: "搜尋同 AI 平台規則會改，量度可能受私隱設定、追蹤缺漏及樣本偏差影響。本文使用所列官方 Google 文件，唔代表其他 AI 平台採用相同報表或規則。",
-      faqs: [{ question: "加 schema 就會畀 AI 引用嗎？", answer: "唔會有呢個保證。只標示頁面上真實可見嘅內容，改善可理解性；平台仍自行決定索引、展示同引用。" }],
+      faqs: [
+        { question: "加 schema 就會畀 AI 引用嗎？", answer: "唔會有呢個保證。只標示頁面上真實可見嘅內容；平台仍自行決定索引、展示同引用。" },
+        { question: "GEO 顧問點樣開始？", answer: "帶網站同三至五條買家問題，先做免費 30 分鐘聽診（bookme）。需要書面診斷先 Snapshot；需要 30／60／90 日計劃先 Discovery。" },
+        { question: "可唔可以保證上 AI 答案？", answer: "唔可以。顧問交付係內容、量度同流程邊界，唔係排名或引用保證。" },
+      ],
     },
     "zh-tw": {
-      title: "GEO、AEO、SEO：哪些可以量度，哪些不能保證？",
-      excerpt: "可改善內容可讀性、索引與證據，但不能承諾排名、AI 引用或每次都出現。",
-      directAnswer: "可以量度索引、搜尋曝光、點擊、相關查詢及轉化，也能有紀錄地抽查 AI 回答；但 GEO、AEO、SEO 都不能保證排名或引用。llms.txt 和 schema 不是引用資格證明。",
-      keyTakeaways: ["先提供可抓取、可索引且有證據的正文。", "AI 抽查要記錄日期、問題、地區及來源。", "FAQ 仍能幫助讀者，但 Google FAQ 複合式搜尋結果已停止。"],
+      title: "香港 AI 顧問如何看待 GEO／AEO？能量度什麼、如何開始",
+      excerpt: "給想改善搜尋與 AI 可見度的香港中小企業：能量度的是曝光與點擊；不保證排名或 AI 引用。起步用 Snapshot／Discovery，聯絡走 bookme。",
+      directAnswer: "若你是香港 3–30 人團隊，想找 AI 顧問釐清 GEO／AEO／SEO，可以量度索引、曝光、點擊與有紀錄的 AI 抽查；不能保證排名或引用。先對齊服務頁與作者證據，再決定 Snapshot 或 Discovery；聯絡由 bookme 或／ai-consulting 開始。llms.txt 與 schema 不是引用資格證明。",
+      keyTakeaways: ["先提供可抓取、可索引且有證據的正文，再談 GEO。", "AI 抽查要記錄日期、問題、地區及來源。", "下一步是 Snapshot／Discovery 或 bookme，不是保證上榜。"],
       sections: [
-        section("區分名稱與可控制的工作", "SEO 著重搜尋可見度；AEO 常指容易回答問題的內容；GEO 常指生成式回答中的可見度。這些名稱不是認證或特殊排名資格。主要答案、範圍、作者與來源應直接出現在 HTML 正文，不依賴登入或點擊。", "Google 官方說明 AI 功能沒有額外技術要求，不需特別 AI 檔案或 schema。可索引與符合摘要要求只是資格，不保證展示。結構化資料應與可見頁面一致，不添加未展示或未證實的聲明。"),
-        section("建立可重複的量度表", "以 Search Console 記錄目標頁面、查詢、日期區間、曝光與點擊，再以網站分析追蹤有意義的查詢或預約。Google AI 功能流量包含於 Web 搜尋報表，不能把全部增長都歸因於 AI。內容變更、宣傳及季節因素也應記錄。", "用固定的一組代表性問題抽查 AI，記下日期、平台、地區、登入狀態、回答和可點擊來源。出現一次或沒有出現只是觀察；版本、個人化及隨機性使抽查不等於市場占有率。"),
-        section("更新 FAQ 與引用承諾", "截至發布時，Google 文件更新指出 FAQ 複合式搜尋結果自 2026 年 5 月 7 日停止出現。有用的 FAQ 仍可保留，但不能再將 FAQ rich results 作為服務承諾。", "llms.txt 可整理資訊，schema 可描述真實頁面，但兩者都不保證引用、排名或流量。驗收應列出正文修訂、來源核對、索引檢查與量度紀錄，而不是承諾出現在特定回答。"),
+        section("這篇給誰、如何開始", "適合已有網站、想改善買家問題可見度，又不想購買「保證 AI 引用」的香港中小企業。先核對／ai-consulting 服務範圍。免費 30 分鐘診斷用 bookme；需要書面診斷再考慮 Snapshot，要規劃 30／60／90 日再考慮 Discovery。", "SEO 著重搜尋可見度；AEO 常指易於回答的內容；GEO 常指生成式回答中的可見度。這些名稱不是認證。主要答案應出現在 HTML 正文。Google 說明 AI 功能沒有額外技術要求。"),
+        section("建立可重複的量度表", "以 Search Console 記錄目標頁面、查詢、日期區間、曝光與點擊，再以網站分析追蹤有意義的查詢或預約。Google AI 功能流量包含於 Web 搜尋報表，不能把全部增長都歸因於 AI。", "用固定的一組代表性問題抽查 AI，記下日期、平台、地區、登入狀態、回答和可點擊來源。出現一次或沒有出現只是觀察。"),
+        section("FAQ、引用承諾與如何聯絡", "截至修訂時，Google 文件更新指出 FAQ 複合式搜尋結果自 2026 年 5 月 7 日停止出現。有用的 FAQ 仍可保留，但不能再將 FAQ rich results 作為服務承諾。", "驗收應列出正文修訂、來源核對、索引檢查與量度紀錄。想討論一條真實流程，前往 bookme；要對照顧問範圍，見／ai-consulting。"),
       ],
       limitations: "平台規則可能改變，私隱設定、追蹤缺漏及抽樣偏差會影響量度。本文引用所列 Google 官方文件，不能推定其他 AI 平台有相同規則或報表。",
-      faqs: [{ question: "加入 schema 就能取得 AI 引用嗎？", answer: "不能保證。只標示頁面上真實可見的內容；平台仍自行決定索引、展示與引用。" }],
+      faqs: [
+        { question: "加入 schema 就能取得 AI 引用嗎？", answer: "不能保證。只標示頁面上真實可見的內容；平台仍自行決定索引、展示與引用。" },
+        { question: "GEO 顧問要如何開始？", answer: "帶網站與三至五條買家問題，先做免費 30 分鐘診斷（bookme）。需要書面診斷再 Snapshot；需要 30／60／90 日計畫再 Discovery。" },
+        { question: "可以保證出現在 AI 回答嗎？", answer: "不可以。顧問交付是內容、量度與流程邊界，不是排名或引用保證。" },
+      ],
     },
     en: {
-      title: "GEO, AEO and SEO: what is measurable, and what is not guaranteed?",
-      excerpt: "Improve readable, indexable, evidenced content. Do not promise rankings, AI citations or appearance in every answer.",
-      directAnswer: "You can measure indexing, search impressions, clicks, relevant queries and enquiries, and keep a structured sample of AI answers. None of GEO, AEO or SEO guarantees rankings or citations. Neither llms.txt nor schema is a citation ticket.",
-      keyTakeaways: ["Start with crawlable, indexable main content backed by evidence.", "Log date, prompt, region and sources when sampling AI answers.", "Useful FAQs still help readers; Google FAQ rich results have stopped."],
+      title: "GEO/AEO with a Hong Kong AI consultant: what to measure, how to start",
+      excerpt: "For Hong Kong SMEs improving search and AI visibility: measure impressions and clicks; do not promise rankings or citations. Start with Snapshot/Discovery; contact via bookme.",
+      directAnswer: "If you are a Hong Kong team of 3–30 looking for an AI consultant on GEO/AEO/SEO, you can measure indexing, impressions, clicks and logged AI samples—not rankings or citations. Align service pages and author evidence, then choose Snapshot or Discovery. Start on bookme or /ai-consulting. Neither llms.txt nor schema is a citation ticket.",
+      keyTakeaways: ["Make crawlable, evidenced main content before talking GEO.", "Log date, prompt, region and sources when sampling AI answers.", "Next step is Snapshot/Discovery or bookme—not a ranking promise."],
       sections: [
-        section("Separate terminology from work you control", "SEO concerns search visibility. AEO commonly describes answer-oriented content; GEO commonly describes visibility in generated answers. These labels are not certifications or special ranking eligibility. Put the answer, service boundaries, author and sources in the HTML body, available without login or a button click.", "Google says its AI features have no additional technical requirements and do not require special AI files or schema. Being indexed and eligible for a snippet is a prerequisite, not an appearance guarantee. Structured data should match visible content, not introduce hidden or unverified claims."),
-        section("Keep a repeatable measurement sheet", "Record target pages, queries, date ranges, impressions and clicks in Search Console. Use site analytics for meaningful enquiries or bookings. Google AI-feature traffic is included in the Web search report; do not attribute all report growth to AI. Log content changes, campaigns and seasonality as alternative explanations.", "Sample a fixed set of representative questions and record date, platform, region, login state, answer and clickable sources. One appearance or absence is only an observation. Model versions, personalisation and variability mean a sample is not a market-share measurement."),
-        section("Update FAQ and citation promises", "At publication, Google's documentation updates state that FAQ rich results stopped appearing in Google Search from May 7, 2026. Keep useful FAQs for readers, but do not sell FAQ rich-result appearance as an outcome.", "An llms.txt file can organise information and schema can describe a real page, but neither guarantees citations, rankings or traffic. Define acceptance around deliverables: content revisions, source checks, indexing checks and measurement records, not guaranteed inclusion in a particular answer."),
+        section("Who this is for, and how to start", "This fits Hong Kong SMEs that already have a site, want clearer answers to buyer questions, and will not buy a “guaranteed AI citation” pitch. Review /ai-consulting: one workflow, an owner, a measurable baseline. Use bookme for a free 30-minute conversation; Snapshot for written diagnosis; Discovery for a 30/60/90-day plan.", "SEO concerns search visibility. AEO commonly describes answer-oriented content; GEO commonly describes visibility in generated answers. These labels are not certifications. Put answers, boundaries, author and sources in the HTML body. Google says its AI features need no special AI files or schema."),
+        section("Keep a repeatable measurement sheet", "Record target pages, queries, date ranges, impressions and clicks in Search Console. Use site analytics for meaningful enquiries or bookings. Google AI-feature traffic is included in the Web search report; do not attribute all report growth to AI. Log content changes, campaigns and seasonality.", "Sample a fixed set of representative questions and record date, platform, region, login state, answer and clickable sources. One appearance or absence is only an observation."),
+        section("FAQ promises and how to contact", "At revision, Google's documentation updates state that FAQ rich results stopped appearing from May 7, 2026. Keep useful FAQs for readers; do not sell FAQ rich-result appearance. llms.txt and schema can describe a real page but neither guarantees citations, rankings or traffic.", "Define acceptance around content revisions, source checks, indexing checks and measurement records. Bring one real workflow via bookme; compare consulting scope on /ai-consulting."),
       ],
       limitations: "Search and AI platform rules change. Privacy settings, tracking gaps and sampling bias affect measurement. The linked official Google guidance does not establish identical reporting or rules for other AI platforms.",
-      faqs: [{ question: "Will adding schema earn an AI citation?", answer: "There is no such guarantee. Mark up truthful visible content to clarify it; platforms still decide indexing, display and citation independently." }],
+      faqs: [
+        { question: "Will adding schema earn an AI citation?", answer: "There is no such guarantee. Mark up truthful visible content; platforms still decide indexing, display and citation." },
+        { question: "How do we start GEO work with a consultant?", answer: "Bring the site and three to five buyer questions to a free 30-minute conversation on bookme. Use Snapshot for written diagnosis; Discovery for a 30/60/90-day plan." },
+        { question: "Can you guarantee appearance in AI answers?", answer: "No. Consulting delivers content, measurement and workflow boundaries—not ranking or citation guarantees." },
+      ],
     },
     ja: {
       title: "GEO・AEO・SEO：測れること、保証できないこと",
@@ -513,7 +526,9 @@ export const WORKFLOW_BLOG_POSTS: WorkflowBlogPost[] = [
       limitations: "Regeln von Such- und KI-Plattformen ändern sich. Datenschutzeinstellungen, Trackinglücken und Stichprobenverzerrung beeinflussen Messungen. Die verlinkten Google-Quellen belegen keine identischen Regeln für andere KI-Plattformen.",
       faqs: [{ question: "Sichert Schema ein KI-Zitat?", answer: "Nein. Kennzeichnen Sie wahrheitsgemäße sichtbare Inhalte. Plattformen entscheiden weiterhin selbst über Indexierung, Anzeige und Quellenangaben." }],
     },
-  }),
+  });
+    return { ...geo, modifiedDate: "2026-11-10" };
+  })(),
   post("phased-legacy-spreadsheet-migration", "workflow-sop", ["workflow", "crm", "governance"], ["workflow", "crm"], {
     "zh-hk": {
       title: "舊 Excel 點分階段搬遷：唔使一晚換晒所有表",

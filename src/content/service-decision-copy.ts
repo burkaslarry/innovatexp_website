@@ -97,8 +97,8 @@ type ConsultingCopy = {
 
 const CONSULTING_COPY: Record<AppLocale, ConsultingCopy> = {
   en: {
-    title: "AI consulting starts with your workflow",
-    answer: "InnovateXP helps SMEs identify one sales or operations bottleneck, clarify ownership and establish a baseline before deciding whether AI, automation or a better manual process is appropriate.",
+    title: "Hong Kong AI consulting firm: one workflow first",
+    answer: "Looking for a Hong Kong AI consultant or AI consulting firm? InnovateXP helps teams of 3–30 name one sales or operations bottleneck, ownership and a baseline, then decide Snapshot, Discovery, a better manual process—or not buying yet. Book a free 30 minutes on bookme.",
     fit: "Teams with a recurring delay, lost enquiry or unclear handoff, and an owner ready to review a real example.",
     unfit: "Not a fit for guaranteed revenue, an instant AI rollout or buying software without reviewing the workflow.",
     free: "Start with a free 30-minute conversation about one workflow. It checks fit and a possible next step; a written diagnosis is separate paid work.",
@@ -110,8 +110,8 @@ const CONSULTING_COPY: Record<AppLocale, ConsultingCopy> = {
     costQuestion: "How much does paid diagnosis cost?", outcomeQuestion: "Does a case study predict our results?", outcomeAnswer: "No. Agilizing's owner confirmed training-material production fell from 10 days to 3 hours in January–February 2026. That implementation result is not a Snapshot deliverable or a promise for another team.",
   },
   "zh-hk": {
-    title: "AI 顧問：先睇流程，再揀工具",
-    answer: "InnovateXP 幫中小企找出一條銷售或營運流程嘅樽頸，定清負責人同起始數字，再判斷應該用 AI、自動化，定係先改善人手做法。",
+    title: "香港 AI 顧問公司：先聽診一條流程",
+    answer: "搵香港 AI 顧問／ai 顧問公司？InnovateXP 幫 3–30 人中小企找出一條銷售或營運樽頸，定清負責人同起始數字，再決定 Snapshot、Discovery、只改人手做法，定暫時唔買系統。免費 30 分鐘由 bookme 開始。",
     fit: "經常慢報價、漏查詢或交接唔清楚，而且有負責人願意用真實例子一齊覆核嘅團隊。",
     unfit: "唔適合要求保證收入、即刻全公司上 AI，或未睇流程就決定買系統嘅需求。",
     free: "先用免費 30 分鐘傾一條流程，確認適唔適合同下一步。書面診斷係另一項付費工作。",
@@ -123,8 +123,8 @@ const CONSULTING_COPY: Record<AppLocale, ConsultingCopy> = {
     costQuestion: "付費診斷幾多錢？", outcomeQuestion: "案例成效可唔可以當我哋嘅預測？", outcomeAnswer: "唔可以。Agilizing 善敏業主確認，2026 年 1–2 月教材製作由 10 日縮至 3 小時。呢個係實施結果，唔係 Snapshot 交付，亦唔係對其他團隊嘅承諾。",
   },
   "zh-tw": {
-    title: "AI 顧問：先釐清流程，再選工具",
-    answer: "InnovateXP 協助中小企業找出一條銷售或營運流程的瓶頸，釐清負責人與起始指標，再判斷適合導入 AI、自動化，或先改善人工流程。",
+    title: "香港 AI 顧問公司：先診斷一條流程",
+    answer: "找香港 AI 顧問／AI 顧問公司？InnovateXP 協助 3–30 人中小企業找出一條銷售或營運瓶頸，釐清負責人與起始指標，再決定 Snapshot、Discovery、只改善人工流程，或暫時不買系統。免費 30 分鐘由 bookme 開始。",
     fit: "經常延遲報價、遺漏詢問或交接不清楚，且有負責人願意提供實際案例並共同審查的團隊。",
     unfit: "不適合要求保證營收、立即全面導入 AI，或尚未檢視流程就決定購買系統的需求。",
     free: "先以免費 30 分鐘討論一條流程，確認是否適合與下一步。書面診斷是另一項付費工作。",
