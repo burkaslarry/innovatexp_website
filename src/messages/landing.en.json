@@ -14,10 +14,10 @@
     "partnership": "Partners"
   },
   "hero": {
-    "eyebrow": "AI Business Consultant Larry Lo | InnovateXP",
-    "title": "AI business consultant for Hong Kong teams of 3–30",
-    "description": "InnovateXP helps Hong Kong SMEs of 3 to 30 people fix the workflow first, then put AI to work. Agilizing cut training materials from 10 days to 3 hours. If you should not buy a system yet, Larry Lo says so.",
-    "fitAudience": "For training centres, social-service organisations, professional firms, and online shops that want AI Automation Consulting before they buy another tool.",
+    "eyebrow": "Hong Kong AI consultant Larry Lo | InnovateXP",
+    "title": "Hong Kong AI consultant: diagnose one workflow first",
+    "description": "Looking for a Hong Kong AI consultant or AI consulting firm? InnovateXP helps teams of 3–30 clarify one enquiry, quote or handoff leak, then decide Snapshot, Discovery, or not buying yet. Start free on bookme.",
+    "fitAudience": "For training centres, gyms and studios, associations, professional firms, and F&B or retail teams that want an AI consultant before buying another tool.",
     "primaryCta": "Book a 30-min diagnosis",
     "secondaryCta": "Ask on WhatsApp",
     "trustPoints": [
@@ -32,7 +32,7 @@
     ],
     "diagnosticOutput": "One visible workflow with clear ownership",
     "diagnosticCaption": "Fix the leak first. Then decide whether AI, CRM, or automation is justified.",
-    "imageAlt": "Larry Lo | InnovateXP AI Business Consultant"
+    "imageAlt": "Larry Lo, AI Consultant at InnovateXP"
   },
   "problem": {
     "eyebrow": "Sound familiar?",

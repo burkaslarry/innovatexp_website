@@ -7,10 +7,11 @@ import { renderToStaticMarkup } from "react-dom/server";
 import { BLOG_CATEGORIES } from "@/content/blog-types";
 import { BLOG_CHROME } from "@/content/blog-chrome";
 import { blogSeo } from "@/content/page-seo";
+import { INDUSTRY_CASE_BLOG_POSTS } from "@/content/industry-case-blog-posts";
 import { WORKFLOW_BLOG_POSTS } from "@/content/workflow-blog-posts";
 import { PDPO_BLOG_SERIES } from "@/content/pdpo-blog-series";
 import { blogPosts } from "@/content/blog-posts";
-import { BLOG_POST_SLUGS, blogLinkHref, buildBlogArticleSchema, getBlogView, listArchive, listInsights, listSeries, seriesNeighbors, seriesTotal } from "@/content/blog-catalog";
+import { BLOG_POST_SLUGS, INSIGHT_BLOG_POSTS, blogLinkHref, buildBlogArticleSchema, getBlogView, listArchive, listInsights, listSeries, seriesNeighbors, seriesTotal } from "@/content/blog-catalog";
 import { formatHkd, PRICING } from "@/content/pricing";
 import { LOCALES, localeToHtmlLang } from "@/lib/i18n-routing";
 import BlogIndexPage, { generateMetadata as indexMetadata } from "@/app/[locale]/blog/page";
@@ -28,21 +29,25 @@ const officialSources = new Set([
   "https://developers.google.com/search/updates",
 ]);
 
-test("eight complete new articles cover all five nonempty pillars in all five locales", () => {
+test("insight articles cover all five nonempty pillars in all five locales", () => {
   assert.equal(WORKFLOW_BLOG_POSTS.length, 8);
+  assert.equal(INDUSTRY_CASE_BLOG_POSTS.length, 6);
+  assert.equal(INSIGHT_BLOG_POSTS.length, 14);
   assert.equal(BLOG_CATEGORIES.length, 5);
   assert.equal(new Set(BLOG_POST_SLUGS).size, BLOG_POST_SLUGS.length);
   for (const locale of LOCALES) {
-    assert.equal(listInsights(locale).length, 8);
+    assert.equal(listInsights(locale).length, 14);
     for (const category of BLOG_CATEGORIES) {
       const posts = listInsights(locale, category);
       assert.ok(posts.length > 0, `${locale}/${category} must not be empty`);
       assert.ok(posts.every((post) => post.category === category));
       assert.ok(BLOG_CHROME[locale].categories[category].description.length > 10);
     }
-    for (const post of WORKFLOW_BLOG_POSTS) {
-      assert.equal(post.date, "2026-11-09");
-      assert.equal(post.modifiedDate, undefined);
+    for (const post of INSIGHT_BLOG_POSTS) {
+      const expectedDate = INDUSTRY_CASE_BLOG_POSTS.some((item) => item.slug === post.slug) ? "2026-11-10" : "2026-11-09";
+      assert.equal(post.date, expectedDate);
+      if (post.slug === "geo-aeo-seo-measurement-limits") assert.equal(post.modifiedDate, "2026-11-10");
+      else assert.equal(post.modifiedDate, undefined);
       assert.deepEqual(Object.keys(post.locales).sort(), [...LOCALES].sort());
       assert.equal(new Set(LOCALES.map((loc) => post.locales[loc].title)).size, 5);
       const copy = post.locales[locale];
@@ -63,7 +68,7 @@ test("eight complete new articles cover all five nonempty pillars in all five lo
 
 test("all old slugs, PDPO order, neighbours and original archive bodies remain intact", () => {
   assert.equal(seriesTotal(), PDPO_BLOG_SERIES.length);
-  assert.equal(BLOG_POST_SLUGS.length, WORKFLOW_BLOG_POSTS.length + PDPO_BLOG_SERIES.length + Object.keys(blogPosts).length);
+  assert.equal(BLOG_POST_SLUGS.length, INSIGHT_BLOG_POSTS.length + PDPO_BLOG_SERIES.length + Object.keys(blogPosts).length);
   for (const locale of LOCALES) {
     const series = listSeries(locale);
     assert.deepEqual(series.map((post) => post.seriesOrder), PDPO_BLOG_SERIES.map((post) => post.order).sort((a, b) => a - b));
@@ -89,7 +94,7 @@ test("all old slugs, PDPO order, neighbours and original archive bodies remain i
 });
 
 test("source, service and case links use real internal routes or verified official URLs", () => {
-  for (const post of WORKFLOW_BLOG_POSTS) {
+  for (const post of INSIGHT_BLOG_POSTS) {
     for (const locale of LOCALES) {
       const copy = post.locales[locale];
       for (const link of [...copy.sources, ...copy.relatedServices, ...copy.relatedCases]) {
@@ -166,7 +171,8 @@ test("Article identity, headline and dates match the real content", () => {
       assert.equal(schema.publisher["@id"], `${siteUrl}/#organization`);
       assert.equal(schema["@id"], `${schema.url}#article`);
       assert.equal(schema.mainEntityOfPage.url, schema.url);
-      assert.equal("dateModified" in schema, false);
+      if (post.modifiedDate) assert.equal(schema.dateModified, post.modifiedDate);
+      else assert.equal("dateModified" in schema, false);
     }
   }
   const revised = { ...getBlogView(WORKFLOW_BLOG_POSTS[0].slug, "en")!, modifiedDate: "2026-11-10" };
@@ -193,9 +199,9 @@ test("the server-rendered index has real category anchors, new posts, series and
   }
 });
 
-test("all forty article bodies, takeaways, evidence links and FAQs render without client interaction", async () => {
+test("all insight article bodies, takeaways, evidence links and FAQs render without client interaction", async () => {
   for (const locale of LOCALES) {
-    for (const original of WORKFLOW_BLOG_POSTS) {
+    for (const original of INSIGHT_BLOG_POSTS) {
       const post = getBlogView(original.slug, locale)!;
       const params = Promise.resolve({ locale, slug: post.slug });
       const page = await BlogPostPage({ params });
@@ -206,7 +212,8 @@ test("all forty article bodies, takeaways, evidence links and FAQs render withou
       assert.ok(html.indexOf('id="key-takeaways"') < html.indexOf(htmlText(post.sections[0].heading)));
       assert.ok(html.includes(`href="/${locale}/about"`));
       assert.ok(html.includes('rel="author"'));
-      assert.ok(html.includes('dateTime="2026-11-09"'));
+      assert.ok(html.includes(`dateTime="${post.date}"`));
+      if (post.modifiedDate) assert.ok(html.includes(`dateTime="${post.modifiedDate}"`));
       assert.ok(html.includes(`href="/${locale}/bookme"`));
       assert.ok(html.includes(htmlText(BLOG_CHROME[locale].book)));
       for (const link of [...post.sources!, ...post.relatedServices!, ...post.relatedCases!]) {
@@ -217,7 +224,8 @@ test("all forty article bodies, takeaways, evidence links and FAQs render withou
       const schema = JSON.parse(json);
       assert.equal(schema.headline, post.title);
       assert.equal(schema.datePublished, post.date);
-      assert.equal("dateModified" in schema, false);
+      if (post.modifiedDate) assert.equal(schema.dateModified, post.modifiedDate);
+      else assert.equal("dateModified" in schema, false);
       const metadata = await articleMetadata({ params });
       assert.equal(metadata.description, post.excerpt);
       assert.equal(metadata.openGraph && "type" in metadata.openGraph && metadata.openGraph.type, "article");

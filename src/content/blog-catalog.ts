@@ -1,10 +1,14 @@
 import type { AppLocale } from "@/lib/i18n-routing";
 import { blogPosts } from "@/content/blog-posts";
+import { INDUSTRY_CASE_BLOG_POSTS } from "@/content/industry-case-blog-posts";
 import { PDPO_BLOG_SERIES } from "@/content/pdpo-blog-series";
 import { WORKFLOW_BLOG_POSTS } from "@/content/workflow-blog-posts";
 import type { BlogCategory, BlogLink } from "@/content/blog-types";
 import { AUTHOR, authorSameAs } from "@/lib/author";
 import { localeToHtmlLang } from "@/lib/i18n-routing";
+
+/** Editorial insights: Nov 2026 workflow pillars + industry adoption composites. */
+export const INSIGHT_BLOG_POSTS = Object.freeze([...WORKFLOW_BLOG_POSTS, ...INDUSTRY_CASE_BLOG_POSTS]);
 
 export type BlogView = {
   slug: string;
@@ -30,7 +34,7 @@ export type BlogView = {
 const SERIES_TOTAL = PDPO_BLOG_SERIES.length;
 
 export const BLOG_POST_SLUGS = Object.freeze([
-  ...WORKFLOW_BLOG_POSTS.map((post) => post.slug),
+  ...INSIGHT_BLOG_POSTS.map((post) => post.slug),
   ...PDPO_BLOG_SERIES.map((post) => post.slug),
   ...Object.keys(blogPosts),
 ]);
@@ -42,6 +46,7 @@ function seriesView(slug: string, locale: AppLocale): BlogView | null {
   return {
     slug: post.slug,
     date: post.date,
+    ...(post.modifiedDate ? { modifiedDate: post.modifiedDate } : {}),
     title: copy.title,
     excerpt: copy.excerpt,
     directAnswer: copy.directAnswer,
@@ -57,7 +62,7 @@ function seriesView(slug: string, locale: AppLocale): BlogView | null {
 }
 
 export function getBlogView(slug: string, locale: AppLocale): BlogView | null {
-  const workflow = WORKFLOW_BLOG_POSTS.find((post) => post.slug === slug);
+  const workflow = INSIGHT_BLOG_POSTS.find((post) => post.slug === slug);
   if (workflow) {
     return {
       ...workflow.locales[locale],
@@ -90,7 +95,7 @@ export function getBlogView(slug: string, locale: AppLocale): BlogView | null {
 
 /** The new editorial collection; PDPO and legacy archives retain their own order. */
 export function listInsights(locale: AppLocale, category?: BlogCategory): BlogView[] {
-  return WORKFLOW_BLOG_POSTS
+  return INSIGHT_BLOG_POSTS
     .filter((post) => !category || post.category === category)
     .map((post) => getBlogView(post.slug, locale)!)
     .sort((a, b) => b.date.localeCompare(a.date));
